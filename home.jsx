@@ -1,0 +1,348 @@
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal */
+const { useState: useState_h } = React;
+
+// ============================================
+// Offer card (used on Home + Pricing)
+// ============================================
+function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, expanded }) {
+  return (
+    <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32, height: "100%", display: "flex", flexDirection: "column", position: "relative" }}>
+      <Crosshairs />
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28 }}>
+        <div style={{
+          width: 48, height: 48, borderRadius: 10,
+          background: "rgba(" + (accent === "pink" ? "255,45,120" : accent === "purple" ? "155,48,255" : accent === "green" ? "0,255,136" : "255,100,32") + ", 0.08)",
+          border: "1px solid rgba(" + (accent === "pink" ? "255,45,120" : accent === "purple" ? "155,48,255" : accent === "green" ? "0,255,136" : "255,100,32") + ", 0.3)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          color: "var(--fwf-" + accent + ")"
+        }}>
+          {icon}
+        </div>
+        <span className={"fwf-badge fwf-badge-" + badgeColor}>{badge}</span>
+      </div>
+
+      <h3 className="fwf-display" style={{ fontSize: expanded ? 44 : 36, margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>{title}</h3>
+      <p style={{ color: "var(--fwf-text-mute)", margin: "0 0 24px 0", fontSize: 15, fontStyle: "italic", lineHeight: 1.5 }}>
+        {tagline}
+      </p>
+
+      <hr className="fwf-hr" style={{ margin: "0 0 20px 0" }} />
+
+      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px 0", flex: 1 }}>
+        {bullets.map((b, i) => (
+          <li key={i} style={{ display: "flex", gap: 12, padding: "8px 0", fontSize: 14.5, color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>
+            <span style={{ color: "var(--fwf-" + accent + ")", flexShrink: 0, marginTop: 2 }}>
+              <Icons.Check size={16} stroke={2} />
+            </span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Link to={expanded ? "contact" : "pricing"} className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
+        {expanded ? "Book a call to discuss" : "Learn more"}
+        <Icons.ArrowRight size={12} />
+      </Link>
+    </div>
+  );
+}
+
+// ============================================
+// Offer data (single source of truth)
+// ============================================
+const OFFERS = [
+  {
+    title: "Launch Film",
+    icon: React.createElement(Icons.Film, { size: 22 }),
+    badge: "Premium Production",
+    badgeColor: "purple",
+    accent: "purple",
+    tagline: "A powerful film for your website, brand, or campaign.",
+    bullets: [
+      "Concept & creative direction",
+      "1 shoot day (full or half day)",
+      "Edit, sound & colour grade",
+      "1 hero film",
+      "2–3 social cutdowns (optional)",
+    ],
+  },
+  {
+    title: "Ad Creative Sprint",
+    icon: React.createElement(Icons.Zap, { size: 22 }),
+    badge: "Fast Start",
+    badgeColor: "orange",
+    accent: "orange",
+    tagline: "Fast ad concepts and creative variations, ready to test.",
+    bullets: [
+      "3–5 ad concepts",
+      "Hooks & scripts",
+      "2–4 finished creatives or variations",
+      "AI visuals (optional)",
+      "Ideal for rapid testing",
+    ],
+  },
+  {
+    title: "Growth Retainer",
+    icon: React.createElement(Icons.TrendUp, { size: 22 }),
+    badge: "Most Popular",
+    badgeColor: "pink",
+    accent: "pink",
+    tagline: "Monthly creatives, ads, and performance optimisation.",
+    bullets: [
+      "Monthly ad creatives",
+      "Content direction",
+      "Creative testing",
+      "Funnel & landing page strategy",
+      "Performance support",
+      "Reporting & optimisation",
+      "Min. 4–6 month commitment",
+    ],
+  },
+  {
+    title: "Premium Partner",
+    icon: React.createElement(Icons.Star, { size: 22 }),
+    badge: "Best Value",
+    badgeColor: "green",
+    accent: "green",
+    tagline: "An external premium creative team, built around your brand.",
+    bullets: [
+      "Creative strategy",
+      "Ad creative production",
+      "Media buying support",
+      "Funnel support",
+      "AI-assisted campaign concepts",
+      "Priority account management",
+    ],
+  },
+];
+
+// ============================================
+// HOME
+// ============================================
+function HomePage() {
+  const [activeVideo, setActiveVideo] = useState_h(null);
+
+  return (
+    React.createElement("main", null,
+
+      /* HERO */
+      React.createElement("section", { style: { position: "relative", paddingTop: 160, paddingBottom: 120, overflow: "hidden", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" } },
+        React.createElement("div", { className: "fwf-grid-bg" }),
+        React.createElement("div", { style: { position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 50% 50% at 20% 30%, rgba(255,45,120,0.16), transparent 60%), radial-gradient(ellipse 50% 50% at 80% 70%, rgba(155,48,255,0.14), transparent 60%), radial-gradient(ellipse 40% 40% at 60% 20%, rgba(0,255,136,0.08), transparent 60%)" } }),
+
+        React.createElement("div", { className: "fwf-container", style: { position: "relative", textAlign: "center" } },
+
+          React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 14px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 36 } },
+            React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" } }),
+            "Studio · Stuttgart · Now booking Q3 2026"
+          ),
+
+          React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
+            "We make brands", React.createElement("br"),
+            "impossible to ",
+            React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "ignore.")
+          ),
+
+          React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
+            "Premium ad creative & cinematic film production for B2B brands that want to scale."
+          ),
+
+          React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
+            React.createElement(Link, { to: "contact", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+              React.createElement(Icons.Calendar, { size: 14 }), " Book a strategy call"
+            ),
+            React.createElement("a", { href: "#work", className: "fwf-btn fwf-btn-ghost" },
+              "See our work ", React.createElement(Icons.ArrowDown, { size: 14 })
+            )
+          ),
+
+          React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
+            React.createElement("span", null, "↳ 6K production"),
+            React.createElement("span", null, "↳ Strategy first"),
+            React.createElement("span", null, "↳ Performance focused")
+          )
+        )
+      ),
+
+      /* TRUST MARQUEE */
+      React.createElement(TrustMarquee),
+
+      /* POSITION / HOOK with typewriter */
+      React.createElement("section", { className: "fwf-section" },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 80, alignItems: "center" }, className: "fwf-grid-collapse" },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "01 / The position")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5.5vw, 76px)", margin: "0 0 28px 0", textWrap: "balance" } },
+                "Most agencies deliver content.", React.createElement("br"),
+                React.createElement("span", { style: { color: "var(--fwf-pink)" } },
+                  "We deliver ",
+                  React.createElement(TypewriterWord, {
+                    words: ["conversion.", "clarity.", "growth.", "impact."],
+                    className: "fwf-display-italic",
+                    style: { color: "var(--fwf-pink)" }
+                  })
+                )
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
+                "Flow West Films combines cinematic production, performance-driven ad creative, and strategic thinking — into one external premium team."
+              )
+            ),
+
+            React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
+              [
+                { num: "50+", label: "Projects delivered", c: "pink" },
+                { num: "B2B", label: "Brand focus", c: "purple" },
+                { num: "DE",  label: "Stuttgart & remote", c: "green" },
+                { num: "S1",  label: "Strategy-first", c: "orange" },
+              ].map((s, i) =>
+                React.createElement("div", { key: i, className: "fwf-stat" },
+                  React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12 } }, s.num),
+                  React.createElement("div", { className: "fwf-label", style: { letterSpacing: "0.14em" } }, s.label)
+                )
+              )
+            )
+          )
+        )
+      ),
+
+      /* 4 OFFERS */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 24 } },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Four ways to work with us")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0, textWrap: "balance" } },
+                "Choose your ", React.createElement("em", { className: "fwf-display-italic" }, "altitude.")
+              )
+            ),
+            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, maxWidth: 360, margin: 0, lineHeight: 1.55 } },
+              "Four offers — from a one-time launch film to a full external creative department. Pricing is discussed on your call."
+            )
+          ),
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }, className: "fwf-offers-grid" },
+            OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
+          )
+        )
+      ),
+
+      /* PORTFOLIO PREVIEW */
+      React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "03 / Featured work")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0 } },
+                "Recent ", React.createElement("em", { className: "fwf-display-italic" }, "productions.")
+              )
+            ),
+            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
+              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
+            )
+          ),
+
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
+            React.createElement(ProjectThumb, {
+              client: "Radisson Blu", title: "Brand Reel", tag: "Social Media",
+              desc: "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.",
+              colors: ["#ff2d78", "#7c3aed"],
+              thumb: "assets/thumbs/rad_blu.jpg", video: "assets/videos/rad_blu.mp4",
+              onPlay: function() { setActiveVideo("assets/videos/rad_blu.mp4"); },
+              featured: true
+            }),
+            React.createElement(ProjectThumb, {
+              client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video",
+              desc: "Directed music video for aonenine & DTOXiD. Shot on location in the UK.",
+              colors: ["#9b30ff", "#0a0a0a"],
+              thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4",
+              onPlay: function() { setActiveVideo("assets/videos/shops_mv.mp4"); }
+            }),
+            React.createElement(ProjectThumb, {
+              client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative",
+              desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
+              colors: ["#ff6420", "#c9a96e"],
+              thumb: "assets/thumbs/golden_brew.jpg", video: "assets/videos/golden_brew.mp4",
+              onPlay: function() { setActiveVideo("assets/videos/golden_brew.mp4"); }
+            })
+          )
+        )
+      ),
+
+      /* WHY FWF */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, "04 / Why FWF")
+          ),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 64px 0", maxWidth: 780, textWrap: "balance" } },
+            "Not just video production —", React.createElement("br"),
+            React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "your external creative department.")
+          ),
+
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }, className: "fwf-why-grid" },
+            [
+              { i: React.createElement(Icons.Brain, { size: 22 }), t: "Strategic Storytelling", d: "We don't just shoot. We think conversion-first.", c: "pink" },
+              { i: React.createElement(Icons.Aperture, { size: 22 }), t: "Cinematic Visual Language", d: "6K production that stays in the mind.", c: "purple" },
+              { i: React.createElement(Icons.Zap, { size: 22 }), t: "Speed & Efficiency", d: "Fast turnaround without sacrificing quality.", c: "green" },
+              { i: React.createElement(Icons.Target, { size: 22 }), t: "Performance Focus", d: "Every frame built to drive action.", c: "orange" },
+            ].map((w, i, arr) =>
+              React.createElement("div", { key: i, style: { padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" } },
+                React.createElement("div", { style: { color: "var(--fwf-" + w.c + ")", marginBottom: 24 } }, w.i),
+                React.createElement("h3", { style: { fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 } }, w.t),
+                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, w.d)
+              )
+            )
+          )
+        )
+      ),
+
+      React.createElement(FinalCTA),
+
+      activeVideo && React.createElement(VideoModal, { src: activeVideo, onClose: function() { setActiveVideo(null); } })
+    )
+  );
+}
+
+// ============================================
+// Project thumb (Home featured grid)
+// ============================================
+function ProjectThumb({ client, title, tag, desc, colors, featured, thumb, video, onPlay }) {
+  return (
+    React.createElement("div", { className: "fwf-card fwf-card-pink", style: { overflow: "hidden", display: "flex", flexDirection: "column", padding: 0 } },
+      React.createElement("div", {
+        style: { position: "relative", aspectRatio: featured ? "16/10" : "4/3", background: "#0a0a0a", overflow: "hidden", cursor: video ? "pointer" : "default" },
+        onClick: video && onPlay ? onPlay : undefined
+      },
+        thumb
+          ? React.createElement("img", { src: thumb, alt: title, className: "fwf-proj-thumb-img" })
+          : React.createElement(React.Fragment, null,
+              React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(135deg, " + colors[0] + "30, " + colors[1] + "90), #0a0a0a" } }),
+              React.createElement("div", { style: { position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 40%, " + colors[0] + "40, transparent 50%), radial-gradient(circle at 70% 80%, " + colors[1] + "40, transparent 50%)", mixBlendMode: "screen" } }),
+              React.createElement("div", { style: { position: "absolute", inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E\")", mixBlendMode: "overlay" } })
+            ),
+        React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7))" } }),
+        React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 20 })),
+        React.createElement("div", { style: { position: "absolute", top: 16, left: 16 } },
+          React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, tag)
+        )
+      ),
+      React.createElement("div", { style: { padding: 24 } },
+        React.createElement("div", { className: "fwf-label", style: { marginBottom: 8 } }, client),
+        React.createElement("h3", { className: "fwf-display", style: { fontSize: featured ? 32 : 24, margin: "0 0 10px 0", letterSpacing: "-0.01em" } }, title),
+        React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, desc)
+      )
+    )
+  );
+}
+
+Object.assign(window, { HomePage, OfferCard, OFFERS, ProjectThumb });

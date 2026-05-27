@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow West Films — Premium Ad Creative & Cinematic Production</title>
+  <meta name="description" content="Premium ad creative & cinematic film production for B2B brands. Flow West Films · Stuttgart." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flow West Films — Premium Ad Creative & Cinematic Production" />
+  <meta property="og:description" content="Premium ad creative & cinematic film production for B2B brands. Stuttgart." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Responsive overrides -->
+  <style>
+    @media (max-width: 980px) {
+      .fwf-offers-grid { grid-template-columns: 1fr !important; }
+      .fwf-proj-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-featured-grid { grid-template-columns: 1fr !important; }
+      .fwf-grid-collapse { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .fwf-why-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; border-bottom: 1px solid var(--fwf-hairline); }
+      .fwf-why-grid > div:nth-child(odd) { border-right: 1px solid var(--fwf-hairline) !important; }
+      .fwf-pillars { grid-template-columns: 1fr 1fr !important; }
+      .fwf-form-row { grid-template-columns: 1fr !important; }
+      .fwf-contact-photo { min-height: 400px !important; }
+    }
+    @media (max-width: 640px) {
+      .fwf-proj-grid { grid-template-columns: 1fr !important; }
+      .fwf-pillars { grid-template-columns: 1fr !important; }
+      .fwf-why-grid { grid-template-columns: 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; }
+      .fwf-nav-inner { padding: 14px 20px !important; }
+      .fwf-nav-wordmark { display: none; }
+    }
+
+    /* Fix: styles.css targets #app, React mounts to #root */
+    #root { min-height: 100vh; display: flex; flex-direction: column; }
+    #root > #app { flex: 1; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <div style="font-family:sans-serif;text-align:center;padding:80px 24px;color:#fff;background:#0a0a0a">
+      <h1>Flow West Films</h1>
+      <p>Please enable JavaScript to view this site.</p>
+    </div>
+  </noscript>
+
+  <!-- React + Babel (CDN) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <!-- Components — order matters: shared → home → pages → tweaks → app -->
+  <script type="text/babel" src="shared.jsx"></script>
+  <script type="text/babel" src="home.jsx"></script>
+  <script type="text/babel" src="pages.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
