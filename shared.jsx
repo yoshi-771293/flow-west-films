@@ -135,7 +135,6 @@ function Nav({ route }) {
                 className={"fwf-nav-link " + (route === l.to ? "fwf-nav-link-active" : "")}
               >{l.label}</Link>
             ))}
-            <a href="/audit/" className="fwf-nav-link">Audit</a>
           </div>
           <div className="fwf-nav-links">
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
@@ -160,7 +159,6 @@ function Nav({ route }) {
           {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setMobile(false)}>{l.label}</Link>
           ))}
-          <a href="/audit/" onClick={() => setMobile(false)}>Audit</a>
           <div style={{ marginTop: 36 }}>
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
               <Icons.Calendar size={14} /> Book a strategy call
