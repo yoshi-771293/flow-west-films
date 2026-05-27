@@ -170,9 +170,9 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
-            React.createElement("span", null, "↳ 6K production"),
-            React.createElement("span", null, "↳ Strategy first"),
-            React.createElement("span", null, "↳ Performance focused")
+            React.createElement("span", null, "6K Production"),
+            React.createElement("span", null, "Strategy First"),
+            React.createElement("span", null, "Performance Focused")
           )
         )
       ),
@@ -210,7 +210,7 @@ function HomePage() {
                 { num: "50+", label: "Projects delivered", c: "pink" },
                 { num: "B2B", label: "Brand focus", c: "purple" },
                 { num: "DE",  label: "Stuttgart & remote", c: "green" },
-                { num: "S1",  label: "Strategy-first", c: "orange" },
+                { num: "#1",  label: "Strategy-first", c: "orange" },
               ].map((s, i) =>
                 React.createElement("div", { key: i, className: "fwf-stat" },
                   React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12 } }, s.num),
@@ -305,7 +305,7 @@ function HomePage() {
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }, className: "fwf-why-grid" },
             [
               { i: React.createElement(Icons.Brain, { size: 22 }), t: "Strategic Storytelling", d: "We don't just shoot. We think conversion-first.", c: "pink" },
-              { i: React.createElement(Icons.Aperture, { size: 22 }), t: "Cinematic Visual Language", d: "6K production that stays in the mind.", c: "purple" },
+              { i: React.createElement(Icons.Aperture, { size: 22 }), t: "Film That Gets Remembered", d: "6K production built to stay in the mind.", c: "purple" },
               { i: React.createElement(Icons.Zap, { size: 22 }), t: "Speed & Efficiency", d: "Fast turnaround without sacrificing quality.", c: "green" },
               { i: React.createElement(Icons.Target, { size: 22 }), t: "Performance Focus", d: "Every frame built to drive action.", c: "orange" },
             ].map((w, i, arr) =>
