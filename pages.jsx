@@ -481,7 +481,7 @@ function ContactPage() {
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 50% 40% at 70% 30%, rgba(255,45,120,0.14), transparent 60%)" }} />
 
         <div className="fwf-container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "stretch" }} className="fwf-grid-collapse">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "start" }} className="fwf-grid-collapse">
             {/* Left — founder photo */}
             <div style={{ position: "relative", minHeight: 600 }} className="fwf-contact-photo">
               <Crosshairs />
@@ -520,12 +520,12 @@ function ContactPage() {
                 <span className="fwf-section-label-line" />
                 <span className="fwf-eyebrow">Get in touch</span>
               </div>
-              <h1 className="fwf-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", margin: "0 0 24px 0", lineHeight: 0.95, textWrap: "balance" }}>
+              <h1 className="fwf-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", margin: "0 0 24px 0", lineHeight: 0.95 }}>
                 Let's build something{" "}
                 <TypewriterWord
                   words={["exceptional.", "unique.", "unforgettable.", "remarkable."]}
                   className="fwf-display-italic"
-                  style={{ color: "var(--fwf-pink)" }}
+                  style={{ color: "var(--fwf-pink)", display: "inline-block", minWidth: "14ch" }}
                 />
               </h1>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 540 }}>

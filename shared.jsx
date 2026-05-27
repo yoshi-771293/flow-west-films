@@ -202,7 +202,7 @@ function Footer() {
           <div className="fwf-footer-col">
             <h4>Contact</h4>
             <a href="tel:+4915737918515">+49 157 37918515</a>
-            <a href="mailto:hello@flowwestfilms.de">hello@flowwestfilms.de</a>
+            <a href="mailto:info@flowwestfilms.de">info@flowwestfilms.de</a>
             <div style={{ color: "var(--fwf-text-mute)", fontSize: 14, padding: "5px 0" }}>Stuttgart, Germany</div>
           </div>
 
