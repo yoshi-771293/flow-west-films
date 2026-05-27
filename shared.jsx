@@ -1,5 +1,5 @@
 /* global React */
-const { useState, useEffect, useRef } = React;
+const { useState, useEffect } = React;
 
 // ============================================
 // FWF Lion Logo (uses real PNG)
@@ -110,6 +110,12 @@ function Nav({ route }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setMobile(false); };
+    if (mobile) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobile]);
 
   const links = [
     { to: "home", label: "Home" },

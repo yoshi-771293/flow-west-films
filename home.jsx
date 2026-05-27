@@ -158,9 +158,15 @@ function HomePage() {
             React.createElement("a", { href: "https://calendly.com/flowwestfilms-appointment/30min", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
               React.createElement(Icons.Calendar, { size: 14 }), " Book a strategy call"
             ),
-            React.createElement("a", { href: "#work", className: "fwf-btn fwf-btn-ghost" },
-              "See our work ", React.createElement(Icons.ArrowDown, { size: 14 })
-            )
+            React.createElement("a", {
+              href: "#work",
+              className: "fwf-btn fwf-btn-ghost",
+              onClick: function(e) {
+                e.preventDefault();
+                var el = document.getElementById("work");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }
+            }, "See our work ", React.createElement(Icons.ArrowDown, { size: 14 }))
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
@@ -338,7 +344,7 @@ function ProjectThumb({ client, title, tag, desc, colors, featured, thumb, video
               React.createElement("div", { style: { position: "absolute", inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E\")", mixBlendMode: "overlay" } })
             ),
         React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7))" } }),
-        React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 20 })),
+        video && React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 20 })),
         React.createElement("div", { style: { position: "absolute", top: 16, left: 16 } },
           React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, tag)
         )

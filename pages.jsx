@@ -226,7 +226,7 @@ function ProjectCard({ client, title, tag, desc, colors, thumb, video, index, on
             </>
         }
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7))" }} />
-        <div className="fwf-play"><Icons.Play size={18} /></div>
+        {video && <div className="fwf-play"><Icons.Play size={18} /></div>}
         <div style={{ position: "absolute", top: 14, left: 14 }}>
           <span className="fwf-badge fwf-badge-pink" style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" }}>{tag}</span>
         </div>
@@ -471,6 +471,23 @@ function ContactPage() {
 
   const submit = (e) => {
     e.preventDefault();
+    const subject = encodeURIComponent(
+      "[flowwestfilms.de] Inquiry from " + form.name + " — " + form.interest
+    );
+    const body = encodeURIComponent(
+      [
+        "Name: " + form.name,
+        "Company: " + (form.company || "—"),
+        "Email: " + form.email,
+        "Interest: " + form.interest,
+        "",
+        "Message:",
+        form.message || "—",
+      ].join("\n")
+    );
+    const link = document.createElement("a");
+    link.href = "mailto:info@flowwestfilms.de?subject=" + subject + "&body=" + body;
+    link.click();
     setSubmitted(true);
   };
 
