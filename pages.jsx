@@ -100,7 +100,7 @@ const ALL_PROJECTS = [
     client: "Sakura", title: "Spring Reel", tag: "Social Media", cat: "social",
     desc: "A dreamy outdoor reel framing cherry blossoms and flowing fashion — spring campaign.",
     colors: ["#ff2d78", "#9b30ff"],
-    thumb: "assets/thumbs/sakura.jpg", video: "assets/videos/sakura.mp4"
+    thumb: "assets/thumbs/sakura.jpg"
   },
   {
     client: "Studio Sessions", title: "Behind the Lens", tag: "BTS", cat: "social",
