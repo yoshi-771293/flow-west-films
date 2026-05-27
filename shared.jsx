@@ -137,10 +137,10 @@ function Nav({ route }) {
             ))}
           </div>
           <div className="fwf-nav-links">
-            <Link to="contact" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
               <Icons.Calendar size={14} />
               Book a call
-            </Link>
+            </a>
             <button className="fwf-mobile-btn" onClick={() => setMobile(true)}>
               <Icons.Menu size={20} />
             </button>
@@ -160,9 +160,9 @@ function Nav({ route }) {
             <Link key={l.to} to={l.to} onClick={() => setMobile(false)}>{l.label}</Link>
           ))}
           <div style={{ marginTop: 36 }}>
-            <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
               <Icons.Calendar size={14} /> Book a strategy call
-            </Link>
+            </a>
           </div>
         </div>
       )}
@@ -245,11 +245,11 @@ function FinalCTA({ headline, sub }) {
         <p style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 600, margin: "0 auto 40px", lineHeight: 1.5 }}>
           {sub || "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team."}
         </p>
-        <Link to="contact" className="fwf-btn fwf-btn-primary fwf-pulse">
+        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
           <Icons.Calendar size={14} />
           Book a strategy call
           <Icons.ArrowRight size={14} />
-        </Link>
+        </a>
         <div style={{ marginTop: 40, fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.22em", color: "var(--fwf-text-faint)" }}>
           FLOWWESTFILMS.DE
         </div>

@@ -39,10 +39,17 @@ function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, e
         ))}
       </ul>
 
-      <Link to={expanded ? "contact" : "pricing"} className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
-        {expanded ? "Book a call to discuss" : "Learn more"}
-        <Icons.ArrowRight size={12} />
-      </Link>
+      {expanded ? (
+        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
+          Book a call to discuss
+          <Icons.ArrowRight size={12} />
+        </a>
+      ) : (
+        <Link to="pricing" className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
+          Learn more
+          <Icons.ArrowRight size={12} />
+        </Link>
+      )}
     </div>
   );
 }
@@ -148,7 +155,7 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
-            React.createElement(Link, { to: "contact", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+            React.createElement("a", { href: "https://calendly.com/flowwestfilms-appointment/30min", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
               React.createElement(Icons.Calendar, { size: 14 }), " Book a strategy call"
             ),
             React.createElement("a", { href: "#work", className: "fwf-btn fwf-btn-ghost" },

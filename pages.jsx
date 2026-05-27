@@ -533,7 +533,7 @@ function ContactPage() {
                 We work with B2B brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
               </p>
 
-              <a href="#book" className="fwf-btn fwf-btn-primary fwf-pulse" style={{ marginBottom: 8 }}>
+              <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse" style={{ marginBottom: 8 }}>
                 <Icons.Calendar size={14}/>
                 Book a strategy call
                 <Icons.ArrowRight size={14}/>
