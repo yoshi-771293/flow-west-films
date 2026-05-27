@@ -372,19 +372,43 @@ function VideoModal({ src, onClose }) {
     };
   }, [onClose]);
 
+  // Detect embed URL (Vimeo / YouTube) vs local mp4
+  const isEmbed = src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
+  // Normalise Vimeo share URLs → player embed URL
+  let embedSrc = src;
+  if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
+    const id = src.split("/").filter(Boolean).pop().split("?")[0];
+    embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
+  }
+  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be"))) {
+    const id = src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
+             : new URL(src).searchParams.get("v");
+    embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+  }
+
   return (
     <div className="fwf-video-modal-backdrop" onClick={onClose}>
       <div className="fwf-video-modal-inner" onClick={e => e.stopPropagation()}>
         <button className="fwf-video-modal-close" onClick={onClose}>
           <Icons.X size={12} /> Close
         </button>
-        <video
-          className="fwf-video-modal-video"
-          src={src}
-          controls
-          autoPlay
-          playsInline
-        />
+        {isEmbed ? (
+          <iframe
+            className="fwf-video-modal-video"
+            src={embedSrc}
+            style={{ aspectRatio: "16/9", border: "none" }}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            className="fwf-video-modal-video"
+            src={src}
+            controls
+            autoPlay
+            playsInline
+          />
+        )}
       </div>
     </div>
   );
