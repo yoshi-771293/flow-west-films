@@ -51,7 +51,7 @@ const ALL_PROJECTS = [
     client: "Pane Vino", title: "Founder Story", tag: "Brand Film", cat: "image",
     desc: "An intimate documentary portrait of the owner at the Santa Lucia wine bar.",
     colors: ["#c9a96e", "#ff2d78"],
-    thumb: "assets/thumbs/pane_vino.jpg", video: "assets/videos/pane_vino.mp4"
+    thumb: "assets/thumbs/pane_vino.jpg"
   },
   {
     client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
@@ -94,7 +94,7 @@ const ALL_PROJECTS = [
     client: "FWF Films", title: "fr_fr — Short Film", tag: "Short Film", cat: "music",
     desc: "A visually intense short film shot through practical light and lens flare.",
     colors: ["#ff6420", "#ff2d78"],
-    thumb: "assets/thumbs/fr_fr.jpg", video: "assets/videos/fr_fr.mp4"
+    thumb: "assets/thumbs/fr_fr.jpg"
   },
   {
     client: "Sakura", title: "Spring Reel", tag: "Social Media", cat: "social",
