@@ -2,14 +2,28 @@
 const { useState, useEffect } = React;
 
 // ============================================
-// FWF Lion Logo (uses real PNG)
+// FWF Lion Logo — winged-lion brand marks
+//   variant="lion"   → winged-lion emblem only (compact mark, nav/mobile)
+//   variant="lockup" → full horizontal "Flow West Films" wordmark + lion
+//   variant="emblem" → vertical lion + "FWF" monogram crest
 // ============================================
-function Logo({ size = 32 }) {
+const LOGO_SRC = {
+  lion:   "assets/fwf-lion.png",
+  lockup: "assets/fwf-lockup.png",
+  emblem: "assets/fwf-emblem.png",
+};
+function Logo({ size = 32, variant = "lion", glow = false, style = {} }) {
   return (
     <img
-      src="assets/fwf-logo.png"
+      src={LOGO_SRC[variant] || LOGO_SRC.lion}
       alt="Flow West Films"
-      style={{ height: size, width: "auto", display: "block" }}
+      style={{
+        height: size,
+        width: "auto",
+        display: "block",
+        filter: glow ? "drop-shadow(0 0 22px rgba(255,45,120,0.35)) drop-shadow(0 0 44px rgba(155,48,255,0.22))" : "none",
+        ...style,
+      }}
     />
   );
 }
@@ -130,7 +144,7 @@ function Nav({ route }) {
       <nav className={"fwf-nav " + (scrolled ? "fwf-nav-scrolled" : "")}>
         <div className="fwf-nav-inner">
           <Link to="home" className="fwf-nav-logo">
-            <Logo size={34} />
+            <Logo size={42} />
             <span className="fwf-nav-wordmark">Flow West Films</span>
           </Link>
           <div className="fwf-nav-links fwf-nav-links-center">
@@ -157,7 +171,7 @@ function Nav({ route }) {
       {mobile && (
         <div className="fwf-mobile-overlay">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 36 }}>
-            <Logo size={34} />
+            <Logo size={40} />
             <button className="fwf-mobile-btn" onClick={() => setMobile(false)}>
               <Icons.X size={20} />
             </button>
@@ -185,11 +199,8 @@ function Footer() {
       <div className="fwf-container">
         <div className="fwf-footer-grid">
           <div className="fwf-footer-col">
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
-              <Logo size={40} />
-              <div>
-                <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase" }}>Flow West Films</div>
-              </div>
+            <div style={{ marginBottom: 22 }}>
+              <Logo variant="lockup" size={64} />
             </div>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.6, margin: 0, maxWidth: 320 }}>
               Premium ad creative & cinematic film production for B2B brands.

@@ -143,6 +143,10 @@ function HomePage() {
 
         React.createElement("div", { className: "fwf-container", style: { position: "relative", textAlign: "center" } },
 
+          React.createElement("div", { className: "fwf-fade-up", style: { display: "flex", justifyContent: "center", marginBottom: 32 } },
+            React.createElement(Logo, { variant: "lion", glow: true, size: "clamp(88px, 13vw, 150px)" })
+          ),
+
           React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 14px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 36 } },
             React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" } }),
             "Studio · Stuttgart · Now booking Q3 2026"
