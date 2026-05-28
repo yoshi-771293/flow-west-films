@@ -5,8 +5,8 @@ const { useState: useState_h } = React;
 // Offer card (used on Home + Pricing)
 // ============================================
 function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, expanded }) {
-  const accentHex = { pink: "#FF2D78", purple: "#9B30FF", orange: "#FF6420", green: "#00FF88" }[accent] || "#FF2D78";
-  const btnStyle = { alignSelf: "flex-start", background: accentHex, borderColor: accentHex, color: "#fff" };
+  const btnCls = `fwf-btn fwf-btn-sm fwf-btn-accent fwf-btn-accent-${accent}`;
+  const btnStyle = { alignSelf: "flex-start" };
 
   return (
     <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32, height: "100%", display: "flex", flexDirection: "column", position: "relative" }}>
@@ -43,12 +43,12 @@ function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, e
       </ul>
 
       {expanded ? (
-        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-sm" style={btnStyle}>
+        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
           Book a call to discuss
           <Icons.ArrowRight size={12} />
         </a>
       ) : (
-        <Link to="pricing" className="fwf-btn fwf-btn-sm" style={btnStyle}>
+        <Link to="pricing" className={btnCls} style={btnStyle}>
           Learn more
           <Icons.ArrowRight size={12} />
         </Link>

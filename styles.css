@@ -19,7 +19,7 @@
   /* Neon accents */
   --fwf-pink: #ff2d78;
   --fwf-purple: #9b30ff;
-  --fwf-green: #00ff88;
+  --fwf-green: #00C87A;
   --fwf-orange: #ff6420;
   --fwf-gold: #c9a96e;
 
@@ -203,10 +203,11 @@ main { flex: 1; }
   border-color: rgba(255, 255, 255, 0.18);
 }
 .fwf-btn-ghost:hover {
+  background: var(--fwf-purple);
   border-color: var(--fwf-purple);
-  box-shadow: 0 0 24px rgba(155, 48, 255, 0.25);
   color: #fff;
-  background: rgba(155, 48, 255, 0.04);
+  box-shadow: 0 0 32px rgba(155, 48, 255, 0.4);
+  transform: translateY(-1px);
 }
 
 .fwf-btn-bare {
@@ -227,6 +228,17 @@ main { flex: 1; }
 .fwf-btn-bare:hover { color: #fff; }
 
 .fwf-btn-sm { padding: 10px 18px; font-size: 11px; }
+
+/* ─── Accent offer-card buttons (dark-default, colored fill on hover) ─── */
+.fwf-btn-accent { background: transparent; color: #fff; }
+.fwf-btn-accent-purple { border: 1px solid #9B30FF; }
+.fwf-btn-accent-purple:hover { background: #9B30FF; border-color: #9B30FF; box-shadow: 0 0 28px rgba(155,48,255,0.45); transform: translateY(-1px); color: #fff; }
+.fwf-btn-accent-orange  { border: 1px solid #FF6420; }
+.fwf-btn-accent-orange:hover  { background: #FF6420; border-color: #FF6420; box-shadow: 0 0 28px rgba(255,100,32,0.45); transform: translateY(-1px); color: #fff; }
+.fwf-btn-accent-pink   { border: 1px solid #FF2D78; }
+.fwf-btn-accent-pink:hover   { background: #FF2D78; border-color: #FF2D78; box-shadow: 0 0 28px rgba(255,45,120,0.45); transform: translateY(-1px); color: #fff; }
+.fwf-btn-accent-green  { border: 1px solid #00C87A; }
+.fwf-btn-accent-green:hover  { background: #00C87A; border-color: #00C87A; box-shadow: 0 0 28px rgba(0,200,122,0.45); transform: translateY(-1px); color: #fff; }
 
 /* ─── Offer card grid — 4-col → 2-col → 1-col ─── */
 .fwf-offers-grid {
@@ -258,7 +270,7 @@ main { flex: 1; }
 
 .fwf-card-pink:hover { border-color: rgba(255, 45, 120, 0.55); box-shadow: 0 0 28px rgba(255, 45, 120, 0.18); }
 .fwf-card-purple:hover { border-color: rgba(155, 48, 255, 0.55); box-shadow: 0 0 28px rgba(155, 48, 255, 0.18); }
-.fwf-card-green:hover { border-color: rgba(0, 255, 136, 0.55); box-shadow: 0 0 28px rgba(0, 255, 136, 0.18); }
+.fwf-card-green:hover { border-color: rgba(0, 200, 122, 0.55); box-shadow: 0 0 28px rgba(0, 200, 122, 0.18); }
 .fwf-card-orange:hover { border-color: rgba(255, 100, 32, 0.55); box-shadow: 0 0 28px rgba(255, 100, 32, 0.18); }
 .fwf-card-gold:hover { border-color: rgba(201, 169, 110, 0.55); box-shadow: 0 0 28px rgba(201, 169, 110, 0.18); }
 
@@ -278,7 +290,7 @@ main { flex: 1; }
 }
 .fwf-badge-pink { color: var(--fwf-pink); border-color: rgba(255, 45, 120, 0.4); }
 .fwf-badge-purple { color: var(--fwf-purple); border-color: rgba(155, 48, 255, 0.4); }
-.fwf-badge-green { color: var(--fwf-green); border-color: rgba(0, 255, 136, 0.4); }
+.fwf-badge-green { color: var(--fwf-green); border-color: rgba(0, 200, 122, 0.4); }
 .fwf-badge-orange { color: var(--fwf-orange); border-color: rgba(255, 100, 32, 0.4); }
 .fwf-badge-gold { color: var(--fwf-gold); border-color: rgba(201, 169, 110, 0.4); }
 
