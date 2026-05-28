@@ -61,64 +61,49 @@ const OFFERS = [
   {
     title: "Launch Film",
     icon: React.createElement(Icons.Film, { size: 22 }),
-    badge: "Premium Production",
+    badge: "Project",
     badgeColor: "purple",
     accent: "purple",
-    tagline: "A powerful film for your website, brand, or campaign.",
+    tagline: "The hero asset that anchors everything else.",
     bullets: [
-      "Concept & creative direction",
-      "1 shoot day (full or half day)",
-      "Edit, sound & colour grade",
-      "1 hero film",
-      "2–3 social cutdowns (optional)",
+      "Strategy + positioning workshop (2 sessions)",
+      "Concept development + script",
+      "Full cinematic production (1–3 shoot days)",
+      "Hero edit + cutdowns (60s, 30s, 15s, 6s)",
+      "Behind-the-scenes content package",
+      "Usage rights: paid, organic, sales, internal",
     ],
   },
   {
-    title: "Ad Creative Sprint",
+    title: "Creative Sprint",
     icon: React.createElement(Icons.Zap, { size: 22 }),
-    badge: "Fast Start",
+    badge: "Retainer",
     badgeColor: "orange",
     accent: "orange",
-    tagline: "Fast ad concepts and creative variations, ready to test.",
+    tagline: "Volume creative that doesn't sacrifice the bar.",
     bullets: [
-      "3–5 ad concepts",
-      "Hooks & scripts",
-      "2–4 finished creatives or variations",
-      "AI visuals (optional)",
-      "Ideal for rapid testing",
+      "3 ad concepts per month — hooks, scripts + CTAs",
+      "4 finished video creatives per concept (12 videos/month)",
+      "10 static creatives per concept (30 statics/month)",
+      "On-brand templates + motion system",
+      "Asset library + organised handoff",
+      "Creative-only retainer — pairs with your own media buying",
     ],
   },
   {
     title: "Growth Retainer",
     icon: React.createElement(Icons.TrendUp, { size: 22 }),
-    badge: "Most Popular",
+    badge: "Retainer+",
     badgeColor: "pink",
     accent: "pink",
-    tagline: "Monthly creatives, ads, and performance optimisation.",
+    tagline: "Creative and paid, run as one system.",
     bullets: [
-      "Monthly ad creatives",
-      "Content direction",
-      "Creative testing",
-      "Funnel & landing page strategy",
-      "Performance support",
-      "Reporting & optimisation",
-      "Min. 4–6 month commitment",
-    ],
-  },
-  {
-    title: "Premium Partner",
-    icon: React.createElement(Icons.Star, { size: 22 }),
-    badge: "Best Value",
-    badgeColor: "green",
-    accent: "green",
-    tagline: "An external premium creative team, built around your brand.",
-    bullets: [
-      "Creative strategy",
-      "Ad creative production",
-      "Media buying support",
-      "Funnel support",
-      "AI-assisted campaign concepts",
-      "Priority account management",
+      "Everything in Creative Sprint — monthly concepts, hooks, scripts",
+      "3 ad concepts/month with 2–4 finished creatives per concept",
+      "Full Meta Ads management — strategy, setup, audiences, scaling",
+      "Structured creative testing tied directly to production",
+      "Performance reporting + monthly review and roadmap",
+      "Minimum 4–6 month commitment — long enough to compound",
     ],
   },
 ];
@@ -229,18 +214,27 @@ function HomePage() {
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Four ways to work with us")
+                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Three ways to work with us")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0, textWrap: "balance" } },
                 "Choose your ", React.createElement("em", { className: "fwf-display-italic" }, "altitude.")
               )
             ),
             React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, maxWidth: 360, margin: 0, lineHeight: 1.55 } },
-              "Four offers — from a one-time launch film to a full external creative department. Pricing is discussed on your call."
+              "Three productized offers — from a one-time anchor film to a full creative and paid system. Pricing is discussed on your call."
             )
           ),
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }, className: "fwf-offers-grid" },
             OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
+          ),
+          React.createElement("div", { style: { marginTop: 20, padding: "20px 24px", border: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 } },
+            React.createElement("div", null,
+              React.createElement("div", { style: { fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 6 } }, "04 · Partnership"),
+              React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: 13, color: "var(--fwf-text-mute)" } },
+                React.createElement("strong", { style: { color: "rgba(255,255,255,0.6)", fontWeight: 500 } }, "Premium Partner"),
+                " — founder-led, bespoke, scoped to outcomes. Working at scale and need something beyond a packaged offer? That conversation happens on the call."
+              )
+            )
           )
         )
       ),

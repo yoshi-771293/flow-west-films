@@ -261,7 +261,7 @@ function PricingPage() {
             <span className="fwf-section-label-line" />
           </div>
           <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(56px, 9vw, 130px)", margin: "0 0 28px 0", lineHeight: 0.95, textWrap: "balance" }}>
-            Four ways to <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>work with us.</em>
+            Three ways to <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>work with us.</em>
           </h1>
           <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 620, margin: "0 auto", lineHeight: 1.5 }}>
             No hidden fees. No lock-ins. Just results. <span style={{ color: "#fff" }}>Pricing is discussed on your strategy call</span> — because every brand starts in a different place.
@@ -275,6 +275,15 @@ function PricingPage() {
             {OFFERS.map((o, i) => (
               <OfferCard key={i} {...o} expanded />
             ))}
+          </div>
+          <div style={{ marginTop: 20, padding: "20px 24px", border: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+            <div>
+              <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 6 }}>04 · Partnership</div>
+              <span style={{ fontFamily: "var(--fwf-mono)", fontSize: 13, color: "var(--fwf-text-mute)" }}>
+                <strong style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>Premium Partner</strong>
+                {" "}— founder-led, bespoke, scoped to outcomes. Working at scale and need something beyond a packaged offer? That conversation happens on the call.
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -310,7 +319,7 @@ function FAQ() {
     { q: "Do you work with brands outside Germany?", a: "Yes — we work remotely with B2B brands across Europe and beyond. Production travel is built into the quote when needed." },
     { q: "How long does a project take?", a: "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works." },
     { q: "Why no prices on the website?", a: "Every project is different. We price based on your goals, scope, and timeline — not a menu. That's how we keep quality up and clients honest about what they actually need." },
-    { q: "Can I start with just one project?", a: "Absolutely. The Ad Creative Sprint is designed for exactly that. Most retainer clients start with a sprint, see the results, and continue from there." },
+    { q: "Can I start with just one project?", a: "Absolutely. The Creative Sprint is designed for exactly that — pure creative volume for brands that run their own paid. Most retainer clients start with a sprint, see the results, and continue from there." },
     { q: "Who's on the team?", a: "Florian Kotulla leads creative and strategy. We bring in a vetted bench of DPs, editors, motion designers, and media buyers depending on the project scope." },
   ];
   const [open, setOpen] = useStateP(0);
@@ -466,31 +475,6 @@ function AboutPage() {
 // CONTACT PAGE
 // ============================================
 function ContactPage() {
-  const [form, setForm] = useStateP({ name: "", company: "", email: "", interest: "Not sure yet", message: "" });
-  const [submitted, setSubmitted] = useStateP(false);
-
-  const submit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(
-      "[flowwestfilms.de] Inquiry from " + form.name + " — " + form.interest
-    );
-    const body = encodeURIComponent(
-      [
-        "Name: " + form.name,
-        "Company: " + (form.company || "—"),
-        "Email: " + form.email,
-        "Interest: " + form.interest,
-        "",
-        "Message:",
-        form.message || "—",
-      ].join("\n")
-    );
-    const link = document.createElement("a");
-    link.href = "mailto:info@flowwestfilms.de?subject=" + subject + "&body=" + body;
-    link.click();
-    setSubmitted(true);
-  };
-
   return (
     <main>
       <section style={{ position: "relative", paddingTop: 140, paddingBottom: 100, overflow: "hidden" }}>
@@ -531,7 +515,7 @@ function ContactPage() {
               </div>
             </div>
 
-            {/* Right — form + CTA */}
+            {/* Right — CTA + trust block */}
             <div>
               <div className="fwf-section-label">
                 <span className="fwf-section-label-line" />
@@ -549,66 +533,45 @@ function ContactPage() {
                 We work with B2B brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
               </p>
 
-              <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse" style={{ marginBottom: 8 }}>
+              <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse" style={{ marginBottom: 48 }}>
                 <Icons.Calendar size={14}/>
                 Book a strategy call
                 <Icons.ArrowRight size={14}/>
               </a>
 
-              <div className="fwf-divider-dot">— or send a message —</div>
-
-              {submitted ? (
-                <div style={{
-                  padding: 32, border: "1px solid rgba(0,255,136,0.4)",
-                  borderRadius: 12, background: "rgba(0,255,136,0.05)",
-                  textAlign: "center"
-                }}>
-                  <div style={{ color: "var(--fwf-green)", marginBottom: 12, display: "flex", justifyContent: "center" }}>
-                    <Icons.Check size={32} />
-                  </div>
-                  <h3 className="fwf-display" style={{ fontSize: 28, margin: "0 0 8px 0" }}>Message received.</h3>
-                  <p style={{ color: "var(--fwf-text-mute)", margin: 0, fontSize: 15 }}>
-                    Florian will get back to you within 24 hours. Usually faster.
-                  </p>
+              {/* Trust block */}
+              <div style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 40 }}>
+                <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 28 }}>
+                  Results that speak for themselves
                 </div>
-              ) : (
-                <form onSubmit={submit} style={{ display: "grid", gap: 16 }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="fwf-form-row">
-                    <div>
-                      <label className="fwf-label-form">Name</label>
-                      <input className="fwf-input" type="text" required value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
-                    </div>
-                    <div>
-                      <label className="fwf-label-form">Company</label>
-                      <input className="fwf-input" type="text" value={form.company} onChange={e => setForm({...form, company: e.target.value})} />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="fwf-label-form">Email</label>
-                    <input className="fwf-input" type="email" required value={form.email} onChange={e => setForm({...form, email: e.target.value})} />
-                  </div>
-                  <div>
-                    <label className="fwf-label-form">What are you looking for?</label>
-                    <select className="fwf-select" value={form.interest} onChange={e => setForm({...form, interest: e.target.value})}>
-                      <option>Launch Film</option>
-                      <option>Ad Creative Sprint</option>
-                      <option>Growth Retainer</option>
-                      <option>Premium Partner</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="fwf-label-form">Tell us more (optional)</label>
-                    <textarea className="fwf-textarea" rows={3} value={form.message} onChange={e => setForm({...form, message: e.target.value})} />
-                  </div>
-                  <button type="submit" className="fwf-btn fwf-btn-primary" style={{ justifyContent: "center", marginTop: 8 }}>
-                    Send message
-                    <Icons.ArrowRight size={14}/>
-                  </button>
-                </form>
-              )}
 
-              <div style={{ marginTop: 48, display: "flex", flexWrap: "wrap", gap: "16px 32px", alignItems: "center" }}>
+                {/* Stats row */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 36 }}>
+                  {[
+                    { num: "4×", label: "ROAS", color: "var(--fwf-pink)" },
+                    { num: "90", label: "DAYS TO RESULTS", color: "var(--fwf-orange)" },
+                    { num: "€0", label: "SPENT ON GUESSING", color: "var(--fwf-green)" },
+                  ].map((s, i) => (
+                    <div key={i} style={{ padding: "20px 16px", border: "1px solid var(--fwf-hairline)", textAlign: "center" }}>
+                      <div style={{ fontFamily: "var(--fwf-display)", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, lineHeight: 1, color: s.color, marginBottom: 8 }}>{s.num}</div>
+                      <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-faint)" }}>{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <div style={{ borderLeft: "2px solid var(--fwf-pink)", paddingLeft: 20 }}>
+                  <p style={{ fontFamily: "var(--fwf-display)", fontStyle: "italic", fontSize: 19, lineHeight: 1.55, color: "rgba(255,255,255,0.8)", margin: "0 0 14px 0" }}>
+                    "We brought FWF in with no brand film, no real ad creative, and no testing discipline.
+                    Twelve weeks later the Launch Film was our highest-converting asset and the retainer had paid for itself twice over."
+                  </p>
+                  <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-faint)" }}>
+                    B2B SaaS · Munich
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ marginTop: 40, display: "flex", flexWrap: "wrap", gap: "16px 32px", alignItems: "center" }}>
                 <a href="tel:+4915737918515" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "var(--fwf-text-mute)", textDecoration: "none", fontSize: 14, fontFamily: "var(--fwf-mono)" }}>
                   <Icons.Phone size={14}/> +49 157 37918515
                 </a>
