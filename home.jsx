@@ -5,6 +5,9 @@ const { useState: useState_h } = React;
 // Offer card (used on Home + Pricing)
 // ============================================
 function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, expanded }) {
+  const accentHex = { pink: "#FF2D78", purple: "#9B30FF", orange: "#FF6420", green: "#00FF88" }[accent] || "#FF2D78";
+  const btnStyle = { alignSelf: "flex-start", background: accentHex, borderColor: accentHex, color: "#fff" };
+
   return (
     <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32, height: "100%", display: "flex", flexDirection: "column", position: "relative" }}>
       <Crosshairs />
@@ -40,12 +43,12 @@ function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, e
       </ul>
 
       {expanded ? (
-        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
+        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-sm" style={btnStyle}>
           Book a call to discuss
           <Icons.ArrowRight size={12} />
         </a>
       ) : (
-        <Link to="pricing" className="fwf-btn fwf-btn-ghost fwf-btn-sm" style={{ alignSelf: "flex-start" }}>
+        <Link to="pricing" className="fwf-btn fwf-btn-sm" style={btnStyle}>
           Learn more
           <Icons.ArrowRight size={12} />
         </Link>
@@ -104,6 +107,21 @@ const OFFERS = [
       "Structured creative testing tied directly to production",
       "Performance reporting + monthly review and roadmap",
       "Minimum 4–6 month commitment — long enough to compound",
+    ],
+  },
+  {
+    title: "Premium Partner",
+    icon: React.createElement(Icons.Star, { size: 22 }),
+    badge: "Partnership",
+    badgeColor: "green",
+    accent: "green",
+    tagline: "Founder-led. Bespoke. Whatever moves the brand.",
+    bullets: [
+      "Concept creation + creative direction across all channels",
+      "Full performance marketing — creative and paid as one system",
+      "Founder-led strategy and hands-on execution",
+      "Website builds, AI workflows, and custom systems",
+      "Bespoke scope, priced to the relationship — not a fixed package",
     ],
   },
 ];
@@ -214,27 +232,18 @@ function HomePage() {
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Three ways to work with us")
+                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Four ways to work with us")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0, textWrap: "balance" } },
                 "Choose your ", React.createElement("em", { className: "fwf-display-italic" }, "altitude.")
               )
             ),
             React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, maxWidth: 360, margin: 0, lineHeight: 1.55 } },
-              "Three productized offers — from a one-time anchor film to a full creative and paid system. Pricing is discussed on your call."
+              "Four offers — from a one-time anchor film to a founder-led bespoke partnership. Pricing is discussed on your call."
             )
           ),
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }, className: "fwf-offers-grid" },
+          React.createElement("div", { className: "fwf-offers-grid" },
             OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
-          ),
-          React.createElement("div", { style: { marginTop: 20, padding: "20px 24px", border: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 } },
-            React.createElement("div", null,
-              React.createElement("div", { style: { fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 6 } }, "04 · Partnership"),
-              React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: 13, color: "var(--fwf-text-mute)" } },
-                React.createElement("strong", { style: { color: "rgba(255,255,255,0.6)", fontWeight: 500 } }, "Premium Partner"),
-                " — founder-led, bespoke, scoped to outcomes. Working at scale and need something beyond a packaged offer? That conversation happens on the call."
-              )
-            )
           )
         )
       ),

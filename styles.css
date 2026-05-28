@@ -228,6 +228,19 @@ main { flex: 1; }
 
 .fwf-btn-sm { padding: 10px 18px; font-size: 11px; }
 
+/* ─── Offer card grid — 4-col → 2-col → 1-col ─── */
+.fwf-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1100px) {
+  .fwf-offers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .fwf-offers-grid { grid-template-columns: 1fr; }
+}
+
 /* ============================================
    Cards
    ============================================ */

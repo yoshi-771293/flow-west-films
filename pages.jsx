@@ -261,7 +261,7 @@ function PricingPage() {
             <span className="fwf-section-label-line" />
           </div>
           <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(56px, 9vw, 130px)", margin: "0 0 28px 0", lineHeight: 0.95, textWrap: "balance" }}>
-            Three ways to <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>work with us.</em>
+            Four ways to <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>work with us.</em>
           </h1>
           <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 620, margin: "0 auto", lineHeight: 1.5 }}>
             No hidden fees. No lock-ins. Just results. <span style={{ color: "#fff" }}>Pricing is discussed on your strategy call</span> — because every brand starts in a different place.
@@ -271,19 +271,10 @@ function PricingPage() {
 
       <section style={{ padding: "40px 0 120px" }}>
         <div className="fwf-container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="fwf-offers-grid">
+          <div className="fwf-offers-grid">
             {OFFERS.map((o, i) => (
               <OfferCard key={i} {...o} expanded />
             ))}
-          </div>
-          <div style={{ marginTop: 20, padding: "20px 24px", border: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-            <div>
-              <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 6 }}>04 · Partnership</div>
-              <span style={{ fontFamily: "var(--fwf-mono)", fontSize: 13, color: "var(--fwf-text-mute)" }}>
-                <strong style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>Premium Partner</strong>
-                {" "}— founder-led, bespoke, scoped to outcomes. Working at scale and need something beyond a packaged offer? That conversation happens on the call.
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -546,28 +537,34 @@ function ContactPage() {
                 </div>
 
                 {/* Stats row */}
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 36 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
                   {[
-                    { num: "4×", label: "ROAS", color: "var(--fwf-pink)" },
-                    { num: "90", label: "DAYS TO RESULTS", color: "var(--fwf-orange)" },
-                    { num: "€0", label: "SPENT ON GUESSING", color: "var(--fwf-green)" },
+                    {
+                      num: "4×",
+                      label: "ROAS",
+                      color: "var(--fwf-pink)",
+                    },
+                    {
+                      num: "30",
+                      label: "DAYS TO FIRST OUTPUT",
+                      sub: "Results within the first sprint",
+                      color: "var(--fwf-orange)",
+                    },
+                    {
+                      num: "€0",
+                      label: "SPENT ON GUESSING",
+                      sub: "Every creative decision is backed by data. No spray-and-pray, no wasted budget on untested ideas.",
+                      color: "var(--fwf-green)",
+                    },
                   ].map((s, i) => (
                     <div key={i} style={{ padding: "20px 16px", border: "1px solid var(--fwf-hairline)", textAlign: "center" }}>
                       <div style={{ fontFamily: "var(--fwf-display)", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400, lineHeight: 1, color: s.color, marginBottom: 8 }}>{s.num}</div>
-                      <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-faint)" }}>{s.label}</div>
+                      <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: s.sub ? 8 : 0 }}>{s.label}</div>
+                      {s.sub && (
+                        <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 9, color: "var(--fwf-text-mute)", lineHeight: 1.5 }}>{s.sub}</div>
+                      )}
                     </div>
                   ))}
-                </div>
-
-                {/* Quote */}
-                <div style={{ borderLeft: "2px solid var(--fwf-pink)", paddingLeft: 20 }}>
-                  <p style={{ fontFamily: "var(--fwf-display)", fontStyle: "italic", fontSize: 19, lineHeight: 1.55, color: "rgba(255,255,255,0.8)", margin: "0 0 14px 0" }}>
-                    "We brought FWF in with no brand film, no real ad creative, and no testing discipline.
-                    Twelve weeks later the Launch Film was our highest-converting asset and the retainer had paid for itself twice over."
-                  </p>
-                  <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-faint)" }}>
-                    B2B SaaS · Munich
-                  </div>
                 </div>
               </div>
 
