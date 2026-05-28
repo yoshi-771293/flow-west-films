@@ -295,6 +295,28 @@ main { flex: 1; }
 .fwf-badge-gold { color: var(--fwf-gold); border-color: rgba(201, 169, 110, 0.4); }
 .fwf-badge-highlight { color: #fff; background: var(--fwf-pink); border-color: var(--fwf-pink); box-shadow: 0 0 14px rgba(255, 45, 120, 0.45); }
 
+/* ── Legal pages ── */
+.fwf-legal-body { max-width: 680px; }
+.fwf-legal-body h2 {
+  font-family: var(--fwf-body);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 40px 0 10px 0;
+  color: rgba(255, 255, 255, 0.88);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--fwf-hairline);
+}
+.fwf-legal-body p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--fwf-text-mute);
+  margin: 0 0 12px 0;
+}
+.fwf-legal-body strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+.fwf-legal-body a { color: var(--fwf-pink); text-decoration: none; }
+.fwf-legal-body a:hover { text-decoration: underline; }
+
 /* ============================================
    Hero animations
    ============================================ */

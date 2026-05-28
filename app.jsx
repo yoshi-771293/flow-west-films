@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, PricingPage, AboutPage, ContactPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -45,20 +45,24 @@ function App() {
 
   let Page;
   switch (route) {
-    case "projects": Page = ProjectsPage; break;
-    case "pricing":  Page = PricingPage;  break;
-    case "about":    Page = AboutPage;    break;
-    case "contact":  Page = ContactPage;  break;
-    default:         Page = HomePage;
+    case "projects":    Page = ProjectsPage;    break;
+    case "pricing":     Page = PricingPage;     break;
+    case "about":       Page = AboutPage;       break;
+    case "contact":     Page = ContactPage;     break;
+    case "impressum":   Page = ImpressumPage;   break;
+    case "datenschutz": Page = DatenschutzPage; break;
+    default:            Page = HomePage;
   }
 
   // Map routes to screen labels
   const labels = {
-    home: "01 Home",
-    projects: "02 Projects",
-    pricing: "03 Pricing",
-    about: "04 About",
-    contact: "05 Contact",
+    home:        "01 Home",
+    projects:    "02 Projects",
+    pricing:     "03 Pricing",
+    about:       "04 About",
+    contact:     "05 Contact",
+    impressum:   "Legal · Impressum",
+    datenschutz: "Legal · Datenschutz",
   };
 
   return (

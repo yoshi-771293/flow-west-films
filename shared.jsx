@@ -203,6 +203,8 @@ function Footer() {
             <Link to="pricing">Pricing</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
+            <Link to="impressum" style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--fwf-hairline)" }}>Impressum</Link>
+            <Link to="datenschutz">Datenschutz</Link>
           </div>
 
           <div className="fwf-footer-col">
@@ -222,7 +224,10 @@ function Footer() {
 
         <div className="fwf-footer-bar">
           <div>© 2026 Flow West Films · Stuttgart, Germany</div>
-          <div>flowwestfilms.de</div>
+          <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
+            <Link to="impressum" style={{ color: "var(--fwf-text-faint)", fontSize: 12, fontFamily: "var(--fwf-mono)", letterSpacing: "0.12em", textDecoration: "none" }}>Impressum</Link>
+            <Link to="datenschutz" style={{ color: "var(--fwf-text-faint)", fontSize: 12, fontFamily: "var(--fwf-mono)", letterSpacing: "0.12em", textDecoration: "none" }}>Datenschutz</Link>
+          </div>
         </div>
       </div>
     </footer>

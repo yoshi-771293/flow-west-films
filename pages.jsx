@@ -587,4 +587,141 @@ function ContactPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, PricingPage, AboutPage, ContactPage });
+// ============================================
+// ImpressumPage
+// ============================================
+function ImpressumPage() {
+  return (
+    <main>
+      <section className="fwf-section" style={{ paddingTop: 140, paddingBottom: 120 }}>
+        <div className="fwf-container">
+          <div className="fwf-eyebrow" style={{ marginBottom: 16 }}>Legal</div>
+          <h1 className="fwf-display" style={{ fontSize: "clamp(48px, 7vw, 84px)", margin: "0 0 56px 0", lineHeight: 1 }}>
+            Impressum
+          </h1>
+          <div className="fwf-legal-body">
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+              <strong>Florian Elias Kotulla</strong><br />
+              Flow West Films<br />
+              Neckarstraße 240<br />
+              70190 Stuttgart
+            </p>
+
+            <h2>Kontakt</h2>
+            <p>
+              Telefon: 015737918515<br />
+              E-Mail: <a href="mailto:kotullaflorian@gmail.com">kotullaflorian@gmail.com</a>
+            </p>
+
+            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>Florian Elias Kotulla, Neckarstraße 240, 70190 Stuttgart</p>
+
+            <h2>Hinweis zur Online-Streitbeilegung</h2>
+            <p>
+              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
+              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noreferrer">https://ec.europa.eu/consumers/odr</a>.
+              Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht verpflichtet und nicht bereit,
+              an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+// ============================================
+// DatenschutzPage
+// ============================================
+function DatenschutzPage() {
+  return (
+    <main>
+      <section className="fwf-section" style={{ paddingTop: 140, paddingBottom: 120 }}>
+        <div className="fwf-container">
+          <div className="fwf-eyebrow" style={{ marginBottom: 16 }}>Legal</div>
+          <h1 className="fwf-display" style={{ fontSize: "clamp(48px, 7vw, 84px)", margin: "0 0 56px 0", lineHeight: 1 }}>
+            Datenschutzerklärung
+          </h1>
+          <div className="fwf-legal-body">
+
+            <h2>1. Datenschutz auf einen Blick</h2>
+            <p>
+              <strong>Verantwortliche Stelle</strong><br />
+              Florian Elias Kotulla · Flow West Films · Neckarstraße 240 · 70190 Stuttgart ·{" "}
+              <a href="mailto:kotullaflorian@gmail.com">kotullaflorian@gmail.com</a>
+            </p>
+            <p>
+              Die Nutzung dieser Website ist ohne Angabe personenbezogener Daten möglich. Soweit Daten erhoben
+              werden, geschieht dies nur, soweit Sie uns diese aktiv mitteilen oder es technisch erforderlich ist.
+            </p>
+
+            <h2>2. Hosting</h2>
+            <p>
+              Diese Website wird über Vercel (vercel.com) gehostet. Beim Besuch der Website werden automatisch
+              technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Uhrzeit des Zugriffs) im Rahmen von
+              Server-Log-Dateien erfasst. Dies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO — wir haben
+              ein berechtigtes Interesse an der technisch einwandfreien Darstellung unserer Website.
+            </p>
+
+            <h2>3. Kontaktaufnahme</h2>
+            <p>
+              Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Nachrichteninhalt)
+              zur Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung
+              weitergegeben und gelöscht, sobald der Zweck der Speicherung entfällt.
+            </p>
+            <p>
+              Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO
+              (berechtigtes Interesse an Anfragenbearbeitung).
+            </p>
+
+            <h2>4. Social Media & externe Dienste</h2>
+            <p>
+              <strong>Instagram / Facebook (Meta)</strong><br />
+              Auf dieser Website sind Links zu unseren Instagram- und Facebook-Präsenzen eingebunden. Beim
+              Anklicken wird eine Verbindung zu den Servern von Meta Platforms Ireland Limited (4 Grand Canal
+              Square, Dublin 2, Irland) hergestellt. Meta erhält dabei die Information, dass Sie unsere Seite
+              besucht haben. Wir haben keinen Einfluss auf die Datenverarbeitung durch Meta. Weitere
+              Informationen:{" "}
+              <a href="https://instagram.com/about/legal/privacy/" target="_blank" rel="noreferrer">instagram.com/about/legal/privacy</a>{" "}
+              und{" "}
+              <a href="https://de-de.facebook.com/privacy/explanation" target="_blank" rel="noreferrer">facebook.com/privacy/explanation</a>.
+            </p>
+            <p>
+              <strong>Meta Ads / Facebook Pixel</strong><br />
+              Wir betreiben bezahlte Werbung über Meta Ads. Dazu wird der Facebook Pixel auf dieser Website
+              eingesetzt, um Conversion-Daten zu erheben und Werbekampagnen zu optimieren. Die dabei erfassten
+              Daten (u. a. IP-Adresse, Seitenaufrufe, User-Agent) werden an Meta übermittelt und können in den
+              USA verarbeitet werden. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a
+              DSGVO). Die Einwilligung ist jederzeit widerrufbar. Wir und Meta Platforms Ireland Limited sind für
+              die Erfassung und Übermittlung dieser Daten gemeinsam verantwortlich (Art. 26 DSGVO). Die
+              Datenübertragung in die USA stützt sich auf die Standardvertragsklauseln der EU-Kommission.
+            </p>
+            <p>
+              <strong>YouTube</strong><br />
+              Auf dieser Website sind YouTube-Videos eingebunden (Google Ireland Limited, Gordon House, Barrow
+              Street, Dublin 4, Irland). Wir nutzen den erweiterten Datenschutzmodus. Beim Abspielen eines Videos
+              wird eine Verbindung zu YouTube-Servern hergestellt. Wenn Sie in Ihrem Google-Konto eingeloggt
+              sind, kann YouTube das Abspielen Ihrem Profil zuordnen. Weitere Informationen:{" "}
+              <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noreferrer">policies.google.com/privacy</a>.
+            </p>
+
+            <h2>5. Ihre Rechte</h2>
+            <p>
+              Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer
+              personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Bei Beschwerden steht Ihnen das
+              Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+            </p>
+            <p>
+              Für alle Anfragen:{" "}
+              <a href="mailto:kotullaflorian@gmail.com">kotullaflorian@gmail.com</a>
+            </p>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+Object.assign(window, { ProjectsPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage });
