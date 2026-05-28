@@ -4,7 +4,7 @@ const { useState: useState_h } = React;
 // ============================================
 // Offer card (used on Home + Pricing)
 // ============================================
-function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, expanded }) {
+function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, bullets, accent, expanded }) {
   const btnCls = `fwf-btn fwf-btn-sm fwf-btn-accent fwf-btn-accent-${accent}`;
   const btnStyle = { alignSelf: "flex-start" };
 
@@ -21,7 +21,7 @@ function OfferCard({ icon, title, badge, badgeColor, tagline, bullets, accent, e
         }}>
           {icon}
         </div>
-        <span className={"fwf-badge fwf-badge-" + badgeColor}>{badge}</span>
+        <span className={"fwf-badge " + (highlight ? "fwf-badge-highlight" : "fwf-badge-" + badgeColor)}>{badge}</span>
       </div>
 
       <h3 className="fwf-display" style={{ fontSize: expanded ? 44 : 36, margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>{title}</h3>
@@ -64,7 +64,7 @@ const OFFERS = [
   {
     title: "Launch Film",
     icon: React.createElement(Icons.Film, { size: 22 }),
-    badge: "Project",
+    badge: "Signature",
     badgeColor: "purple",
     accent: "purple",
     tagline: "The hero asset that anchors everything else.",
@@ -80,7 +80,7 @@ const OFFERS = [
   {
     title: "Creative Sprint",
     icon: React.createElement(Icons.Zap, { size: 22 }),
-    badge: "Retainer",
+    badge: "Fastest",
     badgeColor: "orange",
     accent: "orange",
     tagline: "Volume creative that doesn't sacrifice the bar.",
@@ -96,8 +96,9 @@ const OFFERS = [
   {
     title: "Growth Retainer",
     icon: React.createElement(Icons.TrendUp, { size: 22 }),
-    badge: "Retainer+",
+    badge: "Most Popular",
     badgeColor: "pink",
+    highlight: true,
     accent: "pink",
     tagline: "Creative and paid, run as one system.",
     bullets: [

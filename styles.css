@@ -293,6 +293,7 @@ main { flex: 1; }
 .fwf-badge-green { color: var(--fwf-green); border-color: rgba(0, 200, 122, 0.4); }
 .fwf-badge-orange { color: var(--fwf-orange); border-color: rgba(255, 100, 32, 0.4); }
 .fwf-badge-gold { color: var(--fwf-gold); border-color: rgba(201, 169, 110, 0.4); }
+.fwf-badge-highlight { color: #fff; background: var(--fwf-pink); border-color: var(--fwf-pink); box-shadow: 0 0 14px rgba(255, 45, 120, 0.45); }
 
 /* ============================================
    Hero animations
