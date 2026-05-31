@@ -20,9 +20,9 @@ window.FWF_TRANSLATIONS = {
     "Pricing": "Preise",
     "About": "Über uns",
     "Contact": "Kontakt",
-    "Book a call": "Jetzt anfragen",
-    "Book a strategy call": "Jetzt anfragen",
-    "Book a call to discuss": "Jetzt anfragen",
+    "Book a call": "Call Buchen",
+    "Book a strategy call": "Call Buchen",
+    "Book a call to discuss": "Call Buchen",
     "Learn more": "Mehr erfahren",
     "View all projects": "Alle Projekte ansehen",
     "See our work": "Unsere Arbeit ansehen",
@@ -63,7 +63,7 @@ window.FWF_TRANSLATIONS = {
     "ignore.": "ignorieren.",
     "Premium ad creative & cinematic film production for B2B brands that want to scale.":
       "Premium Ad Creative & cinematische Filmproduktion für B2B-Marken, die skalieren wollen.",
-    "6K Production": "6K-Produktion",
+    "4K Production": "4K-Produktion",
     "Strategy First": "Strategie zuerst",
     "Performance Focused": "Performance-fokussiert",
 
@@ -98,8 +98,8 @@ window.FWF_TRANSLATIONS = {
     "We don't just shoot. We think conversion-first.":
       "Wir drehen nicht einfach. Wir denken conversion-first.",
     "Film That Gets Remembered": "Film, der in Erinnerung bleibt",
-    "6K production built to stay in the mind.":
-      "6K-Produktion, die im Kopf bleibt.",
+    "4K production built to stay in the mind.":
+      "4K-Produktion, die im Kopf bleibt.",
     "Speed & Efficiency": "Tempo & Effizienz",
     "Fast turnaround without sacrificing quality.":
       "Schnelle Umsetzung ohne Qualitätsverlust.",
@@ -270,8 +270,8 @@ window.FWF_TRANSLATIONS = {
     "We start where most agencies finish: with the funnel, the audience, the proof of why this exists.":
       "Wir beginnen, wo die meisten Agenturen aufhören: beim Funnel, der Zielgruppe, dem Beweis, warum das hier existiert.",
     "Craft": "Handwerk",
-    "6K cinema cameras, considered lighting, restraint in the edit. Cinematic doesn't mean noisy.":
-      "6K-Kinokameras, durchdachtes Licht, Zurückhaltung im Edit. Cinematic heißt nicht laut.",
+    "4K cinema cameras, considered lighting, restraint in the edit. Cinematic doesn't mean noisy.":
+      "4K-Kinokameras, durchdachtes Licht, Zurückhaltung im Edit. Cinematic heißt nicht laut.",
     "Speed": "Tempo",
     "Tight pre-production, ruthless on timelines. You'll never wonder where your edit is.":
       "Straffe Pre-Production, kompromisslos bei Timelines. Sie fragen sich nie, wo Ihr Edit bleibt.",

@@ -430,7 +430,7 @@ function AboutPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="fwf-pillars">
             {[
               { n: "01", t: "Strategy", d: "We start where most agencies finish: with the funnel, the audience, the proof of why this exists.", c: "pink" },
-              { n: "02", t: "Craft", d: "6K cinema cameras, considered lighting, restraint in the edit. Cinematic doesn't mean noisy.", c: "purple" },
+              { n: "02", t: "Craft", d: "4K cinema cameras, considered lighting, restraint in the edit. Cinematic doesn't mean noisy.", c: "purple" },
               { n: "03", t: "Speed", d: "Tight pre-production, ruthless on timelines. You'll never wonder where your edit is.", c: "green" },
               { n: "04", t: "Results", d: "Every frame is built to drive an action. We measure performance like a media buyer, not an artist.", c: "orange" },
             ].map((p, i) => (

@@ -29,7 +29,7 @@ window.FWF_TRANSLATIONS = {
     "← Home": "← Home",
     "Already convinced?": "Schon überzeugt?",
     "Let's talk.": "Sprechen wir.",
-    "Book a Call →": "Jetzt anfragen →",
+    "Book a Call →": "Call Buchen →",
 
     /* ---- Dimensions overview ----------------------------------------- */
     "WHAT THE ANALYSIS COVERS": "WAS DIE ANALYSE ABDECKT",
@@ -331,12 +331,12 @@ window.FWF_TRANSLATIONS = {
     "Here's the honest read: your creative and performance fundamentals are solid. Where you're exposed is the layer underneath — how your content systems, infrastructure, and AI workflows are set up to scale. That's not something we sell off a shelf, because no two setups are the same. It's the kind of problem we solve as an embedded partner, scoped to exactly what you've got. The best next step is a conversation, not a package.":
       "Die ehrliche Einschätzung: Ihre Creative- und Performance-Grundlagen sind solide. Verwundbar sind Sie in der Schicht darunter — wie Ihre Content-Systeme, Ihre Infrastruktur und Ihre AI-Workflows auf Skalierung ausgelegt sind. So etwas verkaufen wir nicht von der Stange, denn kein Setup gleicht dem anderen. Das ist die Art Problem, die wir als eingebetteter Partner lösen, zugeschnitten auf genau das, was Sie haben. Der beste nächste Schritt ist ein Gespräch, kein Paket.",
     "Book a Call — let's look at the systems side →":
-      "Jetzt anfragen — schauen wir uns die Systemseite an →",
+      "Call Buchen — schauen wir uns die Systemseite an →",
 
     "You're in rare shape.": "Sie sind in seltener Verfassung.",
     "Most brands that take this audit have at least one glaring gap. You don't. Your fundamentals are strong across the board — which means the conversation isn't about fixing something, it's about what's next. That's exactly the kind of brand we like working with long-term. If you're open to it, let's talk about where you're trying to go and whether we can help you get there faster.":
       "Die meisten Marken, die dieses Audit machen, haben mindestens eine offensichtliche Lücke. Sie nicht. Ihre Grundlagen sind auf ganzer Linie stark — das heißt, im Gespräch geht es nicht darum, etwas zu reparieren, sondern darum, was als Nächstes kommt. Genau mit solchen Marken arbeiten wir gern langfristig. Wenn Sie offen dafür sind, sprechen wir darüber, wohin Sie wollen — und ob wir Sie schneller dorthin bringen können.",
     "Book a Call — let's talk about what's next →":
-      "Jetzt anfragen — sprechen wir über die nächsten Schritte →"
+      "Call Buchen — sprechen wir über die nächsten Schritte →"
   }
 };
