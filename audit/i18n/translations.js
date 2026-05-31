@@ -10,7 +10,7 @@
 window.FWF_TRANSLATIONS = {
   de: {
     /* ---- Nav ---------------------------------------------------------- */
-    "← HOME": "← START",
+    "← HOME": "← HOME",
     "BOOK A CALL": "JETZT ANFRAGEN",
 
     /* ---- Hero --------------------------------------------------------- */
@@ -26,7 +26,7 @@ window.FWF_TRANSLATIONS = {
     "or": "oder",
     "Explore our": "Erst unsere",
     "work first.": "Arbeit ansehen.",
-    "← Home": "← Start",
+    "← Home": "← Home",
     "Already convinced?": "Schon überzeugt?",
     "Let's talk.": "Sprechen wir.",
     "Book a Call →": "Jetzt anfragen →",

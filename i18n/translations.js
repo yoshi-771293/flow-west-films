@@ -16,7 +16,6 @@
 window.FWF_TRANSLATIONS = {
   de: {
     /* ---- Navigation + shared CTAs ------------------------------------- */
-    "Home": "Start",
     "Projects": "Projekte",
     "Pricing": "Preise",
     "About": "Über uns",
