@@ -72,7 +72,7 @@ const OFFERS = [
       "Strategy + positioning workshop (2 sessions)",
       "Concept development + script",
       "Full cinematic production (1–3 shoot days)",
-      "Hero edit + cutdowns (60s, 30s, 15s, 6s)",
+      "Hero edit + cutdowns (60s, 30s)",
       "Behind-the-scenes content package",
       "Usage rights: paid, organic, sales, internal",
     ],

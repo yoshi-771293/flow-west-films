@@ -47,6 +47,22 @@
     #root { min-height: 100vh; display: flex; flex-direction: column; }
     #root > #app { flex: 1; display: flex; flex-direction: column; }
   </style>
+
+  <!-- German overlay (i18n) — anti-flash: hide app until first DE pass (EN visitors unaffected) -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem("fwf-lang");
+        if (l !== "en") {
+          document.documentElement.className += " fwf-i18n-boot";
+          setTimeout(function () { document.documentElement.classList.remove("fwf-i18n-boot"); }, 1600);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>html.fwf-i18n-boot #root { visibility: hidden; }</style>
+  <script src="i18n/translations.js"></script>
+  <script src="i18n/i18n.js"></script>
 </head>
 <body>
   <div id="root"></div>
