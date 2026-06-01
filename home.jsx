@@ -143,8 +143,9 @@ function HomePage() {
 
         React.createElement("div", { className: "fwf-container", style: { position: "relative", textAlign: "center" } },
 
-          React.createElement("div", { className: "fwf-fade-up", style: { display: "flex", justifyContent: "center", marginBottom: 32 } },
-            React.createElement(Logo, { variant: "lion", glow: true, size: "clamp(88px, 13vw, 150px)" })
+          React.createElement("div", { className: "fwf-fade-up", style: { display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginBottom: 32 } },
+            React.createElement(Logo, { variant: "lion", glow: true, size: "clamp(88px, 13vw, 150px)" }),
+            React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: "clamp(10px, 1vw, 12px)", letterSpacing: "0.42em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", paddingLeft: "0.42em" } }, "Flow West Films")
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 14px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 36 } },

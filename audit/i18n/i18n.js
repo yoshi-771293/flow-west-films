@@ -188,7 +188,7 @@
     s.id = "fwf-i18n-style";
     s.textContent =
       "#fwf-lang-toggle{display:inline-flex;align-items:center;gap:5px;line-height:1;}" +
-      ".fwf-lang-seg{transition:opacity .15s ease;font-variant-numeric:tabular-nums;}" +
+      ".fwf-lang-seg{transition:opacity .15s ease;font-variant-numeric:tabular-nums;display:inline-block;min-width:1.8em;text-align:center;}" +
       ".fwf-lang-on{opacity:1;}" +
       ".fwf-lang-off{opacity:.4;}" +
       ".fwf-lang-sep{opacity:.35;}";
