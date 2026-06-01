@@ -186,6 +186,21 @@ function HomePage() {
         )
       ),
 
+      /* OPENING FILM — cinematic brand intro */
+      React.createElement("section", { style: { position: "relative", width: "100%", overflow: "hidden", background: "#0a0a0a", lineHeight: 0 } },
+        /* fade in from top */
+        React.createElement("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 120, background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
+        /* fade out to bottom */
+        React.createElement("div", { style: { position: "absolute", bottom: 0, left: 0, right: 0, height: 180, background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
+        React.createElement("video", {
+          src: "assets/videos/opening_eden.mp4",
+          autoPlay: true,
+          muted: true,
+          playsInline: true,
+          style: { width: "100%", display: "block", objectFit: "cover" }
+        })
+      ),
+
       /* TRUST MARQUEE */
       React.createElement(TrustMarquee),
 
