@@ -18,6 +18,10 @@ window.FWF_TRANSLATIONS = {
     "dimensions. One honest score.": "Dimensionen. Ein ehrlicher Score.",
     "Know exactly what's blocking growth — before the call.":
       "Wissen Sie genau, was Wachstum blockiert — vor dem Gespräch.",
+    "Your content is running.": "Ihr Content läuft.",
+    "Growth isn't.": "Das Wachstum nicht.",
+    "Find out why.": "Finden Sie heraus, warum.",
+    "Seven dimensions. One score. Zero guesswork.": "Sieben Dimensionen. Ein Score. Null Raten.",
     "→ START THE ANALYSIS": "→ ANALYSE STARTEN",
     "QUESTIONS": "FRAGEN",
     "DIMENSIONS": "DIMENSIONEN",
