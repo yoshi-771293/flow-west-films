@@ -20,9 +20,9 @@ window.FWF_TRANSLATIONS = {
     "Pricing": "Preise",
     "About": "Über uns",
     "Contact": "Kontakt",
-    "Book a call": "Call Buchen",
-    "Book a strategy call": "Call Buchen",
-    "Book a call to discuss": "Call Buchen",
+    "Book a call": "Buchen",
+    "Book a strategy call": "Buchen",
+    "Book a call to discuss": "Buchen",
     "Learn more": "Mehr erfahren",
     "View all projects": "Alle Projekte ansehen",
     "See our work": "Unsere Arbeit ansehen",
@@ -38,13 +38,13 @@ window.FWF_TRANSLATIONS = {
       "© 2026 Flow West Films · Stuttgart, Deutschland",
 
     /* ---- Final CTA (shared) ------------------------------------------ */
-    "→ Let's talk": "→ Sprechen wir",
+    "→ Let's talk": "→ Let's talk",
     "Ready to scale with": "Bereit, zu skalieren mit",
     "premium creative?": "Premium Creative?",
     "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team.":
       "Flow West Films vereint cinematische Produktion, Ad Creative und Performance-Denken in einem externen Premium-Team.",
     "Seen enough?": "Genug gesehen?",
-    "Let's talk.": "Sprechen wir.",
+    "Let's talk.": "Let's talk.",
     "Tell us about your brand. We'll tell you what we'd do.":
       "Erzählen Sie uns von Ihrer Marke. Wir sagen Ihnen, was wir tun würden.",
     "Not sure which offer is": "Nicht sicher, welches Angebot",

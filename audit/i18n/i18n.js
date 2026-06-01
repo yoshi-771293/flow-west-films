@@ -177,6 +177,7 @@
     lang = l;
     saveLang(l);
     applyAll();
+    try { window.dispatchEvent(new CustomEvent("fwf-lang-change", { detail: { lang: l } })); } catch(e) {}
   }
   window.FWF_setLanguage = setLanguage;
   window.FWF_getLanguage = function () { return lang; };
