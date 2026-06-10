@@ -388,7 +388,7 @@ function AboutPage() {
               <Crosshairs />
               <div style={{
                 aspectRatio: "3/4",
-                background: "url(assets/founder.jpg) center/cover no-repeat",
+                background: "url(assets/founder.jpg?v=2) center/cover no-repeat",
                 borderRadius: 8,
                 border: "1px solid var(--fwf-hairline-strong)",
                 position: "relative",
@@ -497,7 +497,7 @@ function ContactPage() {
               <Crosshairs />
               <div style={{
                 position: "absolute", inset: 0,
-                background: "url(assets/founder.jpg) center 20%/cover no-repeat",
+                background: "url(assets/founder-contact.jpg?v=1) center 20%/cover no-repeat",
                 borderRadius: 8,
                 border: "1px solid var(--fwf-hairline-strong)",
                 overflow: "hidden",
