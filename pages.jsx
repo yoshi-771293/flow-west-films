@@ -297,6 +297,24 @@ function PricingPage() {
         </div>
       </section>
 
+      {/* Audit bridge */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", background: "rgba(0,200,122,0.025)" }}>
+        <div className="fwf-container" style={{ textAlign: "center" }}>
+          <div className="fwf-eyebrow" style={{ color: "var(--fwf-green)", marginBottom: 20 }}>
+            Not sure which offer fits?
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 60px)", margin: "0 0 20px 0", textWrap: "balance" }}>
+            Take the free 7-minute brand audit first.
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, maxWidth: 520, margin: "0 auto 36px", lineHeight: 1.5 }}>
+            Get a clear picture of where your content stands before you invest.
+          </p>
+          <a href="/audit/" className="fwf-btn fwf-btn-primary">
+            Take the free audit →
+          </a>
+        </div>
+      </section>
+
       <FinalCTA
         headline={<>Not sure which offer is <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>right for you?</em></>}
         sub="Let's figure it out together. 30 minutes, no pressure."
@@ -450,7 +468,7 @@ function AboutPage() {
         <div className="fwf-container">
           <div className="fwf-label" style={{ textAlign: "center", marginBottom: 36 }}>— Partial client list —</div>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "32px 56px" }}>
-            {["Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwatch", "Hatz Beer", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
+            {["Porsche", "Thomas Sabo", "Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwatch", "Hatz Beer", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
               <span key={i} className="fwf-display" style={{ fontSize: 24, color: "rgba(255,255,255,0.55)", letterSpacing: "-0.01em" }}>{c}</span>
             ))}
           </div>
@@ -524,11 +542,16 @@ function ContactPage() {
                 We work with B2B brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
               </p>
 
-              <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse" style={{ marginBottom: 48 }}>
-                <Icons.Calendar size={14}/>
-                Book a strategy call
-                <Icons.ArrowRight size={14}/>
-              </a>
+              <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48, alignItems: "center" }}>
+                <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
+                  <Icons.Calendar size={14}/>
+                  Book a strategy call
+                  <Icons.ArrowRight size={14}/>
+                </a>
+                <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+                  Free Audit →
+                </a>
+              </div>
 
               {/* Trust block */}
               <div style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 40 }}>

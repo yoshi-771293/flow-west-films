@@ -12,7 +12,10 @@
   "use strict";
 
   var STORAGE_KEY = "fwf-lang";
-  var DEFAULT_LANG = "de";
+  var DEFAULT_LANG = (function() {
+    var nl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    return nl.startsWith("de") ? "de" : "en";
+  })();
   var ATTRS = ["placeholder", "aria-label", "title", "alt"];
 
   // App-specific config (main site).
@@ -187,6 +190,7 @@
     lang = l;
     saveLang(l);
     applyAll();
+    try { window.dispatchEvent(new CustomEvent("fwf-lang-change", { detail: { lang: l } })); } catch(e) {}
   }
   window.FWF_setLanguage = setLanguage;
   window.FWF_getLanguage = function () { return lang; };

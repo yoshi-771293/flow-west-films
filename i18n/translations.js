@@ -27,6 +27,13 @@ window.FWF_TRANSLATIONS = {
     "View all projects": "Alle Projekte ansehen",
     "See our work": "Unsere Arbeit ansehen",
     "Coming soon": "Bald verfügbar",
+    "Free Audit": "Gratis Audit",
+    "Free Audit →": "Gratis Audit →",
+    "Get your free audit →": "Kostenloser Audit →",
+    "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are.":
+      "Nicht sicher, wo anfangen? Unser kostenloser 7-Minuten-Audit zeigt Ihnen genau, wo Ihre Lücken sind.",
+    "Not ready yet?": "Noch nicht so weit?",
+    "Start with a free brand audit →": "Jetzt Audit starten →",
 
     /* ---- Footer ------------------------------------------------------- */
     "Premium ad creative & cinematic film production for B2B brands.":
@@ -279,6 +286,13 @@ window.FWF_TRANSLATIONS = {
     "Every frame is built to drive an action. We measure performance like a media buyer, not an artist.":
       "Jedes Frame ist darauf ausgelegt, eine Handlung auszulösen. Wir messen Performance wie ein Media Buyer, nicht wie ein Künstler.",
     "— Partial client list —": "— Auszug aus der Kundenliste —",
+
+    /* ---- Pricing: audit bridge ---------------------------------------- */
+    "Not sure which offer fits?": "Nicht sicher, welches Angebot passt?",
+    "Take the free 7-minute brand audit first.": "Zuerst den kostenlosen 7-Minuten Brand-Audit machen.",
+    "Get a clear picture of where your content stands before you invest.":
+      "Holen Sie sich ein klares Bild, bevor Sie investieren.",
+    "Take the free audit →": "Kostenloser Audit →",
 
     /* ---- Contact page ------------------------------------------------- */
     "Available · Q3 2026": "Verfügbar · Q3 2026",

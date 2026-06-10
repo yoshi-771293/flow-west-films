@@ -1,5 +1,5 @@
 /* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal */
-const { useState: useState_h } = React;
+const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
 // Offer card (used on Home + Pricing)
@@ -128,6 +128,80 @@ const OFFERS = [
 ];
 
 // ============================================
+// Language-aware typewriter (position section)
+// ============================================
+function LangTypewriterWord({ wordsEN, wordsDE, style, className }) {
+  const [lang, setLang] = useState_h(function() {
+    try { return localStorage.getItem("fwf-lang") || "de"; } catch(e) { return "de"; }
+  });
+  useEffect_h(function() {
+    var handler = function(e) { setLang(e.detail.lang); };
+    window.addEventListener("fwf-lang-change", handler);
+    return function() { window.removeEventListener("fwf-lang-change", handler); };
+  }, []);
+  var words = lang === "de" ? wordsDE : wordsEN;
+  return React.createElement(TypewriterWord, { words: words, style: style, className: className });
+}
+
+// ============================================
+// Opening Film — scroll-triggered with unmute
+// ============================================
+function OpeningFilm() {
+  const [muted, setMuted] = useState_h(true);
+  const videoRef = useRef_h(null);
+
+  useEffect_h(function() {
+    var video = videoRef.current;
+    if (!video) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          video.play().catch(function() {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(video);
+    return function() { observer.disconnect(); };
+  }, []);
+
+  function toggleMute() {
+    var video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+  }
+
+  return React.createElement("section", { style: { position: "relative", width: "100%", overflow: "hidden", background: "#0a0a0a", lineHeight: 0 } },
+    React.createElement("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 140, background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
+    React.createElement("div", { style: { position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
+    React.createElement("video", {
+      ref: videoRef,
+      src: "assets/videos/opening_eden.mp4",
+      muted: true,
+      playsInline: true,
+      loop: false,
+      preload: "metadata",
+      style: { width: "100%", display: "block", objectFit: "cover", maxHeight: "100vh" }
+    }),
+    React.createElement("button", {
+      onClick: toggleMute,
+      "aria-label": muted ? "Sound einschalten" : "Sound ausschalten",
+      style: {
+        position: "absolute", bottom: 24, right: 24, zIndex: 3,
+        background: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)",
+        border: "1px solid rgba(255,255,255,0.15)", borderRadius: 4,
+        color: "rgba(255,255,255,0.85)", fontFamily: "var(--fwf-mono)",
+        fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
+        padding: "8px 14px", cursor: "pointer",
+        display: "flex", alignItems: "center", gap: 6
+      }
+    }, muted ? "♪ Sound" : "✕ Mute")
+  );
+}
+
+// ============================================
 // HOME
 // ============================================
 function HomePage() {
@@ -164,6 +238,7 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
+            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →"),
             React.createElement("a", { href: "https://calendly.com/flowwestfilms-appointment/30min", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
               React.createElement(Icons.Calendar, { size: 14 }), " Book a strategy call"
             ),
@@ -187,19 +262,7 @@ function HomePage() {
       ),
 
       /* OPENING FILM — cinematic brand intro (homepage only) */
-      React.createElement("section", { style: { position: "relative", width: "100%", overflow: "hidden", background: "#0a0a0a", lineHeight: 0 } },
-        React.createElement("div", { style: { position: "absolute", top: 0, left: 0, right: 0, height: 140, background: "linear-gradient(to bottom, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
-        React.createElement("div", { style: { position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
-        React.createElement("video", {
-          src: "assets/videos/opening_eden.mp4",
-          autoPlay: true,
-          muted: true,
-          playsInline: true,
-          loop: false,
-          preload: "auto",
-          style: { width: "100%", display: "block", objectFit: "cover", maxHeight: "100vh" }
-        })
-      ),
+      React.createElement(OpeningFilm),
 
       /* TRUST MARQUEE */
       React.createElement(TrustMarquee),
@@ -217,8 +280,9 @@ function HomePage() {
                 "Most agencies deliver content.", React.createElement("br"),
                 React.createElement("span", { style: { color: "var(--fwf-pink)" } },
                   "We deliver ",
-                  React.createElement(TypewriterWord, {
-                    words: ["conversion.", "clarity.", "growth.", "impact."],
+                  React.createElement(LangTypewriterWord, {
+                    wordsEN: ["conversion.", "clarity.", "growth.", "impact."],
+                    wordsDE: ["Conversions.", "Klarheit.", "Wachstum.", "Wirkung."],
                     className: "fwf-display-italic",
                     style: { color: "var(--fwf-pink)" }
                   })
@@ -242,6 +306,12 @@ function HomePage() {
                 )
               )
             )
+          ),
+          React.createElement("div", { style: { marginTop: 48, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" } },
+            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: 0, maxWidth: 480, lineHeight: 1.55 } },
+              "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
+            ),
+            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost fwf-btn-sm" }, "Get your free audit →")
           )
         )
       ),

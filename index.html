@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,14 @@
   <meta property="og:title" content="Flow West Films — Premium Ad Creative & Cinematic Production" />
   <meta property="og:description" content="Premium ad creative & cinematic film production for B2B brands. Stuttgart." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flowwestfilms.de/" />
+  <meta property="og:image" content="https://flowwestfilms.de/assets/fwf-lockup.png" />
+  <meta property="og:locale" content="de_DE" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
@@ -46,6 +49,12 @@
     /* Fix: styles.css targets #app, React mounts to #root */
     #root { min-height: 100vh; display: flex; flex-direction: column; }
     #root > #app { flex: 1; display: flex; flex-direction: column; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fwf-marquee-track { animation: none !important; }
+      .fwf-fade-up, .fwf-d1, .fwf-d2, .fwf-d3, .fwf-d4, .fwf-d5 { animation: none !important; opacity: 1 !important; }
+      .fwf-pulse { animation: none !important; }
+    }
   </style>
 
   <!-- German overlay (i18n) — anti-flash: hide app until first DE pass (EN visitors unaffected) -->
@@ -53,6 +62,10 @@
     (function () {
       try {
         var l = localStorage.getItem("fwf-lang");
+        if (l === null) {
+          var nl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+          l = nl.startsWith("de") ? "de" : "en";
+        }
         if (l !== "en") {
           document.documentElement.className += " fwf-i18n-boot";
           setTimeout(function () { document.documentElement.classList.remove("fwf-i18n-boot"); }, 1600);

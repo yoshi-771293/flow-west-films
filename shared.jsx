@@ -105,7 +105,10 @@ function Link({ to, children, className, onClick, ...rest }) {
     <a
       href={"#/" + to}
       className={className}
-      onClick={(e) => { if (onClick) onClick(e); }}
+      onClick={(e) => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+        if (onClick) onClick(e);
+      }}
       {...rest}
     >{children}</a>
   );
@@ -148,7 +151,9 @@ function Nav({ route }) {
             <span className="fwf-nav-wordmark">Flow West Films</span>
           </Link>
           <div className="fwf-nav-links fwf-nav-links-center">
-            {links.map((l) => (
+            {links.map((l) => l.external ? (
+              <a key={l.href} href={l.href} className="fwf-nav-link">{l.label}</a>
+            ) : (
               <Link
                 key={l.to}
                 to={l.to}
@@ -157,6 +162,25 @@ function Nav({ route }) {
             ))}
           </div>
           <div className="fwf-nav-links">
+            <a
+              href="/audit/"
+              className="fwf-btn fwf-btn-sm fwf-nav-cta-desktop"
+              style={{ borderWidth: "1.5px", borderStyle: "solid", borderColor: "#a855f7", background: "transparent", color: "rgba(255,255,255,0.9)", transition: "box-shadow 0.2s, border-color 0.2s" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#ff2d78";
+                e.currentTarget.style.boxShadow = "0 0 0 1px #ff2d78, 0 0 16px rgba(255,45,120,0.4)";
+                const s = e.currentTarget.querySelector("span");
+                if (s) s.style.color = "#ff2d78";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "#a855f7";
+                e.currentTarget.style.boxShadow = "";
+                const s = e.currentTarget.querySelector("span");
+                if (s) s.style.color = "#a855f7";
+              }}
+            >
+              <span style={{ color: "#a855f7", transition: "color 0.2s" }}>Free</span>{" "}Audit
+            </a>
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
               <Icons.Calendar size={14} />
               Book a call
@@ -176,10 +200,20 @@ function Nav({ route }) {
               <Icons.X size={20} />
             </button>
           </div>
-          {links.map((l) => (
+          {links.map((l) => l.external ? (
+            <a key={l.href} href={l.href} onClick={() => setMobile(false)}>{l.label}</a>
+          ) : (
             <Link key={l.to} to={l.to} onClick={() => setMobile(false)}>{l.label}</Link>
           ))}
-          <div style={{ marginTop: 36 }}>
+          <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 12 }}>
+            <a
+              href="/audit/"
+              className="fwf-btn"
+              style={{ border: "1.5px solid #a855f7", background: "transparent", color: "rgba(255,255,255,0.9)" }}
+              onClick={() => setMobile(false)}
+            >
+              <span style={{ color: "#a855f7" }}>Free</span>{" "}Audit →
+            </a>
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
               <Icons.Calendar size={14} /> Book a strategy call
             </a>
@@ -214,6 +248,7 @@ function Footer() {
             <Link to="pricing">Pricing</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
+            <a href="/audit/">Audit</a>
             <Link to="impressum" style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--fwf-hairline)" }}>Impressum</Link>
             <Link to="datenschutz">Datenschutz</Link>
           </div>
@@ -272,6 +307,15 @@ function FinalCTA({ headline, sub }) {
           Book a strategy call
           <Icons.ArrowRight size={14} />
         </a>
+        <div style={{ marginTop: 24 }}>
+          <span style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em" }}>
+            Not ready yet?
+          </span>
+          {" "}
+          <a href="/audit/" style={{ color: "var(--fwf-pink)", fontFamily: "var(--fwf-mono)", fontSize: 13, textDecoration: "none", letterSpacing: "0.1em" }}>
+            Start with a free brand audit →
+          </a>
+        </div>
         <div style={{ marginTop: 40, fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.22em", color: "var(--fwf-text-faint)" }}>
           FLOWWESTFILMS.DE
         </div>
