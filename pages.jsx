@@ -1,5 +1,5 @@
 /* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal */
-const { useState: useStateP } = React;
+const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
 // All projects data (with real video/thumb where available)
@@ -242,6 +242,713 @@ function ProjectCard({ client, title, tag, desc, colors, thumb, video, index, on
         )}
       </div>
     </div>
+  );
+}
+
+// ============================================
+// PROJECTS — IMMERSIVE GALLERY (preview route: #/projects-lab)
+// Self-contained. Three.js / GSAP / ScrollTrigger / Lenis are loaded globally
+// in index.html but only ever INSTANTIATED while this page is mounted, and are
+// fully torn down on unmount — so every other page/route stays untouched.
+// ============================================
+const FWF_PINK = "#e91e8c";
+const FWF_PURPLE = "#a855f7";
+
+// Desktop (non-touch, >=768px) -> Three.js sphere; otherwise -> cinematic grid.
+function useDesktopGallery() {
+  const get = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(min-width: 768px)").matches &&
+    !("ontouchstart" in window || (navigator.maxTouchPoints || 0) > 0);
+  const [desktop, setDesktop] = useStateP(get);
+  useEffectP(() => {
+    const update = () => setDesktop(get());
+    const mq = window.matchMedia("(min-width: 768px)");
+    mq.addEventListener("change", update);
+    window.addEventListener("resize", update);
+    return () => {
+      mq.removeEventListener("change", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+  return desktop;
+}
+
+// ---- canvas helpers (bake each project card into a texture) ----
+function fwfRoundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+function fwfHexA(hex, a) {
+  const h = hex.replace("#", "");
+  const f = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
+  const n = parseInt(f, 16);
+  return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
+}
+// Cell texture layout — floating label strip (transparent bg) above a rounded card image,
+// like phantom.land's project wall. One texture pair (normal/hover) per unique project.
+const FWF_CELL_W = 640, FWF_CELL_LABEL = 72, FWF_CELL_H = 536;
+
+function fwfDrawCell(ctx, p, img, hover) {
+  const W = FWF_CELL_W, H = FWF_CELL_H, L = FWF_CELL_LABEL;
+  ctx.clearRect(0, 0, W, H);
+
+  // --- floating label: CLIENT  TITLE…  [TAG] ---
+  ctx.textBaseline = "middle";
+  const ly = L / 2 + 4;
+  ctx.font = '500 24px "JetBrains Mono", monospace';
+  ctx.fillStyle = hover ? "#ff9ecb" : "rgba(255,255,255,0.92)";
+  const client = p.client.toUpperCase();
+  ctx.fillText(client, 8, ly);
+  const cw = ctx.measureText(client).width;
+
+  ctx.font = '500 17px "JetBrains Mono", monospace';
+  const tagText = p.tag.toUpperCase();
+  const tagW = ctx.measureText(tagText).width + 26;
+
+  ctx.font = '400 20px "JetBrains Mono", monospace';
+  let title = p.title.toUpperCase();
+  const maxTitleW = W - cw - tagW - 60;
+  if (ctx.measureText(title).width > maxTitleW) {
+    while (title.length > 2 && ctx.measureText(title + "…").width > maxTitleW) title = title.slice(0, -1);
+    title += "…";
+  }
+  ctx.fillStyle = "rgba(255,255,255,0.48)";
+  ctx.fillText(title, 8 + cw + 20, ly);
+
+  const pillH = 38, pillX = W - tagW - 8, pillY = ly - pillH / 2;
+  fwfRoundRect(ctx, pillX, pillY, tagW, pillH, 8);
+  ctx.strokeStyle = hover ? "rgba(233,30,140,0.85)" : "rgba(255,255,255,0.32)";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  ctx.font = '500 17px "JetBrains Mono", monospace';
+  ctx.fillStyle = hover ? "#ff9ecb" : "rgba(255,255,255,0.78)";
+  ctx.fillText(tagText, pillX + 13, ly + 1);
+
+  // --- card image (rounded, hairline border; pure imagery like the reference) ---
+  const ix = 3, iy = L + 3, iw = W - 6, ih = H - L - 6, r = 16;
+  ctx.save();
+  fwfRoundRect(ctx, ix, iy, iw, ih, r);
+  ctx.clip();
+  if (img) {
+    const ir = img.width / img.height, cr = iw / ih;
+    let dw, dh;
+    if (ir > cr) { dh = ih; dw = ih * ir; } else { dw = iw; dh = iw / ir; }
+    ctx.drawImage(img, ix + (iw - dw) / 2, iy + (ih - dh) / 2, dw, dh);
+  } else {
+    const g = ctx.createLinearGradient(ix, iy, ix + iw, iy + ih);
+    g.addColorStop(0, p.colors[0]);
+    g.addColorStop(1, p.colors[1]);
+    ctx.fillStyle = g;
+    ctx.fillRect(ix, iy, iw, ih);
+    const r1 = ctx.createRadialGradient(ix + iw * 0.3, iy + ih * 0.35, 0, ix + iw * 0.3, iy + ih * 0.35, iw * 0.5);
+    r1.addColorStop(0, fwfHexA(p.colors[0], 0.6));
+    r1.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = r1;
+    ctx.fillRect(ix, iy, iw, ih);
+    const r2 = ctx.createRadialGradient(ix + iw * 0.75, iy + ih * 0.85, 0, ix + iw * 0.75, iy + ih * 0.85, iw * 0.45);
+    r2.addColorStop(0, "rgba(0,0,0,0.5)");
+    r2.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = r2;
+    ctx.fillRect(ix, iy, iw, ih);
+  }
+  // dark overlay — lifts on hover
+  ctx.fillStyle = hover ? "rgba(8,8,12,0.04)" : "rgba(8,8,12,0.36)";
+  ctx.fillRect(ix, iy, iw, ih);
+  if (hover) { // pink accent bleeds up from the base
+    const wash = ctx.createLinearGradient(0, iy + ih, 0, iy);
+    wash.addColorStop(0, "rgba(233,30,140,0.32)");
+    wash.addColorStop(0.55, "rgba(233,30,140,0)");
+    ctx.fillStyle = wash;
+    ctx.fillRect(ix, iy, iw, ih);
+  }
+  ctx.restore();
+
+  fwfRoundRect(ctx, ix, iy, iw, ih, r);
+  ctx.strokeStyle = hover ? FWF_PINK : "rgba(255,255,255,0.15)";
+  ctx.lineWidth = hover ? 5 : 2;
+  ctx.stroke();
+  if (hover) { // purple rim glow
+    ctx.save();
+    ctx.shadowColor = FWF_PURPLE;
+    ctx.shadowBlur = 34;
+    fwfRoundRect(ctx, ix, iy, iw, ih, r);
+    ctx.strokeStyle = "rgba(168,85,247,0.95)";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.restore();
+  }
+}
+
+// ---- desktop: phantom.land-style curved wall — every card is a true sphere
+// segment tiled on the inside of a sphere, viewer at the centre, so card edges
+// curve with the dome. Cards repeat to fill the full 360° wall. ----
+function SphereGallery({ items, onOpen, openKey }) {
+  const mountRef = useRefP(null);
+  const stateRef = useRefP({});
+
+  useEffectP(() => {
+    const THREE = window.THREE, gsap = window.gsap;
+    const mount = mountRef.current;
+    if (!THREE || !mount || !items.length) return;
+
+    const S = stateRef.current;
+    let disposed = false;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const R = 10, D2R = Math.PI / 180;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(74, 1, 0.1, 100);
+    camera.position.set(0, 0, 0.001);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    if (THREE.sRGBEncoding !== undefined) renderer.outputEncoding = THREE.sRGBEncoding;
+    mount.appendChild(renderer.domElement);
+    renderer.domElement.style.display = "block";
+    renderer.domElement.style.cursor = "grab";
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    // --- one texture pair per unique project (duplicate cells share GPU memory) ---
+    const maxAniso = renderer.capabilities.getMaxAnisotropy();
+    const disposables = [];
+    const projTex = items.map((p) => {
+      const cN = document.createElement("canvas"); cN.width = FWF_CELL_W; cN.height = FWF_CELL_H;
+      const cH = document.createElement("canvas"); cH.width = FWF_CELL_W; cH.height = FWF_CELL_H;
+      fwfDrawCell(cN.getContext("2d"), p, null, false);
+      fwfDrawCell(cH.getContext("2d"), p, null, true);
+      const entry = { p, cN, cH, img: null, texN: new THREE.CanvasTexture(cN), texH: new THREE.CanvasTexture(cH) };
+      [entry.texN, entry.texH].forEach((t) => {
+        if (THREE.sRGBEncoding !== undefined) t.encoding = THREE.sRGBEncoding;
+        t.anisotropy = maxAniso;
+        t.wrapS = THREE.RepeatWrapping;
+        t.repeat.x = -1; t.offset.x = 1; // un-mirror for inside-the-sphere viewing
+        disposables.push(t);
+      });
+      if (p.thumb) {
+        const img = new Image();
+        img.onload = () => {
+          if (disposed) return;
+          entry.img = img;
+          fwfDrawCell(cN.getContext("2d"), p, img, false);
+          fwfDrawCell(cH.getContext("2d"), p, img, true);
+          entry.texN.needsUpdate = true;
+          entry.texH.needsUpdate = true;
+        };
+        img.src = p.thumb;
+      }
+      return entry;
+    });
+    // re-bake once webfonts land (avoids fallback-font flash in labels)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        if (disposed) return;
+        projTex.forEach((e) => {
+          fwfDrawCell(e.cN.getContext("2d"), e.p, e.img, false);
+          fwfDrawCell(e.cH.getContext("2d"), e.p, e.img, true);
+          e.texN.needsUpdate = true;
+          e.texH.needsUpdate = true;
+        });
+      });
+    }
+
+    // --- tile the sphere interior: 4 rows × 9 variable-width columns = 36 cells ---
+    const ROWS = [44.5, 15, -15, -44.5];  // row-centre latitudes (deg); outer rows crop at viewport edge
+    const ROW_H = 27;                     // angular cell height (incl. label strip)
+    const COL_W = [1.12, 0.92, 1.06, 0.88, 1.0, 1.08, 0.9, 1.12, 0.92]; // ×40° — phantom's varied sizes
+    const PHI_GAP = 3;
+    const stride = [7, 5, 3, 2, 1].find((s) => { // coprime with count → repeats spread apart
+      let a = s, b = items.length;
+      while (b) { const t = a % b; a = b; b = t; }
+      return a === 1;
+    });
+
+    const meshes = [];
+    const cellsByProj = {};
+    let cell = 0;
+    ROWS.forEach((lat, ri) => {
+      const thetaStart = (90 - lat - ROW_H / 2) * D2R;
+      let phiCursor = ri * 17 * D2R; // stagger row seams
+      COL_W.forEach((w) => {
+        const span = w * 40 * D2R;
+        const idx = (cell * stride) % items.length;
+        const p = items[idx], tex = projTex[idx];
+        const geo = new THREE.SphereGeometry(
+          R, 20, 14,
+          phiCursor + (PHI_GAP / 2) * D2R, span - PHI_GAP * D2R,
+          thetaStart, ROW_H * D2R
+        );
+        const mat = new THREE.MeshBasicMaterial({ map: tex.texN, transparent: true, side: THREE.BackSide });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.userData = { cell, p, tex, targetScale: 1 };
+        const key = p.client + "·" + p.title;
+        if (!cellsByProj[key]) cellsByProj[key] = mesh;
+        group.add(mesh);
+        meshes.push(mesh);
+        disposables.push(geo, mat);
+        phiCursor += span;
+        cell++;
+      });
+    });
+
+    // --- drag rotation with inertia + idle cinematic drift ---
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2(99, 99);
+    let hovered = -1, dragging = false, moved = 0, downTime = 0;
+    const last = { x: 0, y: 0 };
+    const vel = { x: 0, y: 0 };
+
+    function applyHover(idx) {
+      if (idx === hovered) return;
+      if (hovered >= 0 && meshes[hovered]) {
+        const m = meshes[hovered];
+        m.material.map = m.userData.tex.texN;
+        m.userData.targetScale = 1;
+      }
+      hovered = idx;
+      if (idx >= 0 && meshes[idx]) {
+        const m = meshes[idx];
+        m.material.map = m.userData.tex.texH;
+        m.userData.targetScale = 0.962; // radius shrinks → card glides toward the viewer
+        renderer.domElement.style.cursor = "pointer";
+      } else {
+        renderer.domElement.style.cursor = dragging ? "grabbing" : "grab";
+      }
+    }
+    function onMove(e) {
+      const rect = renderer.domElement.getBoundingClientRect();
+      pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      if (dragging) {
+        const dx = e.clientX - last.x, dy = e.clientY - last.y;
+        last.x = e.clientX; last.y = e.clientY;
+        moved += Math.abs(dx) + Math.abs(dy);
+        vel.y = dx * 0.0042; vel.x = dy * 0.0042;
+        group.rotation.y += vel.y;
+        group.rotation.x = Math.max(-0.55, Math.min(0.55, group.rotation.x + vel.x));
+      }
+    }
+    function onDown(e) {
+      if (S.locked) return;
+      if (gsap) gsap.killTweensOf(group.rotation); // cancel intro drift-in if mid-flight
+      dragging = true; moved = 0; downTime = performance.now();
+      last.x = e.clientX; last.y = e.clientY;
+      renderer.domElement.style.cursor = "grabbing";
+      e.preventDefault();
+    }
+    function onUp() {
+      if (!dragging) return;
+      dragging = false;
+      const quick = performance.now() - downTime < 400;
+      if (!S.locked && quick && moved < 7 && hovered >= 0) {
+        S.pendingMesh = meshes[hovered]; // remember the exact cell that was clicked
+        onOpen(meshes[hovered].userData.p);
+      } else {
+        renderer.domElement.style.cursor = hovered >= 0 ? "pointer" : "grab";
+      }
+    }
+    function onLeave() { pointer.set(99, 99); }
+
+    let raf = 0, lastT = performance.now();
+    function animate(time) {
+      raf = requestAnimationFrame(animate);
+      const dt = Math.min((time - lastT) / 16.67, 3);
+      lastT = time;
+      if (!S.locked) {
+        if (!dragging) {
+          group.rotation.y += vel.y;
+          group.rotation.x = Math.max(-0.55, Math.min(0.55, group.rotation.x + vel.x));
+          vel.y *= 0.95; vel.x *= 0.95; // Lenis-style glide-out, never snappy
+          if (Math.abs(vel.y) + Math.abs(vel.x) < 0.0006 && hovered < 0 && !reduceMotion) {
+            group.rotation.y += 0.0009; // idle cinematic drift (pauses on hover)
+          }
+        }
+        raycaster.setFromCamera(pointer, camera);
+        const hits = raycaster.intersectObjects(meshes, false);
+        applyHover(hits.length ? hits[0].object.userData.cell : -1);
+      }
+      for (let i = 0; i < meshes.length; i++) {
+        const m = meshes[i];
+        if (m === S.frozen) continue;
+        const s = m.scale.x + (m.userData.targetScale - m.scale.x) * 0.16 * dt;
+        m.scale.setScalar(s);
+      }
+      renderer.render(scene, camera);
+    }
+
+    // --- click zoom: clicked card pulls toward the viewer, the wall falls away ---
+    S.locked = false; S.frozen = null; S.openedMesh = null; S.pendingMesh = null;
+    S.cellsByProj = cellsByProj;
+    S.zoomTo = function (mesh, opening) {
+      if (!gsap || !mesh) return;
+      applyHover(-1);
+      S.frozen = mesh;
+      const done = () => { if (S.frozen === mesh) S.frozen = null; };
+      const others = meshes.filter((m) => m !== mesh);
+      gsap.killTweensOf(mesh.scale);
+      if (opening) {
+        mesh.material.map = mesh.userData.tex.texH;
+        mesh.userData.targetScale = 0.55;
+        gsap.to(mesh.scale, { x: 0.55, y: 0.55, z: 0.55, duration: 0.8, ease: "power3.inOut", onComplete: done });
+        others.forEach((m) => gsap.to(m.material, { opacity: 0.06, duration: 0.5, overwrite: true }));
+      } else {
+        mesh.material.map = mesh.userData.tex.texN;
+        mesh.userData.targetScale = 1;
+        gsap.to(mesh.scale, { x: 1, y: 1, z: 1, duration: 0.7, ease: "power3.inOut", onComplete: done });
+        others.forEach((m) => gsap.to(m.material, { opacity: 1, duration: 0.5, overwrite: true }));
+      }
+    };
+
+    function resize() {
+      const w = mount.clientWidth, h = mount.clientHeight;
+      if (!w || !h) return;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+      renderer.domElement.style.width = "100%";
+      renderer.domElement.style.height = "100%";
+    }
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(mount);
+
+    renderer.domElement.addEventListener("mousedown", onDown);
+    renderer.domElement.addEventListener("mouseleave", onLeave);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    raf = requestAnimationFrame(animate);
+
+    // cinematic entry: wall drifts into place
+    if (gsap && !reduceMotion) {
+      group.rotation.y = -0.5;
+      gsap.to(group.rotation, { y: 0, duration: 1.6, ease: "power3.out" });
+      gsap.fromTo(mount, { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power2.out" });
+    }
+
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      renderer.domElement.removeEventListener("mousedown", onDown);
+      renderer.domElement.removeEventListener("mouseleave", onLeave);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+      if (gsap) {
+        gsap.killTweensOf(group.rotation);
+        gsap.killTweensOf(mount);
+        meshes.forEach((m) => { gsap.killTweensOf(m.scale); gsap.killTweensOf(m.material); });
+      }
+      disposables.forEach((d) => { if (d && d.dispose) d.dispose(); });
+      renderer.dispose();
+      if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+      stateRef.current = {};
+    };
+  }, []); // built once per mount; the page re-keys on filter change
+
+  // open/close zoom, driven by the detail-panel state
+  useEffectP(() => {
+    const S = stateRef.current;
+    if (!S.zoomTo) return;
+    S.locked = !!openKey;
+    if (openKey) {
+      const pm = S.pendingMesh;
+      const mesh = (pm && pm.userData.p.client + "·" + pm.userData.p.title === openKey) ? pm : S.cellsByProj[openKey];
+      if (mesh) { S.zoomTo(mesh, true); S.openedMesh = mesh; }
+    } else if (S.openedMesh) {
+      S.zoomTo(S.openedMesh, false);
+      S.openedMesh = null;
+      S.pendingMesh = null;
+    }
+  }, [openKey]);
+
+  return <div ref={mountRef} style={{ position: "absolute", inset: 0, cursor: "grab", userSelect: "none" }} />;
+}
+
+// ---- mobile/touch: cinematic 2-col grid with GSAP scroll-reveal ----
+function CinematicCard({ p, onOpen }) {
+  return (
+    <div
+      className="fwf-cin-card"
+      onClick={() => onOpen(p)}
+      style={{
+        position: "relative", borderRadius: 10, overflow: "hidden", cursor: "pointer",
+        border: "1px solid rgba(168,85,247,0.35)",
+        boxShadow: "0 0 0 1px rgba(233,30,140,0.10), 0 18px 40px -22px rgba(168,85,247,0.6)",
+        background: "#0d0d0f", willChange: "transform, opacity",
+      }}
+    >
+      <div style={{
+        position: "relative", aspectRatio: "16/11", overflow: "hidden",
+        background: p.thumb ? "#0a0a0a" : "linear-gradient(135deg, " + p.colors[0] + "55, " + p.colors[1] + " 92%)",
+      }}>
+        {p.thumb && <img src={p.thumb} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(233,30,140,0.12) 0%, transparent 32%, rgba(8,8,10,0.86) 100%)" }} />
+        <div style={{ position: "absolute", top: 12, left: 12 }}>
+          <span style={{
+            fontFamily: "var(--fwf-mono)", fontSize: 9.5, letterSpacing: "0.16em", textTransform: "uppercase",
+            color: "#ff8ec4", background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)",
+            padding: "5px 9px", borderRadius: 5, border: "1px solid rgba(233,30,140,0.45)",
+          }}>{p.tag}</span>
+        </div>
+      </div>
+      <div style={{ padding: "14px 15px 17px" }}>
+        <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 5 }}>{p.client}</div>
+        <h3 className="fwf-display" style={{ fontSize: 21, margin: 0, lineHeight: 1.05 }}>{p.title}</h3>
+      </div>
+    </div>
+  );
+}
+function CinematicGrid({ items, onOpen }) {
+  const ref = useRefP(null);
+  useEffectP(() => {
+    const gsap = window.gsap, ST = window.ScrollTrigger, Lenis = window.Lenis;
+    const root = ref.current;
+    if (!gsap || !ST || !root) return;
+    gsap.registerPlugin(ST);
+    let lenis = null, rafId = 0;
+    if (Lenis) {
+      lenis = new Lenis({ duration: 1.1, smoothWheel: true, smoothTouch: false, touchMultiplier: 1.6 });
+      const loop = (t) => { lenis.raf(t); rafId = requestAnimationFrame(loop); };
+      rafId = requestAnimationFrame(loop);
+      lenis.on("scroll", ST.update);
+    }
+    const cards = gsap.utils.toArray(root.querySelectorAll(".fwf-cin-card"));
+    gsap.set(cards, { opacity: 0, y: 48, rotateZ: -4 });
+    const triggers = ST.batch(cards, {
+      start: "top 88%",
+      onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, rotateZ: 0, duration: 0.7, ease: "power3.out", stagger: 0.09, overwrite: true }),
+    });
+    ST.refresh();
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenis) lenis.destroy();
+      triggers.forEach((t) => t.kill());
+      gsap.set(cards, { clearProps: "all" });
+    };
+  }, []);
+  return (
+    <div className="fwf-container" ref={ref}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        {items.map((p) => <CinematicCard key={p.client + p.title} p={p} onOpen={onOpen} />)}
+      </div>
+    </div>
+  );
+}
+
+// ---- shared detail panel (slides from right on desktop, up on mobile) ----
+function ProjectDetailPanel({ project, mobile, videoOpen, onClose, onPlay }) {
+  const ref = useRefP(null);
+  const axis = mobile ? "yPercent" : "xPercent";
+  function close() {
+    const gsap = window.gsap;
+    if (gsap && ref.current) {
+      const o = { duration: 0.42, ease: "power3.in", onComplete: onClose };
+      o[axis] = 100;
+      gsap.to(ref.current, o);
+    } else onClose();
+  }
+  useEffectP(() => {
+    const gsap = window.gsap;
+    document.body.style.overflow = "hidden";
+    // when the film modal is on top, Esc should close only the modal
+    const esc = (e) => { if (e.key === "Escape" && !document.querySelector(".fwf-video-modal-backdrop")) close(); };
+    document.addEventListener("keydown", esc);
+    if (gsap && ref.current) {
+      const from = {}; from[axis] = 100;
+      const to = { duration: 0.6, ease: "power4.out" }; to[axis] = 0;
+      gsap.fromTo(ref.current, from, to);
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", esc);
+    };
+  }, []);
+  // the film modal restores body scroll when it closes — re-assert the lock while the panel stays open
+  useEffectP(() => {
+    if (!videoOpen) document.body.style.overflow = "hidden";
+  }, [videoOpen]);
+  const panelStyle = mobile
+    ? { position: "fixed", left: 0, right: 0, bottom: 0, height: "90vh", borderTopLeftRadius: 18, borderTopRightRadius: 18 }
+    : { position: "fixed", top: 0, right: 0, bottom: 0, width: "min(540px, 94vw)" };
+  return (
+    <div onClick={close} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(6,6,8,0.62)", backdropFilter: "blur(6px)" }}>
+      <div
+        ref={ref}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          ...panelStyle,
+          background: "linear-gradient(180deg, #101013, #0a0a0c)",
+          borderLeft: mobile ? "none" : "1px solid " + fwfHexA(FWF_PURPLE, 0.4),
+          boxShadow: "0 0 80px -10px " + fwfHexA(FWF_PURPLE, 0.5),
+          padding: mobile ? "26px 24px 40px" : "44px 46px",
+          display: "flex", flexDirection: "column", overflowY: "auto",
+        }}
+      >
+        {mobile && <div style={{ width: 44, height: 4, borderRadius: 4, background: "rgba(255,255,255,0.2)", margin: "0 auto 22px" }} />}
+        <button onClick={close} style={{ alignSelf: "flex-start", background: "none", border: "none", color: "var(--fwf-text-mute)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer", padding: 0, marginBottom: 30 }}>
+          ← Back to projects
+        </button>
+        <span style={{ alignSelf: "flex-start", fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "#ff8ec4", border: "1px solid " + fwfHexA(FWF_PINK, 0.5), borderRadius: 6, padding: "6px 11px", marginBottom: 22 }}>
+          {project.tag}
+        </span>
+        <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 10 }}>{project.client}</div>
+        <h2 className="fwf-display" style={{ fontSize: "clamp(38px, 6vw, 60px)", lineHeight: 1, margin: "0 0 22px 0" }}>{project.title}</h2>
+        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16.5, lineHeight: 1.6, margin: "0 0 36px 0", maxWidth: 460 }}>{project.desc}</p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: "auto" }}>
+          <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={onClose}>Book a similar project →</Link>
+          {project.video && (
+            <button className="fwf-btn fwf-btn-ghost" onClick={() => { onPlay(project.video); onClose(); }}>Watch the film →</button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---- the preview page itself (route: #/projects-lab) ----
+function useBerlinTime() {
+  const [t, setT] = useStateP("");
+  useEffectP(() => {
+    const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Europe/Berlin" });
+    const tick = () => setT(fmt.format(new Date()));
+    tick();
+    const id = setInterval(tick, 30000);
+    return () => clearInterval(id);
+  }, []);
+  return t;
+}
+
+const fwfLabMono = (size, color) => ({
+  fontFamily: "var(--fwf-mono)", fontSize: size, letterSpacing: "0.18em",
+  textTransform: "uppercase", color, lineHeight: 1.7,
+});
+
+function ProjectsLabPage() {
+  const [filter, setFilter] = useStateP("all");
+  const [activeVideo, setActiveVideo] = useStateP(null);
+  const [open, setOpen] = useStateP(null);
+  const desktop = useDesktopGallery();
+  const time = useBerlinTime();
+  const visible = filter === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter((p) => p.cat === filter);
+  const openKey = open ? open.client + "·" + open.title : null;
+  // click → the film starts playing immediately; the detail panel waits underneath
+  const handleOpen = (p) => { setOpen(p); if (p.video) setActiveVideo(p.video); };
+
+  if (desktop) {
+    return (
+      <main>
+        <section style={{ position: "relative", height: "100vh", minHeight: 560, overflow: "hidden", background: "#070708" }}>
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 55% at 50% 48%, rgba(155,48,255,0.13), transparent 70%)" }} />
+          <SphereGallery key={"sphere:" + filter} items={visible} onOpen={handleOpen} openKey={openKey} />
+          <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 75% 70% at 50% 50%, transparent 58%, rgba(5,5,6,0.72) 100%)" }} />
+
+          {/* top info strip (below the site nav) */}
+          <div style={{ position: "absolute", top: 92, left: 0, right: 0, padding: "0 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", pointerEvents: "none", zIndex: 5 }}>
+            <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), display: "flex", alignItems: "center", gap: 9 }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
+              Available · Q3 2026
+            </div>
+            <div style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330 }}>
+              Flow West Films is a cinematic creative studio crafting ad films &amp; content for B2B brands.
+            </div>
+            <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), textAlign: "right" }}>
+              <span style={{ color: "rgba(255,255,255,0.85)" }}>● Stuttgart, DE</span>&nbsp;&nbsp;{time}
+            </div>
+          </div>
+
+          {/* bottom-left: view toggle (immersive ↔ classic) */}
+          <div style={{ position: "absolute", left: 28, bottom: 26, zIndex: 6, display: "flex", gap: 6, background: "rgba(14,14,16,0.72)", backdropFilter: "blur(14px)", border: "1px solid var(--fwf-hairline)", borderRadius: 999, padding: 5 }}>
+            <span title="Immersive view" style={{ width: 34, height: 34, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", color: "#000", fontSize: 13 }}>▦</span>
+            <Link to="projects-classic" title="Classic view" style={{ width: 34, height: 34, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.65)", fontSize: 13, textDecoration: "none" }}>☰</Link>
+          </div>
+
+          {/* bottom-centre: floating filter pill */}
+          <div style={{ position: "absolute", left: "50%", bottom: 24, transform: "translateX(-50%)", zIndex: 6, display: "flex", gap: 2, background: "rgba(14,14,16,0.72)", backdropFilter: "blur(14px)", border: "1px solid var(--fwf-hairline)", borderRadius: 999, padding: 5 }}>
+            {FILTERS.map((f) => (
+              <button
+                key={f.id}
+                onClick={() => setFilter(f.id)}
+                style={{
+                  fontFamily: "var(--fwf-mono)", fontSize: 10.5, letterSpacing: "0.14em", textTransform: "uppercase",
+                  padding: "10px 16px", borderRadius: 999, border: "none", cursor: "pointer", whiteSpace: "nowrap",
+                  background: filter === f.id ? "#fff" : "transparent",
+                  color: filter === f.id ? "#000" : "rgba(255,255,255,0.7)",
+                  transition: "background 0.25s, color 0.25s",
+                }}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          {/* bottom-right: count + hint */}
+          <div style={{ position: "absolute", right: 32, bottom: 36, zIndex: 5, pointerEvents: "none", ...fwfLabMono(10, "var(--fwf-text-faint)") }}>
+            {visible.length} Projects · Drag to explore
+          </div>
+        </section>
+
+        {open && <ProjectDetailPanel project={open} mobile={false} videoOpen={!!activeVideo} onClose={() => setOpen(null)} onPlay={(v) => setActiveVideo(v)} />}
+        {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+      </main>
+    );
+  }
+
+  return (
+    <main>
+      {/* Hero */}
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 40, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 42% 42% at 50% 28%, rgba(168,85,247,0.18), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Immersive showcase</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(56px, 9vw, 130px)", margin: "0 0 24px 0", lineHeight: 0.95, textWrap: "balance" }}>
+            Step inside the <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>work.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 560, margin: 0, lineHeight: 1.5 }}>
+            Films, reels, ads, and brand productions — tap a project to dive in.
+          </p>
+        </div>
+      </section>
+
+      {/* Sticky filters */}
+      <section style={{ position: "sticky", top: 72, zIndex: 10, background: "rgba(10,10,10,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", padding: "20px 0" }}>
+        <div className="fwf-container">
+          <div className="fwf-scroll-x" style={{ display: "flex", gap: 8, alignItems: "center", justifyContent: "center" }}>
+            {FILTERS.map((f) => (
+              <button key={f.id} onClick={() => setFilter(f.id)} className={"fwf-tab " + (filter === f.id ? "fwf-tab-active" : "")}>
+                {f.label}
+                <span style={{ marginLeft: 6, opacity: 0.5, fontSize: 10 }}>
+                  {f.id === "all" ? ALL_PROJECTS.length : ALL_PROJECTS.filter((p) => p.cat === f.id).length}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section style={{ position: "relative", padding: "32px 0 100px", overflow: "hidden" }}>
+        <CinematicGrid key={"grid:" + filter} items={visible} onOpen={handleOpen} />
+      </section>
+
+      <FinalCTA
+        headline={<>Seen something you like? <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Let's talk.</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+
+      {open && <ProjectDetailPanel project={open} mobile videoOpen={!!activeVideo} onClose={() => setOpen(null)} onPlay={(v) => setActiveVideo(v)} />}
+      {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+    </main>
   );
 }
 
@@ -747,4 +1454,4 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage });
+Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage });

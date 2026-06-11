@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -30,6 +30,7 @@ const BODY_FONTS = ["Syne", "Outfit", "Inter"];
 function App() {
   const [route] = useRoute();
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  window.useMobileFX(route); // mobile-only scroll animations (fx.js); no-op on desktop
 
   // Apply tweaks to CSS vars
   useEffectA(() => {
@@ -45,7 +46,9 @@ function App() {
 
   let Page;
   switch (route) {
-    case "projects":    Page = ProjectsPage;    break;
+    case "projects":    Page = ProjectsLabPage; break;
+    case "projects-classic": Page = ProjectsPage; break;
+    case "projects-lab": Page = ProjectsLabPage; break;
     case "pricing":     Page = PricingPage;     break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
@@ -58,6 +61,8 @@ function App() {
   const labels = {
     home:        "01 Home",
     projects:    "02 Projects",
+    "projects-classic": "02 Projects · Classic",
+    "projects-lab": "02 Projects",
     pricing:     "03 Pricing",
     about:       "04 About",
     contact:     "05 Contact",
