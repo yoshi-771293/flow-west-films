@@ -75,7 +75,7 @@ window.FWF_TRANSLATIONS = {
     "Performance Focused": "Performance-fokussiert",
 
     /* ---- Home: position section -------------------------------------- */
-    "01 / The position": "01 / Die Position",
+    "The position": "Die Position",
     "Most agencies deliver content.": "Die meisten Agenturen liefern Content.",
     "We deliver": "Wir liefern",
     "Flow West Films combines cinematic production, performance-driven ad creative, and strategic thinking — into one external premium team.":
@@ -86,19 +86,19 @@ window.FWF_TRANSLATIONS = {
     "Strategy-first": "Strategie zuerst",
 
     /* ---- Home: offers section heading -------------------------------- */
-    "02 / Four ways to work with us": "02 / Vier Wege der Zusammenarbeit",
+    "Four ways to work with us": "Vier Wege der Zusammenarbeit",
     "Choose your": "Wählen Sie Ihre",
     "altitude.": "Flughöhe.",
     "Four offers — from a one-time anchor film to a founder-led bespoke partnership. Pricing is discussed on your call.":
       "Vier Angebote — vom einmaligen Hero-Asset bis zur maßgeschneiderten Partnerschaft unter Founder-Leitung. Die Preise besprechen wir in Ihrem Gespräch.",
 
     /* ---- Home: featured work ----------------------------------------- */
-    "03 / Featured work": "03 / Ausgewählte Arbeiten",
+    "Featured work": "Ausgewählte Arbeiten",
     "Recent": "Aktuelle",
     "productions.": "Produktionen.",
 
     /* ---- Home: why FWF ------------------------------------------------ */
-    "04 / Why FWF": "04 / Warum FWF",
+    "Why FWF": "Warum FWF",
     "Not just video production —": "Nicht nur Videoproduktion —",
     "your external creative department.": "Ihre externe Kreativabteilung.",
     "Strategic Storytelling": "Strategisches Storytelling",

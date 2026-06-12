@@ -219,10 +219,10 @@ function HomePage() {
 
           React.createElement("div", { className: "fwf-fade-up", style: { display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginBottom: 32 } },
             React.createElement(Logo, { variant: "lion", glow: true, size: "clamp(88px, 13vw, 150px)" }),
-            React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: "clamp(10px, 1vw, 12px)", letterSpacing: "0.42em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", paddingLeft: "0.42em" } }, "Flow West Films")
+            React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: "clamp(13px, 1.25vw, 16px)", letterSpacing: "0.42em", textTransform: "uppercase", color: "rgba(255,255,255,0.78)", paddingLeft: "0.42em" } }, "Flow West Films")
           ),
 
-          React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 14px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 36 } },
+          React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 12, padding: "11px 20px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 13.5, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.92)", marginBottom: 36 } },
             React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" } }),
             "Studio · Stuttgart · Now booking Q3 2026"
           ),
@@ -274,7 +274,7 @@ function HomePage() {
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "01 / The position")
+                React.createElement("span", { className: "fwf-eyebrow" }, "The position")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5.5vw, 76px)", margin: "0 0 28px 0", textWrap: "balance" } },
                 "Most agencies deliver content.", React.createElement("br"),
@@ -323,7 +323,7 @@ function HomePage() {
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "02 / Four ways to work with us")
+                React.createElement("span", { className: "fwf-eyebrow" }, "Four ways to work with us")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0, textWrap: "balance" } },
                 "Choose your ", React.createElement("em", { className: "fwf-display-italic" }, "altitude.")
@@ -346,7 +346,7 @@ function HomePage() {
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "03 / Featured work")
+                React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0 } },
                 "Recent ", React.createElement("em", { className: "fwf-display-italic" }, "productions.")
@@ -389,7 +389,7 @@ function HomePage() {
         React.createElement("div", { className: "fwf-container" },
           React.createElement("div", { className: "fwf-section-label" },
             React.createElement("span", { className: "fwf-section-label-line" }),
-            React.createElement("span", { className: "fwf-eyebrow" }, "04 / Why FWF")
+            React.createElement("span", { className: "fwf-eyebrow" }, "Why FWF")
           ),
           React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 64px 0", maxWidth: 780, textWrap: "balance" } },
             "Not just video production —", React.createElement("br"),
