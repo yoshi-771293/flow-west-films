@@ -856,7 +856,7 @@ function ProjectsLabPage() {
               Available · Q3 2026
             </div>
             <div style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330 }}>
-              Flow West Films is a cinematic creative studio crafting ad films &amp; content for B2B brands.
+              Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included.
             </div>
             <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), textAlign: "right" }}>
               <span style={{ color: "rgba(255,255,255,0.85)" }}>● Stuttgart, DE</span>&nbsp;&nbsp;{time}
