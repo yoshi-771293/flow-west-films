@@ -28,16 +28,18 @@
       foot: "No spam. Just the audit. · flowwestfilms.de",
       s1: {
         eyebrow: "AUDIT COMPLETE",
-        head: ["Thanks for being ", "straight", " with us."],
-        sub: "Most brands won't. You did — and that's exactly the mindset that scales.",
-        cta: "Fill in your email",
+        head: ["Thanks for ", "finishing", " the audit."],
+        sub: "Most brands never do. You just did — and that's exactly the mindset that scales.",
+        cta: "Get my result →",
       },
       s2: {
         eyebrow: "ONE LAST STEP",
         head: ["Where should we ", "send", " it?"],
         sub: "Your score and the full breakdown — straight to your inbox.",
-        label: "Your email",
-        ph: "you@company.com",
+        nameLabel: "Name", namePh: "Jane Doe",
+        companyLabel: "Company", companyPh: "Acme GmbH",
+        emailLabel: "Email", emailPh: "you@company.com",
+        phoneLabel: "Phone (optional)", phonePh: "+49 …",
         cta: "Send it →",
         sending: "Sending",
         errInvalid: "That's not a valid email.",
@@ -54,16 +56,18 @@
       foot: "Kein Spam. Nur die Analyse. · flowwestfilms.de",
       s1: {
         eyebrow: "ANALYSE ABGESCHLOSSEN",
-        head: ["Danke für die ", "Ehrlichkeit", "."],
-        sub: "Die meisten Marken trauen sich das nicht. Sie schon — und genau dieses Mindset skaliert.",
-        cta: "E-Mail eingeben",
+        head: ["Danke fürs ", "Durchziehen", "."],
+        sub: "Die meisten Marken trauen sich das nie. Sie schon — und genau dieses Mindset skaliert.",
+        cta: "Ergebnis sichern →",
       },
       s2: {
         eyebrow: "NUR NOCH EIN SCHRITT",
         head: ["Wohin dürfen wir's ", "schicken", "?"],
         sub: "Ihr Score und die komplette Auswertung — direkt in Ihr Postfach.",
-        label: "Ihre E-Mail",
-        ph: "sie@firma.de",
+        nameLabel: "Name", namePh: "Max Mustermann",
+        companyLabel: "Firma", companyPh: "Acme GmbH",
+        emailLabel: "E-Mail", emailPh: "sie@firma.de",
+        phoneLabel: "Telefon (optional)", phonePh: "+49 …",
         cta: "Absenden →",
         sending: "Senden",
         errInvalid: "Das ist keine gültige E-Mail.",
@@ -125,14 +129,15 @@
       "#fwf-thanks .fwf-tk-dot{width:7px;height:7px;border-radius:50%;background:#00FF88;box-shadow:0 0 8px rgba(0,255,136,0.8);}",
       "#fwf-thanks h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:500;line-height:0.98;letter-spacing:-0.02em;margin:0 0 16px;color:#fff;}",
       "#fwf-thanks h2 em{font-style:italic;font-weight:500;color:#FF2D78;}",
-      "#fwf-thanks .fwf-tk-sub{font-family:'Syne',system-ui,sans-serif;font-size:15px;line-height:1.6;color:#8A8A8A;max-width:360px;margin-bottom:24px;}",
-      "#fwf-thanks .fwf-tk-flabel{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin-bottom:10px;}",
-      "#fwf-thanks input[type=email]{width:100%;background:#000;border:1px solid #262626;border-radius:9px;padding:14px 15px;color:#fff;font-family:'Syne',system-ui,sans-serif;font-size:15px;transition:border-color .18s,box-shadow .18s;}",
-      "#fwf-thanks input[type=email]::placeholder{color:#4a4a4a;}",
-      "#fwf-thanks input[type=email]:focus{outline:none;border-color:#FF2D78;box-shadow:0 0 0 1px rgba(255,45,120,0.35);}",
+      "#fwf-thanks .fwf-tk-sub{font-family:'Syne',system-ui,sans-serif;font-size:15px;line-height:1.6;color:#8A8A8A;max-width:360px;margin-bottom:22px;}",
+      "#fwf-thanks .fwf-tk-field{margin-bottom:14px;}",
+      "#fwf-thanks .fwf-tk-flabel{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin-bottom:7px;}",
+      "#fwf-thanks input{width:100%;background:#000;border:1px solid #262626;border-radius:9px;padding:13px 15px;color:#fff;font-family:'Syne',system-ui,sans-serif;font-size:15px;transition:border-color .18s,box-shadow .18s;}",
+      "#fwf-thanks input::placeholder{color:#4a4a4a;}",
+      "#fwf-thanks input:focus{outline:none;border-color:#FF2D78;box-shadow:0 0 0 1px rgba(255,45,120,0.35);}",
       "#fwf-thanks input.valid{border-color:#00FF88;box-shadow:0 0 0 1px rgba(0,255,136,0.3);}",
       "#fwf-thanks input.invalid{border-color:#FF6420;box-shadow:0 0 0 1px rgba(255,100,32,0.3);}",
-      "#fwf-thanks .fwf-tk-msg{font-family:'Syne',system-ui,sans-serif;font-size:13px;min-height:18px;margin:9px 0 18px;color:#FF6420;}",
+      "#fwf-thanks .fwf-tk-msg{font-family:'Syne',system-ui,sans-serif;font-size:13px;min-height:16px;margin:2px 0 16px;color:#FF6420;}",
       "#fwf-thanks .fwf-tk-cta{width:100%;padding:15px;border-radius:9px;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;background:#FF2D78;color:#000;transition:background .18s,box-shadow .18s,transform .12s,opacity .18s;display:flex;align-items:center;justify-content:center;gap:9px;}",
       "#fwf-thanks .fwf-tk-cta:hover:not(:disabled){background:#ff4a8c;box-shadow:0 0 22px rgba(255,45,120,0.45);}",
       "#fwf-thanks .fwf-tk-cta:active{transform:scale(.985);}",
@@ -157,11 +162,19 @@
         '<button class="fwf-tk-cta" type="button" data-act="to2">' + c.s1.cta + '</button>' + foot;
     }
     if (step === 2) {
+      function field(id, label, type, ph, autocomplete) {
+        return '<div class="fwf-tk-field">' +
+          '<label class="fwf-tk-flabel" for="' + id + '">' + label + '</label>' +
+          '<input id="' + id + '" type="' + type + '" autocomplete="' + autocomplete + '" spellcheck="false" placeholder="' + ph + '">' +
+          '</div>';
+      }
       return mark + eyebrow(c.s2) + head(c.s2) +
         '<p class="fwf-tk-sub" data-tk="sub">' + c.s2.sub + '</p>' +
-        '<label class="fwf-tk-flabel" for="fwf-tk-email" data-tk="label">' + c.s2.label + '</label>' +
-        '<input id="fwf-tk-email" type="email" autocomplete="email" spellcheck="false" placeholder="' + c.s2.ph + '">' +
-        '<div class="fwf-tk-msg"></div>' +
+        field("fwf-tk-name", c.s2.nameLabel, "text", c.s2.namePh, "name") +
+        field("fwf-tk-company", c.s2.companyLabel, "text", c.s2.companyPh, "organization") +
+        field("fwf-tk-email", c.s2.emailLabel, "email", c.s2.emailPh, "email") +
+        '<div class="fwf-tk-msg" id="fwf-tk-emailmsg"></div>' +
+        field("fwf-tk-phone", c.s2.phoneLabel, "tel", c.s2.phonePh, "tel") +
         '<button class="fwf-tk-cta" type="button" data-act="send" disabled>' + c.s2.cta + '</button>' + foot;
     }
     return mark + eyebrow(c.s3) + head(c.s3) +
@@ -179,21 +192,33 @@
 
   function wireStep(n) {
     var step = popupEl.querySelector('.fwf-tk-step[data-step="' + n + '"]');
-    if (n === 2) {
-      var input = step.querySelector("input");
-      var msg = step.querySelector(".fwf-tk-msg");
-      var btn = step.querySelector('[data-act="send"]');
-      input.addEventListener("input", function () {
-        var v = input.value.trim();
-        input.classList.remove("valid", "invalid");
-        var c = lang() === "en" ? COPY.en : COPY.de;
-        if (!v) { msg.textContent = ""; btn.disabled = true; return; }
-        var r = validateEmail(v);
-        if (r.ok) { input.classList.add("valid"); msg.textContent = ""; btn.disabled = false; }
-        else { input.classList.add("invalid"); msg.textContent = r.disp ? c.s2.errDisp : c.s2.errInvalid; btn.disabled = true; }
-      });
-      input.addEventListener("keydown", function (e) { if (e.key === "Enter" && !btn.disabled) btn.click(); });
+    if (n !== 2) return;
+    var nameEl = step.querySelector("#fwf-tk-name");
+    var companyEl = step.querySelector("#fwf-tk-company");
+    var emailEl = step.querySelector("#fwf-tk-email");
+    var msg = step.querySelector("#fwf-tk-emailmsg");
+    var btn = step.querySelector('[data-act="send"]');
+
+    function revalidate() {
+      var c = lang() === "en" ? COPY.en : COPY.de;
+      var nameOk = !!nameEl.value.trim();
+      var companyOk = !!companyEl.value.trim();
+      var ev = emailEl.value.trim();
+      emailEl.classList.remove("valid", "invalid");
+      var emailOk = false;
+      if (!ev) { msg.textContent = ""; }
+      else {
+        var r = validateEmail(ev);
+        if (r.ok) { emailEl.classList.add("valid"); msg.textContent = ""; emailOk = true; }
+        else { emailEl.classList.add("invalid"); msg.textContent = r.disp ? c.s2.errDisp : c.s2.errInvalid; }
+      }
+      btn.disabled = !(nameOk && companyOk && emailOk);
     }
+
+    [nameEl, companyEl, emailEl].forEach(function (el) { el.addEventListener("input", revalidate); });
+    step.querySelectorAll("input").forEach(function (el) {
+      el.addEventListener("keydown", function (e) { if (e.key === "Enter" && !btn.disabled) btn.click(); });
+    });
   }
 
   function buildPopup() {
@@ -271,44 +296,81 @@
   // ---- build the audit payload from the (already-rendered) results DOM ----
   var DIM_NAMES = { 1: "Positioning", 2: "Creative Quality", 3: "Ad Performance", 4: "Creative Testing", 5: "Storytelling", 6: "AI & Content", 7: "Infrastructure" };
 
-  function readDimScores() {
-    // Map by ORDER, not by name: the 7 dimension rows always render 1→7, and
-    // matching the name would break under i18n (German translates the labels).
-    var scores = {}, idx = 0;
+  // Read the dimension rows as the user actually sees them: displayed name +
+  // label (already in the right language) + score. Order is 1→7 regardless.
+  function readDimensions() {
+    var out = [];
     document.querySelectorAll("#root main .py-3").forEach(function (row) {
+      var spans = row.querySelectorAll("span");
+      if (!spans.length) return;
       var score = null;
-      row.querySelectorAll("span").forEach(function (sp) {
+      spans.forEach(function (sp) {
         var m = (sp.textContent || "").trim().match(/^(\d+)\s*\/\s*10$/);
         if (m) score = parseInt(m[1], 10);
       });
-      if (score !== null) { idx++; if (DIM_NAMES[idx]) scores[idx] = score; }
+      if (score === null) return;
+      var name = (spans[0].textContent || "").trim();
+      var label = "";
+      for (var i = 1; i < spans.length; i++) {
+        var t = (spans[i].textContent || "").trim();
+        if (t && t !== name && !/^\d+\s*\/\s*10$/.test(t)) { label = t; break; }
+      }
+      out.push({ name: name, label: label, score: score });
     });
-    return scores;
+    return out;
+  }
+
+  // The "what we'd do about it" recommendation, lifted from the rendered page
+  // (keyed off the headline's inline font-size so it survives i18n).
+  function readRecommendation(root) {
+    if (!root) return null;
+    var headEl = null, divs = root.querySelectorAll("div");
+    for (var i = 0; i < divs.length; i++) {
+      if (/clamp\(\s*26px/.test(divs[i].getAttribute("style") || "")) { headEl = divs[i]; break; }
+    }
+    if (!headEl) return null;
+    var head = (headEl.textContent || "").trim();
+    if (!head) return null;
+    var body = "", nx = headEl.nextElementSibling;
+    while (nx) { if (nx.tagName === "P") { body = (nx.textContent || "").trim(); break; } nx = nx.nextElementSibling; }
+    return { headline: head, body: body };
   }
 
   function buildAuditPayload() {
-    var dims = readDimScores();
-    var keys = Object.keys(dims);
-    var total = 0; keys.forEach(function (k) { total += dims[k]; });
-    var max = (keys.length || 7) * 10;
-    var sorted = keys.map(function (k) { return { name: DIM_NAMES[k], score: dims[k] }; }).sort(function (a, b) { return b.score - a.score; });
-    var strengths = sorted.filter(function (d) { return d.score >= 7; });
-    var gaps = sorted.slice().reverse().slice(0, 3);
-    var pct = max ? total / max : 0;
-    var label = pct >= 0.8 ? "Strong — well-positioned for scale"
-              : pct >= 0.6 ? "Developing — clear growth gaps identified"
-              : pct >= 0.4 ? "Early stage — significant gaps across key areas"
-              :              "Critical — foundational work needed before scaling";
+    var l = lang();
+    var dims = readDimensions();
+    var total = 0; dims.forEach(function (d) { total += d.score; });
+    var max = (dims.length || 7) * 10;
+    var pct = max ? Math.round((total / max) * 100) : 0;
+
+    // English-named copy for the text fallback (sections), mapped by order
+    var named = dims.map(function (d, i) { return { name: DIM_NAMES[i + 1] || d.name, score: d.score }; });
+    var sortedDesc = named.slice().sort(function (a, b) { return b.score - a.score; });
+    var strengths = sortedDesc.filter(function (d) { return d.score >= 7; });
+    var gaps = sortedDesc.slice().reverse().slice(0, 3);
+    var labelTxt = pct >= 80 ? "Strong — well-positioned for scale"
+                 : pct >= 60 ? "Developing — clear growth gaps identified"
+                 : pct >= 40 ? "Early stage — significant gaps across key areas"
+                 :             "Critical — foundational work needed before scaling";
     var steps = [];
     if (gaps[0]) steps.push("Close the gap in " + gaps[0].name + " — it's your biggest drag on performance.");
     if (gaps[1] && gaps[1].score < 6) steps.push("Develop " + gaps[1].name + " systematically — inconsistency here compounds.");
     steps.push("Book a strategy call to map the path from your current score to scale.");
+
+    var root = document.querySelector("#root main");
+    var h1 = root && root.querySelector("h1");
+
     return {
-      clientName: "Your Business",
-      date: new Date().toLocaleDateString("en-GB"),
+      lang: l,
+      date: new Date().toLocaleDateString(l === "de" ? "de-DE" : "en-GB"),
+      headline: h1 ? (h1.textContent || "").trim() : "",
       score: total + " / " + max,
+      scorePct: pct,
+      dimensions: dims,
+      recommendation: readRecommendation(root),
+      // text fallback in case the rich fields are ever missing server-side
       sections: [
-        { title: "Overall Score", body: total + " / " + max + ". " + label + "." },
+        { title: "Overall Score", body: total + " / " + max + ". " + labelTxt + "." },
         { title: "What's working", body: strengths.length ? strengths.map(function (d) { return d.name + " (" + d.score + "/10)"; }).join(", ") + " — protect these." : "Each dimension is an opportunity. None are too far gone to fix." },
         { title: "Biggest gaps", body: gaps.map(function (d) { return d.name + ": " + d.score + "/10"; }).join("\n") },
         { title: "Next steps", body: steps.map(function (s, i) { return (i + 1) + ". " + s; }).join("\n") },
@@ -318,26 +380,31 @@
 
   function doSend() {
     var step = popupEl.querySelector('.fwf-tk-step[data-step="2"]');
-    var input = step.querySelector("input");
     var btn = step.querySelector('[data-act="send"]');
     var c = lang() === "en" ? COPY.en : COPY.de;
-    if (validateEmail(input.value).ok !== true) return;
-    var email = input.value.trim().toLowerCase();
+
+    var name = (step.querySelector("#fwf-tk-name").value || "").trim();
+    var company = (step.querySelector("#fwf-tk-company").value || "").trim();
+    var email = (step.querySelector("#fwf-tk-email").value || "").trim().toLowerCase();
+    var phone = (step.querySelector("#fwf-tk-phone").value || "").trim();
+    // required: name + company + valid email
+    if (!name || !company || validateEmail(email).ok !== true) return;
+
     btn.disabled = true;
     btn.innerHTML = '<span class="fwf-tk-spin"></span>' + c.s2.sending;
 
-    // results shouldn't be held hostage to a transient server error: a valid
-    // email is the gate, so advance either way — but still attempt the send.
+    // results shouldn't be held hostage to a transient server error: valid
+    // details are the gate, so advance either way — but still attempt the send.
     var done = false;
     function advance() { if (done) return; done = true; goStep(3); scheduleAutoReveal(); }
 
     var payload;
-    try { payload = buildAuditPayload(); } catch (e) { payload = { clientName: "Your Business", date: new Date().toLocaleDateString("en-GB"), score: "", sections: [] }; }
+    try { payload = buildAuditPayload(); } catch (e) { payload = { lang: lang(), date: "", score: "", sections: [] }; }
 
     fetch("/api/send-audit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, audit: payload }),
+      body: JSON.stringify({ email: email, name: name, company: company, phone: phone, audit: payload }),
     }).then(function () { advance(); }).catch(function (err) {
       console.error("[fwf] send-audit failed:", err); advance();
     });
