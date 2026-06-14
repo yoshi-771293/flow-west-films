@@ -42,7 +42,14 @@ function buildEmailHtml(audit) {
   const {
     lang = "en", date = "", score = "", scorePct = 0,
     dimensions = [], recommendation = null, headline = "", sections = [],
+    recipientName = "", recipientCompany = "",
   } = audit;
+
+  // personalized "prepared for" line — name + company brighter, date muted
+  const who = [recipientName, recipientCompany].filter(Boolean).map(esc).join(" · ");
+  const preparedLine = who
+    ? `<p style="font-family:monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${lang === "de" ? "Erstellt für " : "Prepared for "}<span style="color:#cfcfcf;">${who}</span>${date ? " &nbsp;·&nbsp; " + esc(date) : ""}</p>`
+    : (date ? `<p style="font-family:monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${esc(date)}</p>` : "");
 
   const L = lang === "de"
     ? { eyebrow: "ANALYSE ABGESCHLOSSEN", defHead: "Hier stehen Sie.", scoreLabel: "Gesamt-Score", recLabel: "Was wir tun würden", ctaPrimary: "Lassen Sie uns reden →", ctaSecondary: "Zur Startseite", foot: "Kein Spam. Nur die Analyse. · flowwestfilms.de" }
@@ -53,7 +60,7 @@ function buildEmailHtml(audit) {
       <tr><td style="padding:28px 36px 6px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
           <td width="50%" style="padding-right:6px;">
-            <a href="https://flowwestfilms.de/#/contact" style="display:block;text-align:center;background:#FF2D78;color:#000;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:15px 10px;border-radius:9px;">${esc(L.ctaPrimary)}</a>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#FF2D78;color:#000;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:15px 10px;border-radius:9px;">${esc(L.ctaPrimary)}</a>
           </td>
           <td width="50%" style="padding-left:6px;">
             <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #2e2e2e;border-radius:9px;">${esc(L.ctaSecondary)}</a>
@@ -143,7 +150,7 @@ function buildEmailHtml(audit) {
           <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#00FF88;vertical-align:middle;margin-right:7px;"></span>${esc(L.eyebrow)}
         </p>
         <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:40px;font-weight:400;line-height:1.02;letter-spacing:-0.02em;color:#FFFFFF;margin:0 0 12px 0;">${esc(headline || L.defHead)}</h1>
-        ${date ? `<p style="font-family:monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${esc(date)}</p>` : ""}
+        ${preparedLine}
       </td></tr>
 
       ${middle}
@@ -187,8 +194,8 @@ module.exports = async function handler(req, res) {
     await resend.emails.send({
       from: "Flow West Films <audit@noreply.flowwestfilms.de>",
       to: cleanEmail,
-      subject: "Your audit is ready",
-      html: buildEmailHtml(audit),
+      subject: audit.lang === "de" ? "Ihre Analyse ist fertig" : "Your audit is ready",
+      html: buildEmailHtml({ ...audit, recipientName: cleanName, recipientCompany: cleanCompany }),
     });
   } catch (err) {
     console.error("Resend error:", err?.message || err);
