@@ -39,6 +39,109 @@
     <style>html.fwf-i18n-boot #root { visibility: hidden; }</style>
     <script src="/audit/i18n/translations.js"></script>
     <script src="/audit/i18n/i18n.js"></script>
+    <!-- Lead-capture bridge: intercepts the mailto: redirect and POSTs to /api/send-audit instead -->
+    <script>
+    (function () {
+      var DIM_NAMES = {
+        1:"Positioning", 2:"Creative Quality", 3:"Ad Performance",
+        4:"Creative Testing", 5:"Storytelling", 6:"AI & Content", 7:"Infrastructure"
+      };
+
+      function readDimScores() {
+        var scores = {};
+        document.querySelectorAll('div.py-3').forEach(function (container) {
+          var scoreVal = null, dimName = null;
+          container.querySelectorAll('span').forEach(function (span) {
+            var t = span.textContent.trim();
+            var m = t.match(/^(\d+)\/10$/);
+            if (m) { scoreVal = parseInt(m[1]); return; }
+            var up = t.toUpperCase();
+            Object.keys(DIM_NAMES).forEach(function (k) {
+              if (DIM_NAMES[k].toUpperCase() === up) dimName = DIM_NAMES[k];
+            });
+          });
+          if (scoreVal !== null && dimName) {
+            var num = Object.keys(DIM_NAMES).find(function (k) { return DIM_NAMES[k] === dimName; });
+            if (num) scores[num] = scoreVal;
+          }
+        });
+        return scores;
+      }
+
+      function buildSections(total, max, dimScores) {
+        var pct = total / max;
+        var label = pct >= 0.8 ? "Strong — well-positioned for scale"
+                  : pct >= 0.6 ? "Developing — clear growth gaps identified"
+                  : pct >= 0.4 ? "Early stage — significant gaps across key areas"
+                  :              "Critical — foundational work needed before scaling";
+
+        var sorted = Object.keys(dimScores).map(function (k) {
+          return { n: k, name: DIM_NAMES[k], score: dimScores[k] };
+        }).sort(function (a, b) { return b.score - a.score; });
+
+        var strengths = sorted.filter(function (d) { return d.score >= 7; });
+        var gaps = sorted.slice().reverse().slice(0, 3);
+
+        var steps = [];
+        if (gaps[0]) steps.push("Close the gap in " + gaps[0].name + " — it’s your biggest drag on performance.");
+        if (gaps[1] && gaps[1].score < 6) steps.push("Develop " + gaps[1].name + " systematically — inconsistency here compounds over time.");
+        steps.push("Book a strategy call to map the exact path from your current score to scale.");
+
+        return [
+          { title: "Overall Score",   body: total + " / " + max + ". " + label + "." },
+          { title: "What’s working", body: strengths.length
+              ? strengths.map(function (d) { return d.name + " (" + d.score + "/10)"; }).join(", ") + " — protect these."
+              : "Each dimension is an opportunity. None are too far gone to fix." },
+          { title: "Biggest gaps",    body: gaps.map(function (d) { return d.name + ": " + d.score + "/10"; }).join("\n") },
+          { title: "Next steps",      body: steps.map(function (s, i) { return (i + 1) + ". " + s; }).join("\n") }
+        ];
+      }
+
+      // Intercept window.location.href to catch the mailto: redirect React fires on submit
+      var locDesc = Object.getOwnPropertyDescriptor(Location.prototype, 'href');
+      if (locDesc && locDesc.set) {
+        Object.defineProperty(Location.prototype, 'href', {
+          get: locDesc.get,
+          configurable: true,
+          enumerable: true,
+          set: function (url) {
+            if (typeof url === 'string' && url.startsWith('mailto:info@flowwestfilms.de')) {
+              try {
+                var bodyIdx = url.indexOf('body=');
+                var body = bodyIdx >= 0 ? decodeURIComponent(url.slice(bodyIdx + 5)) : '';
+                var emailM = body.match(/Meine E-Mail:\s*(.+)/);
+                var scoreM = body.match(/Mein Score:\s*(\d+)\/(\d+)/);
+                var email = emailM ? emailM[1].trim() : null;
+                var total  = scoreM ? parseInt(scoreM[1]) : 0;
+                var max    = scoreM ? parseInt(scoreM[2]) : 70;
+
+                if (email) {
+                  var dimScores = readDimScores();
+                  var audit = {
+                    clientName: "Your Business",
+                    date: new Date().toLocaleDateString('en-GB'),
+                    score: total + " / " + max,
+                    sections: buildSections(total, max, dimScores)
+                  };
+                  fetch('/api/send-audit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, audit: audit })
+                  }).catch(function (err) {
+                    console.error('[fwf] send-audit failed:', err);
+                  });
+                  return; // swallow the mailto navigation; React's A(!0) success state fires normally
+                }
+              } catch (e) {
+                console.error('[fwf] intercept error:', e);
+              }
+            }
+            locDesc.set.call(this, url);
+          }
+        });
+      }
+    })();
+    </script>
     <script type="module" crossorigin src="/audit/assets/index-zBzxixeT.js"></script>
     <link rel="stylesheet" crossorigin href="/audit/assets/index-xRAkWo1B.css">
   </head>
