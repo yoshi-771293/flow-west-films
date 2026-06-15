@@ -48,8 +48,8 @@ function buildEmailHtml(audit) {
   // personalized "prepared for" line — name + company brighter, date muted
   const who = [recipientName, recipientCompany].filter(Boolean).map(esc).join(" · ");
   const preparedLine = who
-    ? `<p style="font-family:monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${lang === "de" ? "Erstellt für " : "Prepared for "}<span style="color:#cfcfcf;">${who}</span>${date ? " &nbsp;·&nbsp; " + esc(date) : ""}</p>`
-    : (date ? `<p style="font-family:monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${esc(date)}</p>` : "");
+    ? `<p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${lang === "de" ? "Erstellt für " : "Prepared for "}<span style="color:#cfcfcf;">${who}</span>${date ? " &nbsp;·&nbsp; " + esc(date) : ""}</p>`
+    : (date ? `<p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;letter-spacing:0.06em;color:#5A5A5A;margin:0;">${esc(date)}</p>` : "");
 
   const L = lang === "de"
     ? { eyebrow: "ANALYSE ABGESCHLOSSEN", defHead: "Hier stehen Sie.", scoreLabel: "Gesamt-Score", recLabel: "Was wir tun würden", ctaPrimary: "Lassen Sie uns reden →", ctaSecondary: "Zur Startseite", foot: "Kein Spam. Nur die Analyse. · flowwestfilms.de" }
@@ -61,10 +61,10 @@ function buildEmailHtml(audit) {
       <tr><td style="padding:28px 36px 6px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
           <td width="50%" style="padding-right:6px;">
-            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#0A0A0A;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #FF2D78;border-radius:999px;">${esc(L.ctaPrimary)}</a>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#0A0A0A;color:#FFFFFF;font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #FF2D78;border-radius:999px;">${esc(L.ctaPrimary)}</a>
           </td>
           <td width="50%" style="padding-left:6px;">
-            <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid rgba(255,255,255,0.18);border-radius:999px;">${esc(L.ctaSecondary)}</a>
+            <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #00C87A;border-radius:999px;">${esc(L.ctaSecondary)}</a>
           </td>
         </tr></table>
       </td></tr>`;
@@ -80,8 +80,8 @@ function buildEmailHtml(audit) {
       return `
       <tr><td style="padding:14px 0;border-bottom:1px solid #161616;">
         <table width="100%" cellpadding="0" cellspacing="0"><tr>
-          <td style="font-family:monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#cfcfcf;">${esc(d.name)}</td>
-          <td align="right" style="font-family:monospace;font-size:10px;letter-spacing:0.08em;white-space:nowrap;">
+          <td style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#cfcfcf;">${esc(d.name)}</td>
+          <td align="right" style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.08em;white-space:nowrap;">
             <span style="color:${c};letter-spacing:0.12em;">${label}</span>
             <span style="color:#5A5A5A;">&nbsp;&nbsp;${d.score}/10</span>
           </td>
@@ -92,23 +92,23 @@ function buildEmailHtml(audit) {
 
     const recBlock = recommendation && recommendation.headline ? `
       <tr><td style="padding:8px 36px 4px;">
-        <p style="font-family:monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#FF2D78;margin:0 0 12px 0;">${esc(L.recLabel)}</p>
+        <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#FF2D78;margin:0 0 12px 0;">${esc(L.recLabel)}</p>
         <table width="100%" cellpadding="0" cellspacing="0" style="background:#121212;border:1px solid #242424;border-radius:10px;overflow:hidden;">
           <tr><td style="height:1px;background:linear-gradient(90deg,#FF2D78,#9B30FF);font-size:0;line-height:0;">&nbsp;</td></tr>
           <tr><td style="padding:24px 26px;">
-            <p style="font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;line-height:1.1;color:#FFFFFF;margin:0 0 12px 0;">${esc(recommendation.headline)}</p>
-            ${recommendation.body ? `<p style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.65;color:#9a9a9a;margin:0;">${esc(recommendation.body)}</p>` : ""}
+            <p style="font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;line-height:1.1;color:#FFFFFF;margin:0 0 12px 0;">${esc(recommendation.headline)}</p>
+            ${recommendation.body ? `<p style="font-family:'Syne',system-ui,sans-serif;font-size:14px;line-height:1.65;color:#9a9a9a;margin:0;">${esc(recommendation.body)}</p>` : ""}
           </td></tr>
         </table>
       </td></tr>` : "";
 
     middle = `
       <tr><td style="padding:0 36px;">
-        <p style="font-family:monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 14px 0;">${esc(L.scoreLabel)}</p>
+        <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 14px 0;">${esc(L.scoreLabel)}</p>
       </td></tr>
       <tr><td style="padding:0 36px;">
         <table width="100%" cellpadding="0" cellspacing="0"><tr>
-          <td style="font-family:Georgia,'Times New Roman',serif;font-size:54px;font-weight:400;color:#FFFFFF;line-height:1;">${esc(score)}</td>
+          <td style="font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:54px;font-weight:400;color:#FFFFFF;line-height:1;">${esc(score)}</td>
         </tr></table>
         <div style="margin:14px 0 30px;">${barHtml(scorePct, "#FF2D78")}</div>
       </td></tr>
@@ -121,16 +121,16 @@ function buildEmailHtml(audit) {
       <tr><td style="padding:0 36px 28px;">
         <table width="100%" cellpadding="0" cellspacing="0" style="background:#181818;border:1px solid #2a2a2a;border-radius:8px;">
           <tr><td style="padding:18px 22px;">
-            <p style="font-family:monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#5A5A5A;margin:0 0 6px 0;">${esc(L.scoreLabel)}</p>
-            <p style="font-family:Georgia,serif;font-size:30px;font-weight:400;color:#FFFFFF;margin:0;">${esc(score)}</p>
+            <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#5A5A5A;margin:0 0 6px 0;">${esc(L.scoreLabel)}</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:400;color:#FFFFFF;margin:0;">${esc(score)}</p>
           </td></tr>
         </table>
       </td></tr>
       <tr><td style="padding:0 36px;"><table width="100%" cellpadding="0" cellspacing="0">
         ${sections.map((s) => `
         <tr><td style="padding:20px 0;border-bottom:1px solid #1f1f1f;">
-          <p style="font-family:monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8A8A;margin:0 0 8px 0;">${esc(s.title)}</p>
-          <p style="font-family:system-ui,sans-serif;font-size:15px;color:#FFFFFF;margin:0;line-height:1.65;">${esc(s.body).replace(/\n/g, "<br>")}</p>
+          <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8A8A;margin:0 0 8px 0;">${esc(s.title)}</p>
+          <p style="font-family:'Syne',system-ui,sans-serif;font-size:15px;color:#FFFFFF;margin:0;line-height:1.65;">${esc(s.body).replace(/\n/g, "<br>")}</p>
         </td></tr>`).join("")}
       </table></td></tr>`;
   }
@@ -139,7 +139,7 @@ function buildEmailHtml(audit) {
 <html lang="${esc(lang)}">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Your audit is ready — Flow West Films</title></head>
-<body style="margin:0;padding:0;background:#0A0A0A;font-family:system-ui,sans-serif;color:#FFFFFF;">
+<body style="margin:0;padding:0;background:#0A0A0A;font-family:'Syne',system-ui,sans-serif;color:#FFFFFF;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#0A0A0A;padding:48px 0;">
   <tr><td align="center">
     <table width="100%" cellpadding="0" cellspacing="0" style="max-width:540px;background:#0A0A0A;border:1px solid #1f1f1f;border-radius:12px;overflow:hidden;">
@@ -147,10 +147,10 @@ function buildEmailHtml(audit) {
       <tr><td style="height:1px;background:linear-gradient(90deg,transparent,#FF2D78 45%,#9B30FF 75%,transparent);font-size:0;line-height:0;">&nbsp;</td></tr>
 
       <tr><td style="padding:32px 36px 22px;">
-        <p style="font-family:monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8A8A;margin:0 0 18px 0;">
+        <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8A8A;margin:0 0 18px 0;">
           <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#00FF88;vertical-align:middle;margin-right:7px;"></span>${esc(L.eyebrow)}
         </p>
-        <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:40px;font-weight:400;line-height:1.02;letter-spacing:-0.02em;color:#FFFFFF;margin:0 0 12px 0;">${esc(headline || L.defHead)}</h1>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:40px;font-weight:400;line-height:1.02;letter-spacing:-0.02em;color:#FFFFFF;margin:0 0 12px 0;">${esc(headline || L.defHead)}</h1>
         ${preparedLine}
       </td></tr>
 
@@ -159,7 +159,7 @@ function buildEmailHtml(audit) {
       ${ctaRow}
 
       <tr><td style="padding:26px 36px 32px;border-top:1px solid #1a1a1a;">
-        <p style="font-family:monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A5A;margin:0;">${esc(L.foot)}</p>
+        <p style="font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A5A;margin:0;">${esc(L.foot)}</p>
       </td></tr>
 
     </table>

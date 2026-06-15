@@ -116,7 +116,7 @@
       "letter-spacing:0.18em;text-transform:uppercase;border-radius:999px;text-decoration:none;white-space:nowrap;" +
       (primary
         ? "background:#0A0A0A;color:#fff;border:1px solid #FF2D78;box-shadow:0 0 24px rgba(255,45,120,0.18);"
-        : "background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);");
+        : "background:transparent;color:#fff;border:1px solid #00C87A;");
   }
 
   // email validation — mirrors the frontend/server contract
