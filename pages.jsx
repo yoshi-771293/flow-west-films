@@ -135,9 +135,24 @@ const ALL_PROJECTS = [
   },
   {
     client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
-    desc: "Authentic testimonial portrait with Elif D., business-owning mother and Eibl GmbH client.",
+    desc: "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
     colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_f79yQ3u5lZw.jpg",
     video: "https://www.youtube.com/watch?v=f79yQ3u5lZw"
+  },
+  {
+    client: "Eibl GmbH", title: "Testimonial — Käuferin", tag: "Testimonial", cat: "image",
+    desc: "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_voUpNHUcaC0.jpg",
+    video: "https://www.youtube.com/watch?v=voUpNHUcaC0"
+  },
+  {
+    client: "Café Bar Relax", title: "Social Testimonial", tag: "Testimonial", cat: "social",
+    desc: "Customer testimonial showcasing Café Bar Relax's digital presence — shot on location in Ludwigsburg.",
+    colors: ["#ff2d78", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_1dxrsMDjskM.jpg",
+    video: "https://youtu.be/1dxrsMDjskM"
   },
 ];
 
