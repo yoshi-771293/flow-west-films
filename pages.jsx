@@ -9,7 +9,7 @@ const ALL_PROJECTS = [
     client: "Radisson Blu", title: "Brand Reel", tag: "Social Media", cat: "social",
     desc: "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.",
     colors: ["#ff2d78", "#0a0a0a"],
-    thumb: "assets/thumbs/rad_blu.jpg", video: "assets/videos/rad_blu.mp4"
+    thumb: "assets/thumbs/radisson_upwork.png", video: "assets/videos/radisson_upwork.mp4"
   },
   {
     client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
@@ -29,7 +29,8 @@ const ALL_PROJECTS = [
   {
     client: "Schmolke Carbon", title: "Racing Handlebar Ad", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative for a premium carbon component brand.",
-    colors: ["#9b30ff", "#0a0a0a"]
+    colors: ["#9b30ff", "#0a0a0a"],
+    video: "assets/videos/schmolke.mp4"
   },
   {
     client: "App Liqes", title: "Brand Film", tag: "Brand Film", cat: "image",
@@ -45,7 +46,7 @@ const ALL_PROJECTS = [
     client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
     desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
     colors: ["#ff6420", "#c9a96e"],
-    thumb: "assets/thumbs/golden_brew.jpg", video: "assets/videos/golden_brew.mp4"
+    thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
   },
   {
     client: "Pane Vino", title: "Founder Story", tag: "Brand Film", cat: "image",
@@ -76,7 +77,8 @@ const ALL_PROJECTS = [
   {
     client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image",
     desc: "An intimate interview-led portrait for a luxury interior brand.",
-    colors: ["#c9a96e", "#0a0a0a"]
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "assets/thumbs/cw_interview.png", video: "assets/videos/cw_interview.mp4"
   },
   {
     client: "Stuttgart Bierfest", title: "Event Reel", tag: "Event", cat: "event",
@@ -105,13 +107,31 @@ const ALL_PROJECTS = [
     client: "Studio Sessions", title: "Behind the Lens", tag: "BTS", cat: "social",
     desc: "Behind-the-scenes footage of a food & lifestyle commercial shoot.",
     colors: ["#ff6420", "#c9a96e"],
-    thumb: "assets/thumbs/inside_crew.jpg", video: "assets/videos/inside_crew.mp4"
+    thumb: "assets/thumbs/crew_bw.jpg", video: "assets/videos/inside_crew.mp4"
   },
   {
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
+  },
+  {
+    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
+  },
+  {
+    client: "NYC Campaign", title: "Model Shot", tag: "Ad Creative", cat: "ad",
+    desc: "Fashion-forward campaign shoot on location in New York City.",
+    colors: ["#ffffff", "#0a0a0a"],
+    thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
+  },
+  {
+    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Performance hook ad with on-screen copy — built for German-language social feeds.",
+    colors: ["#ff6420", "#0a0a0a"],
+    thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
   },
   {
     client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
