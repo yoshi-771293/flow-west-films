@@ -113,6 +113,12 @@ const ALL_PROJECTS = [
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
   },
+  {
+    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
+    desc: "Authentic testimonial portrait with Elif D., business-owning mother and Eibl GmbH client.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    video: "https://www.youtube.com/watch?v=f79yQ3u5lZw"
+  },
 ];
 
 const FILTERS = [
