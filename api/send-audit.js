@@ -55,15 +55,16 @@ function buildEmailHtml(audit) {
     ? { eyebrow: "ANALYSE ABGESCHLOSSEN", defHead: "Hier stehen Sie.", scoreLabel: "Gesamt-Score", recLabel: "Was wir tun würden", ctaPrimary: "Lassen Sie uns reden →", ctaSecondary: "Zur Startseite", foot: "Kein Spam. Nur die Analyse. · flowwestfilms.de" }
     : { eyebrow: "AUDIT COMPLETE", defHead: "Here's where you stand.", scoreLabel: "Overall Score", recLabel: "What we'd do about it", ctaPrimary: "Let's talk →", ctaSecondary: "Visit homepage", foot: "No spam. Just the audit. · flowwestfilms.de" };
 
-  // two buttons at the end — book a call + back to the site (shared by both layouts)
+  // two buttons at the end — pill-shaped to match the site's .fwf-btn (dark fill,
+  // pink border on primary, faint border on secondary, mono uppercase)
   const ctaRow = `
       <tr><td style="padding:28px 36px 6px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
           <td width="50%" style="padding-right:6px;">
-            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#FF2D78;color:#000;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:15px 10px;border-radius:9px;">${esc(L.ctaPrimary)}</a>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#0A0A0A;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #FF2D78;border-radius:999px;">${esc(L.ctaPrimary)}</a>
           </td>
           <td width="50%" style="padding-left:6px;">
-            <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #2e2e2e;border-radius:9px;">${esc(L.ctaSecondary)}</a>
+            <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid rgba(255,255,255,0.18);border-radius:999px;">${esc(L.ctaSecondary)}</a>
           </td>
         </tr></table>
       </td></tr>`;

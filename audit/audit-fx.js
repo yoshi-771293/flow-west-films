@@ -88,6 +88,37 @@
     return "de";
   }
 
+  var CALENDLY = "https://calendly.com/flowwestfilms-appointment/30min";
+  var SITE = "https://flowwestfilms.de";
+
+  // Results-page header copy — bigger headline, brand voice, one italic moment,
+  // a little dry wit. Tells them: you're done, read it, then book a call.
+  var RESULTS_COPY = {
+    en: {
+      head: ["You made it. Here's the ", "verdict", "."],
+      sub: "Seven dimensions, scored without mercy. Read it top to bottom — then book a call before you overthink it.",
+      ctaPrimary: "Book a call →",
+      ctaSecondary: "Back to site",
+    },
+    de: {
+      head: ["Geschafft. Hier das ", "Urteil", "."],
+      sub: "Sieben Dimensionen, gnadenlos bewertet. Lesen Sie alles — und buchen Sie einen Call, bevor Sie zu lange grübeln.",
+      ctaPrimary: "Call buchen →",
+      ctaSecondary: "Zur Website",
+    },
+  };
+
+  // brand button (matches .fwf-btn-primary / -ghost on the main site: pill,
+  // dark fill, 1px accent border, mono uppercase, soft glow)
+  function brandBtnCss(primary) {
+    return "display:inline-flex;align-items:center;justify-content:center;gap:10px;" +
+      "padding:14px 26px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;" +
+      "letter-spacing:0.18em;text-transform:uppercase;border-radius:999px;text-decoration:none;white-space:nowrap;" +
+      (primary
+        ? "background:#0A0A0A;color:#fff;border:1px solid #FF2D78;box-shadow:0 0 24px rgba(255,45,120,0.18);"
+        : "background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);");
+  }
+
   // email validation — mirrors the frontend/server contract
   var DISPOSABLE = {
     "mailinator.com": 1, "tempmail.com": 1, "temp-mail.org": 1, "guerrillamail.com": 1,
@@ -138,13 +169,14 @@
       "#fwf-thanks input.valid{border-color:#00FF88;box-shadow:0 0 0 1px rgba(0,255,136,0.3);}",
       "#fwf-thanks input.invalid{border-color:#FF6420;box-shadow:0 0 0 1px rgba(255,100,32,0.3);}",
       "#fwf-thanks .fwf-tk-msg{font-family:'Syne',system-ui,sans-serif;font-size:13px;min-height:16px;margin:2px 0 16px;color:#FF6420;}",
-      "#fwf-thanks .fwf-tk-cta{width:100%;padding:15px;border-radius:9px;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;background:#FF2D78;color:#000;transition:background .18s,box-shadow .18s,transform .12s,opacity .18s;display:flex;align-items:center;justify-content:center;gap:9px;}",
-      "#fwf-thanks .fwf-tk-cta:hover:not(:disabled){background:#ff4a8c;box-shadow:0 0 22px rgba(255,45,120,0.45);}",
+      // matches the site's .fwf-btn-primary: pill, dark fill, pink border, glow
+      "#fwf-thanks .fwf-tk-cta{width:100%;padding:15px;border-radius:999px;border:1px solid #FF2D78;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;background:#0A0A0A;color:#fff;box-shadow:0 0 24px rgba(255,45,120,0.18);transition:background .2s,box-shadow .2s,transform .12s,opacity .18s,border-color .2s;display:flex;align-items:center;justify-content:center;gap:9px;}",
+      "#fwf-thanks .fwf-tk-cta:hover:not(:disabled){background:#FF2D78;color:#fff;box-shadow:0 0 0 4px rgba(255,45,120,0.18),0 0 36px rgba(255,45,120,0.45);transform:translateY(-1px);}",
       "#fwf-thanks .fwf-tk-cta:active{transform:scale(.985);}",
-      "#fwf-thanks .fwf-tk-cta:disabled{opacity:.35;cursor:not-allowed;}",
+      "#fwf-thanks .fwf-tk-cta:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;border-color:#3a2330;}",
       "#fwf-thanks .fwf-tk-foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid #1a1a1a;}",
       "#fwf-thanks .fwf-tk-foot span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A5A;}",
-      "#fwf-thanks .fwf-tk-spin{width:13px;height:13px;border:2px solid rgba(0,0,0,.3);border-top-color:#000;border-radius:50%;animation:fwftkspin .6s linear infinite;}",
+      "#fwf-thanks .fwf-tk-spin{width:13px;height:13px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:fwftkspin .6s linear infinite;}",
       "@keyframes fwftkspin{to{transform:rotate(360deg);}}",
       "@media (max-width:520px){#fwf-thanks h2{font-size:36px;}}",
     ].join("");
@@ -453,7 +485,8 @@
       popupEl.classList.remove("on");
       popupEl.style.opacity = "";
       hideBundleEmailForm();
-      try { scan(g, window.ScrollTrigger); } catch (e) {}  // let the results content animate in
+      try { customizeResults(); } catch (e) {}   // rewrite the header + add the CTA first
+      try { scan(g, window.ScrollTrigger); } catch (e) {}  // then animate the rest in
       animateResultBars(g);
     }
     if (REDUCE || !g) { finish(); return; }
@@ -465,6 +498,50 @@
   function hideBundleEmailForm() {
     var form = document.querySelector("#root main form");
     if (form) form.style.display = "none";
+  }
+
+  // Rewrite the results headline + intro in brand voice (bigger, with wit), make
+  // it bulletproof-visible (the motion layer skips it), and drop a brand-style
+  // "Book a call" CTA at the end. Re-applies on language toggle.
+  function customizeResults() {
+    var root = document.querySelector("#root main");
+    if (!root) return;
+    var c = lang() === "en" ? RESULTS_COPY.en : RESULTS_COPY.de;
+
+    var h1 = root.querySelector("h1");
+    if (h1) {
+      h1.setAttribute("data-fwf-fx", "1"); // keep the generic motion layer off it
+      h1.style.fontSize = "clamp(56px, 9.5vw, 112px)";
+      h1.style.opacity = "1";
+      h1.style.clipPath = "none";
+      h1.style.transform = "none";
+      h1.innerHTML = esc(c.head[0]) +
+        '<em style="font-style:italic;color:#FF2D78;">' + esc(c.head[1]) + "</em>" +
+        esc(c.head[2]);
+      var sub = h1.nextElementSibling;
+      if (sub && sub.tagName === "P") {
+        sub.setAttribute("data-fwf-fx", "1");
+        sub.style.opacity = "1";
+        sub.textContent = c.sub;
+      }
+    }
+
+    if (!document.getElementById("fwf-results-cta")) {
+      var section = root.querySelector("section") || root;
+      var wrap = section.querySelector(".wrap") || section;
+      var cta = document.createElement("div");
+      cta.id = "fwf-results-cta";
+      cta.setAttribute("data-fwf-fx", "1");
+      cta.style.cssText = "margin:52px 0 8px;display:flex;gap:12px;flex-wrap:wrap;opacity:1;";
+      cta.innerHTML =
+        '<a href="' + CALENDLY + '" style="' + brandBtnCss(true) + '">' + esc(c.ctaPrimary) + "</a>" +
+        '<a href="' + SITE + '" style="' + brandBtnCss(false) + '">' + esc(c.ctaSecondary) + "</a>";
+      wrap.appendChild(cta);
+    }
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   // health-bar fills: reset each bar to 0, then sweep to its score, left→right
@@ -663,16 +740,30 @@
     if (root) obs.observe(root, { childList: true, subtree: true });
     schedule();
 
-    // Last-resort safety net: if anything primed never got revealed (e.g. an
-    // element that never quite reaches the IO threshold), force it visible so
-    // copy is NEVER permanently hidden on the live page.
+    // keep the rewritten results header in the right language on a DE/EN toggle
+    window.addEventListener("fwf-lang-change", function () {
+      if (resultsRevealed && document.querySelector("#root main .score-bar-track")) {
+        var existing = document.getElementById("fwf-results-cta");
+        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+        try { customizeResults(); } catch (e) {}
+      }
+    });
+
+    // Last-resort safety net: if anything primed never got revealed — whether
+    // it's stuck at opacity 0 OR stranded behind a clip-path mask — hard-show it
+    // so copy is NEVER permanently hidden on the live page.
     setInterval(function () {
-      if (REDUCE || !g) return;
+      if (REDUCE) return;
       document.querySelectorAll('[data-fwf-fx]').forEach(function (el) {
-        var op = parseFloat(getComputedStyle(el).opacity);
-        if (op < 0.02 && el.getBoundingClientRect().top < (window.innerHeight || 800)) {
+        var s = getComputedStyle(el);
+        var op = parseFloat(s.opacity);
+        var cp = s.clipPath || s.webkitClipPath || "";
+        var clipped = cp.indexOf("inset(") === 0 && /inset\(\s*([5-9]\d|\d{3})/.test(cp);
+        if ((op < 0.02 || clipped) && el.getBoundingClientRect().top < (window.innerHeight || 800) + 200) {
           if (io) io.unobserve(el);
-          revealEl(g, el, el.__fwfKind || "generic", 0);
+          el.style.opacity = "1";
+          el.style.clipPath = "none";
+          el.style.transform = "none";
         }
       });
     }, 1500);
