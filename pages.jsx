@@ -27,8 +27,8 @@ const ALL_PROJECTS = [
     colors: ["#c9a96e", "#0a0a0a"]
   },
   {
-    client: "Schmolke Carbon", title: "Racing Handlebar Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Performance ad creative for a premium carbon component brand.",
+    client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
+    desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
     colors: ["#9b30ff", "#0a0a0a"],
     video: "assets/videos/schmolke.mp4"
   },
@@ -65,11 +65,6 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#c9a96e"]
   },
   {
-    client: "Zenroots", title: "Event Film", tag: "Event", cat: "event",
-    desc: "Brand event film for a wellness retreat in the Black Forest.",
-    colors: ["#00ff88", "#0a0a0a"]
-  },
-  {
     client: "EasyFoil", title: "Product Video", tag: "Brand Film", cat: "image",
     desc: "Top-down product video for a hydrofoil brand.",
     colors: ["#9b30ff", "#ff6420"]
@@ -93,21 +88,16 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4"
   },
   {
-    client: "FWF Films", title: "fr_fr — Short Film", tag: "Short Film", cat: "music",
-    desc: "A visually intense short film shot through practical light and lens flare.",
-    colors: ["#ff6420", "#ff2d78"],
-    thumb: "assets/thumbs/fr_fr.jpg"
-  },
-  {
-    client: "Sakura", title: "Spring Reel", tag: "Social Media", cat: "social",
-    desc: "A dreamy outdoor reel framing cherry blossoms and flowing fashion — spring campaign.",
-    colors: ["#ff2d78", "#9b30ff"],
-  },
-  {
     client: "Studio Sessions", title: "Behind the Lens", tag: "BTS", cat: "social",
     desc: "Behind-the-scenes footage of a food & lifestyle commercial shoot.",
     colors: ["#ff6420", "#c9a96e"],
     thumb: "assets/thumbs/crew_bw.jpg", video: "assets/videos/inside_crew.mp4"
+  },
+  {
+    client: "Flow West Films", title: "Behind the Scenes", tag: "BTS", cat: "social",
+    desc: "Behind-the-scenes from a Flow West Films production — on location, in the air.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    video: "assets/videos/helikopter.mp4"
   },
   {
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
@@ -122,7 +112,7 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
   },
   {
-    client: "NYC Campaign", title: "Model Shot", tag: "Ad Creative", cat: "ad",
+    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad",
     desc: "Fashion-forward campaign shoot on location in New York City.",
     colors: ["#ffffff", "#0a0a0a"],
     thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
