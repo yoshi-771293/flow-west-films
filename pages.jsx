@@ -18,11 +18,6 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/rad_blu_xmas.jpg", video: "assets/videos/rad_blu_no_people.mp4"
   },
   {
-    client: "Radisson Blu", title: "Valentine's Reel", tag: "Social Media", cat: "social",
-    desc: "Romantic atmosphere film for a Valentine's Day campaign.",
-    colors: ["#ff2d78", "#0a0a0a"]
-  },
-  {
     client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Reel", cat: "social",
     desc: "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.",
     colors: ["#c9a96e", "#0a0a0a"],
@@ -66,8 +61,8 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#c9a96e"]
   },
   {
-    client: "EasyFoil", title: "Product Video", tag: "Brand Film", cat: "image",
-    desc: "Top-down product video for a hydrofoil brand.",
+    client: "EasyFoil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Top-down product ad for a hydrofoil brand — clean, kinetic, built for the feed.",
     colors: ["#9b30ff", "#ff6420"]
   },
   {
@@ -77,7 +72,7 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/cw_interview.png", video: "assets/videos/cw_interview.mp4"
   },
   {
-    client: "Stuttgart Bierfest", title: "Event Reel", tag: "Event", cat: "event",
+    client: "Stuttgart Bierfest", title: "Event Reel", tag: "Event", cat: "social",
     desc: "Warm, immersive event film capturing the craft and atmosphere of the festival floor.",
     colors: ["#c9a96e", "#ff6420"],
     thumb: "assets/thumbs/bierfest.jpg", video: "assets/videos/bierfest.mp4"
@@ -159,22 +154,28 @@ const ALL_PROJECTS = [
     video: "https://youtu.be/kik0tsFilnE"
   },
   {
-    client: "888MF", title: "Porsche Boxster Spyder", tag: "Automotive", cat: "film",
+    client: "888MF", title: "Porsche Boxster Spyder", tag: "YouTube", cat: "social",
     desc: "A Sapphire Blue Porsche Boxster Spyder, reviewed with Emma Walsh for the 888MF channel. Filmed by Mr Jay Modi & Flow West, edited by Flow West. 160,717 views and counting.",
     colors: ["#2d6cff", "#0a0a0a"],
     thumb: "assets/thumbs/yt_nQFXkBVEheA.jpg",
     video: "https://www.youtube.com/watch?v=-QFXkBVEheA"
   },
+  {
+    client: "Recom Film", title: "Porsche 911 GT3 RS", tag: "CGI", cat: "ad", feature: 3,
+    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_dndILlR3yJM.jpg",
+    video: "https://youtu.be/dndILlR3yJM"
+  },
 ];
 
 const FILTERS = [
   { id: "all", label: "All" },
-  { id: "ad", label: "Ad Creative" },
-  { id: "image", label: "Brand Film" },
+  { id: "ad", label: "Ads" },
+  { id: "image", label: "Brand Films" },
+  { id: "social", label: "Reels & Social" },
   { id: "film", label: "Film" },
-  { id: "social", label: "Social Media" },
-  { id: "event", label: "Event" },
-  { id: "music", label: "Music Video" },
+  { id: "music", label: "Music" },
 ];
 
 // ============================================
