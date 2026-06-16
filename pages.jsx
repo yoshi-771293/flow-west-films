@@ -82,10 +82,11 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Stuttgart Bierfest", title: "Event Reel", tag: "Event", cat: "social",
-    desc: "Warm, immersive event film capturing the craft and atmosphere of the festival floor.",
+    client: "Munich Bierfest", title: "Tavern Reel", tag: "Reel", cat: "social",
+    desc: "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.",
     colors: ["#c9a96e", "#ff6420"],
-    thumb: "assets/thumbs/bierfest.jpg", video: "assets/videos/bierfest.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/9ac156cd-7c36-4057-835c-e199f03c1ecd/thumbnail_c3856f2e.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/9ac156cd-7c36-4057-835c-e199f03c1ecd?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music",
