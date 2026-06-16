@@ -14,7 +14,8 @@ const ALL_PROJECTS = [
   {
     client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
     desc: "Seasonal cinematic reel for the Radisson Blu Stuttgart property.",
-    colors: ["#9b30ff", "#ff2d78"]
+    colors: ["#9b30ff", "#ff2d78"],
+    thumb: "assets/thumbs/rad_blu_xmas.jpg", video: "assets/videos/rad_blu_no_people.mp4"
   },
   {
     client: "Radisson Blu", title: "Valentine's Reel", tag: "Social Media", cat: "social",
@@ -102,13 +103,13 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
   },
   {
-    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad",
+    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
   },
   {
-    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad",
+    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "Fashion-forward campaign shoot on location in New York City.",
     colors: ["#ffffff", "#0a0a0a"],
     thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
@@ -120,21 +121,21 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
   },
   {
-    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
+    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image", feature: 3,
     desc: "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "assets/thumbs/yt_f79yQ3u5lZw.jpg",
     video: "https://www.youtube.com/watch?v=f79yQ3u5lZw"
   },
   {
-    client: "Eibl GmbH", title: "Testimonial — Käuferin", tag: "Testimonial", cat: "image",
+    client: "Eibl GmbH", title: "Testimonial — Käuferin", tag: "Testimonial", cat: "image", feature: 3,
     desc: "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.",
     colors: ["#9b30ff", "#0a0a0a"],
     thumb: "assets/thumbs/yt_voUpNHUcaC0.jpg",
     video: "https://www.youtube.com/watch?v=voUpNHUcaC0"
   },
   {
-    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image",
+    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", feature: 3,
     desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/yt_1dxrsMDjskM.jpg",
@@ -491,8 +492,14 @@ function SphereGallery({ items, onOpen, openKey }) {
     const ROW_H = 27;                     // angular cell height (incl. label strip)
     const COL_W = [1.12, 0.92, 1.06, 0.88, 1.0, 1.08, 0.9, 1.12, 0.92]; // ×40° — phantom's varied sizes
     const PHI_GAP = 3;
-    const stride = [7, 5, 3, 2, 1].find((s) => { // coprime with count → repeats spread apart
-      let a = s, b = items.length;
+
+    // Weighted fill: a project with `feature: n` claims n tiles on the wall instead
+    // of one, so flagship work (NYC, Thomas Sabo, testimonials) reads as more present.
+    // Coprime stride against the *pool* length keeps duplicates spread far apart.
+    const pool = [];
+    items.forEach((p, i) => { const w = Math.max(1, p.feature || 1); for (let k = 0; k < w; k++) pool.push(i); });
+    const stride = [7, 5, 3, 2, 1].find((s) => { // coprime with pool size → repeats spread apart
+      let a = s, b = pool.length;
       while (b) { const t = a % b; a = b; b = t; }
       return a === 1;
     });
@@ -505,7 +512,7 @@ function SphereGallery({ items, onOpen, openKey }) {
       let phiCursor = ri * 17 * D2R; // stagger row seams
       COL_W.forEach((w) => {
         const span = w * 40 * D2R;
-        const idx = (cell * stride) % items.length;
+        const idx = pool[(cell * stride) % pool.length];
         const p = items[idx], tex = projTex[idx];
         const geo = new THREE.SphereGeometry(
           R, 20, 14,
@@ -868,13 +875,42 @@ function ProjectsLabPage() {
   // click → the film starts playing immediately; the detail panel waits underneath
   const handleOpen = (p) => { setOpen(p); if (p.video) setActiveVideo(p.video); };
 
+  // first-load affordance: the sphere is draggable but not everyone knows that.
+  // Show a brand-voice cue until the first interaction (or a short timeout).
+  const [hintSeen, setHintSeen] = useStateP(false);
+  useEffectP(() => {
+    if (hintSeen) return;
+    const t = setTimeout(() => setHintSeen(true), 6500);
+    return () => clearTimeout(t);
+  }, [hintSeen]);
+
   if (desktop) {
     return (
       <main>
-        <section style={{ position: "relative", height: "100vh", minHeight: 560, overflow: "hidden", background: "#070708" }}>
+        <section onPointerDown={() => setHintSeen(true)} style={{ position: "relative", height: "100vh", minHeight: 560, overflow: "hidden", background: "#070708" }}>
+          <style>{"@keyframes fwfDragSlide{0%,100%{transform:translateX(-13px);opacity:.35}50%{transform:translateX(13px);opacity:1}}@keyframes fwfHintIn{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}"}</style>
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 55% at 50% 48%, rgba(155,48,255,0.13), transparent 70%)" }} />
           <SphereGallery key={"sphere:" + filter} items={visible} onOpen={handleOpen} openKey={openKey} />
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 75% 70% at 50% 50%, transparent 58%, rgba(5,5,6,0.72) 100%)" }} />
+
+          {/* first-load drag affordance — fades on first interaction */}
+          <div style={{
+            position: "absolute", left: "50%", top: "50%", zIndex: 6, pointerEvents: "none", textAlign: "center",
+            opacity: hintSeen ? 0 : 1, transform: "translate(-50%,-50%)",
+            transition: "opacity 0.55s ease", animation: hintSeen ? "none" : "fwfHintIn 0.7s ease both",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 20 }}>
+              <span style={{ fontSize: 20, color: "rgba(255,255,255,0.32)" }}>‹</span>
+              <span style={{ display: "inline-block", width: 48, height: 48, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.32)", position: "relative" }}>
+                <span style={{ position: "absolute", left: "50%", top: "50%", width: 8, height: 8, borderRadius: "50%", background: "#fff", marginLeft: -4, marginTop: -4, animation: "fwfDragSlide 1.8s ease-in-out infinite" }} />
+              </span>
+              <span style={{ fontSize: 20, color: "rgba(255,255,255,0.32)" }}>›</span>
+            </div>
+            <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), marginBottom: 10 }}>Interactive</div>
+            <div className="fwf-display" style={{ fontSize: 32, lineHeight: 1, color: "#fff" }}>
+              Grab it. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Give it a spin.</em>
+            </div>
+          </div>
 
           {/* top info strip (below the site nav) */}
           <div style={{ position: "absolute", top: 92, left: 0, right: 0, padding: "0 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", pointerEvents: "none", zIndex: 5 }}>
