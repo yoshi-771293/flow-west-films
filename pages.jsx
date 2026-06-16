@@ -177,6 +177,13 @@ const ALL_PROJECTS = [
     thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
+  {
+    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social",
+    desc: "Social media content produced for Tim Rabitz.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/649373ec-dede-43a1-86af-38639fdc2352/thumbnail_4e24d005.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/649373ec-dede-43a1-86af-38639fdc2352?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
 ];
 
 const FILTERS = [
