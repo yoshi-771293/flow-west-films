@@ -450,7 +450,8 @@ function VideoModal({ src, onClose }) {
     const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
              : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
              : new URL(src).searchParams.get("v");
-    embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+    // youtube-nocookie: privacy domain, far less likely to be hit by ad/privacy blockers
+    embedSrc = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
   }
 
   return (

@@ -7,7 +7,7 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   {
     client: "Radisson Blu", title: "Brand Reel", tag: "Social Media", cat: "social",
-    desc: "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.",
+    desc: "A cinematic nighttime reel for the Radisson Blu Stuttgart. Over 800,000 people reached — fully organic, zero ad spend.",
     colors: ["#ff2d78", "#0a0a0a"],
     thumb: "assets/thumbs/radisson_upwork.png", video: "assets/videos/radisson_upwork.mp4"
   },
@@ -151,12 +151,27 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/yt_1dxrsMDjskM.jpg",
     video: "https://youtu.be/1dxrsMDjskM"
   },
+  {
+    client: "Flow West Films", title: "Whiskey & Ice", tag: "Short Film", cat: "film", feature: 3,
+    desc: "A young son goes missing. In the conversation that follows, a couple's true feelings rise to the surface. A dark-drama short film — directed by Flow West, in collaboration with Westminster University.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_kik0tsFilnE.jpg",
+    video: "https://youtu.be/kik0tsFilnE"
+  },
+  {
+    client: "888MF", title: "Porsche Boxster Spyder", tag: "Automotive", cat: "film",
+    desc: "A Sapphire Blue Porsche Boxster Spyder, reviewed with Emma Walsh for the 888MF channel. Filmed by Mr Jay Modi & Flow West, edited by Flow West. 160,717 views and counting.",
+    colors: ["#2d6cff", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_nQFXkBVEheA.jpg",
+    video: "https://www.youtube.com/watch?v=-QFXkBVEheA"
+  },
 ];
 
 const FILTERS = [
   { id: "all", label: "All" },
   { id: "ad", label: "Ad Creative" },
   { id: "image", label: "Brand Film" },
+  { id: "film", label: "Film" },
   { id: "social", label: "Social Media" },
   { id: "event", label: "Event" },
   { id: "music", label: "Music Video" },
@@ -820,7 +835,8 @@ function ProjectTheater({ project, mobile, onClose }) {
     const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
              : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
              : new URL(src).searchParams.get("v");
-    embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+    // youtube-nocookie: privacy domain, far less likely to be hit by ad/privacy blockers
+    embedSrc = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
   } else if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];
     embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
@@ -888,6 +904,11 @@ function ProjectTheater({ project, mobile, onClose }) {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: "auto" }}>
             <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={onClose}>Book a similar project →</Link>
           </div>
+          {isEmbed && (
+            <a href={src} target="_blank" rel="noopener noreferrer" style={{ marginTop: 14, fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fwf-text-faint)", textDecoration: "none" }}>
+              Or watch on YouTube ↗
+            </a>
+          )}
         </aside>
       </div>
     </div>
