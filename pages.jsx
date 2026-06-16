@@ -6,10 +6,11 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 // ============================================
 const ALL_PROJECTS = [
   {
-    client: "Radisson Blu", title: "Brand Reel", tag: "Social Media", cat: "social",
-    desc: "A cinematic nighttime reel for the Radisson Blu Stuttgart. Over 800,000 people reached — fully organic, zero ad spend.",
+    client: "Radisson Blu", title: "Valentine's Campaign", tag: "Social Media", cat: "social",
+    desc: "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.",
     colors: ["#ff2d78", "#0a0a0a"],
-    thumb: "assets/thumbs/radisson_upwork.png", video: "assets/videos/radisson_upwork.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/58b5722f-c01a-49c3-b354-95f87ccfbbb5/thumbnail_1a214c59.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/58b5722f-c01a-49c3-b354-95f87ccfbbb5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
@@ -47,8 +48,8 @@ const ALL_PROJECTS = [
     client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
     desc: "Instagram reel for French Touch — the French breakfast and brunch spot where butter, flour and a little patience do the talking.",
     colors: ["#ff2d78", "#9b30ff"],
-    thumb: "assets/thumbs/yt_jX4LAqYKAm0.jpg",
-    video: "https://youtube.com/shorts/jX4LAqYKAm0"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/ca3fa44f-26d8-4bef-9303-496692d4c76c/thumbnail_0acb9f11.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/ca3fa44f-26d8-4bef-9303-496692d4c76c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Santa Lucia", title: "Restaurant Reel", tag: "Reel", cat: "social",
