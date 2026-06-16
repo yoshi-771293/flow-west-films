@@ -23,9 +23,11 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#0a0a0a"]
   },
   {
-    client: "Palazzo Stuttgart", title: "Event Film", tag: "Event", cat: "event",
-    desc: "Live event coverage for the Palazzo Stuttgart dinner show.",
-    colors: ["#c9a96e", "#0a0a0a"]
+    client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Reel", cat: "social",
+    desc: "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "assets/thumbs/yt_ugX9d16gHB4.jpg",
+    video: "https://youtube.com/shorts/ugX9d16gHB4"
   },
   {
     client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
@@ -40,10 +42,18 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
   },
   {
-    client: "Pane Vino", title: "Founder Story", tag: "Brand Film", cat: "image",
-    desc: "An intimate documentary portrait of the owner at the Santa Lucia wine bar.",
+    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social",
+    desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
     colors: ["#c9a96e", "#ff2d78"],
-    thumb: "assets/thumbs/pane_vino.jpg"
+    thumb: "assets/thumbs/yt_QbXwEcQXx0M.jpg",
+    video: "https://youtube.com/shorts/QbXwEcQXx0M"
+  },
+  {
+    client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
+    desc: "Instagram reel for French Touch — the French breakfast and brunch spot where butter, flour and a little patience do the talking.",
+    colors: ["#ff2d78", "#9b30ff"],
+    thumb: "assets/thumbs/yt_jX4LAqYKAm0.jpg",
+    video: "https://youtube.com/shorts/jX4LAqYKAm0"
   },
   {
     client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
@@ -806,8 +816,10 @@ function ProjectTheater({ project, mobile, onClose }) {
   const src = project.video;
   const isEmbed = !!src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
   let embedSrc = src;
-  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be"))) {
-    const id = src.includes("youtu.be") ? src.split("/").pop().split("?")[0] : new URL(src).searchParams.get("v");
+  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be") || src.includes("youtube.com/shorts"))) {
+    const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
+             : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
+             : new URL(src).searchParams.get("v");
     embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
   } else if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];

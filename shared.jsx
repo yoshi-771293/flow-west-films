@@ -446,8 +446,9 @@ function VideoModal({ src, onClose }) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];
     embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
   }
-  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be"))) {
-    const id = src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
+  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be") || src.includes("youtube.com/shorts"))) {
+    const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
+             : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
              : new URL(src).searchParams.get("v");
     embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
   }
