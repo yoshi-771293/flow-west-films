@@ -776,71 +776,107 @@ function CinematicGrid({ items, onOpen }) {
   );
 }
 
-// ---- shared detail panel (slides from right on desktop, up on mobile) ----
-function ProjectDetailPanel({ project, mobile, videoOpen, onClose, onPlay }) {
+// ---- project theater: the film autoplays with its info right beside it; a
+// single close returns to the sphere. Replaces the old panel-+-lightbox combo
+// where the video covered the info and closing took two steps. ----
+function ProjectTheater({ project, mobile, onClose }) {
   const ref = useRefP(null);
-  const axis = mobile ? "yPercent" : "xPercent";
   function close() {
     const gsap = window.gsap;
     if (gsap && ref.current) {
-      const o = { duration: 0.42, ease: "power3.in", onComplete: onClose };
-      o[axis] = 100;
-      gsap.to(ref.current, o);
+      gsap.to(ref.current, { opacity: 0, scale: 0.985, duration: 0.3, ease: "power3.in", onComplete: onClose });
+      setTimeout(onClose, 360); // guarantee unmount even if rAF stalls mid-tween (idempotent)
     } else onClose();
   }
   useEffectP(() => {
     const gsap = window.gsap;
     document.body.style.overflow = "hidden";
-    // when the film modal is on top, Esc should close only the modal
-    const esc = (e) => { if (e.key === "Escape" && !document.querySelector(".fwf-video-modal-backdrop")) close(); };
+    const esc = (e) => { if (e.key === "Escape") close(); };
     document.addEventListener("keydown", esc);
     if (gsap && ref.current) {
-      const from = {}; from[axis] = 100;
-      const to = { duration: 0.6, ease: "power4.out" }; to[axis] = 0;
-      gsap.fromTo(ref.current, from, to);
+      gsap.fromTo(ref.current, { opacity: 0, scale: 0.985 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" });
     }
     return () => {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", esc);
     };
   }, []);
-  // the film modal restores body scroll when it closes — re-assert the lock while the panel stays open
-  useEffectP(() => {
-    if (!videoOpen) document.body.style.overflow = "hidden";
-  }, [videoOpen]);
-  const panelStyle = mobile
-    ? { position: "fixed", left: 0, right: 0, bottom: 0, height: "90vh", borderTopLeftRadius: 18, borderTopRightRadius: 18 }
-    : { position: "fixed", top: 0, right: 0, bottom: 0, width: "min(540px, 94vw)" };
+
+  // video source → embed (YouTube / Vimeo) vs local mp4 (same logic as VideoModal)
+  const src = project.video;
+  const isEmbed = !!src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
+  let embedSrc = src;
+  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be"))) {
+    const id = src.includes("youtu.be") ? src.split("/").pop().split("?")[0] : new URL(src).searchParams.get("v");
+    embedSrc = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+  } else if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
+    const id = src.split("/").filter(Boolean).pop().split("?")[0];
+    embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
+  }
+
+  const media = !src ? (
+    <div style={{ width: "100%", height: "100%", minHeight: 220, background: "linear-gradient(135deg, " + fwfHexA(FWF_PURPLE, 0.35) + ", #0a0a0c)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+      Film coming soon
+    </div>
+  ) : isEmbed ? (
+    <iframe title={project.title} src={embedSrc} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen
+      style={{ width: "100%", height: "100%", border: "none", display: "block" }} />
+  ) : (
+    <video src={src} controls autoPlay playsInline
+      style={{ width: "100%", height: "100%", objectFit: "contain", background: "#000", display: "block" }} />
+  );
+
   return (
-    <div onClick={close} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(6,6,8,0.62)", backdropFilter: "blur(6px)" }}>
+    <div onClick={close} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(5,5,7,0.8)", backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", padding: mobile ? 0 : 28 }}>
       <div
         ref={ref}
         onClick={(e) => e.stopPropagation()}
         style={{
-          ...panelStyle,
-          background: "linear-gradient(180deg, #101013, #0a0a0c)",
-          borderLeft: mobile ? "none" : "1px solid " + fwfHexA(FWF_PURPLE, 0.4),
-          boxShadow: "0 0 80px -10px " + fwfHexA(FWF_PURPLE, 0.5),
-          padding: mobile ? "26px 24px 40px" : "44px 46px",
-          display: "flex", flexDirection: "column", overflowY: "auto",
+          position: "relative",
+          width: mobile ? "100%" : "min(1180px, 95vw)",
+          height: mobile ? "100%" : "min(80vh, 720px)",
+          display: "flex", flexDirection: mobile ? "column" : "row",
+          borderRadius: mobile ? 0 : 16, overflow: "hidden",
+          border: mobile ? "none" : "1px solid " + fwfHexA(FWF_PURPLE, 0.32),
+          boxShadow: mobile ? "none" : "0 30px 120px -20px " + fwfHexA(FWF_PURPLE, 0.5),
+          background: "#0a0a0c",
         }}
       >
-        {mobile && <div style={{ width: 44, height: 4, borderRadius: 4, background: "rgba(255,255,255,0.2)", margin: "0 auto 22px" }} />}
-        <button onClick={close} style={{ alignSelf: "flex-start", background: "none", border: "none", color: "var(--fwf-text-mute)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer", padding: 0, marginBottom: 30 }}>
-          ← Back to projects
+        {/* single close → straight back to the sphere */}
+        <button onClick={close} aria-label="Close" style={{
+          position: "absolute", top: 14, right: 16, zIndex: 6,
+          display: "inline-flex", alignItems: "center", gap: 7,
+          background: "rgba(10,10,12,0.7)", backdropFilter: "blur(8px)",
+          border: "1px solid var(--fwf-hairline)", borderRadius: 999,
+          color: "#fff", fontFamily: "var(--fwf-mono)", fontSize: 10.5, letterSpacing: "0.16em",
+          textTransform: "uppercase", padding: "8px 14px", cursor: "pointer",
+        }}>
+          <Icons.X size={11} /> Close
         </button>
-        <span style={{ alignSelf: "flex-start", fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "#ff8ec4", border: "1px solid " + fwfHexA(FWF_PINK, 0.5), borderRadius: 6, padding: "6px 11px", marginBottom: 22 }}>
-          {project.tag}
-        </span>
-        <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 10 }}>{project.client}</div>
-        <h2 className="fwf-display" style={{ fontSize: "clamp(38px, 6vw, 60px)", lineHeight: 1, margin: "0 0 22px 0" }}>{project.title}</h2>
-        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16.5, lineHeight: 1.6, margin: "0 0 36px 0", maxWidth: 460 }}>{project.desc}</p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: "auto" }}>
-          <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={onClose}>Book a similar project →</Link>
-          {project.video && (
-            <button className="fwf-btn fwf-btn-ghost" onClick={() => { onPlay(project.video); onClose(); }}>Watch the film →</button>
-          )}
+
+        {/* the film */}
+        <div style={{ flex: mobile ? "0 0 auto" : "1 1 auto", position: "relative", background: "#000", minHeight: mobile ? "44vh" : 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          {media}
         </div>
+
+        {/* the info, right beside it */}
+        <aside style={{
+          flex: mobile ? "1 1 auto" : "0 0 344px", width: mobile ? "auto" : 344,
+          background: "linear-gradient(180deg, #101013, #0a0a0c)",
+          borderLeft: mobile ? "none" : "1px solid var(--fwf-hairline)",
+          borderTop: mobile ? "1px solid var(--fwf-hairline)" : "none",
+          padding: mobile ? "26px 22px 34px" : "44px 36px", display: "flex", flexDirection: "column", overflowY: "auto",
+        }}>
+          <span style={{ alignSelf: "flex-start", fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "#ff8ec4", border: "1px solid " + fwfHexA(FWF_PINK, 0.5), borderRadius: 6, padding: "6px 11px", marginBottom: 22 }}>
+            {project.tag}
+          </span>
+          <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 10 }}>{project.client}</div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(30px, 3.4vw, 48px)", lineHeight: 1.02, margin: "0 0 18px 0" }}>{project.title}</h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 32px 0" }}>{project.desc}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: "auto" }}>
+            <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={onClose}>Book a similar project →</Link>
+          </div>
+        </aside>
       </div>
     </div>
   );
@@ -866,14 +902,13 @@ const fwfLabMono = (size, color) => ({
 
 function ProjectsLabPage() {
   const [filter, setFilter] = useStateP("all");
-  const [activeVideo, setActiveVideo] = useStateP(null);
   const [open, setOpen] = useStateP(null);
   const desktop = useDesktopGallery();
   const time = useBerlinTime();
   const visible = filter === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter((p) => p.cat === filter);
   const openKey = open ? open.client + "·" + open.title : null;
-  // click → the film starts playing immediately; the detail panel waits underneath
-  const handleOpen = (p) => { setOpen(p); if (p.video) setActiveVideo(p.video); };
+  // click → the theater opens: film autoplays with its info beside it, one close to exit
+  const handleOpen = (p) => setOpen(p);
 
   // first-load affordance: the sphere is draggable but not everyone knows that.
   // Show a brand-voice cue until the first interaction (or a short timeout).
@@ -957,8 +992,7 @@ function ProjectsLabPage() {
           </div>
         </section>
 
-        {open && <ProjectDetailPanel project={open} mobile={false} videoOpen={!!activeVideo} onClose={() => setOpen(null)} onPlay={(v) => setActiveVideo(v)} />}
-        {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+        {open && <ProjectTheater project={open} mobile={false} onClose={() => setOpen(null)} />}
       </main>
     );
   }
@@ -1009,8 +1043,7 @@ function ProjectsLabPage() {
         sub="Tell us about your brand. We'll tell you what we'd do."
       />
 
-      {open && <ProjectDetailPanel project={open} mobile videoOpen={!!activeVideo} onClose={() => setOpen(null)} onPlay={(v) => setActiveVideo(v)} />}
-      {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+      {open && <ProjectTheater project={open} mobile onClose={() => setOpen(null)} />}
     </main>
   );
 }
