@@ -61,9 +61,11 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#c9a96e"]
   },
   {
-    client: "EasyFoil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Top-down product ad for a hydrofoil brand — clean, kinetic, built for the feed.",
-    colors: ["#9b30ff", "#ff6420"]
+    client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.",
+    colors: ["#9b30ff", "#ff6420"],
+    thumb: "assets/thumbs/yt_uoNRUphhohw.jpg",
+    video: "https://youtube.com/shorts/uoNRUphhohw"
   },
   {
     client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image",
