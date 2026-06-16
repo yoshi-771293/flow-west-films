@@ -186,7 +186,7 @@ const ALL_PROJECTS = [
   },
   {
     client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social",
-    desc: "Behind-the-scenes reel for the Porsche 911 GT3 RS commercial — a side-by-side CGI compositing breakdown of the racetrack environment.",
+    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
