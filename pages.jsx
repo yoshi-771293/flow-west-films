@@ -21,8 +21,8 @@ const ALL_PROJECTS = [
     client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Reel", cat: "social",
     desc: "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.",
     colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_ugX9d16gHB4.jpg",
-    video: "https://youtube.com/shorts/ugX9d16gHB4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/1dfa2361-efe0-4067-ae8c-6ccd66ea320c/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/1dfa2361-efe0-4067-ae8c-6ccd66ea320c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
@@ -40,8 +40,8 @@ const ALL_PROJECTS = [
     client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social",
     desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
     colors: ["#c9a96e", "#ff2d78"],
-    thumb: "assets/thumbs/yt_QbXwEcQXx0M.jpg",
-    video: "https://youtube.com/shorts/QbXwEcQXx0M"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
@@ -49,6 +49,13 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#9b30ff"],
     thumb: "assets/thumbs/yt_jX4LAqYKAm0.jpg",
     video: "https://youtube.com/shorts/jX4LAqYKAm0"
+  },
+  {
+    client: "Santa Lucia", title: "Restaurant Reel", tag: "Reel", cat: "social",
+    desc: "Instagram reel for Santa Lucia — built to bring the room, the plates and the atmosphere to the feed.",
+    colors: ["#c9a96e", "#ff2d78"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/f8ed2a20-4ccb-4c66-8b60-84e314d177f6/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
@@ -71,7 +78,8 @@ const ALL_PROJECTS = [
     client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image",
     desc: "An intimate interview-led portrait for a luxury interior brand.",
     colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "assets/thumbs/cw_interview.png", video: "assets/videos/cw_interview.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/11efbd67-5d01-41da-829d-ea50d8d41e46/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Stuttgart Bierfest", title: "Event Reel", tag: "Event", cat: "social",
@@ -131,22 +139,29 @@ const ALL_PROJECTS = [
     client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image", feature: 3,
     desc: "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
     colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_f79yQ3u5lZw.jpg",
-    video: "https://www.youtube.com/watch?v=f79yQ3u5lZw"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/c686eb45-8b2d-4513-a8d5-8a0419ca9469/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/c686eb45-8b2d-4513-a8d5-8a0419ca9469?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Eibl GmbH", title: "Testimonial — Käuferin", tag: "Testimonial", cat: "image", feature: 3,
+    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
+    desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Eibl GmbH", title: "Testimonial — Chris", tag: "Testimonial", cat: "image", feature: 3,
     desc: "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.",
     colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_voUpNHUcaC0.jpg",
-    video: "https://www.youtube.com/watch?v=voUpNHUcaC0"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/cae8231c-893d-4a8c-910e-20c3c57b3384/thumbnail.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/cae8231c-893d-4a8c-910e-20c3c57b3384?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", feature: 3,
     desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_1dxrsMDjskM.jpg",
-    video: "https://youtu.be/1dxrsMDjskM"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/91b09a39-35a9-41b3-a181-6dcfbca79e73/thumbnail_73fb59f1.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/91b09a39-35a9-41b3-a181-6dcfbca79e73?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Flow West Films", title: "Whiskey & Ice", tag: "Short Film", cat: "film", feature: 3,
@@ -168,6 +183,13 @@ const ALL_PROJECTS = [
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/yt_dndILlR3yJM.jpg",
     video: "https://youtu.be/dndILlR3yJM"
+  },
+  {
+    client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social",
+    desc: "Behind-the-scenes reel for the Porsche 911 GT3 RS commercial — a side-by-side CGI compositing breakdown of the racetrack environment.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
+    video: "https://player.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
 ];
 
@@ -490,6 +512,7 @@ function SphereGallery({ items, onOpen, openKey }) {
       });
       if (p.thumb) {
         const img = new Image();
+        img.crossOrigin = "anonymous"; // hotlinked CDN thumbs (Bunny) need this to avoid tainting the canvas texture
         img.onload = () => {
           if (disposed) return;
           entry.img = img;
@@ -830,11 +853,12 @@ function ProjectTheater({ project, mobile, onClose }) {
     };
   }, []);
 
-  // video source → embed (YouTube / Vimeo) vs local mp4 (same logic as VideoModal)
+  // video source → embed (YouTube / Vimeo / Bunny Stream) vs local mp4 (same logic as VideoModal)
   const src = project.video;
-  const isEmbed = !!src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
+  const isYouTube = !!src && (src.includes("youtube.com") || src.includes("youtu.be"));
+  const isEmbed = !!src && (isYouTube || src.includes("vimeo.com") || src.includes("mediadelivery.net"));
   let embedSrc = src;
-  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be") || src.includes("youtube.com/shorts"))) {
+  if (isYouTube) {
     const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
              : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
              : new URL(src).searchParams.get("v");
@@ -844,13 +868,14 @@ function ProjectTheater({ project, mobile, onClose }) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];
     embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
   }
+  // Bunny Stream embed URLs are already complete (self-hosted, no transform needed)
 
   const media = !src ? (
     <div style={{ width: "100%", height: "100%", minHeight: 220, background: "linear-gradient(135deg, " + fwfHexA(FWF_PURPLE, 0.35) + ", #0a0a0c)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
       Film coming soon
     </div>
   ) : isEmbed ? (
-    <iframe title={project.title} src={embedSrc} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen
+    <iframe title={project.title} src={embedSrc} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen
       style={{ width: "100%", height: "100%", border: "none", display: "block" }} />
   ) : (
     <video src={src} controls autoPlay playsInline
@@ -907,7 +932,7 @@ function ProjectTheater({ project, mobile, onClose }) {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: "auto" }}>
             <Link to="contact" className="fwf-btn fwf-btn-primary" onClick={onClose}>Book a similar project →</Link>
           </div>
-          {isEmbed && (
+          {isYouTube && (
             <a href={src} target="_blank" rel="noopener noreferrer" style={{ marginTop: 14, fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fwf-text-faint)", textDecoration: "none" }}>
               Or watch on YouTube ↗
             </a>

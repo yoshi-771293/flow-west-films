@@ -438,8 +438,8 @@ function VideoModal({ src, onClose }) {
     };
   }, [onClose]);
 
-  // Detect embed URL (Vimeo / YouTube) vs local mp4
-  const isEmbed = src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
+  // Detect embed URL (Vimeo / YouTube / Bunny Stream) vs local mp4
+  const isEmbed = src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be") || src.includes("mediadelivery.net"));
   // Normalise Vimeo share URLs → player embed URL
   let embedSrc = src;
   if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
@@ -453,6 +453,7 @@ function VideoModal({ src, onClose }) {
     // youtube-nocookie: privacy domain, far less likely to be hit by ad/privacy blockers
     embedSrc = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
   }
+  // Bunny Stream embed URLs are already complete (self-hosted, no transform needed)
 
   return (
     <div className="fwf-video-modal-backdrop" onClick={onClose}>
@@ -465,7 +466,7 @@ function VideoModal({ src, onClose }) {
             className="fwf-video-modal-video"
             src={embedSrc}
             style={{ aspectRatio: "16/9", border: "none" }}
-            allow="autoplay; fullscreen; picture-in-picture"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
             allowFullScreen
           />
         ) : (
