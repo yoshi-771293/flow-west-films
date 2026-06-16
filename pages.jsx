@@ -171,13 +171,6 @@ const ALL_PROJECTS = [
     video: "https://youtu.be/kik0tsFilnE"
   },
   {
-    client: "888MF", title: "Porsche Boxster Spyder", tag: "YouTube", cat: "social",
-    desc: "A Sapphire Blue Porsche Boxster Spyder, reviewed with Emma Walsh for the 888MF channel. Filmed by Mr Jay Modi & Flow West, edited by Flow West. 160,717 views and counting.",
-    colors: ["#2d6cff", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_nQFXkBVEheA.jpg",
-    video: "https://www.youtube.com/watch?v=-QFXkBVEheA"
-  },
-  {
     client: "Recom Film", title: "Porsche 911 GT3 RS", tag: "CGI", cat: "ad", feature: 3,
     desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack.",
     colors: ["#00ff88", "#0a0a0a"],
