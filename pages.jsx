@@ -33,16 +33,6 @@ const ALL_PROJECTS = [
     video: "assets/videos/schmolke.mp4"
   },
   {
-    client: "App Liqes", title: "Brand Film", tag: "Brand Film", cat: "image",
-    desc: "A 60-second narrative brand film for a B2B SaaS launch.",
-    colors: ["#00ff88", "#0a0a0a"]
-  },
-  {
-    client: "App Liqes", title: "30-Second Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Short-form ad creative for performance campaigns.",
-    colors: ["#00ff88", "#9b30ff"]
-  },
-  {
     client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
     desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
     colors: ["#ff6420", "#c9a96e"],
@@ -97,7 +87,7 @@ const ALL_PROJECTS = [
     client: "Flow West Films", title: "Behind the Scenes", tag: "BTS", cat: "social",
     desc: "Behind-the-scenes from a Flow West Films production — on location, in the air.",
     colors: ["#9b30ff", "#0a0a0a"],
-    video: "assets/videos/helikopter.mp4"
+    thumb: "assets/thumbs/helikopter.jpg", video: "assets/videos/helikopter.mp4"
   },
   {
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
@@ -144,9 +134,9 @@ const ALL_PROJECTS = [
     video: "https://www.youtube.com/watch?v=voUpNHUcaC0"
   },
   {
-    client: "Café Bar Relax", title: "Social Testimonial", tag: "Testimonial", cat: "social",
-    desc: "Customer testimonial showcasing Café Bar Relax's digital presence — shot on location in Ludwigsburg.",
-    colors: ["#ff2d78", "#0a0a0a"],
+    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image",
+    desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
+    colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/yt_1dxrsMDjskM.jpg",
     video: "https://youtu.be/1dxrsMDjskM"
   },
