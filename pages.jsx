@@ -106,6 +106,12 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
   },
   {
+    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Animated brand ad for List for Less — no upfront cost, built for social performance.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
+  },
+  {
     client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad",
     desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
     colors: ["#c9a96e", "#0a0a0a"],
