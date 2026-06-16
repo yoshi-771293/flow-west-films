@@ -171,13 +171,6 @@ const ALL_PROJECTS = [
     video: "https://youtu.be/kik0tsFilnE"
   },
   {
-    client: "Recom Film", title: "Porsche 911 GT3 RS", tag: "CGI", cat: "ad", feature: 3,
-    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_dndILlR3yJM.jpg",
-    video: "https://youtu.be/dndILlR3yJM"
-  },
-  {
     client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social",
     desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.",
     colors: ["#00ff88", "#0a0a0a"],
