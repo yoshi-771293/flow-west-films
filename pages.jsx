@@ -39,6 +39,13 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/bb89e0c9-dba0-4457-b023-0f88a7309a86?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
+    client: "Easy Foil", title: "Easy Drive Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Ad creative for Easy Foil's Easy Drive — showcasing the product in action for European market audiences.",
+    colors: ["#9b30ff", "#ff6420"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/4a5a0bae-1c09-488e-9cd9-2b4ac461067e/thumbnail_c87ec7c6.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/4a5a0bae-1c09-488e-9cd9-2b4ac461067e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
     colors: ["#00ff88", "#0a0a0a"],
