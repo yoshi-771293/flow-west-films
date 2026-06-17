@@ -5,6 +5,68 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 // All projects data (with real video/thumb where available)
 // ============================================
 const ALL_PROJECTS = [
+  // === ADS FIRST ===
+  {
+    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad", feature: 3,
+    desc: "Fashion-forward campaign shoot on location in New York City.",
+    colors: ["#ffffff", "#0a0a0a"],
+    thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
+  },
+  {
+    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
+    desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
+  },
+  {
+    client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
+    colors: ["#ff6420", "#c9a96e"],
+    thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
+  },
+  {
+    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
+    desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.",
+    colors: ["#9b30ff", "#ff6420"],
+    thumb: "assets/thumbs/yt_uoNRUphhohw.jpg",
+    video: "https://youtube.com/shorts/uoNRUphhohw"
+  },
+  {
+    client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
+  },
+  {
+    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Animated brand ad for List for Less — no upfront cost, built for social performance.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
+  },
+  {
+    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad",
+    desc: "Performance hook ad with on-screen copy — built for German-language social feeds.",
+    colors: ["#ff6420", "#0a0a0a"],
+    thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
+  },
+  {
+    client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
+    desc: "Coming soon — macro product film for a skeleton watch reveal.",
+    colors: ["#00ff88", "#0a0a0a"]
+  },
+  {
+    client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
+    desc: "Coming soon — luxury product reel for a Swarovski jewellery line.",
+    colors: ["#ff2d78", "#c9a96e"]
+  },
+  // === SOCIAL / REELS ===
   {
     client: "Radisson Blu", title: "Valentine's Campaign", tag: "Social Media", cat: "social",
     desc: "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.",
@@ -16,7 +78,8 @@ const ALL_PROJECTS = [
     client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
     desc: "Seasonal cinematic reel for the Radisson Blu Stuttgart property.",
     colors: ["#9b30ff", "#ff2d78"],
-    thumb: "assets/thumbs/rad_blu_xmas.jpg", video: "assets/videos/rad_blu_no_people.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/c518444d-58e6-458e-a0a1-d7b880f8848d/thumbnail_96c432b4.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/c518444d-58e6-458e-a0a1-d7b880f8848d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Reel", cat: "social",
@@ -24,25 +87,6 @@ const ALL_PROJECTS = [
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/1dfa2361-efe0-4067-ae8c-6ccd66ea320c/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/1dfa2361-efe0-4067-ae8c-6ccd66ea320c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
-    desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    video: "assets/videos/schmolke.mp4"
-  },
-  {
-    client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
-    colors: ["#ff6420", "#c9a96e"],
-    thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
-  },
-  {
-    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social",
-    desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
-    colors: ["#c9a96e", "#ff2d78"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
@@ -59,30 +103,6 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
-    desc: "Macro product film for a skeleton watch reveal.",
-    colors: ["#00ff88", "#0a0a0a"]
-  },
-  {
-    client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
-    desc: "Luxury product reel for a Swarovski jewellery line.",
-    colors: ["#ff2d78", "#c9a96e"]
-  },
-  {
-    client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.",
-    colors: ["#9b30ff", "#ff6420"],
-    thumb: "assets/thumbs/yt_uoNRUphhohw.jpg",
-    video: "https://youtube.com/shorts/uoNRUphhohw"
-  },
-  {
-    client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image",
-    desc: "An intimate interview-led portrait for a luxury interior brand.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/11efbd67-5d01-41da-829d-ea50d8d41e46/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
     client: "Munich Bierfest", title: "Tavern Reel", tag: "Reel", cat: "social",
     desc: "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.",
     colors: ["#c9a96e", "#ff6420"],
@@ -90,10 +110,32 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/9ac156cd-7c36-4057-835c-e199f03c1ecd?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music",
-    desc: "Directed music video for aonenine & DTOXiD. Shot on location in the UK.",
-    colors: ["#9b30ff", "#ff2d78"],
-    thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4"
+    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social",
+    desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
+    colors: ["#c9a96e", "#ff2d78"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social",
+    desc: "Social media content produced for Tim Rabitz.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/649373ec-dede-43a1-86af-38639fdc2352/thumbnail_4e24d005.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/649373ec-dede-43a1-86af-38639fdc2352?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
+    desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
+    colors: ["#9b30ff", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_3738bf97.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/690975ad-3773-4966-8a30-92d3e4d4eae5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social",
+    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Studio Sessions", title: "Behind the Lens", tag: "BTS", cat: "social",
@@ -107,56 +149,27 @@ const ALL_PROJECTS = [
     colors: ["#9b30ff", "#0a0a0a"],
     thumb: "assets/thumbs/helikopter.jpg", video: "assets/videos/helikopter.mp4"
   },
+  // === BRAND FILMS / TESTIMONIALS ===
   {
-    client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
-  },
-  {
-    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Animated brand ad for List for Less — no upfront cost, built for social performance.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
-  },
-  {
-    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
-  },
-  {
-    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Fashion-forward campaign shoot on location in New York City.",
-    colors: ["#ffffff", "#0a0a0a"],
-    thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
-  },
-  {
-    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Performance hook ad with on-screen copy — built for German-language social feeds.",
-    colors: ["#ff6420", "#0a0a0a"],
-    thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
-  },
-  {
-    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image", feature: 3,
+    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
     desc: "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c686eb45-8b2d-4513-a8d5-8a0419ca9469/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/c686eb45-8b2d-4513-a8d5-8a0419ca9469?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Eibl GmbH", title: "Testimonial — Chris", tag: "Testimonial", cat: "image", feature: 3,
+    client: "Eibl GmbH", title: "Testimonial — Chris", tag: "Testimonial", cat: "image",
     desc: "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.",
     colors: ["#9b30ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/cae8231c-893d-4a8c-910e-20c3c57b3384/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/cae8231c-893d-4a8c-910e-20c3c57b3384?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image",
+    desc: "An intimate interview-led portrait for a luxury interior brand.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/11efbd67-5d01-41da-829d-ea50d8d41e46/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", feature: 3,
@@ -165,26 +178,12 @@ const ALL_PROJECTS = [
     thumb: "https://vz-fd89cb27-622.b-cdn.net/91b09a39-35a9-41b3-a181-6dcfbca79e73/thumbnail_73fb59f1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/91b09a39-35a9-41b3-a181-6dcfbca79e73?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
+  // === MUSIC ===
   {
-    client: "Flow West Films", title: "Whiskey & Ice", tag: "Short Film", cat: "film", feature: 3,
-    desc: "A young son goes missing. In the conversation that follows, a couple's true feelings rise to the surface. A dark-drama short film — directed by Flow West, in collaboration with Westminster University.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "assets/thumbs/yt_kik0tsFilnE.jpg",
-    video: "https://youtu.be/kik0tsFilnE"
-  },
-  {
-    client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social",
-    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social",
-    desc: "Social media content produced for Tim Rabitz.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/649373ec-dede-43a1-86af-38639fdc2352/thumbnail_4e24d005.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/649373ec-dede-43a1-86af-38639fdc2352?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music",
+    desc: "Directed music video for aonenine & DTOXiD. Shot on location in the UK.",
+    colors: ["#9b30ff", "#ff2d78"],
+    thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4"
   },
 ];
 
@@ -1034,7 +1033,7 @@ function ProjectsLabPage() {
               Available · Q3 2026
             </div>
             <div style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330 }}>
-              Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included.
+              Ad Creative · Brand Films · AI Content
             </div>
             <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), textAlign: "right" }}>
               <span style={{ color: "rgba(255,255,255,0.85)" }}>● Stuttgart, DE</span>&nbsp;&nbsp;{time}

@@ -348,8 +348,11 @@ function HomePage() {
                 React.createElement("span", { className: "fwf-section-label-line" }),
                 React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
               ),
-              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0 } },
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 16px 0" } },
                 "Recent ", React.createElement("em", { className: "fwf-display-italic" }, "productions.")
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
+                "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
               )
             ),
             React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
@@ -367,11 +370,12 @@ function HomePage() {
               featured: true
             }),
             React.createElement(ProjectThumb, {
-              client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video",
-              desc: "Directed music video for aonenine & DTOXiD. Shot on location in the UK.",
-              colors: ["#9b30ff", "#0a0a0a"],
-              thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4",
-              onPlay: function() { setActiveVideo("assets/videos/shops_mv.mp4"); }
+              client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative",
+              desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
+              colors: ["#c9a96e", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             }),
             React.createElement(ProjectThumb, {
               client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative",
