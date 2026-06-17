@@ -7,7 +7,7 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "Fashion Blog", title: "NYC Shoot", tag: "Ad Creative", cat: "ad", feature: 3,
+    client: "Fashion Blog", title: "Brand Ad", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "Fashion-forward campaign shoot on location in New York City.",
     colors: ["#ffffff", "#0a0a0a"],
     thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
@@ -42,7 +42,8 @@ const ALL_PROJECTS = [
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/gloria_ad.jpg", video: "assets/videos/gloria_ad.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/ba8cc671-93fd-44ae-8e80-c72cb647d2c8/thumbnail_4088abe6.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/ba8cc671-93fd-44ae-8e80-c72cb647d2c8?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
@@ -127,7 +128,7 @@ const ALL_PROJECTS = [
     client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
     desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
     colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_3738bf97.jpg",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_9cc39d43.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/690975ad-3773-4966-8a30-92d3e4d4eae5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
