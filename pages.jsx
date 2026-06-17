@@ -35,8 +35,8 @@ const ALL_PROJECTS = [
     client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
     desc: "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.",
     colors: ["#9b30ff", "#ff6420"],
-    thumb: "assets/thumbs/yt_uoNRUphhohw.jpg",
-    video: "https://youtube.com/shorts/uoNRUphhohw"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/bb89e0c9-dba0-4457-b023-0f88a7309a86/thumbnail_03a191ed.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/bb89e0c9-dba0-4457-b023-0f88a7309a86?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
