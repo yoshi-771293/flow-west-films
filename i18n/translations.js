@@ -180,7 +180,10 @@ window.FWF_TRANSLATIONS = {
     "Portfolio · 50+ projects · 2018 — present":
       "Portfolio · 50+ Projekte · 2018 — heute",
     "Selected": "Ausgewählte",
-    "work.": "Arbeiten.",
+    "work.": "Arbeit.",
+    "Step inside the ": "Tauchen Sie ein in unsere ",
+    "Films, reels, ads, and brand productions — tap a project to dive in.":
+      "Filme, Reels, Ads und Brand-Filme: Projekt anklicken und mehr entdecken.",
     "Films, reels, ads, and brand productions delivered for B2B brands across hospitality, sports, and consumer goods.":
       "Filme, Reels, Ads und Brand-Produktionen für B2B-Marken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
@@ -225,6 +228,52 @@ window.FWF_TRANSLATIONS = {
       "Behind-the-Scenes-Material eines Food- & Lifestyle-Commercial-Drehs.",
     "Performance ad creative with on-screen subtitles, built for social feed placement.":
       "Performance Ad Creative mit On-Screen-Untertiteln, gebaut fürs Social-Feed-Placement.",
+
+    /* current project descriptions */
+    "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.":
+      "Valentinstags-Kampagne für das Radisson Blu Stuttgart — Kerzenambiente, Skyline-Blick und über 800.000 organische Impressionen. Ohne Werbebudget. Nur eine Stimmung, die sich selbst verkauft hat.",
+    "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.":
+      "Instagram-Reel für Palazzo — fünf Gänge mitten im Zirkus. Spektakel für Erwachsene, eine ausgezeichnete Bar und ein Dinner, das selbst die Show ist.",
+    "Instagram reel for French Touch — the French breakfast and brunch spot where butter, flour and a little patience do the talking.":
+      "Instagram-Reel für French Touch — das French Breakfast & Brunch Café, wo Butter, Mehl und ein bisschen Geduld für sich sprechen.",
+    "Instagram reel for Santa Lucia — built to bring the room, the plates and the atmosphere to the feed.":
+      "Instagram-Reel für Santa Lucia — gebaut, um den Raum, die Teller und die Atmosphäre in den Feed zu bringen.",
+    "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.":
+      "Ein lebendiges Instagram-Reel vom Münchner Bierfest — klirrende Maßkrüge, schaukelnde Tische und der warme, goldene Rausch einer voll besetzten bayerischen Wirtschaft.",
+    "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.":
+      "Instagram-Reel für Pane e Vino — ein Gründer-Interview, das erklärt, was ihre italienische Küche so besonders macht.",
+    "Social media content produced for Tim Rabitz.":
+      "Social-Media-Content für Tim Rabitz.",
+    "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.":
+      "Behind the Scenes einer Schmolke-Carbon-Produktion — im Studio, auf der Suche nach dem perfekten Frame.",
+    "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.":
+      "Porsche 911 GT3 RS Commercial — On-Set-Produktion und CGI durch Recom Film, Schnitt durch Flow West Films. Mit vollständigem CGI-Breakdown von Rennstrecke und Fahrzeug.",
+    "Behind-the-scenes from a Flow West Films production — on location, in the air.":
+      "Behind the Scenes einer Flow West Films Produktion — on Location, in der Luft.",
+    "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.":
+      "Kunden-Testimonial mit Elif D. für Eibl GmbH — eine Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
+    "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.":
+      "Kunden-Testimonial für Eibl GmbH — Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
+    "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.":
+      "Imagefilm für App Liqes — digitale Präsenz, die überzeugt, mit einem Kundentestimonial von Café Bar Relax. On Location in Ludwigsburg.",
+    "Fashion-forward campaign shoot on location in New York City.":
+      "Fashion-Kampagne auf Location in New York City.",
+    "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.":
+      "Cinematischer Spec-Ad — dunkel, temporeich, gebaut für die Markenwelt von Thomas Sabo.",
+    "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.":
+      "Social Ad Creative für Eibl GmbH — eine Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
+    "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.":
+      "Social Ad Creative für Easy Foil — entwickelt, um das europäische Partnernetzwerk zu zeigen und Demo-Buchungen zu generieren.",
+    "Ad creative for Easy Foil's Easy Drive — showcasing the product in action for European market audiences.":
+      "Ad Creative für Easy Foils Easy Drive — das Produkt im Einsatz für den europäischen Markt.",
+    "Performance hook ad with on-screen copy — built for German-language social feeds.":
+      "Performance-Hook-Ad mit On-Screen-Text — gebaut für deutschsprachige Social Feeds.",
+    "Animated brand ad for List for Less — no upfront cost, built for social performance.":
+      "Animierter Brand-Ad für List for Less — ohne Vorabkosten, gebaut für Social Performance.",
+    "Coming soon — macro product film for a skeleton watch reveal.":
+      "Demnächst — Macro-Produktfilm für das Reveal einer Skeleton-Uhr.",
+    "Coming soon — luxury product reel for a Swarovski jewellery line.":
+      "Demnächst — Luxuriöses Produkt-Reel für eine Swarovski-Schmucklinie.",
 
     /* ---- Pricing page ------------------------------------------------- */
     "No hidden fees · no lock-ins":
