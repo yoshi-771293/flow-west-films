@@ -246,18 +246,18 @@ window.FWF_TRANSLATIONS = {
       "Ja — wir arbeiten remote mit B2B-Marken in ganz Europa und darüber hinaus. Reisekosten für die Produktion werden bei Bedarf ins Angebot aufgenommen.",
     "How long does a project take?": "Wie lange dauert ein Projekt?",
     "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works.":
-      "Ein Launch Film dauert in der Regel 1–2 Wochen vom Kickoff bis zur Auslieferung. Der Growth Retainer läuft fortlaufend mit mindestens 4–6 Monaten, damit wir wirklich lernen, was funktioniert.",
+      "Ein Launchfilm dauert in der Regel 1-2 Wochen – vom Kick-off bis zur finalen Auslieferung. Der Growth Retainer ist auf eine Laufzeit von mindestens 4-6 Monaten ausgelegt, damit wir belastbare Erkenntnisse darüber gewinnen, was wirklich funktioniert.",
     "Why no prices on the website?":
       "Warum stehen keine Preise auf der Website?",
     "Every project is different. We price based on your goals, scope, and timeline — not a menu. That's how we keep quality up and clients honest about what they actually need.":
-      "Jedes Projekt ist anders. Wir kalkulieren auf Basis Ihrer Ziele, des Umfangs und des Timings — nicht nach Preisliste. So halten wir die Qualität hoch und bleiben ehrlich darüber, was wirklich gebraucht wird.",
+      "Jedes Projekt ist individuell. Wir kalkulieren auf Basis Ihrer Ziele, des Umfangs und des Timings — nicht nach Preisliste. So halten wir die Qualität hoch und bleiben transparent darüber, was wirklich gebraucht wird.",
     "Can I start with just one project?":
       "Kann ich mit nur einem Projekt starten?",
     "Absolutely. The Creative Sprint is designed for exactly that — pure creative volume for brands that run their own paid. Most retainer clients start with a sprint, see the results, and continue from there.":
-      "Absolut. Der Creative Sprint ist genau dafür gemacht — reines kreatives Volumen für Marken, die ihr Paid selbst steuern. Die meisten Retainer-Kunden starten mit einem Sprint, sehen die Ergebnisse und machen von dort weiter.",
+      "Absolut. Der Creative Sprint ist genau dafür gemacht — reines kreatives Volumen für Marken, die ihr Paid Social selbst steuern. Die meisten Retainer-Kunden starten mit einem Sprint, sehen erste Ergebnisse und bauen darauf auf.",
     "Who's on the team?": "Wer ist im Team?",
     "Florian Kotulla leads creative and strategy. We bring in a vetted bench of DPs, editors, motion designers, and media buyers depending on the project scope.":
-      "Florian Kotulla verantwortet Kreation und Strategie. Je nach Projektumfang holen wir ein geprüftes Netzwerk aus DPs, Editoren, Motion Designern und Media Buyern dazu.",
+      "Florian Kotulla verantwortet Kreation und Strategie. Abhängig vom Projektumfang ergänzen wir das Team gezielt durch unser geprüftes Netzwerk aus DPs, Editoren, Motion Designern und Media Buyern dazu.",
 
     /* ---- About page --------------------------------------------------- */
     "About · Studio philosophy": "Über uns · Studio-Philosophie",
@@ -291,9 +291,9 @@ window.FWF_TRANSLATIONS = {
 
     /* ---- Pricing: audit bridge ---------------------------------------- */
     "Not sure which offer fits?": "Nicht sicher, welches Angebot passt?",
-    "Take the free 7-minute brand audit first.": "Zuerst den kostenlosen 7-Minuten Brand-Audit machen.",
+    "Take the free 7-minute brand audit first.": "Starten Sie mit dem kostenlosen 7-Minuten Brand-Audit.",
     "Get a clear picture of where your content stands before you invest.":
-      "Holen Sie sich ein klares Bild, bevor Sie investieren.",
+      "Verschaffen Sie sich ein klares Bild, bevor Sie investieren.",
     "Take the free audit →": "Kostenloser Audit →",
 
     /* ---- Contact page ------------------------------------------------- */
