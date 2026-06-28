@@ -100,7 +100,7 @@ const OFFERS = [
     badgeColor: "pink",
     highlight: true,
     accent: "pink",
-    tagline: "Creative and paid, run as one system.",
+    tagline: "Creative and Paid Social, run as one system.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",
       "3 ad concepts/month with 2–4 finished creatives per concept",
@@ -119,7 +119,7 @@ const OFFERS = [
     tagline: "Founder-led. Bespoke. Whatever moves the brand.",
     bullets: [
       "Concept creation + creative direction across all channels",
-      "Full performance marketing — creative and paid as one system",
+      "Full performance marketing — creative and Paid Social as one system",
       "Founder-led strategy and hands-on execution",
       "Website builds, AI workflows, and custom systems",
       "Bespoke scope, priced to the relationship — not a fixed package",
@@ -307,11 +307,11 @@ function HomePage() {
               )
             )
           ),
-          React.createElement("div", { style: { marginTop: 48, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" } },
-            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: 0, maxWidth: 480, lineHeight: 1.55 } },
+          React.createElement("div", { style: { marginTop: 48, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 32 } },
+            React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
               "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
             ),
-            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost fwf-btn-sm" }, "Get your free audit →")
+            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
           )
         )
       ),

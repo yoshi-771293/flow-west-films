@@ -31,13 +31,13 @@ window.FWF_TRANSLATIONS = {
     "Free Audit →": "Gratis Audit →",
     "Get your free audit →": "Kostenloser Audit →",
     "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are.":
-      "Nicht sicher, wo anfangen? Unser kostenloser 7-Minuten-Audit zeigt Ihnen genau, wo Ihre Lücken sind.",
+      "Nicht sicher, wo Sie anfangen sollen? Unser kostenloser 7-Minuten-Audit zeigt Ihnen genau, wo Potential besteht.",
     "Not ready yet?": "Noch nicht so weit?",
     "Start with a free brand audit →": "Jetzt Audit starten →",
 
     /* ---- Footer ------------------------------------------------------- */
     "Premium ad creative & cinematic film production for B2B brands.":
-      "Premium Ad Creative & cinematische Filmproduktion für B2B-Marken.",
+      "Premium Ad Creative & Cinematic Film Produktion für B2B-Marken.",
     "Navigate": "Navigation",
     "Follow": "Folgen",
     "Stuttgart, Germany": "Stuttgart, Deutschland",
@@ -47,7 +47,7 @@ window.FWF_TRANSLATIONS = {
     /* ---- Final CTA (shared) ------------------------------------------ */
     "→ Let's talk": "→ Let's talk",
     "Ready to scale with": "Bereit, zu skalieren mit",
-    "premium creative?": "Premium Creative?",
+    "premium creative?": "Premium Creatives?",
     "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team.":
       "Flow West Films vereint cinematische Produktion, Ad Creative und Performance-Denken in einem externen Premium-Team.",
     "Seen enough?": "Genug gesehen?",
@@ -60,16 +60,16 @@ window.FWF_TRANSLATIONS = {
       "Finden wir es gemeinsam heraus. 30 Minuten, kein Druck.",
 
     /* ---- Trust marquee ------------------------------------------------ */
-    "— Trusted by —": "— Vertraut von —",
+    "— Trusted by —": "— Kunden, die uns vertrauen —",
 
     /* ---- Home: hero --------------------------------------------------- */
     "Studio · Stuttgart · Now booking Q3 2026":
       "Studio · Stuttgart · Buchbar ab Q3 2026",
-    "We make brands": "Wir machen Marken",
-    "impossible to": "unmöglich zu",
+    "We make brands": "Wir machen es unmöglich,",
+    "impossible to": "Marken zu",
     "ignore.": "ignorieren.",
     "Premium ad creative & cinematic film production for B2B brands that want to scale.":
-      "Premium Ad Creative & cinematische Filmproduktion für B2B-Marken, die skalieren wollen.",
+      "Premium Ad Creative & Cinematic Film Produktion für B2B-Marken, die skalieren wollen.",
     "4K Production": "4K-Produktion",
     "Strategy First": "Strategie zuerst",
     "Performance Focused": "Performance-fokussiert",
@@ -79,7 +79,7 @@ window.FWF_TRANSLATIONS = {
     "Most agencies deliver content.": "Die meisten Agenturen liefern Content.",
     "We deliver": "Wir liefern",
     "Flow West Films combines cinematic production, performance-driven ad creative, and strategic thinking — into one external premium team.":
-      "Flow West Films vereint cinematische Produktion, performance-getriebenes Ad Creative und strategisches Denken — in einem externen Premium-Team.",
+      "Flow West Films vereint cinematische Film Produktion, performance-getriebene Ad Creatives und strategisches Denken — in einem externen Premium-Team.",
     "Projects delivered": "Projekte realisiert",
     "Brand focus": "Marken-Fokus",
     "Stuttgart & remote": "Stuttgart & Remote",
@@ -90,12 +90,14 @@ window.FWF_TRANSLATIONS = {
     "Choose your": "Wählen Sie Ihre",
     "altitude.": "Flughöhe.",
     "Four offers — from a one-time anchor film to a founder-led bespoke partnership. Pricing is discussed on your call.":
-      "Vier Angebote — vom einmaligen Hero-Asset bis zur maßgeschneiderten Partnerschaft unter Founder-Leitung. Die Preise besprechen wir in Ihrem Gespräch.",
+      "Vier Angebote — vom einmaligen Hero-Asset bis zur maßgeschneiderten Partnerschaft unter Founder-Leitung. Die Preise besprechen wir im persönlichen Gespräch.",
 
     /* ---- Home: featured work ----------------------------------------- */
     "Featured work": "Ausgewählte Arbeiten",
     "Recent": "Aktuelle",
     "productions.": "Produktionen.",
+    "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
+      "Flow West Films ist ein cinematisches Kreativstudio, das Ad Creatives und Content für B2B-Marken entwickelt, die skalieren wollen. Konzeption, Kreation, Performance Marketing und Analytics — alles inklusive.",
 
     /* ---- Home: why FWF ------------------------------------------------ */
     "Why FWF": "Warum FWF",
@@ -112,7 +114,7 @@ window.FWF_TRANSLATIONS = {
       "Schnelle Umsetzung ohne Qualitätsverlust.",
     "Performance Focus": "Performance-Fokus",
     "Every frame built to drive action.":
-      "Jedes Frame ist darauf ausgelegt, Handlungen auszulösen.",
+      "Jeder Frame ist darauf ausgelegt, Handlungen beim Kunden auszulösen.",
 
     /* ---- Offers: taglines + badges + bullets ------------------------- */
     "Fastest": "Am schnellsten",
@@ -132,7 +134,7 @@ window.FWF_TRANSLATIONS = {
       "Nutzungsrechte: Paid, Organic, Sales, intern",
 
     "Volume creative that doesn't sacrifice the bar.":
-      "Volumen-Creative, das den Anspruch nicht senkt.",
+      "Volumen Creatives, ohne Kompromisse beim Anspruch.",
     "3 ad concepts per month — hooks, scripts + CTAs":
       "3 Ad-Konzepte pro Monat — Hooks, Skripte + CTAs",
     "4 finished video creatives per concept (12 videos/month)":
@@ -146,8 +148,8 @@ window.FWF_TRANSLATIONS = {
     "Creative-only retainer — pairs with your own media buying":
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 
-    "Creative and paid, run as one system.":
-      "Creative und Paid, gesteuert als ein System.",
+    "Creative and Paid Social, run as one system.":
+      "Creative und Paid Social, gesteuert als ein System.",
     "Everything in Creative Sprint — monthly concepts, hooks, scripts":
       "Alles aus dem Creative Sprint — monatliche Konzepte, Hooks, Skripte",
     "3 ad concepts/month with 2–4 finished creatives per concept":
@@ -162,11 +164,11 @@ window.FWF_TRANSLATIONS = {
       "Mindestlaufzeit 4–6 Monate — lang genug, damit Wirkung entsteht",
 
     "Founder-led. Bespoke. Whatever moves the brand.":
-      "Founder-led. Maßgeschneidert. Was immer die Marke bewegt.",
+      "Founder-led. Maßgeschneidert. Für das, was die Marke bewegt.",
     "Concept creation + creative direction across all channels":
       "Konzeptkreation + Creative Direction über alle Kanäle",
-    "Full performance marketing — creative and paid as one system":
-      "Komplettes Performance Marketing — Creative und Paid als ein System",
+    "Full performance marketing — creative and Paid Social as one system":
+      "Komplettes Performance Marketing — Creative und Paid Social als ein System",
     "Founder-led strategy and hands-on execution":
       "Founder-led Strategie und Hands-on-Umsetzung",
     "Website builds, AI workflows, and custom systems":
