@@ -221,9 +221,9 @@ window.FWF_TRANSLATIONS = {
     "A family's son gets kidnapped, and the family deals with the aftermath of the kidnapping.":
       "Der Sohn einer Familie wird entführt und die Familie setzt sich mit den Folgen der Entführung auseinander.",
     "A slice-of-life documentary following John Holder into the rural outback of East Anglia — small villages shaped by American influence, where locals make moonshine, play bluegrass, and collect old military gear. A unique subculture hiding in the British countryside.":
-      "Irgendwo hinter Cambridge, tief in der englischen Landschaft, versteckt sich eine besondere Welt: John Holder führt uns in kleine Dörfer, die einst stark vom amerikanischen Einfluss geprägt wurden. Die Einheimischen brennen Mondschein, spielen Bluegrass und sammeln altes Militärgerät — eine einzigartige Subkultur mitten in der britischen Countryside.",
+      "Irgendwo hinter Cambridge, tief in der englischen Prärie, versteckt sich eine besondere Welt: John Holder führt uns in ein kleines Dorf, das einst stark vom amerikanischen Einfluss geprägt wurde. Die Einheimischen brennen Moonshine, spielen Bluegrass Musik und sammeln altes Militärequipment — eine einzigartige Subkultur 1 H außerhalb von London.",
     "Directed music video for aonenine & DTOXiD. Shot on location in the UK.":
-      "Regie-Musikvideo für aonenine & DTOXiD. On Location in UK gedreht.",
+      "Musikvideo für aonenine & DTOXiD — Regie und Produktion durch Flow West Films, on Location in England gedreht.",
     "A visually intense short film shot through practical light and lens flare.":
       "Ein visuell intensiver Kurzfilm, gedreht mit praktischem Licht und Lens Flare.",
     "A dreamy outdoor reel framing cherry blossoms and flowing fashion — spring campaign.":
@@ -231,17 +231,17 @@ window.FWF_TRANSLATIONS = {
     "Behind-the-scenes footage of a food & lifestyle commercial shoot.":
       "Behind-the-Scenes-Material eines Food- & Lifestyle-Commercial-Drehs.",
     "Performance ad creative with on-screen subtitles, built for social feed placement.":
-      "Performance Ad Creative mit On-Screen-Untertiteln, gebaut fürs Social-Feed-Placement.",
+      "Performance Ad Creative mit On-Screen-Untertiteln — gemacht für den deutschsprachigen Social Feed.",
 
     /* current project descriptions */
     "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.":
-      "Valentinstags-Kampagne für das Radisson Blu Stuttgart — Kerzenambiente, Skyline-Blick und über 800.000 organische Impressionen. Ohne Werbebudget. Nur eine Stimmung, die sich selbst verkauft hat.",
+      "Eine Valentinstags-Kampagne für das Radisson Blu Stuttgart: Kerzenschein, Skyline-Blick und über 800.000 organische Impressionen — ganz ohne Werbebudget. Manchmal reicht die richtige Atmosphäre.",
     "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.":
-      "Instagram-Reel für Palazzo — fünf Gänge mitten im Zirkus. Spektakel für Erwachsene, eine ausgezeichnete Bar und ein Dinner, das selbst die Show ist.",
-    "Instagram reel for French Touch — the French breakfast and brunch spot where butter, flour and a little patience do the talking.":
-      "Instagram-Reel für French Touch — das French Breakfast & Brunch Café, wo Butter, Mehl und ein bisschen Geduld für sich sprechen.",
-    "Instagram reel for Santa Lucia — built to bring the room, the plates and the atmosphere to the feed.":
-      "Instagram-Reel für Santa Lucia — gebaut, um den Raum, die Teller und die Atmosphäre in den Feed zu bringen.",
+      "Instagram-Reel für Palazzo: Fünf Gänge mitten im Zirkus — Spektakel für Erwachsene, eine erstklassige Bar und ein Abend, bei dem das Dinner selbst zur Show wird.",
+    "Instagram reel for French Touch — a French patisserie in the heart of Munich, where butter, flour, and a little patience do the talking.":
+      "Instagram-Reel für French Touch — eine französische Patisserie mitten in München, in der Butter, Mehl und ein bisschen Geduld das Sagen haben.",
+    "Instagram reel for Santa Lucia — a founder-led Italian restaurant in Stuttgart, where the owner is on the floor every single day. The room, the plates, the atmosphere — everything that makes this place worth the table comes straight from the heart of Italy.":
+      "Instagram-Reel für Santa Lucia — ein Stuttgarter Italiener, geführt vom Gründer persönlich, der jeden Tag vor Ort ist. Der Raum, die Teller, die Atmosphäre: Alles, was dieses Restaurant ausmacht, kommt aus dem Herzen Italiens.",
     "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.":
       "Ein lebendiges Instagram-Reel vom Münchner Bierfest — klirrende Maßkrüge, schaukelnde Tische und der warme, goldene Rausch einer voll besetzten bayerischen Wirtschaft.",
     "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.":
@@ -259,21 +259,21 @@ window.FWF_TRANSLATIONS = {
     "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.":
       "Kunden-Testimonial für Eibl GmbH — Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
     "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.":
-      "Imagefilm für App Liqes — digitale Präsenz, die überzeugt, mit einem Kundentestimonial von Café Bar Relax. On Location in Ludwigsburg.",
+      "Imagefilm für App Liqes — digitale Präsenz, wie sie funktionieren sollte. Mit einer echten Kundenstimme von Café Bar Relax, gedreht in Ludwigsburg.",
     "Fashion-forward campaign shoot on location in New York City.":
       "Fashion-Kampagne auf Location in New York City.",
-    "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.":
-      "Cinematischer Spec-Ad — dunkel, temporeich, gebaut für die Markenwelt von Thomas Sabo.",
+    "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.":
+      "Ein cinematischer Spec-Ad für Thomas Sabo: Ein Grabräuber betritt ein verlassenes Pharaonengrab — auf der Suche nach einem Artefakt, das seine Tochter heilen kann. Dunkel, tempogeladen, mitreißend. Thomas Sabo: Rebel at Heart.",
     "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.":
       "Social Ad Creative für Eibl GmbH — eine Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
-    "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.":
-      "Social Ad Creative für Easy Foil — entwickelt, um das europäische Partnernetzwerk zu zeigen und Demo-Buchungen zu generieren.",
+    "Ad creative for Easy Foil — a lightweight, affordable hydrofoil built at Lake Constance. We spotlight the demo experience to make booking a test ride feel effortless. Ride the easy way.":
+      "Ad Creative für Easy Foil — ein leichtes, günstiges Hydrofoil vom Bodensee. Wir zeigen das Demo-Erlebnis und machen eine Buchung so einfach wie das Fahren selbst. Ride the easy way.",
     "Ad creative for Easy Foil's Easy Drive — showcasing the product in action for European market audiences.":
       "Ad Creative für Easy Foils Easy Drive — das Produkt im Einsatz für den europäischen Markt.",
     "Performance hook ad with on-screen copy — built for German-language social feeds.":
-      "Performance-Hook-Ad mit On-Screen-Text — gebaut für deutschsprachige Social Feeds.",
+      "Performance-Hook-Ad mit On-Screen-Text — speziell für den deutschsprachigen Social Feed.",
     "Animated brand ad for List for Less — no upfront cost, built for social performance.":
-      "Animierter Brand-Ad für List for Less — ohne Vorabkosten, gebaut für Social Performance.",
+      "Animierter Brand-Ad für List for Less — kein Vorabkostenrisiko, direkt gemacht für Social Performance.",
     "Coming soon — macro product film for a skeleton watch reveal.":
       "Demnächst — Macro-Produktfilm für das Reveal einer Skeleton-Uhr.",
     "Coming soon — luxury product reel for a Swarovski jewellery line.":

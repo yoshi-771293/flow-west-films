@@ -14,7 +14,7 @@ const ALL_PROJECTS = [
   },
   {
     client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Cinematic spec ad — dark, chase-driven, built for the Thomas Sabo brand world.",
+    desc: "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
   },
@@ -33,7 +33,7 @@ const ALL_PROJECTS = [
   },
   {
     client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Social ad creative for Easy Foil — built to spotlight its European partner network and drive demo bookings.",
+    desc: "Ad creative for Easy Foil — a lightweight, affordable hydrofoil built at Lake Constance. We spotlight the demo experience to make booking a test ride feel effortless. Ride the easy way.",
     colors: ["#9b30ff", "#ff6420"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/bb89e0c9-dba0-4457-b023-0f88a7309a86/thumbnail_03a191ed.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/bb89e0c9-dba0-4457-b023-0f88a7309a86?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -98,14 +98,14 @@ const ALL_PROJECTS = [
   },
   {
     client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
-    desc: "Instagram reel for French Touch — the French breakfast and brunch spot where butter, flour and a little patience do the talking.",
+    desc: "Instagram reel for French Touch — a French patisserie in the heart of Munich, where butter, flour, and a little patience do the talking.",
     colors: ["#ff2d78", "#9b30ff"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ca3fa44f-26d8-4bef-9303-496692d4c76c/thumbnail_0acb9f11.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/ca3fa44f-26d8-4bef-9303-496692d4c76c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Santa Lucia", title: "Restaurant Reel", tag: "Reel", cat: "social",
-    desc: "Instagram reel for Santa Lucia — built to bring the room, the plates and the atmosphere to the feed.",
+    desc: "Instagram reel for Santa Lucia — a founder-led Italian restaurant in Stuttgart, where the owner is on the floor every single day. The room, the plates, the atmosphere — everything that makes this place worth the table comes straight from the heart of Italy.",
     colors: ["#c9a96e", "#ff2d78"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/f8ed2a20-4ccb-4c66-8b60-84e314d177f6/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
