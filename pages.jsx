@@ -80,7 +80,7 @@ const ALL_PROJECTS = [
     client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
     desc: "Seasonal cinematic reel for the Radisson Blu Stuttgart property.",
     colors: ["#9b30ff", "#ff2d78"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/c518444d-58e6-458e-a0a1-d7b880f8848d/thumbnail_96c432b4.jpg",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/c518444d-58e6-458e-a0a1-d7b880f8848d/thumbnail_56dc7cd1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/c518444d-58e6-458e-a0a1-d7b880f8848d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
