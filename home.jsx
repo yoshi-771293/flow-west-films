@@ -227,7 +227,7 @@ function HomePage() {
             "Studio · Stuttgart · Now booking Q3 2026"
           ),
 
-          React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
+          React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2 fwf-hero-h1", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
             "We make brands", React.createElement("br"),
             "impossible to ",
             React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "ignore.")

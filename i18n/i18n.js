@@ -117,6 +117,7 @@
       walk(document.body, d);
       ensureButton();
       renderButton();
+      document.documentElement.setAttribute("data-lang", lang);
     } finally {
       connect();
       applying = false;
@@ -205,7 +206,8 @@
       ".fwf-lang-seg{transition:opacity .15s ease;font-variant-numeric:tabular-nums;display:inline-block;min-width:1.8em;text-align:center;}" +
       ".fwf-lang-on{opacity:1;}" +
       ".fwf-lang-off{opacity:.4;}" +
-      ".fwf-lang-sep{opacity:.35;}";
+      ".fwf-lang-sep{opacity:.35;}" +
+      "html[data-lang='de'] .fwf-hero-h1{font-size:clamp(38px,6.5vw,88px)!important;}";
     (document.head || document.documentElement).appendChild(s);
   }
 

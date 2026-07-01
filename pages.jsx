@@ -186,6 +186,14 @@ const ALL_PROJECTS = [
     thumb: "https://vz-fd89cb27-622.b-cdn.net/91b09a39-35a9-41b3-a181-6dcfbca79e73/thumbnail_73fb59f1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/91b09a39-35a9-41b3-a181-6dcfbca79e73?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
+  // === FILM ===
+  {
+    client: "Old Suffolk Boys", title: "Documentary", tag: "Doc", cat: "film",
+    desc: "A slice-of-life documentary following John Holder into the rural outback of East Anglia — small villages shaped by American influence, where locals make moonshine, play bluegrass, and collect old military gear. A unique subculture hiding in the British countryside.",
+    colors: ["#c9a96e", "#1a1208"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/d62b1fcc-269a-4b00-9930-af757d8f2174/thumbnail_be26e700.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/d62b1fcc-269a-4b00-9930-af757d8f2174?token=180145980a43be1ad70f306f6f7691a2178ab2bc32954a9e04f92722dcfe6135&expires=1782989292&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
   // === MUSIC ===
   {
     client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music",
