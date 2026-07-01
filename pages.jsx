@@ -188,6 +188,13 @@ const ALL_PROJECTS = [
   },
   // === FILM ===
   {
+    client: "Whiskey & Ice", title: "Short Film", tag: "Short Film", cat: "film",
+    desc: "A family's son gets kidnapped, and the family deals with the aftermath of the kidnapping.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e625e35-8914-4d5f-a7ba-1f0bb74503c1/thumbnail_8e1529b8.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/1e625e35-8914-4d5f-a7ba-1f0bb74503c1?token=454a24fae561ca750764e73bb60b19a64c9b1291b74dbdf1757cc58953b1dfd1&expires=1782990535&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Old Suffolk Boys", title: "Documentary", tag: "Doc", cat: "film",
     desc: "A slice-of-life documentary following John Holder into the rural outback of East Anglia — small villages shaped by American influence, where locals make moonshine, play bluegrass, and collect old military gear. A unique subculture hiding in the British countryside.",
     colors: ["#c9a96e", "#1a1208"],

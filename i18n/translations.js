@@ -218,8 +218,10 @@ window.FWF_TRANSLATIONS = {
       "Ein intimes, interview-geführtes Porträt für eine Luxus-Interior-Marke.",
     "Warm, immersive event film capturing the craft and atmosphere of the festival floor.":
       "Warmer, immersiver Event-Film, der Handwerk und Atmosphäre des Festivals einfängt.",
+    "A family's son gets kidnapped, and the family deals with the aftermath of the kidnapping.":
+      "Der Sohn einer Familie wird entführt und die Familie setzt sich mit den Folgen der Entführung auseinander.",
     "A slice-of-life documentary following John Holder into the rural outback of East Anglia — small villages shaped by American influence, where locals make moonshine, play bluegrass, and collect old military gear. A unique subculture hiding in the British countryside.":
-      "Ein Slice-of-Life-Dokumentarfilm über John Holder und die ländliche Abgeschiedenheit in East Anglia — kleine Dörfer, geprägt von amerikanischem Einfluss, wo Einheimische Mondschein brennen, Bluegrass spielen und altes Militärequipment sammeln. Eine einzigartige Subkultur tief in der britischen Countryside.",
+      "Irgendwo hinter Cambridge, tief in der englischen Landschaft, versteckt sich eine besondere Welt: John Holder führt uns in kleine Dörfer, die einst stark vom amerikanischen Einfluss geprägt wurden. Die Einheimischen brennen Mondschein, spielen Bluegrass und sammeln altes Militärgerät — eine einzigartige Subkultur mitten in der britischen Countryside.",
     "Directed music video for aonenine & DTOXiD. Shot on location in the UK.":
       "Regie-Musikvideo für aonenine & DTOXiD. On Location in UK gedreht.",
     "A visually intense short film shot through practical light and lens flare.":
