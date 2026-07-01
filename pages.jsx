@@ -7,12 +7,6 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "Fashion Blog", title: "Brand Ad", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Fashion-forward campaign shoot on location in New York City.",
-    colors: ["#ffffff", "#0a0a0a"],
-    thumb: "assets/thumbs/model_nyc.png", video: "assets/videos/model_nyc.mp4"
-  },
-  {
     client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.",
     colors: ["#c9a96e", "#0a0a0a"],
