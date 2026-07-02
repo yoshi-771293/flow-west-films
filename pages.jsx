@@ -129,7 +129,7 @@ const ALL_PROJECTS = [
     client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social",
     desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
     colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_9cc39d43.jpg",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_5142100b.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/690975ad-3773-4966-8a30-92d3e4d4eae5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
