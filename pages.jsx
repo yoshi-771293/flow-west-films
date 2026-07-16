@@ -79,6 +79,13 @@ const ALL_PROJECTS = [
   },
   // === SOCIAL / REELS ===
   {
+    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social", feature: 3,
+    desc: "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.",
+    colors: ["#c9a96e", "#9b30ff"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/55a6ac21-1885-439f-b4a4-575eba9bca85/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/55a6ac21-1885-439f-b4a4-575eba9bca85?token=ab0b09fa835293499e4548c2f61f9b642e21dd27e18d59d5f041a4ba5234031d&expires=1784306487&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Radisson Blu", title: "Valentine's Campaign", tag: "Social Media", cat: "social",
     desc: "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.",
     colors: ["#ff2d78", "#0a0a0a"],

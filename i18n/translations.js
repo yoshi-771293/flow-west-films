@@ -188,6 +188,8 @@ window.FWF_TRANSLATIONS = {
       "Filme, Reels, Ads und Brand-Produktionen für B2B-Marken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
+    "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
+      "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
     "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.":
       "Skeleton Glass Base: Ein Macro-Produktfilm für die IK Automatic Watch — als kompakter Cut für Social Feeds.",
     "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.":
