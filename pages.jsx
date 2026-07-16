@@ -59,9 +59,18 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
   },
   {
-    client: "Alienwatch", title: "Skeleton Watch", tag: "Product", cat: "ad",
-    desc: "Coming soon — macro product film for a skeleton watch reveal.",
-    colors: ["#00ff88", "#0a0a0a"]
+    client: "Alienwork", title: "IK Automatic Watch for Men — Short Cut", tag: "Product", cat: "ad",
+    desc: "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/ee304aaf-2d6d-48f4-be67-47d821ad84f5/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/ee304aaf-2d6d-48f4-be67-47d821ad84f5?token=c6b3ce2d2fedf40d4047324b2e5d165ae2f91393d690bafa8719c0f63a2eff0c&expires=1784293215&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Alienwork", title: "IK Automatic Watch for Men — Long Cut", tag: "Product", cat: "ad", feature: 3,
+    desc: "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/377e7e23-44ea-468f-81ac-6821e4d67655/thumbnail_370a4b90.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
@@ -1367,7 +1376,7 @@ function AboutPage() {
         <div className="fwf-container">
           <div className="fwf-label" style={{ textAlign: "center", marginBottom: 36 }}>— Partial client list —</div>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "32px 56px" }}>
-            {["Porsche", "Thomas Sabo", "Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwatch", "Hatz Beer", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
+            {["Porsche", "Thomas Sabo", "Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwork", "Hatz Beer", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
               <span key={i} className="fwf-display" style={{ fontSize: 24, color: "rgba(255,255,255,0.55)", letterSpacing: "-0.01em" }}>{c}</span>
             ))}
           </div>

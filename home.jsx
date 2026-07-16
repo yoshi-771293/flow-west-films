@@ -370,12 +370,12 @@ function HomePage() {
               featured: true
             }),
             React.createElement(ProjectThumb, {
-              client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative",
-              desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
-              colors: ["#c9a96e", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+              client: "Alienwork", title: "IK Automatic Watch for Men", tag: "Product",
+              desc: "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.",
+              colors: ["#00ff88", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/377e7e23-44ea-468f-81ac-6821e4d67655/thumbnail_370a4b90.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             }),
             React.createElement(ProjectThumb, {
               client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative",

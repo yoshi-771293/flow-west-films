@@ -341,7 +341,7 @@ function TrustMarquee() {
     { name: "Schmolke Carbon" },
     { name: "Hatz Beer" },
     { name: "Liqes" },
-    { name: "Alienwatch" },
+    { name: "Alienwork" },
     { name: "Pane Vino" },
     { name: "EasyFoil" },
     { name: "Zenroots" },

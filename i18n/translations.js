@@ -188,6 +188,10 @@ window.FWF_TRANSLATIONS = {
       "Filme, Reels, Ads und Brand-Produktionen für B2B-Marken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
+    "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.":
+      "Skeleton Glass Base: Ein Macro-Produktfilm für die IK Automatic Watch — als kompakter Cut für Social Feeds.",
+    "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.":
+      "Skeleton Glass Base: Der vollständige Macro-Produktfilm für das Reveal der IK Automatic Watch.",
     "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.":
       "Ein cinematisches Nighttime-Reel, das die Premium-Atmosphäre des Stuttgarter Hauses einfängt.",
     "Seasonal cinematic reel for the Radisson Blu Stuttgart property.":
