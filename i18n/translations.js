@@ -188,6 +188,8 @@ window.FWF_TRANSLATIONS = {
       "Filme, Reels, Ads und Brand-Produktionen für B2B-Marken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
+    "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.":
+      "Ein Spec Commercial für NordVPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis NordVPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
     "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.":

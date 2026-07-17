@@ -7,6 +7,13 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
+    client: "NordVPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
+    desc: "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.",
+    colors: ["#4687ff", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/4882d0f3-a5a0-432a-806c-cd7ab57558ed/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/4882d0f3-a5a0-432a-806c-cd7ab57558ed?token=60d774806dc2fb4952eba94027d3be70e18cac79b1d4c1fd27ef83a3a5fbf6d6&expires=1784365289&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.",
     colors: ["#c9a96e", "#0a0a0a"],

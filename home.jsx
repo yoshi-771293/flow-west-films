@@ -378,11 +378,12 @@ function HomePage() {
               onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             }),
             React.createElement(ProjectThumb, {
-              client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative",
-              desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
-              colors: ["#ff6420", "#c9a96e"],
-              thumb: "assets/thumbs/golden_brew.jpg", video: "assets/videos/golden_brew.mp4",
-              onPlay: function() { setActiveVideo("assets/videos/golden_brew.mp4"); }
+              client: "NordVPN", title: "Ad Creative", tag: "Ad Creative",
+              desc: "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.",
+              colors: ["#4687ff", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/4882d0f3-a5a0-432a-806c-cd7ab57558ed/thumbnail.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/4882d0f3-a5a0-432a-806c-cd7ab57558ed?token=60d774806dc2fb4952eba94027d3be70e18cac79b1d4c1fd27ef83a3a5fbf6d6&expires=1784365289&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/4882d0f3-a5a0-432a-806c-cd7ab57558ed?token=60d774806dc2fb4952eba94027d3be70e18cac79b1d4c1fd27ef83a3a5fbf6d6&expires=1784365289&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             })
           )
         )
