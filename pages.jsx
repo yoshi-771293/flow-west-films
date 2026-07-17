@@ -80,8 +80,8 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94?token=92e8aae8ddb786c4da0da87567138414fbfdc659d2fe48fc6e0a7eeca66377c5&expires=1784389290&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad",
-    desc: "Vertical-format product commercial for the IK Automatic Watch — built for Reels and Stories.",
+    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad", feature: 4,
+    desc: "Vertical-format product commercial for the IK Automatic Watch — built for Meta Reels and Stories.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/08a90788-aa8a-4064-8574-8f80f57b454c/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/08a90788-aa8a-4064-8574-8f80f57b454c?token=7b8ad5812155294180f243ba692be27da4556dc8c858aa85484fb010d599e364&expires=1784389362&autoplay=true&loop=false&muted=true&preload=true&responsive=true"

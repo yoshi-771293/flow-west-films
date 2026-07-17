@@ -193,11 +193,11 @@ window.FWF_TRANSLATIONS = {
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
     "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.":
-      "Kurzform-Produktfilm für das Reveal der IK Automatic Watch — gebaut für Social Feeds.",
+      "Kompakt geschnitten fürs Social-Feed-Tempo: der kurze Produktspot zum Reveal der IK Automatic Watch.",
     "Full-length product film for the IK Automatic Watch reveal.":
-      "Vollständiger Produktfilm für das Reveal der IK Automatic Watch.",
-    "Vertical-format product commercial for the IK Automatic Watch — built for Reels and Stories.":
-      "Vertikaler Produktfilm für die IK Automatic Watch — gebaut für Reels und Stories.",
+      "Das komplette Reveal der IK Automatic Watch, einmal in voller Länge erzählt.",
+    "Vertical-format product commercial for the IK Automatic Watch — built for Meta Reels and Stories.":
+      "Für Meta gemacht: ein vertikaler Werbespot für die IK Automatic Watch, perfekt für Reels und Stories.",
     "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.":
       "Ein cinematisches Nighttime-Reel, das die Premium-Atmosphäre des Stuttgarter Hauses einfängt.",
     "Seasonal cinematic reel for the Radisson Blu Stuttgart property.":
