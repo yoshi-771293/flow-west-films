@@ -196,6 +196,8 @@ window.FWF_TRANSLATIONS = {
       "Kurzform-Produktfilm für das Reveal der IK Automatic Watch — gebaut für Social Feeds.",
     "Full-length product film for the IK Automatic Watch reveal.":
       "Vollständiger Produktfilm für das Reveal der IK Automatic Watch.",
+    "Vertical-format product commercial for the IK Automatic Watch — built for Reels and Stories.":
+      "Vertikaler Produktfilm für die IK Automatic Watch — gebaut für Reels und Stories.",
     "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.":
       "Ein cinematisches Nighttime-Reel, das die Premium-Atmosphäre des Stuttgarter Hauses einfängt.",
     "Seasonal cinematic reel for the Radisson Blu Stuttgart property.":

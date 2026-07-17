@@ -69,15 +69,22 @@ const ALL_PROJECTS = [
     client: "Alienwork", title: "Skeleton Automatic Watch — Short Cut", tag: "Product", cat: "ad",
     desc: "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/ee304aaf-2d6d-48f4-be67-47d821ad84f5/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/ee304aaf-2d6d-48f4-be67-47d821ad84f5?token=c6b3ce2d2fedf40d4047324b2e5d165ae2f91393d690bafa8719c0f63a2eff0c&expires=1784293215&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/2a0c6cf1-6acb-4564-881a-d96b6774505f/thumbnail_09cecfc2.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/2a0c6cf1-6acb-4564-881a-d96b6774505f?token=e5416fec308af851daa02eee642e97c9d03dce603ee0d64c462f15c618b451dd&expires=1784389331&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad", feature: 3,
     desc: "Full-length product film for the IK Automatic Watch reveal.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/377e7e23-44ea-468f-81ac-6821e4d67655/thumbnail_370a4b90.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94/thumbnail_ad0b5ddb.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94?token=92e8aae8ddb786c4da0da87567138414fbfdc659d2fe48fc6e0a7eeca66377c5&expires=1784389290&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad",
+    desc: "Vertical-format product commercial for the IK Automatic Watch — built for Reels and Stories.",
+    colors: ["#00ff88", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/08a90788-aa8a-4064-8574-8f80f57b454c/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/08a90788-aa8a-4064-8574-8f80f57b454c?token=7b8ad5812155294180f243ba692be27da4556dc8c858aa85484fb010d599e364&expires=1784389362&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
