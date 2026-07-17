@@ -192,10 +192,10 @@ window.FWF_TRANSLATIONS = {
       "Ein Spec Commercial für NordVPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis NordVPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
-    "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.":
-      "Skeleton Glass Base: Ein Macro-Produktfilm für die IK Automatic Watch — als kompakter Cut für Social Feeds.",
-    "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.":
-      "Skeleton Glass Base: Der vollständige Macro-Produktfilm für das Reveal der IK Automatic Watch.",
+    "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.":
+      "Kurzform-Produktfilm für das Reveal der IK Automatic Watch — gebaut für Social Feeds.",
+    "Full-length product film for the IK Automatic Watch reveal.":
+      "Vollständiger Produktfilm für das Reveal der IK Automatic Watch.",
     "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.":
       "Ein cinematisches Nighttime-Reel, das die Premium-Atmosphäre des Stuttgarter Hauses einfängt.",
     "Seasonal cinematic reel for the Radisson Blu Stuttgart property.":

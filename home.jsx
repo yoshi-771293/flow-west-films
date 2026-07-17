@@ -370,8 +370,8 @@ function HomePage() {
               featured: true
             }),
             React.createElement(ProjectThumb, {
-              client: "Alienwork", title: "IK Automatic Watch for Men", tag: "Product",
-              desc: "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.",
+              client: "Alienwork", title: "Skeleton Automatic Watch", tag: "Product",
+              desc: "Full-length product film for the IK Automatic Watch reveal.",
               colors: ["#00ff88", "#0a0a0a"],
               thumb: "https://vz-fd89cb27-622.b-cdn.net/377e7e23-44ea-468f-81ac-6821e4d67655/thumbnail_370a4b90.jpg",
               video: "https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true",

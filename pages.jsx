@@ -7,7 +7,7 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "NordVPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
+    client: "NordVPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
     desc: "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.",
     colors: ["#4687ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/4882d0f3-a5a0-432a-806c-cd7ab57558ed/thumbnail.jpg",
@@ -66,15 +66,15 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
   },
   {
-    client: "Alienwork", title: "IK Automatic Watch for Men — Short Cut", tag: "Product", cat: "ad",
-    desc: "Skeleton Glass Base — macro product ad for the IK Automatic Watch. Short-form cut built for social feeds.",
+    client: "Alienwork", title: "Skeleton Automatic Watch — Short Cut", tag: "Product", cat: "ad",
+    desc: "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ee304aaf-2d6d-48f4-be67-47d821ad84f5/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/ee304aaf-2d6d-48f4-be67-47d821ad84f5?token=c6b3ce2d2fedf40d4047324b2e5d165ae2f91393d690bafa8719c0f63a2eff0c&expires=1784293215&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Alienwork", title: "IK Automatic Watch for Men — Long Cut", tag: "Product", cat: "ad", feature: 3,
-    desc: "Skeleton Glass Base — the full-length macro product film for the IK Automatic Watch reveal.",
+    client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad", feature: 3,
+    desc: "Full-length product film for the IK Automatic Watch reveal.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/377e7e23-44ea-468f-81ac-6821e4d67655/thumbnail_370a4b90.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/377e7e23-44ea-468f-81ac-6821e4d67655?token=7ec7da892b403f203ab79c41758efb4c762f9c37a373a3df905d779213e5540c&expires=1784293247&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
