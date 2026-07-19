@@ -137,14 +137,12 @@ window.FWF_TRANSLATIONS = {
       "Volumen Creatives, ohne Kompromisse beim Anspruch.",
     "3 ad concepts per month — hooks, scripts + CTAs":
       "3 Ad-Konzepte pro Monat — Hooks, Skripte + CTAs",
-    "4 finished video creatives per concept (12 videos/month)":
-      "4 fertige Video-Creatives pro Konzept (12 Videos/Monat)",
-    "10 static creatives per concept (30 statics/month)":
-      "10 Static-Creatives pro Konzept (30 Statics/Monat)",
-    "On-brand templates + motion system":
-      "On-Brand-Templates + Motion-System",
-    "Asset library + organised handoff":
-      "Asset-Library + organisierte Übergabe",
+    "3 finished video creatives per concept (9 videos/month)":
+      "3 fertige Video-Creatives pro Konzept (9 Videos/Monat)",
+    "30 static creatives per month (10 per concept)":
+      "30 Static-Creatives pro Monat (10 pro Konzept)",
+    "Prefer UGC? Swap in UGC-style videos at the same volume":
+      "Lieber UGC? Videos im UGC-Stil zum gleichen Volumen möglich",
     "Creative-only retainer — pairs with your own media buying":
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 

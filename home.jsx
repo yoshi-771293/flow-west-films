@@ -86,10 +86,9 @@ const OFFERS = [
     tagline: "Volume creative that doesn't sacrifice the bar.",
     bullets: [
       "3 ad concepts per month — hooks, scripts + CTAs",
-      "4 finished video creatives per concept (12 videos/month)",
-      "10 static creatives per concept (30 statics/month)",
-      "On-brand templates + motion system",
-      "Asset library + organised handoff",
+      "3 finished video creatives per concept (9 videos/month)",
+      "30 static creatives per month (10 per concept)",
+      "Prefer UGC? Swap in UGC-style videos at the same volume",
       "Creative-only retainer — pairs with your own media buying",
     ],
   },
