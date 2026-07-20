@@ -106,11 +106,11 @@ const OFFERS = [
     badgeColor: "pink",
     highlight: true,
     accent: "pink",
-    stat: "6–12 creatives / month",
+    stat: "12 creatives / month",
     tagline: "Performance + Video.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",
-      "3 ad concepts/month with 2–4 finished creatives per concept",
+      "3 ad concepts/month with 4 finished creatives per concept",
       "Full Meta Ads management — strategy, setup, audiences, scaling",
       "Structured creative testing tied directly to production",
       "Performance reporting + monthly review and roadmap",
@@ -123,7 +123,7 @@ const OFFERS = [
     badge: "Partnership",
     badgeColor: "green",
     accent: "green",
-    stat: "Bespoke / founder-led",
+    stat: "Bespoke / Founder-led",
     tagline: "Whatever moves the needle.",
     bullets: [
       "Concept creation + creative direction across all channels",
