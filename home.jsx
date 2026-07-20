@@ -25,7 +25,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
       </div>
 
       {stat && (
-        <div className="fwf-display" style={{ color: "#ff6420", fontSize: expanded ? 48 : 40, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "0 0 6px 0" }}>
+        <div className="fwf-display" style={{ color: "rgb(" + (accent === "pink" ? "255,45,120" : accent === "purple" ? "155,48,255" : accent === "green" ? "0,255,136" : "255,100,32") + ")", fontSize: expanded ? 48 : 40, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "0 0 6px 0" }}>
           {stat}
         </div>
       )}
@@ -72,6 +72,7 @@ const OFFERS = [
     badge: "Signature",
     badgeColor: "purple",
     accent: "purple",
+    stat: "3 films / 1 shoot",
     tagline: "Your story told right.",
     bullets: [
       "Strategy + positioning workshop (2 sessions)",
@@ -105,6 +106,7 @@ const OFFERS = [
     badgeColor: "pink",
     highlight: true,
     accent: "pink",
+    stat: "6–12 creatives / month",
     tagline: "Performance + Video.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",
@@ -121,6 +123,7 @@ const OFFERS = [
     badge: "Partnership",
     badgeColor: "green",
     accent: "green",
+    stat: "Bespoke / founder-led",
     tagline: "Whatever moves the needle.",
     bullets: [
       "Concept creation + creative direction across all channels",

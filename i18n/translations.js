@@ -121,6 +121,7 @@ window.FWF_TRANSLATIONS = {
     "Most Popular": "Beliebteste",
     "Partnership": "Partnerschaft",
 
+    "3 films / 1 shoot": "3 Filme / 1 Dreh",
     "Your story told right.":
       "Ihre Geschichte, richtig erzählt.",
     "Strategy + positioning workshop (2 sessions)":
@@ -147,6 +148,7 @@ window.FWF_TRANSLATIONS = {
     "Creative-only retainer — pairs with your own media buying":
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 
+    "6–12 creatives / month": "6–12 Creatives / Monat",
     "Performance + Video.":
       "Performance + Video.",
     "Everything in Creative Sprint — monthly concepts, hooks, scripts":
@@ -162,6 +164,7 @@ window.FWF_TRANSLATIONS = {
     "Minimum 4–6 month commitment — long enough to compound":
       "Mindestlaufzeit 4–6 Monate — lang genug, damit Wirkung entsteht",
 
+    "Bespoke / founder-led": "Maßgeschneidert / Founder-led",
     "Whatever moves the needle.":
       "Was wirklich etwas bewegt.",
     "Concept creation + creative direction across all channels":
