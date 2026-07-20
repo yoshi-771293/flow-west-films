@@ -121,8 +121,8 @@ window.FWF_TRANSLATIONS = {
     "Most Popular": "Beliebteste",
     "Partnership": "Partnerschaft",
 
-    "The hero asset that anchors everything else.":
-      "Das Hero-Asset, das alles andere verankert.",
+    "Your story told right.":
+      "Ihre Geschichte, richtig erzählt.",
     "Strategy + positioning workshop (2 sessions)":
       "Strategie- + Positioning-Workshop (2 Sessions)",
     "Concept development + script": "Konzeptentwicklung + Skript",
@@ -133,6 +133,7 @@ window.FWF_TRANSLATIONS = {
     "Usage rights: paid, organic, sales, internal":
       "Nutzungsrechte: Paid, Organic, Sales, intern",
 
+    "39 creatives / month": "39 Creatives / Monat",
     "Volume creative that doesn't sacrifice the bar.":
       "Volumen Creatives, ohne Kompromisse beim Anspruch.",
     "3 ad concepts per month — hooks, scripts + CTAs":
@@ -146,8 +147,8 @@ window.FWF_TRANSLATIONS = {
     "Creative-only retainer — pairs with your own media buying":
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 
-    "Creative and Paid Social, run as one system.":
-      "Creative und Paid Social, gesteuert als ein System.",
+    "Performance + Video.":
+      "Performance + Video.",
     "Everything in Creative Sprint — monthly concepts, hooks, scripts":
       "Alles aus dem Creative Sprint — monatliche Konzepte, Hooks, Skripte",
     "3 ad concepts/month with 2–4 finished creatives per concept":
@@ -161,8 +162,8 @@ window.FWF_TRANSLATIONS = {
     "Minimum 4–6 month commitment — long enough to compound":
       "Mindestlaufzeit 4–6 Monate — lang genug, damit Wirkung entsteht",
 
-    "Founder-led. Bespoke. Whatever moves the brand.":
-      "Founder-led. Maßgeschneidert. Für das, was die Marke bewegt.",
+    "Whatever moves the needle.":
+      "Was wirklich etwas bewegt.",
     "Concept creation + creative direction across all channels":
       "Konzeptkreation + Creative Direction über alle Kanäle",
     "Full performance marketing — creative and Paid Social as one system":

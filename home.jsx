@@ -4,7 +4,7 @@ const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React
 // ============================================
 // Offer card (used on Home + Pricing)
 // ============================================
-function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, bullets, accent, expanded }) {
+function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, bullets, accent, expanded }) {
   const btnCls = `fwf-btn fwf-btn-sm fwf-btn-accent fwf-btn-accent-${accent}`;
   const btnStyle = { alignSelf: "flex-start" };
 
@@ -24,6 +24,11 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, bullets
         <span className={"fwf-badge " + (highlight ? "fwf-badge-highlight" : "fwf-badge-" + badgeColor)}>{badge}</span>
       </div>
 
+      {stat && (
+        <div style={{ color: "#ff6420", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 600, margin: "0 0 8px 0" }}>
+          {stat}
+        </div>
+      )}
       <h3 className="fwf-display" style={{ fontSize: expanded ? 44 : 36, margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>{title}</h3>
       <p style={{ color: "var(--fwf-text-mute)", margin: "0 0 24px 0", fontSize: 15, fontStyle: "italic", lineHeight: 1.5 }}>
         {tagline}
@@ -67,7 +72,7 @@ const OFFERS = [
     badge: "Signature",
     badgeColor: "purple",
     accent: "purple",
-    tagline: "The hero asset that anchors everything else.",
+    tagline: "Your story told right.",
     bullets: [
       "Strategy + positioning workshop (2 sessions)",
       "Concept development + script",
@@ -83,6 +88,7 @@ const OFFERS = [
     badge: "Fastest",
     badgeColor: "orange",
     accent: "orange",
+    stat: "39 creatives / month",
     tagline: "Volume creative that doesn't sacrifice the bar.",
     bullets: [
       "3 ad concepts per month — hooks, scripts + CTAs",
@@ -99,7 +105,7 @@ const OFFERS = [
     badgeColor: "pink",
     highlight: true,
     accent: "pink",
-    tagline: "Creative and Paid Social, run as one system.",
+    tagline: "Performance + Video.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",
       "3 ad concepts/month with 2–4 finished creatives per concept",
@@ -115,7 +121,7 @@ const OFFERS = [
     badge: "Partnership",
     badgeColor: "green",
     accent: "green",
-    tagline: "Founder-led. Bespoke. Whatever moves the brand.",
+    tagline: "Whatever moves the needle.",
     bullets: [
       "Concept creation + creative direction across all channels",
       "Full performance marketing — creative and Paid Social as one system",
