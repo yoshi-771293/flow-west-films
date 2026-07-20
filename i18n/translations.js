@@ -133,15 +133,15 @@ window.FWF_TRANSLATIONS = {
     "Usage rights: paid, organic, sales, internal":
       "Nutzungsrechte: Paid, Organic, Sales, intern",
 
-    "39 creatives / month": "39 Creatives / Monat",
+    "30 creatives / month": "30 Creatives / Monat",
     "Volume creative that doesn't sacrifice the bar.":
       "Volumen Creatives, ohne Kompromisse beim Anspruch.",
-    "3 ad concepts per month — hooks, scripts + CTAs":
-      "3 Ad-Konzepte pro Monat — Hooks, Skripte + CTAs",
-    "3 finished video creatives per concept (9 videos/month)":
-      "3 fertige Video-Creatives pro Konzept (9 Videos/Monat)",
-    "30 static creatives per month (10 per concept)":
-      "30 Static-Creatives pro Monat (10 pro Konzept)",
+    "2 ad concepts per month — hooks, scripts + CTAs":
+      "2 Ad-Konzepte pro Monat — Hooks, Skripte + CTAs",
+    "5 finished video creatives per concept (10 videos/month)":
+      "5 fertige Video-Creatives pro Konzept (10 Videos/Monat)",
+    "20 static creatives per month (10 per concept)":
+      "20 Static-Creatives pro Monat (10 pro Konzept)",
     "Prefer UGC? Swap in UGC-style videos at the same volume":
       "Lieber UGC? Videos im UGC-Stil zum gleichen Volumen möglich",
     "Creative-only retainer — pairs with your own media buying":

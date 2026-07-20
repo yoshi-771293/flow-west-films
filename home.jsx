@@ -25,7 +25,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
       </div>
 
       {stat && (
-        <div style={{ color: "#ff6420", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 600, margin: "0 0 8px 0" }}>
+        <div className="fwf-display" style={{ color: "#ff6420", fontSize: expanded ? 48 : 40, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "0 0 6px 0" }}>
           {stat}
         </div>
       )}
@@ -88,12 +88,12 @@ const OFFERS = [
     badge: "Fastest",
     badgeColor: "orange",
     accent: "orange",
-    stat: "39 creatives / month",
+    stat: "30 creatives / month",
     tagline: "Volume creative that doesn't sacrifice the bar.",
     bullets: [
-      "3 ad concepts per month — hooks, scripts + CTAs",
-      "3 finished video creatives per concept (9 videos/month)",
-      "30 static creatives per month (10 per concept)",
+      "2 ad concepts per month — hooks, scripts + CTAs",
+      "5 finished video creatives per concept (10 videos/month)",
+      "20 static creatives per month (10 per concept)",
       "Prefer UGC? Swap in UGC-style videos at the same volume",
       "Creative-only retainer — pairs with your own media buying",
     ],
