@@ -148,13 +148,13 @@ window.FWF_TRANSLATIONS = {
     "Creative-only retainer — pairs with your own media buying":
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 
-    "12 creatives / month": "12 Creatives / Monat",
+    "Creative + Performance Marketing": "Creative + Performance Marketing",
     "Performance + Video.":
       "Performance + Video.",
     "Everything in Creative Sprint — monthly concepts, hooks, scripts":
       "Alles aus dem Creative Sprint — monatliche Konzepte, Hooks, Skripte",
-    "3 ad concepts/month with 4 finished creatives per concept":
-      "3 Ad-Konzepte/Monat mit 4 fertigen Creatives pro Konzept",
+    "2 ad concepts per month with 5 finished creatives per concept":
+      "2 Ad-Konzepte pro Monat mit 5 fertigen Creatives pro Konzept",
     "Full Meta Ads management — strategy, setup, audiences, scaling":
       "Komplettes Meta-Ads-Management — Strategie, Setup, Audiences, Scaling",
     "Structured creative testing tied directly to production":
