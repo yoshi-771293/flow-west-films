@@ -36,8 +36,8 @@ window.FWF_TRANSLATIONS = {
     "Start with a free brand audit →": "Jetzt Audit starten →",
 
     /* ---- Footer ------------------------------------------------------- */
-    "Premium ad creative & cinematic film production for B2B brands.":
-      "Premium Ad Creative & Cinematic Film Produktion für B2B-Marken.",
+    "Premium ad creative & cinematic film production for Mittelstand brands.":
+      "Premium Ad Creative & Cinematic Film Produktion für Mittelstandsmarken.",
     "Navigate": "Navigation",
     "Follow": "Folgen",
     "Stuttgart, Germany": "Stuttgart, Deutschland",
@@ -68,8 +68,8 @@ window.FWF_TRANSLATIONS = {
     "We make brands": "Wir machen es unmöglich,",
     "impossible to": "Marken zu",
     "ignore.": "ignorieren.",
-    "Premium ad creative & cinematic film production for B2B brands that want to scale.":
-      "Premium Ad Creative & Cinematic Film Produktion für B2B-Marken, die skalieren wollen.",
+    "Premium ad creative & cinematic film production for Mittelstand brands that want to scale.":
+      "Premium Ad Creative & Cinematic Film Produktion für Mittelstandsmarken, die skalieren wollen.",
     "4K Production": "4K-Produktion",
     "Strategy First": "Strategie zuerst",
     "Performance Focused": "Performance-fokussiert",
@@ -96,8 +96,8 @@ window.FWF_TRANSLATIONS = {
     "Featured work": "Ausgewählte Arbeiten",
     "Recent": "Aktuelle",
     "productions.": "Produktionen.",
-    "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
-      "Flow West Films ist ein cinematisches Kreativstudio, das Ad Creatives und Content für B2B-Marken entwickelt, die skalieren wollen. Konzeption, Kreation, Performance Marketing und Analytics — alles inklusive.",
+    "Flow West Films is a cinematic creative studio crafting ad creatives and content for Mittelstand brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
+      "Flow West Films ist ein cinematisches Kreativstudio, das Ad Creatives und Content für Mittelstandsmarken entwickelt, die skalieren wollen. Konzeption, Kreation, Performance Marketing und Analytics — alles inklusive.",
 
     /* ---- Home: why FWF ------------------------------------------------ */
     "Why FWF": "Warum FWF",
@@ -186,8 +186,8 @@ window.FWF_TRANSLATIONS = {
     "Step inside the ": "Tauchen Sie ein in unsere ",
     "Films, reels, ads, and brand productions — tap a project to dive in.":
       "Filme, Reels, Ads und Brand-Filme: Projekt anklicken und mehr entdecken.",
-    "Films, reels, ads, and brand productions delivered for B2B brands across hospitality, sports, and consumer goods.":
-      "Filme, Reels, Ads und Brand-Produktionen für B2B-Marken aus Hospitality, Sport und Consumer Goods.",
+    "Films, reels, ads, and brand productions delivered for Mittelstand brands across hospitality, sports, and consumer goods.":
+      "Filme, Reels, Ads und Brand-Produktionen für Mittelstandsmarken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
     "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.":
@@ -307,8 +307,8 @@ window.FWF_TRANSLATIONS = {
 
     "Do you work with brands outside Germany?":
       "Arbeiten Sie auch mit Marken außerhalb Deutschlands?",
-    "Yes — we work remotely with B2B brands across Europe and beyond. Production travel is built into the quote when needed.":
-      "Ja — wir arbeiten remote mit B2B-Marken in ganz Europa und darüber hinaus. Reisekosten für die Produktion werden bei Bedarf ins Angebot aufgenommen.",
+    "Yes — we work remotely with Mittelstand brands across Europe and beyond. Production travel is built into the quote when needed.":
+      "Ja — wir arbeiten remote mit Mittelstandsmarken in ganz Europa und darüber hinaus. Reisekosten für die Produktion werden bei Bedarf ins Angebot aufgenommen.",
     "How long does a project take?": "Wie lange dauert ein Projekt?",
     "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works.":
       "Ein Launchfilm dauert in der Regel 1-2 Wochen – vom Kick-off bis zur finalen Auslieferung. Der Growth Retainer ist auf eine Laufzeit von mindestens 4-6 Monaten ausgelegt, damit wir belastbare Erkenntnisse darüber gewinnen, was wirklich funktioniert.",
@@ -332,8 +332,8 @@ window.FWF_TRANSLATIONS = {
     "Filmmaker. Creative director.": "Filmemacher. Creative Director.",
     "Performance thinker.": "Performance-Denker.",
     "Flow West Films was founded by": "Flow West Films wurde gegründet von",
-    "— filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help B2B brands grow.":
-      "— Filmemacher, Creative Director und Performance-Marketing-Denker. Mit Sitz in Stuttgart vereint das Studio cinematisches Storytelling mit Ad-Strategie, um B2B-Marken beim Wachsen zu helfen.",
+    "— filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help Mittelstand brands grow.":
+      "— Filmemacher, Creative Director und Performance-Marketing-Denker. Mit Sitz in Stuttgart vereint das Studio cinematisches Storytelling mit Ad-Strategie, um Mittelstandsmarken beim Wachsen zu helfen.",
     "Florian has shot for hospitality groups, sports brands, watchmakers, and SaaS companies — with credits on IMDb across narrative film and commercial work.":
       "Florian hat für Hospitality-Gruppen, Sportmarken, Uhrenhersteller und SaaS-Unternehmen gedreht — mit Credits auf IMDb über narrativen Film und Commercial-Arbeiten.",
     "IMDb credits": "IMDb-Credits",
@@ -366,8 +366,8 @@ window.FWF_TRANSLATIONS = {
     "Stuttgart · Available remotely across Europe":
       "Stuttgart · Remote in ganz Europa verfügbar",
     "Get in touch": "Kontakt aufnehmen",
-    "We work with B2B brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.":
-      "Wir arbeiten mit B2B-Marken, die es ernst meinen mit dem Skalieren durch Premium-Creative. Buchen Sie ein 30-minütiges Strategiegespräch und lassen Sie uns sehen, ob wir zusammenpassen.",
+    "We work with Mittelstand brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.":
+      "Wir arbeiten mit Mittelstandsmarken, die es ernst meinen mit dem Skalieren durch Premium-Creative. Buchen Sie ein 30-minütiges Strategiegespräch und lassen Sie uns sehen, ob wir zusammenpassen.",
     "Results that speak for themselves": "Ergebnisse, die für sich sprechen",
     "DAYS TO FIRST OUTPUT": "TAGE BIS ZUM ERSTEN OUTPUT",
     "Results within the first sprint": "Ergebnisse schon im ersten Sprint",

@@ -237,7 +237,7 @@ function Footer() {
               <Logo variant="lockup" size={64} />
             </div>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.6, margin: 0, maxWidth: 320 }}>
-              Premium ad creative & cinematic film production for B2B brands.
+              Premium ad creative & cinematic film production for Mittelstand brands.
             </p>
           </div>
 

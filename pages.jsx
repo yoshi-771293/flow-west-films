@@ -269,7 +269,7 @@ function ProjectsPage() {
             Selected <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>work.</em>
           </h1>
           <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 560, margin: 0, lineHeight: 1.5 }}>
-            Films, reels, ads, and brand productions delivered for B2B brands across hospitality, sports, and consumer goods.
+            Films, reels, ads, and brand productions delivered for Mittelstand brands across hospitality, sports, and consumer goods.
           </p>
         </div>
       </section>
@@ -1254,7 +1254,7 @@ function PricingPage() {
 
 function FAQ() {
   const items = [
-    { q: "Do you work with brands outside Germany?", a: "Yes — we work remotely with B2B brands across Europe and beyond. Production travel is built into the quote when needed." },
+    { q: "Do you work with brands outside Germany?", a: "Yes — we work remotely with Mittelstand brands across Europe and beyond. Production travel is built into the quote when needed." },
     { q: "How long does a project take?", a: "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works." },
     { q: "Why no prices on the website?", a: "Every project is different. We price based on your goals, scope, and timeline — not a menu. That's how we keep quality up and clients honest about what they actually need." },
     { q: "Can I start with just one project?", a: "Absolutely. The Creative Sprint is designed for exactly that — pure creative volume for brands that run their own paid. Most retainer clients start with a sprint, see the results, and continue from there." },
@@ -1345,7 +1345,7 @@ function AboutPage() {
                 Filmmaker. Creative director. <em className="fwf-display-italic">Performance thinker.</em>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 18px 0" }}>
-                Flow West Films was founded by <strong style={{ color: "#fff", fontWeight: 500 }}>Florian Kotulla</strong> — filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help B2B brands grow.
+                Flow West Films was founded by <strong style={{ color: "#fff", fontWeight: 500 }}>Florian Kotulla</strong> — filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help Mittelstand brands grow.
               </p>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.65, margin: "0 0 32px 0" }}>
                 Florian has shot for hospitality groups, sports brands, watchmakers, and SaaS companies — with credits on IMDb across narrative film and commercial work.
@@ -1468,7 +1468,7 @@ function ContactPage() {
                 />
               </h1>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 540 }}>
-                We work with B2B brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
+                We work with Mittelstand brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
               </p>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48, alignItems: "center" }}>

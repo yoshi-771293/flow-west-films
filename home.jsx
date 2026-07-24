@@ -242,7 +242,7 @@ function HomePage() {
           ),
 
           React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
-            "Premium ad creative & cinematic film production for B2B brands that want to scale."
+            "Premium ad creative & cinematic film production for Mittelstand brands that want to scale."
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
@@ -304,7 +304,7 @@ function HomePage() {
             React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
               [
                 { num: "50+", label: "Projects delivered", c: "pink" },
-                { num: "B2B", label: "Brand focus", c: "purple" },
+                { num: "D2C", label: "Brand focus", c: "purple" },
                 { num: "DE",  label: "Stuttgart & remote", c: "green" },
                 { num: "#1",  label: "Strategy-first", c: "orange" },
               ].map((s, i) =>
@@ -360,7 +360,7 @@ function HomePage() {
                 "Recent ", React.createElement("em", { className: "fwf-display-italic" }, "productions.")
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
-                "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2B brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
+                "Flow West Films is a cinematic creative studio crafting ad creatives and content for Mittelstand brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
               )
             ),
             React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
