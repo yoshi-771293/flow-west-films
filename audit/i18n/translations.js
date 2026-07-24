@@ -175,6 +175,8 @@ window.FWF_TRANSLATIONS = {
       "Manche Inhalte wirken unverwechselbar, andere noch etwas generisch oder austauschbar.",
     "Mostly generic — hard to tell us apart from any AI-generated output.":
       "Unser Content hebt sich kaum von anderen AI-generierten Inhalten ab.",
+    "We don't (yet) use AI tools for content creation.":
+      "Wir nutzen (noch) keine AI-Tools für die Content-Erstellung.",
 
     "When someone sees your content cold — do they immediately recognize your company as a specialist, or just another provider?":
       "Wenn jemand Ihren Content zum ersten Mal sieht — erkennt er sofort, dass Sie Spezialisten auf Ihrem Gebiet sind, oder wirken Sie wie viele andere Anbieter?",
