@@ -96,112 +96,112 @@ window.FWF_TRANSLATIONS = {
       "Wir beschreiben vor allem unsere Leistung — der Schmerz des Kunden steht nicht im Mittelpunkt.",
 
     "When your ads appear in someone's feed — do they stop or keep scrolling?":
-      "Wenn Ihre Ads im Feed erscheinen — bleibt man hängen oder scrollt weiter?",
+      "Wenn Ihre Ads im Feed erscheinen — halten sie die Aufmerksamkeit, oder wird einfach weitergescrollt?",
     "They stop — we see strong engagement and our ads consistently grab attention.":
-      "Man bleibt hängen — wir sehen starkes Engagement und unsere Ads ziehen konstant Aufmerksamkeit.",
+      "Man bleibt hängen — unsere Ads ziehen regelmäßig Aufmerksamkeit auf sich und sorgen für starkes Engagement.",
     "Mixed — some ads work, most don't reliably stop the scroll.":
       "Gemischt — manche Ads funktionieren, die meisten stoppen den Scroll nicht zuverlässig.",
     "Our content gets ignored in the feed.":
-      "Unser Content wird im Feed ignoriert.",
+      "Unser Content geht im Feed unter — die meisten Nutzer scrollen weiter, ohne sich mit unseren Ads zu beschäftigen.",
 
     "Compare your visuals to the top brands in your space. What's the honest gap?":
-      "Vergleichen Sie Ihre Visuals mit den Top-Marken Ihrer Branche. Wie groß ist die ehrliche Lücke?",
+      "Vergleichen Sie Ihre Visuals mit denen der führenden Marken Ihrer Branche. Wie groß ist die Lücke wirklich?",
     "On par — we look premium and credible next to the best in our industry.":
-      "Auf Augenhöhe — wir wirken premium und glaubwürdig neben den Besten der Branche.",
+      "Auf Augenhöhe — unsere Visuals wirken genauso hochwertig, professionell und glaubwürdig wie die der Marktführer.",
     "Solid, but not quite at their level yet.":
-      "Solide, aber noch nicht ganz auf deren Niveau.",
+      "Solide, aber mit Luft nach oben — wir treten professionell auf, erreichen jedoch noch nicht ganz das Niveau der führenden Marken.",
     "We look clearly smaller or less polished than the market leaders.":
-      "Wir wirken deutlich kleiner oder weniger poliert als die Marktführer.",
+      "Im Vergleich zu den Marktführern wirken wir sichtbar kleiner, weniger professionell oder weniger hochwertig.",
 
     "If referrals and repeat clients disappeared tomorrow — would marketing still bring in new business?":
-      "Wenn Empfehlungen und Bestandskunden morgen wegfielen — würde Marketing weiterhin neues Geschäft bringen?",
+      "Wenn Empfehlungen und Bestandskunden morgen wegfielen — würde Ihr Marketing weiterhin neue Kunden gewinnen?",
     "Yes — marketing generates leads independently of referrals.":
-      "Ja — Marketing generiert Leads unabhängig von Empfehlungen.",
+      "Ja — unser Marketing generiert kontinuierlich Leads und Anfragen, unabhängig von Empfehlungen.",
     "Not yet, but we're actively building toward that.":
       "Noch nicht, aber wir arbeiten aktiv darauf hin.",
     "No — without referrals or existing clients, new business would dry up.":
-      "Nein — ohne Empfehlungen oder Bestandskunden würde neues Geschäft versiegen.",
+      "Nein — ohne Empfehlungen und Bestandskunden würde die Neukundengewinnung deutlich zurückgehen.",
 
     "When someone sees your ad, is it obvious what they should do next — and does the offer feel worth clicking on?":
-      "Wenn jemand Ihre Ad sieht — ist klar, was als Nächstes zu tun ist, und wirkt das Angebot klickwürdig?",
+      "Wenn jemand Ihre Ad sieht — ist sofort klar, was der nächste Schritt ist und warum sich ein Klick lohnt?",
     "Crystal clear — strong CTA and the offer feels compelling and specific.":
-      "Glasklar — starker CTA und das Angebot wirkt überzeugend und konkret.",
+      "Glasklar — starker CTA und das Angebot wirkt relevant, konkret und überzeugend.",
     "There's a CTA, but the offer feels generic or easy to ignore.":
-      "Es gibt einen CTA, aber das Angebot wirkt generisch oder leicht zu ignorieren.",
+      "Es gibt einen CTA, das Angebot wirkt jedoch austauschbar oder nicht besonders attraktiv.",
     "No clear next step — or the offer doesn't feel worth clicking on.":
-      "Kein klarer nächster Schritt — oder das Angebot wirkt nicht klickwürdig.",
+      "Der nächste Schritt ist nicht eindeutig, oder das Angebot bietet keinen klaren Anreiz zum Klicken.",
 
     "How fast can you go from a new ad idea to having it live and being tested?":
-      "Wie schnell kommen Sie von einer neuen Ad-Idee zu einer live geschalteten, getesteten Ad?",
+      "Wie schnell wird aus einer neuen Ad-Idee eine live geschaltete und getestete Kampagne?",
     "Days — we move fast and testing is built into how we work.":
-      "Tage — wir sind schnell und Testing ist Teil unserer Arbeitsweise.",
+      "Innerhalb weniger Tage — wir arbeiten schnell, und Testing ist fester Bestandteil unserer Arbeitsweise.",
     "A week or two — there's some friction in the process.":
       "Ein bis zwei Wochen — es gibt etwas Reibung im Prozess.",
     "Weeks or longer — production is slow and painful.":
-      "Wochen oder länger — die Produktion ist langsam und mühsam.",
+      "Mehrere Wochen oder länger — von der Idee bis zum Livegang vergeht viel Zeit, und die Umsetzung ist oft aufwendig.",
 
     "When an ad starts underperforming — how quickly do you catch it and act?":
-      "Wenn eine Ad schwächelt — wie schnell erkennen Sie das und handeln?",
+      "Wie schnell erkennen Sie, wenn eine Ad an Performance verliert — und reagieren darauf?",
     "Fast — we monitor performance actively and optimize quickly.":
-      "Schnell — wir überwachen die Performance aktiv und optimieren zügig.",
+      "Schnell — wir überwachen die Performance aktiv und optimieren zeitnah.",
     "We check sometimes, but drops can slip by unnoticed.":
-      "Wir schauen manchmal, aber Einbrüche können unbemerkt durchrutschen.",
+      "Wir prüfen die Performance regelmäßig, dennoch bleiben Einbrüche gelegentlich unentdeckt.",
     "Ads run on autopilot — we rarely catch underperformance in time.":
-      "Ads laufen auf Autopilot — wir bemerken schwache Performance selten rechtzeitig.",
+      "Ads laufen weitgehend auf Autopilot, und schwache Performance fällt oft erst spät auf.",
 
     "Do your ads tell a story — or do they mostly explain what you offer?":
       "Erzählen Ihre Ads eine Geschichte — oder erklären sie vor allem, was Sie anbieten?",
     "We lead with story and emotion — the offer follows naturally.":
-      "Wir führen mit Story und Emotion — das Angebot folgt von selbst.",
+      "Story und Emotion stehen im Vordergrund — das Angebot ergibt sich daraus ganz natürlich.",
     "We mix both, but information tends to dominate.":
-      "Wir mischen beides, aber Information überwiegt meist.",
+      "Wir arbeiten mit Storytelling, stellen aber häufig Leistungen und Informationen in den Vordergrund.",
     "We mostly describe our service — there's no real story.":
-      "Wir beschreiben vor allem unsere Leistung — es gibt keine echte Story.",
+      "Unsere Ads erklären vor allem, was wir anbieten, ohne eine echte Geschichte zu erzählen.",
 
     "Do your videos make your company look like a trusted, premium option — or just another vendor?":
-      "Lassen Ihre Videos Ihr Unternehmen wie eine vertrauenswürdige, premium Option wirken — oder wie einen weiteren Anbieter?",
+      "Lassen Ihre Videos Ihr Unternehmen als vertrauenswürdige Premium-Marke erscheinen — oder wie einen weiteren Anbieter unter vielen?",
     "Definitely premium — we project confidence and authority.":
-      "Eindeutig premium — wir strahlen Selbstvertrauen und Autorität aus.",
+      "Eindeutig premium — unsere Videos vermitteln Kompetenz, Vertrauen und eine klare Positionierung als führender Anbieter.",
     "Somewhere in the middle — not bad, but not commanding either.":
-      "Irgendwo dazwischen — nicht schlecht, aber auch nicht beeindruckend.",
+      "Irgendwo dazwischen — unsere Inhalte wirken professionell, heben uns jedoch nicht deutlich vom Wettbewerb ab.",
     "We blend in — nothing signals we're exceptional.":
-      "Wir gehen unter — nichts signalisiert, dass wir außergewöhnlich sind.",
+      "Wir gehen in der Masse unter — unsere Videos vermitteln keinen klaren Unterschied und keine starke Premium-Wirkung.",
 
     "Even if you use AI tools — does your content still feel distinctly yours, or does it feel generic?":
       "Selbst wenn Sie AI-Tools nutzen — fühlt sich Ihr Content noch unverkennbar nach Ihnen an, oder wirkt er generisch?",
     "Distinctly ours — our voice and style come through regardless of the tools we use.":
-      "Unverkennbar unser — unsere Stimme und unser Stil kommen unabhängig von den Tools durch.",
+      "Unverwechselbar — unsere Stimme, unser Stil und unsere Persönlichkeit sind unabhängig von den eingesetzten Tools klar erkennbar.",
     "Some content does, some still feels generic or interchangeable.":
-      "Bei manchem Content ja, anderes wirkt noch generisch oder austauschbar.",
+      "Manche Inhalte wirken unverwechselbar, andere noch etwas generisch oder austauschbar.",
     "Mostly generic — hard to tell us apart from any AI-generated output.":
-      "Überwiegend generisch — kaum von beliebigem AI-generiertem Output zu unterscheiden.",
+      "Unser Content hebt sich kaum von anderen AI-generierten Inhalten ab.",
 
     "When someone sees your content cold — do they immediately recognize your company as a specialist, or just another provider?":
-      "Wenn jemand Ihren Content zum ersten Mal sieht — erkennt er Ihr Unternehmen sofort als Spezialisten, oder nur als weiteren Anbieter?",
+      "Wenn jemand Ihren Content zum ersten Mal sieht — erkennt er sofort, dass Sie Spezialisten auf Ihrem Gebiet sind, oder wirken Sie wie viele andere Anbieter?",
     "Specialist — we've built clear authority and a recognizable presence.":
-      "Spezialist — wir haben klare Autorität und eine wiedererkennbare Präsenz aufgebaut.",
+      "Klare Expertenpositionierung — wir haben eine starke, wiedererkennbare Präsenz aufgebaut und werden als Spezialisten wahrgenommen.",
     "We're working on it, but the authority signal isn't strong yet.":
-      "Wir arbeiten daran, aber das Autoritätssignal ist noch nicht stark.",
+      "Unsere Expertise wird sichtbar, die Positionierung könnte jedoch noch klarer und prägnanter sein.",
     "We look like everyone else in our category.":
-      "Wir sehen aus wie alle anderen in unserer Kategorie.",
+      "Wir wirken ähnlich wie viele andere Anbieter in unserem Marktumfeld.",
 
     "If the one person handling your marketing left tomorrow — would things keep moving?":
-      "Wenn die eine Person, die Ihr Marketing macht, morgen ginge — liefe alles weiter?",
+      "Wenn die Person, die Ihr Marketing verantwortet, morgen ausfiele — würde alles reibungslos weiterlaufen?",
     "Yes — processes are documented and the work runs independently.":
-      "Ja — Prozesse sind dokumentiert und die Arbeit läuft eigenständig.",
+      "Unsere Prozesse sind dokumentiert, Verantwortlichkeiten klar geregelt, und die Arbeit ist nicht von einer einzelnen Person abhängig.",
     "It would slow down significantly, but eventually recover.":
-      "Es würde sich deutlich verlangsamen, sich aber irgendwann erholen.",
+      "Die Abläufe würden sich zunächst verlangsamen, könnten aber aufgefangen werden.",
     "Everything would stop — it's one person's entire job.":
-      "Alles würde stoppen — es hängt komplett an einer Person.",
+      "Ein Großteil der Aktivitäten hängt an einer Person und würde vorübergehend zum Stillstand kommen.",
 
     "If new clients came in 3× faster right now — could your marketing keep up?":
-      "Wenn ab sofort 3× schneller neue Kunden kämen — käme Ihr Marketing mit?",
+      "Wenn Sie ab morgen dreimal so viele neue Kunden gewinnen würden — wäre Ihr Marketing darauf vorbereitet?",
     "Yes — we're built to scale, the infrastructure is there.":
       "Ja — wir sind auf Skalierung ausgelegt, die Infrastruktur steht.",
     "Maybe — but it would put real strain on the system.":
-      "Vielleicht — aber es würde das System stark belasten.",
+      "Wir könnten wachsen, müssten unsere Prozesse und Kapazitäten jedoch zeitnah anpassen.",
     "No — we'd fall apart at that speed.":
-      "Nein — bei dem Tempo würden wir auseinanderfallen.",
+      "Das zusätzliche Volumen würde unsere bestehenden Strukturen überfordern.",
 
     /* ---- Dimension insights (3 levels × 7) --------------------------- */
     "Visitors and prospects can't instantly tell why you're different — the message isn't cutting through.":
