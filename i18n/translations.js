@@ -36,7 +36,7 @@ window.FWF_TRANSLATIONS = {
     "Start with a free brand audit →": "Jetzt Audit starten →",
 
     /* ---- Footer ------------------------------------------------------- */
-    "Premium ad creative & cinematic film production for Mittelstand brands.":
+    "Premium ad creative & cinematic film production for B2C brands.":
       "Premium Ad Creative & Cinematic Film Produktion für Mittelstandsmarken.",
     "Navigate": "Navigation",
     "Follow": "Folgen",
@@ -68,7 +68,7 @@ window.FWF_TRANSLATIONS = {
     "We make brands": "Wir machen es unmöglich,",
     "impossible to": "Marken zu",
     "ignore.": "ignorieren.",
-    "Premium ad creative & cinematic film production for Mittelstand brands that want to scale.":
+    "Premium ad creative & cinematic film production for B2C brands that want to scale.":
       "Premium Ad Creative & Cinematic Film Produktion für Mittelstandsmarken, die skalieren wollen.",
     "4K Production": "4K-Produktion",
     "Strategy First": "Strategie zuerst",
@@ -96,7 +96,7 @@ window.FWF_TRANSLATIONS = {
     "Featured work": "Ausgewählte Arbeiten",
     "Recent": "Aktuelle",
     "productions.": "Produktionen.",
-    "Flow West Films is a cinematic creative studio crafting ad creatives and content for Mittelstand brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
+    "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
       "Flow West Films ist ein cinematisches Kreativstudio, das Ad Creatives und Content für Mittelstandsmarken entwickelt, die skalieren wollen. Konzeption, Kreation, Performance Marketing und Analytics — alles inklusive.",
 
     /* ---- Home: why FWF ------------------------------------------------ */
@@ -186,7 +186,7 @@ window.FWF_TRANSLATIONS = {
     "Step inside the ": "Tauchen Sie ein in unsere ",
     "Films, reels, ads, and brand productions — tap a project to dive in.":
       "Filme, Reels, Ads und Brand-Filme: Projekt anklicken und mehr entdecken.",
-    "Films, reels, ads, and brand productions delivered for Mittelstand brands across hospitality, sports, and consumer goods.":
+    "Films, reels, ads, and brand productions delivered for B2C brands across hospitality, sports, and consumer goods.":
       "Filme, Reels, Ads und Brand-Produktionen für Mittelstandsmarken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
@@ -307,7 +307,7 @@ window.FWF_TRANSLATIONS = {
 
     "Do you work with brands outside Germany?":
       "Arbeiten Sie auch mit Marken außerhalb Deutschlands?",
-    "Yes — we work remotely with Mittelstand brands across Europe and beyond. Production travel is built into the quote when needed.":
+    "Yes — we work remotely with B2C brands across Europe and beyond. Production travel is built into the quote when needed.":
       "Ja — wir arbeiten remote mit Mittelstandsmarken in ganz Europa und darüber hinaus. Reisekosten für die Produktion werden bei Bedarf ins Angebot aufgenommen.",
     "How long does a project take?": "Wie lange dauert ein Projekt?",
     "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works.":
@@ -332,7 +332,7 @@ window.FWF_TRANSLATIONS = {
     "Filmmaker. Creative director.": "Filmemacher. Creative Director.",
     "Performance thinker.": "Performance-Denker.",
     "Flow West Films was founded by": "Flow West Films wurde gegründet von",
-    "— filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help Mittelstand brands grow.":
+    "— filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help B2C brands grow.":
       "— Filmemacher, Creative Director und Performance-Marketing-Denker. Mit Sitz in Stuttgart vereint das Studio cinematisches Storytelling mit Ad-Strategie, um Mittelstandsmarken beim Wachsen zu helfen.",
     "Florian has shot for hospitality groups, sports brands, watchmakers, and SaaS companies — with credits on IMDb across narrative film and commercial work.":
       "Florian hat für Hospitality-Gruppen, Sportmarken, Uhrenhersteller und SaaS-Unternehmen gedreht — mit Credits auf IMDb über narrativen Film und Commercial-Arbeiten.",
@@ -366,7 +366,7 @@ window.FWF_TRANSLATIONS = {
     "Stuttgart · Available remotely across Europe":
       "Stuttgart · Remote in ganz Europa verfügbar",
     "Get in touch": "Kontakt aufnehmen",
-    "We work with Mittelstand brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.":
+    "We work with B2C brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.":
       "Wir arbeiten mit Mittelstandsmarken, die es ernst meinen mit dem Skalieren durch Premium-Creative. Buchen Sie ein 30-minütiges Strategiegespräch und lassen Sie uns sehen, ob wir zusammenpassen.",
     "Results that speak for themselves": "Ergebnisse, die für sich sprechen",
     "DAYS TO FIRST OUTPUT": "TAGE BIS ZUM ERSTEN OUTPUT",
