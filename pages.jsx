@@ -586,15 +586,36 @@ function SphereGallery({ items, onOpen, openKey }) {
     const PHI_GAP = 3;
 
     // Weighted fill: a project with `feature: n` claims n tiles on the wall instead
-    // of one, so flagship work (NYC, Thomas Sabo, testimonials) reads as more present.
-    // Coprime stride against the *pool* length keeps duplicates spread far apart.
+    // of one, so flagship work (NordVPN, Alienwork, Thomas Sabo) reads as more present.
+    // A greedy "most-remaining-first" placement (same idea as the classic reorganize-string
+    // problem) fills all 36 cells while guaranteeing no two cells carrying the same project
+    // ever land next to each other — including the wrap from the last cell back to the first,
+    // since each row is a full ring around the sphere. Degrades gracefully (best-effort spacing,
+    // no crash) if one project is weighted heavily enough to exceed half the wall.
+    const CELLS = 36;
     const pool = [];
     items.forEach((p, i) => { const w = Math.max(1, p.feature || 1); for (let k = 0; k < w; k++) pool.push(i); });
-    const stride = [7, 5, 3, 2, 1].find((s) => { // coprime with pool size → repeats spread apart
-      let a = s, b = pool.length;
-      while (b) { const t = a % b; a = b; b = t; }
-      return a === 1;
-    });
+    const cellCounts = {};
+    for (let c = 0; c < CELLS; c++) {
+      const idx = pool[c % pool.length];
+      cellCounts[idx] = (cellCounts[idx] || 0) + 1;
+    }
+    const arrangement = (() => {
+      const entries = Object.keys(cellCounts).map((k) => ({ idx: Number(k), count: cellCounts[k] }));
+      const out = [];
+      for (let step = 0; step < CELLS; step++) {
+        entries.sort((a, b) => b.count - a.count);
+        let choice = entries.find((e) =>
+          e.count > 0 &&
+          e.idx !== out[out.length - 1] &&
+          !(step === CELLS - 1 && e.idx === out[0])
+        );
+        if (!choice) choice = entries.find((e) => e.count > 0); // only item left, or unavoidable due to dominance
+        out.push(choice.idx);
+        choice.count--;
+      }
+      return out;
+    })();
 
     const meshes = [];
     const cellsByProj = {};
@@ -604,7 +625,7 @@ function SphereGallery({ items, onOpen, openKey }) {
       let phiCursor = ri * 17 * D2R; // stagger row seams
       COL_W.forEach((w) => {
         const span = w * 40 * D2R;
-        const idx = pool[(cell * stride) % pool.length];
+        const idx = arrangement[cell];
         const p = items[idx], tex = projTex[idx];
         const geo = new THREE.SphereGeometry(
           R, 20, 14,
