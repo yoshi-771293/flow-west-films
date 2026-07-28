@@ -191,9 +191,9 @@ window.FWF_TRANSLATIONS = {
     "All": "Alle",
 
     "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.":
-      "Ein cinematischer Spec-Ad für Nike: warum Athleten sich durch Erschöpfung kämpfen und weitermachen, obwohl die Chancen dagegen stehen — und Aufgeben die leichtere Wahl wäre. Weil man gewinnen könnte.",
-    "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.":
-      "Ein Spec Commercial für NordVPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis NordVPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
+      "Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre? Die Antwort ist einfach — man könnte gewinnen.",
+    "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.":
+      "Ein Spec Commercial für Nord VPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis Nord VPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
     "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.":

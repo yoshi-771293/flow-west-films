@@ -7,21 +7,21 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "Nike", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
+    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
     colors: ["#ff6420", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/89868d1b-837a-4334-a49e-1420d368a48b/thumbnail_71ad64f5.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/89868d1b-837a-4334-a49e-1420d368a48b?token=7996543d5874525e06220c862fc4a2a8b2e5cd3b78b947ea8d65fae1ff17bc83&expires=1785315706&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "NordVPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
-    desc: "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.",
+    client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
+    desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
     colors: ["#4687ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/e50f9e63-232f-43ff-a054-a8f038139574/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/e50f9e63-232f-43ff-a054-a8f038139574?token=71910c15c84230b504eaef007aba63cdc79074ac79b025cf723e3a6ca990c342&expires=1785313123&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", feature: 3,
+    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad",
     desc: "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
@@ -593,7 +593,7 @@ function SphereGallery({ items, onOpen, openKey }) {
     const PHI_GAP = 3;
 
     // Weighted fill: a project with `feature: n` claims n tiles on the wall instead
-    // of one, so flagship work (NordVPN, Alienwork, Thomas Sabo) reads as more present.
+    // of one, so flagship work (Nord VPN, Alienwork, Thomas Sabo) reads as more present.
     // A greedy "most-remaining-first" placement (same idea as the classic reorganize-string
     // problem) fills all 36 cells while guaranteeing no two cells carrying the same project
     // ever land next to each other — including the wrap from the last cell back to the first,
