@@ -389,9 +389,9 @@ function HomePage() {
               client: "NordVPN", title: "Ad Creative", tag: "Ad Creative",
               desc: "A spec commercial for NordVPN — a young man feels watched everywhere, even by his own pets, until NordVPN lets him relax, browse, and work in peace again.",
               colors: ["#4687ff", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/4882d0f3-a5a0-432a-806c-cd7ab57558ed/thumbnail.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/4882d0f3-a5a0-432a-806c-cd7ab57558ed?token=60d774806dc2fb4952eba94027d3be70e18cac79b1d4c1fd27ef83a3a5fbf6d6&expires=1784365289&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/4882d0f3-a5a0-432a-806c-cd7ab57558ed?token=60d774806dc2fb4952eba94027d3be70e18cac79b1d4c1fd27ef83a3a5fbf6d6&expires=1784365289&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/e50f9e63-232f-43ff-a054-a8f038139574/thumbnail.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/e50f9e63-232f-43ff-a054-a8f038139574?token=71910c15c84230b504eaef007aba63cdc79074ac79b025cf723e3a6ca990c342&expires=1785313123&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/e50f9e63-232f-43ff-a054-a8f038139574?token=71910c15c84230b504eaef007aba63cdc79074ac79b025cf723e3a6ca990c342&expires=1785313123&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             })
           )
         )
