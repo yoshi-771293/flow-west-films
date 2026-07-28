@@ -28,13 +28,13 @@ const ALL_PROJECTS = [
   },
   {
     client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.",
+    desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable. No AI — filmed on location in studio.",
     colors: ["#ff6420", "#c9a96e"],
     thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
   },
   {
     client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
-    desc: "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
+    desc: "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -54,8 +54,8 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/4a5a0bae-1c09-488e-9cd9-2b4ac461067e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Gloria", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Performance ad creative with on-screen subtitles, built for social feed placement.",
+    client: "Gloria", title: "Eibl GmbH", tag: "Ad Creative", cat: "ad",
+    desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ba8cc671-93fd-44ae-8e80-c72cb647d2c8/thumbnail_4088abe6.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/ba8cc671-93fd-44ae-8e80-c72cb647d2c8?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -191,14 +191,14 @@ const ALL_PROJECTS = [
   // === BRAND FILMS / TESTIMONIALS ===
   {
     client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image",
-    desc: "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.",
+    desc: "Client testimonial with Elif D. for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c686eb45-8b2d-4513-a8d5-8a0419ca9469/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/c686eb45-8b2d-4513-a8d5-8a0419ca9469?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Eibl GmbH", title: "Testimonial — Chris", tag: "Testimonial", cat: "image",
-    desc: "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.",
+    desc: "Client testimonial for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#9b30ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/cae8231c-893d-4a8c-910e-20c3c57b3384/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/cae8231c-893d-4a8c-910e-20c3c57b3384?autoplay=true&loop=false&muted=true&preload=true&responsive=true"

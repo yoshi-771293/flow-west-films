@@ -216,8 +216,8 @@ window.FWF_TRANSLATIONS = {
       "Ein 60-sekündiger narrativer Brand-Film für einen B2B-SaaS-Launch.",
     "Short-form ad creative for performance campaigns.":
       "Short-Form Ad Creative für Performance-Kampagnen.",
-    "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable.":
-      "Macro-Product-Ad für Hatz — Echt Badisch Gut. Clean, premium, appetitlich.",
+    "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable. No AI — filmed on location in studio.":
+      "Macro-Product-Ad für Hatz — Echt Badisch Gut. Clean, premium, appetitlich. Kein AI — gedreht on Location im Studio.",
     "An intimate documentary portrait of the owner at the Santa Lucia wine bar.":
       "Ein intimes Doku-Porträt des Inhabers der Santa Lucia Weinbar.",
     "Macro product film for a skeleton watch reveal.":
@@ -244,8 +244,8 @@ window.FWF_TRANSLATIONS = {
       "Ein verträumtes Outdoor-Reel mit Kirschblüten und fließender Fashion — Frühjahrskampagne.",
     "Behind-the-scenes footage of a food & lifestyle commercial shoot.":
       "Behind-the-Scenes-Material eines Food- & Lifestyle-Commercial-Drehs.",
-    "Performance ad creative with on-screen subtitles, built for social feed placement.":
-      "Performance Ad Creative mit On-Screen-Untertiteln — gemacht für den deutschsprachigen Social Feed.",
+    "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.":
+      "Performance Ad Creative für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.",
 
     /* current project descriptions */
     "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.":
@@ -268,18 +268,18 @@ window.FWF_TRANSLATIONS = {
       "Porsche 911 GT3 RS Commercial — On-Set-Produktion und CGI durch Recom Film, Schnitt durch Flow West Films. Mit vollständigem CGI-Breakdown von Rennstrecke und Fahrzeug.",
     "Behind-the-scenes from a Flow West Films production — on location, in the air.":
       "Behind the Scenes einer Flow West Films Produktion — on Location, in der Luft.",
-    "Client testimonial with Elif D. for Eibl GmbH — a real estate agency connecting buyers with affordable housing.":
-      "Kunden-Testimonial mit Elif D. für Eibl GmbH — eine Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
-    "Client testimonial for Eibl GmbH — real estate agency connecting buyers with affordable housing.":
-      "Kunden-Testimonial für Eibl GmbH — Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
+    "Client testimonial with Elif D. for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.":
+      "Kunden-Testimonial mit Elif D. für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.",
+    "Client testimonial for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.":
+      "Kunden-Testimonial für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.",
     "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.":
       "Imagefilm für App Liqes — digitale Präsenz, wie sie funktionieren sollte. Mit einer echten Kundenstimme von Café Bar Relax, gedreht in Ludwigsburg.",
     "Fashion-forward campaign shoot on location in New York City.":
       "Fashion-Kampagne auf Location in New York City.",
     "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.":
       "Ein cinematischer Spec-Ad für Thomas Sabo: Ein Grabräuber betritt ein verlassenes Pharaonengrab — auf der Suche nach einem Artefakt, das seine Tochter heilen kann. Dunkel, tempogeladen, mitreißend. Thomas Sabo: Rebel at Heart.",
-    "Social ad creative for Eibl GmbH — a real estate agency connecting buyers with affordable housing.":
-      "Social Ad Creative für Eibl GmbH — eine Immobilienagentur, die Käufer mit bezahlbarem Wohnraum zusammenbringt.",
+    "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.":
+      "Social Ad Creative für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.",
     "Ad creative for Easy Foil — a lightweight, affordable hydrofoil built at Lake Constance. We spotlight the demo experience to make booking a test ride feel effortless. Ride the easy way.":
       "Ad Creative für Easy Foil — ein leichtes, günstiges Hydrofoil vom Bodensee. Wir zeigen das Demo-Erlebnis und machen eine Buchung so einfach wie das Fahren selbst. Ride the easy way.",
     "Ad creative for Easy Foil's Easy Drive — showcasing the product in action for European market audiences.":
