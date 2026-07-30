@@ -7,6 +7,13 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
+    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 4,
+    desc: "Ad creative for WGV Versicherung — promoting private liability insurance (Privathaftpflicht) coverage.",
+    colors: ["#2d6cdf", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
     colors: ["#ff6420", "#0a0a0a"],
@@ -17,8 +24,8 @@ const ALL_PROJECTS = [
     client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
     desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
     colors: ["#4687ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/e50f9e63-232f-43ff-a054-a8f038139574/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/e50f9e63-232f-43ff-a054-a8f038139574?token=71910c15c84230b504eaef007aba63cdc79074ac79b025cf723e3a6ca990c342&expires=1785313123&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/6f0f6301-6d12-42d9-a724-f29ec39a5f75/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad",

@@ -190,6 +190,8 @@ window.FWF_TRANSLATIONS = {
       "Filme, Reels, Ads und Brand-Produktionen für Mittelstandsmarken aus Hospitality, Sport und Consumer Goods.",
     "All": "Alle",
 
+    "Ad creative for WGV Versicherung — promoting private liability insurance (Privathaftpflicht) coverage.":
+      "Ad Creative für die WGV Versicherung — zur Bewerbung der Privathaftpflichtversicherung.",
     "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.":
       "Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre? Die Antwort ist einfach — das Vertrauen in sich selbst und den Glauben daran, dass man gewinnen könnte.",
     "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.":
