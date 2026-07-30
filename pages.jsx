@@ -1273,7 +1273,7 @@ function PricingPage() {
         </div>
       </section>
 
-      <GrowthEngineSection />
+      <GrowthEngineSection cta={false} />
 
       <FinalCTA
         headline={<>Not sure which offer is <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>right for you?</em></>}

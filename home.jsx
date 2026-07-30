@@ -398,8 +398,6 @@ function HomePage() {
         )
       ),
 
-      React.createElement(GrowthEngineSection),
-
       /* WHY FWF */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
         React.createElement("div", { className: "fwf-container" },
@@ -428,6 +426,8 @@ function HomePage() {
           )
         )
       ),
+
+      React.createElement(GrowthEngineSection),
 
       React.createElement(FinalCTA),
 

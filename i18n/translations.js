@@ -389,7 +389,22 @@ window.FWF_TRANSLATIONS = {
     "your growth engine.": "Ihrem Wachstumsmotor wird.",
     "This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.":
       "Wir erstellen kein Creative um des Creatives willen. Jedes Asset, das wir produzieren, ist darauf ausgelegt, eine Zahl zu bewegen, die für Ihr Business zählt — Leads, Markenbekanntheit, Umsatz oder die Bewerber, die bei Ihnen anklopfen. Sobald ein Konzept funktioniert, raten wir nicht, warum — wir skalieren es gezielt.",
+    "Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.":
+      "Enthalten im Growth Retainer und Premium Partner — den beiden Angeboten, bei denen wir Ihre Paid Media steuern.",
+    "We start with your numbers": "Wir starten mit Ihren Zahlen",
+    "Before a single euro goes into media, we agree on the exact metrics that define success for your business — CTR, ROAS, CPA, whichever actually matters to you. Every decision after that gets measured against those targets.":
+      "Bevor ein einziger Euro in Media fließt, definieren wir gemeinsam die Kennzahlen, an denen sich Erfolg für Ihr Business messen lässt — CTR, ROAS, CPA, je nachdem, was für Sie wirklich zählt. Jede Entscheidung danach wird an diesen Zielwerten gemessen.",
     "Scaling, done right": "Skalieren, richtig gemacht",
+    "Where We Scale": "Wo wir skalieren",
+    "Every channel that matters": "Jeder Kanal, der zählt",
+    "Most of our clients start on Meta — but we scale wherever your audience actually is: Google, LinkedIn, TikTok, and YouTube Ads.":
+      "Die meisten unserer Kunden starten auf Meta — wir skalieren aber dort, wo Ihre Zielgruppe wirklich ist: Google, LinkedIn, TikTok und YouTube Ads.",
+    "AI Visibility": "AI-Sichtbarkeit",
+    "Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.":
+      "Immer mehr Kaufentscheidungen beginnen in einer AI. Wir optimieren Ihre Marke so, dass sie in ChatGPT, Claude und Gemini gefunden wird — nicht nur bei Google.",
+    "This is what the Growth Retainer and Premium Partner are built around.":
+      "Genau darauf sind der Growth Retainer und Premium Partner ausgelegt.",
+    "Check out the Growth Retainer & Premium Partner": "Growth Retainer & Premium Partner ansehen",
     "We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.":
       "Wir erhöhen Budgets nicht auf Verdacht. Sobald sich ein Creative-Konzept bewährt hat, duplizieren wir genau das, was funktioniert, in neue Audience-Kampagnen — wir skalieren das, was Ergebnisse liefert, statt es zu verwässern.",
     "Onboarding & Collaboration": "Onboarding & Zusammenarbeit",
@@ -407,7 +422,7 @@ window.FWF_TRANSLATIONS = {
     "Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.":
       "Ihr eigenes Live-Dashboard — CTR, ROAS und CPA in Echtzeit, ohne auf einen Report zu warten, um zu wissen, wie eine Kampagne läuft.",
     "CRM & Meta Feedback Loop": "CRM- & Meta-Feedback-Loop",
-    "Every lead flows straight into your CRM. When your sales team marks a lead \"qualified,\" we feed that signal back into Meta — training the algorithm to chase quality leads, not just volume.":
-      "Jeder Lead landet direkt in Ihrem CRM. Markiert Ihr Vertrieb einen Lead als „qualifiziert“, spielen wir dieses Signal zurück an Meta — und trainieren so den Algorithmus darauf, hochwertige Leads zu finden, statt nur möglichst viele."
+    "Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.":
+      "Jeder Lead landet direkt in Ihrem CRM. Wer bei Ihnen den Vertrieb macht — Gründer oder Team — markiert, welche Leads wirklich qualifiziert waren, und gibt das an uns zurück. Wir spielen es an Meta zurück und trainieren den Algorithmus darauf, hochwertige Leads zu finden statt reiner Masse."
   }
 };

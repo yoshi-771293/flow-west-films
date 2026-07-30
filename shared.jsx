@@ -431,7 +431,18 @@ function TypewriterWord({ words, style, className }) {
 // GrowthEngineSection — "how we scale" explainer, shared between Home
 // (below Recent Productions) and Pricing (below offers + audit bridge)
 // ============================================
-function GrowthEngineSection() {
+function GrowthEngineSection({ cta = true }) {
+  const principles = [
+    {
+      i: <Icons.Target size={22} />, c: "pink", t: "We start with your numbers",
+      d: "Before a single euro goes into media, we agree on the exact metrics that define success for your business — CTR, ROAS, CPA, whichever actually matters to you. Every decision after that gets measured against those targets.",
+    },
+    {
+      i: <Icons.TrendUp size={22} />, c: "pink", t: "Scaling, done right",
+      d: "We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.",
+    },
+  ];
+
   const collab = [
     { i: <Icons.Calendar size={22} />, t: "Onboarding (2–3 Days)", d: "A fast, focused setup to get strategy, access, and tracking aligned — no weeks-long ramp-up.", c: "purple" },
     { i: <Icons.Phone size={22} />, t: "Weekly Performance Calls", d: "A standing sync with your dedicated Performance Marketing Manager to review what's working and answer questions in real time.", c: "green" },
@@ -448,16 +459,43 @@ function GrowthEngineSection() {
         <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
           Creative built to become <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your growth engine.</em>
         </h2>
-        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 56px 0", maxWidth: 640 }}>
+        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px 0", maxWidth: 640 }}>
           This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.
         </p>
 
-        <div style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
-          <div style={{ color: "var(--fwf-pink)", flexShrink: 0 }}><Icons.Repeat size={22} /></div>
-          <div>
-            <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>Scaling, done right</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>
-              We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.
+        <div style={{ display: "inline-flex", alignItems: "flex-start", gap: 10, padding: "10px 18px", borderRadius: 100, border: "1px solid rgba(255,45,120,0.28)", background: "rgba(255,45,120,0.06)", marginBottom: 56 }}>
+          <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 1 }}><Icons.Check size={15} stroke={2} /></span>
+          <span style={{ fontSize: 13.5, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
+            Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.
+          </span>
+        </div>
+
+        <div style={{ borderTop: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
+          {principles.map((p, i) => (
+            <div key={i} style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderBottom: "1px solid var(--fwf-hairline)" }}>
+              <div style={{ color: "var(--fwf-" + p.c + ")", flexShrink: 0 }}>{p.i}</div>
+              <div>
+                <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>{p.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Where We Scale</span>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
+          <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
+            <div style={{ color: "var(--fwf-green)", marginBottom: 20 }}><Icons.Aperture size={24} /></div>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Every channel that matters</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              Most of our clients start on Meta — but we scale wherever your audience actually is: Google, LinkedIn, TikTok, and YouTube Ads.
+            </p>
+          </div>
+          <div className="fwf-card fwf-card-orange" style={{ padding: 32 }}>
+            <div style={{ color: "var(--fwf-orange)", marginBottom: 20 }}><Icons.Sparkles size={24} /></div>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.
             </p>
           </div>
         </div>
@@ -483,13 +521,24 @@ function GrowthEngineSection() {
             </p>
           </div>
           <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
-            <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Target size={24} /></div>
+            <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Repeat size={24} /></div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-              Every lead flows straight into your CRM. When your sales team marks a lead "qualified," we feed that signal back into Meta — training the algorithm to chase quality leads, not just volume.
+              Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.
             </p>
           </div>
         </div>
+
+        {cta && (
+          <div style={{ marginTop: 56, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 420 }}>
+              This is what the Growth Retainer and Premium Partner are built around.
+            </p>
+            <Link to="pricing" className="fwf-btn fwf-btn-primary">
+              Check out the Growth Retainer & Premium Partner <Icons.ArrowRight size={12} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
