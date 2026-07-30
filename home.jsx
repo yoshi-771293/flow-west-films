@@ -186,7 +186,7 @@ function OpeningFilm() {
     React.createElement("div", { style: { position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
     React.createElement("video", {
       ref: videoRef,
-      src: "assets/videos/opening_eden.mp4",
+      src: "assets/videos/intro_lion_glitch_4k.mp4",
       muted: true,
       playsInline: true,
       loop: false,
