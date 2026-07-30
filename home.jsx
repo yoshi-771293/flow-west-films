@@ -370,11 +370,12 @@ function HomePage() {
 
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
             React.createElement(ProjectThumb, {
-              client: "Radisson Blu", title: "Brand Reel", tag: "Social Media",
-              desc: "A cinematic nighttime reel capturing the Stuttgart property's premium atmosphere.",
-              colors: ["#ff2d78", "#7c3aed"],
-              thumb: "assets/thumbs/rad_blu.jpg", video: "assets/videos/rad_blu.mp4",
-              onPlay: function() { setActiveVideo("assets/videos/rad_blu.mp4"); },
+              client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative",
+              desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
+              colors: ["#2d6cdf", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
               featured: true
             }),
             React.createElement(ProjectThumb, {
