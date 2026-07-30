@@ -17,8 +17,8 @@ const ALL_PROJECTS = [
     client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
     colors: ["#ff6420", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/89868d1b-837a-4334-a49e-1420d368a48b/thumbnail_71ad64f5.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/89868d1b-837a-4334-a49e-1420d368a48b?token=7996543d5874525e06220c862fc4a2a8b2e5cd3b78b947ea8d65fae1ff17bc83&expires=1785315706&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
