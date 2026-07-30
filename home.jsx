@@ -381,9 +381,9 @@ function HomePage() {
               client: "Alienwork", title: "Skeleton Automatic Watch", tag: "Product",
               desc: "Full-length product film for the IK Automatic Watch reveal.",
               colors: ["#00ff88", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94/thumbnail_ad0b5ddb.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94?token=92e8aae8ddb786c4da0da87567138414fbfdc659d2fe48fc6e0a7eeca66377c5&expires=1784389290&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94?token=92e8aae8ddb786c4da0da87567138414fbfdc659d2fe48fc6e0a7eeca66377c5&expires=1784389290&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/9dc085af-2c2d-4f8c-acfd-d8ae5863c109/thumbnail_14fae6d7.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             }),
             React.createElement(ProjectThumb, {
               client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative",

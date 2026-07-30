@@ -61,6 +61,20 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/4a5a0bae-1c09-488e-9cd9-2b4ac461067e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
+    client: "Schmolke Carbon", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
+    desc: "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.",
+    colors: ["#8a8f98", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/a0017744-8d83-4f2f-8f12-ca9e937adb3f/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/a0017744-8d83-4f2f-8f12-ca9e937adb3f?token=5fbde514eda6a34c2dfcf241b14a011c6ab6faf83cae60d1e13a7f88f981eda2&expires=1785494649&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Schmolke Carbon", title: "Ad Creative — Cut 2", tag: "Ad Creative", cat: "ad",
+    desc: "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.",
+    colors: ["#8a8f98", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/7b2b34e4-af62-4492-9247-5023b8f717a1/thumbnail_2204be89.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/7b2b34e4-af62-4492-9247-5023b8f717a1?token=e87b5cce50016d83e4b64a33aaabaadb25b34bbb88d2966a9c9003d009281c9f&expires=1785494752&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Gloria", title: "Eibl GmbH", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#00ff88", "#0a0a0a"],
@@ -83,22 +97,22 @@ const ALL_PROJECTS = [
     client: "Alienwork", title: "Skeleton Automatic Watch — Short Cut", tag: "Product", cat: "ad",
     desc: "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/2a0c6cf1-6acb-4564-881a-d96b6774505f/thumbnail_09cecfc2.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/2a0c6cf1-6acb-4564-881a-d96b6774505f?token=e5416fec308af851daa02eee642e97c9d03dce603ee0d64c462f15c618b451dd&expires=1784389331&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/20d7d100-50a5-46f1-818b-d2a53fab7d9f/thumbnail_3627a386.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/20d7d100-50a5-46f1-818b-d2a53fab7d9f?token=7529d2fe701819da118392ca3b7ed4eec35ebd835b9c357a288e586061d0f6a8&expires=1785494607&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad", feature: 3,
     desc: "Full-length product film for the IK Automatic Watch reveal.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94/thumbnail_ad0b5ddb.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/01c9e73e-a9d9-40a0-a199-6e9d1ad2fa94?token=92e8aae8ddb786c4da0da87567138414fbfdc659d2fe48fc6e0a7eeca66377c5&expires=1784389290&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/9dc085af-2c2d-4f8c-acfd-d8ae5863c109/thumbnail_14fae6d7.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad", feature: 4,
     desc: "Vertical-format product commercial for the IK Automatic Watch — built for Meta Reels and Stories.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/08a90788-aa8a-4064-8574-8f80f57b454c/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/08a90788-aa8a-4064-8574-8f80f57b454c?token=7b8ad5812155294180f243ba692be27da4556dc8c858aa85484fb010d599e364&expires=1784389362&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    video: "https://iframe.mediadelivery.net/embed/684848/0ec6ff9f-c9e2-4415-b80e-b1bf6ed973a8?token=854c2caf8a78886201be846141911c2f25f7f68fba7948cbfb075befe312f297&expires=1785495352&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",

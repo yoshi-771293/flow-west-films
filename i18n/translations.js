@@ -192,6 +192,10 @@ window.FWF_TRANSLATIONS = {
 
     "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.":
       "Ad Creative für die WGV Versicherung — aus einem kleinen Missgeschick wird schnell ein echter Schadensfall, für den jemand geradestehen muss. Die Privathaftpflicht der WGV schützt Sie davor.",
+    "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.":
+      "Ad Creative für Schmolke Carbon — ein Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt. Premium-Engineering, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.",
+    "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.":
+      "Ad Creative für Schmolke Carbon — ein Vorbau komplett aus Carbon, mit demselben Material und demselben Vorteil wie ihre Lenker: eines der leichtesten Bauteile auf dem Markt, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.",
     "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.":
       "Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre? Die Antwort ist einfach — das Vertrauen in sich selbst und den Glauben daran, dass man gewinnen könnte.",
     "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.":
