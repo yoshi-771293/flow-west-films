@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer */
+/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -1272,6 +1272,8 @@ function PricingPage() {
           </a>
         </div>
       </section>
+
+      <GrowthEngineSection />
 
       <FinalCTA
         headline={<>Not sure which offer is <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>right for you?</em></>}

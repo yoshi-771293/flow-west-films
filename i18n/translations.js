@@ -381,6 +381,33 @@ window.FWF_TRANSLATIONS = {
     "Results within the first sprint": "Ergebnisse schon im ersten Sprint",
     "SPENT ON GUESSING": "FÜRS RATEN AUSGEGEBEN",
     "Every creative decision is backed by data. No spray-and-pray, no wasted budget on untested ideas.":
-      "Jede kreative Entscheidung ist datenbasiert. Kein Spray-and-Pray, kein verschwendetes Budget für ungetestete Ideen."
+      "Jede kreative Entscheidung ist datenbasiert. Kein Spray-and-Pray, kein verschwendetes Budget für ungetestete Ideen.",
+
+    /* ---- Growth Engine section (Home + Pricing) ------------------------ */
+    "How We Scale": "Wie wir skalieren",
+    "Creative built to become": "Creative, das zu",
+    "your growth engine.": "Ihrem Wachstumsmotor wird.",
+    "This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.":
+      "Wir erstellen kein Creative um des Creatives willen. Jedes Asset, das wir produzieren, ist darauf ausgelegt, eine Zahl zu bewegen, die für Ihr Business zählt — Leads, Markenbekanntheit, Umsatz oder die Bewerber, die bei Ihnen anklopfen. Sobald ein Konzept funktioniert, raten wir nicht, warum — wir skalieren es gezielt.",
+    "Scaling, done right": "Skalieren, richtig gemacht",
+    "We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.":
+      "Wir erhöhen Budgets nicht auf Verdacht. Sobald sich ein Creative-Konzept bewährt hat, duplizieren wir genau das, was funktioniert, in neue Audience-Kampagnen — wir skalieren das, was Ergebnisse liefert, statt es zu verwässern.",
+    "Onboarding & Collaboration": "Onboarding & Zusammenarbeit",
+    "Onboarding (2–3 Days)": "Onboarding (2–3 Tage)",
+    "A fast, focused setup to get strategy, access, and tracking aligned — no weeks-long ramp-up.":
+      "Ein schnelles, fokussiertes Setup, bei dem Strategie, Zugänge und Tracking abgestimmt werden — kein wochenlanger Anlauf.",
+    "Weekly Performance Calls": "Wöchentliche Performance-Calls",
+    "A standing sync with your dedicated Performance Marketing Manager to review what's working and answer questions in real time.":
+      "Ein fester wöchentlicher Austausch mit Ihrem persönlichen Performance Marketing Manager, um zu besprechen, was funktioniert, und Fragen in Echtzeit zu klären.",
+    "Monthly Reporting": "Monatliches Reporting",
+    "A full report on performance and insights every month, so you always know exactly where your budget is going and why.":
+      "Ein vollständiger monatlicher Bericht zu Performance und Insights, damit Sie immer genau wissen, wohin Ihr Budget fließt und warum.",
+    "Analytics & Smart Optimization": "Analytics & Smarte Optimierung",
+    "Live Analytics Tool": "Live-Analytics-Tool",
+    "Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.":
+      "Ihr eigenes Live-Dashboard — CTR, ROAS und CPA in Echtzeit, ohne auf einen Report zu warten, um zu wissen, wie eine Kampagne läuft.",
+    "CRM & Meta Feedback Loop": "CRM- & Meta-Feedback-Loop",
+    "Every lead flows straight into your CRM. When your sales team marks a lead \"qualified,\" we feed that signal back into Meta — training the algorithm to chase quality leads, not just volume.":
+      "Jeder Lead landet direkt in Ihrem CRM. Markiert Ihr Vertrieb einen Lead als „qualifiziert“, spielen wir dieses Signal zurück an Meta — und trainieren so den Algorithmus darauf, hochwertige Leads zu finden, statt nur möglichst viele."
   }
 };

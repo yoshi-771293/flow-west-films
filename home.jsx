@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal */
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -397,6 +397,8 @@ function HomePage() {
           )
         )
       ),
+
+      React.createElement(GrowthEngineSection),
 
       /* WHY FWF */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },

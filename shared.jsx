@@ -78,6 +78,9 @@ const Icons = {
   Target:    (p) => <Icon {...p}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></Icon>,
   Sparkles:  (p) => <Icon {...p}><path d="M12 2l1.8 5.5L19 9.5l-5.2 2L12 17l-1.8-5.5L5 9.5l5.2-2L12 2zM19 14l.9 2.5L22 17.5l-2.1 1L19 21l-.9-2.5L16 17.5l2.1-1L19 14zM5 14l.9 2.5L8 17.5l-2.1 1L5 21l-.9-2.5L2 17.5l2.1-1L5 14z"/></Icon>,
   ExternalLink: (p) => <Icon {...p}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></Icon>,
+  BarChart:  (p) => <Icon {...p}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></Icon>,
+  Repeat:    (p) => <Icon {...p}><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></Icon>,
+  FileText:  (p) => <Icon {...p}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></Icon>,
 };
 
 // ============================================
@@ -425,6 +428,74 @@ function TypewriterWord({ words, style, className }) {
 }
 
 // ============================================
+// GrowthEngineSection — "how we scale" explainer, shared between Home
+// (below Recent Productions) and Pricing (below offers + audit bridge)
+// ============================================
+function GrowthEngineSection() {
+  const collab = [
+    { i: <Icons.Calendar size={22} />, t: "Onboarding (2–3 Days)", d: "A fast, focused setup to get strategy, access, and tracking aligned — no weeks-long ramp-up.", c: "purple" },
+    { i: <Icons.Phone size={22} />, t: "Weekly Performance Calls", d: "A standing sync with your dedicated Performance Marketing Manager to review what's working and answer questions in real time.", c: "green" },
+    { i: <Icons.FileText size={22} />, t: "Monthly Reporting", d: "A full report on performance and insights every month, so you always know exactly where your budget is going and why.", c: "orange" },
+  ];
+
+  return (
+    <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+      <div className="fwf-container">
+        <div className="fwf-section-label">
+          <span className="fwf-section-label-line" />
+          <span className="fwf-eyebrow">How We Scale</span>
+        </div>
+        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
+          Creative built to become <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your growth engine.</em>
+        </h2>
+        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 56px 0", maxWidth: 640 }}>
+          This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.
+        </p>
+
+        <div style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
+          <div style={{ color: "var(--fwf-pink)", flexShrink: 0 }}><Icons.Repeat size={22} /></div>
+          <div>
+            <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>Scaling, done right</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>
+              We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.
+            </p>
+          </div>
+        </div>
+
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Onboarding & Collaboration</span>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 64 }} className="fwf-pillars">
+          {collab.map((w, i, arr) => (
+            <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 24 }}>{w.i}</div>
+              <h3 style={{ fontSize: 17, margin: "0 0 12px 0", fontWeight: 500 }}>{w.t}</h3>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
+            </div>
+          ))}
+        </div>
+
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Analytics & Smart Optimization</span>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="fwf-grid-collapse">
+          <div className="fwf-card fwf-card-pink" style={{ padding: 32 }}>
+            <div style={{ color: "var(--fwf-pink)", marginBottom: 20 }}><Icons.BarChart size={24} /></div>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Live Analytics Tool</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.
+            </p>
+          </div>
+          <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
+            <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Target size={24} /></div>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              Every lead flows straight into your CRM. When your sales team marks a lead "qualified," we feed that signal back into Meta — training the algorithm to chase quality leads, not just volume.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ============================================
 // BunnyPlayer — plays a Bunny Stream video via hls.js pointed straight at the
 // HLS manifest, forcing the top bitrate rendition immediately so playback
 // starts at max resolution instead of ramping up through Bunny's default ABR.
@@ -540,4 +611,4 @@ function VideoModal({ src, onClose }) {
 }
 
 // Expose for other files
-Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer });
+Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection });
