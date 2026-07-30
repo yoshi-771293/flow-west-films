@@ -425,11 +425,59 @@ function TypewriterWord({ words, style, className }) {
 }
 
 // ============================================
+// BunnyPlayer — plays a Bunny Stream video via hls.js pointed straight at the
+// HLS manifest, forcing the top bitrate rendition immediately so playback
+// starts at max resolution instead of ramping up through Bunny's default ABR.
+// Falls back to native HLS (Safari) when hls.js isn't supported.
+// ============================================
+const BUNNY_PULL_ZONE = "vz-fd89cb27-622.b-cdn.net";
+function BunnyPlayer({ src, poster, style, className, muted = true, loop = false, controls = true }) {
+  const videoRef = React.useRef(null);
+  const guid = src && src.includes("/embed/684848/") ? src.split("/embed/684848/")[1]?.split("?")[0] : null;
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !guid) return;
+    const manifestUrl = `https://${BUNNY_PULL_ZONE}/${guid}/playlist.m3u8`;
+    let hls;
+    // Forcing currentLevel triggers hls.js to flush/reload the buffer, which can abort
+    // a play() call issued in the same tick — so play from the video's own "canplay"
+    // event instead of right after the level switch.
+    video.addEventListener("canplay", () => video.play().catch(() => {}), { once: true });
+    if (window.Hls && window.Hls.isSupported()) {
+      hls = new window.Hls({ capLevelToPlayerSize: false, startLevel: -1 });
+      hls.loadSource(manifestUrl);
+      hls.attachMedia(video);
+      hls.on(window.Hls.Events.MANIFEST_PARSED, (evt, data) => {
+        hls.currentLevel = data.levels.length - 1; // skip ABR ramp-up, force top quality now
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = manifestUrl;
+    }
+    return () => { if (hls) hls.destroy(); };
+  }, [guid]);
+
+  if (!guid) return null;
+
+  return (
+    <video
+      ref={videoRef}
+      poster={poster}
+      className={className}
+      style={style}
+      controls={controls}
+      autoPlay
+      muted={muted}
+      loop={loop}
+      playsInline
+    />
+  );
+}
+
+// ============================================
 // VideoModal — full-screen video lightbox
 // ============================================
 function VideoModal({ src, onClose }) {
-  const [bunnyUrl, setBunnyUrl] = React.useState(null);
-
   useEffect(() => {
     const esc = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', esc);
@@ -442,26 +490,15 @@ function VideoModal({ src, onClose }) {
 
   const isBunny = src && src.includes("mediadelivery.net");
 
-  // Fetch a signed Bunny embed URL from our serverless function
-  useEffect(() => {
-    if (!isBunny) return;
-    const guid = src.split("/embed/684848/")[1]?.split("?")[0];
-    if (!guid) return;
-    fetch(`/api/bunny-embed?guid=${guid}`)
-      .then(r => r.json())
-      .then(d => { if (d.url) setBunnyUrl(d.url); })
-      .catch(() => setBunnyUrl(src)); // fallback to original on error
-  }, [src, isBunny]);
+  // Detect embed URL (Vimeo / YouTube) vs Bunny (own HLS player) vs local mp4
+  const isEmbed = src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be"));
+  let embedSrc = src;
 
-  // Detect embed URL (Vimeo / YouTube / Bunny Stream) vs local mp4
-  const isEmbed = src && (src.includes("vimeo.com") || src.includes("youtube.com") || src.includes("youtu.be") || isBunny);
-  let embedSrc = isBunny ? (bunnyUrl || null) : src;
-
-  if (!isBunny && isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
+  if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];
     embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
   }
-  if (!isBunny && isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be") || src.includes("youtube.com/shorts"))) {
+  if (isEmbed && (src.includes("youtube.com/watch") || src.includes("youtu.be") || src.includes("youtube.com/shorts"))) {
     const id = src.includes("/shorts/") ? src.split("/shorts/")[1].split(/[?&/]/)[0]
              : src.includes("youtu.be") ? src.split("/").pop().split("?")[0]
              : new URL(src).searchParams.get("v");
@@ -474,20 +511,20 @@ function VideoModal({ src, onClose }) {
         <button className="fwf-video-modal-close" onClick={onClose}>
           <Icons.X size={12} /> Close
         </button>
-        {isEmbed ? (
-          embedSrc ? (
-            <iframe
-              className="fwf-video-modal-video"
-              src={embedSrc}
-              style={{ aspectRatio: "16/9", border: "none" }}
-              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
-              allowFullScreen
-            />
-          ) : (
-            <div className="fwf-video-modal-video" style={{ aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", background: "#000", color: "#888" }}>
-              Loading…
-            </div>
-          )
+        {isBunny ? (
+          <BunnyPlayer
+            className="fwf-video-modal-video"
+            src={src}
+            style={{ aspectRatio: "16/9" }}
+          />
+        ) : isEmbed ? (
+          <iframe
+            className="fwf-video-modal-video"
+            src={embedSrc}
+            style={{ aspectRatio: "16/9", border: "none" }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+          />
         ) : (
           <video
             className="fwf-video-modal-video"
@@ -503,4 +540,4 @@ function VideoModal({ src, onClose }) {
 }
 
 // Expose for other files
-Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal });
+Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer });

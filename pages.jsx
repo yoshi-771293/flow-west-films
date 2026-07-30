@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal */
+/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -929,26 +929,11 @@ function ProjectTheater({ project, mobile, onClose }) {
     };
   }, []);
 
-  // video source → embed (YouTube / Vimeo / Bunny Stream) vs local mp4 (same logic as VideoModal)
+  // video source → Bunny (own HLS player, max resolution) vs YouTube / Vimeo embed vs local mp4
   const src = project.video;
   const isYouTube = !!src && (src.includes("youtube.com") || src.includes("youtu.be"));
   const isBunny = !!src && src.includes("mediadelivery.net");
-  const isEmbed = !!src && (isYouTube || src.includes("vimeo.com") || isBunny);
-
-  // Bunny requires a signed embed URL (direct player.mediadelivery.net access is 403).
-  // Fetch a token-signed iframe.mediadelivery.net URL from our serverless function.
-  const [bunnyUrl, setBunnyUrl] = useStateP(null);
-  useEffectP(() => {
-    if (!isBunny) return;
-    const guid = src.split("/embed/684848/")[1]?.split("?")[0];
-    if (!guid) return;
-    let cancelled = false;
-    fetch("/api/bunny-embed?guid=" + guid)
-      .then(r => r.json())
-      .then(d => { if (!cancelled && d.url) setBunnyUrl(d.url); })
-      .catch(() => {});
-    return () => { cancelled = true; };
-  }, [src, isBunny]);
+  const isEmbed = !!src && (isYouTube || src.includes("vimeo.com"));
 
   let embedSrc = src;
   if (isYouTube) {
@@ -960,23 +945,18 @@ function ProjectTheater({ project, mobile, onClose }) {
   } else if (isEmbed && src.includes("vimeo.com") && !src.includes("player.vimeo.com")) {
     const id = src.split("/").filter(Boolean).pop().split("?")[0];
     embedSrc = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0";
-  } else if (isBunny) {
-    embedSrc = bunnyUrl; // null until the signed URL arrives → render a loading placeholder
   }
 
   const media = !src ? (
     <div style={{ width: "100%", height: "100%", minHeight: 220, background: "linear-gradient(135deg, " + fwfHexA(FWF_PURPLE, 0.35) + ", #0a0a0c)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
       Film coming soon
     </div>
+  ) : isBunny ? (
+    <BunnyPlayer src={src} poster={project.thumb}
+      style={{ width: "100%", height: "100%", objectFit: "contain", background: "#000", display: "block" }} />
   ) : isEmbed ? (
-    embedSrc ? (
-      <iframe title={project.title} src={embedSrc} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen
-        style={{ width: "100%", height: "100%", border: "none", display: "block" }} />
-    ) : (
-      <div style={{ width: "100%", height: "100%", minHeight: 220, background: "#0a0a0c", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
-        Loading…
-      </div>
-    )
+    <iframe title={project.title} src={embedSrc} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen
+      style={{ width: "100%", height: "100%", border: "none", display: "block" }} />
   ) : (
     <video src={src} controls autoPlay playsInline
       style={{ width: "100%", height: "100%", objectFit: "contain", background: "#000", display: "block" }} />
