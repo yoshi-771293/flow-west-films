@@ -51,6 +51,7 @@ window.FWF_TRANSLATIONS = {
     "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team.":
       "Flow West Films vereint cinematische Produktion, Ad Creative und Performance-Denken in einem externen Premium-Team.",
     "Seen enough?": "Genug gesehen?",
+    "Seen something you like?": "Etwas gefunden, das Ihnen gefällt?",
     "Let's talk.": "Let's talk.",
     "Tell us about your brand. We'll tell you what we'd do.":
       "Erzählen Sie uns von Ihrer Marke. Wir sagen Ihnen, was wir tun würden.",
@@ -183,7 +184,7 @@ window.FWF_TRANSLATIONS = {
       "Portfolio · 50+ Projekte · 2018 — heute",
     "Selected": "Ausgewählte",
     "work.": "Arbeit.",
-    "Step inside the ": "Tauchen Sie ein in unsere ",
+    "Step inside the": "Tauchen Sie ein in unsere",
     "Films, reels, ads, and brand productions — tap a project to dive in.":
       "Filme, Reels, Ads und Brand-Filme: Projekt anklicken und mehr entdecken.",
     "Films, reels, ads, and brand productions delivered for B2C brands across hospitality, sports, and consumer goods.":
