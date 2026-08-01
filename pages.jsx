@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection */
+/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, FunnelSection */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -1272,6 +1272,8 @@ function PricingPage() {
           </a>
         </div>
       </section>
+
+      <FunnelSection cta={false} />
 
       <GrowthEngineSection cta={false} />
 

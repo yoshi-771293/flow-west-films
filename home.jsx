@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection */
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection, FunnelSection */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -426,6 +426,8 @@ function HomePage() {
           )
         )
       ),
+
+      React.createElement(FunnelSection),
 
       React.createElement(GrowthEngineSection),
 

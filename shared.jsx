@@ -428,6 +428,99 @@ function TypewriterWord({ words, style, className }) {
 }
 
 // ============================================
+// ReassureBlock — "never done X? we'll guide you" callout. Used by the
+// funnel and performance sections to defuse the two most common blockers.
+// ============================================
+function ReassureBlock({ question, answer, points, accent }) {
+  return (
+    <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32 }}>
+      <h3 style={{ fontSize: 19, margin: "0 0 10px 0", fontWeight: 500, lineHeight: 1.35 }}>{question}</h3>
+      <p style={{ color: "var(--fwf-" + accent + ")", fontSize: 15, margin: "0 0 22px 0", fontWeight: 500 }}>{answer}</p>
+      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {points.map((p, i) => (
+          <li key={i} style={{ display: "flex", gap: 12, padding: "7px 0", fontSize: 14.5, color: "var(--fwf-text-mute)", lineHeight: 1.55 }}>
+            <span style={{ color: "var(--fwf-" + accent + ")", flexShrink: 0, marginTop: 3 }}>
+              <Icons.Check size={15} stroke={2} />
+            </span>
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// ============================================
+// FunnelSection — TOFU / MOFU / BOFU explainer + funnel reassurance.
+// Shared between Home and Pricing.
+// ============================================
+function FunnelSection({ cta = true }) {
+  const stages = [
+    {
+      k: "TOFU", c: "purple", t: "Get discovered",
+      d: "Cold audiences who've never heard of you. Story-led creative that stops the scroll, earns attention, and makes the brand stick.",
+    },
+    {
+      k: "MOFU", c: "pink", t: "Earn the trust",
+      d: "People who know you but aren't ready yet. Retargeting, testimonials and proof that answer the objections before they're spoken out loud.",
+    },
+    {
+      k: "BOFU", c: "green", t: "Convert",
+      d: "People ready to act. Direct-response creative and a clear offer, pointed straight at the page or booking flow where they actually convert.",
+    },
+  ];
+
+  return (
+    <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+      <div className="fwf-container">
+        <div className="fwf-section-label">
+          <span className="fwf-section-label-line" />
+          <span className="fwf-eyebrow">The Funnel</span>
+        </div>
+        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
+          One video doesn't sell. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>A funnel does.</em>
+        </h2>
+        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 56px 0", maxWidth: 640 }}>
+          Nobody goes from never hearing of you to buying in a single ad. So we don't build single ads — we build the whole path, and every asset knows exactly which job it's doing.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
+          {stages.map((s, i, arr) => (
+            <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+              <div className="fwf-display" style={{ color: "var(--fwf-" + s.c + ")", fontSize: 30, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 14 }}>
+                {s.k}
+              </div>
+              <h3 style={{ fontSize: 17, margin: "0 0 12px 0", fontWeight: 500 }}>{s.t}</h3>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{s.d}</p>
+            </div>
+          ))}
+        </div>
+
+        <ReassureBlock
+          accent="purple"
+          question="Never built a funnel or a sales page before?"
+          answer="No problem — we guide you through it."
+          points={[
+            "We map the full funnel with you. You don't need to arrive with one.",
+            "Every asset gets a clear job: attract, convince, or convert.",
+            "We tell you what each stage needs before anything gets produced.",
+            "If a landing or sales page is required, we scope and build it with you.",
+          ]}
+        />
+
+        {cta && (
+          <div style={{ marginTop: 40 }}>
+            <Link to="pricing" className="fwf-btn-bare">
+              See the Growth Retainer & Premium Partner <Icons.ArrowRight size={12} />
+            </Link>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+// ============================================
 // GrowthEngineSection — "how we scale" explainer, shared between Home
 // (below Recent Productions) and Pricing (below offers + audit bridge)
 // ============================================
@@ -454,7 +547,7 @@ function GrowthEngineSection({ cta = true }) {
       <div className="fwf-container">
         <div className="fwf-section-label">
           <span className="fwf-section-label-line" />
-          <span className="fwf-eyebrow">How We Scale</span>
+          <span className="fwf-eyebrow">Performance Marketing</span>
         </div>
         <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
           Creative built to become <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your growth engine.</em>
@@ -527,6 +620,20 @@ function GrowthEngineSection({ cta = true }) {
               Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.
             </p>
           </div>
+        </div>
+
+        <div style={{ marginTop: 32 }}>
+          <ReassureBlock
+            accent="green"
+            question="Only ever done organic? Never run paid social?"
+            answer="No problem — we guide you through it."
+            points={[
+              "We handle the setup end to end: ad account, tracking, audiences.",
+              "Your organic work isn't wasted — what already performs organically is usually the first thing we test as paid.",
+              "We start on a defined test budget against agreed targets, then scale only what earns it.",
+              "Weekly calls mean you learn the system while we run it. No black box.",
+            ]}
+          />
         </div>
 
         {cta && (
@@ -660,4 +767,4 @@ function VideoModal({ src, onClose }) {
 }
 
 // Expose for other files
-Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection });
+Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, FunnelSection });
