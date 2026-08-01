@@ -457,15 +457,15 @@ function ReassureBlock({ question, answer, points, accent }) {
 function FunnelSection({ cta = true }) {
   const stages = [
     {
-      k: "TOFU", c: "purple", t: "Get discovered",
+      k: "TOFU", full: "Top of Funnel", c: "purple", t: "Get discovered",
       d: "Cold audiences who've never heard of you. Story-led creative that stops the scroll, earns attention, and makes the brand stick.",
     },
     {
-      k: "MOFU", c: "pink", t: "Earn the trust",
+      k: "MOFU", full: "Middle of Funnel", c: "pink", t: "Earn the trust",
       d: "People who know you but aren't ready yet. Retargeting, testimonials and proof that answer the objections before they're spoken out loud.",
     },
     {
-      k: "BOFU", c: "green", t: "Convert",
+      k: "BOFU", full: "Bottom of Funnel", c: "green", t: "Convert",
       d: "People ready to act. Direct-response creative and a clear offer, pointed straight at the page or booking flow where they actually convert.",
     },
   ];
@@ -487,8 +487,11 @@ function FunnelSection({ cta = true }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
           {stages.map((s, i, arr) => (
             <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
-              <div className="fwf-display" style={{ color: "var(--fwf-" + s.c + ")", fontSize: 30, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 14 }}>
+              <div className="fwf-display" style={{ color: "var(--fwf-" + s.c + ")", fontSize: 30, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>
                 {s.k}
+              </div>
+              <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 12, color: "var(--fwf-text-faint)", marginBottom: 18 }}>
+                ({s.full})
               </div>
               <h3 style={{ fontSize: 17, margin: "0 0 12px 0", fontWeight: 500 }}>{s.t}</h3>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{s.d}</p>
@@ -509,9 +512,21 @@ function FunnelSection({ cta = true }) {
         />
 
         {cta && (
-          <div style={{ marginTop: 40 }}>
-            <Link to="pricing" className="fwf-btn-bare">
-              See the Growth Retainer & Premium Partner <Icons.ArrowRight size={12} />
+          <div style={{ marginTop: 40, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
+            <span style={{ color: "var(--fwf-text-mute)", fontSize: 14 }}>See it in action:</span>
+            <Link
+              to="pricing"
+              className="fwf-badge fwf-badge-pink"
+              style={{ padding: "10px 20px", fontSize: 12.5, borderRadius: 100, textDecoration: "none" }}
+            >
+              Growth Retainer
+            </Link>
+            <Link
+              to="pricing"
+              className="fwf-badge fwf-badge-green"
+              style={{ padding: "10px 20px", fontSize: 12.5, borderRadius: 100, textDecoration: "none" }}
+            >
+              Premium Partner
             </Link>
           </div>
         )}
@@ -576,12 +591,19 @@ function GrowthEngineSection({ cta = true }) {
         </div>
 
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Where We Scale</span>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
           <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
             <div style={{ color: "var(--fwf-green)", marginBottom: 20 }}><Icons.Aperture size={24} /></div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Every channel that matters</h3>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-              Most of our clients start on Meta — but we scale wherever your audience actually is: Google, LinkedIn, TikTok, and YouTube Ads.
+              Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.
+            </p>
+          </div>
+          <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
+            <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Target size={24} /></div>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Search & YouTube</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.
             </p>
           </div>
           <div className="fwf-card fwf-card-orange" style={{ padding: 32 }}>

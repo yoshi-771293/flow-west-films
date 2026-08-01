@@ -409,6 +409,8 @@ window.FWF_TRANSLATIONS = {
     "If a landing or sales page is required, we scope and build it with you.":
       "Wenn eine Landing- oder Sales Page nötig ist, planen und bauen wir sie gemeinsam mit Ihnen.",
     "See the Growth Retainer & Premium Partner": "Growth Retainer & Premium Partner ansehen",
+    "See it in action:": "So sieht das in der Praxis aus:",
+    "Where exactly are you losing": "Wo genau verlieren Sie",
 
     /* ---- Growth Engine section (Home + Pricing) ------------------------ */
     "Performance Marketing": "Performance Marketing",
@@ -433,9 +435,11 @@ window.FWF_TRANSLATIONS = {
       "Bevor ein einziger Euro in Media fließt, definieren wir gemeinsam die Kennzahlen, an denen sich Erfolg für Ihr Business messen lässt — CTR, ROAS, CPA, je nachdem, was für Sie wirklich zählt. Jede Entscheidung danach wird an diesen Zielwerten gemessen.",
     "Scaling, done right": "Skalieren, richtig gemacht",
     "Where We Scale": "Wo wir skalieren",
-    "Every channel that matters": "Jeder Kanal, der zählt",
-    "Most of our clients start on Meta — but we scale wherever your audience actually is: Google, LinkedIn, TikTok, and YouTube Ads.":
-      "Die meisten unserer Kunden starten auf Meta — wir skalieren aber dort, wo Ihre Zielgruppe wirklich ist: Google, LinkedIn, TikTok und YouTube Ads.",
+    "Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.":
+      "Die meisten unserer Kunden starten auf Meta — wir skalieren aber dort, wo Ihre Zielgruppe wirklich ist: auch auf TikTok und LinkedIn.",
+    "Search & YouTube": "Search & YouTube",
+    "Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.":
+      "Google und YouTube Ads laufen über Intent statt Interest — ein anderer Mechanismus als Meta. Eine starke Option, wenn Sie nicht stark auf Paid Social setzen wollen.",
     "AI Visibility": "AI-Sichtbarkeit",
     "Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.":
       "Immer mehr Kaufentscheidungen beginnen in einer AI. Wir optimieren Ihre Marke so, dass sie in ChatGPT, Claude und Gemini gefunden wird — nicht nur bei Google.",

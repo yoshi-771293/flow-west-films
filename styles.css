@@ -85,8 +85,8 @@ html, body {
 }
 .fwf-eyebrow {
   font-family: var(--fwf-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
+  font-size: 14px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
