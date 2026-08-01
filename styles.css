@@ -295,6 +295,14 @@ main { flex: 1; }
 .fwf-badge-gold { color: var(--fwf-gold); border-color: rgba(201, 169, 110, 0.4); }
 .fwf-badge-highlight { color: #fff; background: var(--fwf-pink); border-color: var(--fwf-pink); box-shadow: 0 0 14px rgba(255, 45, 120, 0.45); }
 
+/* Interactive badge-pills (e.g. clickable offer links) — static tag badges elsewhere are unaffected */
+.fwf-badge-link { transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; }
+.fwf-badge-link:hover { transform: translateY(-1px); color: #fff; }
+.fwf-badge-link.fwf-badge-pink:hover { background: var(--fwf-pink); border-color: var(--fwf-pink); box-shadow: 0 0 20px rgba(255, 45, 120, 0.4); }
+.fwf-badge-link.fwf-badge-purple:hover { background: var(--fwf-purple); border-color: var(--fwf-purple); box-shadow: 0 0 20px rgba(155, 48, 255, 0.4); }
+.fwf-badge-link.fwf-badge-green:hover { background: var(--fwf-green); border-color: var(--fwf-green); box-shadow: 0 0 20px rgba(0, 200, 122, 0.4); }
+.fwf-badge-link.fwf-badge-orange:hover { background: var(--fwf-orange); border-color: var(--fwf-orange); box-shadow: 0 0 20px rgba(255, 100, 32, 0.4); }
+
 /* ── Legal pages ── */
 .fwf-legal-body { max-width: 680px; }
 .fwf-legal-body h2 {
