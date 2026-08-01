@@ -81,17 +81,6 @@ const Icons = {
   BarChart:  (p) => <Icon {...p}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></Icon>,
   Repeat:    (p) => <Icon {...p}><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></Icon>,
   FileText:  (p) => <Icon {...p}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></Icon>,
-  // Simplified platform marks (monoline, matching the icon set above) —
-  // used only as factual "we advertise on / optimize for this platform"
-  // indicators, not as reproductions of official brand assets.
-  LogoMeta:      (p) => <Icon {...p}><path d="M8 8c-2.2 0-4 1.8-4 4s1.8 4 4 4c2.5 0 3.5-2 4-4 .5 2 1.5 4 4 4 2.2 0 4-1.8 4-4s-1.8-4-4-4c-2.5 0-3.5 2-4 4-.5-2-1.5-4-4-4z"/></Icon>,
-  LogoLinkedin:  (p) => <Icon {...p}><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8.3" r="0.6" fill="currentColor"/><path d="M8 11v6.5M12 17.5V13a2.2 2.2 0 0 1 4.4 0v4.5"/></Icon>,
-  LogoTiktok:    (p) => <Icon {...p}><path d="M14 3v11.6a3.4 3.4 0 1 1-3.4-3.4"/><path d="M14 3c0 3 2.2 5.2 5 5.2"/></Icon>,
-  LogoGoogle:    (p) => <Icon {...p}><path d="M20 12a8 8 0 1 1-2.9-6.2"/><path d="M20 12h-7"/></Icon>,
-  LogoYoutube:   (p) => <Icon {...p}><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 16 12 10 15" fill="currentColor"/></Icon>,
-  LogoOpenAI:    (p) => <Icon {...p}><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="6.5" cy="9" r="2"/><circle cx="17.5" cy="9" r="2"/><circle cx="6.5" cy="15" r="2"/><circle cx="17.5" cy="15" r="2"/></Icon>,
-  LogoClaude:    (p) => <Icon {...p}><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></Icon>,
-  LogoGemini:    (p) => <Icon {...p}><path d="M12 2c.6 4.4 2.6 6.4 7 7-4.4.6-6.4 2.6-7 7-.6-4.4-2.6-6.4-7-7 4.4-.6 6.4-2.6 7-7z"/></Icon>,
 };
 
 // ============================================
@@ -604,8 +593,10 @@ function GrowthEngineSection({ cta = true }) {
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Where We Scale</span>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
           <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
-            <div style={{ display: "flex", gap: 14, color: "var(--fwf-green)", marginBottom: 20 }}>
-              <Icons.LogoMeta size={22} /><Icons.LogoTiktok size={22} /><Icons.LogoLinkedin size={22} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
+              <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/linkedin-neon.png" alt="LinkedIn" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
@@ -613,8 +604,9 @@ function GrowthEngineSection({ cta = true }) {
             </p>
           </div>
           <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
-            <div style={{ display: "flex", gap: 14, color: "var(--fwf-purple)", marginBottom: 20 }}>
-              <Icons.LogoGoogle size={22} /><Icons.LogoYoutube size={22} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
+              <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Search & YouTube</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
@@ -622,8 +614,10 @@ function GrowthEngineSection({ cta = true }) {
             </p>
           </div>
           <div className="fwf-card fwf-card-orange" style={{ padding: 32 }}>
-            <div style={{ display: "flex", gap: 14, color: "var(--fwf-orange)", marginBottom: 20 }}>
-              <Icons.LogoOpenAI size={22} /><Icons.LogoClaude size={22} /><Icons.LogoGemini size={22} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
+              <img src="assets/logos/openai-neon.png" alt="OpenAI" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/claude-neon.png" alt="Claude" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/gemini-neon.png" alt="Gemini" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
