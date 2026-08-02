@@ -593,10 +593,10 @@ function GrowthEngineSection({ cta = true }) {
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Where We Scale</span>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
           <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
-              <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/linkedin-neon.png" alt="LinkedIn" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
+              <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/linkedin-neon.png" alt="LinkedIn" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
@@ -604,9 +604,9 @@ function GrowthEngineSection({ cta = true }) {
             </p>
           </div>
           <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
-              <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
+              <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Search & YouTube</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
@@ -614,10 +614,10 @@ function GrowthEngineSection({ cta = true }) {
             </p>
           </div>
           <div className="fwf-card fwf-card-orange" style={{ padding: 32 }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 20 }}>
-              <img src="assets/logos/openai-neon.png" alt="OpenAI" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/claude-neon.png" alt="Claude" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/gemini-neon.png" alt="Gemini" style={{ height: 22, width: "auto", mixBlendMode: "screen" }} />
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
+              <img src="assets/logos/openai-neon.png" alt="OpenAI" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/claude-neon.png" alt="Claude" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
+              <img src="assets/logos/gemini-neon.png" alt="Gemini" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
