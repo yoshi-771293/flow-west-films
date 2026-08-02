@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection, FunnelSection */
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection, WhyFwfSection */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -314,51 +314,28 @@ function HomePage() {
                 )
               )
             )
-          ),
-          React.createElement("div", { style: { marginTop: 48, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 } },
-            React.createElement("h3", { className: "fwf-display", style: { color: "var(--fwf-pink)", fontSize: "clamp(22px, 2.6vw, 30px)", margin: 0, fontWeight: 500 } },
-              "Where exactly are you losing ",
-              React.createElement(LangTypewriterWord, {
-                wordsEN: ["leads?", "revenue?", "momentum?"],
-                wordsDE: ["Leads?", "Umsatz?", "Momentum?"],
-                className: "fwf-display-italic",
-                style: { color: "var(--fwf-pink)" }
-              })
-            ),
-            React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
-              "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
-            ),
-            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
           )
         )
       ),
 
-      /* WHY FWF */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
-        React.createElement("div", { className: "fwf-container" },
-          React.createElement("div", { className: "fwf-section-label" },
-            React.createElement("span", { className: "fwf-section-label-line" }),
-            React.createElement("span", { className: "fwf-eyebrow" }, "Why FWF")
-          ),
-          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 64px 0", maxWidth: 780, textWrap: "balance" } },
-            "Not just video production —", React.createElement("br"),
-            React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "your external creative department.")
-          ),
+      React.createElement(WhyFwfSection),
 
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }, className: "fwf-why-grid" },
-            [
-              { i: React.createElement(Icons.Brain, { size: 22 }), t: "Strategic Storytelling", d: "We don't just shoot. We think conversion-first.", c: "pink" },
-              { i: React.createElement(Icons.Aperture, { size: 22 }), t: "Film That Gets Remembered", d: "4K production built to stay in the mind.", c: "purple" },
-              { i: React.createElement(Icons.Zap, { size: 22 }), t: "Speed & Efficiency", d: "Fast turnaround without sacrificing quality.", c: "green" },
-              { i: React.createElement(Icons.Target, { size: 22 }), t: "Performance Focus", d: "Every frame built to drive action.", c: "orange" },
-            ].map((w, i, arr) =>
-              React.createElement("div", { key: i, style: { padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" } },
-                React.createElement("div", { style: { color: "var(--fwf-" + w.c + ")", marginBottom: 24 } }, w.i),
-                React.createElement("h3", { style: { fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 } }, w.t),
-                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, w.d)
-              )
-            )
-          )
+      /* AUDIT CTA */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container", style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 } },
+          React.createElement("h3", { className: "fwf-display", style: { color: "var(--fwf-pink)", fontSize: "clamp(22px, 2.6vw, 30px)", margin: 0, fontWeight: 500 } },
+            "Where exactly are you losing ",
+            React.createElement(LangTypewriterWord, {
+              wordsEN: ["leads?", "revenue?", "momentum?"],
+              wordsDE: ["Leads?", "Umsatz?", "Momentum?"],
+              className: "fwf-display-italic",
+              style: { color: "var(--fwf-pink)" }
+            })
+          ),
+          React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
+            "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
+          ),
+          React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
         )
       ),
 
@@ -413,9 +390,7 @@ function HomePage() {
         )
       ),
 
-      React.createElement(FunnelSection),
-
-      React.createElement(GrowthEngineSection),
+      React.createElement(GrowthEngineSection, { compact: true }),
 
       /* 4 OFFERS */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative" } },

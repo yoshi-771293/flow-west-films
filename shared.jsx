@@ -451,23 +451,21 @@ function ReassureBlock({ question, answer, points, accent }) {
 }
 
 // ============================================
-// FunnelSection — TOFU / MOFU / BOFU explainer + funnel reassurance.
-// Shared between Home and Pricing.
+// WhyFwfSection — "why we're different" 4-pillar grid + a compact funnel
+// arrow-flow (replaces the old card-heavy FunnelSection). Shared between
+// Home and Pricing.
 // ============================================
-function FunnelSection({ cta = true }) {
-  const stages = [
-    {
-      k: "TOFU", full: "Top of Funnel", c: "purple", t: "Get discovered",
-      d: "Cold audiences who've never heard of you. Story-led creative that stops the scroll, earns attention, and makes the brand stick.",
-    },
-    {
-      k: "MOFU", full: "Middle of Funnel", c: "pink", t: "Earn the trust",
-      d: "People who know you but aren't ready yet. Retargeting, testimonials and proof that answer the objections before they're spoken out loud.",
-    },
-    {
-      k: "BOFU", full: "Bottom of Funnel", c: "green", t: "Convert",
-      d: "People ready to act. Direct-response creative and a clear offer, pointed straight at the page or booking flow where they actually convert.",
-    },
+function WhyFwfSection() {
+  const pillars = [
+    { i: <Icons.Brain size={22} />, t: "Strategic Storytelling", d: "We don't just shoot. We think conversion-first.", c: "pink" },
+    { i: <Icons.Aperture size={22} />, t: "Film That Gets Remembered", d: "4K production built to stay in the mind.", c: "purple" },
+    { i: <Icons.Zap size={22} />, t: "Speed & Efficiency", d: "Fast turnaround without sacrificing quality.", c: "green" },
+    { i: <Icons.Target size={22} />, t: "Performance Focus", d: "Every frame built to drive action.", c: "orange" },
+  ];
+  const flow = [
+    { c: "purple", t: "Get discovered with Creative" },
+    { c: "pink", t: "Earn the trust with retargeting & testimonials" },
+    { c: "green", t: "Convert your target audience" },
   ];
 
   return (
@@ -475,61 +473,34 @@ function FunnelSection({ cta = true }) {
       <div className="fwf-container">
         <div className="fwf-section-label">
           <span className="fwf-section-label-line" />
-          <span className="fwf-eyebrow">The Funnel</span>
+          <span className="fwf-eyebrow">Why FWF</span>
         </div>
-        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
-          One video doesn't sell. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>A funnel does.</em>
+        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 64px 0", maxWidth: 780, textWrap: "balance" }}>
+          Not just video production —<br />
+          <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your external creative department.</em>
         </h2>
-        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 56px 0", maxWidth: 640 }}>
-          Nobody goes from never hearing of you to buying in a single ad. So we don't build single ads — we build the whole path, and every asset knows exactly which job it's doing.
-        </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
-          {stages.map((s, i, arr) => (
-            <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
-              <div className="fwf-display" style={{ color: "var(--fwf-" + s.c + ")", fontSize: 30, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>
-                {s.k}
-              </div>
-              <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 12, color: "var(--fwf-text-faint)", marginBottom: 18 }}>
-                ({s.full})
-              </div>
-              <h3 style={{ fontSize: 17, margin: "0 0 12px 0", fontWeight: 500 }}>{s.t}</h3>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{s.d}</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-why-grid">
+          {pillars.map((w, i, arr) => (
+            <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" }}>
+              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 24 }}>{w.i}</div>
+              <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{w.t}</h3>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
             </div>
           ))}
         </div>
 
-        <ReassureBlock
-          accent="purple"
-          question="Never built a funnel or a sales page before?"
-          answer="No problem — we guide you through it."
-          points={[
-            "We map the full funnel with you. You don't need to arrive with one.",
-            "Every asset gets a clear job: attract, convince, or convert.",
-            "We tell you what each stage needs before anything gets produced.",
-            "If a landing or sales page is required, we scope and build it with you.",
-          ]}
-        />
-
-        {cta && (
-          <div style={{ marginTop: 40, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
-            <span style={{ color: "var(--fwf-text-mute)", fontSize: 14 }}>See it in action:</span>
-            <Link
-              to="pricing"
-              className="fwf-badge fwf-badge-link fwf-badge-pink"
-              style={{ padding: "10px 20px", fontSize: 12.5, borderRadius: 100, textDecoration: "none" }}
-            >
-              Growth Retainer
-            </Link>
-            <Link
-              to="pricing"
-              className="fwf-badge fwf-badge-link fwf-badge-green"
-              style={{ padding: "10px 20px", fontSize: 12.5, borderRadius: 100, textDecoration: "none" }}
-            >
-              Premium Partner
-            </Link>
-          </div>
-        )}
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 20 }}>The Funnel</span>
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
+          {flow.map((s, i, arr) => (
+            <React.Fragment key={i}>
+              <span style={{ padding: "13px 22px", borderRadius: 100, border: "1px solid rgba(255,255,255,0.14)", color: "var(--fwf-" + s.c + ")", fontSize: 14.5, fontWeight: 500 }}>
+                {s.t}
+              </span>
+              {i < arr.length - 1 && <Icons.ArrowRight size={18} style={{ color: "var(--fwf-text-faint)", flexShrink: 0 }} />}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -539,7 +510,7 @@ function FunnelSection({ cta = true }) {
 // GrowthEngineSection — "how we scale" explainer, shared between Home
 // (below Recent Productions) and Pricing (below offers + audit bridge)
 // ============================================
-function GrowthEngineSection({ cta = true }) {
+function GrowthEngineSection({ cta = true, compact = false }) {
   const principles = [
     {
       i: <Icons.Target size={22} />, c: "pink", t: "We start with your numbers",
@@ -567,30 +538,34 @@ function GrowthEngineSection({ cta = true }) {
         <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
           Creative built to become <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your growth engine.</em>
         </h2>
-        <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px 0", maxWidth: 640 }}>
-          This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.
-        </p>
+        {!compact && (
+          <>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px 0", maxWidth: 640 }}>
+              This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.
+            </p>
 
-        <div style={{ display: "inline-flex", alignItems: "flex-start", gap: 10, padding: "10px 18px", borderRadius: 100, border: "1px solid rgba(255,45,120,0.28)", background: "rgba(255,45,120,0.06)", marginBottom: 56 }}>
-          <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 1 }}><Icons.Check size={15} stroke={2} /></span>
-          <span style={{ fontSize: 13.5, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
-            Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.
-          </span>
-        </div>
-
-        <div style={{ borderTop: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
-          {principles.map((p, i) => (
-            <div key={i} style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderBottom: "1px solid var(--fwf-hairline)" }}>
-              <div style={{ color: "var(--fwf-" + p.c + ")", flexShrink: 0 }}>{p.i}</div>
-              <div>
-                <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>{p.t}</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>{p.d}</p>
-              </div>
+            <div style={{ display: "inline-flex", alignItems: "flex-start", gap: 10, padding: "10px 18px", borderRadius: 100, border: "1px solid rgba(255,45,120,0.28)", background: "rgba(255,45,120,0.06)", marginBottom: 56 }}>
+              <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 1 }}><Icons.Check size={15} stroke={2} /></span>
+              <span style={{ fontSize: 13.5, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
+                Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.
+              </span>
             </div>
-          ))}
-        </div>
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Where We Scale</span>
+            <div style={{ borderTop: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
+              {principles.map((p, i) => (
+                <div key={i} style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderBottom: "1px solid var(--fwf-hairline)" }}>
+                  <div style={{ color: "var(--fwf-" + p.c + ")", flexShrink: 0 }}>{p.i}</div>
+                  <div>
+                    <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>{p.t}</h3>
+                    <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>{p.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24, marginTop: compact ? 32 : 0 }}>Where We Scale</span>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
           <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
@@ -637,24 +612,29 @@ function GrowthEngineSection({ cta = true }) {
           ))}
         </div>
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Analytics & Smart Optimization</span>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="fwf-grid-collapse">
-          <div className="fwf-card fwf-card-pink" style={{ padding: 32 }}>
-            <div style={{ color: "var(--fwf-pink)", marginBottom: 20 }}><Icons.BarChart size={24} /></div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Live Analytics Tool</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-              Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.
-            </p>
-          </div>
-          <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
-            <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Repeat size={24} /></div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-              Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.
-            </p>
-          </div>
-        </div>
+        {!compact && (
+          <>
+            <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Analytics & Smart Optimization</span>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="fwf-grid-collapse">
+              <div className="fwf-card fwf-card-pink" style={{ padding: 32 }}>
+                <div style={{ color: "var(--fwf-pink)", marginBottom: 20 }}><Icons.BarChart size={24} /></div>
+                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Live Analytics Tool</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+                  Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.
+                </p>
+              </div>
+              <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
+                <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Repeat size={24} /></div>
+                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+                  Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.
+                </p>
+              </div>
+            </div>
+          </>
+        )}
 
+        {!compact && (
         <div style={{ marginTop: 32 }}>
           <ReassureBlock
             accent="green"
@@ -668,6 +648,7 @@ function GrowthEngineSection({ cta = true }) {
             ]}
           />
         </div>
+        )}
 
         {cta && (
           <div style={{ marginTop: 56, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
@@ -800,4 +781,4 @@ function VideoModal({ src, onClose }) {
 }
 
 // Expose for other files
-Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, FunnelSection });
+Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });

@@ -384,33 +384,12 @@ window.FWF_TRANSLATIONS = {
     "Every creative decision is backed by data. No spray-and-pray, no wasted budget on untested ideas.":
       "Jede kreative Entscheidung ist datenbasiert. Kein Spray-and-Pray, kein verschwendetes Budget für ungetestete Ideen.",
 
-    /* ---- Funnel section (Home + Pricing) ------------------------------- */
+    /* ---- Why FWF + funnel flow (Home + Pricing) ------------------------- */
     "The Funnel": "Der Funnel",
-    "One video doesn't sell.": "Ein Video verkauft nicht.",
-    "A funnel does.": "Ein Funnel schon.",
-    "Nobody goes from never hearing of you to buying in a single ad. So we don't build single ads — we build the whole path, and every asset knows exactly which job it's doing.":
-      "Niemand geht von „noch nie gehört“ direkt zum Kauf — schon gar nicht über eine einzige Anzeige. Deshalb bauen wir keine Einzelanzeigen, sondern den kompletten Weg. Und jedes Asset weiß genau, welche Aufgabe es dabei hat.",
-    "Get discovered": "Entdeckt werden",
-    "Cold audiences who've never heard of you. Story-led creative that stops the scroll, earns attention, and makes the brand stick.":
-      "Kalte Zielgruppen, die noch nie von Ihnen gehört haben. Story-getriebenes Creative, das den Scroll stoppt, Aufmerksamkeit verdient und die Marke im Kopf bleiben lässt.",
-    "Earn the trust": "Vertrauen aufbauen",
-    "People who know you but aren't ready yet. Retargeting, testimonials and proof that answer the objections before they're spoken out loud.":
-      "Menschen, die Sie kennen, aber noch nicht so weit sind. Retargeting, Testimonials und Belege, die Einwände beantworten, bevor sie überhaupt ausgesprochen werden.",
-    "Convert": "Konvertieren",
-    "People ready to act. Direct-response creative and a clear offer, pointed straight at the page or booking flow where they actually convert.":
-      "Menschen, die bereit sind zu handeln. Direct-Response-Creative und ein klares Angebot — direkt auf die Seite oder den Buchungsflow gerichtet, wo sie wirklich konvertieren.",
-    "Never built a funnel or a sales page before?": "Noch nie einen Funnel oder eine Sales Page gebaut?",
+    "Get discovered with Creative": "Entdeckt werden mit Creative",
+    "Earn the trust with retargeting & testimonials": "Vertrauen aufbauen mit Retargeting & Testimonials",
+    "Convert your target audience": "Ihre Zielgruppe konvertieren",
     "No problem — we guide you through it.": "Kein Problem — wir begleiten Sie dabei.",
-    "We map the full funnel with you. You don't need to arrive with one.":
-      "Wir entwickeln den kompletten Funnel gemeinsam mit Ihnen. Sie müssen keinen mitbringen.",
-    "Every asset gets a clear job: attract, convince, or convert.":
-      "Jedes Asset bekommt eine klare Aufgabe: gewinnen, überzeugen oder konvertieren.",
-    "We tell you what each stage needs before anything gets produced.":
-      "Wir sagen Ihnen, was jede Stufe braucht, bevor irgendetwas produziert wird.",
-    "If a landing or sales page is required, we scope and build it with you.":
-      "Wenn eine Landing- oder Sales Page nötig ist, planen und bauen wir sie gemeinsam mit Ihnen.",
-    "See the Growth Retainer & Premium Partner": "Growth Retainer & Premium Partner ansehen",
-    "See it in action:": "So sieht das in der Praxis aus:",
     "Where exactly are you losing": "Wo genau verlieren Sie",
 
     /* ---- Growth Engine section (Home + Pricing) ------------------------ */
