@@ -84,31 +84,66 @@ const Icons = {
 };
 
 // ============================================
-// Router (hash-based)
+// Router (path-based, History API)
+// ----------------------------------------------------------------------------
+// Real URLs (/pricing) instead of hash fragments (#/pricing) so each route is a
+// distinct, indexable page. Requires the SPA rewrites in vercel.json — every
+// route path must serve index.html.
+//
+// Legacy #/route links (old bookmarks, anything already shared) are rewritten
+// to the real path on load so they keep working.
 // ============================================
+function routeToPath(route) {
+  return !route || route === "home" ? "/" : "/" + route;
+}
+function pathToRoute(pathname) {
+  const p = (pathname || "/").replace(/^\/+|\/+$/g, "");
+  // "" and a direct /index.html hit are both the homepage
+  return !p || p === "index.html" ? "home" : p;
+}
+// Old #/route URLs → real paths, before React reads the location.
+(function migrateLegacyHash() {
+  const h = window.location.hash;
+  if (h && h.indexOf("#/") === 0) {
+    const route = h.slice(2).replace(/\/+$/, "");
+    if (route) window.history.replaceState({}, "", routeToPath(route) + window.location.search);
+    else window.history.replaceState({}, "", "/" + window.location.search);
+  }
+})();
+
+function navigate(route) {
+  const path = routeToPath(route);
+  if (window.location.pathname !== path) window.history.pushState({}, "", path);
+  window.dispatchEvent(new CustomEvent("fwf-navigate"));
+}
+
 function useRoute() {
-  const [route, setRoute] = useState(() => {
-    const h = window.location.hash.replace("#/", "").replace("#", "");
-    return h || "home";
-  });
+  const [route, setRoute] = useState(() => pathToRoute(window.location.pathname));
   useEffect(() => {
     const handler = () => {
-      const h = window.location.hash.replace("#/", "").replace("#", "");
-      setRoute(h || "home");
+      setRoute(pathToRoute(window.location.pathname));
       window.scrollTo({ top: 0, behavior: "instant" });
     };
-    window.addEventListener("hashchange", handler);
-    return () => window.removeEventListener("hashchange", handler);
+    window.addEventListener("popstate", handler);
+    window.addEventListener("fwf-navigate", handler);
+    return () => {
+      window.removeEventListener("popstate", handler);
+      window.removeEventListener("fwf-navigate", handler);
+    };
   }, []);
-  return [route, (r) => { window.location.hash = "/" + r; }];
+  return [route, navigate];
 }
 
 function Link({ to, children, className, onClick, ...rest }) {
   return (
     <a
-      href={"#/" + to}
+      href={routeToPath(to)}
       className={className}
       onClick={(e) => {
+        // let the browser handle new-tab / new-window / download intents
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        navigate(to);
         window.scrollTo({ top: 0, behavior: "instant" });
         if (onClick) onClick(e);
       }}

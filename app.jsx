@@ -25,12 +25,63 @@ const DISPLAY_FONTS = ["Cormorant Garamond", "Playfair Display", "Fraunces"];
 const BODY_FONTS = ["Syne", "Outfit", "Inter"];
 
 // ============================================
+// Per-route SEO metadata (DE + EN)
+// Keep in sync with the route switch below and the rewrites in vercel.json.
+// ============================================
+const ROUTE_META = {
+  home: {
+    de: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium Ad Creative & cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart." },
+    en: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium ad creative & cinematic film production for B2C brands that want to scale. Studio in Stuttgart." },
+  },
+  projects: {
+    de: { title: "Projekte — Flow West Films", desc: "Ausgewählte Arbeiten: Ad Creatives, Brand Films, Reels und Produktionen für Marken aus Hospitality, Sport und Consumer Goods." },
+    en: { title: "Projects — Flow West Films", desc: "Selected work: ad creatives, brand films, reels and productions for brands across hospitality, sport and consumer goods." },
+  },
+  "projects-classic": {
+    de: { title: "Projekte — Flow West Films", desc: "Ausgewählte Arbeiten: Ad Creatives, Brand Films, Reels und Produktionen für Marken aus Hospitality, Sport und Consumer Goods." },
+    en: { title: "Projects — Flow West Films", desc: "Selected work: ad creatives, brand films, reels and productions for brands across hospitality, sport and consumer goods." },
+  },
+  pricing: {
+    de: { title: "Preise & Angebote — Flow West Films", desc: "Vier Wege der Zusammenarbeit: Launch Film, Creative Sprint, Growth Retainer und Premium Partner. Keine versteckten Kosten, keine Knebelverträge." },
+    en: { title: "Pricing & Offers — Flow West Films", desc: "Four ways to work with us: Launch Film, Creative Sprint, Growth Retainer and Premium Partner. No hidden fees, no lock-ins." },
+  },
+  "meta-ads-agentur": {
+    de: { title: "Meta Ads Agentur Stuttgart — Flow West Films", desc: "Volles Meta-Ads-Management: Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht." },
+    en: { title: "Meta Ads Agency Stuttgart — Flow West Films", desc: "Full Meta Ads management: strategy, creative, audiences and scaling — run by the same team that shoots the film." },
+  },
+  about: {
+    de: { title: "Über uns — Flow West Films", desc: "Gegründet von Florian Kotulla in Stuttgart. Filmemacher, Creative Director und Performance-Marketing-Denker in einer Person." },
+    en: { title: "About — Flow West Films", desc: "Founded by Florian Kotulla in Stuttgart. Filmmaker, creative director and performance marketing thinker in one." },
+  },
+  contact: {
+    de: { title: "Kontakt — Flow West Films", desc: "Erzählen Sie uns von Ihrer Marke. 30-minütiges Strategiegespräch, kein Druck. Stuttgart und remote in ganz Europa." },
+    en: { title: "Contact — Flow West Films", desc: "Tell us about your brand. A 30-minute strategy call, no pressure. Stuttgart and remote across Europe." },
+  },
+  impressum: {
+    de: { title: "Impressum — Flow West Films", desc: "Impressum und Anbieterkennzeichnung der Flow West Films, Stuttgart." },
+    en: { title: "Impressum — Flow West Films", desc: "Legal notice and provider identification for Flow West Films, Stuttgart." },
+  },
+  datenschutz: {
+    de: { title: "Datenschutz — Flow West Films", desc: "Datenschutzerklärung der Flow West Films nach DSGVO." },
+    en: { title: "Privacy Policy — Flow West Films", desc: "Flow West Films privacy policy under GDPR." },
+  },
+};
+
+// ============================================
 // App
 // ============================================
 function App() {
   const [route] = useRoute();
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   window.useMobileFX(route); // mobile-only scroll animations (fx.js); no-op on desktop
+
+  // bump on language toggle so route meta re-renders in the active language
+  const [langTick, setLangTick] = useStateA(0);
+  useEffectA(() => {
+    const onLang = () => setLangTick((n) => n + 1);
+    window.addEventListener("fwf-lang-change", onLang);
+    return () => window.removeEventListener("fwf-lang-change", onLang);
+  }, []);
 
   // Apply tweaks to CSS vars
   useEffectA(() => {
@@ -57,6 +108,32 @@ function App() {
     case "datenschutz": Page = DatenschutzPage; break;
     default:            Page = HomePage;
   }
+
+  // Per-route <title> + meta description. Without this every real URL would
+  // share one title and Google would treat them as near-duplicates, which
+  // defeats the point of having separate paths at all.
+  useEffectA(() => {
+    const lang = (window.FWF_getLanguage && window.FWF_getLanguage()) || "de";
+    const meta = (ROUTE_META[route] || ROUTE_META.home)[lang === "de" ? "de" : "en"];
+    document.title = meta.title;
+    const set = (sel, attr, val) => {
+      const el = document.querySelector(sel);
+      if (el) el.setAttribute(attr, val);
+    };
+    set('meta[name="description"]', "content", meta.desc);
+    set('meta[property="og:title"]', "content", meta.title);
+    set('meta[property="og:description"]', "content", meta.desc);
+    set('meta[property="og:url"]', "content", "https://flowwestfilms.de" + (route === "home" ? "/" : "/" + route));
+    // canonical keeps duplicate/param variants from splitting ranking signals
+    let canon = document.querySelector('link[rel="canonical"]');
+    if (!canon) {
+      canon = document.createElement("link");
+      canon.setAttribute("rel", "canonical");
+      document.head.appendChild(canon);
+    }
+    canon.setAttribute("href", "https://flowwestfilms.de" + (route === "home" ? "/" : "/" + route));
+    document.documentElement.setAttribute("lang", lang === "de" ? "de" : "en");
+  }, [route, langTick]);
 
   // Map routes to screen labels
   const labels = {

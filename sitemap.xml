@@ -6,8 +6,43 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://flowwestfilms.de/audit/</loc>
+    <loc>https://flowwestfilms.de/meta-ads-agentur</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/pricing</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/audit/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/about</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/contact</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/impressum</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/datenschutz</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>
