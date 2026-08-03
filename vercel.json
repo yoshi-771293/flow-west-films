@@ -1,5 +1,4 @@
 {
-  "//": "SPA rewrites: each app route must serve index.html so real URLs work on hard load/refresh. Listed explicitly (rather than a catch-all) so /audit/, /assets/, /api/ and static files are never swallowed. Add a line here whenever a route is added to app.jsx.",
   "rewrites": [
     { "source": "/projects", "destination": "/index.html" },
     { "source": "/projects-classic", "destination": "/index.html" },
