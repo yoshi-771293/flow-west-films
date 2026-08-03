@@ -249,6 +249,7 @@ function Footer() {
             <Link to="home">Home</Link>
             <Link to="projects">Projects</Link>
             <Link to="pricing">Pricing</Link>
+            <Link to="meta-ads-agentur">Meta Ads Agency</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
             <a href="/audit/">Audit</a>

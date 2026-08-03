@@ -1443,6 +1443,181 @@ function AboutPage() {
 }
 
 // ============================================
+// META ADS AGENTUR (channel landing page)
+// ============================================
+function MetaAdsPage() {
+  const included = [
+    { i: <Icons.Target size={22} />, t: "Strategy & audience mapping", d: "We map who we're targeting at each funnel stage before a single ad goes live.", c: "pink" },
+    { i: <Icons.Film size={22} />, t: "Creative production", d: "The same team that shoots your film builds and tests your ad creative — no handoff, no drift.", c: "purple" },
+    { i: <Icons.Aperture size={22} />, t: "Full account management", d: "Campaign structure, ad sets, tracking, audiences — set up and run end to end.", c: "green" },
+    { i: <Icons.Repeat size={22} />, t: "Structured scaling", d: "We don't inflate budgets on a hunch. Winning creative gets duplicated into new audience campaigns.", c: "orange" },
+    { i: <Icons.Phone size={22} />, t: "Weekly performance calls", d: "A standing sync with your dedicated Performance Marketing Manager — no black box.", c: "pink" },
+    { i: <Icons.BarChart size={22} />, t: "Live dashboard + monthly reporting", d: "Real-time CTR, ROAS, and CPA, plus a full report every month on where budget is going and why.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.Brain size={22} />, t: "Concept", d: "Strategy first. Or we don't press record." },
+    { n: "02", i: <Icons.Film size={22} />, t: "Creative", d: "Built to be remembered. Engineered to convert." },
+    { n: "03", i: <Icons.Zap size={22} />, t: "Launch & Test", d: "A defined test budget against agreed targets — CTR, ROAS, or CPA, whichever matters to you." },
+    { n: "04", i: <Icons.TrendUp size={22} />, t: "Scale", d: "We duplicate what's working into new audiences. Not a bigger bet on a hunch." },
+  ];
+
+  const faqs = [
+    {
+      q: "Do I need an existing Meta ad account or pixel set up?",
+      a: "No. Onboarding runs 2–3 days and includes full setup — ad account, tracking, audiences.",
+    },
+    {
+      q: "I've only ever done organic. Never run paid social. Is that a problem?",
+      a: "No problem — we guide you through it. What already performs organically is usually the first thing we test as paid, so your existing work isn't wasted.",
+    },
+    {
+      q: "How much budget do I need?",
+      a: "There's no fixed minimum. We agree on a test budget and clear targets on the strategy call, then scale only what earns it.",
+    },
+    {
+      q: "How is this different from a normal Meta Ads agency?",
+      a: "Most agencies split creative and media buying between two teams, or two vendors. We don't. One team owns the camera and the ad account, because the moment you split them, the work stops connecting to the result.",
+    },
+    {
+      q: "Is there a minimum commitment?",
+      a: "The Growth Retainer runs on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255,45,120,0.14), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Meta Ads Agency</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            One team. One ad account. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Meta Ads that convert.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 620, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            Full Meta Ads management — strategy, creative, audiences, and scaling — run by the same team that shoots the film. Most of our clients start here.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why Meta, why us</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                The wall between your creative team and your performance team is why neither one works.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                Most agencies hand you off between a creative shop and a media buyer — two teams, two invoices, and a gap where accountability should be. We don't split them. The people who shoot and edit your ads are the same people running the account that spends against them.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What's included</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Everything a Meta Ads engine needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Concept to scale. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>One system.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-pink)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-pink)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                Meta Ads, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Ready to run Meta Ads <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>the right way?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+    </main>
+  );
+}
+
+// ============================================
 // CONTACT PAGE
 // ============================================
 function ContactPage() {
@@ -1709,4 +1884,4 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage });
+Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage });

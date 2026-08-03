@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -50,6 +50,7 @@ function App() {
     case "projects-classic": Page = ProjectsPage; break;
     case "projects-lab": Page = ProjectsLabPage; break;
     case "pricing":     Page = PricingPage;     break;
+    case "meta-ads-agentur": Page = MetaAdsPage; break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
@@ -64,6 +65,7 @@ function App() {
     "projects-classic": "02 Projects · Classic",
     "projects-lab": "02 Projects",
     pricing:     "03 Pricing",
+    "meta-ads-agentur": "03 Pricing · Meta Ads",
     about:       "04 About",
     contact:     "05 Contact",
     impressum:   "Legal · Impressum",

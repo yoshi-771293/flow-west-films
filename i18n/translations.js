@@ -444,6 +444,70 @@ window.FWF_TRANSLATIONS = {
       "Ihr eigenes Live-Dashboard — CTR, ROAS und CPA in Echtzeit, ohne auf einen Report zu warten, um zu wissen, wie eine Kampagne läuft.",
     "CRM & Meta Feedback Loop": "CRM- & Meta-Feedback-Loop",
     "Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.":
-      "Jeder Lead landet direkt in Ihrem CRM. Wer bei Ihnen den Vertrieb macht — Gründer oder Team — markiert, welche Leads wirklich qualifiziert waren, und gibt das an uns zurück. Wir spielen es an Meta zurück und trainieren den Algorithmus darauf, hochwertige Leads zu finden statt reiner Masse."
+      "Jeder Lead landet direkt in Ihrem CRM. Wer bei Ihnen den Vertrieb macht — Gründer oder Team — markiert, welche Leads wirklich qualifiziert waren, und gibt das an uns zurück. Wir spielen es an Meta zurück und trainieren den Algorithmus darauf, hochwertige Leads zu finden statt reiner Masse.",
+
+    /* ---- Meta Ads Agency (channel landing page) ------------------------ */
+    "Meta Ads Agency": "Meta Ads Agentur",
+    "One team. One ad account.": "Ein Team. Ein Werbekonto.",
+    "Meta Ads that convert.": "Meta Ads, die konvertieren.",
+    "Full Meta Ads management — strategy, creative, audiences, and scaling — run by the same team that shoots the film. Most of our clients start here.":
+      "Volles Meta-Ads-Management — Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht. Die meisten unserer Kunden starten genau hier.",
+    "Why Meta, why us": "Warum Meta, warum wir",
+    "The wall between your creative team and your performance team is why neither one works.":
+      "Die Mauer zwischen Ihrem Creative-Team und Ihrem Performance-Team ist der Grund, warum keins von beiden richtig funktioniert.",
+    "Most agencies hand you off between a creative shop and a media buyer — two teams, two invoices, and a gap where accountability should be. We don't split them. The people who shoot and edit your ads are the same people running the account that spends against them.":
+      "Die meisten Agenturen reichen Sie zwischen einer Kreativagentur und einem Media Buyer weiter — zwei Teams, zwei Rechnungen und eine Lücke, wo Verantwortung sein sollte. Wir trennen das nicht. Die Menschen, die Ihre Ads drehen und schneiden, sind dieselben, die das Konto betreiben, über das das Budget läuft.",
+    "That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.":
+      "Das ist die ganze These: Premium-Creative ist nicht das Gegenteil von Performance. Richtig gemacht, ist es die Quelle davon.",
+    "What's included": "Was enthalten ist",
+    "Everything a Meta Ads engine needs.": "Alles, was eine Meta-Ads-Maschine braucht.",
+    "Nothing it doesn't.": "Nichts, was sie nicht braucht.",
+    "Strategy & audience mapping": "Strategie & Audience-Mapping",
+    "We map who we're targeting at each funnel stage before a single ad goes live.":
+      "Wir definieren, wen wir in jeder Funnel-Stufe ansprechen, bevor auch nur eine Anzeige live geht.",
+    "Creative production": "Creative-Produktion",
+    "The same team that shoots your film builds and tests your ad creative — no handoff, no drift.":
+      "Dasselbe Team, das Ihren Film dreht, entwickelt und testet Ihr Ad Creative — keine Übergabe, kein Qualitätsverlust.",
+    "Full account management": "Vollständiges Account-Management",
+    "Campaign structure, ad sets, tracking, audiences — set up and run end to end.":
+      "Kampagnenstruktur, Ad Sets, Tracking, Audiences — von uns aufgesetzt und durchgehend betreut.",
+    "Structured scaling": "Strukturiertes Scaling",
+    "We don't inflate budgets on a hunch. Winning creative gets duplicated into new audience campaigns.":
+      "Wir erhöhen Budgets nicht auf Verdacht. Erfolgreiches Creative wird in neue Audience-Kampagnen dupliziert.",
+    "Weekly performance calls": "Wöchentliche Performance-Calls",
+    "A standing sync with your dedicated Performance Marketing Manager — no black box.":
+      "Ein fester Austausch mit Ihrem persönlichen Performance Marketing Manager — keine Blackbox.",
+    "Live dashboard + monthly reporting": "Live-Dashboard + monatliches Reporting",
+    "Real-time CTR, ROAS, and CPA, plus a full report every month on where budget is going and why.":
+      "CTR, ROAS und CPA in Echtzeit, dazu ein vollständiger monatlicher Bericht, wohin Ihr Budget fließt und warum.",
+    "How it runs": "So läuft es ab",
+    "Concept to scale.": "Von Konzept bis Scale.",
+    "One system.": "Ein System.",
+    "Strategy first. Or we don't press record.": "Strategie zuerst. Oder wir drücken nicht auf Aufnahme.",
+    "Built to be remembered. Engineered to convert.": "Gebaut, um in Erinnerung zu bleiben. Entwickelt, um zu konvertieren.",
+    "A defined test budget against agreed targets — CTR, ROAS, or CPA, whichever matters to you.":
+      "Ein definiertes Testbudget gegen vereinbarte Zielwerte — CTR, ROAS oder CPA, je nachdem, was für Sie zählt.",
+    "We duplicate what's working into new audiences. Not a bigger bet on a hunch.":
+      "Wir duplizieren, was funktioniert, in neue Audiences. Keine größere Wette auf Verdacht.",
+    "Meta Ads,": "Meta Ads,",
+    "answered.": "beantwortet.",
+    "Do I need an existing Meta ad account or pixel set up?": "Brauche ich bereits ein Meta-Werbekonto oder einen eingerichteten Pixel?",
+    "No. Onboarding runs 2–3 days and includes full setup — ad account, tracking, audiences.":
+      "Nein. Das Onboarding dauert 2–3 Tage und umfasst das komplette Setup — Werbekonto, Tracking, Audiences.",
+    "I've only ever done organic. Never run paid social. Is that a problem?":
+      "Ich habe bisher nur organisch gearbeitet, nie Paid Social. Ist das ein Problem?",
+    "No problem — we guide you through it. What already performs organically is usually the first thing we test as paid, so your existing work isn't wasted.":
+      "Kein Problem — wir begleiten Sie dabei. Was organisch bereits funktioniert, testen wir in der Regel als Erstes bezahlt — Ihre bisherige Arbeit war also nicht umsonst.",
+    "How much budget do I need?": "Wie viel Budget brauche ich?",
+    "There's no fixed minimum. We agree on a test budget and clear targets on the strategy call, then scale only what earns it.":
+      "Es gibt kein festes Minimum. Wir legen im Strategiegespräch ein Testbudget und klare Zielwerte fest und skalieren dann nur das, was sich verdient.",
+    "How is this different from a normal Meta Ads agency?": "Was unterscheidet das von einer normalen Meta-Ads-Agentur?",
+    "Most agencies split creative and media buying between two teams, or two vendors. We don't. One team owns the camera and the ad account, because the moment you split them, the work stops connecting to the result.":
+      "Die meisten Agenturen trennen Creative und Media Buying zwischen zwei Teams oder zwei Dienstleistern. Wir nicht. Ein Team verantwortet Kamera und Werbekonto — denn sobald man das trennt, verliert die Arbeit die Verbindung zum Ergebnis.",
+    "Is there a minimum commitment?": "Gibt es eine Mindestlaufzeit?",
+    "The Growth Retainer runs on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.":
+      "Der Growth Retainer läuft mit einer Mindestlaufzeit von 4–6 Monaten — lang genug, um wirklich herauszufinden, was funktioniert. Danach bleiben Sie, weil es sich aufbaut, nicht wegen eines Vertrags.",
+    "Ready to run Meta Ads": "Bereit, Meta Ads",
+    "the right way?": "richtig zu machen?"
   }
 };
