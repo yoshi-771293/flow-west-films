@@ -568,17 +568,20 @@ function GrowthEngineSection({ cta = true, compact = false }) {
 
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24, marginTop: compact ? 32 : 0 }}>Where We Scale</span>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
-          <div className="fwf-card fwf-card-green" style={{ padding: 32 }}>
+          <Link to="meta-ads-agentur" className="fwf-card fwf-card-green" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/linkedin-neon.png" alt="LinkedIn" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
               Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.
             </p>
-          </div>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-green)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+              Meta Ads Agency <Icons.ArrowRight size={12} />
+            </span>
+          </Link>
           <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
