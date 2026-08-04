@@ -84,8 +84,8 @@ window.FWF_TRANSLATIONS = {
 
     /* ---- Home: position section -------------------------------------- */
     "The position": "Die Position",
-    "Most agencies deliver content.": "Die meisten Agenturen liefern Content.",
-    "We deliver": "Wir liefern",
+    "You didn't come here for content.": "Sie sind nicht wegen Content hier.",
+    "You came for": "Sondern wegen",
     "Flow West Films combines cinematic production, performance-driven ad creative, and strategic thinking — into one external premium team.":
       "Flow West Films vereint cinematische Film Produktion, performance-getriebene Ad Creatives und strategisches Denken — in einem externen Premium-Team.",
     "Projects delivered": "Projekte realisiert",
@@ -129,8 +129,8 @@ window.FWF_TRANSLATIONS = {
       "Nutzungsrechte: Paid, Organic, Sales, intern",
 
     "30 creatives / month": "30 Creatives / Monat",
-    "Volume creative that doesn't sacrifice the bar.":
-      "Volumen Creatives, ohne Kompromisse beim Anspruch.",
+    "Never run out of creative to test.":
+      "Nie wieder ohne Creative zum Testen.",
     "2 ad concepts per month — hooks, scripts + CTAs":
       "2 Ad-Konzepte pro Monat — Hooks, Skripte + CTAs",
     "5 finished video creatives per concept (10 videos/month)":
@@ -143,8 +143,8 @@ window.FWF_TRANSLATIONS = {
       "Reiner Creative-Retainer — kombinierbar mit Ihrem eigenen Media Buying",
 
     "Creative + Performance Marketing": "Creative + Performance Marketing",
-    "Performance + Video.":
-      "Performance + Video.",
+    "The whole engine, handled.":
+      "Der komplette Motor, betreut.",
     "Everything in Creative Sprint — monthly concepts, hooks, scripts":
       "Alles aus dem Creative Sprint — monatliche Konzepte, Hooks, Skripte",
     "2 ad concepts per month with 5 finished creatives per concept":
@@ -378,15 +378,15 @@ window.FWF_TRANSLATIONS = {
       "Jede kreative Entscheidung ist datenbasiert. Kein Spray-and-Pray, kein verschwendetes Budget für ungetestete Ideen.",
 
     /* ---- Home hero + position (outcome-first retrofit) ------------------ */
-    "We turn ad spend": "Wir machen aus Werbebudget",
-    "into": "",
+    "We turn ad spend": "Aus Ihrem Werbebudget",
+    "into": "werden",
     "repeat customers.": "wiederkehrende Kunden.",
     "Cinematic ad creative and performance marketing for e-commerce and B2C brands — built to earn the second purchase, not just the first click.":
       "Cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken — gebaut, um den zweiten Kauf zu verdienen, nicht nur den ersten Klick.",
     "E-commerce & B2C": "E-Commerce & B2C",
     "Built for Repeat Sales": "Gebaut für Wiederholungskäufe",
-    "Flow West Films exists to turn ad spend into repeat customers for e-commerce and B2C brands — not just more impressions. Cinematic production, ad creative, and media buying, run by one team, so nothing gets lost between the shoot and the spend.":
-      "Flow West Films existiert, um aus Werbebudget wiederkehrende Kunden zu machen — für E-Commerce- und B2C-Marken, nicht nur mehr Impressions. Cinematische Produktion, Ad Creative und Media Buying, geführt von einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
+    "Your ad spend should come back as customers who buy again — not as impressions you can't bank. Production, ad creative and media buying all sit with one team, so nothing gets lost between the shoot and the spend.":
+      "Ihr Werbebudget sollte als Kunden zurückkommen, die wieder kaufen — nicht als Impressions, mit denen sich nichts anfangen lässt. Produktion, Ad Creative und Media Buying liegen bei einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
     "ROAS achieved — Weinzeit": "ROAS erreicht — Weinzeit",
     "& B2C — where we focus": "& B2C — unser Fokus",
     "Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.":
@@ -450,29 +450,29 @@ window.FWF_TRANSLATIONS = {
     "How We Scale": "Wie wir skalieren",
     "Creative built to become": "Creative, das zu",
     "your growth engine.": "Ihrem Wachstumsmotor wird.",
-    "This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.":
+    "This isn't creative for creative's sake. Every asset is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, nothing gets left to guesswork. It gets scaled, deliberately.":
       "Wir erstellen kein Creative um des Creatives willen. Jedes Asset, das wir produzieren, ist darauf ausgelegt, eine Zahl zu bewegen, die für Ihr Business zählt — Leads, Markenbekanntheit, Umsatz oder die Bewerber, die bei Ihnen anklopfen. Sobald ein Konzept funktioniert, raten wir nicht, warum — wir skalieren es gezielt.",
     "Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.":
       "Enthalten im Growth Retainer und Premium Partner — den beiden Angeboten, bei denen wir Ihre Paid Media steuern.",
-    "We start with your numbers": "Wir starten mit Ihren Zahlen",
-    "Before a single euro goes into media, we agree on the exact metrics that define success for your business — CTR, ROAS, CPA, whichever actually matters to you. Every decision after that gets measured against those targets.":
-      "Bevor ein einziger Euro in Media fließt, definieren wir gemeinsam die Kennzahlen, an denen sich Erfolg für Ihr Business messen lässt — CTR, ROAS, CPA, je nachdem, was für Sie wirklich zählt. Jede Entscheidung danach wird an diesen Zielwerten gemessen.",
+    "It starts with your numbers": "Es beginnt mit Ihren Zahlen",
+    "Before a single euro goes into media, you decide what success actually means — CTR, ROAS, CPA, whichever one your business runs on. Every decision after that gets measured against your targets, not ours.":
+      "Bevor ein einziger Euro in Media fließt, legen Sie fest, was Erfolg konkret bedeutet — CTR, ROAS, CPA, je nachdem, worauf Ihr Geschäft läuft. Jede weitere Entscheidung wird an Ihren Zielwerten gemessen, nicht an unseren.",
     "Scaling, done right": "Skalieren, richtig gemacht",
     "Where We Scale": "Wo wir skalieren",
-    "Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.":
+    "Most brands start on Meta — but your audience decides, not us. TikTok and LinkedIn are on the table too.":
       "Die meisten unserer Kunden starten auf Meta — wir skalieren aber dort, wo Ihre Zielgruppe wirklich ist: auch auf TikTok und LinkedIn.",
     "Search & YouTube": "Search & YouTube",
     "Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.":
       "Google und YouTube Ads laufen über Intent statt Interest — ein anderer Mechanismus als Meta. Eine starke Option, wenn Sie nicht stark auf Paid Social setzen wollen.",
     "AI Visibility": "AI-Sichtbarkeit",
-    "Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.":
+    "Your buyers increasingly start their search inside an AI. Being found in ChatGPT, Claude and Gemini — not just Google — is becoming its own channel.":
       "Immer mehr Kaufentscheidungen beginnen in einer AI. Wir optimieren Ihre Marke so, dass sie in ChatGPT, Claude und Gemini gefunden wird — nicht nur bei Google.",
     "AI Visibility Agency": "AI-Sichtbarkeit Agentur",
     "This is what the Growth Retainer and Premium Partner are built around.":
       "Genau darauf sind der Growth Retainer und Premium Partner ausgelegt.",
     "Check out the Growth Retainer & Premium Partner": "Growth Retainer & Premium Partner ansehen",
-    "We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.":
-      "Wir erhöhen Budgets nicht auf Verdacht. Sobald sich ein Creative-Konzept bewährt hat, duplizieren wir genau das, was funktioniert, in neue Audience-Kampagnen — wir skalieren das, was Ergebnisse liefert, statt es zu verwässern.",
+    "Your budget doesn't grow on a hunch. Once a concept proves itself, the winner gets duplicated into new audience campaigns — so you're scaling the exact thing driving results, not diluting it.":
+      "Ihr Budget wächst nicht auf Verdacht. Sobald sich ein Konzept bewährt hat, wird der Gewinner in neue Audience-Kampagnen dupliziert — Sie skalieren also genau das, was Ergebnisse liefert, statt es zu verwässern.",
     "Onboarding & Collaboration": "Onboarding & Zusammenarbeit",
     "Onboarding (2–3 Days)": "Onboarding (2–3 Tage)",
     "A fast, focused setup to get strategy, access, and tracking aligned — no weeks-long ramp-up.":
@@ -488,8 +488,8 @@ window.FWF_TRANSLATIONS = {
     "Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.":
       "Ihr eigenes Live-Dashboard — CTR, ROAS und CPA in Echtzeit, ohne auf einen Report zu warten, um zu wissen, wie eine Kampagne läuft.",
     "CRM & Meta Feedback Loop": "CRM- & Meta-Feedback-Loop",
-    "Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.":
-      "Jeder Lead landet direkt in Ihrem CRM. Wer bei Ihnen den Vertrieb macht — Gründer oder Team — markiert, welche Leads wirklich qualifiziert waren, und gibt das an uns zurück. Wir spielen es an Meta zurück und trainieren den Algorithmus darauf, hochwertige Leads zu finden statt reiner Masse.",
+    "Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. That signal goes into Meta, training the algorithm to chase quality leads instead of raw volume.":
+      "Jeder Lead landet direkt in Ihrem CRM. Wer bei Ihnen den Vertrieb macht — Gründer oder Team — markiert, welche Leads wirklich qualifiziert waren, und gibt das zurück. Dieses Signal fließt an Meta und trainiert den Algorithmus darauf, hochwertige Leads zu finden statt reiner Masse.",
 
     /* ---- Meta Ads Agency (channel landing page) ------------------------ */
     "Meta Ads Agency": "Meta Ads Agentur",

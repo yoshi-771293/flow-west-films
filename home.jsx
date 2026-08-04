@@ -90,7 +90,7 @@ const OFFERS = [
     badgeColor: "orange",
     accent: "orange",
     stat: "30 creatives / month",
-    tagline: "Volume creative that doesn't sacrifice the bar.",
+    tagline: "Never run out of creative to test.",
     bullets: [
       "2 ad concepts per month — hooks, scripts + CTAs",
       "5 finished video creatives per concept (10 videos/month)",
@@ -107,7 +107,7 @@ const OFFERS = [
     highlight: true,
     accent: "pink",
     stat: "Creative + Performance Marketing",
-    tagline: "Performance + Video.",
+    tagline: "The whole engine, handled.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",
       "2 ad concepts per month with 5 finished creatives per concept",
@@ -285,19 +285,19 @@ function HomePage() {
                 React.createElement("span", { className: "fwf-eyebrow" }, "The position")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5.5vw, 76px)", margin: "0 0 28px 0", textWrap: "balance" } },
-                "Most agencies deliver content.", React.createElement("br"),
+                "You didn't come here for content.", React.createElement("br"),
                 React.createElement("span", { style: { color: "var(--fwf-pink)" } },
-                  "We deliver ",
+                  "You came for ",
                   React.createElement(LangTypewriterWord, {
-                    wordsEN: ["conversion.", "clarity.", "growth.", "impact."],
-                    wordsDE: ["Conversions.", "Klarheit.", "Wachstum.", "Wirkung."],
+                    wordsEN: ["conversions.", "clarity.", "growth.", "revenue."],
+                    wordsDE: ["Conversions.", "Klarheit.", "Wachstum.", "Umsatz."],
                     className: "fwf-display-italic",
                     style: { color: "var(--fwf-pink)" }
                   })
                 )
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
-                "Flow West Films exists to turn ad spend into repeat customers for e-commerce and B2C brands — not just more impressions. Cinematic production, ad creative, and media buying, run by one team, so nothing gets lost between the shoot and the spend."
+                "Your ad spend should come back as customers who buy again — not as impressions you can't bank. Production, ad creative and media buying all sit with one team, so nothing gets lost between the shoot and the spend."
               )
             ),
 

@@ -605,12 +605,12 @@ function WhyFwfSection() {
 function GrowthEngineSection({ cta = true, compact = false }) {
   const principles = [
     {
-      i: <Icons.Target size={22} />, c: "pink", t: "We start with your numbers",
-      d: "Before a single euro goes into media, we agree on the exact metrics that define success for your business — CTR, ROAS, CPA, whichever actually matters to you. Every decision after that gets measured against those targets.",
+      i: <Icons.Target size={22} />, c: "pink", t: "It starts with your numbers",
+      d: "Before a single euro goes into media, you decide what success actually means — CTR, ROAS, CPA, whichever one your business runs on. Every decision after that gets measured against your targets, not ours.",
     },
     {
       i: <Icons.TrendUp size={22} />, c: "pink", t: "Scaling, done right",
-      d: "We don't inflate budgets on a hunch. Once a creative concept proves itself, we duplicate what's working into new audience campaigns — scaling the exact thing driving results, not diluting it.",
+      d: "Your budget doesn't grow on a hunch. Once a concept proves itself, the winner gets duplicated into new audience campaigns — so you're scaling the exact thing driving results, not diluting it.",
     },
   ];
 
@@ -633,7 +633,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
         {!compact && (
           <>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px 0", maxWidth: 640 }}>
-              This isn't creative for creative's sake. Every asset we make is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, we don't guess why. We scale it, deliberately.
+              This isn't creative for creative's sake. Every asset is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, nothing gets left to guesswork. It gets scaled, deliberately.
             </p>
 
             <div style={{ display: "inline-flex", alignItems: "flex-start", gap: 10, padding: "10px 18px", borderRadius: 100, border: "1px solid rgba(255,45,120,0.28)", background: "rgba(255,45,120,0.06)", marginBottom: 56 }}>
@@ -667,7 +667,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
-              Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.
+              Most brands start on Meta — but your audience decides, not us. TikTok and LinkedIn are on the table too.
             </p>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-green)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
               Social Media Ads <Icons.ArrowRight size={12} />
@@ -694,7 +694,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
-              Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.
+              Your buyers increasingly start their search inside an AI. Being found in ChatGPT, Claude and Gemini — not just Google — is becoming its own channel.
             </p>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-orange)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
               AI Visibility Agency <Icons.ArrowRight size={12} />
@@ -728,7 +728,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
                 <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Repeat size={24} /></div>
                 <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
                 <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-                  Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. We feed it into Meta, training the algorithm to chase quality leads instead of raw volume.
+                  Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. That signal goes into Meta, training the algorithm to chase quality leads instead of raw volume.
                 </p>
               </div>
             </div>

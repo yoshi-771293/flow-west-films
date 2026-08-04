@@ -56,21 +56,29 @@
   // ---- text nodes ---------------------------------------------------------
   function doTextNode(node, d) {
     var raw = node.nodeValue;
+    if (raw == null) return;
+    // Restore first, before any early-return on the CURRENT text. A DE value
+    // of "" (a deliberately blanked connector word) leaves the node holding
+    // only whitespace; norm()'ing that current value produces an empty key,
+    // which used to trigger an early return before this restore ever ran --
+    // permanently losing the English original on the next EN switch.
+    if (lang !== "de") {
+      if (textOriginals.has(node)) {
+        var orig = textOriginals.get(node);
+        if (node.nodeValue !== orig) node.nodeValue = orig;
+      }
+      return;
+    }
     if (!raw) return;
     var key = norm(raw);
     if (!key) return;
-    if (lang === "de") {
-      var de = d[key];
-      if (de == null) return;
-      if (!textOriginals.has(node)) textOriginals.set(node, raw);
-      var lead = raw.match(/^\s*/)[0];
-      var trail = raw.match(/\s*$/)[0];
-      var next = lead + de + trail;
-      if (node.nodeValue !== next) node.nodeValue = next;
-    } else if (textOriginals.has(node)) {
-      var orig = textOriginals.get(node);
-      if (node.nodeValue !== orig) node.nodeValue = orig;
-    }
+    var de = d[key];
+    if (de == null) return;
+    if (!textOriginals.has(node)) textOriginals.set(node, raw);
+    var lead = raw.match(/^\s*/)[0];
+    var trail = raw.match(/\s*$/)[0];
+    var next = lead + de + trail;
+    if (node.nodeValue !== next) node.nodeValue = next;
   }
 
   // ---- attributes ---------------------------------------------------------
