@@ -537,16 +537,18 @@ function ReassureBlock({ question, answer, points, accent }) {
 // Home and Pricing.
 // ============================================
 function WhyFwfSection() {
-  const pillars = [
-    { i: <Icons.Brain size={22} />, t: "Strategic Storytelling", d: "We don't just shoot. We think conversion-first.", c: "pink" },
-    { i: <Icons.Aperture size={22} />, t: "Film That Gets Remembered", d: "4K production built to stay in the mind.", c: "purple" },
-    { i: <Icons.Zap size={22} />, t: "Speed & Efficiency", d: "Fast turnaround without sacrificing quality.", c: "green" },
-    { i: <Icons.Target size={22} />, t: "Performance Focus", d: "Every frame built to drive action.", c: "orange" },
+  // The three phases a stranger passes through on the way to buying.
+  const system = [
+    { i: <Icons.Aperture size={22} />, n: "01", t: "Get Discovered with Creative", d: "Your future customers meet you through a film worth stopping for — not another ad they scroll straight past.", c: "purple" },
+    { i: <Icons.Repeat size={22} />, n: "02", t: "Earn Trust with Retargeting & Testimonials", d: "The people who noticed you see you again — this time with real customers vouching that you deliver.", c: "pink" },
+    { i: <Icons.Target size={22} />, n: "03", t: "Convert Your Target Audience", d: "By the time they're ready to buy, the decision is already made. The sale is a formality.", c: "green" },
   ];
-  const flow = [
-    { c: "purple", t: "Get discovered with Creative" },
-    { c: "pink", t: "Earn the trust with retargeting & testimonials" },
-    { c: "green", t: "Convert your target audience" },
+
+  // What that system stands on. Without these three, the phases above leak.
+  const foundation = [
+    { i: <Icons.Sparkles size={22} />, t: "Brand & Rebranding", d: "A brand that still looks like it did ten years ago quietly undercuts every euro you spend on ads. Your look and your language get brought into the present first — so everything after it has something solid to stand on.", c: "pink" },
+    { i: <Icons.Aperture size={22} />, t: "End-to-End Consistency", d: "Brilliant ad creative pointing at a tired website still loses the sale. Social, organic, ad creative, website, funnel — one typography, one colour system, one feel, the whole way through.", c: "purple" },
+    { i: <Icons.FileText size={22} />, t: "The Onboarding System", d: "Onboarding asks a lot of you upfront, and that's deliberate: everything above is built out of what comes from it. It's the reason the pieces fit together instead of merely sitting next to each other.", c: "green" },
   ];
 
   return (
@@ -557,33 +559,38 @@ function WhyFwfSection() {
           <span className="fwf-eyebrow">Why FWF</span>
         </div>
         <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 28px 0", maxWidth: 780, textWrap: "balance" }}>
-          Not just video production —<br />
-          <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your external creative department.</em>
+          How a stranger becomes <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your customer.</em>
         </h2>
 
         <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 56px 0", maxWidth: 720 }}>
-          Most ads shout. Ours listen first. At Flow West Films, we craft cinematic ad creative that speaks to your customer like a friend would — not a pitch, a story. When someone feels seen instead of sold to, they lean in instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. We help B2C brands turn that invitation into demand — and demand into revenue.
+          Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-why-grid">
-          {pillars.map((w, i, arr) => (
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>The system</span>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
+          {system.map((w, i, arr) => (
             <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" }}>
-              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 24 }}>{w.i}</div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <span style={{ color: "var(--fwf-" + w.c + ")" }}>{w.i}</span>
+                <span className="fwf-mono" style={{ color: "var(--fwf-" + w.c + ")", fontSize: 13, letterSpacing: "0.2em" }}>{w.n}</span>
+              </div>
               <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{w.t}</h3>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
             </div>
           ))}
         </div>
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 20 }}>The Funnel</span>
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
-          {flow.map((s, i, arr) => (
-            <React.Fragment key={i}>
-              <span style={{ padding: "13px 22px", borderRadius: 100, border: "1px solid rgba(255,255,255,0.14)", color: "var(--fwf-" + s.c + ")", fontSize: 14.5, fontWeight: 500 }}>
-                {s.t}
-              </span>
-              {i < arr.length - 1 && <Icons.ArrowRight size={18} style={{ color: "var(--fwf-text-faint)", flexShrink: 0 }} />}
-            </React.Fragment>
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 12 }}>The foundation</span>
+        <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 640 }}>
+          Three things hold that system up. Miss one and the funnel leaks, no matter how good the ads are.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="fwf-grid-collapse">
+          {foundation.map((w, i) => (
+            <div key={i} className={"fwf-card fwf-card-" + w.c} style={{ padding: 28 }}>
+              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 18 }}>{w.i}</div>
+              <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{w.t}</h3>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
+            </div>
           ))}
         </div>
       </div>

@@ -109,20 +109,6 @@ window.FWF_TRANSLATIONS = {
 
     /* ---- Home: why FWF ------------------------------------------------ */
     "Why FWF": "Warum FWF",
-    "Not just video production —": "Nicht nur Videoproduktion —",
-    "your external creative department.": "Ihre externe Kreativabteilung.",
-    "Strategic Storytelling": "Strategisches Storytelling",
-    "We don't just shoot. We think conversion-first.":
-      "Wir drehen nicht einfach. Wir denken conversion-first.",
-    "Film That Gets Remembered": "Film, der in Erinnerung bleibt",
-    "4K production built to stay in the mind.":
-      "4K-Produktion, die im Kopf bleibt.",
-    "Speed & Efficiency": "Tempo & Effizienz",
-    "Fast turnaround without sacrificing quality.":
-      "Schnelle Umsetzung ohne Qualitätsverlust.",
-    "Performance Focus": "Performance-Fokus",
-    "Every frame built to drive action.":
-      "Jeder Frame ist darauf ausgelegt, Handlungen beim Kunden auszulösen.",
 
     /* ---- Offers: taglines + badges + bullets ------------------------- */
     "Fastest": "Am schnellsten",
@@ -403,25 +389,50 @@ window.FWF_TRANSLATIONS = {
       "Flow West Films existiert, um aus Werbebudget wiederkehrende Kunden zu machen — für E-Commerce- und B2C-Marken, nicht nur mehr Impressions. Cinematische Produktion, Ad Creative und Media Buying, geführt von einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
     "ROAS achieved — Weinzeit": "ROAS erreicht — Weinzeit",
     "& B2C — where we focus": "& B2C — unser Fokus",
-    "Most ads shout. Ours listen first. At Flow West Films, we craft cinematic ad creative that speaks to your customer like a friend would — not a pitch, a story. When someone feels seen instead of sold to, they lean in instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. We help B2C brands turn that invitation into demand — and demand into revenue.":
-      "Die meisten Ads schreien. Unsere hören erst zu. Bei Flow West Films entwickeln wir cinematisches Ad Creative, das Ihre Kunden anspricht wie ein guter Freund — kein Verkaufsgespräch, eine Geschichte. Wer sich gesehen statt verkauft fühlt, bleibt dran, statt weiterzuscrollen. Das ist der Unterschied zwischen einer Anzeige und einem Film: Die eine unterbricht, der andere lädt ein. Wir helfen B2C-Marken, aus dieser Einladung Nachfrage zu machen — und aus Nachfrage Umsatz.",
+    "Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.":
+      "Die meisten Ads schreien. Unsere hören erst zu. Cinematisches Ad Creative spricht mit Ihren Kunden wie ein guter Freund — kein Verkaufsgespräch, eine Geschichte. Wer sich gesehen statt verkauft fühlt, bleibt dran, statt weiterzuscrollen. Das ist der Unterschied zwischen einer Anzeige und einem Film: Die eine unterbricht, der andere lädt ein. Für B2C-Marken wird genau diese Einladung zu Nachfrage — und Nachfrage zu Umsatz.",
 
     /* ---- Real Proof section (Home) --------------------------------------- */
     "Real proof": "Echte Beweise",
-    "Two kinds of proof.": "Zwei Arten von Beweisen.",
-    "Both real.": "Beide echt.",
-    "A campaign currently under consideration for industry awards — proof our creative meets a global brand's bar, not just a local one.":
-      "Eine Kampagne, die aktuell für Branchenpreise in der engeren Auswahl ist — der Beweis, dass unser Creative den Ansprüchen einer globalen Marke gerecht wird, nicht nur einer lokalen.",
-    "Directed a film competing for a top-10 placement in the XPRIZE competition — cinematic storytelling applied where most ad shops never go.":
-      "Regie bei einem Film geführt, der um eine Top-10-Platzierung beim XPRIZE-Wettbewerb konkurriert — cinematisches Storytelling dort eingesetzt, wo die meisten Ad-Shops nie hinkommen.",
-    "Scaled paid-social performance for DACH D2C brands Eibl GmbH and Schmolke Carbon — plus ~850K organic views for local brand partners by replacing typical ad formats with cinematic, story-first content.":
-      "Paid-Social-Performance für die DACH-D2C-Marken Eibl GmbH und Schmolke Carbon skaliert — und die organische Reichweite lokaler Markenpartner auf rund 850.000 Views gebracht, indem typische Ad-Formate durch cinematischen, story-first Content ersetzt wurden.",
+    "You're not the": "Sie sind nicht der",
+    "test case.": "Testfall.",
+    "A campaign now in consideration for industry awards. The standard your creative gets held to is a global one, not a local one.":
+      "Eine Kampagne, die aktuell für Branchenpreise in der engeren Auswahl steht. Der Maßstab für Ihr Creative ist damit ein globaler, kein lokaler.",
+    "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.":
+      "Ein Film im Rennen um eine Top-10-Platzierung beim XPRIZE — Storytelling auf einem Niveau, an das sich die wenigsten Ad-Agenturen überhaupt heranwagen.",
+    "Ad creative and paid social for ImmoVersteigerung. Part of the DACH D2C work scaled from 2× to 6.2× ROAS.":
+      "Ad Creative und Paid Social für ImmoVersteigerung. Teil der DACH-D2C-Arbeit, die von 2× auf 6,2× ROAS skaliert wurde.",
+    "Premium carbon race components. Part of the same DACH D2C work scaled from 2× to 6.2× ROAS.":
+      "Hochwertige Carbon-Rennkomponenten. Teil derselben DACH-D2C-Arbeit, die von 2× auf 6,2× ROAS skaliert wurde.",
+    "850K organic views": "850.000 organische Views",
+    "Reach earned for local brand partners by replacing typical ad formats with cinematic, story-first content.":
+      "Reichweite für lokale Markenpartner, erzielt durch den Wechsel von typischen Ad-Formaten zu cinematischem, story-first Content.",
 
-    /* ---- Why FWF + funnel flow (Home + Pricing) ------------------------- */
-    "The Funnel": "Der Funnel",
-    "Get discovered with Creative": "Entdeckt werden mit Creative",
-    "Earn the trust with retargeting & testimonials": "Vertrauen aufbauen mit Retargeting & Testimonials",
-    "Convert your target audience": "Ihre Zielgruppe konvertieren",
+    /* ---- Why FWF: the system + the foundation (Home + Services) --------- */
+    "How a stranger becomes": "Wie aus einem Fremden",
+    "your customer.": "Ihr Kunde wird.",
+    "The system": "Das System",
+    "Get Discovered with Creative": "Entdeckt werden mit Creative",
+    "Your future customers meet you through a film worth stopping for — not another ad they scroll straight past.":
+      "Ihre künftigen Kunden begegnen Ihnen durch einen Film, für den man anhält — nicht durch die nächste Anzeige, an der sie vorbeiscrollen.",
+    "Earn Trust with Retargeting & Testimonials": "Vertrauen aufbauen mit Retargeting & Testimonials",
+    "The people who noticed you see you again — this time with real customers vouching that you deliver.":
+      "Wer Sie einmal wahrgenommen hat, sieht Sie wieder — diesmal mit echten Kunden, die bestätigen, dass Sie liefern.",
+    "Convert Your Target Audience": "Ihre Zielgruppe konvertieren",
+    "By the time they're ready to buy, the decision is already made. The sale is a formality.":
+      "Wenn sie kaufbereit sind, ist die Entscheidung längst gefallen. Der Abschluss ist nur noch Formsache.",
+    "The foundation": "Das Fundament",
+    "Three things hold that system up. Miss one and the funnel leaks, no matter how good the ads are.":
+      "Drei Dinge tragen dieses System. Fehlt eines davon, verliert der Funnel — egal, wie gut die Ads sind.",
+    "Brand & Rebranding": "Marke & Rebranding",
+    "A brand that still looks like it did ten years ago quietly undercuts every euro you spend on ads. Your look and your language get brought into the present first — so everything after it has something solid to stand on.":
+      "Eine Marke, die noch aussieht wie vor zehn Jahren, entwertet still und leise jeden Euro, den Sie in Werbung stecken. Erst kommen Auftritt und Sprache in die Gegenwart — damit alles Weitere auf festem Grund steht.",
+    "End-to-End Consistency": "Durchgängige Konsistenz",
+    "Brilliant ad creative pointing at a tired website still loses the sale. Social, organic, ad creative, website, funnel — one typography, one colour system, one feel, the whole way through.":
+      "Hervorragendes Ad Creative, das auf eine müde Website führt, verliert den Abschluss trotzdem. Social, Organic, Ad Creative, Website, Funnel — eine Typografie, ein Farbsystem, ein Gefühl, durchgängig.",
+    "The Onboarding System": "Das Onboarding-System",
+    "Onboarding asks a lot of you upfront, and that's deliberate: everything above is built out of what comes from it. It's the reason the pieces fit together instead of merely sitting next to each other.":
+      "Das Onboarding verlangt Ihnen vorab einiges ab — mit Absicht: Alles oben Genannte entsteht aus dem, was dabei zusammenkommt. Genau deshalb greifen die Teile ineinander, statt nur nebeneinanderzustehen.",
     "No problem — we guide you through it.": "Kein Problem — wir begleiten Sie dabei.",
     "Where exactly are you losing": "Wo genau verlieren Sie",
 

@@ -327,23 +327,31 @@ function HomePage() {
             React.createElement("span", { className: "fwf-eyebrow" }, "Real proof")
           ),
           React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
-            "Two kinds of proof. ",
-            React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "Both real.")
+            "You're not the ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "test case.")
           ),
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }, className: "fwf-grid-collapse" },
             [
               {
                 i: React.createElement(Icons.Star, { size: 22 }), c: "pink", t: "Nike",
-                d: "A campaign currently under consideration for industry awards — proof our creative meets a global brand's bar, not just a local one.",
+                d: "A campaign now in consideration for industry awards. The standard your creative gets held to is a global one, not a local one.",
               },
               {
                 i: React.createElement(Icons.Sparkles, { size: 22 }), c: "purple", t: "XPRIZE",
-                d: "Directed a film competing for a top-10 placement in the XPRIZE competition — cinematic storytelling applied where most ad shops never go.",
+                d: "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.",
               },
               {
-                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "2× → 6.2× ROAS",
-                d: "Scaled paid-social performance for DACH D2C brands Eibl GmbH and Schmolke Carbon — plus ~850K organic views for local brand partners by replacing typical ad formats with cinematic, story-first content.",
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "Eibl GmbH",
+                d: "Ad creative and paid social for ImmoVersteigerung. Part of the DACH D2C work scaled from 2× to 6.2× ROAS.",
               },
+              {
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "orange", t: "Schmolke Carbon",
+                d: "Premium carbon race components. Part of the same DACH D2C work scaled from 2× to 6.2× ROAS.",
+              },
+              {
+                i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views",
+                d: "Reach earned for local brand partners by replacing typical ad formats with cinematic, story-first content.",
+              },
+              /* Sixth slot intentionally empty — Flow to decide what goes here. */
             ].map((p, i) =>
               React.createElement("div", { key: i, className: "fwf-card fwf-card-" + p.c, style: { padding: 28 } },
                 React.createElement("div", { style: { color: "var(--fwf-" + p.c + ")", marginBottom: 18 } }, p.i),
