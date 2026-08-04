@@ -556,10 +556,14 @@ function WhyFwfSection() {
           <span className="fwf-section-label-line" />
           <span className="fwf-eyebrow">Why FWF</span>
         </div>
-        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 64px 0", maxWidth: 780, textWrap: "balance" }}>
+        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 28px 0", maxWidth: 780, textWrap: "balance" }}>
           Not just video production —<br />
           <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your external creative department.</em>
         </h2>
+
+        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 56px 0", maxWidth: 720 }}>
+          Most ads shout. Ours listen first. At Flow West Films, we craft cinematic ad creative that speaks to your customer like a friend would — not a pitch, a story. When someone feels seen instead of sold to, they lean in instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. We help B2C brands turn that invitation into demand — and demand into revenue.
+        </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-why-grid">
           {pillars.map((w, i, arr) => (

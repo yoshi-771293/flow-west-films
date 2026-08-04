@@ -403,6 +403,19 @@ window.FWF_TRANSLATIONS = {
       "Flow West Films existiert, um aus Werbebudget wiederkehrende Kunden zu machen — für E-Commerce- und B2C-Marken, nicht nur mehr Impressions. Cinematische Produktion, Ad Creative und Media Buying, geführt von einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
     "ROAS achieved — Weinzeit": "ROAS erreicht — Weinzeit",
     "& B2C — where we focus": "& B2C — unser Fokus",
+    "Most ads shout. Ours listen first. At Flow West Films, we craft cinematic ad creative that speaks to your customer like a friend would — not a pitch, a story. When someone feels seen instead of sold to, they lean in instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. We help B2C brands turn that invitation into demand — and demand into revenue.":
+      "Die meisten Ads schreien. Unsere hören erst zu. Bei Flow West Films erstellen wir cinematisches Ad Creative, das mit Ihren Kunden spricht wie ein Freund — kein Pitch, eine Geschichte. Wenn sich jemand gesehen statt verkauft fühlt, lehnt er sich hinein, statt weiterzuscrollen. Das ist der Unterschied zwischen einer Anzeige und einem Film: Die eine unterbricht, der andere lädt ein. Wir helfen B2C-Marken, aus dieser Einladung Nachfrage zu machen — und aus Nachfrage Umsatz.",
+
+    /* ---- Real Proof section (Home) --------------------------------------- */
+    "Real proof": "Echte Beweise",
+    "Two kinds of proof.": "Zwei Arten von Beweisen.",
+    "Both real.": "Beide echt.",
+    "A campaign currently under consideration for industry awards — proof our creative meets a global brand's bar, not just a local one.":
+      "Eine Kampagne, die aktuell für Branchenpreise in der engeren Auswahl ist — der Beweis, dass unser Creative den Ansprüchen einer globalen Marke gerecht wird, nicht nur einer lokalen.",
+    "Directed a film competing for a top-10 placement in the XPRIZE competition — cinematic storytelling applied where most ad shops never go.":
+      "Regie bei einem Film geführt, der um eine Top-10-Platzierung beim XPRIZE-Wettbewerb konkurriert — cinematisches Storytelling dort eingesetzt, wo die meisten Ad-Shops nie hinkommen.",
+    "Scaled paid-social performance for DACH D2C brands Eibl GmbH and Schmolke Carbon — plus ~850K organic views for local brand partners by replacing typical ad formats with cinematic, story-first content.":
+      "Paid-Social-Performance für die DACH-D2C-Marken Eibl GmbH und Schmolke Carbon skaliert — plus ca. 850.000 organische Views für lokale Markenpartner, durch den Ersatz typischer Ad-Formate mit cinematischem, story-first Content.",
 
     /* ---- Why FWF + funnel flow (Home + Pricing) ------------------------- */
     "The Funnel": "Der Funnel",
@@ -490,6 +503,12 @@ window.FWF_TRANSLATIONS = {
       "Die meisten Agenturen reichen Sie zwischen einer Kreativagentur und einem Media Buyer weiter — zwei Teams, zwei Rechnungen und eine Lücke, wo Verantwortung sein sollte. Wir trennen das nicht. Die Menschen, die Ihre Ads drehen und schneiden, sind dieselben, die das Konto betreiben, über das das Budget läuft.",
     "That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.":
       "Das ist die ganze These: Premium-Creative ist nicht das Gegenteil von Performance. Richtig gemacht, ist es die Quelle davon.",
+    "Flow West Films is the only B2C ad creative partner in DACH offering full-cycle cinematic production — not template editing. We build the concept, shoot and produce the creative to a film-level standard, then launch and scale it through paid social with data-driven testing.":
+      "Flow West Films ist der einzige B2C-Ad-Creative-Partner im DACH-Raum mit voller cinematischer Produktion aus einer Hand — kein Template-Editing. Wir entwickeln das Konzept, drehen und produzieren das Creative auf Filmniveau und bringen es dann mit datengetriebenem Testing über Paid Social live und zum Skalieren.",
+    "Brands get agency-grade strategy and film-grade craft under one roof — not a freelancer stitching together stock footage.":
+      "Marken bekommen Agentur-Strategie und Film-Handwerk unter einem Dach — kein Freelancer, der Stock-Footage zusammenschneidet.",
+    "We work with established DACH B2C brands and growth-stage companies — €500K+ revenue — who are ready to move beyond templated social content and invest in premium, cinematic ad creative that builds trust and drives conversion. Ideal partners value craft as much as performance, and are scaling paid social for the first time or upgrading from a cheaper creative supplier.":
+      "Wir arbeiten mit etablierten DACH-B2C-Marken und Wachstumsunternehmen — ab 500.000 € Umsatz — die bereit sind, über templatehaften Social-Content hinauszugehen und in premium, cinematisches Ad Creative zu investieren, das Vertrauen aufbaut und Conversion treibt. Ideale Partner schätzen Handwerk genauso wie Performance und skalieren entweder zum ersten Mal Paid Social oder wechseln von einem günstigeren Creative-Anbieter.",
     "What's included": "Was enthalten ist",
     "Everything a Meta Ads engine needs.": "Alles, was eine Meta-Ads-Maschine braucht.",
     "Nothing it doesn't.": "Nichts, was sie nicht braucht.",

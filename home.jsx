@@ -318,6 +318,43 @@ function HomePage() {
         )
       ),
 
+      /* REAL PROOF — credibility (Nike, XPRIZE) standing next to performance (ROAS),
+         kept as distinct proof points rather than blended into one soft average. */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, "Real proof")
+          ),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
+            "Two kinds of proof. ",
+            React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "Both real.")
+          ),
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }, className: "fwf-grid-collapse" },
+            [
+              {
+                i: React.createElement(Icons.Star, { size: 22 }), c: "pink", t: "Nike",
+                d: "A campaign currently under consideration for industry awards — proof our creative meets a global brand's bar, not just a local one.",
+              },
+              {
+                i: React.createElement(Icons.Sparkles, { size: 22 }), c: "purple", t: "XPRIZE",
+                d: "Directed a film competing for a top-10 placement in the XPRIZE competition — cinematic storytelling applied where most ad shops never go.",
+              },
+              {
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "2× → 6.2× ROAS",
+                d: "Scaled paid-social performance for DACH D2C brands Eibl GmbH and Schmolke Carbon — plus ~850K organic views for local brand partners by replacing typical ad formats with cinematic, story-first content.",
+              },
+            ].map((p, i) =>
+              React.createElement("div", { key: i, className: "fwf-card fwf-card-" + p.c, style: { padding: 28 } },
+                React.createElement("div", { style: { color: "var(--fwf-" + p.c + ")", marginBottom: 18 } }, p.i),
+                React.createElement("h3", { style: { fontSize: 19, margin: "0 0 10px 0", fontWeight: 500 } }, p.t),
+                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, p.d)
+              )
+            )
+          )
+        )
+      ),
+
       React.createElement(WhyFwfSection),
 
       /* AUDIT CTA */

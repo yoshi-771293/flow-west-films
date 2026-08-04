@@ -2315,10 +2315,10 @@ function FullServicePage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
-                Most agencies hand you off between a creative shop and a media buyer — two teams, two invoices, and a gap where accountability should be. We don't split them. The people who shoot and edit your ads are the same people running the accounts that spend against them.
+                Flow West Films is the only B2C ad creative partner in DACH offering full-cycle cinematic production — not template editing. We build the concept, shoot and produce the creative to a film-level standard, then launch and scale it through paid social with data-driven testing.
               </p>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
-                That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.
+                Brands get agency-grade strategy and film-grade craft under one roof — not a freelancer stitching together stock footage.
               </p>
             </div>
           </div>
@@ -2487,8 +2487,8 @@ function ContactPage() {
                   style={{ color: "var(--fwf-pink)", display: "inline-block", minWidth: "14ch" }}
                 />
               </h1>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 540 }}>
-                We work with B2C brands who are serious about scaling with premium creative. Book a 30-minute strategy call and let's see if we're a fit.
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 620 }}>
+                We work with established DACH B2C brands and growth-stage companies — €500K+ revenue — who are ready to move beyond templated social content and invest in premium, cinematic ad creative that builds trust and drives conversion. Ideal partners value craft as much as performance, and are scaling paid social for the first time or upgrading from a cheaper creative supplier.
               </p>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48, alignItems: "center" }}>
