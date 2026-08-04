@@ -457,14 +457,19 @@ main { flex: 1; }
   .fwf-nav-links-center { display: none; }
 }
 
-/* Services dropdown */
-.fwf-nav-dropdown { position: relative; display: flex; align-items: center; }
+/* Services dropdown
+   The panel sits flush (margin-top: 0) against the trigger's own padding-bottom
+   instead of a separate margin gap -- a gap there is dead space no element
+   covers, so the mouse crossing it fires mouseleave on the wrapper before ever
+   reaching the panel, closing the menu instantly. Padding stays part of the
+   trigger's hoverable box; margin never is. */
+.fwf-nav-dropdown { position: relative; display: flex; align-items: center; padding-bottom: 18px; margin-bottom: -18px; }
 .fwf-nav-dropdown-panel {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 18px;
+  margin-top: 0;
   min-width: 210px;
   background: rgba(10, 10, 10, 0.97);
   backdrop-filter: blur(16px);
