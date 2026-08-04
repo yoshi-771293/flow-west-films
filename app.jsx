@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, ContentPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -41,17 +41,25 @@ const ROUTE_META = {
     de: { title: "Projekte — Flow West Films", desc: "Ausgewählte Arbeiten: Ad Creatives, Brand Films, Reels und Produktionen für Marken aus Hospitality, Sport und Consumer Goods." },
     en: { title: "Projects — Flow West Films", desc: "Selected work: ad creatives, brand films, reels and productions for brands across hospitality, sport and consumer goods." },
   },
-  pricing: {
-    de: { title: "Preise & Angebote — Flow West Films", desc: "Vier Wege der Zusammenarbeit: Launch Film, Creative Sprint, Growth Retainer und Premium Partner. Keine versteckten Kosten, keine Knebelverträge." },
-    en: { title: "Pricing & Offers — Flow West Films", desc: "Four ways to work with us: Launch Film, Creative Sprint, Growth Retainer and Premium Partner. No hidden fees, no lock-ins." },
+  services: {
+    de: { title: "Leistungen & Angebote — Flow West Films", desc: "Vier Wege der Zusammenarbeit: Launch Film, Creative Sprint, Growth Retainer und Premium Partner. Keine versteckten Kosten, keine Knebelverträge." },
+    en: { title: "Services & Pricing — Flow West Films", desc: "Four ways to work with us: Launch Film, Creative Sprint, Growth Retainer and Premium Partner. No hidden fees, no lock-ins." },
   },
-  "meta-ads-agentur": {
-    de: { title: "Meta Ads Agentur Stuttgart — Flow West Films", desc: "Volles Meta-Ads-Management: Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht." },
-    en: { title: "Meta Ads Agency Stuttgart — Flow West Films", desc: "Full Meta Ads management: strategy, creative, audiences and scaling — run by the same team that shoots the film." },
+  "social-media-ads": {
+    de: { title: "Social Media Ads Agentur Stuttgart — Flow West Films", desc: "Volles Meta-Ads-Management: Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht." },
+    en: { title: "Social Media Ads Agency Stuttgart — Flow West Films", desc: "Full Meta Ads management: strategy, creative, audiences and scaling — run by the same team that shoots the film." },
   },
-  "google-ads-agentur": {
-    de: { title: "Google & YouTube Ads Agentur Stuttgart — Flow West Films", desc: "Google & YouTube Ads für E-Commerce und B2C-Marken: Search-Strategie, YouTube-Creative und volles Account-Management aus einer Hand." },
-    en: { title: "Google & YouTube Ads Agency Stuttgart — Flow West Films", desc: "Google & YouTube Ads for e-commerce and B2C brands: search strategy, YouTube creative and full account management, run by one team." },
+  "search-ads": {
+    de: { title: "Search Ads Agentur Stuttgart — Flow West Films", desc: "Google & YouTube Ads für E-Commerce und B2C-Marken: Search-Strategie, YouTube-Creative und volles Account-Management aus einer Hand." },
+    en: { title: "Search Ads Agency Stuttgart — Flow West Films", desc: "Google & YouTube Ads for e-commerce and B2C brands: search strategy, YouTube creative and full account management, run by one team." },
+  },
+  content: {
+    de: { title: "Ad Creative & Content Produktion — Flow West Films", desc: "Monatliche Ad-Creative-Produktion für E-Commerce und B2C-Marken — Konzepte, Video und Statics, die zu Ihrem eigenen Media Buying passen." },
+    en: { title: "Ad Creative & Content Production — Flow West Films", desc: "Monthly ad creative production for e-commerce and B2C brands — concepts, video and statics that plug into your own media buying." },
+  },
+  "full-service": {
+    de: { title: "Full Service: Creative & Performance — Flow West Films", desc: "Creative und Performance Marketing als ein System, geführt von einem Team — für E-Commerce und B2C-Marken, die aus Werbebudget wiederkehrende Kunden machen wollen." },
+    en: { title: "Full Service: Creative & Performance — Flow West Films", desc: "Creative and performance marketing run as one system, by one team — for e-commerce and B2C brands that want to turn ad spend into repeat customers." },
   },
   "ai-visibility-agentur": {
     de: { title: "KI-Sichtbarkeit / AI Visibility Agentur — Flow West Films", desc: "Wir optimieren, wie ChatGPT, Claude und Gemini über Ihre Marke sprechen — Sichtbarkeit dort, wo Kaufentscheidungen zunehmend entstehen." },
@@ -108,9 +116,11 @@ function App() {
     case "projects":    Page = ProjectsLabPage; break;
     case "projects-classic": Page = ProjectsPage; break;
     case "projects-lab": Page = ProjectsLabPage; break;
-    case "pricing":     Page = PricingPage;     break;
-    case "meta-ads-agentur": Page = MetaAdsPage; break;
-    case "google-ads-agentur": Page = GoogleAdsPage; break;
+    case "services":    Page = PricingPage;     break;
+    case "social-media-ads": Page = MetaAdsPage; break;
+    case "search-ads": Page = GoogleAdsPage; break;
+    case "content": Page = ContentPage; break;
+    case "full-service": Page = FullServicePage; break;
     case "ai-visibility-agentur": Page = AiVisibilityPage; break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
@@ -151,10 +161,12 @@ function App() {
     projects:    "02 Projects",
     "projects-classic": "02 Projects · Classic",
     "projects-lab": "02 Projects",
-    pricing:     "03 Pricing",
-    "meta-ads-agentur": "03 Pricing · Meta Ads",
-    "google-ads-agentur": "03 Pricing · Google Ads",
-    "ai-visibility-agentur": "03 Pricing · AI Visibility",
+    services:    "03 Services",
+    "social-media-ads": "03 Services · Social Media Ads",
+    "search-ads": "03 Services · Search Ads",
+    content: "03 Services · Content",
+    "full-service": "03 Services · Full Service",
+    "ai-visibility-agentur": "03 Services · AI Visibility",
     about:       "04 About",
     contact:     "05 Contact",
     impressum:   "Legal · Impressum",

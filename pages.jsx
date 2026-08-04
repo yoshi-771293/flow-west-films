@@ -1625,6 +1625,30 @@ function MetaAdsPage() {
         </div>
       </section>
 
+      {/* How to work with us */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How to work with us</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
+            This runs on the <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Growth Retainer or Premium Partner.</em>
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
+            Full paid media management is bundled into these two offers — not sold separately.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
+            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
+              <OfferCard key={i} {...o} />
+            ))}
+          </div>
+          <Link to="services" className="fwf-btn-bare">
+            See all four ways to work with us <Icons.ArrowRight size={12} />
+          </Link>
+        </div>
+      </section>
+
       <FinalCTA
         headline={<>Ready to run Meta Ads <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>the right way?</em></>}
         sub="Tell us about your brand. We'll tell you what we'd do."
@@ -1797,6 +1821,30 @@ function GoogleAdsPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How to work with us */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How to work with us</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
+            This runs on the <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Growth Retainer or Premium Partner.</em>
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
+            Full paid media management is bundled into these two offers — not sold separately.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
+            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
+              <OfferCard key={i} {...o} />
+            ))}
+          </div>
+          <Link to="services" className="fwf-btn-bare">
+            See all four ways to work with us <Icons.ArrowRight size={12} />
+          </Link>
         </div>
       </section>
 
@@ -1977,6 +2025,404 @@ function AiVisibilityPage() {
 
       <FinalCTA
         headline={<>Curious what AI is already saying <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>about your brand?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+    </main>
+  );
+}
+
+// ============================================
+// CONTENT PAGE
+// ============================================
+function ContentPage() {
+  const included = [
+    { i: <Icons.Brain size={22} />, t: "Monthly ad concepts", d: "Two new concepts a month — hooks, scripts, and CTAs mapped out before we shoot.", c: "pink" },
+    { i: <Icons.Film size={22} />, t: "Finished video creatives", d: "Multiple cuts per concept, ready for feed, stories, and reels.", c: "purple" },
+    { i: <Icons.Aperture size={22} />, t: "Static creatives", d: "Scroll-stopping statics for the placements video can't fill.", c: "green" },
+    { i: <Icons.Sparkles size={22} />, t: "UGC-style option", d: "Prefer UGC? Swap in UGC-style videos at the same volume.", c: "orange" },
+    { i: <Icons.Zap size={22} />, t: "Fast turnaround", d: "Built on a monthly cadence, not a one-off project timeline.", c: "pink" },
+    { i: <Icons.Repeat size={22} />, t: "Pairs with your media buying", d: "Creative-only — plug it into whatever you're already running on Meta, Google, or TikTok.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.Target size={22} />, t: "Brief", d: "We start with what's already working — and not — in your account." },
+    { n: "02", i: <Icons.Brain size={22} />, t: "Concept", d: "Hooks, scripts, and CTAs mapped out before a single shot." },
+    { n: "03", i: <Icons.Film size={22} />, t: "Produce", d: "Video and static production on a monthly cadence." },
+    { n: "04", i: <Icons.Zap size={22} />, t: "Deliver", d: "Ready to plug into whatever you're already running." },
+  ];
+
+  const faqs = [
+    {
+      q: "Do you handle the media buying too?",
+      a: "Not on this offer — Content is creative-only, built to pair with your own team or agency. If you want us running the media buying as well, that's the Full Service offer (Growth Retainer or Premium Partner).",
+    },
+    {
+      q: "What if I don't know what to test?",
+      a: "We bring the concepts. Every month starts with hooks and angles based on what typically converts for e-commerce and B2C — you're not starting from a blank page.",
+    },
+    {
+      q: "Can I do video-only or static-only?",
+      a: "Yes. The volume and mix flexes to what your accounts actually need.",
+    },
+    {
+      q: "What are the usage rights?",
+      a: "Full usage rights across paid, organic, sales, and internal — the same as everything else we produce.",
+    },
+    {
+      q: "Is there a minimum commitment?",
+      a: "Creative Sprint runs month to month — no long lock-in. Most clients stay because the creative keeps working, not because of a contract.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255,100,32,0.14), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Content</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            More creative to test. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>Without hiring in-house.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 640, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            Ad creative production for e-commerce and B2C brands who run their own media buying — hooks, scripts, video and statics, delivered on a monthly cadence, ready to plug into whatever you're already running.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why creative, why us</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                Most of what makes an ad perform gets decided before a single euro is spent.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                Every concept ships with hooks, scripts, and CTAs built the same way we'd build them if we were running your media buying ourselves — because the hook decides more of the outcome than the algorithm does.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                You keep your media buying wherever it already lives. We just make sure it's never short on creative worth testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What's included</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Everything a creative pipeline needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Brief to delivery. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>One cadence.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-orange)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-orange)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                Content, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to work with us */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How to work with us</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
+            Two ways to get this creative. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>Pick your shape.</em>
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
+            A one-off anchor film, or a running monthly retainer — both include full production.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
+            {OFFERS.filter((o) => o.title === "Launch Film" || o.title === "Creative Sprint").map((o, i) => (
+              <OfferCard key={i} {...o} />
+            ))}
+          </div>
+          <Link to="services" className="fwf-btn-bare">
+            See all four ways to work with us <Icons.ArrowRight size={12} />
+          </Link>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Ready for creative that <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>doesn't run out?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+    </main>
+  );
+}
+
+// ============================================
+// FULL SERVICE PAGE
+// ============================================
+function FullServicePage() {
+  const included = [
+    { i: <Icons.Target size={22} />, t: "Strategy across every channel", d: "One strategy that spans creative and media, not a separate plan per vendor.", c: "pink" },
+    { i: <Icons.Film size={22} />, t: "Creative production", d: "The same team that shoots your film builds and tests your ad creative — no handoff, no drift.", c: "purple" },
+    { i: <Icons.Aperture size={22} />, t: "Full account management", d: "Meta, Google & YouTube — campaigns, tracking, audiences, set up and run end to end.", c: "green" },
+    { i: <Icons.Repeat size={22} />, t: "Structured scaling", d: "We don't inflate budgets on a hunch. Winning creative gets duplicated into new audience campaigns.", c: "orange" },
+    { i: <Icons.Phone size={22} />, t: "Weekly performance calls", d: "A standing sync with your dedicated Performance Marketing Manager — no black box.", c: "pink" },
+    { i: <Icons.BarChart size={22} />, t: "Live dashboard + monthly reporting", d: "Real-time CTR, ROAS, and CPA, plus a full report every month on where budget is going and why.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.Brain size={22} />, t: "Concept", d: "Strategy first. Or we don't press record." },
+    { n: "02", i: <Icons.Film size={22} />, t: "Creative", d: "Built to be remembered. Engineered to convert." },
+    { n: "03", i: <Icons.Zap size={22} />, t: "Launch & Test", d: "A defined test budget against agreed targets — CTR, ROAS, or CPA, whichever matters to you." },
+    { n: "04", i: <Icons.TrendUp size={22} />, t: "Scale", d: "We duplicate what's working into new audiences. Not a bigger bet on a hunch." },
+  ];
+
+  const faqs = [
+    {
+      q: "Which channels are included?",
+      a: "Meta and Google & YouTube today, with more added as they prove out — TikTok and LinkedIn are next. Everything runs through the same team and the same reporting.",
+    },
+    {
+      q: "How is this different from hiring a creative agency and a media buying agency separately?",
+      a: "You'd be paying two invoices, syncing two teams, and absorbing the gap when something underperforms and neither side owns it. Here, one team owns the whole chain — the camera and the ad account.",
+    },
+    {
+      q: "Do I need an existing ad account or tracking set up?",
+      a: "No. Onboarding runs 2–3 days and includes full setup across every channel we're running for you.",
+    },
+    {
+      q: "How much budget do I need?",
+      a: "There's no fixed minimum. We agree on a test budget and clear targets on the strategy call, then scale only what earns it.",
+    },
+    {
+      q: "Is there a minimum commitment?",
+      a: "Both offers run on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255,45,120,0.14), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Full Service</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            Creative and performance, run as one system. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Not two vendors.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 640, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            For e-commerce and B2C brands who want production and media buying handled by the same team — so nothing gets lost between the shoot and the spend.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why full service, why us</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                Split creative and media buying across two vendors, and you've split accountability too.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                Most agencies hand you off between a creative shop and a media buyer — two teams, two invoices, and a gap where accountability should be. We don't split them. The people who shoot and edit your ads are the same people running the accounts that spend against them.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What's included</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Everything a growth engine needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Concept to scale. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>One system.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-pink)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-pink)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                Full Service, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to work with us */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How to work with us</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
+            The two ways to run this as <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>one system.</em>
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
+            Growth Retainer for a defined monthly engine, Premium Partner for a bespoke founder-led partnership.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
+            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
+              <OfferCard key={i} {...o} />
+            ))}
+          </div>
+          <Link to="services" className="fwf-btn-bare">
+            See all four ways to work with us <Icons.ArrowRight size={12} />
+          </Link>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Ready to run this <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>as one system?</em></>}
         sub="Tell us about your brand. We'll tell you what we'd do."
       />
     </main>
@@ -2250,4 +2696,4 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage });
+Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, ContentPage, FullServicePage });

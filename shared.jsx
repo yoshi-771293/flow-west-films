@@ -158,6 +158,7 @@ function Link({ to, children, className, onClick, ...rest }) {
 function Nav({ route }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -172,10 +173,17 @@ function Nav({ route }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [mobile]);
 
+  const servicesChildren = [
+    { to: "social-media-ads", label: "Social Media Ads" },
+    { to: "search-ads", label: "Search Ads" },
+    { to: "content", label: "Content" },
+    { to: "full-service", label: "Full Service" },
+  ];
+
   const links = [
     { to: "home", label: "Home" },
     { to: "projects", label: "Projects" },
-    { to: "pricing", label: "Pricing" },
+    { to: "services", label: "Services", children: servicesChildren },
     { to: "about", label: "About" },
     { to: "contact", label: "Contact" },
   ];
@@ -189,15 +197,39 @@ function Nav({ route }) {
             <span className="fwf-nav-wordmark">Flow West Films</span>
           </Link>
           <div className="fwf-nav-links fwf-nav-links-center">
-            {links.map((l) => l.external ? (
-              <a key={l.href} href={l.href} className="fwf-nav-link">{l.label}</a>
-            ) : (
-              <Link
-                key={l.to}
-                to={l.to}
-                className={"fwf-nav-link " + (route === l.to ? "fwf-nav-link-active" : "")}
-              >{l.label}</Link>
-            ))}
+            {links.map((l) => {
+              if (l.external) return <a key={l.href} href={l.href} className="fwf-nav-link">{l.label}</a>;
+              const isActive = route === l.to || (l.children && l.children.some((c) => c.to === route));
+              if (!l.children) {
+                return (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    className={"fwf-nav-link " + (isActive ? "fwf-nav-link-active" : "")}
+                  >{l.label}</Link>
+                );
+              }
+              return (
+                <div
+                  key={l.to}
+                  className="fwf-nav-dropdown"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <Link
+                    to={l.to}
+                    className={"fwf-nav-link " + (isActive ? "fwf-nav-link-active" : "")}
+                  >{l.label}</Link>
+                  {servicesOpen && (
+                    <div className="fwf-nav-dropdown-panel">
+                      {l.children.map((c) => (
+                        <Link key={c.to} to={c.to} className="fwf-nav-dropdown-item">{c.label}</Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className="fwf-nav-links">
             <a
@@ -238,11 +270,20 @@ function Nav({ route }) {
               <Icons.X size={20} />
             </button>
           </div>
-          {links.map((l) => l.external ? (
-            <a key={l.href} href={l.href} onClick={() => setMobile(false)}>{l.label}</a>
-          ) : (
-            <Link key={l.to} to={l.to} onClick={() => setMobile(false)}>{l.label}</Link>
-          ))}
+          {links.map((l) => {
+            if (l.external) return <a key={l.href} href={l.href} onClick={() => setMobile(false)}>{l.label}</a>;
+            if (!l.children) return <Link key={l.to} to={l.to} onClick={() => setMobile(false)}>{l.label}</Link>;
+            return (
+              <React.Fragment key={l.to}>
+                <Link to={l.to} onClick={() => setMobile(false)} style={{ borderBottom: "none" }}>{l.label}</Link>
+                <div className="fwf-mobile-sublinks">
+                  {l.children.map((c) => (
+                    <Link key={c.to} to={c.to} className="fwf-mobile-sublink" onClick={() => setMobile(false)}>{c.label}</Link>
+                  ))}
+                </div>
+              </React.Fragment>
+            );
+          })}
           <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 12 }}>
             <a
               href="/audit/"
@@ -283,9 +324,11 @@ function Footer() {
             <h4>Navigate</h4>
             <Link to="home">Home</Link>
             <Link to="projects">Projects</Link>
-            <Link to="pricing">Pricing</Link>
-            <Link to="meta-ads-agentur">Meta Ads Agency</Link>
-            <Link to="google-ads-agentur">Google Ads Agency</Link>
+            <Link to="services">Services</Link>
+            <Link to="social-media-ads">Social Media Ads</Link>
+            <Link to="search-ads">Search Ads</Link>
+            <Link to="content">Content</Link>
+            <Link to="full-service">Full Service</Link>
             <Link to="ai-visibility-agentur">AI Visibility</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
@@ -605,7 +648,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
 
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24, marginTop: compact ? 32 : 0 }}>Where We Scale</span>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
-          <Link to="meta-ads-agentur" className="fwf-card fwf-card-green" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
+          <Link to="social-media-ads" className="fwf-card fwf-card-green" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
@@ -616,10 +659,10 @@ function GrowthEngineSection({ cta = true, compact = false }) {
               Most of our clients start on Meta — but we scale wherever your audience actually is: TikTok and LinkedIn too.
             </p>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-green)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-              Meta Ads Agency <Icons.ArrowRight size={12} />
+              Social Media Ads <Icons.ArrowRight size={12} />
             </span>
           </Link>
-          <Link to="google-ads-agentur" className="fwf-card fwf-card-purple" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
+          <Link to="search-ads" className="fwf-card fwf-card-purple" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
@@ -629,7 +672,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
               Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.
             </p>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-purple)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-              Google Ads Agency <Icons.ArrowRight size={12} />
+              Search Ads <Icons.ArrowRight size={12} />
             </span>
           </Link>
           <Link to="ai-visibility-agentur" className="fwf-card fwf-card-orange" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
@@ -702,7 +745,7 @@ function GrowthEngineSection({ cta = true, compact = false }) {
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 420 }}>
               This is what the Growth Retainer and Premium Partner are built around.
             </p>
-            <Link to="pricing" className="fwf-btn fwf-btn-primary">
+            <Link to="services" className="fwf-btn fwf-btn-primary">
               Check out the Growth Retainer & Premium Partner <Icons.ArrowRight size={12} />
             </Link>
           </div>

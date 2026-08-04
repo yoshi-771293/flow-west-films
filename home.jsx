@@ -53,7 +53,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
           <Icons.ArrowRight size={12} />
         </a>
       ) : (
-        <Link to="pricing" className={btnCls} style={btnStyle}>
+        <Link to="services" className={btnCls} style={btnStyle}>
           Learn more
           <Icons.ArrowRight size={12} />
         </Link>

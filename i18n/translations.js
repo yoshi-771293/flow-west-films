@@ -18,6 +18,10 @@ window.FWF_TRANSLATIONS = {
     /* ---- Navigation + shared CTAs ------------------------------------- */
     "Projects": "Projekte",
     "Pricing": "Preise",
+    "Services": "Leistungen",
+    "Social Media Ads": "Social Media Ads",
+    "Search Ads": "Search Ads",
+    "Full Service": "Full Service",
     "About": "Über uns",
     "Contact": "Kontakt",
     "Book a call": "Call Buchen",
@@ -537,6 +541,14 @@ window.FWF_TRANSLATIONS = {
     "Ready to run Meta Ads": "Bereit, Meta Ads",
     "the right way?": "richtig zu machen?",
 
+    /* ---- Shared "How to work with us" offer-callout (channel pages) ---- */
+    "How to work with us": "So arbeiten Sie mit uns",
+    "This runs on the": "Das läuft über den",
+    "Growth Retainer or Premium Partner.": "Growth Retainer oder Premium Partner.",
+    "Full paid media management is bundled into these two offers — not sold separately.":
+      "Volles Media-Management ist in diesen beiden Angeboten enthalten — nicht separat buchbar.",
+    "See all four ways to work with us": "Alle vier Wege der Zusammenarbeit ansehen",
+
     /* ---- Google & YouTube Ads Agency (channel landing page) ------------ */
     "Google & YouTube Ads Agency": "Google & YouTube Ads Agentur",
     "Capture the customers": "Erreichen Sie die Kunden, die",
@@ -636,6 +648,105 @@ window.FWF_TRANSLATIONS = {
     "This runs on the same minimum 4–6 month commitment as our other retainers — model behavior shifts over weeks and months, not days, so short engagements don't show much.":
       "Das läuft mit derselben Mindestlaufzeit von 4–6 Monaten wie unsere anderen Retainer — Modellverhalten verändert sich über Wochen und Monate, nicht Tage, deshalb bringen kurze Engagements wenig.",
     "Curious what AI is already saying": "Neugierig, was AI schon",
-    "about your brand?": "über Ihre Marke sagt?"
+    "about your brand?": "über Ihre Marke sagt?",
+
+    /* ---- Content page ---------------------------------------------------- */
+    "More creative to test.": "Mehr Creative zum Testen.",
+    "Without hiring in-house.": "Ohne intern einzustellen.",
+    "Ad creative production for e-commerce and B2C brands who run their own media buying — hooks, scripts, video and statics, delivered on a monthly cadence, ready to plug into whatever you're already running.":
+      "Ad-Creative-Produktion für E-Commerce- und B2C-Marken, die ihr Media Buying selbst steuern — Hooks, Skripte, Video und Statics, geliefert im monatlichen Rhythmus, einsatzbereit für alles, was Sie bereits laufen haben.",
+    "Why creative, why us": "Warum Creative, warum wir",
+    "Most of what makes an ad perform gets decided before a single euro is spent.":
+      "Das meiste, was eine Anzeige performen lässt, wird entschieden, bevor ein einziger Euro ausgegeben wird.",
+    "Every concept ships with hooks, scripts, and CTAs built the same way we'd build them if we were running your media buying ourselves — because the hook decides more of the outcome than the algorithm does.":
+      "Jedes Konzept kommt mit Hooks, Skripten und CTAs, gebaut genauso, wie wir sie bauen würden, wenn wir Ihr Media Buying selbst betreiben würden — denn der Hook entscheidet mehr über das Ergebnis als der Algorithmus.",
+    "You keep your media buying wherever it already lives. We just make sure it's never short on creative worth testing.":
+      "Ihr Media Buying bleibt genau dort, wo es schon ist. Wir sorgen nur dafür, dass es nie an testenswertem Creative mangelt.",
+    "Everything a creative pipeline needs.": "Alles, was eine Creative-Pipeline braucht.",
+    "Monthly ad concepts": "Monatliche Ad-Konzepte",
+    "Two new concepts a month — hooks, scripts, and CTAs mapped out before we shoot.":
+      "Zwei neue Konzepte im Monat — Hooks, Skripte und CTAs ausgearbeitet, bevor wir drehen.",
+    "Finished video creatives": "Fertige Video-Creatives",
+    "Multiple cuts per concept, ready for feed, stories, and reels.":
+      "Mehrere Schnitte pro Konzept, einsatzbereit für Feed, Stories und Reels.",
+    "Static creatives": "Static Creatives",
+    "Scroll-stopping statics for the placements video can't fill.":
+      "Scroll-stoppende Statics für die Placements, die Video nicht füllen kann.",
+    "UGC-style option": "UGC-Style-Option",
+    "Prefer UGC? Swap in UGC-style videos at the same volume.":
+      "Lieber UGC? Tauschen Sie zum gleichen Volumen gegen UGC-Style-Videos.",
+    "Fast turnaround": "Schnelle Durchlaufzeit",
+    "Built on a monthly cadence, not a one-off project timeline.":
+      "Im monatlichen Rhythmus, nicht als einmaliges Projekt.",
+    "Pairs with your media buying": "Passt zu Ihrem Media Buying",
+    "Creative-only — plug it into whatever you're already running on Meta, Google, or TikTok.":
+      "Nur Creative — einsetzbar bei allem, was Sie bereits auf Meta, Google oder TikTok laufen haben.",
+    "Brief to delivery.": "Von Brief bis Lieferung.",
+    "One cadence.": "Ein Rhythmus.",
+    "We start with what's already working — and not — in your account.":
+      "Wir starten mit dem, was in Ihrem Konto bereits funktioniert — und was nicht.",
+    "Hooks, scripts, and CTAs mapped out before a single shot.":
+      "Hooks, Skripte und CTAs ausgearbeitet, bevor auch nur ein Bild gedreht wird.",
+    "Video and static production on a monthly cadence.":
+      "Video- und Static-Produktion im monatlichen Rhythmus.",
+    "Ready to plug into whatever you're already running.":
+      "Einsatzbereit für alles, was Sie bereits laufen haben.",
+    "Content,": "Content,",
+    "Do you handle the media buying too?": "Übernehmen Sie auch das Media Buying?",
+    "Not on this offer — Content is creative-only, built to pair with your own team or agency. If you want us running the media buying as well, that's the Full Service offer (Growth Retainer or Premium Partner).":
+      "Bei diesem Angebot nicht — Content ist reines Creative, gebaut für die Zusammenarbeit mit Ihrem eigenen Team oder Ihrer Agentur. Wenn wir auch das Media Buying übernehmen sollen, ist das Full Service (Growth Retainer oder Premium Partner).",
+    "What if I don't know what to test?": "Was, wenn ich nicht weiß, was ich testen soll?",
+    "We bring the concepts. Every month starts with hooks and angles based on what typically converts for e-commerce and B2C — you're not starting from a blank page.":
+      "Wir bringen die Konzepte mit. Jeder Monat startet mit Hooks und Angles, die typischerweise für E-Commerce und B2C konvertieren — Sie starten nicht bei null.",
+    "Can I do video-only or static-only?": "Kann ich nur Video oder nur Static wählen?",
+    "Yes. The volume and mix flexes to what your accounts actually need.":
+      "Ja. Volumen und Mix passen sich dem an, was Ihre Konten tatsächlich brauchen.",
+    "What are the usage rights?": "Wie sieht es mit den Nutzungsrechten aus?",
+    "Full usage rights across paid, organic, sales, and internal — the same as everything else we produce.":
+      "Volle Nutzungsrechte für Paid, Organic, Sales und intern — wie bei allem anderen, das wir produzieren.",
+    "Creative Sprint runs month to month — no long lock-in. Most clients stay because the creative keeps working, not because of a contract.":
+      "Der Creative Sprint läuft monatlich — keine lange Bindung. Die meisten Kunden bleiben, weil das Creative weiter funktioniert, nicht wegen eines Vertrags.",
+    "Two ways to get this creative.": "Zwei Wege zu diesem Creative.",
+    "Pick your shape.": "Wählen Sie Ihre Form.",
+    "A one-off anchor film, or a running monthly retainer — both include full production.":
+      "Ein einmaliger Anker-Film oder ein laufender monatlicher Retainer — beide beinhalten die volle Produktion.",
+    "Ready for creative that": "Bereit für Creative, das",
+    "doesn't run out?": "nicht ausgeht?",
+
+    /* ---- Full Service page ------------------------------------------------ */
+    "Creative and performance, run as one system.": "Creative und Performance, als ein System.",
+    "Not two vendors.": "Nicht zwei Dienstleister.",
+    "For e-commerce and B2C brands who want production and media buying handled by the same team — so nothing gets lost between the shoot and the spend.":
+      "Für E-Commerce- und B2C-Marken, die Produktion und Media Buying vom selben Team betreut haben wollen — damit zwischen Dreh und Media-Budget nichts verloren geht.",
+    "Why full service, why us": "Warum Full Service, warum wir",
+    "Split creative and media buying across two vendors, and you've split accountability too.":
+      "Trennen Sie Creative und Media Buying auf zwei Dienstleister auf, trennen Sie auch die Verantwortung.",
+    "Most agencies hand you off between a creative shop and a media buyer — two teams, two invoices, and a gap where accountability should be. We don't split them. The people who shoot and edit your ads are the same people running the accounts that spend against them.":
+      "Die meisten Agenturen reichen Sie zwischen einer Kreativagentur und einem Media Buyer weiter — zwei Teams, zwei Rechnungen und eine Lücke, wo Verantwortung sein sollte. Wir trennen das nicht. Die Menschen, die Ihre Ads drehen und schneiden, sind dieselben, die die Konten betreiben, über die das Budget läuft.",
+    "Everything a growth engine needs.": "Alles, was ein Wachstumsmotor braucht.",
+    "Strategy across every channel": "Strategie über alle Kanäle",
+    "One strategy that spans creative and media, not a separate plan per vendor.":
+      "Eine Strategie, die Creative und Media umspannt, kein separater Plan pro Dienstleister.",
+    "Meta, Google & YouTube — campaigns, tracking, audiences, set up and run end to end.":
+      "Meta, Google & YouTube — Kampagnen, Tracking, Audiences, von uns aufgesetzt und durchgehend betreut.",
+    "Full Service,": "Full Service,",
+    "Which channels are included?": "Welche Kanäle sind enthalten?",
+    "Meta and Google & YouTube today, with more added as they prove out — TikTok and LinkedIn are next. Everything runs through the same team and the same reporting.":
+      "Aktuell Meta sowie Google & YouTube, weitere kommen dazu, sobald sie sich bewähren — TikTok und LinkedIn sind als Nächstes dran. Alles läuft über dasselbe Team und dasselbe Reporting.",
+    "How is this different from hiring a creative agency and a media buying agency separately?":
+      "Was unterscheidet das davon, eine Kreativagentur und eine Media-Buying-Agentur separat zu beauftragen?",
+    "You'd be paying two invoices, syncing two teams, and absorbing the gap when something underperforms and neither side owns it. Here, one team owns the whole chain — the camera and the ad account.":
+      "Sie würden zwei Rechnungen zahlen, zwei Teams synchronisieren und die Lücke tragen, wenn etwas underperformt und keine Seite die Verantwortung übernimmt. Hier verantwortet ein Team die ganze Kette — die Kamera und das Werbekonto.",
+    "Do I need an existing ad account or tracking set up?": "Brauche ich bereits ein Werbekonto oder eingerichtetes Tracking?",
+    "No. Onboarding runs 2–3 days and includes full setup across every channel we're running for you.":
+      "Nein. Das Onboarding dauert 2–3 Tage und umfasst das komplette Setup über alle Kanäle, die wir für Sie betreiben.",
+    "Both offers run on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.":
+      "Beide Angebote laufen mit einer Mindestlaufzeit von 4–6 Monaten — lang genug, um wirklich herauszufinden, was funktioniert. Danach bleiben Sie, weil es sich aufbaut, nicht wegen eines Vertrags.",
+    "The two ways to run this as": "Die zwei Wege, das als",
+    "one system.": "ein System zu betreiben.",
+    "Growth Retainer for a defined monthly engine, Premium Partner for a bespoke founder-led partnership.":
+      "Growth Retainer für einen definierten monatlichen Motor, Premium Partner für eine maßgeschneiderte, gründergeführte Partnerschaft.",
+    "Ready to run this": "Bereit, das",
+    "as one system?": "als ein System zu betreiben?"
   }
 };

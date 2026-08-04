@@ -1,11 +1,18 @@
 {
+  "redirects": [
+    { "source": "/pricing", "destination": "/services", "permanent": true },
+    { "source": "/meta-ads-agentur", "destination": "/social-media-ads", "permanent": true },
+    { "source": "/google-ads-agentur", "destination": "/search-ads", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/projects", "destination": "/index.html" },
     { "source": "/projects-classic", "destination": "/index.html" },
     { "source": "/projects-lab", "destination": "/index.html" },
-    { "source": "/pricing", "destination": "/index.html" },
-    { "source": "/meta-ads-agentur", "destination": "/index.html" },
-    { "source": "/google-ads-agentur", "destination": "/index.html" },
+    { "source": "/services", "destination": "/index.html" },
+    { "source": "/social-media-ads", "destination": "/index.html" },
+    { "source": "/search-ads", "destination": "/index.html" },
+    { "source": "/content", "destination": "/index.html" },
+    { "source": "/full-service", "destination": "/index.html" },
     { "source": "/ai-visibility-agentur", "destination": "/index.html" },
     { "source": "/about", "destination": "/index.html" },
     { "source": "/contact", "destination": "/index.html" },
