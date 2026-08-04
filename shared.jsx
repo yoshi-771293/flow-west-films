@@ -275,7 +275,7 @@ function Footer() {
               <Logo variant="lockup" size={64} />
             </div>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.6, margin: 0, maxWidth: 320 }}>
-              Premium ad creative & cinematic film production for B2C brands.
+              Cinematic ad creative & performance marketing for e-commerce and B2C brands.
             </p>
           </div>
 
@@ -285,6 +285,8 @@ function Footer() {
             <Link to="projects">Projects</Link>
             <Link to="pricing">Pricing</Link>
             <Link to="meta-ads-agentur">Meta Ads Agency</Link>
+            <Link to="google-ads-agentur">Google Ads Agency</Link>
+            <Link to="ai-visibility-agentur">AI Visibility</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
             <a href="/audit/">Audit</a>
@@ -617,27 +619,33 @@ function GrowthEngineSection({ cta = true, compact = false }) {
               Meta Ads Agency <Icons.ArrowRight size={12} />
             </span>
           </Link>
-          <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
+          <Link to="google-ads-agentur" className="fwf-card fwf-card-purple" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Search & YouTube</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
               Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.
             </p>
-          </div>
-          <div className="fwf-card fwf-card-orange" style={{ padding: 32 }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-purple)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+              Google Ads Agency <Icons.ArrowRight size={12} />
+            </span>
+          </Link>
+          <Link to="ai-visibility-agentur" className="fwf-card fwf-card-orange" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
               <img src="assets/logos/openai-neon.png" alt="OpenAI" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/claude-neon.png" alt="Claude" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
               <img src="assets/logos/gemini-neon.png" alt="Gemini" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
             </div>
             <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
               Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.
             </p>
-          </div>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-orange)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+              AI Visibility Agency <Icons.ArrowRight size={12} />
+            </span>
+          </Link>
         </div>
 
         <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Onboarding & Collaboration</span>

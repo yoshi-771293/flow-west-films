@@ -236,13 +236,13 @@ function HomePage() {
           ),
 
           React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2 fwf-hero-h1", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
-            "We make brands", React.createElement("br"),
-            "impossible to ",
-            React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "ignore.")
+            "We turn ad spend", React.createElement("br"),
+            "into ",
+            React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "repeat customers.")
           ),
 
           React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
-            "Premium ad creative & cinematic film production for B2C brands that want to scale."
+            "Cinematic ad creative and performance marketing for e-commerce and B2C brands — built to earn the second purchase, not just the first click."
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
@@ -263,8 +263,8 @@ function HomePage() {
 
           React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
             React.createElement("span", null, "4K Production"),
-            React.createElement("span", null, "Strategy First"),
-            React.createElement("span", null, "Performance Focused")
+            React.createElement("span", null, "E-commerce & B2C"),
+            React.createElement("span", null, "Built for Repeat Sales")
           )
         )
       ),
@@ -297,16 +297,16 @@ function HomePage() {
                 )
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
-                "Flow West Films combines cinematic production, performance-driven ad creative, and strategic thinking — into one external premium team."
+                "Flow West Films exists to turn ad spend into repeat customers for e-commerce and B2C brands — not just more impressions. Cinematic production, ad creative, and media buying, run by one team, so nothing gets lost between the shoot and the spend."
               )
             ),
 
             React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
               [
                 { num: "50+", label: "Projects delivered", c: "pink" },
-                { num: "B2C", label: "Brand focus", c: "purple" },
+                { num: "14×", label: "ROAS achieved — Weinzeit", c: "purple" },
                 { num: "DE",  label: "Stuttgart & remote", c: "green" },
-                { num: "#1",  label: "Strategy-first", c: "orange" },
+                { num: "E-com", label: "& B2C — where we focus", c: "orange" },
               ].map((s, i) =>
                 React.createElement("div", { key: i, className: "fwf-stat" },
                   React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12 } }, s.num),

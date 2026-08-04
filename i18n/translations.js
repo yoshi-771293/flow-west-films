@@ -38,6 +38,9 @@ window.FWF_TRANSLATIONS = {
     /* ---- Footer ------------------------------------------------------- */
     "Premium ad creative & cinematic film production for B2C brands.":
       "Premium Ad Creative & Cinematic Film Produktion für Mittelstandsmarken.",
+    "Cinematic ad creative & performance marketing for e-commerce and B2C brands.":
+      "Cinematisches Ad Creative & Performance Marketing für E-Commerce- und B2C-Marken.",
+    "Google Ads Agency": "Google Ads Agentur",
     "Navigate": "Navigation",
     "Follow": "Folgen",
     "Stuttgart, Germany": "Stuttgart, Deutschland",
@@ -384,6 +387,19 @@ window.FWF_TRANSLATIONS = {
     "Every creative decision is backed by data. No spray-and-pray, no wasted budget on untested ideas.":
       "Jede kreative Entscheidung ist datenbasiert. Kein Spray-and-Pray, kein verschwendetes Budget für ungetestete Ideen.",
 
+    /* ---- Home hero + position (outcome-first retrofit) ------------------ */
+    "We turn ad spend": "Wir machen aus Werbebudget",
+    "into": "",
+    "repeat customers.": "wiederkehrende Kunden.",
+    "Cinematic ad creative and performance marketing for e-commerce and B2C brands — built to earn the second purchase, not just the first click.":
+      "Cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken — gebaut, um den zweiten Kauf zu verdienen, nicht nur den ersten Klick.",
+    "E-commerce & B2C": "E-Commerce & B2C",
+    "Built for Repeat Sales": "Gebaut für Wiederholungskäufe",
+    "Flow West Films exists to turn ad spend into repeat customers for e-commerce and B2C brands — not just more impressions. Cinematic production, ad creative, and media buying, run by one team, so nothing gets lost between the shoot and the spend.":
+      "Flow West Films existiert, um aus Werbebudget wiederkehrende Kunden zu machen — für E-Commerce- und B2C-Marken, nicht nur mehr Impressions. Cinematische Produktion, Ad Creative und Media Buying, geführt von einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
+    "ROAS achieved — Weinzeit": "ROAS erreicht — Weinzeit",
+    "& B2C — where we focus": "& B2C — unser Fokus",
+
     /* ---- Why FWF + funnel flow (Home + Pricing) ------------------------- */
     "The Funnel": "Der Funnel",
     "Get discovered with Creative": "Entdeckt werden mit Creative",
@@ -423,6 +439,7 @@ window.FWF_TRANSLATIONS = {
     "AI Visibility": "AI-Sichtbarkeit",
     "Buyers increasingly start their search inside an AI. We optimize your brand to be found in ChatGPT, Claude, and Gemini — not just in Google.":
       "Immer mehr Kaufentscheidungen beginnen in einer AI. Wir optimieren Ihre Marke so, dass sie in ChatGPT, Claude und Gemini gefunden wird — nicht nur bei Google.",
+    "AI Visibility Agency": "AI-Sichtbarkeit Agentur",
     "This is what the Growth Retainer and Premium Partner are built around.":
       "Genau darauf sind der Growth Retainer und Premium Partner ausgelegt.",
     "Check out the Growth Retainer & Premium Partner": "Growth Retainer & Premium Partner ansehen",
@@ -450,8 +467,18 @@ window.FWF_TRANSLATIONS = {
     "Meta Ads Agency": "Meta Ads Agentur",
     "One team. One ad account.": "Ein Team. Ein Werbekonto.",
     "Meta Ads that convert.": "Meta Ads, die konvertieren.",
+    "Turn cold Meta traffic into": "Aus kaltem Meta-Traffic werden",
     "Full Meta Ads management — strategy, creative, audiences, and scaling — run by the same team that shoots the film. Most of our clients start here.":
       "Volles Meta-Ads-Management — Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht. Die meisten unserer Kunden starten genau hier.",
+    "Full Meta Ads management for e-commerce and B2C brands — strategy, creative, audiences, and scaling, run by the same team that shoots the film. Most of our clients start here.":
+      "Volles Meta-Ads-Management für E-Commerce- und B2C-Marken — Strategie, Creative, Audiences und Scaling, geführt vom selben Team, das auch den Film dreht. Die meisten unserer Kunden starten genau hier.",
+    "Real client: Weinzeit — a wine festival touring all of Germany — went from":
+      "Echter Kunde: Weinzeit — ein Weinfest, das durch ganz Deutschland tourt — steigerte den ROAS von",
+    "2× to 14× ROAS": "2× auf 14×",
+    "on Meta with us.": "mit uns auf Meta.",
+    "Real result · Weinzeit": "Echtes Ergebnis · Weinzeit",
+    "Weinzeit — a wine festival touring all of Germany — scaled their Meta Ads ROAS from 2× to 14× working with us.":
+      "Weinzeit — ein Weinfest, das durch ganz Deutschland tourt — steigerte den Meta-Ads-ROAS mit uns von 2× auf 14×.",
     "Why Meta, why us": "Warum Meta, warum wir",
     "The wall between your creative team and your performance team is why neither one works.":
       "Die Mauer zwischen Ihrem Creative-Team und Ihrem Performance-Team ist der Grund, warum keins von beiden richtig funktioniert.",
@@ -508,6 +535,107 @@ window.FWF_TRANSLATIONS = {
     "The Growth Retainer runs on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.":
       "Der Growth Retainer läuft mit einer Mindestlaufzeit von 4–6 Monaten — lang genug, um wirklich herauszufinden, was funktioniert. Danach bleiben Sie, weil es sich aufbaut, nicht wegen eines Vertrags.",
     "Ready to run Meta Ads": "Bereit, Meta Ads",
-    "the right way?": "richtig zu machen?"
+    "the right way?": "richtig zu machen?",
+
+    /* ---- Google & YouTube Ads Agency (channel landing page) ------------ */
+    "Google & YouTube Ads Agency": "Google & YouTube Ads Agentur",
+    "Capture the customers": "Erreichen Sie die Kunden, die",
+    "already searching for you.": "schon nach Ihnen suchen.",
+    "Google & YouTube Ads for e-commerce and B2C brands — built to catch high-intent search traffic and turn it into sales, with the same team producing the video creative YouTube ads actually need to perform.":
+      "Google & YouTube Ads für E-Commerce- und B2C-Marken — gebaut, um Traffic mit hoher Kaufabsicht abzufangen und in Umsatz zu verwandeln, mit demselben Team, das auch das Video-Creative produziert, das YouTube Ads wirklich braucht, um zu performen.",
+    "Why Google, why us": "Warum Google, warum wir",
+    "Google runs on intent. Most agencies only bring half of what it needs to win.":
+      "Google läuft über Intent. Die meisten Agenturen bringen nur die Hälfte von dem mit, was es zum Gewinnen braucht.",
+    "Search catches people who already decided to buy — that part is mostly about bidding discipline. YouTube is different: it's an attention game, and attention needs real creative, not a repurposed static banner. Most Google Ads agencies are set up to do the first and not the second.":
+      "Search fängt Menschen ab, die sich bereits zum Kauf entschieden haben — dabei geht es vor allem um Bid-Disziplin. YouTube ist anders: Es ist ein Aufmerksamkeitsspiel, und Aufmerksamkeit braucht echtes Creative, kein umfunktioniertes Static Banner. Die meisten Google-Ads-Agenturen sind auf das Erste eingerichtet, nicht auf das Zweite.",
+    "We run both from one team — the Search account that captures intent, and the YouTube creative built by the same people who shoot your Launch Film.":
+      "Wir betreiben beides aus einem Team — das Search-Konto, das Intent abgreift, und das YouTube-Creative, gebaut von denselben Leuten, die auch Ihren Launch Film drehen.",
+    "Everything a Google & YouTube engine needs.": "Alles, was eine Google-&-YouTube-Maschine braucht.",
+    "Search strategy & keyword mapping": "Search-Strategie & Keyword-Mapping",
+    "We map the exact searches your buyers already type before they find you — and bid where it counts.":
+      "Wir kartieren genau die Suchanfragen, die Ihre Käufer bereits eingeben, bevor sie Sie finden — und bieten dort, wo es zählt.",
+    "YouTube ad creative": "YouTube Ad Creative",
+    "The same team that shoots your film builds the YouTube creative — most Google agencies can only run text ads.":
+      "Dasselbe Team, das Ihren Film dreht, baut das YouTube-Creative — die meisten Google-Agenturen können nur Textanzeigen schalten.",
+    "Campaign structure, conversion tracking, bidding strategy — set up and run end to end.":
+      "Kampagnenstruktur, Conversion-Tracking, Gebotsstrategie — von uns aufgesetzt und durchgehend betreut.",
+    "For e-commerce catalogs — product feeds set up correctly so Google can actually sell for you.":
+      "Für E-Commerce-Kataloge — Produktfeeds korrekt aufgesetzt, damit Google wirklich für Sie verkaufen kann.",
+    "Which searches, which products, which intent — mapped before a single euro is spent.":
+      "Welche Suchanfragen, welche Produkte, welcher Intent — kartiert, bevor ein einziger Euro ausgegeben wird.",
+    "YouTube ads built to earn attention, not just fill inventory.":
+      "YouTube Ads, die Aufmerksamkeit verdienen, statt nur Inventar zu füllen.",
+    "We duplicate what's working into new campaigns and audiences. Not a bigger bet on a hunch.":
+      "Wir duplizieren, was funktioniert, in neue Kampagnen und Audiences. Keine größere Wette auf Verdacht.",
+    "Google & YouTube,": "Google & YouTube,",
+    "Do I need an existing Google Ads account or conversion tracking set up?":
+      "Brauche ich bereits ein Google-Ads-Konto oder eingerichtetes Conversion-Tracking?",
+    "No. Onboarding runs 2–3 days and includes full setup — account, conversion tracking, and (for e-commerce) product feed.":
+      "Nein. Das Onboarding dauert 2–3 Tage und umfasst das komplette Setup — Konto, Conversion-Tracking und (für E-Commerce) Produktfeed.",
+    "I've only ever run Meta Ads. Never Google. Is that a problem?":
+      "Ich habe bisher nur Meta Ads laufen lassen, nie Google. Ist das ein Problem?",
+    "No problem. Google and Meta run on different mechanics — intent vs. interest — and most brands eventually want both. We guide you through the setup either way.":
+      "Kein Problem. Google und Meta laufen über unterschiedliche Mechaniken — Intent vs. Interest — und die meisten Marken wollen früher oder später beides. Wir begleiten Sie so oder so durch das Setup.",
+    "How is this different from a normal Google Ads agency?": "Was unterscheidet das von einer normalen Google-Ads-Agentur?",
+    "Most Google Ads agencies are Search-only — they can bid on keywords, but they can't produce the video creative YouTube actually needs to compete for attention. We can do both.":
+      "Die meisten Google-Ads-Agenturen machen nur Search — sie können auf Keywords bieten, aber nicht das Video-Creative produzieren, das YouTube wirklich braucht, um um Aufmerksamkeit zu konkurrieren. Wir können beides.",
+    "Ready to capture the customers": "Bereit, die Kunden zu erreichen, die",
+    "already searching for you?": "schon nach Ihnen suchen?",
+
+    /* ---- AI Visibility Agency (channel landing page) -------------------- */
+    "AI Visibility & Optimization": "AI-Sichtbarkeit & Optimierung",
+    "Get recommended, not skipped,": "Empfohlen werden, nicht übersprungen —",
+    "when they ask AI what to buy.": "wenn sie eine AI fragen, was sie kaufen sollen.",
+    "More shoppers are asking ChatGPT, Claude, and Gemini for recommendations before they ever open Google. We help e-commerce and B2C brands show up in those answers — not just in search results.":
+      "Immer mehr Käufer fragen ChatGPT, Claude und Gemini nach Empfehlungen, bevor sie überhaupt Google öffnen. Wir helfen E-Commerce- und B2C-Marken, in diesen Antworten aufzutauchen — nicht nur in Suchergebnissen.",
+    "Why AI visibility, why now": "Warum AI-Sichtbarkeit, warum jetzt",
+    "Ranking #1 on Google doesn't mean your brand gets mentioned when someone asks an AI instead.":
+      "Platz 1 bei Google heißt nicht, dass Ihre Marke erwähnt wird, wenn jemand stattdessen eine AI fragt.",
+    "Buying research is shifting from search engines to AI assistants. Being visible there runs on different signals than SEO — clear positioning, structured proof content, and real presence across the web a model can actually draw from.":
+      "Kaufrecherche verlagert sich von Suchmaschinen zu AI-Assistenten. Sichtbarkeit dort läuft über andere Signale als SEO — klare Positionierung, strukturierter Proof-Content und echte Präsenz im Web, aus der ein Modell tatsächlich schöpfen kann.",
+    "This is an emerging channel and we're honest about that — nobody has it fully figured out yet. What we do is make sure your brand's story is legible to a model, not just to a search crawler.":
+      "Das ist ein entstehender Kanal, und das sagen wir auch ehrlich — niemand hat das schon vollständig durchdrungen. Was wir tun: dafür sorgen, dass die Geschichte Ihrer Marke für ein Modell lesbar ist, nicht nur für einen Suchcrawler.",
+    "Everything an AI visibility engine needs.": "Alles, was eine AI-Sichtbarkeits-Maschine braucht.",
+    "AI visibility audit": "AI-Sichtbarkeits-Audit",
+    "We systematically ask ChatGPT, Claude, and Gemini what they say about your brand vs. your competitors — and show you exactly where the gaps are.":
+      "Wir fragen ChatGPT, Claude und Gemini systematisch, was sie über Ihre Marke im Vergleich zu Ihren Wettbewerbern sagen — und zeigen Ihnen genau, wo die Lücken sind.",
+    "Positioning & content clarity": "Positionierung & Content-Klarheit",
+    "We tighten your public positioning into language a model can actually summarize and recommend correctly.":
+      "Wir schärfen Ihre öffentliche Positionierung zu einer Sprache, die ein Modell korrekt zusammenfassen und empfehlen kann.",
+    "Structured proof content": "Strukturierter Proof-Content",
+    "Comparisons, FAQs, and case studies published in a format AI systems can actually cite when asked.":
+      "Vergleiche, FAQs und Case Studies, veröffentlicht in einem Format, das AI-Systeme bei Anfragen tatsächlich zitieren können.",
+    "Ongoing re-checks": "Laufende Re-Checks",
+    "Models update constantly. We re-test your visibility on a regular cadence, not just once.":
+      "Modelle werden ständig aktualisiert. Wir testen Ihre Sichtbarkeit regelmäßig neu, nicht nur einmal.",
+    "Monthly reporting": "Monatliches Reporting",
+    "A full report every month on what's changed across models and what we're doing about it.":
+      "Ein vollständiger monatlicher Bericht dazu, was sich bei den Modellen geändert hat und was wir dagegen tun.",
+    "See exactly what AI currently says — and doesn't say — about your brand.":
+      "Sehen Sie genau, was AI aktuell über Ihre Marke sagt — und was nicht.",
+    "Tighten your public positioning into language models actually quote.":
+      "Schärfen Sie Ihre öffentliche Positionierung zu einer Sprache, die Modelle tatsächlich zitieren.",
+    "Ship the structured proof content models pull from — comparisons, FAQs, case studies.":
+      "Veröffentlichen Sie den strukturierten Proof-Content, aus dem Modelle schöpfen — Vergleiche, FAQs, Case Studies.",
+    "Re-test across models as they update. This space moves fast.":
+      "Erneut testen, sobald Modelle sich aktualisieren. Dieser Bereich bewegt sich schnell.",
+    "Audit to re-check.": "Von Audit bis Re-Check.",
+    "AI visibility,": "AI-Sichtbarkeit,",
+    "Can you guarantee my brand shows up in ChatGPT's answers?": "Können Sie garantieren, dass meine Marke in den Antworten von ChatGPT auftaucht?",
+    "No — and any agency that promises that isn't being straight with you. Nobody can guarantee placement inside a black-box model. What we can do is fix the actual, fixable gaps: unclear positioning, missing proof content, and weak public presence — the same things that keep a brand invisible to AI as much as to a human researching you.":
+      "Nein — und jede Agentur, die das verspricht, ist nicht ehrlich zu Ihnen. Niemand kann eine Platzierung in einem Black-Box-Modell garantieren. Was wir tun können: die tatsächlichen, behebbaren Lücken schließen — unklare Positionierung, fehlender Proof-Content und schwache öffentliche Präsenz — dieselben Dinge, die eine Marke sowohl für AI als auch für einen recherchierenden Menschen unsichtbar machen.",
+    "Is this the same as SEO?": "Ist das dasselbe wie SEO?",
+    "Related, not the same. SEO targets search crawlers and rankings. This targets what a language model actually says when someone asks it a question — a different, newer surface that ranks differently.":
+      "Verwandt, aber nicht dasselbe. SEO zielt auf Suchcrawler und Rankings. Das hier zielt darauf, was ein Sprachmodell tatsächlich sagt, wenn jemand ihm eine Frage stellt — eine andere, neuere Oberfläche mit eigenen Regeln.",
+    "How do you know what AI is currently saying about my brand?": "Woher wissen Sie, was AI aktuell über meine Marke sagt?",
+    "We ask it — systematically, with a consistent set of prompts across ChatGPT, Claude, and Gemini, tracked over time so we can see what's changing and why.":
+      "Wir fragen es — systematisch, mit einem konsistenten Set an Prompts über ChatGPT, Claude und Gemini hinweg, über Zeit verfolgt, damit wir sehen, was sich ändert und warum.",
+    "Do I still need Google or Meta Ads if I do this?": "Brauche ich trotzdem noch Google oder Meta Ads, wenn ich das mache?",
+    "Yes — this complements paid, it doesn't replace it. Think of it the way you'd think of SEO next to paid search: one is free visibility that compounds, the other is immediate and scalable.":
+      "Ja — das ergänzt Paid, es ersetzt es nicht. Denken Sie daran wie an SEO neben Paid Search: das eine ist kostenlose Sichtbarkeit, die sich aufbaut, das andere ist sofort wirksam und skalierbar.",
+    "This runs on the same minimum 4–6 month commitment as our other retainers — model behavior shifts over weeks and months, not days, so short engagements don't show much.":
+      "Das läuft mit derselben Mindestlaufzeit von 4–6 Monaten wie unsere anderen Retainer — Modellverhalten verändert sich über Wochen und Monate, nicht Tage, deshalb bringen kurze Engagements wenig.",
+    "Curious what AI is already saying": "Neugierig, was AI schon",
+    "about your brand?": "über Ihre Marke sagt?"
   }
 };

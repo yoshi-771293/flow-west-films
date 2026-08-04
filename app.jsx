@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -48,6 +48,14 @@ const ROUTE_META = {
   "meta-ads-agentur": {
     de: { title: "Meta Ads Agentur Stuttgart — Flow West Films", desc: "Volles Meta-Ads-Management: Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht." },
     en: { title: "Meta Ads Agency Stuttgart — Flow West Films", desc: "Full Meta Ads management: strategy, creative, audiences and scaling — run by the same team that shoots the film." },
+  },
+  "google-ads-agentur": {
+    de: { title: "Google & YouTube Ads Agentur Stuttgart — Flow West Films", desc: "Google & YouTube Ads für E-Commerce und B2C-Marken: Search-Strategie, YouTube-Creative und volles Account-Management aus einer Hand." },
+    en: { title: "Google & YouTube Ads Agency Stuttgart — Flow West Films", desc: "Google & YouTube Ads for e-commerce and B2C brands: search strategy, YouTube creative and full account management, run by one team." },
+  },
+  "ai-visibility-agentur": {
+    de: { title: "KI-Sichtbarkeit / AI Visibility Agentur — Flow West Films", desc: "Wir optimieren, wie ChatGPT, Claude und Gemini über Ihre Marke sprechen — Sichtbarkeit dort, wo Kaufentscheidungen zunehmend entstehen." },
+    en: { title: "AI Visibility Agency — Flow West Films", desc: "We optimize how ChatGPT, Claude and Gemini talk about your brand — visibility where buying decisions increasingly start." },
   },
   about: {
     de: { title: "Über uns — Flow West Films", desc: "Gegründet von Florian Kotulla in Stuttgart. Filmemacher, Creative Director und Performance-Marketing-Denker in einer Person." },
@@ -102,6 +110,8 @@ function App() {
     case "projects-lab": Page = ProjectsLabPage; break;
     case "pricing":     Page = PricingPage;     break;
     case "meta-ads-agentur": Page = MetaAdsPage; break;
+    case "google-ads-agentur": Page = GoogleAdsPage; break;
+    case "ai-visibility-agentur": Page = AiVisibilityPage; break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
@@ -143,6 +153,8 @@ function App() {
     "projects-lab": "02 Projects",
     pricing:     "03 Pricing",
     "meta-ads-agentur": "03 Pricing · Meta Ads",
+    "google-ads-agentur": "03 Pricing · Google Ads",
+    "ai-visibility-agentur": "03 Pricing · AI Visibility",
     about:       "04 About",
     contact:     "05 Contact",
     impressum:   "Legal · Impressum",

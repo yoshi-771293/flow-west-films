@@ -11,6 +11,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://flowwestfilms.de/google-ads-agentur</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/ai-visibility-agentur</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://flowwestfilms.de/pricing</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>

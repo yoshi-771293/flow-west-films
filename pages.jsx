@@ -1496,11 +1496,15 @@ function MetaAdsPage() {
             <span className="fwf-eyebrow">Meta Ads Agency</span>
           </div>
           <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
-            One team. One ad account. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Meta Ads that convert.</em>
+            Turn cold Meta traffic into <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>repeat customers.</em>
           </h1>
-          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 620, margin: "0 0 40px 0", lineHeight: 1.6 }}>
-            Full Meta Ads management — strategy, creative, audiences, and scaling — run by the same team that shoots the film. Most of our clients start here.
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 620, margin: "0 0 28px 0", lineHeight: 1.6 }}>
+            Full Meta Ads management for e-commerce and B2C brands — strategy, creative, audiences, and scaling, run by the same team that shoots the film. Most of our clients start here.
           </p>
+          <div className="fwf-fade-up fwf-d3b" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "9px 18px", borderRadius: 999, border: "1px solid rgba(0,255,136,0.28)", background: "rgba(0,255,136,0.06)", fontSize: 13.5, color: "rgba(255,255,255,0.9)", marginBottom: 36 }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)", flexShrink: 0 }} />
+            Real client: Weinzeit — a wine festival touring all of Germany — went from <strong>2× to 14× ROAS</strong> on Meta with us.
+          </div>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
@@ -1531,6 +1535,18 @@ function MetaAdsPage() {
               </p>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
                 That's the whole thesis: premium creative isn't the opposite of performance. Done right, it's the source of it.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 56, padding: 32, border: "1px solid rgba(0,255,136,0.25)", background: "rgba(0,255,136,0.04)", borderRadius: 8, display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "center" }} className="fwf-grid-collapse">
+            <div className="fwf-display" style={{ color: "var(--fwf-green)", fontSize: "clamp(48px, 6vw, 72px)", fontWeight: 700, lineHeight: 1, whiteSpace: "nowrap" }}>
+              2× → 14×
+            </div>
+            <div>
+              <div className="fwf-label" style={{ marginBottom: 8, color: "var(--fwf-green)" }}>Real result · Weinzeit</div>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 15.5, lineHeight: 1.6, margin: 0 }}>
+                Weinzeit — a wine festival touring all of Germany — scaled their Meta Ads ROAS from 2× to 14× working with us.
               </p>
             </div>
           </div>
@@ -1611,6 +1627,356 @@ function MetaAdsPage() {
 
       <FinalCTA
         headline={<>Ready to run Meta Ads <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>the right way?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+    </main>
+  );
+}
+
+// ============================================
+// GOOGLE ADS PAGE
+// ============================================
+function GoogleAdsPage() {
+  const included = [
+    { i: <Icons.Target size={22} />, t: "Search strategy & keyword mapping", d: "We map the exact searches your buyers already type before they find you — and bid where it counts.", c: "pink" },
+    { i: <Icons.Film size={22} />, t: "YouTube ad creative", d: "The same team that shoots your film builds the YouTube creative — most Google agencies can only run text ads.", c: "purple" },
+    { i: <Icons.Aperture size={22} />, t: "Full account management", d: "Campaign structure, conversion tracking, bidding strategy — set up and run end to end.", c: "green" },
+    { i: <Icons.Repeat size={22} />, t: "Shopping & Performance Max", d: "For e-commerce catalogs — product feeds set up correctly so Google can actually sell for you.", c: "orange" },
+    { i: <Icons.Phone size={22} />, t: "Weekly performance calls", d: "A standing sync with your dedicated Performance Marketing Manager — no black box.", c: "pink" },
+    { i: <Icons.BarChart size={22} />, t: "Live dashboard + monthly reporting", d: "Real-time CTR, ROAS, and CPA, plus a full report every month on where budget is going and why.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.Brain size={22} />, t: "Concept", d: "Which searches, which products, which intent — mapped before a single euro is spent." },
+    { n: "02", i: <Icons.Film size={22} />, t: "Creative", d: "YouTube ads built to earn attention, not just fill inventory." },
+    { n: "03", i: <Icons.Zap size={22} />, t: "Launch & Test", d: "A defined test budget against agreed targets — CTR, ROAS, or CPA, whichever matters to you." },
+    { n: "04", i: <Icons.TrendUp size={22} />, t: "Scale", d: "We duplicate what's working into new campaigns and audiences. Not a bigger bet on a hunch." },
+  ];
+
+  const faqs = [
+    {
+      q: "Do I need an existing Google Ads account or conversion tracking set up?",
+      a: "No. Onboarding runs 2–3 days and includes full setup — account, conversion tracking, and (for e-commerce) product feed.",
+    },
+    {
+      q: "I've only ever run Meta Ads. Never Google. Is that a problem?",
+      a: "No problem. Google and Meta run on different mechanics — intent vs. interest — and most brands eventually want both. We guide you through the setup either way.",
+    },
+    {
+      q: "How much budget do I need?",
+      a: "There's no fixed minimum. We agree on a test budget and clear targets on the strategy call, then scale only what earns it.",
+    },
+    {
+      q: "How is this different from a normal Google Ads agency?",
+      a: "Most Google Ads agencies are Search-only — they can bid on keywords, but they can't produce the video creative YouTube actually needs to compete for attention. We can do both.",
+    },
+    {
+      q: "Is there a minimum commitment?",
+      a: "The Growth Retainer runs on a minimum 4–6 month commitment — long enough to actually learn what works. After that, you stay because it's compounding, not because of a contract.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(155,48,255,0.14), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Google & YouTube Ads Agency</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            Capture the customers <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>already searching for you.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 620, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            Google & YouTube Ads for e-commerce and B2C brands — built to catch high-intent search traffic and turn it into sales, with the same team producing the video creative YouTube ads actually need to perform.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why Google, why us</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                Google runs on intent. Most agencies only bring half of what it needs to win.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                Search catches people who already decided to buy — that part is mostly about bidding discipline. YouTube is different: it's an attention game, and attention needs real creative, not a repurposed static banner. Most Google Ads agencies are set up to do the first and not the second.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                We run both from one team — the Search account that captures intent, and the YouTube creative built by the same people who shoot your Launch Film.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What's included</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Everything a Google & YouTube engine needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Concept to scale. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>One system.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-purple)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-purple)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                Google & YouTube, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Ready to capture the customers <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>already searching for you?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+    </main>
+  );
+}
+
+// ============================================
+// AI VISIBILITY PAGE
+// ============================================
+function AiVisibilityPage() {
+  const included = [
+    { i: <Icons.Sparkles size={22} />, t: "AI visibility audit", d: "We systematically ask ChatGPT, Claude, and Gemini what they say about your brand vs. your competitors — and show you exactly where the gaps are.", c: "pink" },
+    { i: <Icons.Target size={22} />, t: "Positioning & content clarity", d: "We tighten your public positioning into language a model can actually summarize and recommend correctly.", c: "purple" },
+    { i: <Icons.FileText size={22} />, t: "Structured proof content", d: "Comparisons, FAQs, and case studies published in a format AI systems can actually cite when asked.", c: "green" },
+    { i: <Icons.Repeat size={22} />, t: "Ongoing re-checks", d: "Models update constantly. We re-test your visibility on a regular cadence, not just once.", c: "orange" },
+    { i: <Icons.Phone size={22} />, t: "Weekly performance calls", d: "A standing sync with your dedicated Performance Marketing Manager — no black box.", c: "pink" },
+    { i: <Icons.BarChart size={22} />, t: "Monthly reporting", d: "A full report every month on what's changed across models and what we're doing about it.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.Brain size={22} />, t: "Audit", d: "See exactly what AI currently says — and doesn't say — about your brand." },
+    { n: "02", i: <Icons.Target size={22} />, t: "Reposition", d: "Tighten your public positioning into language models actually quote." },
+    { n: "03", i: <Icons.FileText size={22} />, t: "Publish", d: "Ship the structured proof content models pull from — comparisons, FAQs, case studies." },
+    { n: "04", i: <Icons.Repeat size={22} />, t: "Re-check", d: "Re-test across models as they update. This space moves fast." },
+  ];
+
+  const faqs = [
+    {
+      q: "Can you guarantee my brand shows up in ChatGPT's answers?",
+      a: "No — and any agency that promises that isn't being straight with you. Nobody can guarantee placement inside a black-box model. What we can do is fix the actual, fixable gaps: unclear positioning, missing proof content, and weak public presence — the same things that keep a brand invisible to AI as much as to a human researching you.",
+    },
+    {
+      q: "Is this the same as SEO?",
+      a: "Related, not the same. SEO targets search crawlers and rankings. This targets what a language model actually says when someone asks it a question — a different, newer surface that ranks differently.",
+    },
+    {
+      q: "How do you know what AI is currently saying about my brand?",
+      a: "We ask it — systematically, with a consistent set of prompts across ChatGPT, Claude, and Gemini, tracked over time so we can see what's changing and why.",
+    },
+    {
+      q: "Do I still need Google or Meta Ads if I do this?",
+      a: "Yes — this complements paid, it doesn't replace it. Think of it the way you'd think of SEO next to paid search: one is free visibility that compounds, the other is immediate and scalable.",
+    },
+    {
+      q: "Is there a minimum commitment?",
+      a: "This runs on the same minimum 4–6 month commitment as our other retainers — model behavior shifts over weeks and months, not days, so short engagements don't show much.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255,100,32,0.14), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">AI Visibility & Optimization</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            Get recommended, not skipped, <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>when they ask AI what to buy.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 640, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            More shoppers are asking ChatGPT, Claude, and Gemini for recommendations before they ever open Google. We help e-commerce and B2C brands show up in those answers — not just in search results.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why AI visibility, why now</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                Ranking #1 on Google doesn't mean your brand gets mentioned when someone asks an AI instead.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                Buying research is shifting from search engines to AI assistants. Being visible there runs on different signals than SEO — clear positioning, structured proof content, and real presence across the web a model can actually draw from.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                This is an emerging channel and we're honest about that — nobody has it fully figured out yet. What we do is make sure your brand's story is legible to a model, not just to a search crawler.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What's included</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Everything an AI visibility engine needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Audit to re-check. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>One system.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-orange)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-orange)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                AI visibility, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Curious what AI is already saying <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>about your brand?</em></>}
         sub="Tell us about your brand. We'll tell you what we'd do."
       />
     </main>
@@ -1884,4 +2250,4 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage });
+Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage });
