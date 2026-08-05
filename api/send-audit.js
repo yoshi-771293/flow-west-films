@@ -207,7 +207,56 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: "Failed to send email" });
   }
 
-  // ── 2. Upsert to Mailchimp (best-effort — never blocks the response) ────────
+  // ── 2. Notify the studio (best-effort) ──────────────────────────────────────
+  // The lead's own email has already sent by this point, so a failure here is
+  // logged and swallowed — a broken notification must never cost someone their
+  // audit. Recipient is overridable via env so it can move without a deploy.
+  const notifyTo = process.env.AUDIT_NOTIFY_TO || "kotullaflorian@gmail.com";
+  try {
+    const sections = Array.isArray(audit.sections) ? audit.sections : [];
+    const gaps = sections.find((s) => s && s.title === "Biggest gaps");
+    const row = (label, value) =>
+      `<tr>
+         <td style="padding:6px 16px 6px 0;color:#8a8a8a;font:13px system-ui,sans-serif;white-space:nowrap;vertical-align:top;">${esc(label)}</td>
+         <td style="padding:6px 0;color:#111;font:600 15px system-ui,sans-serif;">${esc(value) || "—"}</td>
+       </tr>`;
+
+    await resend.emails.send({
+      from: "Flow West Films <audit@noreply.flowwestfilms.de>",
+      to: notifyTo,
+      replyTo: cleanEmail,
+      subject: `Audit lead: ${cleanName} — ${cleanCompany} (${audit.score || "?"})`,
+      text: [
+        `New audit lead`,
+        `Name:    ${cleanName}`,
+        `Company: ${cleanCompany}`,
+        `Phone:   ${cleanPhone || "—"}`,
+        `Email:   ${cleanEmail}`,
+        `Score:   ${audit.score || "?"}`,
+        ``,
+        gaps ? `Biggest gaps:\n${gaps.body}` : ``,
+      ].join("\n"),
+      html: `
+        <div style="max-width:520px;font-family:system-ui,-apple-system,sans-serif;">
+          <p style="font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FF2D78;margin:0 0 14px;">New audit lead</p>
+          <table style="border-collapse:collapse;margin:0 0 20px;">
+            ${row("Name", cleanName)}
+            ${row("Company", cleanCompany)}
+            ${row("Phone", cleanPhone)}
+            ${row("Email", cleanEmail)}
+            ${row("Score", audit.score || "")}
+            ${row("Language", audit.lang === "de" ? "German" : "English")}
+            ${row("Date", audit.date || "")}
+          </table>
+          ${gaps ? `<p style="font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;margin:0 0 6px;">Biggest gaps</p>
+          <pre style="font:14px/1.6 system-ui,sans-serif;color:#111;margin:0;white-space:pre-wrap;">${esc(gaps.body)}</pre>` : ""}
+        </div>`,
+    });
+  } catch (err) {
+    console.error("Notify error:", err?.message || err);
+  }
+
+  // ── 3. Upsert to Mailchimp (best-effort — never blocks the response) ────────
   try {
     const apiKey = process.env.MAILCHIMP_API_KEY || "";
     const audienceId = process.env.MAILCHIMP_AUDIENCE_ID || "";

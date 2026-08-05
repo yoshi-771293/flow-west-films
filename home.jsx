@@ -163,30 +163,93 @@ function LangTypewriterWord({ wordsEN, wordsDE, style, className }) {
 // ============================================
 // Opening Film — scroll-triggered with unmute
 // ============================================
+// Opening film now streams from Bunny instead of a ~35MB local mp4 served off
+// the origin. Uses the HLS manifest directly rather than a player.mediadelivery
+// embed, which 403s — and keeps a real <video> element so the scroll-trigger
+// and the sound toggle below still work.
+const INTRO_ZONE = "vz-fd89cb27-622.b-cdn.net";
+const INTRO_GUID = "1d3be5d7-6082-4751-bae3-eccbb89fe876";
+
 function OpeningFilm() {
   const [muted, setMuted] = useState_h(true);
   const videoRef = useRef_h(null);
+  const wantSound = useRef_h(true); // sound is the default; a manual mute clears it
 
   useEffect_h(function() {
     var video = videoRef.current;
     if (!video) return;
+    var manifest = "https://" + INTRO_ZONE + "/" + INTRO_GUID + "/playlist.m3u8";
+    var visible = false;
+    var hls;
+
+    // Sound-on is the intent, but browsers reject play() on an unmuted video
+    // until the visitor has interacted with the page. So: attempt unmuted, and
+    // on rejection fall back to muted and play anyway — the film always runs
+    // rather than freezing on the poster. unlockSound() below then turns sound
+    // on at the first real gesture.
+    function tryPlay() {
+      if (!visible) return;
+      if (wantSound.current) video.muted = false;
+      var p = video.play();
+      if (!p || !p.catch) return;
+      p.then(function() { setMuted(video.muted); }).catch(function() {
+        video.muted = true;
+        setMuted(true);
+        video.play().catch(function() {});
+      });
+    }
+
+    var unlocked = false;
+    var GESTURES = ["pointerdown", "keydown", "touchstart"];
+    function unlockSound() {
+      if (unlocked) return;
+      unlocked = true;
+      GESTURES.forEach(function(evt) { document.removeEventListener(evt, unlockSound); });
+      if (!wantSound.current) return; // they already hit mute — respect it
+      video.muted = false;
+      setMuted(false);
+      if (visible) video.play().catch(function() {});
+    }
+    GESTURES.forEach(function(evt) { document.addEventListener(evt, unlockSound, { passive: true }); });
+    // Forcing currentLevel below flushes the buffer, which can abort an
+    // in-flight play() — so play off "canplay" rather than immediately after
+    // the level switch. Also covers the case where the section is already in
+    // view at load, before the manifest has parsed.
+    video.addEventListener("canplay", tryPlay);
+
+    if (window.Hls && window.Hls.isSupported()) {
+      hls = new window.Hls({ capLevelToPlayerSize: false, startLevel: -1 });
+      hls.loadSource(manifest);
+      hls.attachMedia(video);
+      hls.on(window.Hls.Events.MANIFEST_PARSED, function(evt, data) {
+        hls.currentLevel = data.levels.length - 1; // skip ABR ramp-up, top quality now
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = manifest; // Safari plays HLS natively
+    }
+
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          video.play().catch(function() {});
-        } else {
-          video.pause();
-        }
+        visible = entry.isIntersecting;
+        if (visible) tryPlay(); else video.pause();
       });
     }, { threshold: 0.25 });
     observer.observe(video);
-    return function() { observer.disconnect(); };
+
+    return function() {
+      observer.disconnect();
+      video.removeEventListener("canplay", tryPlay);
+      GESTURES.forEach(function(evt) { document.removeEventListener(evt, unlockSound); });
+      if (hls) hls.destroy();
+    };
   }, []);
 
   function toggleMute() {
     var video = videoRef.current;
     if (!video) return;
     video.muted = !video.muted;
+    // Remember the choice so the gesture-unlock doesn't override a deliberate mute.
+    wantSound.current = !video.muted;
     setMuted(video.muted);
   }
 
@@ -195,7 +258,7 @@ function OpeningFilm() {
     React.createElement("div", { style: { position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to top, #0a0a0a 0%, transparent 100%)", zIndex: 2, pointerEvents: "none" } }),
     React.createElement("video", {
       ref: videoRef,
-      src: "assets/videos/intro_lion_glitch_4k.mp4",
+      poster: "https://" + INTRO_ZONE + "/" + INTRO_GUID + "/thumbnail.jpg",
       muted: true,
       playsInline: true,
       loop: false,
