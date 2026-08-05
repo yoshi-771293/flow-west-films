@@ -376,12 +376,12 @@ function HomePage() {
             React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 } },
               [
                 { num: "50+", label: "Projects delivered", c: "pink" },
-                { num: "14×", label: "ROAS achieved — Weinzeit", c: "purple" },
+                { num: "14× ROAS", label: "With Weinzeit, for example", c: "purple" },
                 { num: "DE",  label: "Stuttgart & remote", c: "green" },
-                { num: "E-com", label: "& B2C — where we focus", c: "orange" },
+                { num: "E-Commerce & B2C", label: "Where we focus", c: "orange" },
               ].map((s, i) =>
                 React.createElement("div", { key: i, className: "fwf-stat" },
-                  React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12 } }, s.num),
+                  React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12, fontSize: s.num.length > 8 ? 28 : 56 } }, s.num),
                   React.createElement("div", { className: "fwf-label", style: { letterSpacing: "0.14em" } }, s.label)
                 )
               )

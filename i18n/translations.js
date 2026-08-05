@@ -387,8 +387,8 @@ window.FWF_TRANSLATIONS = {
     "Built for Repeat Sales": "Gebaut für Wiederholungskäufe",
     "Your ad spend should come back as customers who buy again — not as impressions you can't bank. Production, ad creative and media buying all sit with one team, so nothing gets lost between the shoot and the spend.":
       "Ihr Werbebudget sollte als Kunden zurückkommen, die wieder kaufen — nicht als Impressions, mit denen sich nichts anfangen lässt. Produktion, Ad Creative und Media Buying liegen bei einem Team, damit zwischen Dreh und Media-Budget nichts verloren geht.",
-    "ROAS achieved — Weinzeit": "ROAS erreicht — Weinzeit",
-    "& B2C — where we focus": "& B2C — unser Fokus",
+    "With Weinzeit, for example": "Zum Beispiel mit Weinzeit",
+    "Where we focus": "Unser Fokus",
     "Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.":
       "Die meisten Ads schreien. Unsere hören erst zu. Cinematisches Ad Creative spricht mit Ihren Kunden wie ein guter Freund — kein Verkaufsgespräch, eine Geschichte. Wer sich gesehen statt verkauft fühlt, bleibt dran, statt weiterzuscrollen. Das ist der Unterschied zwischen einer Anzeige und einem Film: Die eine unterbricht, der andere lädt ein. Für B2C-Marken wird genau diese Einladung zu Nachfrage — und Nachfrage zu Umsatz.",
 
