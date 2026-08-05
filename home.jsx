@@ -140,7 +140,16 @@ const OFFERS = [
 // ============================================
 function LangTypewriterWord({ wordsEN, wordsDE, style, className }) {
   const [lang, setLang] = useState_h(function() {
-    try { return localStorage.getItem("fwf-lang") || "de"; } catch(e) { return "de"; }
+    // Mirror i18n.js's own resolution. Hardcoding "de" here desynced from
+    // i18n.js, which falls back to navigator.language when nothing is stored --
+    // so a first-time visitor on a non-German browser got English body copy
+    // with German typewriter words ("Where exactly are you losing Umsatz?").
+    if (window.FWF_getLanguage) return window.FWF_getLanguage();
+    try {
+      var s = localStorage.getItem("fwf-lang");
+      if (s === "de" || s === "en") return s;
+    } catch (e) {}
+    return (navigator.language || "").toLowerCase().indexOf("de") === 0 ? "de" : "en";
   });
   useEffect_h(function() {
     var handler = function(e) { setLang(e.detail.lang); };

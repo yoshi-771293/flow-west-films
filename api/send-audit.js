@@ -179,7 +179,11 @@ module.exports = async function handler(req, res) {
   if (!email || !isValidEmail(email) || !audit || typeof audit !== "object") {
     return res.status(400).json({ error: "Invalid request: bad email or missing audit" });
   }
-  // name + company are required (phone is optional)
+  // name + company are required. Phone is required by the form too, but is
+  // deliberately NOT hard-rejected here: the client advances the user to the
+  // results regardless of this response, so 400-ing a stale cached bundle that
+  // still treats phone as optional would silently cost that person their audit
+  // email. The form is the gate; this stays lenient.
   if (!name || !String(name).trim() || !company || !String(company).trim()) {
     return res.status(400).json({ error: "Invalid request: name and company are required" });
   }

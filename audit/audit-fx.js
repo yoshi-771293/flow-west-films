@@ -39,7 +39,7 @@
         nameLabel: "Name", namePh: "Jane Doe",
         companyLabel: "Company", companyPh: "Acme GmbH",
         emailLabel: "Email", emailPh: "you@company.com",
-        phoneLabel: "Phone (optional)", phonePh: "+49 …",
+        phoneLabel: "Phone", phonePh: "+49 …",
         cta: "Send it →",
         sending: "Sending",
         errInvalid: "That's not a valid email.",
@@ -67,7 +67,7 @@
         nameLabel: "Name", namePh: "Max Mustermann",
         companyLabel: "Firma", companyPh: "Acme GmbH",
         emailLabel: "E-Mail", emailPh: "sie@firma.de",
-        phoneLabel: "Telefon (optional)", phonePh: "+49 …",
+        phoneLabel: "Telefon", phonePh: "+49 …",
         cta: "Absenden →",
         sending: "Senden",
         errInvalid: "Das ist keine gültige E-Mail.",
@@ -228,6 +228,7 @@
     var nameEl = step.querySelector("#fwf-tk-name");
     var companyEl = step.querySelector("#fwf-tk-company");
     var emailEl = step.querySelector("#fwf-tk-email");
+    var phoneEl = step.querySelector("#fwf-tk-phone");
     var msg = step.querySelector("#fwf-tk-emailmsg");
     var btn = step.querySelector('[data-act="send"]');
 
@@ -235,6 +236,10 @@
       var c = lang() === "en" ? COPY.en : COPY.de;
       var nameOk = !!nameEl.value.trim();
       var companyOk = !!companyEl.value.trim();
+      // Count digits rather than pattern-match: international formats vary too
+      // much (+49, 0049, spaces, slashes, parens) and a strict pattern would
+      // reject real numbers. Six digits is enough to block junk like "-".
+      var phoneOk = phoneEl.value.replace(/\D/g, "").length >= 6;
       var ev = emailEl.value.trim();
       emailEl.classList.remove("valid", "invalid");
       var emailOk = false;
@@ -244,10 +249,10 @@
         if (r.ok) { emailEl.classList.add("valid"); msg.textContent = ""; emailOk = true; }
         else { emailEl.classList.add("invalid"); msg.textContent = r.disp ? c.s2.errDisp : c.s2.errInvalid; }
       }
-      btn.disabled = !(nameOk && companyOk && emailOk);
+      btn.disabled = !(nameOk && companyOk && emailOk && phoneOk);
     }
 
-    [nameEl, companyEl, emailEl].forEach(function (el) { el.addEventListener("input", revalidate); });
+    [nameEl, companyEl, emailEl, phoneEl].forEach(function (el) { el.addEventListener("input", revalidate); });
     step.querySelectorAll("input").forEach(function (el) {
       el.addEventListener("keydown", function (e) { if (e.key === "Enter" && !btn.disabled) btn.click(); });
     });
@@ -419,8 +424,8 @@
     var company = (step.querySelector("#fwf-tk-company").value || "").trim();
     var email = (step.querySelector("#fwf-tk-email").value || "").trim().toLowerCase();
     var phone = (step.querySelector("#fwf-tk-phone").value || "").trim();
-    // required: name + company + valid email
-    if (!name || !company || validateEmail(email).ok !== true) return;
+    // required: name + company + valid email + phone
+    if (!name || !company || phone.replace(/\D/g, "").length < 6 || validateEmail(email).ok !== true) return;
 
     btn.disabled = true;
     btn.innerHTML = '<span class="fwf-tk-spin"></span>' + c.s2.sending;
