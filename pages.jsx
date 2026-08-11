@@ -76,20 +76,20 @@ const ALL_PROJECTS = [
   },
   {
     client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad",
-    desc: "AI-assisted ad creative for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity.",
+    desc: "A cinematic spec ad for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity. Powered by AI, curated by creators.",
     colors: ["#8a8f98", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/IOSRkgMz6Ss/maxresdefault.jpg",
     video: "https://www.youtube.com/watch?v=IOSRkgMz6Ss"
   },
   {
     client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad",
-    desc: "AI-assisted spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame.",
+    desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
     colors: ["#c8102e", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
     video: "https://youtu.be/nYRfEo-6-Bk"
   },
   {
-    client: "Gloria", title: "Eibl GmbH", tag: "Ad Creative", cat: "ad",
+    client: "Eibl GmbH", title: "Introduction: Gloria", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ba8cc671-93fd-44ae-8e80-c72cb647d2c8/thumbnail_4088abe6.jpg",
