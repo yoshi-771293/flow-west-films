@@ -7,14 +7,14 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 4,
+    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 5,
     desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
     colors: ["#2d6cdf", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
+    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 5,
     desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
     colors: ["#ff6420", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
@@ -75,14 +75,14 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/7b2b34e4-af62-4492-9247-5023b8f717a1?token=e87b5cce50016d83e4b64a33aaabaadb25b34bbb88d2966a9c9003d009281c9f&expires=1785494752&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad",
+    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad", feature: 5,
     desc: "A cinematic spec ad for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity. Powered by AI, curated by creators.",
     colors: ["#8a8f98", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/IOSRkgMz6Ss/maxresdefault.jpg",
     video: "https://www.youtube.com/watch?v=IOSRkgMz6Ss"
   },
   {
-    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad",
+    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", feature: 5,
     desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
     colors: ["#c8102e", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
@@ -122,7 +122,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad", feature: 4,
+    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad",
     desc: "Vertical-format product commercial for the IK Automatic Watch — built for Meta Reels and Stories.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/08a90788-aa8a-4064-8574-8f80f57b454c/thumbnail.jpg",
