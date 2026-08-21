@@ -215,11 +215,30 @@ module.exports = async function handler(req, res) {
   try {
     const sections = Array.isArray(audit.sections) ? audit.sections : [];
     const gaps = sections.find((s) => s && s.title === "Biggest gaps");
-    const row = (label, value) =>
+    const dims = Array.isArray(audit.dimensions) ? audit.dimensions : [];
+    const MONO = "'JetBrains Mono','Courier New',monospace";
+    const SERIF = "'Cormorant Garamond',Georgia,'Times New Roman',serif";
+    const SANS = "'Syne',system-ui,-apple-system,sans-serif";
+    // strip non-dialable characters so the number is tappable straight from the inbox
+    const telHref = cleanPhone.replace(/[^\d+]/g, "");
+
+    const row = (label, value, accent) =>
       `<tr>
-         <td style="padding:6px 16px 6px 0;color:#8a8a8a;font:13px system-ui,sans-serif;white-space:nowrap;vertical-align:top;">${esc(label)}</td>
-         <td style="padding:6px 0;color:#111;font:600 15px system-ui,sans-serif;">${esc(value) || "—"}</td>
+         <td style="padding:9px 18px 9px 0;font-family:${MONO};font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#5A5A5A;white-space:nowrap;vertical-align:middle;">${esc(label)}</td>
+         <td style="padding:9px 0;font-family:${SANS};font-size:15px;font-weight:${accent ? 600 : 400};color:${accent || "#EDEDED"};">${value || "—"}</td>
        </tr>`;
+
+    const dimRows = dims.map((d) => {
+      const c = dimColor(d.score);
+      return `
+        <tr><td style="padding:7px 0;">
+          <table width="100%" cellpadding="0" cellspacing="0"><tr>
+            <td style="font-family:${MONO};font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#9a9a9a;">${esc(d.name)}</td>
+            <td align="right" style="font-family:${MONO};font-size:10px;color:${c};white-space:nowrap;">${d.score}/10</td>
+          </tr></table>
+          <div style="margin-top:6px;">${barHtml(d.score * 10, c)}</div>
+        </td></tr>`;
+    }).join("");
 
     await resend.emails.send({
       from: "Flow West Films <audit@noreply.flowwestfilms.de>",
@@ -237,20 +256,52 @@ module.exports = async function handler(req, res) {
         gaps ? `Biggest gaps:\n${gaps.body}` : ``,
       ].join("\n"),
       html: `
-        <div style="max-width:520px;font-family:system-ui,-apple-system,sans-serif;">
-          <p style="font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FF2D78;margin:0 0 14px;">New audit lead</p>
-          <table style="border-collapse:collapse;margin:0 0 20px;">
-            ${row("Name", cleanName)}
-            ${row("Company", cleanCompany)}
-            ${row("Phone", cleanPhone)}
-            ${row("Email", cleanEmail)}
-            ${row("Score", audit.score || "")}
-            ${row("Language", audit.lang === "de" ? "German" : "English")}
-            ${row("Date", audit.date || "")}
-          </table>
-          ${gaps ? `<p style="font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;margin:0 0 6px;">Biggest gaps</p>
-          <pre style="font:14px/1.6 system-ui,sans-serif;color:#111;margin:0;white-space:pre-wrap;">${esc(gaps.body)}</pre>` : ""}
-        </div>`,
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0A0A0A;padding:28px 0;">
+      <tr><td align="center">
+        <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;background:#0D0D0D;border:1px solid #1E1E1E;border-radius:14px;overflow:hidden;">
+          <tr><td style="height:2px;background:linear-gradient(90deg,#FF2D78,#9B30FF);font-size:0;line-height:0;">&nbsp;</td></tr>
+
+          <tr><td style="padding:26px 32px 0;">
+            <p style="font-family:${MONO};font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#FF2D78;margin:0 0 18px 0;">New audit lead</p>
+            <p style="font-family:${SERIF};font-size:34px;line-height:1.05;color:#FFFFFF;margin:0;">${esc(cleanName)}</p>
+            <p style="font-family:${SANS};font-size:14px;color:#8a8a8a;margin:6px 0 0 0;">${esc(cleanCompany)}</p>
+          </td></tr>
+
+          <tr><td style="padding:22px 32px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#121212;border:1px solid #242424;border-radius:10px;">
+              <tr><td style="padding:18px 22px;">
+                <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 4px 0;">Overall score</p>
+                <p style="font-family:${SERIF};font-size:46px;line-height:1;color:#FFFFFF;margin:0 0 12px 0;">${esc(audit.score || "?")}</p>
+                ${barHtml(Number(audit.scorePct) || 0, "#FF2D78")}
+              </td></tr>
+            </table>
+          </td></tr>
+
+          <tr><td style="padding:20px 32px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              ${row("Phone", telHref ? `<a href="tel:${esc(telHref)}" style="color:#00C87A;text-decoration:none;font-weight:600;">${esc(cleanPhone)}</a>` : "", "#00C87A")}
+              ${row("Email", `<a href="mailto:${esc(cleanEmail)}" style="color:#EDEDED;text-decoration:none;">${esc(cleanEmail)}</a>`)}
+              ${row("Language", audit.lang === "de" ? "German" : "English")}
+              ${row("Date", esc(audit.date || ""))}
+            </table>
+          </td></tr>
+
+          ${dimRows ? `<tr><td style="padding:22px 32px 0;">
+            <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 10px 0;">Dimensions</p>
+            <table width="100%" cellpadding="0" cellspacing="0">${dimRows}</table>
+          </td></tr>` : ""}
+
+          ${gaps ? `<tr><td style="padding:22px 32px 0;">
+            <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#FF2D78;margin:0 0 10px 0;">Biggest gaps</p>
+            <p style="font-family:${SANS};font-size:14px;line-height:1.7;color:#cfcfcf;margin:0;white-space:pre-wrap;">${esc(gaps.body)}</p>
+          </td></tr>` : ""}
+
+          <tr><td style="padding:26px 32px 30px;">
+            ${telHref ? `<a href="tel:${esc(telHref)}" style="display:block;text-align:center;background:#0A0A0A;color:#FFFFFF;font-family:${MONO};font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #00C87A;border-radius:999px;">Call ${esc(cleanName.split(" ")[0] || "them")} now →</a>` : ""}
+          </td></tr>
+        </table>
+      </td></tr>
+      </table>`,
     });
   } catch (err) {
     console.error("Notify error:", err?.message || err);

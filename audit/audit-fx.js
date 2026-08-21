@@ -769,6 +769,10 @@
           el.style.opacity = "1";
           el.style.clipPath = "none";
           el.style.transform = "none";
+          // prime() also sets filter: blur(7px). Rescuing opacity/clip/transform
+          // without clearing it leaves the element fully visible but permanently
+          // blurred — which is how the results-page CTAs ended up unreadable.
+          el.style.filter = "none";
         }
       });
     }, 1500);
