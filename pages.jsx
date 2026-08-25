@@ -667,12 +667,15 @@ function SphereGallery({ items, onOpen, openKey }) {
 
     // Weighted fill: a project with `feature: n` claims n tiles on the wall instead
     // of one, so flagship work (Nord VPN, Alienwork, Thomas Sabo) reads as more present.
-    // A greedy "most-remaining-first" placement (same idea as the classic reorganize-string
-    // problem) fills all 36 cells while guaranteeing no two cells carrying the same project
-    // ever land next to each other — including the wrap from the last cell back to the first,
-    // since each row is a full ring around the sphere. Degrades gracefully (best-effort spacing,
-    // no crash) if one project is weighted heavily enough to exceed half the wall.
+    // A greedy "most-remaining-first" placement fills the 4×9 grid while checking BOTH
+    // the left neighbor (with row-wrap, since each row is a full ring around the sphere)
+    // AND the neighbor directly above — a flat 1D "not equal to the previous cell" check
+    // only guards left/right and misses vertical repeats entirely, which is why the same
+    // project could land directly on top of itself a row down. Degrades gracefully
+    // (best-effort spacing, no crash) if one project is weighted heavily enough to
+    // dominate the wall.
     const CELLS = 36;
+    const NCOLS = COL_W.length;
     const pool = [];
     items.forEach((p, i) => { const w = Math.max(1, p.feature || 1); for (let k = 0; k < w; k++) pool.push(i); });
     const cellCounts = {};
@@ -684,15 +687,28 @@ function SphereGallery({ items, onOpen, openKey }) {
       const entries = Object.keys(cellCounts).map((k) => ({ idx: Number(k), count: cellCounts[k] }));
       const out = [];
       for (let step = 0; step < CELLS; step++) {
+        const col = step % NCOLS;
+        const left = col === 0 ? undefined : out[step - 1];
+        const above = step >= NCOLS ? out[step - NCOLS] : undefined;
         entries.sort((a, b) => b.count - a.count);
-        let choice = entries.find((e) =>
-          e.count > 0 &&
-          e.idx !== out[out.length - 1] &&
-          !(step === CELLS - 1 && e.idx === out[0])
-        );
-        if (!choice) choice = entries.find((e) => e.count > 0); // only item left, or unavoidable due to dominance
+        let choice = entries.find((e) => e.count > 0 && e.idx !== left && e.idx !== above);
+        if (!choice) choice = entries.find((e) => e.count > 0 && e.idx !== left); // relax the vertical guard first
+        if (!choice) choice = entries.find((e) => e.count > 0); // unavoidable due to dominance
         out.push(choice.idx);
         choice.count--;
+      }
+      // row-wrap fixup: last column of each row is also adjacent to that row's first column
+      for (let r = 0; r < CELLS / NCOLS; r++) {
+        const firstI = r * NCOLS, lastI = firstI + NCOLS - 1;
+        if (out[firstI] !== out[lastI]) continue;
+        for (let c = lastI - 1; c > firstI; c--) {
+          const above = lastI >= NCOLS ? out[lastI - NCOLS] : undefined;
+          const aboveC = c >= NCOLS ? out[c - NCOLS] : undefined;
+          if (out[c] !== out[firstI] && out[c] !== above && out[lastI] !== aboveC) {
+            const tmp = out[lastI]; out[lastI] = out[c]; out[c] = tmp;
+            break;
+          }
+        }
       }
       return out;
     })();

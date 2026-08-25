@@ -102,8 +102,8 @@ window.FWF_TRANSLATIONS = {
 
     /* ---- Home: featured work ----------------------------------------- */
     "Featured work": "Ausgewählte Arbeiten",
-    "Recent": "Aktuelle",
-    "productions.": "Produktionen.",
+    "Three ad creatives,": "Drei Ad Creatives,",
+    "reframed for the horizontal screen.": "neu geschnitten fürs Querformat.",
     "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included.":
       "Flow West Films ist ein cinematisches Kreativstudio, das Ad Creatives und Content für Mittelstandsmarken entwickelt, die skalieren wollen. Konzeption, Kreation, Performance Marketing und Analytics — alles inklusive.",
 
@@ -187,16 +187,16 @@ window.FWF_TRANSLATIONS = {
     "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.":
       "Ad Creative für die WGV Versicherung — aus einem kleinen Missgeschick wird schnell ein echter Schadensfall, für den jemand geradestehen muss. Die Privathaftpflicht der WGV schützt Sie davor.",
     "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.":
-      "Ad Creative für Voyah — ein SUV fährt einen kompletten 360-Grad-Loop durch einen Tunnel, reines Stunt-Spektakel, gebaut, um den Scroll zu stoppen.",
+      "Ad Creative für Voyah — ein SUV dreht eine volle 360-Grad-Schleife durch einen Tunnel: reines Stunt-Spektakel, das jeden Scroll stoppt.",
     "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.":
-      "Ein Reel für Streetside Classics — ein Oldtimer-Autohaus in Dallas, Texas, das Oldtimer und andere Sammlerfahrzeuge auf der Showroom-Fläche präsentiert.",
+      "Ein Reel für Streetside Classics — ein Autohaus in Dallas, Texas, das sich ganz den automobilen Klassikern und Sammlerstücken verschrieben hat.",
     "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.":
       "Der WGV-Spot im Hochkantformat — neu geschnitten und hochskaliert für Reels und Stories, wo das Missgeschick schon in den ersten zwei Sekunden sitzen muss.",
 
-    "reframed for the feed.": "neu geschnitten fürs Feed.",
+    "reframed for the social media feed.": "neu geschnitten für den Social-Media-Feed.",
     "Three cuts,": "Drei Schnitte,",
     "Vertical work from WGV, Voyah, and Streetside Classics — built for Reels, Stories, and Shorts, where the hook has to land in the first two seconds.":
-      "Vertikale Arbeiten von WGV, Voyah und Streetside Classics — gebaut für Reels, Stories und Shorts, wo der Hook schon in den ersten zwei Sekunden sitzen muss.",
+      "Vertikale Arbeiten für WGV, Voyah und Streetside Classics — entwickelt für Reels, Stories und Shorts, wo der Hook schon in den ersten zwei Sekunden sitzen muss.",
     "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.":
       "Ad Creative für Schmolke Carbon — ein Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt. Premium-Engineering, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.",
     "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.":

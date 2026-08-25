@@ -486,8 +486,8 @@ function HomePage() {
                 React.createElement("span", { className: "fwf-section-label-line" }),
                 React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
               ),
-              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 16px 0" } },
-                "Recent ", React.createElement("em", { className: "fwf-display-italic" }, "productions.")
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
+                "Three ad creatives, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "reframed for the horizontal screen.")
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
                 "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
@@ -539,7 +539,7 @@ function HomePage() {
                 React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
-                "Three cuts, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the feed.")
+                "Three cuts, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the social media feed.")
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: 0 } },
                 "Vertical work from WGV, Voyah, and Streetside Classics — built for Reels, Stories, and Shorts, where the hook has to land in the first two seconds."
