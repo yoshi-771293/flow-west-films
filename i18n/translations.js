@@ -186,6 +186,10 @@ window.FWF_TRANSLATIONS = {
 
     "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.":
       "Ad Creative für die WGV Versicherung — aus einem kleinen Missgeschick wird schnell ein echter Schadensfall, für den jemand geradestehen muss. Die Privathaftpflicht der WGV schützt Sie davor.",
+    "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.":
+      "Ad Creative für Voyah — ein SUV fährt einen kompletten 360-Grad-Loop durch einen Tunnel, reines Stunt-Spektakel, gebaut, um den Scroll zu stoppen.",
+    "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.":
+      "Ein Reel für Streetside Classics — ein Oldtimer-Autohaus in Dallas, Texas, das Oldtimer und andere Sammlerfahrzeuge auf der Showroom-Fläche präsentiert.",
     "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.":
       "Ad Creative für Schmolke Carbon — ein Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt. Premium-Engineering, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.",
     "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.":
@@ -220,8 +224,6 @@ window.FWF_TRANSLATIONS = {
       "Ein 60-sekündiger narrativer Brand-Film für einen B2B-SaaS-Launch.",
     "Short-form ad creative for performance campaigns.":
       "Short-Form Ad Creative für Performance-Kampagnen.",
-    "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable. No AI — filmed on location in studio.":
-      "Macro-Product-Ad für Hatz — Echt Badisch Gut. Clean, premium, appetitlich. Kein AI — gedreht on Location im Studio.",
     "An intimate documentary portrait of the owner at the Santa Lucia wine bar.":
       "Ein intimes Doku-Porträt des Inhabers der Santa Lucia Weinbar.",
     "Macro product film for a skeleton watch reveal.":

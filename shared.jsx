@@ -423,7 +423,6 @@ function TrustMarquee() {
     { name: "Swarovski",         logo: "assets/logos/swarovski.svg",     filter: true,  h: 18 },
     { name: "viral house",       logo: "assets/logos/viral_house.svg",   filter: false, h: 22 },
     { name: "Schmolke Carbon" },
-    { name: "Hatz Beer" },
     { name: "Liqes" },
     { name: "Alienwork" },
     { name: "Pane Vino" },

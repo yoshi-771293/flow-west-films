@@ -34,12 +34,6 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
   },
   {
-    client: "Hatz Beer", title: "Product Ad", tag: "Ad Creative", cat: "ad",
-    desc: "Macro product ad for Hatz — Echt Badisch Gut. Clean, premium, craveable. No AI — filmed on location in studio.",
-    colors: ["#ff6420", "#c9a96e"],
-    thumb: "assets/thumbs/hatz_beer.png", video: "assets/videos/golden_brew_final.mp4"
-  },
-  {
     client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
     desc: "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#c9a96e", "#0a0a0a"],
@@ -133,7 +127,21 @@ const ALL_PROJECTS = [
     desc: "Coming soon — luxury product reel for a Swarovski jewellery line.",
     colors: ["#ff2d78", "#c9a96e"]
   },
+  {
+    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad",
+    desc: "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.",
+    colors: ["#4687ff", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/637af620-778f-4a9b-83b6-7941d535a772/thumbnail_393fe05d.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/637af620-778f-4a9b-83b6-7941d535a772?token=613086822587d8be60269286e3b8c68f91c1e8aa67596a8ee013e0280f9026f3&expires=1787759279&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
   // === SOCIAL / REELS ===
+  {
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social",
+    desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
   {
     client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social", feature: 3,
     desc: "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.",
@@ -1444,7 +1452,7 @@ function AboutPage() {
         <div className="fwf-container">
           <div className="fwf-label" style={{ textAlign: "center", marginBottom: 36 }}>— Partial client list —</div>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "32px 56px" }}>
-            {["Porsche", "Thomas Sabo", "Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwork", "Hatz Beer", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
+            {["Porsche", "Thomas Sabo", "Radisson Blu", "Palazzo Stuttgart", "Schmolke Carbon", "App Liqes", "Zenroots", "Swarovski", "Alienwork", "Pane Vino", "EasyFoil", "CW Architectural Art"].map((c, i) => (
               <span key={i} className="fwf-display" style={{ fontSize: 24, color: "rgba(255,255,255,0.55)", letterSpacing: "-0.01em" }}>{c}</span>
             ))}
           </div>
