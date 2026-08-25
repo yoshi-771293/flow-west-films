@@ -194,9 +194,9 @@ window.FWF_TRANSLATIONS = {
       "Der WGV-Spot im Hochkantformat — neu geschnitten und hochskaliert für Reels und Stories, wo das Missgeschick schon in den ersten zwei Sekunden sitzen muss.",
 
     "reframed for the feed.": "neu geschnitten fürs Feed.",
-    "A vertical cut of our WGV Versicherung campaign — built and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.":
-      "Ein Hochkant-Schnitt unserer WGV-Kampagne — gebaut und hochskaliert für Reels und Stories, wo das Missgeschick schon in den ersten zwei Sekunden treffen muss.",
-    "See the full campaign": "Zur ganzen Kampagne",
+    "Three cuts,": "Drei Schnitte,",
+    "Vertical work from WGV, Voyah, and Streetside Classics — built for Reels, Stories, and Shorts, where the hook has to land in the first two seconds.":
+      "Vertikale Arbeiten von WGV, Voyah und Streetside Classics — gebaut für Reels, Stories und Shorts, wo der Hook schon in den ersten zwei Sekunden sitzen muss.",
     "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.":
       "Ad Creative für Schmolke Carbon — ein Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt. Premium-Engineering, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.",
     "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.":

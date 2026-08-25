@@ -284,6 +284,27 @@ function OpeningFilm() {
 // ============================================
 // HOME
 // ============================================
+const VERTICAL_SPOTLIGHT = [
+  {
+    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", local: true,
+    desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
+    thumb: "/assets/thumbs/wgv_vertical.jpg",
+    video: "/assets/videos/wgv_vertical_haftpflicht.mp4"
+  },
+  {
+    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", local: false,
+    desc: "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/637af620-778f-4a9b-83b6-7941d535a772/thumbnail_393fe05d.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/637af620-778f-4a9b-83b6-7941d535a772?token=613086822587d8be60269286e3b8c68f91c1e8aa67596a8ee013e0280f9026f3&expires=1787759279&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", local: false,
+    desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  }
+];
+
 function HomePage() {
   const [activeVideo, setActiveVideo] = useState_h(null);
 
@@ -532,41 +553,52 @@ function HomePage() {
         )
       ),
 
-      /* WGV VERTICAL SPOTLIGHT */
+      /* VERTICAL SPOTLIGHT — WGV / Voyah / Streetside Classics */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },
         React.createElement("div", { style: { position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 45% 55% at 85% 50%, rgba(45,108,223,0.14), transparent 60%)" } }),
-        React.createElement("div", { className: "fwf-container", style: { position: "relative", display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 56, alignItems: "center" }, id: "fwf-wgv-vertical" },
-          React.createElement("div", null,
-            React.createElement("div", { className: "fwf-section-label" },
-              React.createElement("span", { className: "fwf-section-label-line" }),
-              React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
-            ),
-            React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 20px 0", lineHeight: 1.05, textWrap: "balance" } },
-              "WGV Versicherung, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the feed.")
-            ),
-            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 16.5, lineHeight: 1.6, maxWidth: 440, margin: "0 0 28px 0" } },
-              "A vertical cut of our WGV Versicherung campaign — built and upscaled for Reels and Stories, where the mishap has to land in the first two seconds."
+        React.createElement("div", { className: "fwf-container", style: { position: "relative" }, id: "fwf-wgv-vertical" },
+          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 44, flexWrap: "wrap", gap: 24 } },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
+                "Three cuts, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the feed.")
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: 0 } },
+                "Vertical work from WGV, Voyah, and Streetside Classics — built for Reels, Stories, and Shorts, where the hook has to land in the first two seconds."
+              )
             ),
             React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
-              "See the full campaign ", React.createElement(Icons.ArrowRight, { size: 11 })
+              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
             )
           ),
-          React.createElement("div", {
-            className: "fwf-card fwf-card-pink",
-            style: { position: "relative", aspectRatio: "9/16", maxWidth: 320, margin: "0 auto", overflow: "hidden", cursor: "pointer", padding: 0 },
-            onClick: function() { setActiveVideo("/assets/videos/wgv_vertical_haftpflicht.mp4"); }
-          },
-            React.createElement("video", {
-              src: "/assets/videos/wgv_vertical_haftpflicht.mp4",
-              poster: "/assets/thumbs/wgv_vertical.jpg",
-              autoPlay: true, muted: true, loop: true, playsInline: true, preload: "metadata",
-              style: { width: "100%", height: "100%", objectFit: "cover", display: "block" }
-            }),
-            React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.65))" } }),
-            React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 20 })),
-            React.createElement("div", { style: { position: "absolute", top: 14, left: 14 } },
-              React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, "Ad Creative")
-            )
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }, className: "fwf-vertical-grid" },
+            VERTICAL_SPOTLIGHT.map(function(v, i) {
+              return React.createElement("div", { key: i },
+                React.createElement("div", {
+                  className: "fwf-card fwf-card-pink",
+                  style: { position: "relative", aspectRatio: "9/16", overflow: "hidden", cursor: "pointer", padding: 0, marginBottom: 14 },
+                  onClick: function() { setActiveVideo(v.video); }
+                },
+                  v.local
+                    ? React.createElement("video", {
+                        src: v.video, poster: v.thumb,
+                        autoPlay: true, muted: true, loop: true, playsInline: true, preload: "metadata",
+                        style: { width: "100%", height: "100%", objectFit: "cover", display: "block" }
+                      })
+                    : React.createElement("img", { src: v.thumb, alt: v.title, style: { width: "100%", height: "100%", objectFit: "cover", display: "block" } }),
+                  React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.65))" } }),
+                  React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 18 })),
+                  React.createElement("div", { style: { position: "absolute", top: 14, left: 14 } },
+                    React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, v.tag)
+                  )
+                ),
+                React.createElement("div", { className: "fwf-label", style: { marginBottom: 6 } }, v.client),
+                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 13.5, lineHeight: 1.5, margin: 0 } }, v.desc)
+              );
+            })
           )
         )
       ),
