@@ -7,11 +7,18 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 5,
+    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
     colors: ["#2d6cdf", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
+    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", feature: 6,
+    desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
+    colors: ["#2d6cdf", "#0a0a0a"],
+    thumb: "/assets/thumbs/wgv_vertical.jpg",
+    video: "/assets/videos/wgv_vertical_haftpflicht.mp4"
   },
   {
     client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 5,
@@ -128,7 +135,7 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#c9a96e"]
   },
   {
-    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad",
+    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad", feature: 5,
     desc: "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.",
     colors: ["#4687ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/637af620-778f-4a9b-83b6-7941d535a772/thumbnail_393fe05d.jpg",
@@ -136,7 +143,7 @@ const ALL_PROJECTS = [
   },
   // === SOCIAL / REELS ===
   {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social",
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social", feature: 5,
     desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",

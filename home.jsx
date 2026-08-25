@@ -479,21 +479,21 @@ function HomePage() {
 
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
             React.createElement(ProjectThumb, {
-              client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative",
-              desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
-              colors: ["#2d6cdf", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+              client: "Nike", title: "Ad Creative", tag: "Ad Creative",
+              desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
+              colors: ["#ff6420", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
               featured: true
             }),
             React.createElement(ProjectThumb, {
-              client: "Alienwork", title: "Skeleton Automatic Watch", tag: "Product",
-              desc: "Full-length product film for the IK Automatic Watch reveal.",
-              colors: ["#00ff88", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/9dc085af-2c2d-4f8c-acfd-d8ae5863c109/thumbnail_14fae6d7.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+              client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative",
+              desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
+              colors: ["#c8102e", "#0a0a0a"],
+              thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
+              video: "https://youtu.be/nYRfEo-6-Bk",
+              onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); }
             }),
             React.createElement(ProjectThumb, {
               client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative",
@@ -528,6 +528,45 @@ function HomePage() {
           ),
           React.createElement("div", { className: "fwf-offers-grid" },
             OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
+          )
+        )
+      ),
+
+      /* WGV VERTICAL SPOTLIGHT */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },
+        React.createElement("div", { style: { position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 45% 55% at 85% 50%, rgba(45,108,223,0.14), transparent 60%)" } }),
+        React.createElement("div", { className: "fwf-container", style: { position: "relative", display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 56, alignItems: "center" }, id: "fwf-wgv-vertical" },
+          React.createElement("div", null,
+            React.createElement("div", { className: "fwf-section-label" },
+              React.createElement("span", { className: "fwf-section-label-line" }),
+              React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
+            ),
+            React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 20px 0", lineHeight: 1.05, textWrap: "balance" } },
+              "WGV Versicherung, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the feed.")
+            ),
+            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 16.5, lineHeight: 1.6, maxWidth: 440, margin: "0 0 28px 0" } },
+              "A vertical cut of our WGV Versicherung campaign — built and upscaled for Reels and Stories, where the mishap has to land in the first two seconds."
+            ),
+            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
+              "See the full campaign ", React.createElement(Icons.ArrowRight, { size: 11 })
+            )
+          ),
+          React.createElement("div", {
+            className: "fwf-card fwf-card-pink",
+            style: { position: "relative", aspectRatio: "9/16", maxWidth: 320, margin: "0 auto", overflow: "hidden", cursor: "pointer", padding: 0 },
+            onClick: function() { setActiveVideo("/assets/videos/wgv_vertical_haftpflicht.mp4"); }
+          },
+            React.createElement("video", {
+              src: "/assets/videos/wgv_vertical_haftpflicht.mp4",
+              poster: "/assets/thumbs/wgv_vertical.jpg",
+              autoPlay: true, muted: true, loop: true, playsInline: true, preload: "metadata",
+              style: { width: "100%", height: "100%", objectFit: "cover", display: "block" }
+            }),
+            React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.65))" } }),
+            React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 20 })),
+            React.createElement("div", { style: { position: "absolute", top: 14, left: 14 } },
+              React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, "Ad Creative")
+            )
           )
         )
       ),
