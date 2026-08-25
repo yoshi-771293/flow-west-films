@@ -286,10 +286,10 @@ function OpeningFilm() {
 // ============================================
 const VERTICAL_SPOTLIGHT = [
   {
-    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", local: true,
+    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", local: false,
     desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
-    thumb: "/assets/thumbs/wgv_vertical.jpg",
-    video: "/assets/videos/wgv_vertical_haftpflicht.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/a501bbea-1b3a-4970-a43f-79198f3b071e/thumbnail_0facfef9.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/a501bbea-1b3a-4970-a43f-79198f3b071e?token=df9376f11b7e09bbe230c51ee2c429278e3a0bd1e5c908837a33c35bbfa5f420&expires=1787783170&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", local: false,
@@ -477,7 +477,7 @@ function HomePage() {
         )
       ),
 
-      /* PORTFOLIO PREVIEW */
+      /* PORTFOLIO PREVIEW — horizontal + vertical work side by side */
       React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
         React.createElement("div", { className: "fwf-container" },
           React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
@@ -498,32 +498,68 @@ function HomePage() {
             )
           ),
 
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
-            React.createElement(ProjectThumb, {
-              client: "Nike", title: "Ad Creative", tag: "Ad Creative",
-              desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
-              colors: ["#ff6420", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
-              featured: true
-            }),
-            React.createElement(ProjectThumb, {
-              client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative",
-              desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
-              colors: ["#c8102e", "#0a0a0a"],
-              thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
-              video: "https://youtu.be/nYRfEo-6-Bk",
-              onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); }
-            }),
-            React.createElement(ProjectThumb, {
-              client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative",
-              desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
-              colors: ["#4687ff", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/6f0f6301-6d12-42d9-a724-f29ec39a5f75/thumbnail.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
-            })
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }, className: "fwf-work-columns" },
+            React.createElement("div", null,
+              React.createElement("div", { style: { fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 20, paddingBottom: 14, borderBottom: "1px solid var(--fwf-hairline)" } }, "Horizontal cuts"),
+              React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 24 } },
+                React.createElement(ProjectThumb, {
+                  client: "Nike", title: "Ad Creative", tag: "Ad Creative",
+                  desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
+                  colors: ["#ff6420", "#0a0a0a"],
+                  thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
+                  video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+                  onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+                  featured: true
+                }),
+                React.createElement(ProjectThumb, {
+                  client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative",
+                  desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
+                  colors: ["#c8102e", "#0a0a0a"],
+                  thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
+                  video: "https://youtu.be/nYRfEo-6-Bk",
+                  onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); },
+                  featured: true
+                }),
+                React.createElement(ProjectThumb, {
+                  client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative",
+                  desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
+                  colors: ["#4687ff", "#0a0a0a"],
+                  thumb: "https://vz-fd89cb27-622.b-cdn.net/6f0f6301-6d12-42d9-a724-f29ec39a5f75/thumbnail.jpg",
+                  video: "https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+                  onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+                  featured: true
+                })
+              )
+            ),
+            React.createElement("div", null,
+              React.createElement("div", { style: { fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-mute)", marginBottom: 20, paddingBottom: 14, borderBottom: "1px solid var(--fwf-hairline)" } }, "Vertical cuts"),
+              React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 24 } },
+                VERTICAL_SPOTLIGHT.map(function(v, i) {
+                  return React.createElement("div", { key: i, style: { display: "flex", gap: 16, alignItems: "flex-start" } },
+                    React.createElement("div", {
+                      className: "fwf-card fwf-card-pink",
+                      style: { position: "relative", width: 110, aspectRatio: "9/16", flex: "0 0 auto", overflow: "hidden", cursor: "pointer", padding: 0 },
+                      onClick: function() { setActiveVideo(v.video); }
+                    },
+                      v.local
+                        ? React.createElement("video", {
+                            src: v.video, poster: v.thumb,
+                            autoPlay: true, muted: true, loop: true, playsInline: true, preload: "metadata",
+                            style: { width: "100%", height: "100%", objectFit: "cover", display: "block" }
+                          })
+                        : React.createElement("img", { src: v.thumb, alt: v.title, style: { width: "100%", height: "100%", objectFit: "cover", display: "block" } }),
+                      React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.65))" } }),
+                      React.createElement("div", { className: "fwf-play", style: { width: 32, height: 32 } }, React.createElement(Icons.Play, { size: 13 }))
+                    ),
+                    React.createElement("div", { style: { paddingTop: 4 } },
+                      React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { marginBottom: 8, display: "inline-block" } }, v.tag),
+                      React.createElement("div", { className: "fwf-label", style: { margin: "8px 0 6px 0" } }, v.client),
+                      React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 13, lineHeight: 1.5, margin: 0 } }, v.desc)
+                    )
+                  );
+                })
+              )
+            )
           )
         )
       ),
@@ -549,56 +585,6 @@ function HomePage() {
           ),
           React.createElement("div", { className: "fwf-offers-grid" },
             OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
-          )
-        )
-      ),
-
-      /* VERTICAL SPOTLIGHT — WGV / Voyah / Streetside Classics */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },
-        React.createElement("div", { style: { position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 45% 55% at 85% 50%, rgba(45,108,223,0.14), transparent 60%)" } }),
-        React.createElement("div", { className: "fwf-container", style: { position: "relative" }, id: "fwf-wgv-vertical" },
-          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 44, flexWrap: "wrap", gap: 24 } },
-            React.createElement("div", null,
-              React.createElement("div", { className: "fwf-section-label" },
-                React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
-              ),
-              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
-                "Three cuts, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the feed.")
-              ),
-              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: 0 } },
-                "Vertical work from WGV, Voyah, and Streetside Classics — built for Reels, Stories, and Shorts, where the hook has to land in the first two seconds."
-              )
-            ),
-            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
-              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
-            )
-          ),
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }, className: "fwf-vertical-grid" },
-            VERTICAL_SPOTLIGHT.map(function(v, i) {
-              return React.createElement("div", { key: i },
-                React.createElement("div", {
-                  className: "fwf-card fwf-card-pink",
-                  style: { position: "relative", aspectRatio: "9/16", overflow: "hidden", cursor: "pointer", padding: 0, marginBottom: 14 },
-                  onClick: function() { setActiveVideo(v.video); }
-                },
-                  v.local
-                    ? React.createElement("video", {
-                        src: v.video, poster: v.thumb,
-                        autoPlay: true, muted: true, loop: true, playsInline: true, preload: "metadata",
-                        style: { width: "100%", height: "100%", objectFit: "cover", display: "block" }
-                      })
-                    : React.createElement("img", { src: v.thumb, alt: v.title, style: { width: "100%", height: "100%", objectFit: "cover", display: "block" } }),
-                  React.createElement("div", { style: { position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.65))" } }),
-                  React.createElement("div", { className: "fwf-play" }, React.createElement(Icons.Play, { size: 18 })),
-                  React.createElement("div", { style: { position: "absolute", top: 14, left: 14 } },
-                    React.createElement("span", { className: "fwf-badge fwf-badge-pink", style: { background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)" } }, v.tag)
-                  )
-                ),
-                React.createElement("div", { className: "fwf-label", style: { marginBottom: 6 } }, v.client),
-                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 13.5, lineHeight: 1.5, margin: 0 } }, v.desc)
-              );
-            })
           )
         )
       ),

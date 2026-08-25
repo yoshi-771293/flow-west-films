@@ -10,25 +10,25 @@ const ALL_PROJECTS = [
     client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
     colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1/thumbnail_d8e174d4.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/6c5e6dd1-cb8e-4031-ba05-e233a28bb5c1?token=dd6c824357b5106c675b3fa00ab52be2902b7100a012a6fa08b3791ef547b994&expires=1785488747&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/07202c37-ea39-47db-aa15-5fbd4d06736b/thumbnail_13524645.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/07202c37-ea39-47db-aa15-5fbd4d06736b?token=921b92253417ea018f86fd2cf371625211edfccc00d39943e67460543165520e&expires=1787783136&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", feature: 6,
+    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", feature: 2,
     desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
     colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "/assets/thumbs/wgv_vertical.jpg",
-    video: "/assets/videos/wgv_vertical_haftpflicht.mp4"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/a501bbea-1b3a-4970-a43f-79198f3b071e/thumbnail_0facfef9.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/a501bbea-1b3a-4970-a43f-79198f3b071e?token=df9376f11b7e09bbe230c51ee2c429278e3a0bd1e5c908837a33c35bbfa5f420&expires=1787783170&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 5,
+    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 2,
     desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
     colors: ["#ff6420", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 6,
+    client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 2,
     desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
     colors: ["#4687ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/6f0f6301-6d12-42d9-a724-f29ec39a5f75/thumbnail.jpg",
@@ -41,7 +41,7 @@ const ALL_PROJECTS = [
     thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
   },
   {
-    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 3,
+    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail.jpg",
@@ -76,14 +76,14 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/7b2b34e4-af62-4492-9247-5023b8f717a1?token=e87b5cce50016d83e4b64a33aaabaadb25b34bbb88d2966a9c9003d009281c9f&expires=1785494752&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad", feature: 5,
+    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad", feature: 2,
     desc: "A cinematic spec ad for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity. Powered by AI, curated by creators.",
     colors: ["#8a8f98", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/IOSRkgMz6Ss/maxresdefault.jpg",
     video: "https://www.youtube.com/watch?v=IOSRkgMz6Ss"
   },
   {
-    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", feature: 5,
+    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", feature: 2,
     desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
     colors: ["#c8102e", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
@@ -116,7 +116,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/20d7d100-50a5-46f1-818b-d2a53fab7d9f?token=7529d2fe701819da118392ca3b7ed4eec35ebd835b9c357a288e586061d0f6a8&expires=1785494607&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad", feature: 3,
+    client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad",
     desc: "Full-length product film for the IK Automatic Watch reveal.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/9dc085af-2c2d-4f8c-acfd-d8ae5863c109/thumbnail_14fae6d7.jpg",
@@ -135,7 +135,7 @@ const ALL_PROJECTS = [
     colors: ["#ff2d78", "#c9a96e"]
   },
   {
-    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad", feature: 5,
+    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad", feature: 2,
     desc: "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.",
     colors: ["#4687ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/637af620-778f-4a9b-83b6-7941d535a772/thumbnail_393fe05d.jpg",
@@ -143,14 +143,14 @@ const ALL_PROJECTS = [
   },
   // === SOCIAL / REELS ===
   {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social", feature: 5,
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social",
     desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social", feature: 3,
+    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social",
     desc: "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.",
     colors: ["#c9a96e", "#9b30ff"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/55a6ac21-1885-439f-b4a4-575eba9bca85/thumbnail.jpg",
@@ -261,7 +261,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", feature: 3,
+    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image",
     desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/91b09a39-35a9-41b3-a181-6dcfbca79e73/thumbnail_73fb59f1.jpg",
@@ -303,10 +303,26 @@ const FILTERS = [
 // ============================================
 // PROJECTS PAGE
 // ============================================
+// A project with `feature: n >= 2` gets re-inserted n-1 more times, spread evenly
+// through the list, so standout work resurfaces again as you scroll instead of
+// only ever showing once near the top.
+function withFeaturedRepeats(list) {
+  const out = list.map((p, i) => ({ p, key: p.client + "|" + p.title + "|0|" + i }));
+  list.forEach((p) => {
+    const extra = Math.max(0, (p.feature || 1) - 1);
+    for (let n = 0; n < extra; n++) {
+      const pos = Math.round(((out.length + 1) * (n + 2)) / (extra + 2));
+      out.splice(Math.min(out.length, pos), 0, { p, key: p.client + "|" + p.title + "|repeat|" + n });
+    }
+  });
+  return out;
+}
+
 function ProjectsPage() {
   const [filter, setFilter] = useStateP("all");
   const [activeVideo, setActiveVideo] = useStateP(null);
-  const visible = filter === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === filter);
+  const base = filter === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === filter);
+  const visible = withFeaturedRepeats(base);
 
   return (
     <main>
@@ -354,10 +370,10 @@ function ProjectsPage() {
       {/* Grid */}
       <section style={{ padding: "64px 0 120px" }}>
         <div className="fwf-container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="fwf-proj-grid">
-            {visible.map((p, i) => (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="fwf-proj-grid">
+            {visible.map(({ p, key }, i) => (
               <ProjectCard
-                key={p.client + p.title}
+                key={key}
                 {...p}
                 index={i}
                 onPlay={p.video ? () => setActiveVideo(p.video) : null}
