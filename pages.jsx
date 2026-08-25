@@ -97,13 +97,13 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/ba8cc671-93fd-44ae-8e80-c72cb647d2c8?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad",
+    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad", hidden: true,
     desc: "Animated brand ad for List for Less — no upfront cost, built for social performance.",
     colors: ["#00ff88", "#0a0a0a"],
     thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
   },
   {
-    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad",
+    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad", hidden: true,
     desc: "Performance hook ad with on-screen copy — built for German-language social feeds.",
     colors: ["#ff6420", "#0a0a0a"],
     thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
@@ -143,14 +143,14 @@ const ALL_PROJECTS = [
   },
   // === SOCIAL / REELS ===
   {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social",
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social", hidden: true,
     desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social",
+    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social", hidden: true,
     desc: "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.",
     colors: ["#c9a96e", "#9b30ff"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/55a6ac21-1885-439f-b4a4-575eba9bca85/thumbnail.jpg",
@@ -164,7 +164,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/58b5722f-c01a-49c3-b354-95f87ccfbbb5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social",
+    client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social", hidden: true,
     desc: "Seasonal cinematic reel for the Radisson Blu Stuttgart property.",
     colors: ["#9b30ff", "#ff2d78"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c518444d-58e6-458e-a0a1-d7b880f8848d/thumbnail_56dc7cd1.jpg",
@@ -178,7 +178,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/1dfa2361-efe0-4067-ae8c-6ccd66ea320c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social",
+    client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social", hidden: true,
     desc: "Instagram reel for French Touch — a French patisserie in the heart of Munich, where butter, flour, and a little patience do the talking.",
     colors: ["#ff2d78", "#9b30ff"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ca3fa44f-26d8-4bef-9303-496692d4c76c/thumbnail_0acb9f11.jpg",
@@ -192,14 +192,14 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Munich Bierfest", title: "Tavern Reel", tag: "Reel", cat: "social",
+    client: "Munich Bierfest", title: "Tavern Reel", tag: "Reel", cat: "social", hidden: true,
     desc: "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.",
     colors: ["#c9a96e", "#ff6420"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/9ac156cd-7c36-4057-835c-e199f03c1ecd/thumbnail_c3856f2e.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/9ac156cd-7c36-4057-835c-e199f03c1ecd?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social",
+    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social", hidden: true,
     desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
     colors: ["#c9a96e", "#ff2d78"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",
@@ -304,16 +304,22 @@ const FILTERS = [
 // PROJECTS PAGE
 // ============================================
 // A project with `feature: n >= 2` gets re-inserted n-1 more times, spread evenly
-// through the list, so standout work resurfaces again as you scroll instead of
-// only ever showing once near the top.
+// through the list (computed against the original length/positions, not a
+// growing array, so the copies land genuinely spread out — and never within 3
+// slots of the project's own first appearance, so a 2-up grid never shows the
+// same card twice in the same row or stacked directly underneath itself).
 function withFeaturedRepeats(list) {
+  const N = list.length;
+  const featured = list.map((p, i) => ({ p, i })).filter(x => (x.p.feature || 1) >= 2);
   const out = list.map((p, i) => ({ p, key: p.client + "|" + p.title + "|0|" + i }));
-  list.forEach((p) => {
-    const extra = Math.max(0, (p.feature || 1) - 1);
-    for (let n = 0; n < extra; n++) {
-      const pos = Math.round(((out.length + 1) * (n + 2)) / (extra + 2));
-      out.splice(Math.min(out.length, pos), 0, { p, key: p.client + "|" + p.title + "|repeat|" + n });
-    }
+  const inserts = featured.map((f, k) => {
+    let pos = Math.round(((k + 1) * N) / (featured.length + 1));
+    if (Math.abs(pos - f.i) < 3) pos = (f.i + Math.floor(N / 2)) % (N + 1);
+    return { p: f.p, pos: Math.max(0, Math.min(N, pos)) };
+  });
+  inserts.sort((a, b) => b.pos - a.pos);
+  inserts.forEach((ins, idx) => {
+    out.splice(ins.pos, 0, { p: ins.p, key: ins.p.client + "|" + ins.p.title + "|repeat|" + idx });
   });
   return out;
 }
@@ -321,7 +327,8 @@ function withFeaturedRepeats(list) {
 function ProjectsPage() {
   const [filter, setFilter] = useStateP("all");
   const [activeVideo, setActiveVideo] = useStateP(null);
-  const base = filter === "all" ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === filter);
+  const shown = ALL_PROJECTS.filter(p => !p.hidden);
+  const base = filter === "all" ? shown : shown.filter(p => p.cat === filter);
   const visible = withFeaturedRepeats(base);
 
   return (
@@ -359,7 +366,7 @@ function ProjectsPage() {
               >
                 {f.label}
                 <span style={{ marginLeft: 6, opacity: 0.5, fontSize: 10 }}>
-                  {f.id === "all" ? ALL_PROJECTS.length : ALL_PROJECTS.filter(p => p.cat === f.id).length}
+                  {f.id === "all" ? shown.length : shown.filter(p => p.cat === f.id).length}
                 </span>
               </button>
             ))}
