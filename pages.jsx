@@ -17,8 +17,8 @@ const ALL_PROJECTS = [
     client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", feature: 2,
     desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
     colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/a501bbea-1b3a-4970-a43f-79198f3b071e/thumbnail_0facfef9.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/a501bbea-1b3a-4970-a43f-79198f3b071e?token=df9376f11b7e09bbe230c51ee2c429278e3a0bd1e5c908837a33c35bbfa5f420&expires=1787783170&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/24acd352-29ff-4e05-917b-ff5716af6bbf/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/24acd352-29ff-4e05-917b-ff5716af6bbf?token=4cf8658e705771dd73a89ea979eb51ce1531bcb703b1105690c699a43ee4b271&expires=1787850076&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", feature: 2,
