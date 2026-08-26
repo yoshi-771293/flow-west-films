@@ -10,8 +10,8 @@ const ALL_PROJECTS = [
     client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
     colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/07202c37-ea39-47db-aa15-5fbd4d06736b/thumbnail_13524645.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/07202c37-ea39-47db-aa15-5fbd4d06736b?token=921b92253417ea018f86fd2cf371625211edfccc00d39943e67460543165520e&expires=1787783136&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/d1ef2cd0-f1f5-425e-8c7f-6c5d2bfef18f/thumbnail_a93ddee5.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/d1ef2cd0-f1f5-425e-8c7f-6c5d2bfef18f?token=c9676e9082150cfc7be006f83abb99581bebd9461e59c07c0b37c98ad78e5527&expires=1787850387&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", feature: 2,
@@ -131,8 +131,10 @@ const ALL_PROJECTS = [
   },
   {
     client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
-    desc: "Coming soon — luxury product reel for a Swarovski jewellery line.",
-    colors: ["#ff2d78", "#c9a96e"]
+    desc: "A luxury product reel for a Swarovski jewellery line — crystal, light, and detail shots built to make the pieces feel worth the price.",
+    colors: ["#ff2d78", "#c9a96e"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/376b544f-331d-4b81-a3a6-a33ff0e0e91e/thumbnail_2352b428.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/376b544f-331d-4b81-a3a6-a33ff0e0e91e?token=af4d3cd50ee72620fbba1f456aaa4fc14e78ccb99e2a80d17f8de5310cff749a&expires=1787850351&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
     client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad", feature: 2,
@@ -268,6 +270,13 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/91b09a39-35a9-41b3-a181-6dcfbca79e73?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   // === FILM ===
+  {
+    client: "Flow West Films", title: "The Lie Detector", tag: "Short Film", cat: "film",
+    desc: "A short film built around a single interrogation — two men, one polygraph, and a needle that decides who walks out.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/84e569a7-e590-49f3-8059-34f419507d9d/thumbnail_00a8a478.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/84e569a7-e590-49f3-8059-34f419507d9d?token=f68a92fb980a3c4a9359a693d97f929b632b914184479e9e57d610ce1b1e3217&expires=1787850430&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
   {
     client: "Whiskey & Ice", title: "Short Film", tag: "Short Film", cat: "film",
     desc: "A family's son gets kidnapped, and the family deals with the aftermath of the kidnapping.",

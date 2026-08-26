@@ -303,8 +303,11 @@ window.FWF_TRANSLATIONS = {
       "Animierter Brand-Ad für List for Less — kein Vorabkostenrisiko, direkt gemacht für Social Performance.",
     "Coming soon — macro product film for a skeleton watch reveal.":
       "Demnächst — Macro-Produktfilm für das Reveal einer Skeleton-Uhr.",
-    "Coming soon — luxury product reel for a Swarovski jewellery line.":
-      "Demnächst — Luxuriöses Produkt-Reel für eine Swarovski-Schmucklinie.",
+    "A luxury product reel for a Swarovski jewellery line — crystal, light, and detail shots built to make the pieces feel worth the price.":
+      "Ein Produkt-Reel für eine Swarovski-Schmucklinie — Kristall, Licht und Detailaufnahmen, die den Wert der Stücke spürbar machen.",
+    "The Lie Detector": "Der Lügendetektor",
+    "A short film built around a single interrogation — two men, one polygraph, and a needle that decides who walks out.":
+      "Ein Kurzfilm, der ganz auf ein Verhör setzt — zwei Männer, ein Polygraf und ein Zeiger, der entscheidet, wer den Raum verlässt.",
 
     /* ---- Pricing page ------------------------------------------------- */
     "No hidden fees · no lock-ins":

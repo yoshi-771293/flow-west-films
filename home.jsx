@@ -168,7 +168,7 @@ function LangTypewriterWord({ wordsEN, wordsDE, style, className }) {
 // embed, which 403s — and keeps a real <video> element so the scroll-trigger
 // and the sound toggle below still work.
 const INTRO_ZONE = "vz-fd89cb27-622.b-cdn.net";
-const INTRO_GUID = "24acd352-29ff-4e05-917b-ff5716af6bbf";
+const INTRO_GUID = "1d3be5d7-6082-4751-bae3-eccbb89fe876";
 
 function OpeningFilm() {
   const [muted, setMuted] = useState_h(true);
