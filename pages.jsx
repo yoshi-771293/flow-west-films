@@ -7,6 +7,13 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
+    client: "KFC", title: "Spec Ad", tag: "Spec Ad", cat: "ad", feature: 3,
+    desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken.",
+    colors: ["#e4002b", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad",
     desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
     colors: ["#2d6cdf", "#0a0a0a"],
@@ -313,22 +320,34 @@ const FILTERS = [
 // PROJECTS PAGE
 // ============================================
 // A project with `feature: n >= 2` gets re-inserted n-1 more times, spread evenly
-// through the list (computed against the original length/positions, not a
-// growing array, so the copies land genuinely spread out — and never within 3
-// slots of the project's own first appearance, so a 2-up grid never shows the
-// same card twice in the same row or stacked directly underneath itself).
+// through the list — each insert lands at least 3 slots from every other copy of
+// that SAME project (its original spot and any of its other copies), so a 2-up
+// grid never shows the same card twice in one row or stacked directly underneath
+// itself, no matter how many times it's featured.
 function withFeaturedRepeats(list) {
-  const N = list.length;
-  const featured = list.map((p, i) => ({ p, i })).filter(x => (x.p.feature || 1) >= 2);
   const out = list.map((p, i) => ({ p, key: p.client + "|" + p.title + "|0|" + i }));
-  const inserts = featured.map((f, k) => {
-    let pos = Math.round(((k + 1) * N) / (featured.length + 1));
-    if (Math.abs(pos - f.i) < 3) pos = (f.i + Math.floor(N / 2)) % (N + 1);
-    return { p: f.p, pos: Math.max(0, Math.min(N, pos)) };
+  const inserts = [];
+  list.forEach((p) => {
+    const extra = Math.max(0, (p.feature || 1) - 1);
+    for (let n = 0; n < extra; n++) inserts.push({ p, tag: n });
   });
-  inserts.sort((a, b) => b.pos - a.pos);
-  inserts.forEach((ins, idx) => {
-    out.splice(ins.pos, 0, { p: ins.p, key: ins.p.client + "|" + ins.p.title + "|repeat|" + idx });
+  inserts.forEach((ins, k) => {
+    const target = Math.max(0, Math.min(out.length, Math.round(((k + 1) * out.length) / (inserts.length + 1))));
+    const isSafe = (pos) => {
+      for (let d = -2; d <= 2; d++) {
+        const j = pos + d;
+        if (j >= 0 && j < out.length && out[j].p === ins.p) return false;
+      }
+      return true;
+    };
+    let pos = target;
+    if (!isSafe(pos)) {
+      for (let r = 1; r <= out.length; r++) {
+        if (target + r <= out.length && isSafe(target + r)) { pos = target + r; break; }
+        if (target - r >= 0 && isSafe(target - r)) { pos = target - r; break; }
+      }
+    }
+    out.splice(pos, 0, { p: ins.p, key: ins.p.client + "|" + ins.p.title + "|repeat|" + ins.tag });
   });
   return out;
 }

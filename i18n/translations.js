@@ -211,6 +211,8 @@ window.FWF_TRANSLATIONS = {
       "Ein Spec Commercial für Nord VPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis Nord VPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
+    "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken.":
+      "Ein cinematischer Spec-Ad für KFC — ein Revolverheld betritt eine staubige Westernstadt zum Duell: die schnellste Hand im Wilden Westen gegen das schnellste Brathähnchen der Welt.",
     "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.":
       "Kompakt geschnitten fürs Social-Feed-Tempo: der kurze Produktspot zum Reveal der IK Automatic Watch.",
     "Full-length product film for the IK Automatic Watch reveal.":
