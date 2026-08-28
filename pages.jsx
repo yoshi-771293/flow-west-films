@@ -97,6 +97,13 @@ const ALL_PROJECTS = [
     video: "https://youtu.be/nYRfEo-6-Bk"
   },
   {
+    client: "Panthera", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad",
+    desc: "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.",
+    colors: ["#111318", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/7c8bd9dd-aee2-4403-a564-24a9c9cb1597/thumbnail_4f036e23.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/7c8bd9dd-aee2-4403-a564-24a9c9cb1597?token=ae024d2b90742b4c25fcd33488d82cf705e0306d9d516a86b5761a06b1ba6495&expires=1788011506&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Eibl GmbH", title: "Introduction: Gloria", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#00ff88", "#0a0a0a"],

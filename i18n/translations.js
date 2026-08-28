@@ -205,6 +205,8 @@ window.FWF_TRANSLATIONS = {
       "Ein cinematischer Spec Ad für Schmolke Carbon — der Moment, in dem Physik auf die Alpen trifft. Ultraleichtes Carbon, keine Kompromisse, kein Motor — nur Asphalt und reine Geschwindigkeit. Powered by AI, kuratiert von Kreativen.",
     "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.":
       "Ein cinematischer Spec Ad für Wilson — voller Einsatz beim Aufschlag, Kraft und Präzision des Schlägers in einem Bild eingefangen. Powered by AI, kuratiert von Kreativen.",
+    "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.":
+      "Ein cinematischer Spec Ad für Panthera — die Kamera bleibt nah am Cockpit, während die Zahlen in den roten Bereich klettern: pure Performance in einer einzigen Einstellung. Powered by AI, kuratiert von Kreativen.",
     "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.":
       "Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre? Die Antwort ist einfach — das Vertrauen in sich selbst und den Glauben daran, dass man gewinnen könnte.",
     "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.":
