@@ -500,12 +500,12 @@ function HomePage() {
 
           React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
             React.createElement(ProjectThumb, {
-              client: "Nike", title: "Ad Creative", tag: "Ad Creative",
-              desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
-              colors: ["#ff6420", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+              client: "Porsche", title: "For the Chosen", tag: "Spec Ad",
+              desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
+              colors: ["#d5001c", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_0aa70dbc.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
               featured: true
             }),
             React.createElement(ProjectThumb, {

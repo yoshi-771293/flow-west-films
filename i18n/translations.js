@@ -207,6 +207,8 @@ window.FWF_TRANSLATIONS = {
       "Ein cinematischer Spec Ad für Wilson — voller Einsatz beim Aufschlag, Kraft und Präzision des Schlägers in einem Bild eingefangen. Powered by AI, kuratiert von Kreativen.",
     "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.":
       "Ein cinematischer Spec Ad für Panthera — die Kamera bleibt nah am Cockpit, während die Zahlen in den roten Bereich klettern: pure Performance in einer einzigen Einstellung. Powered by AI, kuratiert von Kreativen.",
+    "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.":
+      "Ein cinematischer Spec Ad für Porsche — eine Frau bricht das Siegel einer geheimnisvollen Einladung und gibt ihre Sammlung für den einen Wagen auf, den sie sich über Jahre verdient hat. Es geht um Exklusivität, die man nicht ankündigt — man weiß sie einfach.",
     "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.":
       "Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre? Die Antwort ist einfach — das Vertrauen in sich selbst und den Glauben daran, dass man gewinnen könnte.",
     "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.":
@@ -307,8 +309,8 @@ window.FWF_TRANSLATIONS = {
       "Animierter Brand-Ad für List for Less — kein Vorabkostenrisiko, direkt gemacht für Social Performance.",
     "Coming soon — macro product film for a skeleton watch reveal.":
       "Demnächst — Macro-Produktfilm für das Reveal einer Skeleton-Uhr.",
-    "A luxury product reel for a Swarovski jewellery line — crystal, light, and detail shots built to make the pieces feel worth the price.":
-      "Ein Produkt-Reel für eine Swarovski-Schmucklinie — Kristall, Licht und Detailaufnahmen, die den Wert der Stücke spürbar machen.",
+    "A cinematic spec ad for Swarovski — a slow descent down a marble staircase in a gown, a necklace catching every light in the room, and a voiceover that refuses to soften itself. Luxury shot as confidence rather than seduction.":
+      "Ein cinematischer Spec Ad für Swarovski — eine Frau schreitet im Abendkleid die Marmortreppe hinab, das Collier fängt jedes Licht im Raum ein, die Stimme aus dem Off bleibt kompromisslos. Luxus als Ausdruck von Selbstbewusstsein, nicht von Verführung.",
     "The Lie Detector": "Der Lügendetektor",
     "A short film built around a single interrogation — two men, one polygraph, and a needle that decides who walks out.":
       "Ein Kurzfilm, der ganz auf ein Verhör setzt — zwei Männer, ein Polygraf und ein Zeiger, der entscheidet, wer den Raum verlässt.",

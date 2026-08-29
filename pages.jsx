@@ -104,6 +104,13 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/7c8bd9dd-aee2-4403-a564-24a9c9cb1597?token=ae024d2b90742b4c25fcd33488d82cf705e0306d9d516a86b5761a06b1ba6495&expires=1788011506&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
+    client: "Porsche", title: "For the Chosen", tag: "Spec Ad", cat: "ad", feature: 3,
+    desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
+    colors: ["#d5001c", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_0aa70dbc.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
+  {
     client: "Eibl GmbH", title: "Introduction: Gloria", tag: "Ad Creative", cat: "ad",
     desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
     colors: ["#00ff88", "#0a0a0a"],
@@ -144,8 +151,8 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/0ec6ff9f-c9e2-4415-b80e-b1bf6ed973a8?token=854c2caf8a78886201be846141911c2f25f7f68fba7948cbfb075befe312f297&expires=1785495352&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Swarovski", title: "Product Reel", tag: "Product", cat: "ad",
-    desc: "A luxury product reel for a Swarovski jewellery line — crystal, light, and detail shots built to make the pieces feel worth the price.",
+    client: "Swarovski", title: "Never Apologize", tag: "Spec Ad", cat: "ad",
+    desc: "A cinematic spec ad for Swarovski — a slow descent down a marble staircase in a gown, a necklace catching every light in the room, and a voiceover that refuses to soften itself. Luxury shot as confidence rather than seduction.",
     colors: ["#ff2d78", "#c9a96e"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/376b544f-331d-4b81-a3a6-a33ff0e0e91e/thumbnail_2352b428.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/376b544f-331d-4b81-a3a6-a33ff0e0e91e?token=af4d3cd50ee72620fbba1f456aaa4fc14e78ccb99e2a80d17f8de5310cff749a&expires=1787850351&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
