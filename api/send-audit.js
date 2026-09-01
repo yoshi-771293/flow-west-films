@@ -262,8 +262,12 @@ module.exports = async function handler(req, res) {
   // ── 2. Notify the studio (best-effort) ──────────────────────────────────────
   // The lead's own email has already sent by this point, so a failure here is
   // logged and swallowed — a broken notification must never cost someone their
-  // audit. Recipient is overridable via env so it can move without a deploy.
-  const notifyTo = process.env.AUDIT_NOTIFY_TO || "kotullaflorian@gmail.com";
+  // audit. Recipients are overridable via env (comma-separated) so they can
+  // change without a deploy. Sales needs this too — it's what preps the second
+  // call — so customer.service@flowestfilms.de gets it alongside Florian.
+  const notifyTo = process.env.AUDIT_NOTIFY_TO
+    ? process.env.AUDIT_NOTIFY_TO.split(",").map((s) => s.trim()).filter(Boolean)
+    : ["kotullaflorian@gmail.com", "customer.service@flowestfilms.de"];
   try {
     const sections = Array.isArray(audit.sections) ? audit.sections : [];
     const gaps = sections.find((s) => s && s.title === "Biggest gaps");
