@@ -271,6 +271,8 @@ module.exports = async function handler(req, res) {
   try {
     const sections = Array.isArray(audit.sections) ? audit.sections : [];
     const gaps = sections.find((s) => s && s.title === "Biggest gaps");
+    const overall = sections.find((s) => s && s.title === "Overall Score");
+    const rec = audit.recommendation && audit.recommendation.headline ? audit.recommendation : null;
     const dims = Array.isArray(audit.dimensions) ? audit.dimensions : [];
     const MONO = "'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace";
     const SERIF = "'Cormorant Garamond',Georgia,'Times New Roman',serif";
@@ -350,6 +352,21 @@ module.exports = async function handler(req, res) {
           ${gaps ? `<tr><td style="padding:22px 32px 0;">
             <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#FF2D78;margin:0 0 10px 0;">Biggest gaps</p>
             <p style="font-family:${SANS};font-size:14px;line-height:1.7;color:#cfcfcf;margin:0;white-space:pre-wrap;">${esc(gaps.body)}</p>
+          </td></tr>` : ""}
+
+          ${overall ? `<tr><td style="padding:22px 32px 0;">
+            <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 10px 0;">Summary</p>
+            <p style="font-family:${SANS};font-size:14px;line-height:1.7;color:#cfcfcf;margin:0;">${esc(overall.body)}</p>
+          </td></tr>` : ""}
+
+          ${rec ? `<tr><td style="padding:22px 32px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#121212;border:1px solid #242424;border-radius:10px;">
+              <tr><td style="padding:18px 22px;">
+                <p style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#5A5A5A;margin:0 0 8px 0;">What we'd recommend</p>
+                <p style="font-family:${SERIF};font-size:22px;line-height:1.2;color:#FFFFFF;margin:0 0 8px 0;">${esc(rec.headline)}</p>
+                ${rec.body ? `<p style="font-family:${SANS};font-size:14px;line-height:1.65;color:#cfcfcf;margin:0;">${esc(rec.body)}</p>` : ""}
+              </td></tr>
+            </table>
           </td></tr>` : ""}
 
           <tr><td style="padding:26px 32px 30px;">

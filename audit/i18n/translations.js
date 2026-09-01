@@ -339,9 +339,9 @@ window.FWF_TRANSLATIONS = {
     "Book a Call — let's look at the systems side →":
       "Call Buchen — schauen wir uns die Systemseite an →",
 
-    "You're in rare shape.": "Sie sind in seltener Verfassung.",
-    "Most brands that take this audit have at least one glaring gap. You don't. Your fundamentals are strong across the board — which means the conversation isn't about fixing something, it's about what's next. That's exactly the kind of brand we like working with long-term. If you're open to it, let's talk about where you're trying to go and whether we can help you get there faster.":
-      "Die meisten Marken, die dieses Audit machen, haben mindestens eine offensichtliche Lücke. Sie nicht. Ihre Grundlagen sind auf ganzer Linie stark — das heißt, im Gespräch geht es nicht darum, etwas zu reparieren, sondern darum, was als Nächstes kommt. Genau mit solchen Marken arbeiten wir gern langfristig. Wenn Sie offen dafür sind, sprechen wir darüber, wohin Sie wollen — und ob wir Sie schneller dorthin bringen können.",
+    "You're in rare shape. Let's keep it that way.": "Sie sind in seltener Verfassung. Das soll so bleiben.",
+    "Most brands that take this audit have at least one glaring gap. You don't. Your fundamentals are strong across the board — which means the conversation isn't about fixing something, it's about compounding what's already working. A Growth Retainer keeps creative and paid running as one system, so the advantage you've built doesn't erode as you scale. That's exactly the kind of brand we like working with long-term.":
+      "Die meisten Marken, die diesen Audit machen, haben mindestens eine echte Schwachstelle. Bei Ihnen ist das nicht so — Ihre Basis stimmt rundum. Die Frage ist also nicht, was Sie reparieren müssen, sondern wie Sie das, was schon funktioniert, ausbauen. Ein Growth Retainer hält Creative und Paid als ein System zusammen, damit Ihr Vorsprung beim Skalieren nicht wieder verloren geht. Genau mit solchen Marken arbeiten wir am liebsten langfristig zusammen.",
     "Book a Call — let's talk about what's next →":
       "Call Buchen — sprechen wir über die nächsten Schritte →"
   }
