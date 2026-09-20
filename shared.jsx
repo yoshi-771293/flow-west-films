@@ -781,17 +781,15 @@ function BunnyPlayer({ src, poster, style, className, muted = true, loop = false
     if (!video || !guid) return;
     const manifestUrl = `https://${BUNNY_PULL_ZONE}/${guid}/playlist.m3u8`;
     let hls;
-    // Forcing currentLevel triggers hls.js to flush/reload the buffer, which can abort
-    // a play() call issued in the same tick — so play from the video's own "canplay"
-    // event instead of right after the level switch.
     video.addEventListener("canplay", () => video.play().catch(() => {}), { once: true });
     if (window.Hls && window.Hls.isSupported()) {
-      hls = new window.Hls({ capLevelToPlayerSize: false, startLevel: -1 });
+      // Real adaptive bitrate, like YouTube: start on whatever level hls.js's bandwidth
+      // estimate picks (startLevel: -1 = auto), capped to the player's actual rendered
+      // size so it never fetches a higher resolution than can be seen, then let ABR ramp
+      // up on its own as the bandwidth estimate improves. No forced jump to max quality.
+      hls = new window.Hls({ capLevelToPlayerSize: true, startLevel: -1 });
       hls.loadSource(manifestUrl);
       hls.attachMedia(video);
-      hls.on(window.Hls.Events.MANIFEST_PARSED, (evt, data) => {
-        hls.currentLevel = data.levels.length - 1; // skip ABR ramp-up, force top quality now
-      });
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = manifestUrl;
     }

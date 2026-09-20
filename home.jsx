@@ -211,19 +211,17 @@ function OpeningFilm() {
       if (visible) video.play().catch(function() {});
     }
     GESTURES.forEach(function(evt) { document.addEventListener(evt, unlockSound, { passive: true }); });
-    // Forcing currentLevel below flushes the buffer, which can abort an
-    // in-flight play() — so play off "canplay" rather than immediately after
-    // the level switch. Also covers the case where the section is already in
-    // view at load, before the manifest has parsed.
+    // play() fires off "canplay" — also covers the case where the section is
+    // already in view at load, before the manifest has parsed.
     video.addEventListener("canplay", tryPlay);
 
     if (window.Hls && window.Hls.isSupported()) {
-      hls = new window.Hls({ capLevelToPlayerSize: false, startLevel: -1 });
+      // Real adaptive bitrate, like YouTube: start on whatever level hls.js's bandwidth
+      // estimate picks (startLevel: -1 = auto), capped to the player's actual rendered
+      // size, then let ABR ramp up on its own — no forced jump to max quality.
+      hls = new window.Hls({ capLevelToPlayerSize: true, startLevel: -1 });
       hls.loadSource(manifest);
       hls.attachMedia(video);
-      hls.on(window.Hls.Events.MANIFEST_PARSED, function(evt, data) {
-        hls.currentLevel = data.levels.length - 1; // skip ABR ramp-up, top quality now
-      });
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = manifest; // Safari plays HLS natively
     }
