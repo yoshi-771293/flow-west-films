@@ -427,20 +427,20 @@ function HomePage() {
                 d: "A campaign now in consideration for industry awards. The standard your creative gets held to is a global one, not a local one.",
               },
               {
-                i: React.createElement(Icons.Sparkles, { size: 22 }), c: "purple", t: "XPRIZE",
+                i: React.createElement(Icons.Film, { size: 22 }), c: "purple", t: "FutureVision XPRIZE",
                 d: "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.",
               },
               {
                 i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "Eibl GmbH",
-                d: "Ad creative and paid social for ImmoVersteigerung. Part of the DACH D2C work scaled from 2× to 6.2× ROAS.",
+                d: "Ad creative and paid social for ImmoVersteigerung — helping them grow across social media and performance marketing.",
               },
               {
                 i: React.createElement(Icons.TrendUp, { size: 22 }), c: "orange", t: "Schmolke Carbon",
-                d: "Premium carbon race components. Part of the same DACH D2C work scaled from 2× to 6.2× ROAS.",
+                d: "A racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.",
               },
               {
                 i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views",
-                d: "Reach earned for local brand partners by replacing typical ad formats with cinematic, story-first content.",
+                d: "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.",
               },
               /* Sixth slot intentionally empty — Flow to decide what goes here. */
             ].map((p, i) =>

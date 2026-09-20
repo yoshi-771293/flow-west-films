@@ -422,13 +422,13 @@ window.FWF_TRANSLATIONS = {
       "Eine Kampagne, die aktuell für Branchenpreise in der engeren Auswahl steht. Der Maßstab für Ihr Creative ist damit ein globaler, kein lokaler.",
     "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.":
       "Ein Film im Rennen um eine Top-10-Platzierung beim XPRIZE — Storytelling auf einem Niveau, an das sich die wenigsten Ad-Agenturen überhaupt heranwagen.",
-    "Ad creative and paid social for ImmoVersteigerung. Part of the DACH D2C work scaled from 2× to 6.2× ROAS.":
-      "Ad Creative und Paid Social für ImmoVersteigerung. Teil der DACH-D2C-Arbeit, die von 2× auf 6,2× ROAS skaliert wurde.",
-    "Premium carbon race components. Part of the same DACH D2C work scaled from 2× to 6.2× ROAS.":
-      "Hochwertige Carbon-Rennkomponenten. Teil derselben DACH-D2C-Arbeit, die von 2× auf 6,2× ROAS skaliert wurde.",
+    "Ad creative and paid social for ImmoVersteigerung — helping them grow across social media and performance marketing.":
+      "Ad Creative und Paid Social für ImmoVersteigerung — wir unterstützen sie dabei, sowohl auf Social Media als auch im Performance Marketing zu wachsen.",
+    "A racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.":
+      "Ein Rennrad-Hersteller aus Konstanz, bekannt für hochwertige Carbon-Rennkomponenten.",
     "850K organic views": "850.000 organische Views",
-    "Reach earned for local brand partners by replacing typical ad formats with cinematic, story-first content.":
-      "Reichweite für lokale Markenpartner, erzielt durch den Wechsel von typischen Ad-Formaten zu cinematischem, story-first Content.",
+    "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.":
+      "Organische Reichweite für Radisson Blu, entstanden mit Agenturpartner Viral House — story-first Content statt klassischer Ad-Formate, der von ganz allein durchgestartet ist.",
 
     /* ---- Why FWF: the system + the foundation (Home + Services) --------- */
     "How a stranger becomes": "Wie aus einem Fremden",

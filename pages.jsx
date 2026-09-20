@@ -2622,7 +2622,7 @@ function ContactPage() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
                   {[
                     {
-                      num: "4×",
+                      num: "6.2×",
                       label: "ROAS",
                       color: "var(--fwf-pink)",
                     },
