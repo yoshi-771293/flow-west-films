@@ -565,7 +565,7 @@ function WhyFwfSection() {
           Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.
         </p>
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>The system</span>
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>The Flow System</span>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
           {system.map((w, i, arr) => (
             <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" }}>

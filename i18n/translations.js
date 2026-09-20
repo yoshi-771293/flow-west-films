@@ -433,7 +433,7 @@ window.FWF_TRANSLATIONS = {
     /* ---- Why FWF: the system + the foundation (Home + Services) --------- */
     "How a stranger becomes": "Wie aus einem Fremden",
     "your customer.": "Ihr Kunde wird.",
-    "The system": "Das System",
+    "The Flow System": "Das Flow System",
     "Get Discovered with Creative": "Entdeckt werden mit Creative",
     "Your future customers meet you through a film worth stopping for — not another ad they scroll straight past.":
       "Ihre künftigen Kunden begegnen Ihnen durch einen Film, für den man anhält — nicht durch die nächste Anzeige, an der sie vorbeiscrollen.",
