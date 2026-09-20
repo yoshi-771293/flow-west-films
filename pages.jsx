@@ -1216,7 +1216,7 @@ function ProjectsLabPage() {
           <div style={{ position: "absolute", top: 92, left: 0, right: 0, padding: "0 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", pointerEvents: "none", zIndex: 5 }}>
             <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), display: "flex", alignItems: "center", gap: 9 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
-              Available · Q3 2026
+              Available · Q4 2026
             </div>
             <div style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330 }}>
               Ad Creative · Brand Films · AI Content
@@ -2569,7 +2569,7 @@ function ContactPage() {
                   display: "flex", alignItems: "center", gap: 8
                 }}>
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
-                  Available · Q3 2026
+                  Available · Q4 2026
                 </div>
                 <div style={{ position: "absolute", left: 28, bottom: 28, right: 28, display: "flex", flexDirection: "column", gap: 12 }}>
                   <div className="fwf-eyebrow" style={{ color: "var(--fwf-pink)" }}>Florian Kotulla</div>

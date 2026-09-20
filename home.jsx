@@ -323,7 +323,7 @@ function HomePage() {
 
           React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 12, padding: "11px 20px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 13.5, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.92)", marginBottom: 36 } },
             React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" } }),
-            "Studio · Stuttgart · Now booking Q3 2026"
+            "Studio · Stuttgart · Now booking Q4 2026"
           ),
 
           React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2 fwf-hero-h1", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
@@ -333,7 +333,7 @@ function HomePage() {
           ),
 
           React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
-            "Cinematic ad creative and performance marketing for e-commerce and B2C brands — built to earn the second purchase, not just the first click."
+            "Cinematic ad creative and performance marketing for e-commerce and B2C brands — engineered to earn repeat customers, not just first clicks."
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },

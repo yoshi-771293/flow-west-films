@@ -71,8 +71,8 @@ window.FWF_TRANSLATIONS = {
     "— Trusted by —": "— Kunden, die uns vertrauen —",
 
     /* ---- Home: hero --------------------------------------------------- */
-    "Studio · Stuttgart · Now booking Q3 2026":
-      "Studio · Stuttgart · Buchbar ab Q3 2026",
+    "Studio · Stuttgart · Now booking Q4 2026":
+      "Studio · Stuttgart · Buchbar ab Q4 2026",
     "We make brands": "Wir machen es unmöglich,",
     "impossible to": "Marken zu",
     "ignore.": "ignorieren.",
@@ -386,7 +386,7 @@ window.FWF_TRANSLATIONS = {
     "Take the free audit →": "Kostenloser Audit →",
 
     /* ---- Contact page ------------------------------------------------- */
-    "Available · Q3 2026": "Verfügbar · Q3 2026",
+    "Available · Q4 2026": "Verfügbar · Q4 2026",
     "Stuttgart · Available remotely across Europe":
       "Stuttgart · Remote in ganz Europa verfügbar",
     "Get in touch": "Kontakt aufnehmen",
@@ -403,8 +403,8 @@ window.FWF_TRANSLATIONS = {
     "We turn ad spend": "Aus Ihrem Werbebudget",
     "into": "werden",
     "repeat customers.": "wiederkehrende Kunden.",
-    "Cinematic ad creative and performance marketing for e-commerce and B2C brands — built to earn the second purchase, not just the first click.":
-      "Cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken — gebaut, um den zweiten Kauf zu verdienen, nicht nur den ersten Klick.",
+    "Cinematic ad creative and performance marketing for e-commerce and B2C brands — engineered to earn repeat customers, not just first clicks.":
+      "Cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken — entwickelt, um wiederkehrende Kunden zu gewinnen, nicht nur einzelne Klicks.",
     "E-commerce & B2C": "E-Commerce & B2C",
     "Built for Repeat Sales": "Gebaut für Wiederholungskäufe",
     "Your ad spend should come back as customers who buy again — not as impressions you can't bank. Production, ad creative and media buying all sit with one team, so nothing gets lost between the shoot and the spend.":
