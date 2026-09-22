@@ -409,73 +409,8 @@ function HomePage() {
         )
       ),
 
-      /* REAL PROOF — credibility (Nike, XPRIZE) standing next to performance (ROAS),
-         kept as distinct proof points rather than blended into one soft average. */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
-        React.createElement("div", { className: "fwf-container" },
-          React.createElement("div", { className: "fwf-section-label" },
-            React.createElement("span", { className: "fwf-section-label-line" }),
-            React.createElement("span", { className: "fwf-eyebrow" }, "Real proof")
-          ),
-          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
-            "You're not the ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "test case.")
-          ),
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }, className: "fwf-grid-collapse" },
-            [
-              {
-                i: React.createElement(Icons.Star, { size: 22 }), c: "pink", t: "Nike",
-                d: "A campaign now in consideration for industry awards. The standard your creative gets held to is a global one, not a local one.",
-              },
-              {
-                i: React.createElement(Icons.Film, { size: 22 }), c: "purple", t: "FutureVision XPRIZE",
-                d: "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.",
-              },
-              {
-                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "Eibl GmbH",
-                d: "Ad creative and paid social for ImmoVersteigerung — helping them grow across social media and performance marketing.",
-              },
-              {
-                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "orange", t: "Schmolke Carbon",
-                d: "A racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.",
-              },
-              {
-                i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views",
-                d: "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.",
-              },
-              /* Sixth slot intentionally empty — Flow to decide what goes here. */
-            ].map((p, i) =>
-              React.createElement("div", { key: i, className: "fwf-card fwf-card-" + p.c, style: { padding: 28 } },
-                React.createElement("div", { style: { color: "var(--fwf-" + p.c + ")", marginBottom: 18 } }, p.i),
-                React.createElement("h3", { style: { fontSize: 19, margin: "0 0 10px 0", fontWeight: 500 } }, p.t),
-                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, p.d)
-              )
-            )
-          )
-        )
-      ),
-
-      React.createElement(WhyFwfSection),
-
-      /* AUDIT CTA */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
-        React.createElement("div", { className: "fwf-container", style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 } },
-          React.createElement("h3", { className: "fwf-display", style: { color: "var(--fwf-pink)", fontSize: "clamp(22px, 2.6vw, 30px)", margin: 0, fontWeight: 500 } },
-            "Where exactly are you losing ",
-            React.createElement(LangTypewriterWord, {
-              wordsEN: ["leads?", "revenue?", "momentum?"],
-              wordsDE: ["Leads?", "Umsatz?", "Momentum?"],
-              className: "fwf-display-italic",
-              style: { color: "var(--fwf-pink)" }
-            })
-          ),
-          React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
-            "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
-          ),
-          React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
-        )
-      ),
-
-      /* PORTFOLIO PREVIEW — horizontal work */
+      /* PORTFOLIO PREVIEW — horizontal work. Placed right after the pitch, ahead of
+         the proof/system sections, so real work backs up the claim early. */
       React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
         React.createElement("div", { className: "fwf-container" },
           React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
@@ -523,6 +458,72 @@ function HomePage() {
               onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             })
           )
+        )
+      ),
+
+      /* REAL PROOF — credibility (Nike, XPRIZE) standing next to performance (ROAS),
+         kept as distinct proof points rather than blended into one soft average. */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, "Real proof")
+          ),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
+            "You're not the ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "test case.")
+          ),
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }, className: "fwf-grid-collapse" },
+            [
+              {
+                i: React.createElement(Icons.Star, { size: 22 }), c: "pink", t: "Nike",
+                d: "A campaign now in consideration for industry awards. The standard your creative gets held to is a global one, not a local one.",
+              },
+              {
+                i: React.createElement(Icons.Film, { size: 22 }), c: "purple", t: "FutureVision XPRIZE",
+                d: "A film competing for a top-10 placement in the XPRIZE competition — storytelling at a level most ad shops never attempt.",
+              },
+              {
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "green", t: "Eibl GmbH",
+                d: "Ad creative and paid social for ImmoVersteigerung — helping them grow across social media and performance marketing.",
+              },
+              {
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "orange", t: "Schmolke Carbon",
+                d: "A racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.",
+              },
+              {
+                i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views",
+                d: "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.",
+              },
+              /* Sixth slot intentionally empty — Flow to decide what goes here. */
+            ].map((p, i) =>
+              React.createElement("div", { key: i, className: "fwf-card fwf-card-" + p.c, style: { padding: 28 } },
+                React.createElement("div", { style: { color: "var(--fwf-" + p.c + ")", marginBottom: 18 } }, p.i),
+                React.createElement("h3", { style: { fontSize: 19, margin: "0 0 10px 0", fontWeight: 500 } }, p.t),
+                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, p.d)
+              )
+            )
+          )
+        )
+      ),
+
+      React.createElement(WhyFwfSection, { compact: true }),
+
+      /* AUDIT CTA */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container", style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 } },
+          React.createElement("h3", { className: "fwf-display", style: { color: "var(--fwf-pink)", fontSize: "clamp(22px, 2.6vw, 30px)", margin: 0, fontWeight: 500 } },
+            "Where exactly are you losing ",
+            React.createElement(LangTypewriterWord, {
+              wordsEN: ["leads?", "revenue?", "momentum?"],
+              wordsDE: ["Leads?", "Umsatz?", "Momentum?"],
+              className: "fwf-display-italic",
+              style: { color: "var(--fwf-pink)" }
+            })
+          ),
+          React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
+            "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
+          ),
+          React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
         )
       ),
 

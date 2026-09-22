@@ -178,6 +178,7 @@ function Nav({ route }) {
     { to: "search-ads", label: "Search Ads" },
     { to: "content", label: "Content" },
     { to: "full-service", label: "Full Service" },
+    { to: "ki-videoproduktion", label: "AI Video Production" },
   ];
 
   const links = [
@@ -536,7 +537,7 @@ function ReassureBlock({ question, answer, points, accent }) {
 // arrow-flow (replaces the old card-heavy FunnelSection). Shared between
 // Home and Pricing.
 // ============================================
-function WhyFwfSection() {
+function WhyFwfSection({ compact = false }) {
   // The three phases a stranger passes through on the way to buying.
   const system = [
     { i: <Icons.Aperture size={22} />, n: "01", t: "Get Discovered with Creative", d: "Your future customers meet you through a film worth stopping for — not another ad they scroll straight past.", c: "purple" },
@@ -562,12 +563,14 @@ function WhyFwfSection() {
           How a stranger becomes <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your customer.</em>
         </h2>
 
-        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 56px 0", maxWidth: 720 }}>
-          Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.
-        </p>
+        {!compact && (
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 56px 0", maxWidth: 720 }}>
+            Most ads shout. Ours listen first. Cinematic ad creative speaks to your customer the way a friend would — not a pitch, a story. When someone feels seen instead of sold to, they stay instead of scrolling past. That's the difference between an ad and a film: one interrupts, the other invites. For B2C brands, that invitation is what turns into demand — and demand into revenue.
+          </p>
+        )}
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>The Flow System</span>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 56 }} className="fwf-pillars">
+        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24, marginTop: compact ? 8 : 0 }}>The Flow System</span>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: compact ? 0 : 56 }} className="fwf-pillars">
           {system.map((w, i, arr) => (
             <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none", position: "relative" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
@@ -580,19 +583,23 @@ function WhyFwfSection() {
           ))}
         </div>
 
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 12 }}>The foundation</span>
-        <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 640 }}>
-          Three things hold that system up. Miss one and the funnel leaks, no matter how good the ads are.
-        </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="fwf-grid-collapse">
-          {foundation.map((w, i) => (
-            <div key={i} className={"fwf-card fwf-card-" + w.c} style={{ padding: 28 }}>
-              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 18 }}>{w.i}</div>
-              <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{w.t}</h3>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
+        {!compact && (
+          <>
+            <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 12 }}>The foundation</span>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 640 }}>
+              Three things hold that system up. Miss one and the funnel leaks, no matter how good the ads are.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="fwf-grid-collapse">
+              {foundation.map((w, i) => (
+                <div key={i} className={"fwf-card fwf-card-" + w.c} style={{ padding: 28 }}>
+                  <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 18 }}>{w.i}</div>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{w.t}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
     </section>
   );

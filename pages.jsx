@@ -2325,6 +2325,23 @@ function AiVideoPage() {
         </div>
       </section>
 
+      {/* Mid-page CTA */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 56, paddingBottom: 56 }}>
+        <div className="fwf-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
+          <h3 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: 0, lineHeight: 1.2, maxWidth: 520, textWrap: "balance" }}>
+            Like what you see? <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Let's talk about your brand.</em>
+          </h3>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
         <div className="fwf-container">
