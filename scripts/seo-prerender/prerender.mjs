@@ -12,7 +12,7 @@ const ORIGIN = "https://flowwestfilms.de";
 
 const ROUTES = [
   "home", "projects", "services", "social-media-ads", "search-ads", "content",
-  "full-service", "ai-visibility-agentur", "about", "contact", "impressum", "datenschutz",
+  "full-service", "ai-visibility-agentur", "ki-videoproduktion", "about", "contact", "impressum", "datenschutz",
 ];
 
 const CDN = {

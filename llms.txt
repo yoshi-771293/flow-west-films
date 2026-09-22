@@ -1,6 +1,6 @@
 # Flow West Films
 
-> Filmproduktion und Ad Creative aus Stuttgart. Werbefilme, Imagefilme, Social Media Ads (Meta), Search Ads und KI-Sichtbarkeit für Mittelstand, E-Commerce und Autohäuser in Deutschland, Österreich und der Schweiz. Gegründet von Florian Kotulla.
+> Filmproduktion und Ad Creative aus Stuttgart. Werbefilme, Imagefilme, KI-Videoproduktion, Social Media Ads (Meta), Search Ads und KI-Sichtbarkeit für Mittelstand, E-Commerce und Autohäuser in Deutschland, Österreich und der Schweiz. Gegründet von Florian Kotulla.
 
 Standort: Neckarstraße 240, 70190 Stuttgart. Kontakt: kotullaflorian@gmail.com, +49 1573 7918515.
 
@@ -10,6 +10,7 @@ Standort: Neckarstraße 240, 70190 Stuttgart. Kontakt: kotullaflorian@gmail.com,
 - [Search Ads](https://flowwestfilms.de/search-ads): Google & YouTube Ads
 - [Ad Creative & Content](https://flowwestfilms.de/content): monatliche Creative-Produktion
 - [Full Service](https://flowwestfilms.de/full-service): Creative und Performance aus einer Hand
+- [KI-Videoproduktion](https://flowwestfilms.de/ki-videoproduktion): cinematische AI-Werbefilme, Produktvideos und Ad Creatives, inszeniert von Filmemachern
 - [KI-Sichtbarkeit](https://flowwestfilms.de/ai-visibility-agentur): Sichtbarkeit in ChatGPT, Claude und Gemini
 
 ## Über uns

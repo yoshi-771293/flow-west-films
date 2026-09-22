@@ -42,6 +42,30 @@ const ORG = {
   ],
 };
 
+// Route-specific schema (in addition to the org graph on every page).
+const faq = (pairs) => ({ "@type": "FAQPage", mainEntity: pairs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
+const EXTRA = {
+  "ki-videoproduktion": [
+    {
+      "@type": "Service",
+      name: "KI-Videoproduktion",
+      alternateName: ["AI Video Production", "KI-Werbefilm", "AI Werbefilm"],
+      serviceType: "KI-Videoproduktion",
+      provider: { "@id": ORIGIN + "/#business" },
+      areaServed: ["Stuttgart", "Deutschland", "Österreich", "Schweiz"],
+      url: ORIGIN + "/ki-videoproduktion",
+      description: "Cinematische KI-Werbefilme, Produktfilme, hybride Produktionen und Ad Creatives — inszeniert von Filmemachern, nicht nur generiert.",
+    },
+    faq([
+      ["Was ist KI-Videoproduktion?", "Filme mit generativer KI produzieren — statt oder zusätzlich zu einem Kamerateam. Szenen, Produkte und Locations entstehen Shot für Shot und werden dann geschnitten, gegradet und vertont."],
+      ["Was kostet ein KI-Werbefilm?", "Das hängt von Länge, Anzahl der Szenen und Varianten ab. In der Regel liegt es deutlich unter einem vergleichbaren Realdreh, weil Set, Crew und Reisen wegfallen. Flow West Films erstellt nach einem 30-minütigen Call ein Festpreisangebot."],
+      ["Wie lange dauert ein KI-Werbefilm?", "Ein einzelnes KI-Ad-Creative dauert meist wenige Tage, ein vollständiger Werbefilm mit Skript, Look Development und Korrekturschleifen meist ein bis zwei Wochen."],
+      ["Kann man KI mit echtem Footage kombinieren?", "Ja. Flow West Films dreht, was echt sein muss — Menschen, Produkt, Räume — und nutzt KI für alles, was teuer, gefährlich oder unmöglich zu drehen wäre."],
+      ["Wo sitzt Flow West Films?", "In Stuttgart. KI-Produktion läuft komplett remote für Marken in ganz Deutschland, Österreich und der Schweiz."],
+    ]),
+  ],
+};
+
 fs.mkdirSync(path.join(OUT, "_pre"), { recursive: true });
 for (const f of fs.readdirSync(SNAP).filter((f) => f.endsWith(".json"))) {
   const route = f.replace(".json", "");
@@ -53,7 +77,7 @@ for (const f of fs.readdirSync(SNAP).filter((f) => f.endsWith(".json"))) {
     .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${esc(s.title)}" />`)
     .replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${esc(s.desc)}" />`)
     .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`)
-    .replace("<!-- Fonts -->", `<script type="application/ld+json">${JSON.stringify(ORG)}</script>\n\n  <!-- Fonts -->`)
+    .replace("<!-- Fonts -->", `<script type="application/ld+json">${JSON.stringify(EXTRA[route] ? { ...ORG, "@graph": [...ORG["@graph"], ...EXTRA[route]] } : ORG)}</script>\n\n  <!-- Fonts -->`)
     .replace('<div id="root"></div>', `<div id="root" data-prerendered="${route}">${s.body}</div>`);
   const dest = route === "home" ? path.join(OUT, "index.html") : path.join(OUT, "_pre", route + ".html");
   fs.writeFileSync(dest, html);

@@ -2142,6 +2142,223 @@ function AiVisibilityPage() {
 }
 
 // ============================================
+// AI VIDEO PRODUCTION PAGE (/ki-videoproduktion)
+// ============================================
+function AiVideoPage() {
+  const [activeVideo, setActiveVideo] = useStateP(null);
+  const aiWork = ALL_PROJECTS.filter((p) => !p.hidden && /\bAI\b/.test(p.tag || ""));
+
+  const included = [
+    { i: <Icons.Film size={22} />, t: "AI commercials & spec ads", d: "Cinematic 15–60 second spots for social, web and pre-roll — concept, script, generation, edit and sound from one team.", c: "pink" },
+    { i: <Icons.Sparkles size={22} />, t: "Product & brand worlds", d: "Locations and product scenes that would otherwise cost a set build or a flight — generated, lit and graded to match your brand.", c: "purple" },
+    { i: <Icons.Aperture size={22} />, t: "Hybrid productions", d: "Real footage of your team, product or location combined with AI scenes. The honest mix most brands actually need.", c: "green" },
+    { i: <Icons.Zap size={22} />, t: "Ad creative at volume", d: "Hook variations, formats and cutdowns for Meta and TikTok — ready to test in days, not weeks.", c: "orange" },
+    { i: <Icons.TrendUp size={22} />, t: "Automotive & dealerships", d: "Vehicle films and dealership spots — cars in light and locations you can't book, without moving a single car.", c: "pink" },
+    { i: <Icons.Play size={22} />, t: "Sound & voice", d: "Music, sound design and voiceover in German or English, mixed for the platform the ad runs on.", c: "purple" },
+  ];
+
+  const process = [
+    { n: "01", i: <Icons.FileText size={22} />, t: "Brief & script", d: "Every AI film starts like a real one: one clear job, one idea, a script and a shot list." },
+    { n: "02", i: <Icons.Target size={22} />, t: "Look development", d: "Style frames you approve before anything moves. No surprises in the final cut." },
+    { n: "03", i: <Icons.Film size={22} />, t: "Generate & edit", d: "Shot by shot, directed and curated — then edited, graded and scored like a live-action film." },
+    { n: "04", i: <Icons.Repeat size={22} />, t: "Deliver & test", d: "Every format your channels need, plus variants ready to test against each other." },
+  ];
+
+  const faqs = [
+    {
+      q: "What is AI video production?",
+      a: "Producing films with generative AI instead of — or alongside — a camera crew. Scenes, products and locations are generated shot by shot, then edited, graded and scored. Done well, it looks like a film. Done badly, it looks like AI.",
+    },
+    {
+      q: "Does AI video look cheap?",
+      a: "It can — most of it does. Floating cameras, plastic faces, no story. That's the problem we solve. We're filmmakers first: script, framing, pacing and sound decide whether a viewer stays, and those are still human decisions.",
+    },
+    {
+      q: "What does an AI commercial cost?",
+      a: "It depends on length, number of scenes and variants. It's typically well below a comparable live-action shoot, because there's no set, crew or travel. You get a fixed quote after a 30-minute call.",
+    },
+    {
+      q: "How long does it take?",
+      a: "A single AI ad creative usually takes days. A full commercial with script, look development and revisions usually takes one to two weeks.",
+    },
+    {
+      q: "Can you combine AI with real footage?",
+      a: "Yes, and often that's the best answer. We film what has to be real — your people, your product, your space — and use AI for everything that would be expensive, dangerous or impossible to shoot.",
+    },
+    {
+      q: "Can we use AI-generated videos in paid ads?",
+      a: "Yes. We don't imitate real people without consent, and we label AI-generated content where Meta, TikTok or YouTube require it.",
+    },
+    {
+      q: "Do you only work in Stuttgart?",
+      a: "No. We're based in Stuttgart and work with brands across Germany, Austria and Switzerland. AI production runs fully remote.",
+    },
+  ];
+
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(155,48,255,0.16), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">AI Video Production · Stuttgart</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            AI video production from Stuttgart. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Directed, not generated.</em>
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 660, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            Cinematic AI commercials, product films and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="#ai-work" className="fwf-btn fwf-btn-ghost">
+              See the AI work →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Position */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">Why us for AI video</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
+                Anyone can type a prompt. Very few can direct a film.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
+                AI tools made footage cheap. They didn't make good films cheap. Most AI ads look the same — and get scrolled past in half a second.
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                We're filmmakers first. Every AI film we make starts with a script and one clear job: stop the scroll, sell the product. AI is a tool, not a religion — we use whatever wins, and mix in real footage when the brief needs it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI work */}
+      {aiWork.length > 0 && (
+        <section id="ai-work" className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+          <div className="fwf-container">
+            <div className="fwf-section-label">
+              <span className="fwf-section-label-line" />
+              <span className="fwf-eyebrow">Selected AI work</span>
+            </div>
+            <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+              Powered by AI. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Curated by creators.</em>
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+              {aiWork.map((p, i) => (
+                <article key={i} className="fwf-card" style={{ padding: 0, overflow: "hidden", cursor: "pointer" }} onClick={() => setActiveVideo(p.video)}>
+                  <div style={{ position: "relative", aspectRatio: "16/9", background: "#111" }}>
+                    <img src={p.thumb} alt={p.client + " — AI " + p.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <span style={{ position: "absolute", left: 16, bottom: 16, color: "#fff" }}><Icons.Play size={22} /></span>
+                  </div>
+                  <div style={{ padding: 24 }}>
+                    <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--fwf-purple)" }}>{p.tag}</span>
+                    <h3 style={{ fontSize: 18, margin: "10px 0 8px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
+                    <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* What we make */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">What we make with AI</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Films that sell. <em className="fwf-display-italic">Not demos that impress.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {included.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">How it runs</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
+            Script to final cut. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Like a real film.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {process.map((p, i, arr) => (
+              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <span style={{ color: "var(--fwf-purple)" }}>{p.i}</span>
+                  <span className="fwf-mono" style={{ color: "var(--fwf-purple)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
+                </div>
+                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              <div className="fwf-section-label">
+                <span className="fwf-section-label-line" />
+                <span className="fwf-eyebrow">FAQ</span>
+              </div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
+                AI video, <em className="fwf-display-italic">answered.</em>
+              </h2>
+            </div>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>Want to see what AI can do <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>for your brand?</em></>}
+        sub="Tell us about your brand. We'll tell you what we'd do."
+      />
+      {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+    </main>
+  );
+}
+
+// ============================================
 // CONTENT PAGE
 // ============================================
 function ContentPage() {
@@ -2806,4 +3023,4 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, ContentPage, FullServicePage });
+Object.assign(window, { ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, ContentPage, FullServicePage });

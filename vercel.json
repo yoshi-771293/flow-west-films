@@ -19,6 +19,16 @@
       "source": "/about-us",
       "destination": "/about",
       "permanent": true
+    },
+    {
+      "source": "/ai-video-production",
+      "destination": "/ki-videoproduktion",
+      "permanent": true
+    },
+    {
+      "source": "/ai-videoproduktion",
+      "destination": "/ki-videoproduktion",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -57,6 +67,10 @@
     {
       "source": "/ai-visibility-agentur",
       "destination": "/_pre/ai-visibility-agentur.html"
+    },
+    {
+      "source": "/ki-videoproduktion",
+      "destination": "/_pre/ki-videoproduktion.html"
     },
     {
       "source": "/about",

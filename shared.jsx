@@ -329,6 +329,7 @@ function Footer() {
             <Link to="search-ads">Search Ads</Link>
             <Link to="content">Content</Link>
             <Link to="full-service">Full Service</Link>
+            <Link to="ki-videoproduktion">AI Video Production</Link>
             <Link to="ai-visibility-agentur">AI Visibility</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
