@@ -409,6 +409,58 @@ function HomePage() {
         )
       ),
 
+      /* PORTFOLIO PREVIEW — horizontal work. Placed right after the pitch, ahead of
+         the proof/system sections, so real work backs up the claim early. */
+      React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
+                "Three ad creatives, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "reframed for the horizontal screen.")
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
+                "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
+              )
+            ),
+            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
+              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
+            )
+          ),
+
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
+            React.createElement(ProjectThumb, {
+              client: "Porsche", title: "For the Chosen", tag: "Spec Ad",
+              desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
+              colors: ["#d5001c", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+              featured: true
+            }),
+            React.createElement(ProjectThumb, {
+              client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative",
+              desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
+              colors: ["#c8102e", "#0a0a0a"],
+              thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
+              video: "https://youtu.be/nYRfEo-6-Bk",
+              onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); }
+            }),
+            React.createElement(ProjectThumb, {
+              client: "KFC", title: "Spec Ad", tag: "AI Spec Ad",
+              desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
+              colors: ["#e4002b", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+            })
+          )
+        )
+      ),
+
       /* REAL PROOF — credibility (Nike, XPRIZE) standing next to performance (ROAS),
          kept as distinct proof points rather than blended into one soft average. */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
@@ -454,7 +506,7 @@ function HomePage() {
         )
       ),
 
-      React.createElement(WhyFwfSection),
+      React.createElement(WhyFwfSection, { compact: true }),
 
       /* AUDIT CTA */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
@@ -472,57 +524,6 @@ function HomePage() {
             "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
           ),
           React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
-        )
-      ),
-
-      /* PORTFOLIO PREVIEW — horizontal work */
-      React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
-        React.createElement("div", { className: "fwf-container" },
-          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
-            React.createElement("div", null,
-              React.createElement("div", { className: "fwf-section-label" },
-                React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
-              ),
-              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
-                "Three ad creatives, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "reframed for the horizontal screen.")
-              ),
-              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
-                "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
-              )
-            ),
-            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
-              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
-            )
-          ),
-
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
-            React.createElement(ProjectThumb, {
-              client: "Porsche", title: "For the Chosen", tag: "Spec Ad",
-              desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
-              colors: ["#d5001c", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
-              featured: true
-            }),
-            React.createElement(ProjectThumb, {
-              client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative",
-              desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
-              colors: ["#c8102e", "#0a0a0a"],
-              thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
-              video: "https://youtu.be/nYRfEo-6-Bk",
-              onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); }
-            }),
-            React.createElement(ProjectThumb, {
-              client: "KFC", title: "Spec Ad", tag: "Spec Ad",
-              desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken.",
-              colors: ["#e4002b", "#0a0a0a"],
-              thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
-              video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
-            })
-          )
         )
       ),
 

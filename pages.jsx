@@ -7,8 +7,8 @@ const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 const ALL_PROJECTS = [
   // === ADS FIRST ===
   {
-    client: "KFC", title: "Spec Ad", tag: "Spec Ad", cat: "ad", feature: 3,
-    desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken.",
+    client: "KFC", title: "Spec Ad", tag: "AI Spec Ad", cat: "ad", feature: 3,
+    desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
     colors: ["#e4002b", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -2146,7 +2146,8 @@ function AiVisibilityPage() {
 // ============================================
 function AiVideoPage() {
   const [activeVideo, setActiveVideo] = useStateP(null);
-  const aiWork = ALL_PROJECTS.filter((p) => !p.hidden && /\bAI\b/.test(p.tag || ""));
+  const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "Spec Ad"]];
+  const aiWork = AI_WORK_PICKS.map(([c, t]) => ALL_PROJECTS.find((p) => p.client === c && p.title === t)).filter(Boolean);
 
   const included = [
     { i: <Icons.Film size={22} />, t: "AI commercials & spec ads", d: "Cinematic 15–60 second spots for social, web and pre-roll — concept, script, generation, edit and sound from one team.", c: "pink" },
@@ -2320,6 +2321,23 @@ function AiVideoPage() {
                 <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mid-page CTA */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 56, paddingBottom: 56 }}>
+        <div className="fwf-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
+          <h3 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: 0, lineHeight: 1.2, maxWidth: 520, textWrap: "balance" }}>
+            Like what you see? <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Let's talk about your brand.</em>
+          </h3>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              Book a strategy call <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
+              Get your free audit →
+            </a>
           </div>
         </div>
       </section>
