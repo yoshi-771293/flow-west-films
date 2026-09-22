@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, ContentPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, ContentPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -30,7 +30,7 @@ const BODY_FONTS = ["Syne", "Outfit", "Inter"];
 // ============================================
 const ROUTE_META = {
   home: {
-    de: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium Ad Creative & cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart." },
+    de: { title: "Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films", desc: "Werbefilme, Ad Creatives & cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart, Einsatz in ganz DACH." },
     en: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium ad creative & cinematic film production for B2C brands that want to scale. Studio in Stuttgart." },
   },
   projects: {
@@ -64,6 +64,10 @@ const ROUTE_META = {
   "ai-visibility-agentur": {
     de: { title: "KI-Sichtbarkeit / AI Visibility Agentur — Flow West Films", desc: "Wir optimieren, wie ChatGPT, Claude und Gemini über Ihre Marke sprechen — Sichtbarkeit dort, wo Kaufentscheidungen zunehmend entstehen." },
     en: { title: "AI Visibility Agency — Flow West Films", desc: "We optimize how ChatGPT, Claude and Gemini talk about your brand — visibility where buying decisions increasingly start." },
+  },
+  "ki-videoproduktion": {
+    de: { title: "KI-Videoproduktion Stuttgart — AI Werbefilme | Flow West Films", desc: "KI-Videoproduktion aus Stuttgart: cinematische AI-Werbefilme, Produktvideos und Ad Creatives — inszeniert von Filmemachern, nicht nur generiert. Für Marken in ganz DACH." },
+    en: { title: "AI Video Production Stuttgart — AI Commercials | Flow West Films", desc: "AI video production from Stuttgart: cinematic AI commercials, product films and ad creatives — directed by filmmakers, not just generated. For brands across DACH." },
   },
   about: {
     de: { title: "Über uns — Flow West Films", desc: "Gegründet von Florian Kotulla in Stuttgart. Filmemacher, Creative Director und Performance-Marketing-Denker in einer Person." },
@@ -122,6 +126,7 @@ function App() {
     case "content": Page = ContentPage; break;
     case "full-service": Page = FullServicePage; break;
     case "ai-visibility-agentur": Page = AiVisibilityPage; break;
+    case "ki-videoproduktion": Page = AiVideoPage; break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
@@ -167,6 +172,7 @@ function App() {
     content: "03 Services · Content",
     "full-service": "03 Services · Full Service",
     "ai-visibility-agentur": "03 Services · AI Visibility",
+    "ki-videoproduktion": "03 Services · AI Video",
     about:       "04 About",
     contact:     "05 Contact",
     impressum:   "Legal · Impressum",

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz — Flow West Films</title>
+  <meta name="description" content="Datenschutzerklärung der Flow West Films nach DSGVO." />
+  <link rel="canonical" href="https://flowwestfilms.de/datenschutz" />
+  <link rel="icon" type="image/png" href="assets/fwf-lion.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Datenschutz — Flow West Films" />
+  <meta property="og:description" content="Datenschutzerklärung der Flow West Films nach DSGVO." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flowwestfilms.de/datenschutz" />
+  <meta property="og:image" content="https://flowwestfilms.de/assets/fwf-lockup.png" />
+  <meta property="og:locale" content="de_DE" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService","LocalBusiness"],"@id":"https://flowwestfilms.de/#business","name":"Flow West Films","url":"https://flowwestfilms.de/","logo":"https://flowwestfilms.de/assets/fwf-lockup.png","image":"https://flowwestfilms.de/assets/fwf-lockup.png","description":"Filmproduktion und Ad Creative aus Stuttgart: Werbefilme, Imagefilme, Social Media Ads und Performance Marketing für Mittelstand, E-Commerce und Autohäuser.","telephone":"+49 1573 7918515","email":"kotullaflorian@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Neckarstraße 240","postalCode":"70190","addressLocality":"Stuttgart","addressRegion":"Baden-Württemberg","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":48.7926,"longitude":9.2071},"areaServed":[{"@type":"City","name":"Stuttgart"},{"@type":"State","name":"Baden-Württemberg"},{"@type":"Country","name":"Deutschland"},{"@type":"Country","name":"Österreich"},{"@type":"Country","name":"Schweiz"}],"founder":{"@id":"https://flowwestfilms.de/#founder"},"knowsAbout":["Werbefilm","Imagefilm","Videoproduktion","Ad Creative","Meta Ads","Social Media Ads","Performance Marketing","KI-Sichtbarkeit","Autohaus Marketing"],"sameAs":["https://www.facebook.com/flowwest/","https://www.linkedin.com/in/florian-kotulla/"]},{"@type":"Person","@id":"https://flowwestfilms.de/#founder","name":"Florian Kotulla","jobTitle":"Gründer & Creative Director","worksFor":{"@id":"https://flowwestfilms.de/#business"},"sameAs":["https://www.linkedin.com/in/florian-kotulla/"]},{"@type":"WebSite","@id":"https://flowwestfilms.de/#website","url":"https://flowwestfilms.de/","name":"Flow West Films","inLanguage":"de-DE","publisher":{"@id":"https://flowwestfilms.de/#business"}}]}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=65" />
+
+  <!-- Responsive overrides -->
+  <style>
+    @media (max-width: 980px) {
+      .fwf-offers-grid { grid-template-columns: 1fr !important; }
+      .fwf-proj-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-featured-grid { grid-template-columns: 1fr !important; }
+      .fwf-grid-collapse { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .fwf-why-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; border-bottom: 1px solid var(--fwf-hairline); }
+      .fwf-why-grid > div:nth-child(odd) { border-right: 1px solid var(--fwf-hairline) !important; }
+      .fwf-pillars { grid-template-columns: 1fr 1fr !important; }
+      .fwf-form-row { grid-template-columns: 1fr !important; }
+      .fwf-contact-photo { min-height: 400px !important; }
+    }
+    @media (max-width: 640px) {
+      .fwf-proj-grid { grid-template-columns: 1fr !important; }
+      .fwf-pillars { grid-template-columns: 1fr !important; }
+      .fwf-why-grid { grid-template-columns: 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; }
+      .fwf-nav-inner { padding: 14px 20px !important; }
+      .fwf-nav-wordmark { display: none; }
+    }
+
+    /* Fix: styles.css targets #app, React mounts to #root */
+    #root { min-height: 100vh; display: flex; flex-direction: column; }
+    #root > #app { flex: 1; display: flex; flex-direction: column; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fwf-marquee-track { animation: none !important; }
+      .fwf-fade-up, .fwf-d1, .fwf-d2, .fwf-d3, .fwf-d4, .fwf-d5 { animation: none !important; opacity: 1 !important; }
+      .fwf-pulse { animation: none !important; }
+    }
+  </style>
+
+  <!-- German overlay (i18n) — anti-flash: hide app until first DE pass (EN visitors unaffected) -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem("fwf-lang");
+        if (l === null) {
+          var nl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+          l = nl.startsWith("de") ? "de" : "en";
+        }
+        if (l !== "en") {
+          document.documentElement.className += " fwf-i18n-boot";
+          setTimeout(function () { document.documentElement.classList.remove("fwf-i18n-boot"); }, 1600);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>html.fwf-i18n-boot #root { visibility: hidden; }</style>
+  <script src="i18n/translations.js?v=94"></script>
+  <script src="i18n/i18n.js?v=78"></script>
+</head>
+<body>
+  <div id="root" data-prerendered="datenschutz"><div id="app" data-screen-label="Legal · Datenschutz"><nav class="fwf-nav "><div class="fwf-nav-inner"><a href="/" class="fwf-nav-logo"><img src="assets/fwf-lion.png" alt="Flow West Films" style="height: 42px; width: auto; display: block; filter: none;"><span class="fwf-nav-wordmark">Flow West Films</span></a><div class="fwf-nav-links fwf-nav-links-center"><a href="/" class="fwf-nav-link ">Home</a><a href="/projects" class="fwf-nav-link ">Projekte</a><div class="fwf-nav-dropdown"><a href="/services" class="fwf-nav-link ">Leistungen</a></div><a href="/about" class="fwf-nav-link ">Über uns</a><a href="/contact" class="fwf-nav-link ">Kontakt</a></div><div class="fwf-nav-links"><button type="button" id="fwf-lang-toggle" class="fwf-btn fwf-btn-ghost fwf-btn-sm" aria-label="Sprache umschalten — switch language"><span class="fwf-lang-seg fwf-lang-on">DE</span><span class="fwf-lang-sep">·</span><span class="fwf-lang-seg fwf-lang-off">EN</span></button><a href="/audit/" class="fwf-btn fwf-btn-sm fwf-nav-cta-desktop" style="border-width: 1.5px; border-style: solid; border-color: rgb(168, 85, 247); background: transparent; color: rgba(255, 255, 255, 0.9); transition: box-shadow 0.2s, border-color 0.2s;"><span style="color: rgb(168, 85, 247); transition: color 0.2s;">Free</span> Audit</a><a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" class="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Call Buchen</a><button class="fwf-mobile-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></button></div></div></nav><div style="animation: 500ms cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal none running fwfFadeUp;"><main><section class="fwf-section" style="padding-top: 140px; padding-bottom: 120px;"><div class="fwf-container"><div class="fwf-eyebrow" style="margin-bottom: 16px;">Legal</div><h1 class="fwf-display" style="font-size: clamp(48px, 7vw, 84px); margin: 0px 0px 56px; line-height: 1;">Datenschutzerklärung</h1><div class="fwf-legal-body"><h2>1. Datenschutz auf einen Blick</h2><p><strong>Verantwortliche Stelle</strong><br>Florian Elias Kotulla · Flow West Films · Neckarstraße 240 · 70190 Stuttgart · <a href="mailto:kotullaflorian@gmail.com">kotullaflorian@gmail.com</a></p><p>Die Nutzung dieser Website ist ohne Angabe personenbezogener Daten möglich. Soweit Daten erhoben werden, geschieht dies nur, soweit Sie uns diese aktiv mitteilen oder es technisch erforderlich ist.</p><h2>2. Hosting</h2><p>Diese Website wird über Vercel (vercel.com) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Uhrzeit des Zugriffs) im Rahmen von Server-Log-Dateien erfasst. Dies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO — wir haben ein berechtigtes Interesse an der technisch einwandfreien Darstellung unserer Website.</p><h2>3. Kontaktaufnahme</h2><p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Nachrichteninhalt) zur Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben und gelöscht, sobald der Zweck der Speicherung entfällt.</p><p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Anfragenbearbeitung).</p><h2>4. Social Media &amp; externe Dienste</h2><p><strong>Instagram / Facebook (Meta)</strong><br>Auf dieser Website sind Links zu unseren Instagram- und Facebook-Präsenzen eingebunden. Beim Anklicken wird eine Verbindung zu den Servern von Meta Platforms Ireland Limited (4 Grand Canal Square, Dublin 2, Irland) hergestellt. Meta erhält dabei die Information, dass Sie unsere Seite besucht haben. Wir haben keinen Einfluss auf die Datenverarbeitung durch Meta. Weitere Informationen: <a href="https://instagram.com/about/legal/privacy/" target="_blank" rel="noreferrer">instagram.com/about/legal/privacy</a> und <a href="https://de-de.facebook.com/privacy/explanation" target="_blank" rel="noreferrer">facebook.com/privacy/explanation</a>.</p><p><strong>Meta Ads / Facebook Pixel</strong><br>Wir betreiben bezahlte Werbung über Meta Ads. Dazu wird der Facebook Pixel auf dieser Website eingesetzt, um Conversion-Daten zu erheben und Werbekampagnen zu optimieren. Die dabei erfassten Daten (u. a. IP-Adresse, Seitenaufrufe, User-Agent) werden an Meta übermittelt und können in den USA verarbeitet werden. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die Einwilligung ist jederzeit widerrufbar. Wir und Meta Platforms Ireland Limited sind für die Erfassung und Übermittlung dieser Daten gemeinsam verantwortlich (Art. 26 DSGVO). Die Datenübertragung in die USA stützt sich auf die Standardvertragsklauseln der EU-Kommission.</p><p><strong>YouTube</strong><br>Auf dieser Website sind YouTube-Videos eingebunden (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Wir nutzen den erweiterten Datenschutzmodus. Beim Abspielen eines Videos wird eine Verbindung zu YouTube-Servern hergestellt. Wenn Sie in Ihrem Google-Konto eingeloggt sind, kann YouTube das Abspielen Ihrem Profil zuordnen. Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noreferrer">policies.google.com/privacy</a>.</p><h2>5. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Bei Beschwerden steht Ihnen das Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p><p>Für alle Anfragen: <a href="mailto:kotullaflorian@gmail.com">kotullaflorian@gmail.com</a></p></div></div></section></main></div><footer class="fwf-footer"><div class="fwf-container"><div class="fwf-footer-grid"><div class="fwf-footer-col"><div style="margin-bottom: 22px;"><img src="assets/fwf-lockup.png" alt="Flow West Films" style="height: 64px; width: auto; display: block; filter: none;"></div><p style="color: var(--fwf-text-mute); font-size: 14px; line-height: 1.6; margin: 0px; max-width: 320px;">Cinematisches Ad Creative &amp; Performance Marketing für E-Commerce- und B2C-Marken.</p></div><div class="fwf-footer-col"><h4>Navigation</h4><a href="/">Home</a><a href="/projects">Projekte</a><a href="/services">Leistungen</a><a href="/social-media-ads">Social Media Ads</a><a href="/search-ads">Search Ads</a><a href="/content">Content</a><a href="/full-service">Full Service</a><a href="/ai-visibility-agentur">AI-Sichtbarkeit</a><a href="/about">Über uns</a><a href="/contact">Kontakt</a><a href="/audit/">Audit</a><a href="/impressum" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--fwf-hairline);">Impressum</a><a href="/datenschutz">Datenschutz</a></div><div class="fwf-footer-col"><h4>Kontakt</h4><a href="tel:+4915737918515">+49 157 37918515</a><a href="mailto:info@flowwestfilms.de">info@flowwestfilms.de</a><div style="color: var(--fwf-text-mute); font-size: 14px; padding: 5px 0px;">Stuttgart, Deutschland</div></div><div class="fwf-footer-col"><h4>Folgen</h4><a href="https://instagram.com/flowwestfilms" target="_blank" rel="noreferrer">Instagram</a><a href="https://linkedin.com/in/florian-kotulla/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://imdb.com/name/nm6945443/" target="_blank" rel="noreferrer">IMDb</a></div></div><div class="fwf-footer-bar"><div>© 2026 Flow West Films · Stuttgart, Deutschland</div><div style="display: flex; gap: 24px; align-items: center;"><a href="/impressum" style="color: var(--fwf-text-faint); font-size: 12px; font-family: var(--fwf-mono); letter-spacing: 0.12em; text-decoration: none;">Impressum</a><a href="/datenschutz" style="color: var(--fwf-text-faint); font-size: 12px; font-family: var(--fwf-mono); letter-spacing: 0.12em; text-decoration: none;">Datenschutz</a></div></div></div></footer></div></div>
+  <noscript>
+    <div style="font-family:sans-serif;text-align:center;padding:80px 24px;color:#fff;background:#0a0a0a">
+      <h1>Flow West Films</h1>
+      <p>Please enable JavaScript to view this site.</p>
+    </div>
+  </noscript>
+
+  <!-- React + Babel (CDN) — integrity hashes lock to exact file content (SRI).
+       defer on all of these (kept in dependency order, which defer preserves)
+       so the browser can paint the hero/CSS immediately instead of blocking
+       HTML parsing on ~7 sequential third-party downloads first. -->
+  <script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"></script>
+  <script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"></script>
+  <script defer src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"></script>
+
+  <!-- 3D + animation libs (used only by the Projects page; inert until that route mounts) -->
+  <script defer src="https://unpkg.com/three@0.128.0/build/three.min.js" crossorigin="anonymous" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea"></script>
+
+  <!-- HLS.js — real adaptive bitrate now (see shared.jsx/home.jsx), so this just decodes the manifest -->
+  <script defer src="https://unpkg.com/hls.js@1.5.17/dist/hls.min.js" crossorigin="anonymous" integrity="sha384-9v3HcdYrO3D+OPDTjZ40RXocgE4GtXVCd3/mCS62JsM93JXgI1afJVuwjFvsu6ni"></script>
+
+  <!-- Mobile motion layer (plain JS — executes before the Babel-compiled components) -->
+  <script defer src="fx.js?v=3"></script>
+
+  <!-- Components — order matters: shared → home → pages → tweaks → app.
+       type="text/babel" scripts are already inert to native execution (Babel's
+       runtime scans for them on DOMContentLoaded), so defer here just keeps
+       them consistent with the loader chain above; it isn't load-bearing. -->
+  <script defer type="text/babel" src="shared.jsx?v=79"></script>
+  <script defer type="text/babel" src="home.jsx?v=94"></script>
+  <script defer type="text/babel" src="pages.jsx?v=95"></script>
+  <script defer type="text/babel" src="tweaks-panel.jsx?v=76"></script>
+  <script defer type="text/babel" src="app.jsx?v=76"></script>
+
+  <!-- Vercel Web Analytics — static-site script tag (no build step, so no @vercel/analytics package) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

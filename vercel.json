@@ -1,32 +1,100 @@
 {
   "redirects": [
-    { "source": "/pricing", "destination": "/services", "permanent": true },
-    { "source": "/meta-ads-agentur", "destination": "/social-media-ads", "permanent": true },
-    { "source": "/google-ads-agentur", "destination": "/search-ads", "permanent": true }
+    {
+      "source": "/pricing",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/meta-ads-agentur",
+      "destination": "/social-media-ads",
+      "permanent": true
+    },
+    {
+      "source": "/google-ads-agentur",
+      "destination": "/search-ads",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/projects", "destination": "/index.html" },
-    { "source": "/projects-classic", "destination": "/index.html" },
-    { "source": "/projects-lab", "destination": "/index.html" },
-    { "source": "/services", "destination": "/index.html" },
-    { "source": "/social-media-ads", "destination": "/index.html" },
-    { "source": "/search-ads", "destination": "/index.html" },
-    { "source": "/content", "destination": "/index.html" },
-    { "source": "/full-service", "destination": "/index.html" },
-    { "source": "/ai-visibility-agentur", "destination": "/index.html" },
-    { "source": "/about", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" },
-    { "source": "/impressum", "destination": "/index.html" },
-    { "source": "/datenschutz", "destination": "/index.html" }
+    {
+      "source": "/projects",
+      "destination": "/_pre/projects.html"
+    },
+    {
+      "source": "/projects-classic",
+      "destination": "/_pre/projects.html"
+    },
+    {
+      "source": "/projects-lab",
+      "destination": "/_pre/projects.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/_pre/services.html"
+    },
+    {
+      "source": "/social-media-ads",
+      "destination": "/_pre/social-media-ads.html"
+    },
+    {
+      "source": "/search-ads",
+      "destination": "/_pre/search-ads.html"
+    },
+    {
+      "source": "/content",
+      "destination": "/_pre/content.html"
+    },
+    {
+      "source": "/full-service",
+      "destination": "/_pre/full-service.html"
+    },
+    {
+      "source": "/ai-visibility-agentur",
+      "destination": "/_pre/ai-visibility-agentur.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/_pre/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/_pre/contact.html"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/_pre/impressum.html"
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/_pre/datenschutz.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://vz-fd89cb27-622.b-cdn.net; connect-src 'self' https://unpkg.com https://vz-fd89cb27-622.b-cdn.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://iframe.mediadelivery.net https://player.mediadelivery.net; frame-ancestors 'none';"

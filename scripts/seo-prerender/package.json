@@ -1,0 +1,18 @@
+{
+  "name": "fwf-seo-prerender",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node prerender.mjs ../.. ./snap && node build.mjs ../.. ./snap ../.."
+  },
+  "dependencies": {
+    "@babel/standalone": "7.29.0",
+    "@studio-freight/lenis": "1.0.42",
+    "gsap": "3.12.5",
+    "hls.js": "1.5.17",
+    "playwright-core": "^1.55.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.128.0"
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films</title>
+  <meta name="description" content="Werbefilme, Ad Creatives &amp; cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart, Einsatz in ganz DACH." />
+  <link rel="icon" type="image/png" href="assets/fwf-lion.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films" />
+  <meta property="og:description" content="Werbefilme, Ad Creatives &amp; cinematische Filmproduktion für Mittelstandsmarken. Studio in Stuttgart." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flowwestfilms.de/" />
+  <meta property="og:image" content="https://flowwestfilms.de/assets/fwf-lockup.png" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=65" />
+
+  <!-- Responsive overrides -->
+  <style>
+    @media (max-width: 980px) {
+      .fwf-offers-grid { grid-template-columns: 1fr !important; }
+      .fwf-proj-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-featured-grid { grid-template-columns: 1fr !important; }
+      .fwf-grid-collapse { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .fwf-why-grid { grid-template-columns: 1fr 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; border-bottom: 1px solid var(--fwf-hairline); }
+      .fwf-why-grid > div:nth-child(odd) { border-right: 1px solid var(--fwf-hairline) !important; }
+      .fwf-pillars { grid-template-columns: 1fr 1fr !important; }
+      .fwf-form-row { grid-template-columns: 1fr !important; }
+      .fwf-contact-photo { min-height: 400px !important; }
+    }
+    @media (max-width: 640px) {
+      .fwf-proj-grid { grid-template-columns: 1fr !important; }
+      .fwf-pillars { grid-template-columns: 1fr !important; }
+      .fwf-why-grid { grid-template-columns: 1fr !important; }
+      .fwf-why-grid > div { border-right: none !important; }
+      .fwf-nav-inner { padding: 14px 20px !important; }
+      .fwf-nav-wordmark { display: none; }
+    }
+
+    /* Fix: styles.css targets #app, React mounts to #root */
+    #root { min-height: 100vh; display: flex; flex-direction: column; }
+    #root > #app { flex: 1; display: flex; flex-direction: column; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fwf-marquee-track { animation: none !important; }
+      .fwf-fade-up, .fwf-d1, .fwf-d2, .fwf-d3, .fwf-d4, .fwf-d5 { animation: none !important; opacity: 1 !important; }
+      .fwf-pulse { animation: none !important; }
+    }
+  </style>
+
+  <!-- German overlay (i18n) — anti-flash: hide app until first DE pass (EN visitors unaffected) -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem("fwf-lang");
+        if (l === null) {
+          var nl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+          l = nl.startsWith("de") ? "de" : "en";
+        }
+        if (l !== "en") {
+          document.documentElement.className += " fwf-i18n-boot";
+          setTimeout(function () { document.documentElement.classList.remove("fwf-i18n-boot"); }, 1600);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>html.fwf-i18n-boot #root { visibility: hidden; }</style>
+  <script src="i18n/translations.js?v=94"></script>
+  <script src="i18n/i18n.js?v=78"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <div style="font-family:sans-serif;text-align:center;padding:80px 24px;color:#fff;background:#0a0a0a">
+      <h1>Flow West Films</h1>
+      <p>Please enable JavaScript to view this site.</p>
+    </div>
+  </noscript>
+
+  <!-- React + Babel (CDN) — integrity hashes lock to exact file content (SRI).
+       defer on all of these (kept in dependency order, which defer preserves)
+       so the browser can paint the hero/CSS immediately instead of blocking
+       HTML parsing on ~7 sequential third-party downloads first. -->
+  <script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"></script>
+  <script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"></script>
+  <script defer src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"></script>
+
+  <!-- 3D + animation libs (used only by the Projects page; inert until that route mounts) -->
+  <script defer src="https://unpkg.com/three@0.128.0/build/three.min.js" crossorigin="anonymous" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
+  <script defer src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea"></script>
+
+  <!-- HLS.js — real adaptive bitrate now (see shared.jsx/home.jsx), so this just decodes the manifest -->
+  <script defer src="https://unpkg.com/hls.js@1.5.17/dist/hls.min.js" crossorigin="anonymous" integrity="sha384-9v3HcdYrO3D+OPDTjZ40RXocgE4GtXVCd3/mCS62JsM93JXgI1afJVuwjFvsu6ni"></script>
+
+  <!-- Mobile motion layer (plain JS — executes before the Babel-compiled components) -->
+  <script defer src="fx.js?v=3"></script>
+
+  <!-- Components — order matters: shared → home → pages → tweaks → app.
+       type="text/babel" scripts are already inert to native execution (Babel's
+       runtime scans for them on DOMContentLoaded), so defer here just keeps
+       them consistent with the loader chain above; it isn't load-bearing. -->
+  <script defer type="text/babel" src="shared.jsx?v=79"></script>
+  <script defer type="text/babel" src="home.jsx?v=94"></script>
+  <script defer type="text/babel" src="pages.jsx?v=95"></script>
+  <script defer type="text/babel" src="tweaks-panel.jsx?v=76"></script>
+  <script defer type="text/babel" src="app.jsx?v=76"></script>
+
+  <!-- Vercel Web Analytics — static-site script tag (no build step, so no @vercel/analytics package) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
