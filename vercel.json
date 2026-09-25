@@ -29,6 +29,16 @@
       "source": "/ai-videoproduktion",
       "destination": "/ki-videoproduktion",
       "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum-1",
+      "destination": "/impressum",
+      "permanent": true
     }
   ],
   "rewrites": [
