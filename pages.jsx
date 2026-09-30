@@ -1165,6 +1165,32 @@ const fwfLabMono = (size, color) => ({
   textTransform: "uppercase", color, lineHeight: 1.7,
 });
 
+// The sphere is canvas-drawn, so crawlers see no project text. This index puts every
+// project's copy in the HTML; it's collapsed by default (user-expandable, so not hidden text).
+function ProjectIndex({ items }) {
+  return (
+    <section style={{ borderTop: "1px solid var(--fwf-hairline)", background: "#070708" }}>
+      <div className="fwf-container" style={{ paddingTop: 28, paddingBottom: 28 }}>
+        <details>
+          <summary style={{ ...fwfLabMono(10.5, "var(--fwf-text-mute)"), cursor: "pointer" }}>
+            <span>Project index</span> <span style={{ color: "var(--fwf-text-faint)" }}>({items.length})</span>
+          </summary>
+          <h2 className="fwf-display" style={{ fontSize: 32, margin: "28px 0 32px 0", fontWeight: 400 }}>All projects</h2>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "28px 40px" }}>
+            {items.map((p, i) => (
+              <li key={i}>
+                <div style={fwfLabMono(9.5, "var(--fwf-purple)")}>{p.tag}</div>
+                <h3 style={{ fontSize: 16, margin: "6px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 13.5, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </div>
+    </section>
+  );
+}
+
 function ProjectsLabPage() {
   const [filter, setFilter] = useStateP("all");
   const [open, setOpen] = useStateP(null);
@@ -1218,9 +1244,9 @@ function ProjectsLabPage() {
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
               Available · Q4 2026
             </div>
-            <div style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330 }}>
+            <h1 style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330, margin: 0, fontWeight: "inherit" }}>
               Ad Creative · Brand Films · AI Content
-            </div>
+            </h1>
             <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), textAlign: "right" }}>
               <span style={{ color: "rgba(255,255,255,0.85)" }}>● Stuttgart, DE</span>&nbsp;&nbsp;{time}
             </div>
@@ -1256,6 +1282,8 @@ function ProjectsLabPage() {
             {visible.length} Projects · Drag to explore
           </div>
         </section>
+
+        <ProjectIndex items={ALL_PROJECTS} />
 
         {open && <ProjectTheater project={open} mobile={false} onClose={() => setOpen(null)} />}
       </main>
@@ -1302,6 +1330,8 @@ function ProjectsLabPage() {
       <section style={{ position: "relative", padding: "32px 0 100px", overflow: "hidden" }}>
         <CinematicGrid key={"grid:" + filter} items={visible} onOpen={handleOpen} />
       </section>
+
+      <ProjectIndex items={ALL_PROJECTS} />
 
       <FinalCTA
         headline={<>Seen something you like? <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Let's talk.</em></>}
