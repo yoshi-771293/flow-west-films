@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection, WhyFwfSection */
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, GrowthEngineSection, WhyFwfSection, VideoSchema */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -303,11 +303,28 @@ const VERTICAL_SPOTLIGHT = [
   }
 ];
 
+// Videos shown on the homepage, for the invisible video schema.
+function HOME_VIDEOS() {
+  const all = window.ALL_PROJECTS || [];
+  const pick = (c, t) => all.find((p) => p.client === c && p.title === t);
+  const featured = [pick("Porsche", "For the Chosen"), pick("Wilson", "Spec Ad"), pick("KFC", "Spec Ad")].filter(Boolean);
+  const intro = {
+    client: "Flow West Films", title: "Brand Film",
+    desc: "Flow West Films brand film: cinematic ad creative and performance marketing for e-commerce and B2C brands.",
+    thumb: "https://" + INTRO_ZONE + "/" + INTRO_GUID + "/thumbnail.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/" + INTRO_GUID,
+  };
+  return [intro].concat(featured, VERTICAL_SPOTLIGHT);
+}
+
 function HomePage() {
   const [activeVideo, setActiveVideo] = useState_h(null);
 
   return (
     React.createElement("main", null,
+
+      /* Invisible video schema for Google (renders nothing) */
+      React.createElement(VideoSchema, { items: HOME_VIDEOS() }),
 
       /* HERO */
       React.createElement("section", { style: { position: "relative", paddingTop: 160, paddingBottom: 120, overflow: "hidden", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" } },

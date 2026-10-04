@@ -886,5 +886,90 @@ function VideoModal({ src, onClose }) {
   );
 }
 
+// When each video first went on the site (from git history) — feeds uploadDate in the video schema below.
+const VIDEO_ADDED = {
+  "KFC·Spec Ad": "2026-08-27",
+  "WGV Versicherung·Ad Creative": "2026-08-26",
+  "WGV Versicherung·Vertical Cut": "2026-08-26",
+  "Nike·Ad Creative": "2026-07-30",
+  "Nord VPN·Ad Creative": "2026-07-30",
+  "Thomas Sabo·Spec Ad": "2026-06-16",
+  "Eibl GmbH·Ad Creative": "2026-06-16",
+  "Easy Foil·Product Ad": "2026-06-18",
+  "Easy Foil·Easy Drive Ad": "2026-06-18",
+  "Schmolke Carbon·Ad Creative": "2026-07-30",
+  "Schmolke Carbon·Ad Creative — Cut 2": "2026-07-30",
+  "Schmolke Carbon·Alps Descent": "2026-08-12",
+  "Wilson·Spec Ad": "2026-08-12",
+  "Panthera·Spec Ad": "2026-08-28",
+  "Porsche·For the Chosen": "2026-08-29",
+  "Eibl GmbH·Introduction: Gloria": "2026-06-18",
+  "List for Less·Brand Ad": "2026-06-16",
+  "Hook Creative·Google Ranking Ad": "2026-06-16",
+  "Alienwork·Skeleton Automatic Watch — Short Cut": "2026-07-30",
+  "Alienwork·Skeleton Automatic Watch — Long Cut": "2026-07-30",
+  "Alienwork·Skeleton Automatic Watch — Vertical Cut": "2026-07-30",
+  "Swarovski·Never Apologize": "2026-08-26",
+  "Voyah·360° Tunnel Loop": "2026-08-25",
+  "Streetside Classics·Showroom Reel": "2026-08-25",
+  "Swarovski × Alienwork × Thomas Sabo·Jewelry Mashup": "2026-07-16",
+  "Radisson Blu·Valentine's Campaign": "2026-06-17",
+  "Radisson Blu·Christmas Reel": "2026-06-18",
+  "Palazzo Circus·Dinner Show Reel": "2026-06-16",
+  "French Touch·Patisserie Reel": "2026-06-17",
+  "Santa Lucia·Restaurant Reel": "2026-06-16",
+  "Munich Bierfest·Tavern Reel": "2026-06-17",
+  "Pane e Vino·Founder Reel": "2026-06-16",
+  "Tim Rabitz·Social Content": "2026-06-17",
+  "Schmolke Carbon·Behind the Lens": "2026-06-18",
+  "Recom Film·Porsche — CGI BTS Racetrack Breakdown": "2026-06-16",
+  "Studio Sessions·Behind the Lens": "2026-05-27",
+  "Flow West Films·Behind the Scenes": "2026-06-16",
+  "Eibl GmbH·Testimonial — Elif D.": "2026-06-16",
+  "Eibl GmbH·Testimonial — Chris": "2026-06-16",
+  "CW Architectural Art·Founder Interview": "2026-06-16",
+  "App Liqes·Image Film": "2026-06-16",
+  "Flow West Films·The Lie Detector": "2026-08-26",
+  "Whiskey & Ice·Short Film": "2026-07-01",
+  "Old Suffolk Boys·Documentary": "2026-07-01",
+  "aonenine·SHOPS — Music Video": "2026-05-27",
+  "Flow West Films·Brand Film": "2026-08-05"
+};
+
+// Invisible JSON-LD so Google can understand each video; renders nothing on screen.
+// Emits a German and an English entry per video (the site is one URL for both languages,
+// so both are always present for crawlers); skips the German one if no translation exists.
+function VideoSchema({ items }) {
+  const de = (window.FWF_TRANSLATIONS && window.FWF_TRANSLATIONS.de) || {};
+  const origin = "https://flowwestfilms.de";
+  const abs = (u) => (/^https?:/.test(u) ? u : origin + "/" + u.replace(/^\//, ""));
+  const seen = {};
+  const videos = [];
+  items.forEach((p) => {
+    const v = p.video || "";
+    const bunny = v.match(/\/embed\/684848\/([0-9a-f-]{36})/);
+    const yt = v.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+    const base = {
+      "@type": "VideoObject",
+      name: p.client + " — " + p.title,
+      thumbnailUrl: p.thumb ? abs(p.thumb) : undefined,
+      uploadDate: VIDEO_ADDED[p.client + "·" + p.title],
+      publisher: { "@type": "Organization", name: "Flow West Films", url: origin },
+    };
+    if (bunny) { base.contentUrl = "https://" + BUNNY_PULL_ZONE + "/" + bunny[1] + "/playlist.m3u8"; base.embedUrl = "https://iframe.mediadelivery.net/embed/684848/" + bunny[1]; }
+    else if (yt) base.embedUrl = "https://www.youtube.com/embed/" + yt[1];
+    else if (/\.mp4$/.test(v)) base.contentUrl = abs(v);
+    else return;
+    const key = base.contentUrl || base.embedUrl;
+    if (seen[key] || !base.uploadDate || !base.thumbnailUrl) return;
+    seen[key] = true;
+    if (de[p.desc]) videos.push(Object.assign({}, base, { description: de[p.desc] }));
+    videos.push(Object.assign({}, base, { description: p.desc }));
+  });
+  if (!videos.length) return null;
+  const json = JSON.stringify({ "@context": "https://schema.org", "@graph": videos }).replace(/</g, "\\u003c");
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
+}
+
 // Expose for other files
-Object.assign(window, { Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });
+Object.assign(window, { VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });

@@ -215,6 +215,7 @@ window.FWF_TRANSLATIONS = {
       "Ein Spec Commercial für Nord VPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis Nord VPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.",
     "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.":
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
+    "Flow West Films brand film: cinematic ad creative and performance marketing for e-commerce and B2C brands.": "Flow West Films Imagefilm: cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken.",
     "Project index": "Projektübersicht",
     "All projects": "Alle Projekte",
     "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.":
