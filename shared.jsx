@@ -953,7 +953,7 @@ function VideoSchema({ items }) {
       "@type": "VideoObject",
       name: p.client + " — " + p.title,
       thumbnailUrl: p.thumb ? abs(p.thumb) : undefined,
-      uploadDate: VIDEO_ADDED[p.client + "·" + p.title],
+      uploadDate: VIDEO_ADDED[p.client + "·" + p.title] && VIDEO_ADDED[p.client + "·" + p.title] + "T12:00:00+02:00",
       publisher: { "@type": "Organization", name: "Flow West Films", url: origin },
     };
     if (bunny) { base.contentUrl = "https://" + BUNNY_PULL_ZONE + "/" + bunny[1] + "/playlist.m3u8"; base.embedUrl = "https://iframe.mediadelivery.net/embed/684848/" + bunny[1]; }
