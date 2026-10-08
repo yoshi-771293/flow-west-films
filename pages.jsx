@@ -312,6 +312,13 @@ const ALL_PROJECTS = [
     thumb: "https://vz-fd89cb27-622.b-cdn.net/d62b1fcc-269a-4b00-9930-af757d8f2174/thumbnail_be26e700.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/d62b1fcc-269a-4b00-9930-af757d8f2174?token=180145980a43be1ad70f306f6f7691a2178ab2bc32954a9e04f92722dcfe6135&expires=1782989292&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
+  {
+    client: "Flow West Films", title: "Quiet Sky", tag: "Short Film", cat: "film",
+    desc: "A short film set in Earth orbit, where satellites and debris drift above the planet.",
+    colors: ["#c9a96e", "#0a0a0a"],
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/d0d7187d-abd0-4cce-85e9-784e691a596e/thumbnail_785257da.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/d0d7187d-abd0-4cce-85e9-784e691a596e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+  },
   // === MUSIC ===
   {
     client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music",

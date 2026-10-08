@@ -933,7 +933,8 @@ const VIDEO_ADDED = {
   "Whiskey & Ice·Short Film": "2026-07-01",
   "Old Suffolk Boys·Documentary": "2026-07-01",
   "aonenine·SHOPS — Music Video": "2026-05-27",
-  "Flow West Films·Brand Film": "2026-08-05"
+  "Flow West Films·Brand Film": "2026-08-05",
+  "Flow West Films·Quiet Sky": "2026-10-08"
 };
 
 // Invisible JSON-LD so Google can understand each video; renders nothing on screen.
