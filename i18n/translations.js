@@ -217,6 +217,9 @@ window.FWF_TRANSLATIONS = {
       "Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.",
     "Flow West Films brand film: cinematic ad creative and performance marketing for e-commerce and B2C brands.": "Flow West Films Imagefilm: cinematisches Ad Creative und Performance Marketing für E-Commerce- und B2C-Marken.",
     "A short film set in Earth orbit, where satellites and debris drift above the planet.": "Ein Kurzfilm im Erdorbit, in dem Satelliten und Trümmer über dem Planeten treiben.",
+    "Ad Films Stuttgart": "Werbefilm Stuttgart",
+    "Brand Films Stuttgart": "Imagefilm Stuttgart",
+    "Product Videos Stuttgart": "Produktvideo Stuttgart",
     "Project index": "Projektübersicht",
     "All projects": "Alle Projekte",
     "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.":

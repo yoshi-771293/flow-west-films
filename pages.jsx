@@ -3080,4 +3080,540 @@ function DatenschutzPage() {
   );
 }
 
-Object.assign(window, { ALL_PROJECTS, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, ContentPage, FullServicePage });
+// ============================================
+// KEYWORD SERVICE PAGES — Werbefilm / Imagefilm / Produktvideo (Stuttgart)
+// One template, three configs. Copy is language-aware (de default for crawlers, en on toggle).
+// ============================================
+const KW_UI = {
+  de: {
+    book: "Strategiegespräch buchen", audit: "Kostenloser Audit →", see: "Beispiele ansehen →",
+    all: "Alle Projekte ansehen", midA: "Gefällt Ihnen, was Sie sehen?", midB: "Sprechen wir über Ihre Marke.",
+    why: "Warum Flow West Films", inc: "Leistungen", proc: "Ablauf", faq: "FAQ", more: "Mehr dazu:", relTitle: "Weitere Leistungen",
+    runLinks: [["social-media-ads", "Social Media Ads"], ["search-ads", "Search Ads"], ["full-service", "Full Service"]],
+    rel: { "werbefilm-stuttgart": "Werbefilm Stuttgart", "imagefilm-stuttgart": "Imagefilm Stuttgart", "produktvideo-stuttgart": "Produktvideo Stuttgart", "ki-videoproduktion": "KI-Videoproduktion" },
+    ctaSub: "Erzählen Sie uns von Ihrer Marke. Wir sagen Ihnen, was wir tun würden.",
+  },
+  en: {
+    book: "Book a strategy call", audit: "Get your free audit →", see: "See the work →",
+    all: "View all projects", midA: "Like what you see?", midB: "Let's talk about your brand.",
+    why: "Why Flow West Films", inc: "What you get", proc: "How it runs", faq: "FAQ", more: "Learn more:", relTitle: "More services",
+    runLinks: [["social-media-ads", "Social Media Ads"], ["search-ads", "Search Ads"], ["full-service", "Full Service"]],
+    rel: { "werbefilm-stuttgart": "Ad Films Stuttgart", "imagefilm-stuttgart": "Brand Films Stuttgart", "produktvideo-stuttgart": "Product Videos Stuttgart", "ki-videoproduktion": "AI Video Production" },
+    ctaSub: "Tell us about your brand. We'll tell you what we'd do.",
+  },
+};
+
+const KW_PAGES = {
+  "werbefilm-stuttgart": {
+    accent: "pink", rel: ["imagefilm-stuttgart", "produktvideo-stuttgart", "ki-videoproduktion"],
+    work: [["Porsche", "For the Chosen"], ["KFC", "Spec Ad"], ["Nike", "Ad Creative"], ["Nord VPN", "Ad Creative"], ["WGV Versicherung", "Ad Creative"], ["Swarovski", "Never Apologize"]],
+    alt: { de: "Werbefilm", en: "Ad film" },
+    de: {
+      serviceName: "Werbefilm-Produktion mit KI", serviceType: "Werbefilm Produktion",
+      eyebrow: "Werbefilm Stuttgart · KI-Produktion & Ad-Kampagnen",
+      h1a: "Werbefilm aus Stuttgart, ", h1b: "gebaut als Anzeige.",
+      lead: "Wir produzieren KI-gestützte Werbefilme und Video Ads für Marken in Deutschland, Österreich und der Schweiz — vom Skript bis zum Schnitt, inszeniert von Filmemachern. Auf Wunsch schalten und optimieren wir die Kampagne gleich mit.",
+      posTitle: "Ein Werbefilm ist nur so gut wie die Anzeige, in der er läuft.",
+      p1: "Die meisten Werbefilme werden für die Schublade produziert: schön, aber nicht dafür gebaut, in Feed, Reels oder auf YouTube zu bestehen. Wir drehen rückwärts — vom Platzierungsformat, vom Hook in den ersten zwei Sekunden und vom Kampagnenziel.",
+      p2: "KI macht uns schnell und skalierbar: Welten, Produkte und Varianten, für die sonst ein Set nötig wäre. Dramaturgie, Geschmack und Regie bleiben menschlich — deshalb sieht Ihr Werbefilm nach Film aus und nicht nach Generator.",
+      workEyebrow: "Ausgewählte Werbefilme", workA: "Werbefilme, die ", workB: "im Feed bestehen.",
+      incA: "Vom Skript bis ", incB: "zum fertigen Werbefilm.",
+      included: [
+        { t: "Konzept & Skript", d: "Eine Idee, ein Ziel, ein klares Skript — bevor die erste Einstellung entsteht." },
+        { t: "KI-Werbefilm oder Hybrid", d: "Komplett KI-produziert oder gemischt mit echtem Material von Team, Produkt oder Ort — je nachdem, was Ihre Marke braucht." },
+        { t: "Schnitt, Sound & Sprecher", d: "Musik, Sounddesign und Voiceover auf Deutsch oder Englisch, abgemischt für die Plattform, auf der die Anzeige läuft." },
+        { t: "Alle Formate", d: "16:9, 9:16 und 1:1 für Meta, TikTok, YouTube und Website — in einem Durchgang geliefert." },
+        { t: "Hook-Varianten zum Testen", d: "Mehrere Einstiege und Cutdowns, damit sich in der Kampagne zeigt, was wirklich funktioniert." },
+        { t: "Untertitel & Versionen", d: "Untertitel und Sprachversionen für Märkte in Deutschland, Österreich und der Schweiz." },
+      ],
+      procA: "Vom Briefing ", procB: "zum Livegang.",
+      process: [
+        { t: "Briefing & Skript", d: "Ein klares Ziel, eine Idee, ein Skript und eine Shotlist — bevor etwas produziert wird." },
+        { t: "Look-Entwicklung", d: "Stilbilder, die Sie freigeben, bevor sich etwas bewegt. Keine Überraschungen im fertigen Schnitt." },
+        { t: "Produktion & Schnitt", d: "Einstellung für Einstellung inszeniert, dann geschnitten, gegradet und vertont wie ein Realfilm." },
+        { t: "Auslieferung & Test", d: "Alle Formate für Ihre Kanäle, dazu Varianten, die gegeneinander getestet werden können." },
+      ],
+      runEyebrow: "Optional: Wir schalten Ihre Werbung auch", runA: "Film und Kampagne ", runB: "aus einer Hand.",
+      runIntro: "Wer will, bekommt den Werbefilm nicht nur geliefert, sondern auch ausgespielt. Das Team, das den Film dreht, betreut Ihre Kampagne — ohne Reibungsverluste zwischen Agentur und Produktion.",
+      run: [
+        { t: "Performance Marketing", d: "Meta-, Google- und YouTube-Kampagnen, aufgebaut rund um Ihre Zielzahlen — ROAS, CPA oder Leads." },
+        { t: "Creative-Testing", d: "Hooks und Varianten laufen gegeneinander. Was gewinnt, wird skaliert." },
+        { t: "Conversion-Optimierung (CRO)", d: "Landingpage und Funnel werden mitoptimiert, damit aus Klicks Kunden werden." },
+        { t: "Reporting", d: "Wöchentliche Abstimmung und ein monatlicher Report — Sie sehen, wohin das Budget geht und warum." },
+      ],
+      faqA: "Werbefilm, ", faqB: "beantwortet.",
+      faqs: [
+        { q: "Was kostet ein Werbefilm?", a: "Das hängt von Länge, Szenenzahl und Varianten ab. KI-Produktion ist in der Regel deutlich günstiger als ein klassischer Dreh, weil Set, Crew und Reisen entfallen. Nach einem 30-minütigen Gespräch bekommen Sie ein Festangebot." },
+        { q: "Wie lange dauert die Produktion eines Werbefilms?", a: "Ein einzelnes Ad Creative oft nur wenige Tage. Ein vollständiger Werbefilm mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
+        { q: "Dürfen KI-Werbefilme in bezahlten Anzeigen laufen?", a: "Ja. Wir bilden keine realen Personen ohne Einwilligung nach und kennzeichnen KI-Inhalte, wo Meta, TikTok oder YouTube das verlangen." },
+        { q: "Drehen Sie auch klassisch mit Kamera und Team?", a: "Ja — und oft ist die Mischung die beste Lösung. Wir drehen, was echt sein muss (Menschen, Produkt, Ort), und nutzen KI für alles, was teuer, gefährlich oder unmöglich zu drehen wäre." },
+        { q: "Kann ich den Werbefilm auch ohne Kampagnenbetreuung bestellen?", a: "Ja. Die Kampagnenbetreuung ist optional. Viele Kunden buchen zunächst nur den Film und entscheiden danach, ob wir auch die Anzeigen betreuen." },
+        { q: "Arbeiten Sie nur in Stuttgart?", a: "Wir sitzen in Stuttgart und arbeiten mit Marken in Deutschland, Österreich und der Schweiz. Die KI-Produktion läuft komplett remote." },
+      ],
+      ctaA: "Ihr nächster Werbefilm, ", ctaB: "gebaut als Anzeige.",
+    },
+    en: {
+      serviceName: "AI-powered ad film production", serviceType: "Commercial production",
+      eyebrow: "Ad Films Stuttgart · AI Production & Ad Campaigns",
+      h1a: "Ad films from Stuttgart, ", h1b: "built to run as ads.",
+      lead: "We produce AI-powered commercials and video ads for brands across Germany, Austria and Switzerland — from script to final cut, directed by filmmakers. If you like, we launch and optimise the campaign too.",
+      posTitle: "An ad film is only as good as the ad it runs in.",
+      p1: "Most commercials are made for a drawer: beautiful, but not built to survive a feed, Reels or YouTube. We work backwards — from the placement format, from the hook in the first two seconds, and from the campaign goal.",
+      p2: "AI makes us fast and scalable: worlds, products and variations that would otherwise need a set. Story, taste and direction stay human — which is why your ad film looks like a film, not like a generator.",
+      workEyebrow: "Selected ad films", workA: "Ad films that ", workB: "hold up in the feed.",
+      incA: "From script to ", incB: "a finished ad film.",
+      included: [
+        { t: "Concept & script", d: "One idea, one goal, one clear script — before the first shot exists." },
+        { t: "AI ad film or hybrid", d: "Fully AI-produced, or mixed with real footage of your team, product or location — whatever your brand needs." },
+        { t: "Edit, sound & voice", d: "Music, sound design and voiceover in German or English, mixed for the platform the ad runs on." },
+        { t: "Every format", d: "16:9, 9:16 and 1:1 for Meta, TikTok, YouTube and your website — delivered in one pass." },
+        { t: "Hook variations to test", d: "Several openings and cutdowns, so the campaign shows what really works." },
+        { t: "Subtitles & versions", d: "Subtitles and language versions for markets across Germany, Austria and Switzerland." },
+      ],
+      procA: "From brief ", procB: "to live.",
+      process: [
+        { t: "Brief & script", d: "A clear goal, one idea, a script and a shot list — before anything is produced." },
+        { t: "Look development", d: "Style frames you approve before anything moves. No surprises in the final cut." },
+        { t: "Production & edit", d: "Directed shot by shot, then edited, graded and scored like a live-action film." },
+        { t: "Delivery & test", d: "Every format your channels need, plus variants ready to test against each other." },
+      ],
+      runEyebrow: "Optional: we run your ads too", runA: "Film and campaign ", runB: "from one team.",
+      runIntro: "If you want, you don't just get the ad film delivered — you get it launched. The team that makes the film runs your campaign, with no hand-off loss between agency and production.",
+      run: [
+        { t: "Performance marketing", d: "Meta, Google and YouTube campaigns built around your target numbers — ROAS, CPA or leads." },
+        { t: "Creative testing", d: "Hooks and variations compete against each other. What wins gets scaled." },
+        { t: "Conversion optimisation (CRO)", d: "Landing page and funnel are optimised alongside, so clicks turn into customers." },
+        { t: "Reporting", d: "A weekly check-in and a monthly report — you see where the budget goes and why." },
+      ],
+      faqA: "Ad films, ", faqB: "answered.",
+      faqs: [
+        { q: "How much does an ad film cost?", a: "It depends on length, number of scenes and variants. AI production is typically well below a comparable live-action shoot, because there's no set, crew or travel. You get a fixed quote after a 30-minute call." },
+        { q: "How long does it take to produce an ad film?", a: "A single ad creative often takes just days. A full commercial with script, look development and revisions usually takes one to two weeks." },
+        { q: "Can AI ad films run in paid ads?", a: "Yes. We don't imitate real people without consent, and we label AI-generated content where Meta, TikTok or YouTube require it." },
+        { q: "Do you also shoot with a camera and crew?", a: "Yes — and the mix is often the best answer. We film what has to be real (people, product, place) and use AI for everything that would be expensive, dangerous or impossible to shoot." },
+        { q: "Can I order the ad film without campaign management?", a: "Yes. Campaign management is optional. Many clients book just the film first and decide afterwards whether we should run the ads too." },
+        { q: "Do you only work in Stuttgart?", a: "We're based in Stuttgart and work with brands across Germany, Austria and Switzerland. AI production runs fully remote." },
+      ],
+      ctaA: "Your next ad film, ", ctaB: "built to run as an ad.",
+    },
+  },
+
+  "imagefilm-stuttgart": {
+    accent: "purple", rel: ["werbefilm-stuttgart", "produktvideo-stuttgart", "ki-videoproduktion"],
+    work: [["CW Architectural Art", "Founder Interview"], ["Eibl GmbH", "Testimonial — Elif D."], ["Eibl GmbH", "Testimonial — Chris"]],
+    alt: { de: "Imagefilm", en: "Brand film" },
+    de: {
+      serviceName: "Imagefilm- und Unternehmensfilm-Produktion mit KI", serviceType: "Imagefilm Produktion",
+      eyebrow: "Imagefilm Stuttgart · Unternehmensfilm & KI",
+      h1a: "Imagefilm aus Stuttgart, ", h1b: "der Vertrauen aufbaut.",
+      lead: "Wir produzieren Imagefilme und Unternehmensfilme für Mittelstand und B2C-Marken — KI-gestützt, von Filmemachern inszeniert und so gebaut, dass sie auf Ihrer Website und in Ihren Anzeigen arbeiten. Auf Wunsch bringen wir den Film auch in den Markt.",
+      posTitle: "Ein Imagefilm muss mehr leisten, als gut auszusehen.",
+      p1: "Ein klassischer Imagefilm landet auf der Website und wird selten gesehen. Unserer ist von Anfang an doppelt gedacht: als Vertrauensanker auf Ihrer Seite — und als Quelle für Kurzschnitte, die in Kampagnen laufen.",
+      p2: "Wir erzählen Ihre Geschichte mit echten Menschen und echten Orten und, wo es sinnvoll ist, mit KI-Szenen für alles, was sich nicht drehen lässt. Das spart Zeit und Budget, ohne dass der Film an Haltung verliert.",
+      workEyebrow: "Ausgewählte Imagefilme", workA: "Imagefilme mit ", workB: "echten Gesichtern.",
+      incA: "Vom Briefing bis ", incB: "zum fertigen Imagefilm.",
+      included: [
+        { t: "Strategie & Storyline", d: "Wer sind Sie, wem erzählen Sie es und was soll danach passieren? Das klären wir, bevor gedreht wird." },
+        { t: "Dreh und/oder KI-Szenen", d: "Echte Drehs vor Ort, KI-Szenen für das, was sich nicht filmen lässt — oder beides gemischt." },
+        { t: "Interviews & Gründergeschichte", d: "Gesichter statt Stockfootage: Gründer, Team und Kunden vor der Kamera." },
+        { t: "Schnitt, Musik & Sounddesign", d: "Sorgfältig geschnitten, gegradet und vertont — mit Voiceover auf Deutsch oder Englisch." },
+        { t: "Kurzschnitte für Social & Ads", d: "Aus dem Imagefilm entstehen Cutdowns und Hochformat-Versionen für Meta, LinkedIn und YouTube." },
+        { t: "Untertitel & Sprachversionen", d: "Untertitel und Versionen für Deutschland, Österreich, die Schweiz und internationale Märkte." },
+      ],
+      procA: "Vom Briefing ", procB: "zur Verwertung.",
+      process: [
+        { t: "Briefing & Storyline", d: "Ziel, Zielgruppe und Haltung — daraus entsteht die Geschichte, die der Film erzählt." },
+        { t: "Look & Planung", d: "Stilbilder und Drehplan, die Sie freigeben, bevor produziert wird." },
+        { t: "Produktion & Schnitt", d: "Dreh und/oder KI-Szenen, dann Schnitt, Grading und Sound wie bei einem Kinofilm." },
+        { t: "Auslieferung & Verwertung", d: "Der Hauptfilm für Ihre Website plus Cutdowns für Social und Anzeigen." },
+      ],
+      runEyebrow: "Optional: Wir bringen Ihren Imagefilm in den Markt", runA: "Film und Kampagne ", runB: "aus einer Hand.",
+      runIntro: "Ein Imagefilm wirkt erst, wenn ihn die richtigen Menschen sehen. Auf Wunsch spielen wir ihn und seine Cutdowns gezielt aus — und optimieren die Seite, auf der er Anfragen auslösen soll.",
+      run: [
+        { t: "Reichweite & Retargeting", d: "Der Film erreicht neue Zielgruppen, Cutdowns holen Interessierte wieder zurück." },
+        { t: "Performance Marketing", d: "Meta-, Google- und YouTube-Kampagnen, aufgebaut rund um Ihre Zielzahlen." },
+        { t: "Landingpage & CRO", d: "Wir testen, wo der Film auf der Seite steht und wie die Seite aufgebaut ist, damit daraus Anfragen werden." },
+        { t: "Reporting", d: "Wöchentliche Abstimmung und ein monatlicher Report — transparent und nachvollziehbar." },
+      ],
+      faqA: "Imagefilm, ", faqB: "beantwortet.",
+      faqs: [
+        { q: "Was kostet ein Imagefilm?", a: "Das hängt von Umfang, Drehaufwand und Länge ab. Mit KI-Szenen ist ein Imagefilm in der Regel günstiger als eine rein klassische Produktion. Nach einem 30-minütigen Gespräch bekommen Sie ein Festangebot." },
+        { q: "Wie lange dauert ein Imagefilm?", a: "Das hängt von Umfang und Drehaufwand ab. Den Zeitplan legen wir im Briefing verbindlich fest; mit KI-Szenen geht es oft schneller als bei klassischer Produktion." },
+        { q: "Was ist der Unterschied zwischen Imagefilm und Werbefilm?", a: "Ein Imagefilm erzählt, wer Sie sind, und schafft Vertrauen. Ein Werbefilm will eine direkte Handlung auslösen. Wir denken beides zusammen: Aus einer Produktion entstehen der Imagefilm und die Anzeigen-Schnitte." },
+        { q: "Muss der Imagefilm in Stuttgart gedreht werden?", a: "Nein. Wir drehen bei Ihnen vor Ort in Deutschland, Österreich und der Schweiz — oder produzieren ganz ohne Dreh mit KI." },
+        { q: "Können Sie Gründer, Team und Kunden filmen?", a: "Ja, das ist oft der stärkste Teil eines Imagefilms. Interviews und echte Gesichter schaffen Vertrauen, KI ergänzt, was sich nicht drehen lässt." },
+        { q: "Gibt es den Imagefilm auch auf Englisch?", a: "Ja. Voiceover und Untertitel liefern wir auf Deutsch und Englisch, auf Wunsch auch in weiteren Sprachen." },
+      ],
+      ctaA: "Ihr Imagefilm — ", ctaB: "mit Haltung und Reichweite.",
+    },
+    en: {
+      serviceName: "Brand film and corporate film production with AI", serviceType: "Brand film production",
+      eyebrow: "Brand Films Stuttgart · Corporate Film & AI",
+      h1a: "Brand films from Stuttgart ", h1b: "that build trust.",
+      lead: "We produce brand films and corporate films for mid-sized companies and B2C brands — AI-assisted, directed by filmmakers and built to work on your website and in your ads. If you like, we put the film to work in the market too.",
+      posTitle: "A brand film has to do more than look good.",
+      p1: "A classic brand film ends up on the website and is rarely watched. Ours is built for two jobs from day one: an anchor of trust on your site — and the source of short cuts that run in campaigns.",
+      p2: "We tell your story with real people and real places and, where it makes sense, AI scenes for everything that can't be shot. That saves time and budget without costing the film its point of view.",
+      workEyebrow: "Selected brand films", workA: "Brand films with ", workB: "real faces.",
+      incA: "From brief to ", incB: "a finished brand film.",
+      included: [
+        { t: "Strategy & storyline", d: "Who are you, who are you telling, and what should happen afterwards? We settle that before anything is shot." },
+        { t: "Shoot and/or AI scenes", d: "Real shoots on location, AI scenes for what can't be filmed — or a mix of both." },
+        { t: "Interviews & founder story", d: "Faces instead of stock footage: founders, team and customers on camera." },
+        { t: "Edit, music & sound design", d: "Carefully edited, graded and scored — with voiceover in German or English." },
+        { t: "Short cuts for social & ads", d: "The brand film produces cutdowns and vertical versions for Meta, LinkedIn and YouTube." },
+        { t: "Subtitles & language versions", d: "Subtitles and versions for Germany, Austria, Switzerland and international markets." },
+      ],
+      procA: "From brief ", procB: "to rollout.",
+      process: [
+        { t: "Brief & storyline", d: "Goal, audience and point of view — from them comes the story the film tells." },
+        { t: "Look & planning", d: "Style frames and a shoot plan you approve before production starts." },
+        { t: "Production & edit", d: "Shoot and/or AI scenes, then edit, grade and sound like a feature film." },
+        { t: "Delivery & rollout", d: "The main film for your website plus cutdowns for social and ads." },
+      ],
+      runEyebrow: "Optional: we put your brand film to work", runA: "Film and campaign ", runB: "from one team.",
+      runIntro: "A brand film only works once the right people see it. If you like, we run it and its cutdowns to the right audience — and optimise the page where it should trigger enquiries.",
+      run: [
+        { t: "Reach & retargeting", d: "The film reaches new audiences, and cutdowns bring interested people back." },
+        { t: "Performance marketing", d: "Meta, Google and YouTube campaigns built around your target numbers." },
+        { t: "Landing page & CRO", d: "We test where the film sits on the page and how the page is built, so it turns into enquiries." },
+        { t: "Reporting", d: "A weekly check-in and a monthly report — transparent and easy to follow." },
+      ],
+      faqA: "Brand films, ", faqB: "answered.",
+      faqs: [
+        { q: "How much does a brand film cost?", a: "It depends on scope, shoot effort and length. With AI scenes, a brand film is typically less expensive than a purely traditional production. You get a fixed quote after a 30-minute call." },
+        { q: "How long does a brand film take?", a: "It depends on scope and shoot effort. We fix the schedule in the briefing; with AI scenes it's often faster than a traditional production." },
+        { q: "What's the difference between a brand film and an ad film?", a: "A brand film tells who you are and builds trust. An ad film aims for a direct action. We think of them together: one production yields the brand film and the cuts for your ads." },
+        { q: "Does the brand film have to be shot in Stuttgart?", a: "No. We shoot on location with you across Germany, Austria and Switzerland — or produce with no shoot at all, using AI." },
+        { q: "Can you film founders, team and customers?", a: "Yes, and it's often the strongest part of a brand film. Interviews and real faces build trust; AI fills in what can't be shot." },
+        { q: "Is the brand film available in English?", a: "Yes. We deliver voiceover and subtitles in German and English, and in other languages on request." },
+      ],
+      ctaA: "Your brand film — ", ctaB: "with a point of view and reach.",
+    },
+  },
+
+  "produktvideo-stuttgart": {
+    accent: "green", rel: ["werbefilm-stuttgart", "imagefilm-stuttgart", "ki-videoproduktion"],
+    work: [["Easy Foil", "Product Ad"], ["Easy Foil", "Easy Drive Ad"], ["Alienwork", "Skeleton Automatic Watch — Long Cut"], ["Schmolke Carbon", "Ad Creative"], ["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"]],
+    alt: { de: "Produktvideo", en: "Product video" },
+    de: {
+      serviceName: "Produktvideo-Produktion mit KI", serviceType: "Produktvideo Produktion",
+      eyebrow: "Produktvideo Stuttgart · KI-Produktion für Shop & Ads",
+      h1a: "Produktvideos, die ", h1b: "verkaufen — nicht nur zeigen.",
+      lead: "Wir erstellen Produktvideos für Shop, Produktseite und Anzeigen — KI-gestützt, in allen Formaten und in Varianten zum Testen. Auf Wunsch betreuen wir auch die Kampagnen, in denen sie laufen.",
+      posTitle: "Ein Produktvideo ist ein Verkaufsargument in Bewegung.",
+      p1: "Stillbilder erklären selten, wie sich ein Produkt anfühlt, was es kann und warum es besser ist. Ein gutes Produktvideo beantwortet diese Fragen in Sekunden — auf der Produktseite genauso wie im Feed.",
+      p2: "Mit KI entstehen Produktwelten, Umgebungen und Perspektiven, für die sonst ein Studio, ein Set oder eine Reise nötig wäre. Wir inszenieren sie so, dass Ihr Produkt im Mittelpunkt bleibt und sich anfühlt wie Ihre Marke.",
+      workEyebrow: "Ausgewählte Produktvideos", workA: "Produktvideos, die ", workB: "Lust aufs Produkt machen.",
+      incA: "Vom Produkt ", incB: "zum fertigen Video.",
+      included: [
+        { t: "Produktfilm für Shop & Produktseite", d: "Das Hero-Video, das auf der Produktseite zeigt, was Ihr Produkt kann und wofür es steht." },
+        { t: "Produktwelten & Umgebungen", d: "Orte und Szenen, die sonst ein Set oder eine Reise kosten würden — generiert, ausgeleuchtet und passend zu Ihrer Marke gegradet." },
+        { t: "Anwendung & Features", d: "Szenen, die zeigen, wie das Produkt funktioniert — als echtes Material, mit KI oder gemischt." },
+        { t: "Varianten im Volumen", d: "Hooks, Formate und Cutdowns für Meta und TikTok — in Tagen testbar statt in Wochen." },
+        { t: "Alle Formate", d: "16:9, 9:16 und 1:1 für Produktseite, Shop, Social und Anzeigen in einem Durchgang." },
+        { t: "Sound & Sprecher", d: "Musik, Sounddesign und Voiceover auf Deutsch oder Englisch, abgemischt für die jeweilige Plattform." },
+      ],
+      procA: "Vom Briefing ", procB: "zum Test.",
+      process: [
+        { t: "Briefing & Produktanalyse", d: "Was ist Ihr Produkt, wer kauft es und was überzeugt? Daraus entsteht das Skript." },
+        { t: "Look-Entwicklung", d: "Stilbilder, die Sie freigeben, bevor sich etwas bewegt. Keine Überraschungen im Ergebnis." },
+        { t: "Produktion & Schnitt", d: "Szenen entstehen Einstellung für Einstellung und werden geschnitten, gegradet und vertont." },
+        { t: "Auslieferung & Test", d: "Alle Formate plus Varianten, die in Ihren Kampagnen gegeneinander laufen." },
+      ],
+      runEyebrow: "Optional: Wir verkaufen mit Ihrem Produktvideo", runA: "Video und Kampagne ", runB: "aus einer Hand.",
+      runIntro: "Produktvideos zeigen ihren Wert im Test. Auf Wunsch schalten wir sie in Meta- und Google-Kampagnen und optimieren Produktseite und Funnel gleich mit.",
+      run: [
+        { t: "Performance Marketing", d: "Meta-, Google- und YouTube-Kampagnen, aufgebaut rund um Ihre Zielzahlen — ROAS, CPA oder Umsatz." },
+        { t: "Creative-Testing", d: "Mehrere Varianten laufen gegeneinander; die stärksten werden skaliert." },
+        { t: "Produktseiten-CRO", d: "Platzierung des Videos, Seitenaufbau und Call-to-Action werden getestet." },
+        { t: "Reporting", d: "Wöchentliche Abstimmung und ein monatlicher Report — Sie wissen, was das Budget bewirkt." },
+      ],
+      faqA: "Produktvideo, ", faqB: "beantwortet.",
+      faqs: [
+        { q: "Was kostet es, ein Produktvideo erstellen zu lassen?", a: "Das hängt von Länge, Szenenzahl und Varianten ab. KI-Produktion ist in der Regel deutlich günstiger als ein klassischer Dreh mit Studio und Crew. Nach einem 30-minütigen Gespräch bekommen Sie ein Festangebot." },
+        { q: "Wie schnell bekomme ich ein Produktvideo?", a: "Ein einzelnes Ad Creative oft in wenigen Tagen. Ein vollständiges Produktvideo mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
+        { q: "Brauche ich dafür das physische Produkt?", a: "Für eine originalgetreue Darstellung brauchen wir Referenzmaterial — Fotos, Renderings oder das Produkt selbst. Was genau nötig ist, klären wir im Briefing." },
+        { q: "Kann ich mehrere Varianten zum Testen bekommen?", a: "Ja, und das empfehlen wir. Wir liefern verschiedene Hooks, Längen und Formate, damit Ihre Kampagne zeigt, welche Version verkauft." },
+        { q: "Kann ich KI-Produktvideos im Shop und in Anzeigen nutzen?", a: "Für Ihren Shop, Ihre Website und Anzeigen auf Meta, TikTok und YouTube ja. Für einzelne Marktplätze gelten eigene Regeln, die wir vorab mit Ihnen prüfen." },
+        { q: "Arbeiten Sie nur in Stuttgart?", a: "Wir sitzen in Stuttgart und arbeiten mit Marken in Deutschland, Österreich und der Schweiz. Die KI-Produktion läuft komplett remote." },
+      ],
+      ctaA: "Ihr Produkt, ", ctaB: "in Bewegung.",
+    },
+    en: {
+      serviceName: "AI-powered product video production", serviceType: "Product video production",
+      eyebrow: "Product Videos Stuttgart · AI Production for Shop & Ads",
+      h1a: "Product videos that ", h1b: "sell — not just show.",
+      lead: "We create product videos for your shop, product pages and ads — AI-assisted, in every format and in variants ready to test. If you like, we run the campaigns they appear in too.",
+      posTitle: "A product video is a sales argument in motion.",
+      p1: "Still images rarely explain how a product feels, what it does and why it's better. A good product video answers those questions in seconds — on the product page as much as in the feed.",
+      p2: "With AI we create product worlds, environments and perspectives that would otherwise need a studio, a set or a trip. We direct them so your product stays at the centre and feels like your brand.",
+      workEyebrow: "Selected product videos", workA: "Product videos that ", workB: "make people want the product.",
+      incA: "From product to ", incB: "a finished video.",
+      included: [
+        { t: "Product film for shop & product page", d: "The hero video that shows on the product page what your product does and what it stands for." },
+        { t: "Product worlds & environments", d: "Places and scenes that would otherwise cost a set or a trip — generated, lit and graded to match your brand." },
+        { t: "Use & features", d: "Scenes that show how the product works — as real footage, with AI, or mixed." },
+        { t: "Variations at volume", d: "Hooks, formats and cutdowns for Meta and TikTok — testable in days, not weeks." },
+        { t: "Every format", d: "16:9, 9:16 and 1:1 for product page, shop, social and ads in one pass." },
+        { t: "Sound & voice", d: "Music, sound design and voiceover in German or English, mixed for each platform." },
+      ],
+      procA: "From brief ", procB: "to test.",
+      process: [
+        { t: "Brief & product analysis", d: "What is your product, who buys it and what convinces them? The script comes from that." },
+        { t: "Look development", d: "Style frames you approve before anything moves. No surprises in the result." },
+        { t: "Production & edit", d: "Scenes are made shot by shot, then edited, graded and scored." },
+        { t: "Delivery & test", d: "Every format, plus variants that compete against each other in your campaigns." },
+      ],
+      runEyebrow: "Optional: we sell with your product video", runA: "Video and campaign ", runB: "from one team.",
+      runIntro: "Product videos prove their value in testing. If you like, we run them in Meta and Google campaigns and optimise the product page and funnel alongside.",
+      run: [
+        { t: "Performance marketing", d: "Meta, Google and YouTube campaigns built around your target numbers — ROAS, CPA or revenue." },
+        { t: "Creative testing", d: "Several variants compete against each other; the strongest get scaled." },
+        { t: "Product page CRO", d: "Video placement, page structure and call to action are tested." },
+        { t: "Reporting", d: "A weekly check-in and a monthly report — you know what the budget achieves." },
+      ],
+      faqA: "Product videos, ", faqB: "answered.",
+      faqs: [
+        { q: "How much does it cost to have a product video made?", a: "It depends on length, number of scenes and variants. AI production is typically well below a classic shoot with studio and crew. You get a fixed quote after a 30-minute call." },
+        { q: "How fast can I get a product video?", a: "A single ad creative often in a few days. A full product video with script, look development and revisions usually takes one to two weeks." },
+        { q: "Do I need the physical product?", a: "For a faithful result we need reference material — photos, renderings or the product itself. We settle exactly what's needed in the briefing." },
+        { q: "Can I get several variants to test?", a: "Yes, and we recommend it. We deliver different hooks, lengths and formats so your campaign shows which version sells." },
+        { q: "Can I use AI product videos in my shop and in ads?", a: "For your shop, website and ads on Meta, TikTok and YouTube, yes. Individual marketplaces have their own rules, which we check with you beforehand." },
+        { q: "Do you only work in Stuttgart?", a: "We're based in Stuttgart and work with brands across Germany, Austria and Switzerland. AI production runs fully remote." },
+      ],
+      ctaA: "Your product, ", ctaB: "in motion.",
+    },
+  },
+};
+
+function KeywordPage({ id }) {
+  const P = KW_PAGES[id];
+  const lang = (window.FWF_getLanguage && window.FWF_getLanguage()) === "en" ? "en" : "de";
+  const L = P[lang];
+  const U = KW_UI[lang];
+  const [activeVideo, setActiveVideo] = useStateP(null);
+  const works = P.work.map(([c, t]) => ALL_PROJECTS.find((p) => p.client === c && p.title === t)).filter(Boolean);
+  const color = "var(--fwf-" + P.accent + ")";
+  const glow = { pink: "255,45,120,0.16", purple: "155,48,255,0.16", green: "0,255,136,0.12" }[P.accent];
+  const em = (txt) => <em className="fwf-display-italic" style={{ color }}>{txt}</em>;
+  const eyebrow = (txt) => (
+    <div className="fwf-section-label">
+      <span className="fwf-section-label-line" />
+      <span className="fwf-eyebrow">{txt}</span>
+    </div>
+  );
+  const h2 = { fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" };
+  const incColors = ["pink", "purple", "green", "orange", "pink", "purple"];
+  const incIcons = [Icons.Film, Icons.Sparkles, Icons.Aperture, Icons.Zap, Icons.TrendUp, Icons.Play];
+  const procIcons = [Icons.FileText, Icons.Target, Icons.Film, Icons.Repeat];
+  const runIcons = [Icons.TrendUp, Icons.Zap, Icons.Target, Icons.BarChart];
+  const url = "https://flowwestfilms.de/" + id;
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service", name: L.serviceName, serviceType: L.serviceType, url,
+        description: L.lead, provider: { "@id": "https://flowwestfilms.de/#business" },
+        areaServed: [{ "@type": "City", name: "Stuttgart" }, { "@type": "Country", name: "Deutschland" }, { "@type": "Country", name: "Österreich" }, { "@type": "Country", name: "Schweiz" }],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: L.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      },
+    ],
+  };
+
+  return (
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, "\\u003c") }} />
+      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(" + glow + "), transparent 60%)" }} />
+        <div className="fwf-container" style={{ position: "relative" }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">{L.eyebrow}</span>
+          </div>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
+            {L.h1a}{em(L.h1b)}
+          </h1>
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 700, margin: "0 0 40px 0", lineHeight: 1.6 }}>
+            {L.lead}
+          </p>
+          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              {U.book} <Icons.ArrowRight size={12} />
+            </a>
+            <a href="#kw-work" className="fwf-btn fwf-btn-ghost">{U.see}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
+            <div>
+              {eyebrow(U.why)}
+              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>{L.posTitle}</h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>{L.p1}</p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{L.p2}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {works.length > 0 && (
+        <section id="kw-work" className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+          <VideoSchema items={works} />
+          <div className="fwf-container">
+            {eyebrow(L.workEyebrow)}
+            <h2 className="fwf-display" style={h2}>{L.workA}{em(L.workB)}</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 24 }}>
+              {works.map((p, i) => (
+                <article key={i} className="fwf-card" style={{ padding: 0, overflow: "hidden", cursor: "pointer" }} onClick={() => setActiveVideo(p.video)}>
+                  <div style={{ position: "relative", aspectRatio: "16/9", background: "#111" }}>
+                    <img src={p.thumb} alt={P.alt[lang] + ": " + p.client + " — " + p.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <span style={{ position: "absolute", left: 16, bottom: 16, color: "#fff" }}><Icons.Play size={22} /></span>
+                  </div>
+                  <div style={{ padding: 24 }}>
+                    <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color }}>{p.tag}</span>
+                    <h3 style={{ fontSize: 18, margin: "10px 0 8px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
+                    <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div style={{ marginTop: 32 }}>
+              <Link to="projects" className="fwf-btn-bare">{U.all} <Icons.ArrowRight size={12} /></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          {eyebrow(U.inc)}
+          <h2 className="fwf-display" style={h2}>{L.incA}{em(L.incB)}</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 24 }}>
+            {L.included.map((f, i) => {
+              const Ic = incIcons[i % incIcons.length];
+              const c = incColors[i % incColors.length];
+              return (
+                <div key={i} className={"fwf-card fwf-card-" + c} style={{ padding: 28 }}>
+                  <div style={{ color: "var(--fwf-" + c + ")", marginBottom: 18 }}><Ic size={22} /></div>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          {eyebrow(U.proc)}
+          <h2 className="fwf-display" style={h2}>{L.procA}{em(L.procB)}</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
+            {L.process.map((p, i, arr) => {
+              const Ic = procIcons[i % procIcons.length];
+              return (
+                <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                    <span style={{ color }}><Ic size={22} /></span>
+                    <span className="fwf-mono" style={{ color, fontSize: 13, letterSpacing: "0.2em" }}>{"0" + (i + 1)}</span>
+                  </div>
+                  <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", background: "linear-gradient(180deg, transparent, rgba(" + glow + ") 140%)" }}>
+        <div className="fwf-container">
+          {eyebrow(L.runEyebrow)}
+          <h2 className="fwf-display" style={{ ...h2, margin: "0 0 24px 0" }}>{L.runA}{em(L.runB)}</h2>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, maxWidth: 720, margin: "0 0 48px 0" }}>{L.runIntro}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
+            {L.run.map((r, i) => {
+              const Ic = runIcons[i % runIcons.length];
+              return (
+                <div key={i} className="fwf-card" style={{ padding: 28 }}>
+                  <div style={{ color, marginBottom: 18 }}><Ic size={22} /></div>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{r.t}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{r.d}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center", margin: "32px 0 0 0" }}>
+            <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--fwf-text-mute)", textTransform: "uppercase" }}>{U.more}</span>
+            {U.runLinks.map(([to, label]) => (
+              <Link key={to} to={to} className="fwf-btn-bare">{label} <Icons.ArrowRight size={12} /></Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 56, paddingBottom: 56 }}>
+        <div className="fwf-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
+          <h3 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: 0, lineHeight: 1.2, maxWidth: 520, textWrap: "balance" }}>
+            {U.midA} {em(U.midB)}
+          </h3>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+              {U.book} <Icons.ArrowRight size={12} />
+            </a>
+            <a href="/audit/" className="fwf-btn fwf-btn-ghost">{U.audit}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
+            <div>
+              {eyebrow(U.faq)}
+              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>{L.faqA}{em(L.faqB)}</h2>
+            </div>
+            <div>
+              {L.faqs.map((f, i) => (
+                <div key={i} style={{ padding: "24px 0", borderBottom: i < L.faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
+                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
+                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 48, paddingBottom: 48 }}>
+        <div className="fwf-container" style={{ display: "flex", gap: 28, flexWrap: "wrap", alignItems: "center" }}>
+          <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--fwf-text-mute)", textTransform: "uppercase" }}>{U.relTitle}</span>
+          {P.rel.map((to) => (
+            <Link key={to} to={to} className="fwf-btn-bare">{U.rel[to]} <Icons.ArrowRight size={12} /></Link>
+          ))}
+        </div>
+      </section>
+
+      <FinalCTA
+        headline={<>{L.ctaA}{em(L.ctaB)}</>}
+        sub={U.ctaSub}
+      />
+      {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
+    </main>
+  );
+}
+
+function WerbefilmPage() { return <KeywordPage id="werbefilm-stuttgart" />; }
+function ImagefilmPage() { return <KeywordPage id="imagefilm-stuttgart" />; }
+function ProduktvideoPage() { return <KeywordPage id="produktvideo-stuttgart" />; }
+
+Object.assign(window, { ALL_PROJECTS, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, ContentPage, FullServicePage });

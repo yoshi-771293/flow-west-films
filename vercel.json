@@ -39,6 +39,21 @@
       "source": "/impressum-1",
       "destination": "/impressum",
       "permanent": true
+    },
+    {
+      "source": "/werbefilm",
+      "destination": "/werbefilm-stuttgart",
+      "permanent": true
+    },
+    {
+      "source": "/imagefilm",
+      "destination": "/imagefilm-stuttgart",
+      "permanent": true
+    },
+    {
+      "source": "/produktvideo",
+      "destination": "/produktvideo-stuttgart",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -81,6 +96,18 @@
     {
       "source": "/ki-videoproduktion",
       "destination": "/_pre/ki-videoproduktion.html"
+    },
+    {
+      "source": "/werbefilm-stuttgart",
+      "destination": "/_pre/werbefilm-stuttgart.html"
+    },
+    {
+      "source": "/imagefilm-stuttgart",
+      "destination": "/_pre/imagefilm-stuttgart.html"
+    },
+    {
+      "source": "/produktvideo-stuttgart",
+      "destination": "/_pre/produktvideo-stuttgart.html"
     },
     {
       "source": "/about",

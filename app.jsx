@@ -69,6 +69,18 @@ const ROUTE_META = {
     de: { title: "KI-Videoproduktion Stuttgart — AI Werbefilme | Flow West Films", desc: "KI-Videoproduktion aus Stuttgart: cinematische AI-Werbefilme, Produktvideos und Ad Creatives — inszeniert von Filmemachern, nicht nur generiert. Für Marken in ganz DACH." },
     en: { title: "AI Video Production Stuttgart — AI Commercials | Flow West Films", desc: "AI video production from Stuttgart: cinematic AI commercials, product films and ad creatives — directed by filmmakers, not just generated. For brands across DACH." },
   },
+  "werbefilm-stuttgart": {
+    de: { title: "Werbefilm Stuttgart: KI-Werbefilme für Ads | Flow West Films", desc: "Werbefilm aus Stuttgart: KI-Werbefilme und Video Ads, die verkaufen — inszeniert von Filmemachern. Auf Wunsch betreuen wir Ihre Kampagnen mit." },
+    en: { title: "Ad Films Stuttgart: AI Commercials for Ads | Flow West Films", desc: "Ad films from Stuttgart: AI-powered commercials and video ads built to sell, directed by filmmakers. If you like, we run your ad campaigns too." },
+  },
+  "imagefilm-stuttgart": {
+    de: { title: "Imagefilm Stuttgart: Unternehmensfilm & KI | Flow West Films", desc: "Imagefilm aus Stuttgart: Ihre Geschichte, von Filmemachern inszeniert und KI-gestützt. Für Website und Anzeigen — optional mit Kampagnenbetreuung." },
+    en: { title: "Brand Films Stuttgart: Corporate Film with AI | Flow West Films", desc: "Brand and corporate films from Stuttgart: your story, directed by filmmakers — AI-assisted, built for your website and ads. Optionally with campaign management." },
+  },
+  "produktvideo-stuttgart": {
+    de: { title: "Produktvideo Stuttgart: KI-Produktvideos | Flow West Films", desc: "Produktvideo erstellen lassen: KI-gestützt, für Shop, Produktseite und Anzeigen — in allen Formaten, mit Varianten zum Testen. Optional mit Kampagnenbetreuung." },
+    en: { title: "Product Videos Stuttgart: AI-Powered Product Films | Flow West Films", desc: "Product videos for your shop, product pages and ads: AI-assisted, in every format and with variants to test. If you like, we run your campaigns too." },
+  },
   about: {
     de: { title: "Über uns — Flow West Films", desc: "Gegründet von Florian Kotulla in Stuttgart. Filmemacher, Creative Director und Performance-Marketing-Denker in einer Person." },
     en: { title: "About — Flow West Films", desc: "Founded by Florian Kotulla in Stuttgart. Filmmaker, creative director and performance marketing thinker in one." },
@@ -127,6 +139,9 @@ function App() {
     case "full-service": Page = FullServicePage; break;
     case "ai-visibility-agentur": Page = AiVisibilityPage; break;
     case "ki-videoproduktion": Page = AiVideoPage; break;
+    case "werbefilm-stuttgart": Page = WerbefilmPage; break;
+    case "imagefilm-stuttgart": Page = ImagefilmPage; break;
+    case "produktvideo-stuttgart": Page = ProduktvideoPage; break;
     case "about":       Page = AboutPage;       break;
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
@@ -173,6 +188,9 @@ function App() {
     "full-service": "03 Services · Full Service",
     "ai-visibility-agentur": "03 Services · AI Visibility",
     "ki-videoproduktion": "03 Services · AI Video",
+    "werbefilm-stuttgart": "03 Services · Werbefilm",
+    "imagefilm-stuttgart": "03 Services · Imagefilm",
+    "produktvideo-stuttgart": "03 Services · Produktvideo",
     about:       "04 About",
     contact:     "05 Contact",
     impressum:   "Legal · Impressum",

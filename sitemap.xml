@@ -43,6 +43,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://flowwestfilms.de/werbefilm-stuttgart</loc>
+    <lastmod>2026-10-09</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/imagefilm-stuttgart</loc>
+    <lastmod>2026-10-09</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/produktvideo-stuttgart</loc>
+    <lastmod>2026-10-09</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://flowwestfilms.de/ai-visibility-agentur</loc>
     <lastmod>2026-09-22</lastmod>
     <priority>0.9</priority>

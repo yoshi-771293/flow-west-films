@@ -331,6 +331,9 @@ function Footer() {
             <Link to="content">Content</Link>
             <Link to="full-service">Full Service</Link>
             <Link to="ki-videoproduktion">AI Video Production</Link>
+            <Link to="werbefilm-stuttgart">Ad Films Stuttgart</Link>
+            <Link to="imagefilm-stuttgart">Brand Films Stuttgart</Link>
+            <Link to="produktvideo-stuttgart">Product Videos Stuttgart</Link>
             <Link to="ai-visibility-agentur">AI Visibility</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
