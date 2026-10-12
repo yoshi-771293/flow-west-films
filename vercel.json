@@ -54,6 +54,16 @@
       "source": "/produktvideo",
       "destination": "/produktvideo-stuttgart",
       "permanent": true
+    },
+    {
+      "source": "/shorts",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/shorts/",
+      "destination": "/projects",
+      "permanent": true
     }
   ],
   "rewrites": [

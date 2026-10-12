@@ -100,7 +100,7 @@ const ALL_PROJECTS = [
     client: "Panthera", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", ind: "auto",
     desc: "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.",
     colors: ["#111318", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/7c8bd9dd-aee2-4403-a564-24a9c9cb1597/thumbnail_4f036e23.jpg",
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/7c8bd9dd-aee2-4403-a564-24a9c9cb1597/thumbnail_6dcb52ff.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/7c8bd9dd-aee2-4403-a564-24a9c9cb1597?token=ae024d2b90742b4c25fcd33488d82cf705e0306d9d516a86b5761a06b1ba6495&expires=1788011506&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
@@ -229,7 +229,7 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social",
+    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social", ind: "personal",
     desc: "Social media content produced for Tim Rabitz.",
     colors: ["#9b30ff", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/649373ec-dede-43a1-86af-38639fdc2352/thumbnail_4e24d005.jpg",
@@ -287,8 +287,8 @@ const ALL_PROJECTS = [
     client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", ind: "tech",
     desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
     colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/91b09a39-35a9-41b3-a181-6dcfbca79e73/thumbnail_73fb59f1.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/91b09a39-35a9-41b3-a181-6dcfbca79e73?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
+    thumb: "https://vz-fd89cb27-622.b-cdn.net/d335b0a3-3816-44a1-af9e-7fb518ed16d1/thumbnail_46cf09ef.jpg",
+    video: "https://iframe.mediadelivery.net/embed/684848/d335b0a3-3816-44a1-af9e-7fb518ed16d1?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   // === FILM ===
   {
@@ -348,6 +348,7 @@ const INDUSTRIES = [
   { id: "realestate", de: "Immobilien", en: "Real Estate" },
   { id: "tech", de: "Tech & Software", en: "Tech & Software" },
   { id: "culture", de: "Film, Musik & Kultur", en: "Film, Music & Culture" },
+  { id: "personal", de: "Personal Brands", en: "Personal Brands" },
 ];
 const fwfLang = () => ((window.FWF_getLanguage && window.FWF_getLanguage()) === "en" ? "en" : "de");
 const industryLabel = (id) => { const i = INDUSTRIES.find((x) => x.id === id); return i ? i[fwfLang()] : ""; };
@@ -3263,7 +3264,7 @@ const KW_PAGES = {
 
   "imagefilm-stuttgart": {
     accent: "purple", rel: ["werbefilm-stuttgart", "produktvideo-stuttgart", "ki-videoproduktion"],
-    work: [["CW Architectural Art", "Founder Interview"], ["Eibl GmbH", "Testimonial — Elif D."], ["Eibl GmbH", "Testimonial — Chris"]],
+    work: [["CW Architectural Art", "Founder Interview"], ["App Liqes", "Image Film"], ["Eibl GmbH", "Testimonial — Elif D."], ["Eibl GmbH", "Testimonial — Chris"]],
     alt: { de: "Imagefilm", en: "Brand film" },
     de: {
       serviceName: "Imagefilm- und Unternehmensfilm-Produktion mit KI", serviceType: "Imagefilm Produktion",
