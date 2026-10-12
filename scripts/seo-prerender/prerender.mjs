@@ -11,7 +11,7 @@ const NM = path.resolve(path.dirname(new URL(import.meta.url).pathname), "node_m
 const ORIGIN = "https://flowwestfilms.de";
 
 const ROUTES = [
-  "home", "projects", "services", "social-media-ads", "search-ads", "content",
+  "home", "projects", "services", "social-media-ads", "search-ads",
   "full-service", "ai-visibility-agentur", "ki-videoproduktion", "werbefilm-stuttgart", "imagefilm-stuttgart", "produktvideo-stuttgart", "about", "contact", "impressum", "datenschutz",
 ];
 

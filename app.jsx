@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, ContentPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -53,10 +53,6 @@ const ROUTE_META = {
     de: { title: "Search Ads Agentur Stuttgart — Flow West Films", desc: "Google & YouTube Ads für E-Commerce und B2C-Marken: Search-Strategie, YouTube-Creative und volles Account-Management aus einer Hand." },
     en: { title: "Search Ads Agency Stuttgart — Flow West Films", desc: "Google & YouTube Ads for e-commerce and B2C brands: search strategy, YouTube creative and full account management, run by one team." },
   },
-  content: {
-    de: { title: "Ad Creative & Content Produktion — Flow West Films", desc: "Monatliche Ad-Creative-Produktion für E-Commerce und B2C-Marken — Konzepte, Video und Statics, die zu Ihrem eigenen Media Buying passen." },
-    en: { title: "Ad Creative & Content Production — Flow West Films", desc: "Monthly ad creative production for e-commerce and B2C brands — concepts, video and statics that plug into your own media buying." },
-  },
   "full-service": {
     de: { title: "Full Service: Creative & Performance — Flow West Films", desc: "Creative und Performance Marketing als ein System, geführt von einem Team — für E-Commerce und B2C-Marken, die aus Werbebudget wiederkehrende Kunden machen wollen." },
     en: { title: "Full Service: Creative & Performance — Flow West Films", desc: "Creative and performance marketing run as one system, by one team — for e-commerce and B2C brands that want to turn ad spend into repeat customers." },
@@ -66,8 +62,8 @@ const ROUTE_META = {
     en: { title: "AI Visibility Agency — Flow West Films", desc: "We optimize how ChatGPT, Claude and Gemini talk about your brand — visibility where buying decisions increasingly start." },
   },
   "ki-videoproduktion": {
-    de: { title: "KI-Videoproduktion Stuttgart — AI Werbefilme | Flow West Films", desc: "KI-Videoproduktion aus Stuttgart: cinematische AI-Werbefilme, Produktvideos und Ad Creatives — inszeniert von Filmemachern, nicht nur generiert. Für Marken in ganz DACH." },
-    en: { title: "AI Video Production Stuttgart — AI Commercials | Flow West Films", desc: "AI video production from Stuttgart: cinematic AI commercials, product films and ad creatives — directed by filmmakers, not just generated. For brands across DACH." },
+    de: { title: "KI-Videoproduktion & Ad Creatives Stuttgart | Flow West Films", desc: "KI-Videoproduktion aus Stuttgart: KI-Werbefilme, UGC- und AI-Influencer-Videos und laufende Ad Creatives — inszeniert von Filmemachern. Für Marken in ganz DACH." },
+    en: { title: "AI Video Production & Ad Creatives Stuttgart | Flow West Films", desc: "AI video production from Stuttgart: AI commercials, UGC and AI-influencer videos and ongoing ad creatives — directed by filmmakers. For brands across DACH." },
   },
   "werbefilm-stuttgart": {
     de: { title: "Werbefilm Stuttgart: KI-Werbefilme für Ads | Flow West Films", desc: "Werbefilm aus Stuttgart: KI-Werbefilme und Video Ads, die verkaufen — inszeniert von Filmemachern. Auf Wunsch betreuen wir Ihre Kampagnen mit." },
@@ -135,7 +131,6 @@ function App() {
     case "services":    Page = PricingPage;     break;
     case "social-media-ads": Page = MetaAdsPage; break;
     case "search-ads": Page = GoogleAdsPage; break;
-    case "content": Page = ContentPage; break;
     case "full-service": Page = FullServicePage; break;
     case "ai-visibility-agentur": Page = AiVisibilityPage; break;
     case "ki-videoproduktion": Page = AiVideoPage; break;
@@ -184,10 +179,9 @@ function App() {
     services:    "03 Services",
     "social-media-ads": "03 Services · Social Media Ads",
     "search-ads": "03 Services · Search Ads",
-    content: "03 Services · Content",
     "full-service": "03 Services · Full Service",
     "ai-visibility-agentur": "03 Services · AI Visibility",
-    "ki-videoproduktion": "03 Services · AI Video",
+    "ki-videoproduktion": "03 Services · AI Video & Content",
     "werbefilm-stuttgart": "03 Services · Werbefilm",
     "imagefilm-stuttgart": "03 Services · Imagefilm",
     "produktvideo-stuttgart": "03 Services · Produktvideo",

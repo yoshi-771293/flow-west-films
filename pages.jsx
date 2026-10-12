@@ -2253,11 +2253,18 @@ function AiVideoPage() {
 
   const included = [
     { i: <Icons.Film size={22} />, t: "AI commercials & spec ads", d: "Cinematic 15–60 second spots for social, web and pre-roll — concept, script, generation, edit and sound from one team.", c: "pink" },
-    { i: <Icons.Sparkles size={22} />, t: "Product & brand worlds", d: "Locations and product scenes that would otherwise cost a set build or a flight — generated, lit and graded to match your brand.", c: "purple" },
-    { i: <Icons.Aperture size={22} />, t: "Hybrid productions", d: "Real footage of your team, product or location combined with AI scenes. The honest mix most brands actually need.", c: "green" },
-    { i: <Icons.Zap size={22} />, t: "Ad creative at volume", d: "Hook variations, formats and cutdowns for Meta and TikTok — ready to test in days, not weeks.", c: "orange" },
-    { i: <Icons.TrendUp size={22} />, t: "Automotive & dealerships", d: "Vehicle films and dealership spots — cars in light and locations you can't book, without moving a single car.", c: "pink" },
-    { i: <Icons.Play size={22} />, t: "Sound & voice", d: "Music, sound design and voiceover in German or English, mixed for the platform the ad runs on.", c: "purple" },
+    { i: <Icons.Play size={22} />, t: "UGC & AI-influencer videos", d: "Vertical 9:16 videos in UGC or AI-influencer style for Meta, TikTok and YouTube Shorts — full sets, ready to test in days, not weeks.", c: "purple" },
+    { i: <Icons.Sparkles size={22} />, t: "Product & brand worlds", d: "Locations and product scenes that would otherwise cost a set build or a flight — generated, lit and graded to match your brand.", c: "green" },
+    { i: <Icons.Aperture size={22} />, t: "Hybrid productions", d: "Real footage of your team, product or location combined with AI scenes. The honest mix most brands actually need.", c: "orange" },
+    { i: <Icons.Zap size={22} />, t: "Ad creative at volume", d: "Hook variations, formats and cutdowns for Meta and TikTok — ready to test in days, not weeks.", c: "pink" },
+    { i: <Icons.TrendUp size={22} />, t: "Automotive & dealerships", d: "Vehicle films and dealership spots — cars in light and locations you can't book, without moving a single car.", c: "purple" },
+  ];
+
+  const ongoing = [
+    { i: <Icons.Brain size={22} />, t: "Concepts, hooks & scripts", d: "Every batch starts with angles and hooks mapped out before we generate a single frame.", c: "pink" },
+    { i: <Icons.Film size={22} />, t: "Video sets & statics", d: "Multiple cuts per concept for Feed, Stories and Reels, plus statics for the placements video can't fill.", c: "purple" },
+    { i: <Icons.Repeat size={22} />, t: "Plugs into your media buying", d: <>Creative-only: use it in whatever you already run. Want one team for creative and campaigns? See <Link to="full-service" style={{ color: "var(--fwf-purple)" }}>Full Service</Link>.</>, c: "green" },
+    { i: <Icons.Check size={22} />, t: "Full usage rights", d: "Paid, organic, sales and internal use — same as everything we produce.", c: "orange" },
   ];
 
   const process = [
@@ -2271,6 +2278,10 @@ function AiVideoPage() {
     {
       q: "What is AI video production?",
       a: "Producing films with generative AI instead of — or alongside — a camera crew. Scenes, products and locations are generated shot by shot, then edited, graded and scored. Done well, it looks like a film. Done badly, it looks like AI.",
+    },
+    {
+      q: "What are UGC-style and AI-influencer videos?",
+      a: "Vertical videos that feel native to the feed — a person talking to camera, demonstrating or reviewing a product. Instead of booking creators and shipping products, we generate and direct the performance with AI, so you get many variants fast. AI-generated content is labeled where the platforms require it.",
     },
     {
       q: "Does AI video look cheap?",
@@ -2296,6 +2307,14 @@ function AiVideoPage() {
       q: "Do you only work in Stuttgart?",
       a: "No. We're based in Stuttgart and work with brands across Germany, Austria and Switzerland. AI production runs fully remote.",
     },
+    {
+      q: "Do you also run the media buying?",
+      a: "Not with this offer. We deliver the creative and you plug it into your own media buying or agency. If you want one team for both, that's our Full Service.",
+    },
+    {
+      q: "What are the usage rights?",
+      a: "Full usage rights across paid, organic, sales and internal use — the same as everything we produce.",
+    },
   ];
 
   return (
@@ -2306,13 +2325,13 @@ function AiVideoPage() {
         <div className="fwf-container" style={{ position: "relative" }}>
           <div className="fwf-section-label fwf-fade-up fwf-d1">
             <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">AI Video Production · Stuttgart</span>
+            <span className="fwf-eyebrow">AI Video & Content · Stuttgart</span>
           </div>
           <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
-            AI video production from Stuttgart. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Directed, not generated.</em>
+            AI video production & ad creatives from Stuttgart. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Directed, not generated.</em>
           </h1>
           <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 660, margin: "0 0 40px 0", lineHeight: 1.6 }}>
-            Cinematic AI commercials, product films and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.
+            Cinematic AI commercials, product films, UGC-style and AI-influencer videos and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
@@ -2403,6 +2422,31 @@ function AiVideoPage() {
         </div>
       </section>
 
+      {/* Ongoing creative */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Ongoing creative</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
+            Always something new to test. <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Without hiring in-house.</em>
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 48px 0", maxWidth: 720 }}>
+            For brands that run their own media buying: we deliver concepts, hooks, scripts and finished creatives in a steady rhythm — ready to plug into whatever you already run on Meta, Google or TikTok.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {ongoing.map((f, i) => (
+              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
+                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
+                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
         <div className="fwf-container">
@@ -2475,205 +2519,6 @@ function AiVideoPage() {
         sub="Tell us about your brand. We'll tell you what we'd do."
       />
       {activeVideo && <VideoModal src={activeVideo} onClose={() => setActiveVideo(null)} />}
-    </main>
-  );
-}
-
-// ============================================
-// CONTENT PAGE
-// ============================================
-function ContentPage() {
-  const included = [
-    { i: <Icons.Brain size={22} />, t: "Monthly ad concepts", d: "Two new concepts a month — hooks, scripts, and CTAs mapped out before we shoot.", c: "pink" },
-    { i: <Icons.Film size={22} />, t: "Finished video creatives", d: "Multiple cuts per concept, ready for feed, stories, and reels.", c: "purple" },
-    { i: <Icons.Aperture size={22} />, t: "Static creatives", d: "Scroll-stopping statics for the placements video can't fill.", c: "green" },
-    { i: <Icons.Sparkles size={22} />, t: "UGC-style option", d: "Prefer UGC? Swap in UGC-style videos at the same volume.", c: "orange" },
-    { i: <Icons.Zap size={22} />, t: "Fast turnaround", d: "Built on a monthly cadence, not a one-off project timeline.", c: "pink" },
-    { i: <Icons.Repeat size={22} />, t: "Pairs with your media buying", d: "Creative-only — plug it into whatever you're already running on Meta, Google, or TikTok.", c: "purple" },
-  ];
-
-  const process = [
-    { n: "01", i: <Icons.Target size={22} />, t: "Brief", d: "We start with what's already working — and not — in your account." },
-    { n: "02", i: <Icons.Brain size={22} />, t: "Concept", d: "Hooks, scripts, and CTAs mapped out before a single shot." },
-    { n: "03", i: <Icons.Film size={22} />, t: "Produce", d: "Video and static production on a monthly cadence." },
-    { n: "04", i: <Icons.Zap size={22} />, t: "Deliver", d: "Ready to plug into whatever you're already running." },
-  ];
-
-  const faqs = [
-    {
-      q: "Do you handle the media buying too?",
-      a: "Not on this offer — Content is creative-only, built to pair with your own team or agency. If you want us running the media buying as well, that's the Full Service offer (Growth Retainer or Premium Partner).",
-    },
-    {
-      q: "What if I don't know what to test?",
-      a: "We bring the concepts. Every month starts with hooks and angles based on what typically converts for e-commerce and B2C — you're not starting from a blank page.",
-    },
-    {
-      q: "Can I do video-only or static-only?",
-      a: "Yes. The volume and mix flexes to what your accounts actually need.",
-    },
-    {
-      q: "What are the usage rights?",
-      a: "Full usage rights across paid, organic, sales, and internal — the same as everything else we produce.",
-    },
-    {
-      q: "Is there a minimum commitment?",
-      a: "Creative Sprint runs month to month — no long lock-in. Most clients stay because the creative keeps working, not because of a contract.",
-    },
-  ];
-
-  return (
-    <main>
-      <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
-        <div className="fwf-grid-bg" />
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 40% 40% at 30% 30%, rgba(255,100,32,0.14), transparent 60%)" }} />
-        <div className="fwf-container" style={{ position: "relative" }}>
-          <div className="fwf-section-label fwf-fade-up fwf-d1">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">Content</span>
-          </div>
-          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(44px, 6.5vw, 92px)", margin: "0 0 28px 0", lineHeight: 1, maxWidth: 1000, textWrap: "balance" }}>
-            More creative to test. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>Without hiring in-house.</em>
-          </h1>
-          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 640, margin: "0 0 40px 0", lineHeight: 1.6 }}>
-            Ad creative production for e-commerce and B2C brands who run their own media buying — hooks, scripts, video and statics, delivered on a monthly cadence, ready to plug into whatever you're already running.
-          </p>
-          <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
-              Book a strategy call <Icons.ArrowRight size={12} />
-            </a>
-            <a href="/audit/" className="fwf-btn fwf-btn-ghost">
-              Get your free audit →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Position */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="fwf-grid-collapse">
-            <div>
-              <div className="fwf-section-label">
-                <span className="fwf-section-label-line" />
-                <span className="fwf-eyebrow">Why creative, why us</span>
-              </div>
-              <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: 0, lineHeight: 1.1, textWrap: "balance" }}>
-                Most of what makes an ad perform gets decided before a single euro is spent.
-              </h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 20px 0" }}>
-                Every concept ships with hooks, scripts, and CTAs built the same way we'd build them if we were running your media buying ourselves — because the hook decides more of the outcome than the algorithm does.
-              </p>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
-                You keep your media buying wherever it already lives. We just make sure it's never short on creative worth testing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What's included */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div className="fwf-section-label">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">What's included</span>
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
-            Everything a creative pipeline needs. <em className="fwf-display-italic">Nothing it doesn't.</em>
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
-            {included.map((f, i) => (
-              <div key={i} className={"fwf-card fwf-card-" + f.c} style={{ padding: 28 }}>
-                <div style={{ color: "var(--fwf-" + f.c + ")", marginBottom: 18 }}>{f.i}</div>
-                <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.t}</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{f.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div className="fwf-section-label">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">How it runs</span>
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" }}>
-            Brief to delivery. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>One cadence.</em>
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }} className="fwf-pillars">
-            {process.map((p, i, arr) => (
-              <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                  <span style={{ color: "var(--fwf-orange)" }}>{p.i}</span>
-                  <span className="fwf-mono" style={{ color: "var(--fwf-orange)", fontSize: 13, letterSpacing: "0.2em" }}>{p.n}</span>
-                </div>
-                <h3 style={{ fontSize: 18, margin: "0 0 12px 0", fontWeight: 500 }}>{p.t}</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }} className="fwf-grid-collapse">
-            <div>
-              <div className="fwf-section-label">
-                <span className="fwf-section-label-line" />
-                <span className="fwf-eyebrow">FAQ</span>
-              </div>
-              <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: 0, lineHeight: 1, textWrap: "balance" }}>
-                Content, <em className="fwf-display-italic">answered.</em>
-              </h2>
-            </div>
-            <div>
-              {faqs.map((f, i) => (
-                <div key={i} style={{ padding: "24px 0", borderBottom: i < faqs.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
-                  <h3 style={{ fontSize: 17, margin: "0 0 10px 0", fontWeight: 500 }}>{f.q}</h3>
-                  <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{f.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How to work with us */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div className="fwf-section-label">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">How to work with us</span>
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
-            Two ways to get this creative. <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>Pick your shape.</em>
-          </h2>
-          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
-            A one-off anchor film, or a running monthly retainer — both include full production.
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
-            {OFFERS.filter((o) => o.title === "Launch Film" || o.title === "Creative Sprint").map((o, i) => (
-              <OfferCard key={i} {...o} />
-            ))}
-          </div>
-          <Link to="services" className="fwf-btn-bare">
-            See all four ways to work with us <Icons.ArrowRight size={12} />
-          </Link>
-        </div>
-      </section>
-
-      <FinalCTA
-        headline={<>Ready for creative that <em className="fwf-display-italic" style={{ color: "var(--fwf-orange)" }}>doesn't run out?</em></>}
-        sub="Tell us about your brand. We'll tell you what we'd do."
-      />
     </main>
   );
 }
@@ -3680,4 +3525,4 @@ function WerbefilmPage() { return <KeywordPage id="werbefilm-stuttgart" />; }
 function ImagefilmPage() { return <KeywordPage id="imagefilm-stuttgart" />; }
 function ProduktvideoPage() { return <KeywordPage id="produktvideo-stuttgart" />; }
 
-Object.assign(window, { ALL_PROJECTS, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, ContentPage, FullServicePage });
+Object.assign(window, { ALL_PROJECTS, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, FullServicePage });

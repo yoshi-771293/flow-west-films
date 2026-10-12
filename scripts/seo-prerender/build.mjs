@@ -49,12 +49,12 @@ const EXTRA = {
     {
       "@type": "Service",
       name: "KI-Videoproduktion",
-      alternateName: ["AI Video Production", "KI-Werbefilm", "AI Werbefilm"],
+      alternateName: ["AI Video Production", "KI-Werbefilm", "AI Werbefilm", "KI UGC Videos", "AI Influencer Video"],
       serviceType: "KI-Videoproduktion",
       provider: { "@id": ORIGIN + "/#business" },
       areaServed: ["Stuttgart", "Deutschland", "Österreich", "Schweiz"],
       url: ORIGIN + "/ki-videoproduktion",
-      description: "Cinematische KI-Werbefilme, Produktfilme, hybride Produktionen und Ad Creatives — inszeniert von Filmemachern, nicht nur generiert.",
+      description: "Cinematische KI-Werbefilme, Produktfilme, UGC- und AI-Influencer-Videos, hybride Produktionen und laufende Ad Creatives — inszeniert von Filmemachern, nicht nur generiert.",
     },
     faq([
       ["Was ist KI-Videoproduktion?", "Filme mit generativer KI produzieren — statt oder zusätzlich zu einem Kamerateam. Szenen, Produkte und Locations entstehen Shot für Shot und werden dann geschnitten, gegradet und vertont."],
@@ -62,6 +62,9 @@ const EXTRA = {
       ["Wie lange dauert ein KI-Werbefilm?", "Ein einzelnes KI-Ad-Creative dauert meist wenige Tage, ein vollständiger Werbefilm mit Skript, Look Development und Korrekturschleifen meist ein bis zwei Wochen."],
       ["Kann man KI mit echtem Footage kombinieren?", "Ja. Flow West Films dreht, was echt sein muss — Menschen, Produkt, Räume — und nutzt KI für alles, was teuer, gefährlich oder unmöglich zu drehen wäre."],
       ["Wo sitzt Flow West Films?", "In Stuttgart. KI-Produktion läuft komplett remote für Marken in ganz Deutschland, Österreich und der Schweiz."],
+      ["Was sind UGC- und AI-Influencer-Videos?", "Vertikale Videos, die sich im Feed natürlich anfühlen — eine Person spricht in die Kamera, zeigt oder bewertet ein Produkt. Statt Creator zu buchen und Produkte zu versenden, generieren und inszenieren wir die Performance mit KI — Sie erhalten schnell viele Varianten. KI-generierte Inhalte kennzeichnen wir dort, wo die Plattformen es verlangen."],
+      ["Übernehmen Sie auch das Media Buying?", "Bei diesem Angebot nicht. Wir liefern das Creative, Sie setzen es in Ihrem eigenen Media Buying oder bei Ihrer Agentur ein. Wenn Sie ein Team für beides wollen, ist das unser Full Service."],
+      ["Wie sieht es mit den Nutzungsrechten aus?", "Volle Nutzungsrechte für Paid, Organic, Sales und interne Nutzung — wie bei allem, das wir produzieren."],
     ]),
   ],
 };

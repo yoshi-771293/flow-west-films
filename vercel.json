@@ -64,6 +64,16 @@
       "source": "/shorts/",
       "destination": "/projects",
       "permanent": true
+    },
+    {
+      "source": "/content",
+      "destination": "/ki-videoproduktion",
+      "permanent": true
+    },
+    {
+      "source": "/content/",
+      "destination": "/ki-videoproduktion",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -90,10 +100,6 @@
     {
       "source": "/search-ads",
       "destination": "/_pre/search-ads.html"
-    },
-    {
-      "source": "/content",
-      "destination": "/_pre/content.html"
     },
     {
       "source": "/full-service",

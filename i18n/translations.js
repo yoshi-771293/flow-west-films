@@ -221,6 +221,40 @@ window.FWF_TRANSLATIONS = {
     "Brand Films Stuttgart": "Imagefilm Stuttgart",
     "Product Videos Stuttgart": "Produktvideo Stuttgart",
     "Industries": "Branchen",
+    "AI Video & Content · Stuttgart": "KI-Video & Content · Stuttgart",
+    "AI video production & ad creatives from Stuttgart.": "KI-Videoproduktion & Ad Creatives aus Stuttgart.",
+    "Cinematic AI commercials, product films, UGC-style and AI-influencer videos and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.": "Cinematische KI-Werbefilme, Produktfilme, UGC- und AI-Influencer-Videos sowie Ad Creatives für Marken in ganz DACH. KI gibt uns Tempo und Skalierung. Story, Geschmack und Regie bleiben menschlich — und genau diesen Unterschied sehen Sie in jedem Frame.",
+    "UGC & AI-influencer videos": "UGC- & AI-Influencer-Videos",
+    "Vertical 9:16 videos in UGC or AI-influencer style for Meta, TikTok and YouTube Shorts — full sets, ready to test in days, not weeks.": "Vertikale 9:16-Videos im UGC- oder AI-Influencer-Stil für Meta, TikTok und YouTube Shorts — komplette Sets, testbereit in Tagen, nicht Wochen.",
+    "Ongoing creative": "Laufende Creatives",
+    "Always something new to test.": "Immer etwas Neues zum Testen.",
+    "For brands that run their own media buying: we deliver concepts, hooks, scripts and finished creatives in a steady rhythm — ready to plug into whatever you already run on Meta, Google or TikTok.": "Für Marken, die ihr Media Buying selbst steuern: Wir liefern Konzepte, Hooks, Skripte und fertige Creatives im festen Rhythmus — einsatzbereit für alles, was Sie bereits auf Meta, Google oder TikTok laufen haben.",
+    "Concepts, hooks & scripts": "Konzepte, Hooks & Skripte",
+    "Every batch starts with angles and hooks mapped out before we generate a single frame.": "Jede Lieferung beginnt mit Angles und Hooks, die ausgearbeitet sind, bevor wir ein einziges Bild generieren.",
+    "Video sets & statics": "Video-Sets & Statics",
+    "Multiple cuts per concept for Feed, Stories and Reels, plus statics for the placements video can't fill.": "Mehrere Schnitte pro Konzept für Feed, Stories und Reels, dazu Statics für die Placements, die Video nicht füllen kann.",
+    "Plugs into your media buying": "Passt zu Ihrem Media Buying",
+    "Creative-only: use it in whatever you already run. Want one team for creative and campaigns? See": "Nur Creative: einsetzbar bei allem, was Sie bereits laufen haben. Lieber ein Team für Creative und Kampagnen? Dann",
+    "Full usage rights": "Volle Nutzungsrechte",
+    "Paid, organic, sales and internal use — same as everything we produce.": "Paid, Organic, Sales und intern — wie bei allem, das wir produzieren.",
+    "What are UGC-style and AI-influencer videos?": "Was sind UGC- und AI-Influencer-Videos?",
+    "Vertical videos that feel native to the feed — a person talking to camera, demonstrating or reviewing a product. Instead of booking creators and shipping products, we generate and direct the performance with AI, so you get many variants fast. AI-generated content is labeled where the platforms require it.": "Vertikale Videos, die sich im Feed natürlich anfühlen — eine Person spricht in die Kamera, zeigt oder bewertet ein Produkt. Statt Creator zu buchen und Produkte zu versenden, generieren und inszenieren wir die Performance mit KI — Sie erhalten schnell viele Varianten. KI-generierte Inhalte kennzeichnen wir dort, wo die Plattformen es verlangen.",
+    "Do you also run the media buying?": "Übernehmen Sie auch das Media Buying?",
+    "Not with this offer. We deliver the creative and you plug it into your own media buying or agency. If you want one team for both, that's our Full Service.": "Bei diesem Angebot nicht. Wir liefern das Creative, Sie setzen es in Ihrem eigenen Media Buying oder bei Ihrer Agentur ein. Wenn Sie ein Team für beides wollen, ist das unser Full Service.",
+    "Full usage rights across paid, organic, sales and internal use — the same as everything we produce.": "Volle Nutzungsrechte für Paid, Organic, Sales und interne Nutzung — wie bei allem, das wir produzieren.",
+    "AI Video & Content": "KI-Video & Content",
+    "What we do": "Was wir tun",
+    "Everything we offer,": "Alles, was wir anbieten,",
+    "in one place.": "an einem Ort.",
+    "AI commercials, UGC and AI-influencer videos, ongoing ad creatives.": "KI-Werbefilme, UGC- und AI-Influencer-Videos, laufende Ad Creatives.",
+    "Full Meta Ads management — strategy, creative, audiences, scaling.": "Volles Meta-Ads-Management — Strategie, Creative, Audiences, Scaling.",
+    "Google & YouTube Ads for e-commerce and B2C brands.": "Google & YouTube Ads für E-Commerce- und B2C-Marken.",
+    "Creative and performance as one system, run by one team.": "Creative und Performance als ein System, geführt von einem Team.",
+    "AI-powered ad films and video ads built to sell.": "KI-gestützte Werbefilme und Video Ads, die verkaufen.",
+    "Brand and corporate films, directed by filmmakers.": "Imagefilme und Unternehmensfilme, von Filmemachern inszeniert.",
+    "Product videos for your shop, product pages and ads.": "Produktvideos für Shop, Produktseite und Anzeigen.",
+    "Be named when ChatGPT, Claude and Gemini are asked.": "Genannt werden, wenn ChatGPT, Claude und Gemini gefragt werden.",
+    "Compare all services →": "Alle Leistungen vergleichen →",
     "Project index": "Projektübersicht",
     "All projects": "Alle Projekte",
     "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.":
@@ -711,67 +745,8 @@ window.FWF_TRANSLATIONS = {
     "about your brand?": "über Ihre Marke sagt?",
 
     /* ---- Content page ---------------------------------------------------- */
-    "More creative to test.": "Mehr Creative zum Testen.",
-    "Without hiring in-house.": "Ohne intern einzustellen.",
-    "Ad creative production for e-commerce and B2C brands who run their own media buying — hooks, scripts, video and statics, delivered on a monthly cadence, ready to plug into whatever you're already running.":
-      "Ad-Creative-Produktion für E-Commerce- und B2C-Marken, die ihr Media Buying selbst steuern — Hooks, Skripte, Video und Statics, geliefert im monatlichen Rhythmus, einsatzbereit für alles, was Sie bereits laufen haben.",
-    "Why creative, why us": "Warum Creative, warum wir",
-    "Most of what makes an ad perform gets decided before a single euro is spent.":
-      "Das meiste, was eine Anzeige performen lässt, wird entschieden, bevor ein einziger Euro ausgegeben wird.",
-    "Every concept ships with hooks, scripts, and CTAs built the same way we'd build them if we were running your media buying ourselves — because the hook decides more of the outcome than the algorithm does.":
-      "Jedes Konzept kommt mit Hooks, Skripten und CTAs, gebaut genauso, wie wir sie bauen würden, wenn wir Ihr Media Buying selbst betreiben würden — denn der Hook entscheidet mehr über das Ergebnis als der Algorithmus.",
-    "You keep your media buying wherever it already lives. We just make sure it's never short on creative worth testing.":
-      "Ihr Media Buying bleibt genau dort, wo es schon ist. Wir sorgen nur dafür, dass es nie an testenswertem Creative mangelt.",
-    "Everything a creative pipeline needs.": "Alles, was eine Creative-Pipeline braucht.",
-    "Monthly ad concepts": "Monatliche Ad-Konzepte",
-    "Two new concepts a month — hooks, scripts, and CTAs mapped out before we shoot.":
-      "Zwei neue Konzepte im Monat — Hooks, Skripte und CTAs ausgearbeitet, bevor wir drehen.",
-    "Finished video creatives": "Fertige Video-Creatives",
-    "Multiple cuts per concept, ready for feed, stories, and reels.":
-      "Mehrere Schnitte pro Konzept, einsatzbereit für Feed, Stories und Reels.",
-    "Static creatives": "Static Creatives",
-    "Scroll-stopping statics for the placements video can't fill.":
-      "Scroll-stoppende Statics für die Placements, die Video nicht füllen kann.",
-    "UGC-style option": "UGC-Style-Option",
-    "Prefer UGC? Swap in UGC-style videos at the same volume.":
-      "Lieber UGC? Tauschen Sie zum gleichen Volumen gegen UGC-Style-Videos.",
-    "Fast turnaround": "Schnelle Durchlaufzeit",
-    "Built on a monthly cadence, not a one-off project timeline.":
-      "Im monatlichen Rhythmus, nicht als einmaliges Projekt.",
-    "Pairs with your media buying": "Passt zu Ihrem Media Buying",
-    "Creative-only — plug it into whatever you're already running on Meta, Google, or TikTok.":
-      "Nur Creative — einsetzbar bei allem, was Sie bereits auf Meta, Google oder TikTok laufen haben.",
-    "Brief to delivery.": "Von Brief bis Lieferung.",
-    "One cadence.": "Ein Rhythmus.",
-    "We start with what's already working — and not — in your account.":
-      "Wir starten mit dem, was in Ihrem Konto bereits funktioniert — und was nicht.",
-    "Hooks, scripts, and CTAs mapped out before a single shot.":
-      "Hooks, Skripte und CTAs ausgearbeitet, bevor auch nur ein Bild gedreht wird.",
-    "Video and static production on a monthly cadence.":
-      "Video- und Static-Produktion im monatlichen Rhythmus.",
-    "Ready to plug into whatever you're already running.":
-      "Einsatzbereit für alles, was Sie bereits laufen haben.",
-    "Content,": "Content,",
-    "Do you handle the media buying too?": "Übernehmen Sie auch das Media Buying?",
-    "Not on this offer — Content is creative-only, built to pair with your own team or agency. If you want us running the media buying as well, that's the Full Service offer (Growth Retainer or Premium Partner).":
-      "Bei diesem Angebot nicht — Content ist reines Creative, gebaut für die Zusammenarbeit mit Ihrem eigenen Team oder Ihrer Agentur. Wenn wir auch das Media Buying übernehmen sollen, ist das Full Service (Growth Retainer oder Premium Partner).",
-    "What if I don't know what to test?": "Was, wenn ich nicht weiß, was ich testen soll?",
-    "We bring the concepts. Every month starts with hooks and angles based on what typically converts for e-commerce and B2C — you're not starting from a blank page.":
-      "Wir bringen die Konzepte mit. Jeder Monat startet mit Hooks und Angles, die typischerweise für E-Commerce und B2C konvertieren — Sie starten nicht bei null.",
-    "Can I do video-only or static-only?": "Kann ich nur Video oder nur Static wählen?",
-    "Yes. The volume and mix flexes to what your accounts actually need.":
-      "Ja. Volumen und Mix passen sich dem an, was Ihre Konten tatsächlich brauchen.",
+    "Without hiring in-house.": "Ohne jemanden einzustellen.",
     "What are the usage rights?": "Wie sieht es mit den Nutzungsrechten aus?",
-    "Full usage rights across paid, organic, sales, and internal — the same as everything else we produce.":
-      "Volle Nutzungsrechte für Paid, Organic, Sales und intern — wie bei allem anderen, das wir produzieren.",
-    "Creative Sprint runs month to month — no long lock-in. Most clients stay because the creative keeps working, not because of a contract.":
-      "Der Creative Sprint läuft monatlich — keine lange Bindung. Die meisten Kunden bleiben, weil das Creative weiter funktioniert, nicht wegen eines Vertrags.",
-    "Two ways to get this creative.": "Zwei Wege zu diesem Creative.",
-    "Pick your shape.": "Wählen Sie Ihr Format.",
-    "A one-off anchor film, or a running monthly retainer — both include full production.":
-      "Ein einmaliger Anker-Film oder ein laufender monatlicher Retainer — beide beinhalten die volle Produktion.",
-    "Ready for creative that": "Bereit für Creative, das",
-    "doesn't run out?": "nicht ausgeht?",
 
     /* ---- Full Service page ------------------------------------------------ */
     "Creative and performance, run as one system.": "Creative und Performance, als ein System.",
@@ -811,10 +786,7 @@ window.FWF_TRANSLATIONS = {
 
     /* ---- AI Video Production page ---- */
     "AI Video Production": "KI-Videoproduktion",
-    "AI Video Production · Stuttgart": "KI-Videoproduktion · Stuttgart",
-    "AI video production from Stuttgart.": "KI-Videoproduktion aus Stuttgart.",
     "Directed, not generated.": "Inszeniert, nicht nur generiert.",
-    "Cinematic AI commercials, product films and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.": "Cinematische KI-Werbefilme, Produktfilme und Ad Creatives für Marken in ganz DACH. KI gibt uns Tempo und Skalierung. Story, Geschmack und Regie bleiben menschlich — und genau diesen Unterschied sehen Sie in jedem Frame.",
     "See the AI work →": "KI-Arbeiten ansehen →",
     "Why us for AI video": "Warum wir für KI-Video",
     "Anyone can type a prompt. Very few can direct a film.": "Einen Prompt tippen kann jeder. Einen Film inszenieren können wenige.",

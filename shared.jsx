@@ -176,9 +176,8 @@ function Nav({ route }) {
   const servicesChildren = [
     { to: "social-media-ads", label: "Social Media Ads" },
     { to: "search-ads", label: "Search Ads" },
-    { to: "content", label: "Content" },
     { to: "full-service", label: "Full Service" },
-    { to: "ki-videoproduktion", label: "AI Video Production" },
+    { to: "ki-videoproduktion", label: "AI Video & Content" },
   ];
 
   const links = [
@@ -328,9 +327,8 @@ function Footer() {
             <Link to="services">Services</Link>
             <Link to="social-media-ads">Social Media Ads</Link>
             <Link to="search-ads">Search Ads</Link>
-            <Link to="content">Content</Link>
             <Link to="full-service">Full Service</Link>
-            <Link to="ki-videoproduktion">AI Video Production</Link>
+            <Link to="ki-videoproduktion">AI Video & Content</Link>
             <Link to="werbefilm-stuttgart">Ad Films Stuttgart</Link>
             <Link to="imagefilm-stuttgart">Brand Films Stuttgart</Link>
             <Link to="produktvideo-stuttgart">Product Videos Stuttgart</Link>

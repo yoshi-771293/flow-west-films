@@ -282,6 +282,18 @@ function OpeningFilm() {
 // ============================================
 // HOME
 // ============================================
+// "What we do": real <a href> links from the homepage (Google's most-crawled page) to every service page.
+const WHAT_WE_DO = [
+  { to: "ki-videoproduktion", t: "AI Video & Content", d: "AI commercials, UGC and AI-influencer videos, ongoing ad creatives.", c: "purple" },
+  { to: "social-media-ads", t: "Social Media Ads", d: "Full Meta Ads management — strategy, creative, audiences, scaling.", c: "pink" },
+  { to: "search-ads", t: "Search Ads", d: "Google & YouTube Ads for e-commerce and B2C brands.", c: "green" },
+  { to: "full-service", t: "Full Service", d: "Creative and performance as one system, run by one team.", c: "orange" },
+  { to: "werbefilm-stuttgart", t: "Ad Films Stuttgart", d: "AI-powered ad films and video ads built to sell.", c: "pink" },
+  { to: "imagefilm-stuttgart", t: "Brand Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
+  { to: "produktvideo-stuttgart", t: "Product Videos Stuttgart", d: "Product videos for your shop, product pages and ads.", c: "green" },
+  { to: "ai-visibility-agentur", t: "AI Visibility", d: "Be named when ChatGPT, Claude and Gemini are asked.", c: "orange" },
+];
+
 const VERTICAL_SPOTLIGHT = [
   {
     client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", local: false,
@@ -616,6 +628,29 @@ function HomePage() {
           React.createElement("div", { className: "fwf-offers-grid" },
             OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
           )
+        )
+      ),
+
+      /* WHAT WE DO — every service page, as crawlable links */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, "What we do")
+          ),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
+            "Everything we offer, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "in one place.")
+          ),
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24, marginBottom: 40 } },
+            WHAT_WE_DO.map(function(s) {
+              return React.createElement(Link, { key: s.to, to: s.to, className: "fwf-card fwf-card-" + s.c, style: { padding: 28, display: "block", textDecoration: "none", color: "inherit" } },
+                React.createElement("h3", { style: { fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 } }, s.t),
+                React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: "0 0 18px 0" } }, s.d),
+                React.createElement("span", { style: { color: "var(--fwf-" + s.c + ")" } }, React.createElement(Icons.ArrowRight, { size: 14 }))
+              );
+            })
+          ),
+          React.createElement(Link, { to: "services", className: "fwf-btn-bare" }, "Compare all services →")
         )
       ),
 
