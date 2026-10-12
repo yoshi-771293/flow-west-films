@@ -220,6 +220,7 @@ window.FWF_TRANSLATIONS = {
     "Ad Films Stuttgart": "Werbefilm Stuttgart",
     "Brand Films Stuttgart": "Imagefilm Stuttgart",
     "Product Videos Stuttgart": "Produktvideo Stuttgart",
+    "Industries": "Branchen",
     "Project index": "Projektübersicht",
     "All projects": "Alle Projekte",
     "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.":
