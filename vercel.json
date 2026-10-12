@@ -140,6 +140,22 @@
     {
       "source": "/datenschutz",
       "destination": "/_pre/datenschutz.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/_pre/blog.html"
+    },
+    {
+      "source": "/blog/was-kostet-ein-ki-werbefilm",
+      "destination": "/_pre/blog__was-kostet-ein-ki-werbefilm.html"
+    },
+    {
+      "source": "/blog/ki-werbespot-erstellen-kfc-spec-ad",
+      "destination": "/_pre/blog__ki-werbespot-erstellen-kfc-spec-ad.html"
+    },
+    {
+      "source": "/blog/warum-ki-werbung-billig-aussieht",
+      "destination": "/_pre/blog__warum-ki-werbung-billig-aussieht.html"
     }
   ],
   "headers": [

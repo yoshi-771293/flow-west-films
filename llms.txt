@@ -19,3 +19,9 @@ Standort: Neckarstraße 240, 70190 Stuttgart. Kontakt: kotullaflorian@gmail.com,
 - [Projekte](https://flowwestfilms.de/projects)
 - [Über uns](https://flowwestfilms.de/about)
 - [Kontakt](https://flowwestfilms.de/contact)
+
+## Blog
+- [Blog](https://flowwestfilms.de/blog): Wissen aus der Produktion
+- [Was kostet ein KI-Werbefilm?](https://flowwestfilms.de/blog/was-kostet-ein-ki-werbefilm): Preise ab ca. 2.500 €, Pakete, was KI-Projekte teurer macht
+- [KI-Werbespot erstellen: KFC Spec Ad](https://flowwestfilms.de/blog/ki-werbespot-erstellen-kfc-spec-ad): Making-of in 2 bis 3 Tagen, Tools und Learnings
+- [Warum KI-Werbung billig aussieht](https://flowwestfilms.de/blog/warum-ki-werbung-billig-aussieht): Die fünf häufigsten Fehler und was in der ersten Stunde passiert

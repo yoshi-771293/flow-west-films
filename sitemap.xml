@@ -96,4 +96,28 @@
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog/was-kostet-ein-ki-werbefilm</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog/ki-werbespot-erstellen-kfc-spec-ad</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog/warum-ki-werbung-billig-aussieht</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

@@ -2337,7 +2337,7 @@ function AiVideoPage() {
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
-            <a href="#ai-work" className="fwf-btn fwf-btn-ghost">
+            <a href={window.location.pathname + "#ai-work"} className="fwf-btn fwf-btn-ghost">
               See the AI work →
             </a>
           </div>
@@ -3354,7 +3354,7 @@ function KeywordPage({ id }) {
             <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               {U.book} <Icons.ArrowRight size={12} />
             </a>
-            <a href="#kw-work" className="fwf-btn fwf-btn-ghost">{U.see}</a>
+            <a href={window.location.pathname + "#kw-work"} className="fwf-btn fwf-btn-ghost">{U.see}</a>
           </div>
         </div>
       </section>

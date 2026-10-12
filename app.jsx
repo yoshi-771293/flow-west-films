@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, FullServicePage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, FullServicePage, BlogIndexPage, BlogPostPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -32,6 +32,10 @@ const ROUTE_META = {
   home: {
     de: { title: "Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films", desc: "Werbefilme, Ad Creatives & cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart, Einsatz in ganz DACH." },
     en: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium ad creative & cinematic film production for B2C brands that want to scale. Studio in Stuttgart." },
+  },
+  blog: {
+    de: { title: "Blog: KI-Werbefilm, Kosten & Making-of | Flow West Films", desc: "Wissen aus der Produktion: Was KI-Werbefilme kosten, wie ein KI-Spot entsteht und warum so viel KI-Werbung billig aussieht." },
+    en: { title: "Blog: AI Commercials, Costs & Making-of | Flow West Films", desc: "Insights from production: what AI commercials cost, how an AI spot is made and why so much AI advertising looks cheap." },
   },
   projects: {
     de: { title: "Projekte — Flow West Films", desc: "Ausgewählte Arbeiten: Ad Creatives, Brand Films, Reels und Produktionen für Marken aus Hospitality, Sport und Consumer Goods." },
@@ -125,6 +129,7 @@ function App() {
 
   let Page;
   switch (route) {
+    case "blog":        Page = BlogIndexPage;   break;
     case "projects":    Page = ProjectsLabPage; break;
     case "projects-classic": Page = ProjectsPage; break;
     case "projects-lab": Page = ProjectsLabPage; break;
@@ -141,7 +146,7 @@ function App() {
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
     case "datenschutz": Page = DatenschutzPage; break;
-    default:            Page = HomePage;
+    default:            Page = route.indexOf("blog/") === 0 ? BlogPostPage : HomePage;
   }
 
   // Per-route <title> + meta description. Without this every real URL would
@@ -149,7 +154,12 @@ function App() {
   // defeats the point of having separate paths at all.
   useEffectA(() => {
     const lang = (window.FWF_getLanguage && window.FWF_getLanguage()) || "de";
-    const meta = (ROUTE_META[route] || ROUTE_META.home)[lang === "de" ? "de" : "en"];
+    let entry = ROUTE_META[route];
+    if (!entry && route.indexOf("blog/") === 0) {
+      const post = (window.FWF_POSTS || []).find((p) => "blog/" + p.slug === route);
+      if (post) entry = { de: { title: post.metaTitle, desc: post.metaDesc }, en: { title: post.metaTitle, desc: post.metaDesc } };
+    }
+    const meta = (entry || ROUTE_META.home)[lang === "de" ? "de" : "en"];
     document.title = meta.title;
     const set = (sel, attr, val) => {
       const el = document.querySelector(sel);
@@ -173,6 +183,7 @@ function App() {
   // Map routes to screen labels
   const labels = {
     home:        "01 Home",
+    blog:        "06 Blog",
     projects:    "02 Projects",
     "projects-classic": "02 Projects · Classic",
     "projects-lab": "02 Projects",

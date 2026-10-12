@@ -184,6 +184,7 @@ function Nav({ route }) {
     { to: "home", label: "Home" },
     { to: "projects", label: "Projects" },
     { to: "services", label: "Services", children: servicesChildren },
+    { to: "blog", label: "Blog" },
     { to: "about", label: "About" },
     { to: "contact", label: "Contact" },
   ];
@@ -199,7 +200,7 @@ function Nav({ route }) {
           <div className="fwf-nav-links fwf-nav-links-center">
             {links.map((l) => {
               if (l.external) return <a key={l.href} href={l.href} className="fwf-nav-link">{l.label}</a>;
-              const isActive = route === l.to || (l.children && l.children.some((c) => c.to === route));
+              const isActive = route === l.to || route.indexOf(l.to + "/") === 0 || (l.children && l.children.some((c) => c.to === route));
               if (!l.children) {
                 return (
                   <Link
@@ -333,6 +334,7 @@ function Footer() {
             <Link to="imagefilm-stuttgart">Brand Films Stuttgart</Link>
             <Link to="produktvideo-stuttgart">Product Videos Stuttgart</Link>
             <Link to="ai-visibility-agentur">AI Visibility</Link>
+            <Link to="blog">Blog</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
             <a href="/audit/">Audit</a>

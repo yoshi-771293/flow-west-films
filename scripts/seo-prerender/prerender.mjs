@@ -4,6 +4,7 @@
 import { chromium } from "playwright-core";
 import fs from "node:fs";
 import path from "node:path";
+import vm from "node:vm";
 
 const SITE = path.resolve(process.argv[2]);
 const OUT = path.resolve(process.argv[3]);
@@ -13,7 +14,14 @@ const ORIGIN = "https://flowwestfilms.de";
 const ROUTES = [
   "home", "projects", "services", "social-media-ads", "search-ads",
   "full-service", "ai-visibility-agentur", "ki-videoproduktion", "werbefilm-stuttgart", "imagefilm-stuttgart", "produktvideo-stuttgart", "about", "contact", "impressum", "datenschutz",
+  "blog",
 ];
+// Blog posts come from blog-data.js (single source of truth) -> /blog/<slug>
+{
+  const sb = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "blog-data.js"), "utf8"), sb);
+  for (const p of sb.window.FWF_POSTS || []) ROUTES.push("blog/" + p.slug);
+}
 
 const CDN = {
   "react@18.3.1/umd/react.production.min.js": "react/umd/react.production.min.js",
@@ -87,7 +95,7 @@ for (const route of ROUTES) {
       text: root.innerText.length,
     };
   });
-  fs.writeFileSync(path.join(OUT, route + ".json"), JSON.stringify(html));
+  fs.writeFileSync(path.join(OUT, route.replace(/\//g, "__") + ".json"), JSON.stringify(html));
   console.log(route.padEnd(24), "chars:", String(html.text).padStart(6), "|", html.title, errors.length ? "| ERR " + errors[0] : "");
   await page.close();
 }

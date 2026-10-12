@@ -3,6 +3,7 @@
 // _template.html is the source of truth for <head>; index.html is GENERATED (home page).
 import fs from "node:fs";
 import path from "node:path";
+import vm from "node:vm";
 
 const [SITE, SNAP, OUT] = process.argv.slice(2).map((p) => path.resolve(p));
 const ORIGIN = "https://flowwestfilms.de";
@@ -69,9 +70,32 @@ const EXTRA = {
   ],
 };
 
+// Blog: posts come from blog-data.js -> BlogPosting + FAQPage schema per post, Blog schema on /blog.
+{
+  const sb = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "blog-data.js"), "utf8"), sb);
+  const posts = sb.window.FWF_POSTS || [];
+  EXTRA["blog"] = [{
+    "@type": "Blog", "@id": ORIGIN + "/blog#blog", url: ORIGIN + "/blog", name: "Flow West Films Blog", inLanguage: "de-DE",
+    publisher: { "@id": ORIGIN + "/#business" },
+    blogPost: posts.map((p) => ({ "@type": "BlogPosting", headline: p.title, url: ORIGIN + "/blog/" + p.slug, datePublished: p.date })),
+  }];
+  for (const p of posts) {
+    EXTRA["blog/" + p.slug] = [
+      {
+        "@type": "BlogPosting", headline: p.title, description: p.metaDesc, inLanguage: "de-DE",
+        datePublished: p.date, dateModified: p.date,
+        mainEntityOfPage: ORIGIN + "/blog/" + p.slug,
+        author: { "@id": ORIGIN + "/#founder" }, publisher: { "@id": ORIGIN + "/#business" },
+      },
+      faq(p.faq),
+    ];
+  }
+}
+
 fs.mkdirSync(path.join(OUT, "_pre"), { recursive: true });
 for (const f of fs.readdirSync(SNAP).filter((f) => f.endsWith(".json"))) {
-  const route = f.replace(".json", "");
+  const route = f.replace(".json", "").replace(/__/g, "/");
   const s = JSON.parse(fs.readFileSync(path.join(SNAP, f), "utf8"));
   const url = ORIGIN + (route === "home" ? "/" : "/" + route);
   let html = tpl
@@ -82,7 +106,7 @@ for (const f of fs.readdirSync(SNAP).filter((f) => f.endsWith(".json"))) {
     .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`)
     .replace("<!-- Fonts -->", `<script type="application/ld+json">${JSON.stringify(EXTRA[route] ? { ...ORG, "@graph": [...ORG["@graph"], ...EXTRA[route]] } : ORG)}</script>\n\n  <!-- Fonts -->`)
     .replace('<div id="root"></div>', `<div id="root" data-prerendered="${route}">${s.body}</div>`);
-  const dest = route === "home" ? path.join(OUT, "index.html") : path.join(OUT, "_pre", route + ".html");
+  const dest = route === "home" ? path.join(OUT, "index.html") : path.join(OUT, "_pre", route.replace(/\//g, "__") + ".html");
   fs.writeFileSync(dest, html);
   console.log(route.padEnd(24), (html.length / 1024).toFixed(0) + "KB", "->", path.relative(OUT, dest));
 }

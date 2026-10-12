@@ -18,3 +18,9 @@ After ANY change to page content, copy, routes or `_template.html`, regenerate b
 ## New routes
 Add the route in four places: app.jsx (switch + ROUTE_META), vercel.json rewrite
 to `/_pre/<route>.html`, `ROUTES` in scripts/seo-prerender/prerender.mjs, and sitemap.xml.
+
+## Blog
+Posts live in `blog-data.js` (one object per post) and render via `blog.jsx` at `/blog/<slug>`.
+`scripts/seo-prerender` reads `blog-data.js`, so routes and schema (BlogPosting + FAQPage) follow automatically.
+For each new post also add: a rewrite in vercel.json (`/blog/<slug>` -> `/_pre/blog__<slug>.html`) and a sitemap.xml entry. Then rebuild.
+Voice: German, "Du", short declarative sentences. Price ranges are fine in posts; the site pages stay price-free.
