@@ -253,6 +253,7 @@ window.FWF_TRANSLATIONS = {
     "Product videos for your shop, product pages and ads.": "Produktvideos für Shop, Produktseite und Anzeigen.",
     "Be named when ChatGPT, Claude and Gemini are asked.": "Genannt werden, wenn ChatGPT, Claude und Gemini gefragt werden.",
     "Compare all services →": "Alle Leistungen vergleichen →",
+    "Cookie settings": "Cookie-Einstellungen",
     "Project index": "Projektübersicht",
     "All projects": "Alle Projekte",
     "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.":

@@ -2958,7 +2958,7 @@ function DatenschutzPage() {
               eingesetzt, um Conversion-Daten zu erheben und Werbekampagnen zu optimieren. Die dabei erfassten
               Daten (u. a. IP-Adresse, Seitenaufrufe, User-Agent) werden an Meta übermittelt und können in den
               USA verarbeitet werden. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a
-              DSGVO). Die Einwilligung ist jederzeit widerrufbar. Wir und Meta Platforms Ireland Limited sind für
+              DSGVO). Die Einwilligung ist jederzeit widerrufbar, über „Cookie-Einstellungen“ im Footer dieser Website. Wir und Meta Platforms Ireland Limited sind für
               die Erfassung und Übermittlung dieser Daten gemeinsam verantwortlich (Art. 26 DSGVO). Die
               Datenübertragung in die USA stützt sich auf die Standardvertragsklauseln der EU-Kommission.
             </p>

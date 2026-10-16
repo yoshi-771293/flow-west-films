@@ -362,6 +362,7 @@ function Footer() {
           <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
             <Link to="impressum" style={{ color: "var(--fwf-text-faint)", fontSize: 12, fontFamily: "var(--fwf-mono)", letterSpacing: "0.12em", textDecoration: "none" }}>Impressum</Link>
             <Link to="datenschutz" style={{ color: "var(--fwf-text-faint)", fontSize: 12, fontFamily: "var(--fwf-mono)", letterSpacing: "0.12em", textDecoration: "none" }}>Datenschutz</Link>
+            <button type="button" onClick={() => window.FWF_consent && window.FWF_consent.open()} style={{ color: "var(--fwf-text-faint)", fontSize: 12, fontFamily: "var(--fwf-mono)", letterSpacing: "0.12em", background: "none", border: "none", padding: 0, cursor: "pointer" }}>Cookie settings</button>
           </div>
         </div>
       </div>
