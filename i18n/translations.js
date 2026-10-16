@@ -71,8 +71,6 @@ window.FWF_TRANSLATIONS = {
     "— Trusted by —": "— Kunden, die uns vertrauen —",
 
     /* ---- Home: hero --------------------------------------------------- */
-    "Studio · Stuttgart · Now booking Q4 2026":
-      "Studio · Stuttgart · Buchbar ab Q4 2026",
     "We make brands": "Wir machen es unmöglich,",
     "impossible to": "Marken zu",
     "ignore.": "ignorieren.",

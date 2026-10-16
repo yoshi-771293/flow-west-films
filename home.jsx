@@ -350,11 +350,6 @@ function HomePage() {
             React.createElement("span", { style: { fontFamily: "var(--fwf-mono)", fontSize: "clamp(13px, 1.25vw, 16px)", letterSpacing: "0.42em", textTransform: "uppercase", color: "rgba(255,255,255,0.78)", paddingLeft: "0.42em" } }, "Flow West Films")
           ),
 
-          React.createElement("div", { className: "fwf-fade-up fwf-d1", style: { display: "inline-flex", alignItems: "center", gap: 12, padding: "11px 20px", borderRadius: 999, border: "1px solid var(--fwf-hairline-strong)", background: "rgba(255,255,255,0.03)", fontFamily: "var(--fwf-mono)", fontSize: 13.5, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.92)", marginBottom: 36 } },
-            React.createElement("span", { style: { width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" } }),
-            "Studio · Stuttgart · Now booking Q4 2026"
-          ),
-
           React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2 fwf-hero-h1", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
             "We turn ad spend", React.createElement("br"),
             "into ",
