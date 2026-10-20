@@ -156,6 +156,10 @@
     {
       "source": "/blog/warum-ki-werbung-billig-aussieht",
       "destination": "/_pre/blog__warum-ki-werbung-billig-aussieht.html"
+    },
+    {
+      "source": "/blog/done-for-you-marketing-agentur-vs-einmalprojekt",
+      "destination": "/_pre/blog__done-for-you-marketing-agentur-vs-einmalprojekt.html"
     }
   ],
   "headers": [

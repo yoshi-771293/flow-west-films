@@ -125,7 +125,7 @@ function BlogPostPage() {
               <Icons.ArrowRight size={14} />
             </a>
             <div style={{ marginTop: 20, fontSize: 15 }}>
-              <Link to="ki-videoproduktion" style={{ color: "var(--fwf-purple)" }}>Mehr zu KI-Videoproduktion bei Flow West Films →</Link>
+              <Link to={(post.cta.link || {}).to || "ki-videoproduktion"} style={{ color: "var(--fwf-purple)" }}>{(post.cta.link || {}).label || "Mehr zu KI-Videoproduktion bei Flow West Films →"}</Link>
             </div>
           </div>
         </div>

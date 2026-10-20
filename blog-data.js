@@ -252,5 +252,82 @@ window.FWF_POSTS = [
     ],
     related: ["ki-werbespot-erstellen-kfc-spec-ad", "was-kostet-ein-ki-werbefilm"],
     cta: { h: "Du willst KI-Werbung, die nach Film aussieht?", sub: "30 Minuten Call. Wir schauen auf Deine Marke und Dein Ziel." }
+  },
+
+  {
+    slug: "done-for-you-marketing-agentur-vs-einmalprojekt",
+    title: "Done for you oder Einmalprojekt? Warum ein Imagefilm allein Dein Marketing nicht löst",
+    metaTitle: "Done for you Marketing Agentur vs. Einmalprojekt | Flow West Films",
+    metaDesc: "Done for you Marketing Agentur oder Einmalprojekt? Warum ein Imagefilm allein nicht reicht und was ein Service für rund 4.000 € im Monat übernimmt.",
+    eyebrow: "Done for you",
+    date: "2026-10-20",
+    readMin: 4,
+    answer: "Bei einem Einmalprojekt wie einem Imagefilm bekommst Du genau ein Stück: das Video. Social Media, Ads, Schnitt und Auswertung bleiben bei Dir. Bei einem Done-for-you-Service übernimmt die Agentur das laufende Marketing: Content, Ads und Performance, dazu Check-ins und Reports. Bei uns liegt das in der Größenordnung eines Vollzeitgehalts, rund 4.000 € im Monat. Dafür bleibt Deine Zeit bei dem, was Du gut kannst und gern tust.",
+    intro: ["Ein Imagefilm sieht gut aus. Er klärt aber nicht, wer danach Dein Marketing macht. Genau hier liegt der Unterschied zwischen einem Einmalprojekt und einem Done-for-you-Service."],
+    sections: [
+      {
+        h: "Was ein Einmalprojekt liefert und was es Dir überlässt",
+        blocks: [
+          { p: "Nimm einen Imagefilm. Er wird produziert, Dein Unternehmen sieht online besser aus, das Projekt ist abgeschlossen. Danach geht die Arbeit erst richtig los." },
+          { p: "Auf Social Media musst Du aktiv bleiben: Content filmen, schneiden und posten. Bei den Ads ist es dasselbe. Jemand muss sie erstellen, jemand muss sie schneiden, und jemand muss das Performance Marketing steuern: schwache Ads abschalten, gute optimieren." },
+          { p: "Ein Einmalprojekt erledigt ein Stück. Es ist kein fertiger Service. Der Rest bleibt liegen, wenn ihn niemand übernimmt." }
+        ]
+      },
+      {
+        h: "Was bei Done for you passiert",
+        blocks: [
+          { ul: [
+            "Content: Filmen, Schneiden und Posten übernimmt die Agentur.",
+            "Ads: Die Agentur erstellt und schneidet die Ads.",
+            "Performance: Sie steuert die Kampagnen, schaltet schwache Ads ab und optimiert die guten.",
+            "Reporting: Du bekommst Check-ins und Reports und siehst, was passiert."
+          ] },
+          { p: "Du behältst den Überblick, ohne die Arbeit selbst zu machen." }
+        ]
+      },
+      {
+        h: "Warum die meisten Unternehmer es sonst nie tun",
+        blocks: [
+          { p: "Wenn Du Marketing nicht magst, wirst Du es nicht regelmäßig machen. Das ist keine Schwäche, sondern ein ehrlicher Blick auf Deine Zeit. Content, Ads und Auswertung brauchen Kontinuität. Ohne sie bleibt der Imagefilm ein schönes Video auf der Website." },
+          { p: "Es bleiben zwei ehrliche Wege: Du machst es selbst, oder Du gibst es ab." }
+        ]
+      },
+      {
+        h: "Was Done for you kostet",
+        blocks: [
+          { p: "Bei Flow West Films liegt ein Done-for-you-Service in der Größenordnung eines Vollzeitgehalts, rund 4.000 € im Monat. Du bezahlst damit nicht ein einzelnes Video, sondern Marketing, das dauerhaft läuft." },
+          { p: "Das ist mehr als ein Einmalprojekt. Es ist aber auch ein anderes Produkt: Ein Einmalprojekt kauft Dir ein Ergebnis. Done for you kauft Dir Zeit und Kontinuität." }
+        ]
+      },
+      {
+        h: "Wann ein Einmalprojekt reicht",
+        blocks: [
+          { p: "Ein Einmalprojekt ist die richtige Wahl, wenn Du intern jemanden hast, der Content, Ads und Auswertung übernimmt. Dann liefert das Projekt das Material, und Dein Team macht daraus laufendes Marketing." }
+        ]
+      },
+      {
+        h: "Der Selbsttest: Brauchst Du Done for you?",
+        blocks: [
+          { p: "Beantworte fünf Fragen:" },
+          { ol: [
+            "Wer filmt regelmäßig neuen Content?",
+            "Wer schneidet ihn?",
+            "Wer postet und bleibt auf Social Media aktiv?",
+            "Wer erstellt und schneidet Deine Ads?",
+            "Wer wertet die Ads aus, schaltet schwache ab und optimiert die guten?"
+          ] },
+          { p: "Wenn Du bei mehr als einer Frage „niemand“ sagst, bleibt Dein Marketing liegen. Dann ist Done for you die ehrlichere Lösung." }
+        ]
+      }
+    ],
+    faq: [
+      ["Was bedeutet Done for you im Marketing?", "Die Agentur übernimmt das laufende Marketing komplett: Content filmen, schneiden und posten, Ads erstellen und steuern, Ergebnisse auswerten. Du bekommst Check-ins und Reports und gibst Feedback, statt selbst zu arbeiten."],
+      ["Was ist der Unterschied zwischen Done for you und einem Einmalprojekt?", "Ein Einmalprojekt wie ein Imagefilm liefert ein einzelnes Ergebnis. Social Media, Ads und Performance bleiben bei Dir. Done for you übernimmt diese laufende Arbeit."],
+      ["Was kostet Done-for-you-Marketing bei Flow West Films?", "In der Größenordnung eines Vollzeitgehalts, rund 4.000 € im Monat. Ein konkretes Angebot gibt es nach einem 30-minütigen Call."],
+      ["Brauche ich nach einem Imagefilm noch laufendes Marketing?", "Ja, wenn Du Reichweite und Anfragen willst. Der Film ist das Material. Social Media, Ads und deren Optimierung muss danach jemand betreiben."],
+      ["Wann reicht ein Einmalprojekt?", "Wenn Du intern jemanden hast, der Content, Ads und Auswertung übernimmt."]
+    ],
+    related: ["was-kostet-ein-ki-werbefilm", "warum-ki-werbung-billig-aussieht"],
+    cta: { h: "Du willst Dein Marketing abgeben?", sub: "30 Minuten Call. Wir klären, was Du abgeben willst und was es kostet.", link: { to: "full-service", label: "Mehr zum Full Service von Flow West Films →" } }
   }
 ];
