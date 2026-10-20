@@ -23,7 +23,8 @@ function BlogBlocks({ blocks }) {
 }
 
 function BlogIndexPage() {
-  const posts = blogPosts();
+  // Newest first; posts sharing a date keep "added later = newer" (blog-data.js appends new posts at the end).
+  const posts = blogPosts().map((p, i) => [p, i]).sort((a, b) => b[0].date.localeCompare(a[0].date) || b[1] - a[1]).map(([p]) => p);
   return (
     <main>
       <section style={{ position: "relative", paddingTop: 180, paddingBottom: 60, overflow: "hidden" }}>
