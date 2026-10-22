@@ -166,7 +166,7 @@ const ALL_PROJECTS = [
   },
   // === SOCIAL / REELS ===
   {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", cat: "social", ind: "auto", hidden: true,
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Ad Creative", cat: "social", ind: "auto", hidden: true,
     desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
@@ -194,35 +194,35 @@ const ALL_PROJECTS = [
     video: "https://iframe.mediadelivery.net/embed/684848/c518444d-58e6-458e-a0a1-d7b880f8848d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Reel", cat: "social", ind: "food",
+    client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Ad Creative", cat: "social", ind: "food",
     desc: "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.",
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/1dfa2361-efe0-4067-ae8c-6ccd66ea320c/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/1dfa2361-efe0-4067-ae8c-6ccd66ea320c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "French Touch", title: "Patisserie Reel", tag: "Reel", cat: "social", ind: "food", hidden: true,
+    client: "French Touch", title: "Patisserie Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
     desc: "Instagram reel for French Touch — a French patisserie in the heart of Munich, where butter, flour, and a little patience do the talking.",
     colors: ["#ff2d78", "#9b30ff"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/ca3fa44f-26d8-4bef-9303-496692d4c76c/thumbnail_0acb9f11.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/ca3fa44f-26d8-4bef-9303-496692d4c76c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Santa Lucia", title: "Restaurant Reel", tag: "Reel", cat: "social", ind: "food",
+    client: "Santa Lucia", title: "Restaurant Reel", tag: "Ad Creative", cat: "social", ind: "food",
     desc: "Instagram reel for Santa Lucia — a founder-led Italian restaurant in Stuttgart, where the owner is on the floor every single day. The room, the plates, the atmosphere — everything that makes this place worth the table comes straight from the heart of Italy.",
     colors: ["#c9a96e", "#ff2d78"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/f8ed2a20-4ccb-4c66-8b60-84e314d177f6/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Munich Bierfest", title: "Tavern Reel", tag: "Reel", cat: "social", ind: "food", hidden: true,
+    client: "Munich Bierfest", title: "Tavern Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
     desc: "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.",
     colors: ["#c9a96e", "#ff6420"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/9ac156cd-7c36-4057-835c-e199f03c1ecd/thumbnail_c3856f2e.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/9ac156cd-7c36-4057-835c-e199f03c1ecd?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Pane e Vino", title: "Founder Reel", tag: "Reel", cat: "social", ind: "food", hidden: true,
+    client: "Pane e Vino", title: "Founder Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
     desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
     colors: ["#c9a96e", "#ff2d78"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",

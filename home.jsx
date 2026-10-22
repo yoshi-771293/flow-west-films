@@ -308,7 +308,7 @@ const VERTICAL_SPOTLIGHT = [
     video: "https://iframe.mediadelivery.net/embed/684848/637af620-778f-4a9b-83b6-7941d535a772?token=613086822587d8be60269286e3b8c68f91c1e8aa67596a8ee013e0280f9026f3&expires=1787759279&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
   },
   {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Reel", local: false,
+    client: "Streetside Classics", title: "Showroom Reel", tag: "Ad Creative", local: false,
     desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
     thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
