@@ -840,19 +840,20 @@ window.FWF_TRANSLATIONS = {
     /* ---- Home: AI Creative Sprint as the single offer (2026-10) ---- */
     "Same budget.": "Gleiches Budget.",
     "More revenue.": "Mehr Umsatz.",
-    "The AI Creative Sprint: 10, 20 or 50 short-form videos at once — from UGC to ad creative, vertical or horizontal, for Meta, TikTok and YouTube. First output in days, not weeks.": "Der AI Creative Sprint: 10, 20 oder 50 Short-Form-Videos auf einmal, von UGC bis Ad Creative, vertikal oder horizontal, für Meta, TikTok und YouTube. Erster Output in Tagen statt Wochen.",
+    "The AI Creative Sprint: 10, 20 or 50 short-form videos at once — from UGC to ad creative, vertical or horizontal, for Meta, TikTok and YouTube. First output in days, not weeks.": "Der AI Creative Sprint: 10, 20 oder 50 kurze Videos auf einen Schlag, vom UGC-Style bis zum klassischen Ad Creative, hochkant oder quer, für Meta, TikTok und YouTube. Die ersten Videos haben Sie nach wenigen Tagen, nicht erst nach Wochen.",
     "Start the 60-second check": "60-Sekunden-Check starten",
-    "10–50 short-form ads": "10–50 Short-Form-Ads",
-    "First output in days": "Erster Output in Tagen",
-    "The offer": "Das Angebot",
+    "10–50 short-form ads": "10 bis 50 Ads pro Sprint",
+    "First output in days": "Erste Videos nach wenigen Tagen",
+    "The offer": "Unser Angebot",
     "The AI Creative Sprint.": "Der AI Creative Sprint.",
     "As many ads as your account can test.": "So viele Ads, wie Ihr Account testen kann.",
-    "Short-form videos in one package, sized to your needs: UGC style, ad creatives, YouTube ads, vertical or horizontal. One sprint, one team, every format.": "Short-Form-Videos im Paket, ganz nach Bedarf: UGC-Style, Ad Creatives, YouTube Ads, vertikal oder horizontal. Ein Sprint, ein Team, jedes Format.",
+    "Short-form videos in one package, sized to your needs: UGC style, ad creatives, YouTube ads, vertical or horizontal. One sprint, one team, every format.": "Kurze Videos im Paket, genau so viele, wie Sie brauchen: im UGC-Style, als Ad Creative oder YouTube Ad, hochkant oder quer. Ein Sprint, ein Team, jedes Format.",
     "UGC style": "UGC-Style",
     "Ad creatives": "Ad Creatives",
     "YouTube ads": "YouTube Ads",
-    "Vertical 9:16": "Vertikal 9:16",
-    "Bigger project — image film or commercial?": "Größeres Projekt, Imagefilm oder Werbefilm?",
+    "Vertical 9:16": "Hochkant 9:16",
+    "Horizontal 16:9": "Quer 16:9",
+    "Bigger project — image film or commercial?": "Sie planen etwas Größeres, etwa einen Imagefilm oder Werbespot?",
     "Write to us →": "Schreiben Sie uns →"
   }
 };
