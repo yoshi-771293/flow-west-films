@@ -48,7 +48,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
       </ul>
 
       {expanded ? (
-        <a href="https://calendly.com/flowwestfilms-appointment/30min" target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
+        <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=pricing" target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
           Book a call to discuss
           <Icons.ArrowRight size={12} />
         </a>
@@ -351,19 +351,18 @@ function HomePage() {
           ),
 
           React.createElement("h1", { className: "fwf-display fwf-fade-up fwf-d2 fwf-hero-h1", style: { fontSize: "clamp(56px, 10vw, 140px)", margin: "0 0 28px 0", lineHeight: 0.92, textWrap: "balance" } },
-            "We turn ad spend", React.createElement("br"),
-            "into ",
-            React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "repeat customers.")
+            "Same budget.", React.createElement("br"),
+            React.createElement("em", { className: "fwf-display-italic", style: { background: "linear-gradient(90deg, var(--fwf-pink), var(--fwf-purple))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 28px rgba(255,45,120,0.35))" } }, "More revenue.")
           ),
 
           React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
-            "Cinematic ad creative and performance marketing for e-commerce and B2C brands — engineered to earn repeat customers, not just first clicks."
+            "The AI Creative Sprint: 10, 20 or 50 short-form videos at once — from UGC to ad creative, vertical or horizontal, for Meta, TikTok and YouTube. First output in days, not weeks."
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
             React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →"),
-            React.createElement("a", { href: "https://calendly.com/flowwestfilms-appointment/30min", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
-              React.createElement(Icons.Calendar, { size: 14 }), " Book a strategy call"
+            React.createElement("a", { href: "https://start.flowwestfilms.de/?utm_source=website&utm_content=hero", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+              "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
             ),
             React.createElement("a", {
               href: "#work",
@@ -377,9 +376,9 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
-            React.createElement("span", null, "4K Production"),
-            React.createElement("span", null, "E-commerce & B2C"),
-            React.createElement("span", null, "Built for Repeat Sales")
+            React.createElement("span", null, "10–50 short-form ads"),
+            React.createElement("span", null, "Meta · TikTok · YouTube"),
+            React.createElement("span", null, "First output in days")
           )
         )
       ),
@@ -603,25 +602,40 @@ function HomePage() {
 
       React.createElement(GrowthEngineSection, { compact: true }),
 
-      /* 4 OFFERS */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative" } },
+      /* THE OFFER — one product: the AI Creative Sprint. The other services stay below ("What we do") for SEO. */
+      React.createElement("section", { className: "fwf-section", id: "sprint", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative" } },
         React.createElement("div", { className: "fwf-container" },
-          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 24 } },
-            React.createElement("div", null,
-              React.createElement("div", { className: "fwf-section-label" },
-                React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "Four ways to work with us")
-              ),
-              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: 0, textWrap: "balance" } },
-                "Choose your ", React.createElement("em", { className: "fwf-display-italic" }, "altitude.")
-              )
-            ),
-            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, maxWidth: 360, margin: 0, lineHeight: 1.55 } },
-              "Four offers — from a one-time anchor film to a founder-led bespoke partnership. Pricing is discussed on your call."
-            )
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, "The offer")
           ),
-          React.createElement("div", { className: "fwf-offers-grid" },
-            OFFERS.map((o, i) => React.createElement(OfferCard, Object.assign({ key: i }, o)))
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 20px 0", maxWidth: 900, textWrap: "balance" } },
+            "The AI Creative Sprint. ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "As many ads as your account can test.")
+          ),
+          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, maxWidth: 620, margin: "0 0 48px 0" } },
+            "Short-form videos in one package, sized to your needs: UGC style, ad creatives, YouTube ads, vertical or horizontal. One sprint, one team, every format."
+          ),
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))", gap: 12, marginBottom: 24 } },
+            [10, 15, 20, 30, 40, 50].map(function(n) {
+              return React.createElement("div", { key: n, className: "fwf-stat", style: { textAlign: "center", padding: "24px 12px" } },
+                React.createElement("div", { className: "fwf-stat-num", style: { marginBottom: 10 } }, String(n)),
+                React.createElement("div", { className: "fwf-label" }, "Videos")
+              );
+            })
+          ),
+          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 } },
+            ["UGC style", "Ad creatives", "YouTube ads", "Vertical 9:16", "Horizontal 16:9"].map(function(f) {
+              return React.createElement("span", { key: f, className: "fwf-badge fwf-badge-pink" }, f);
+            })
+          ),
+          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 } },
+            React.createElement("a", { href: "https://start.flowwestfilms.de/?utm_source=website&utm_content=sprint", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+              "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
+            ),
+            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: 0 } },
+              "Bigger project — image film or commercial? ",
+              React.createElement(Link, { to: "contact", style: { color: "var(--fwf-pink)", textDecoration: "none" } }, "Write to us →")
+            )
           )
         )
       ),

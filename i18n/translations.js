@@ -835,6 +835,24 @@ window.FWF_TRANSLATIONS = {
     "Do you only work in Stuttgart?": "Arbeiten Sie nur in Stuttgart?",
     "No. We're based in Stuttgart and work with brands across Germany, Austria and Switzerland. AI production runs fully remote.": "Nein. Wir sitzen in Stuttgart und arbeiten mit Marken in ganz Deutschland, Österreich und der Schweiz. KI-Produktion läuft komplett remote.",
     "Want to see what AI can do": "Wollen Sie sehen, was KI",
-    "for your brand?": "für Ihre Marke leisten kann?"
+    "for your brand?": "für Ihre Marke leisten kann?",
+
+    /* ---- Home: AI Creative Sprint as the single offer (2026-10) ---- */
+    "Same budget.": "Gleiches Budget.",
+    "More revenue.": "Mehr Umsatz.",
+    "The AI Creative Sprint: 10, 20 or 50 short-form videos at once — from UGC to ad creative, vertical or horizontal, for Meta, TikTok and YouTube. First output in days, not weeks.": "Der AI Creative Sprint: 10, 20 oder 50 Short-Form-Videos auf einmal, von UGC bis Ad Creative, vertikal oder horizontal, für Meta, TikTok und YouTube. Erster Output in Tagen statt Wochen.",
+    "Start the 60-second check": "60-Sekunden-Check starten",
+    "10–50 short-form ads": "10–50 Short-Form-Ads",
+    "First output in days": "Erster Output in Tagen",
+    "The offer": "Das Angebot",
+    "The AI Creative Sprint.": "Der AI Creative Sprint.",
+    "As many ads as your account can test.": "So viele Ads, wie Ihr Account testen kann.",
+    "Short-form videos in one package, sized to your needs: UGC style, ad creatives, YouTube ads, vertical or horizontal. One sprint, one team, every format.": "Short-Form-Videos im Paket, ganz nach Bedarf: UGC-Style, Ad Creatives, YouTube Ads, vertikal oder horizontal. Ein Sprint, ein Team, jedes Format.",
+    "UGC style": "UGC-Style",
+    "Ad creatives": "Ad Creatives",
+    "YouTube ads": "YouTube Ads",
+    "Vertical 9:16": "Vertikal 9:16",
+    "Bigger project — image film or commercial?": "Größeres Projekt, Imagefilm oder Werbefilm?",
+    "Write to us →": "Schreiben Sie uns →"
   }
 };

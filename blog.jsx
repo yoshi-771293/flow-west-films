@@ -1,6 +1,6 @@
 /* global React, Icons, Link, useRoute */
 /* Blog pages — content lives in blog-data.js (window.FWF_POSTS). */
-const BLOG_CALENDLY = "https://calendly.com/flowwestfilms-appointment/30min";
+const BLOG_CALENDLY = "https://start.flowwestfilms.de/?utm_source=website&utm_content=blog";
 const BLOG_MAX = 720;
 
 function blogPosts() { return window.FWF_POSTS || []; }
