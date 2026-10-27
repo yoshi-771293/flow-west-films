@@ -867,6 +867,7 @@ window.FWF_TRANSLATIONS = {
     "What do you sell?": "Was verkaufen Sie?",
     "Pick one and the check asks the right questions for your business.": "Wählen Sie aus, und der Check stellt die passenden Fragen zu Ihrem Geschäft.",
     "Products (e-commerce)": "Produkte (E-Commerce)",
-    "A service": "Eine Dienstleistung"
+    "A service": "Eine Dienstleistung",
+    "Brand & Corporate Films Stuttgart": "Imagefilm & Unternehmensfilm Stuttgart"
   }
 };

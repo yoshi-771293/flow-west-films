@@ -11,12 +11,12 @@ Standort: Neckarstraße 240, 70190 Stuttgart. Kontakt: kotullaflorian@gmail.com,
 - [Full Service](https://flowwestfilms.de/full-service): Creative und Performance aus einer Hand
 - [AI Video & Content](https://flowwestfilms.de/ki-videoproduktion): KI-Werbefilme, UGC- und AI-Influencer-Videos, laufende Ad Creatives
 - [Werbefilm Stuttgart](https://flowwestfilms.de/werbefilm-stuttgart): KI-Werbefilme und Video Ads, optional mit Kampagnenbetreuung
-- [Imagefilm Stuttgart](https://flowwestfilms.de/imagefilm-stuttgart): Imagefilme und Unternehmensfilme, KI-gestützt
+- [Imagefilm & Unternehmensfilm Stuttgart](https://flowwestfilms.de/imagefilm-stuttgart): Imagefilme und Unternehmensfilme, KI-gestützt, Dreh vor Ort
 - [Produktvideo Stuttgart](https://flowwestfilms.de/produktvideo-stuttgart): Produktvideos für Shop, Produktseite und Anzeigen
 - [KI-Sichtbarkeit](https://flowwestfilms.de/ai-visibility-agentur): Sichtbarkeit in ChatGPT, Claude und Gemini
 
 ## Über uns
-- [Projekte](https://flowwestfilms.de/projects)
+- [Projekte](https://flowwestfilms.de/projects): alle Arbeiten, jede mit eigener Projektseite (siehe unten)
 - [Über uns](https://flowwestfilms.de/about)
 - [Kontakt](https://flowwestfilms.de/contact)
 
@@ -27,3 +27,51 @@ Standort: Neckarstraße 240, 70190 Stuttgart. Kontakt: kotullaflorian@gmail.com,
 - [Warum KI-Werbung billig aussieht](https://flowwestfilms.de/blog/warum-ki-werbung-billig-aussieht): Die fünf häufigsten Fehler und was in der ersten Stunde passiert
 - [Done for you oder Einmalprojekt?](https://flowwestfilms.de/blog/done-for-you-marketing-agentur-vs-einmalprojekt): Warum ein Imagefilm allein nicht reicht und was ein Komplett-Service übernimmt
 - [Unternehmensfilm Stuttgart](https://flowwestfilms.de/blog/unternehmensfilm-stuttgart): Kosten, Ablauf, Produktvideo, Reels und Meta Ads aus einer Hand
+
+## Projekte (eine Seite pro Video)
+- [KFC — KI-Werbefilm](https://flowwestfilms.de/projects/kfc-spec-ad): Ein cinematischer Spec Ad für KFC — ein Revolverheld betritt eine staubige Westernstadt zum Duell: die schnellste Hand im Wilden Westen gegen das schnellste Brathähnchen der Welt.
+- [WGV Versicherung — Ad Creative](https://flowwestfilms.de/projects/wgv-versicherung-ad-creative): Ad Creative für die WGV Versicherung — aus einem kleinen Missgeschick wird schnell ein echter Schadensfall, für den jemand geradestehen muss.
+- [WGV Versicherung: Vertical Cut — Ad Creative](https://flowwestfilms.de/projects/wgv-versicherung-vertical-cut): Der WGV-Spot im Hochkantformat — neu geschnitten und hochskaliert für Reels und Stories, wo das Missgeschick schon in den ersten zwei Sekunden sitzen muss.
+- [Nike — Ad Creative](https://flowwestfilms.de/projects/nike-ad-creative): Ein cinematischer Spec-Ad für Nike: Warum quälen sich Athleten durch Erschöpfung und aussichtslose Chancen, wenn Aufgeben so viel leichter wäre?
+- [Nord VPN — Ad Creative](https://flowwestfilms.de/projects/nord-vpn-ad-creative): Ein Spec Commercial für Nord VPN — ein junger Mann fühlt sich überall beobachtet, sogar von seinen eigenen Haustieren, bis Nord VPN ihm hilft, wieder entspannt zu surfen und zu arbeiten.
+- [Thomas Sabo — Ad Creative](https://flowwestfilms.de/projects/thomas-sabo-spec-ad): Ein cinematischer Spec-Ad für Thomas Sabo: Ein Grabräuber betritt ein verlassenes Pharaonengrab — auf der Suche nach einem Artefakt, das seine Tochter heilen kann.
+- [Eibl GmbH — Ad Creative](https://flowwestfilms.de/projects/eibl-gmbh-ad-creative): Social Ad Creative für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.
+- [Easy Foil — Ad Creative](https://flowwestfilms.de/projects/easy-foil-product-ad): Ad Creative für Easy Foil — ein leichtes, günstiges Hydrofoil vom Bodensee.
+- [Easy Foil: Easy Drive Ad — Ad Creative](https://flowwestfilms.de/projects/easy-foil-easy-drive-ad): Ad Creative für Easy Foils Easy Drive — das Produkt im Einsatz für den europäischen Markt.
+- [Schmolke Carbon — Ad Creative](https://flowwestfilms.de/projects/schmolke-carbon-ad-creative): Ad Creative für Schmolke Carbon — ein Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt.
+- [Schmolke Carbon: Cut 2 — Ad Creative](https://flowwestfilms.de/projects/schmolke-carbon-ad-creative-cut-2): Ad Creative für Schmolke Carbon — ein Vorbau komplett aus Carbon, mit demselben Material und demselben Vorteil wie ihre Lenker: eines der leichtesten Bauteile auf dem Markt, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen, damit professionelle Athleten noch ein bisschen schneller werden.
+- [Schmolke Carbon: Alps Descent — KI-Werbefilm](https://flowwestfilms.de/projects/schmolke-carbon-alps-descent): Ein cinematischer Spec Ad für Schmolke Carbon — der Moment, in dem Physik auf die Alpen trifft.
+- [Wilson — KI-Werbefilm](https://flowwestfilms.de/projects/wilson-spec-ad): Ein cinematischer Spec Ad für Wilson — voller Einsatz beim Aufschlag, Kraft und Präzision des Schlägers in einem Bild eingefangen.
+- [Panthera — KI-Werbefilm](https://flowwestfilms.de/projects/panthera-spec-ad): Ein cinematischer Spec Ad für Panthera — die Kamera bleibt nah am Cockpit, während die Zahlen in den roten Bereich klettern: pure Performance in einer einzigen Einstellung.
+- [Porsche: For the Chosen — Spec-Werbefilm](https://flowwestfilms.de/projects/porsche-for-the-chosen): Ein cinematischer Spec Ad für Porsche — eine Frau bricht das Siegel einer geheimnisvollen Einladung und gibt ihre Sammlung für den einen Wagen auf, den sie sich über Jahre verdient hat.
+- [Eibl GmbH: Introduction · Gloria — Ad Creative](https://flowwestfilms.de/projects/eibl-gmbh-introduction-gloria): Performance Ad Creative für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.
+- [List for Less — Ad Creative](https://flowwestfilms.de/projects/list-for-less-brand-ad): Animierter Brand-Ad für List for Less — kein Vorabkostenrisiko, direkt gemacht für Social Performance.
+- [Hook Creative: Google Ranking Ad — Ad Creative](https://flowwestfilms.de/projects/hook-creative-google-ranking-ad): Performance-Hook-Ad mit On-Screen-Text — speziell für den deutschsprachigen Social Feed.
+- [Alienwork: Skeleton Automatic Watch · Short Cut — Produktvideo](https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-short-cut): Kompakt geschnitten fürs Social-Feed-Tempo: der kurze Produktspot zum Reveal der IK Automatic Watch.
+- [Alienwork: Skeleton Automatic Watch · Long Cut — Produktvideo](https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-long-cut): Das komplette Reveal der IK Automatic Watch, einmal in voller Länge erzählt.
+- [Alienwork: Skeleton Automatic Watch · Vertical Cut — Produktvideo](https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-vertical-cut): Für Meta gemacht: ein vertikaler Werbespot für die IK Automatic Watch, perfekt für Reels und Stories.
+- [Swarovski: Never Apologize — Spec-Werbefilm](https://flowwestfilms.de/projects/swarovski-never-apologize): Ein cinematischer Spec Ad für Swarovski — eine Frau schreitet im Abendkleid die Marmortreppe hinab, das Collier fängt jedes Licht im Raum ein, die Stimme aus dem Off bleibt kompromisslos.
+- [Voyah: 360° Tunnel Loop — Ad Creative](https://flowwestfilms.de/projects/voyah-360-tunnel-loop): Ad Creative für Voyah — ein SUV dreht eine volle 360-Grad-Schleife durch einen Tunnel: reines Stunt-Spektakel, das jeden Scroll stoppt.
+- [Streetside Classics: Showroom Reel — Ad Creative](https://flowwestfilms.de/projects/streetside-classics-showroom-reel): Ein Reel für Streetside Classics — ein Autohaus in Dallas, Texas, das sich ganz den automobilen Klassikern und Sammlerstücken verschrieben hat.
+- [Swarovski × Alienwork × Thomas Sabo: Jewelry Mashup — Social-Media-Video](https://flowwestfilms.de/projects/swarovski-alienwork-thomas-sabo-jewelry-mashup): Ein schnell geschnittener Social-Mashup aus Swarovski, Alienwork und Thomas Sabo — drei Schmuck- und Uhrenmarken, ein Reel für den Feed.
+- [Radisson Blu: Valentine's Campaign — Social-Media-Video](https://flowwestfilms.de/projects/radisson-blu-valentines-campaign): Eine Valentinstags-Kampagne für das Radisson Blu Stuttgart: Kerzenschein, Skyline-Blick und über 800.000 organische Impressionen — ganz ohne Werbebudget.
+- [Radisson Blu: Christmas Reel — Social-Media-Video](https://flowwestfilms.de/projects/radisson-blu-christmas-reel): Saisonales cinematisches Reel für das Radisson Blu Stuttgart.
+- [Palazzo Circus: Dinner Show Reel — Ad Creative](https://flowwestfilms.de/projects/palazzo-circus-dinner-show-reel): Instagram-Reel für Palazzo: Fünf Gänge mitten im Zirkus — Spektakel für Erwachsene, eine erstklassige Bar und ein Abend, bei dem das Dinner selbst zur Show wird.
+- [French Touch: Patisserie Reel — Ad Creative](https://flowwestfilms.de/projects/french-touch-patisserie-reel): Instagram-Reel für French Touch — eine französische Patisserie mitten in München, in der Butter, Mehl und ein bisschen Geduld das Sagen haben.
+- [Santa Lucia: Restaurant Reel — Ad Creative](https://flowwestfilms.de/projects/santa-lucia-restaurant-reel): Instagram-Reel für Santa Lucia — ein Stuttgarter Italiener, geführt vom Gründer persönlich, der jeden Tag vor Ort ist.
+- [Munich Bierfest: Tavern Reel — Ad Creative](https://flowwestfilms.de/projects/munich-bierfest-tavern-reel): Ein lebendiges Instagram-Reel vom Münchner Bierfest — klirrende Maßkrüge, schaukelnde Tische und der warme, goldene Rausch einer voll besetzten bayerischen Wirtschaft.
+- [Pane e Vino: Founder Reel — Ad Creative](https://flowwestfilms.de/projects/pane-e-vino-founder-reel): Instagram-Reel für Pane e Vino — ein Gründer-Interview, das erklärt, was ihre italienische Küche so besonders macht.
+- [Tim Rabitz — Social-Media-Video](https://flowwestfilms.de/projects/tim-rabitz-social-content): Social-Media-Content für Tim Rabitz.
+- [Schmolke Carbon: Behind the Lens — Behind the Scenes](https://flowwestfilms.de/projects/schmolke-carbon-behind-the-lens): Behind the Scenes einer Schmolke-Carbon-Produktion — im Studio, auf der Suche nach dem perfekten Frame.
+- [Recom Film: Porsche · CGI BTS Racetrack Breakdown — Behind the Scenes](https://flowwestfilms.de/projects/recom-film-porsche-cgi-bts-racetrack-breakdown): Porsche 911 GT3 RS Commercial — On-Set-Produktion und CGI durch Recom Film, Schnitt durch Flow West Films.
+- [Studio Sessions: Behind the Lens — Behind the Scenes](https://flowwestfilms.de/projects/studio-sessions-behind-the-lens): Behind-the-Scenes-Material eines Food- & Lifestyle-Commercial-Drehs.
+- [Flow West Films — Behind the Scenes](https://flowwestfilms.de/projects/flow-west-films-behind-the-scenes): Behind the Scenes einer Flow West Films Produktion — on Location, in der Luft.
+- [Eibl GmbH: Elif D. — Testimonial-Video](https://flowwestfilms.de/projects/eibl-gmbh-testimonial-elif-d): Kunden-Testimonial mit Elif D.
+- [Eibl GmbH: Chris — Testimonial-Video](https://flowwestfilms.de/projects/eibl-gmbh-testimonial-chris): Kunden-Testimonial für ImmoVersteigerung von Eibl GmbH — eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.
+- [CW Architectural Art: Founder Interview — Imagefilm](https://flowwestfilms.de/projects/cw-architectural-art-founder-interview): Ein intimes, interview-geführtes Porträt für eine Luxus-Interior-Marke.
+- [App Liqes — Imagefilm](https://flowwestfilms.de/projects/app-liqes-image-film): Imagefilm für App Liqes — digitale Präsenz, wie sie funktionieren sollte.
+- [Flow West Films: The Lie Detector — Kurzfilm](https://flowwestfilms.de/projects/flow-west-films-the-lie-detector): Ein Kurzfilm, der ganz auf ein Verhör setzt — zwei Männer, ein Polygraf und ein Zeiger, der entscheidet, wer den Raum verlässt.
+- [Whiskey & Ice — Kurzfilm](https://flowwestfilms.de/projects/whiskey-ice-short-film): Der Sohn einer Familie wird entführt und die Familie setzt sich mit den Folgen der Entführung auseinander.
+- [Old Suffolk Boys — Dokumentarfilm](https://flowwestfilms.de/projects/old-suffolk-boys-documentary): Irgendwo hinter Cambridge, tief in der englischen Prärie, versteckt sich eine besondere Welt: John Holder führt uns in ein kleines Dorf, das einst stark vom amerikanischen Einfluss geprägt wurde.
+- [Flow West Films: Quiet Sky — Kurzfilm](https://flowwestfilms.de/projects/flow-west-films-quiet-sky): Ein Kurzfilm im Erdorbit, in dem Satelliten und Trümmer über dem Planeten treiben.
+- [aonenine: SHOPS — Musikvideo](https://flowwestfilms.de/projects/aonenine-shops-music-video): Musikvideo für aonenine & DTOXiD — Regie und Produktion durch Flow West Films, on Location in England gedreht.

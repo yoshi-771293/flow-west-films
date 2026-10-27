@@ -1,4 +1,4 @@
-/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, FullServicePage, BlogIndexPage, BlogPostPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
+/* global React, ReactDOM, useRoute, Nav, Footer, HomePage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, FullServicePage, BlogIndexPage, BlogPostPage, ProjectWatchPage, TweaksPanel, useTweaks, TweakSection, TweakColor, TweakRadio, TweakToggle */
 const { useState: useStateA, useEffect: useEffectA } = React;
 
 // ============================================
@@ -146,7 +146,7 @@ function App() {
     case "contact":     Page = ContactPage;     break;
     case "impressum":   Page = ImpressumPage;   break;
     case "datenschutz": Page = DatenschutzPage; break;
-    default:            Page = route.indexOf("blog/") === 0 ? BlogPostPage : HomePage;
+    default:            Page = route.indexOf("blog/") === 0 ? BlogPostPage : route.indexOf("projects/") === 0 ? ProjectWatchPage : HomePage;
   }
 
   // Per-route <title> + meta description. Without this every real URL would
@@ -158,6 +158,14 @@ function App() {
     if (!entry && route.indexOf("blog/") === 0) {
       const post = (window.FWF_POSTS || []).find((p) => "blog/" + p.slug === route);
       if (post) entry = { de: { title: post.metaTitle, desc: post.metaDesc }, en: { title: post.metaTitle, desc: post.metaDesc } };
+    }
+    if (!entry && route.indexOf("projects/") === 0 && window.FWF_WATCH) {
+      const p = window.FWF_WATCH.find(route.slice("projects/".length));
+      const de = (window.FWF_TRANSLATIONS && window.FWF_TRANSLATIONS.de) || {};
+      if (p) entry = {
+        de: { title: window.FWF_WATCH.title(p, "de") + " | Flow West Films", desc: de[p.desc] || p.desc },
+        en: { title: window.FWF_WATCH.title(p, "en") + " | Flow West Films", desc: p.desc },
+      };
     }
     const meta = (entry || ROUTE_META.home)[lang === "de" ? "de" : "en"];
     document.title = meta.title;
@@ -187,6 +195,7 @@ function App() {
     projects:    "02 Projects",
     "projects-classic": "02 Projects · Classic",
     "projects-lab": "02 Projects",
+    "projects/": "02 Projects · Watch",
     services:    "03 Services",
     "social-media-ads": "03 Services · Social Media Ads",
     "search-ads": "03 Services · Search Ads",
@@ -203,7 +212,7 @@ function App() {
   };
 
   return (
-    <div id="app" data-screen-label={labels[route] || labels.home}>
+    <div id="app" data-screen-label={labels[route] || (route.indexOf("projects/") === 0 && labels["projects/"]) || labels.home}>
       <Nav route={route} />
       <div key={route} style={{ animation: "fwfFadeUp 500ms cubic-bezier(0.4,0,0.2,1)" }}>
         <Page />

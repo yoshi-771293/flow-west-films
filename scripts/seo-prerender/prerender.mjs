@@ -22,6 +22,12 @@ const ROUTES = [
   vm.runInNewContext(fs.readFileSync(path.join(SITE, "blog-data.js"), "utf8"), sb);
   for (const p of sb.window.FWF_POSTS || []) ROUTES.push("blog/" + p.slug);
 }
+// Project watch pages come from projects-data.js -> /projects/<slug>
+{
+  const sb = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "projects-data.js"), "utf8"), sb);
+  for (const p of sb.window.FWF_PROJECTS || []) ROUTES.push("projects/" + p.slug);
+}
 
 const CDN = {
   "react@18.3.1/umd/react.production.min.js": "react/umd/react.production.min.js",
@@ -86,7 +92,7 @@ for (const route of ROUTES) {
     const root = document.getElementById("root");
     // reveal-on-scroll content must be visible in the snapshot
     root.querySelectorAll("[style*='opacity: 0']").forEach((el) => (el.style.opacity = ""));
-    root.querySelectorAll("video").forEach((v) => v.removeAttribute("src"));
+    root.querySelectorAll("video:not([data-keep-src])").forEach((v) => v.removeAttribute("src")); // watch pages keep their mp4
     return {
       title: document.title,
       desc: document.querySelector('meta[name="description"]').content,

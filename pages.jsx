@@ -1,332 +1,10 @@
-/* global React, Icons, Link, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, useRoute, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection, VideoSchema */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
 // All projects data (with real video/thumb where available)
 // ============================================
-const ALL_PROJECTS = [
-  // === ADS FIRST ===
-  {
-    client: "KFC", title: "Spec Ad", tag: "AI Spec Ad", cat: "ad", ind: "food", feature: 3,
-    desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
-    colors: ["#e4002b", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "WGV Versicherung", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "finance",
-    desc: "Ad creative for WGV Versicherung — a small mishap can quickly turn into real damage, and someone has to answer for it. Their private liability insurance has you covered.",
-    colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/d1ef2cd0-f1f5-425e-8c7f-6c5d2bfef18f/thumbnail_a93ddee5.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/d1ef2cd0-f1f5-425e-8c7f-6c5d2bfef18f?token=c9676e9082150cfc7be006f83abb99581bebd9461e59c07c0b37c98ad78e5527&expires=1787850387&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "WGV Versicherung", title: "Vertical Cut", tag: "Ad Creative", cat: "ad", ind: "finance", feature: 2,
-    desc: "Vertical cut of the WGV Versicherung liability spot — reframed and upscaled for Reels and Stories, where the mishap has to land in the first two seconds.",
-    colors: ["#2d6cdf", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/24acd352-29ff-4e05-917b-ff5716af6bbf/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/24acd352-29ff-4e05-917b-ff5716af6bbf?token=4cf8658e705771dd73a89ea979eb51ce1531bcb703b1105690c699a43ee4b271&expires=1787850076&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Nike", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "sport", feature: 2,
-    desc: "A cinematic spec ad for Nike — why athletes train through exhaustion and long odds, when giving up would be so much easier. Because you might win.",
-    colors: ["#ff6420", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/d1b5fb3e-5c0b-435b-a9ec-9c1394f577d2?token=d0e0018c7cdda6c2ee22db1f774b1ac7ab06e2a6006449e03ca40e7c5006c321&expires=1785493212&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Nord VPN", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "tech", feature: 2,
-    desc: "A spec commercial for Nord VPN — a young man feels watched everywhere, even by his own pets, until Nord VPN lets him relax, browse, and work in peace again.",
-    colors: ["#4687ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/6f0f6301-6d12-42d9-a724-f29ec39a5f75/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/6f0f6301-6d12-42d9-a724-f29ec39a5f75?token=7a08a8999d42fb1837ed547d71935fac5de1a46658a4109acaf5ae63060cedc6&expires=1785488470&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Thomas Sabo", title: "Spec Ad", tag: "Ad Creative", cat: "ad", ind: "fashion",
-    desc: "A cinematic spec ad for Thomas Sabo — a grave robber enters an abandoned pharaoh's tomb, searching for an artifact that can save his daughter. Dark, tense, and driven. Thomas Sabo: Rebel at Heart.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "assets/thumbs/thomas_sabo.png", video: "assets/videos/thomas_sabo.mp4"
-  },
-  {
-    client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "realestate",
-    desc: "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail_e6b795ee.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad", ind: "sport",
-    desc: "Ad creative for Easy Foil — a lightweight, affordable hydrofoil built at Lake Constance. We spotlight the demo experience to make booking a test ride feel effortless. Ride the easy way.",
-    colors: ["#9b30ff", "#ff6420"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/bb89e0c9-dba0-4457-b023-0f88a7309a86/thumbnail_03a191ed.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/bb89e0c9-dba0-4457-b023-0f88a7309a86?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Easy Foil", title: "Easy Drive Ad", tag: "Ad Creative", cat: "ad", ind: "sport",
-    desc: "Ad creative for Easy Foil's Easy Drive — showcasing the product in action for European market audiences.",
-    colors: ["#9b30ff", "#ff6420"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/4a5a0bae-1c09-488e-9cd9-2b4ac461067e/thumbnail_c87ec7c6.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/4a5a0bae-1c09-488e-9cd9-2b4ac461067e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Schmolke Carbon", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "sport",
-    desc: "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.",
-    colors: ["#8a8f98", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/a0017744-8d83-4f2f-8f12-ca9e937adb3f/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/a0017744-8d83-4f2f-8f12-ca9e937adb3f?token=5fbde514eda6a34c2dfcf241b14a011c6ab6faf83cae60d1e13a7f88f981eda2&expires=1785494649&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Schmolke Carbon", title: "Ad Creative — Cut 2", tag: "Ad Creative", cat: "ad", ind: "sport",
-    desc: "Ad creative for Schmolke Carbon — a stem built entirely from carbon, the same material and the same edge as their handlebars: among the lightest components on the market, shedding weight without giving up stability, built to help professional athletes go that little bit faster.",
-    colors: ["#8a8f98", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/7b2b34e4-af62-4492-9247-5023b8f717a1/thumbnail_2204be89.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/7b2b34e4-af62-4492-9247-5023b8f717a1?token=e87b5cce50016d83e4b64a33aaabaadb25b34bbb88d2966a9c9003d009281c9f&expires=1785494752&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad", ind: "sport", feature: 2,
-    desc: "A cinematic spec ad for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity. Powered by AI, curated by creators.",
-    colors: ["#8a8f98", "#0a0a0a"],
-    thumb: "https://i.ytimg.com/vi/IOSRkgMz6Ss/maxresdefault.jpg",
-    video: "https://www.youtube.com/watch?v=IOSRkgMz6Ss"
-  },
-  {
-    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", ind: "sport", feature: 2,
-    desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
-    colors: ["#c8102e", "#0a0a0a"],
-    thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
-    video: "https://youtu.be/nYRfEo-6-Bk"
-  },
-  {
-    client: "Panthera", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", ind: "auto",
-    desc: "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.",
-    colors: ["#111318", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/7c8bd9dd-aee2-4403-a564-24a9c9cb1597/thumbnail_6dcb52ff.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/7c8bd9dd-aee2-4403-a564-24a9c9cb1597?token=ae024d2b90742b4c25fcd33488d82cf705e0306d9d516a86b5761a06b1ba6495&expires=1788011506&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Porsche", title: "For the Chosen", tag: "Spec Ad", cat: "ad", ind: "auto", feature: 3,
-    desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
-    colors: ["#d5001c", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Eibl GmbH", title: "Introduction: Gloria", tag: "Ad Creative", cat: "ad", ind: "realestate",
-    desc: "Performance ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/ba8cc671-93fd-44ae-8e80-c72cb647d2c8/thumbnail_4088abe6.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/ba8cc671-93fd-44ae-8e80-c72cb647d2c8?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "List for Less", title: "Brand Ad", tag: "Ad Creative", cat: "ad", ind: "tech", hidden: true,
-    desc: "Animated brand ad for List for Less — no upfront cost, built for social performance.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "assets/thumbs/list_for_less.png", video: "assets/videos/list_for_less.mp4"
-  },
-  {
-    client: "Hook Creative", title: "Google Ranking Ad", tag: "Ad Creative", cat: "ad", ind: "tech", hidden: true,
-    desc: "Performance hook ad with on-screen copy — built for German-language social feeds.",
-    colors: ["#ff6420", "#0a0a0a"],
-    thumb: "assets/thumbs/hook2.png", video: "assets/videos/hook2.mp4"
-  },
-  {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Short Cut", tag: "Product", cat: "ad", ind: "fashion",
-    desc: "Short-form product ad for the IK Automatic Watch reveal, built for social feeds.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/20d7d100-50a5-46f1-818b-d2a53fab7d9f/thumbnail_3627a386.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/20d7d100-50a5-46f1-818b-d2a53fab7d9f?token=7529d2fe701819da118392ca3b7ed4eec35ebd835b9c357a288e586061d0f6a8&expires=1785494607&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Long Cut", tag: "Product", cat: "ad", ind: "fashion",
-    desc: "Full-length product film for the IK Automatic Watch reveal.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/9dc085af-2c2d-4f8c-acfd-d8ae5863c109/thumbnail_14fae6d7.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/9dc085af-2c2d-4f8c-acfd-d8ae5863c109?token=fdbabff47bdc0de76002f4a763a8932ce5b0095383825d078eb92e7148eaa636&expires=1785494800&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Alienwork", title: "Skeleton Automatic Watch — Vertical Cut", tag: "Product", cat: "ad", ind: "fashion",
-    desc: "Vertical-format product commercial for the IK Automatic Watch — built for Meta Reels and Stories.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/08a90788-aa8a-4064-8574-8f80f57b454c/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/0ec6ff9f-c9e2-4415-b80e-b1bf6ed973a8?token=854c2caf8a78886201be846141911c2f25f7f68fba7948cbfb075befe312f297&expires=1785495352&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Swarovski", title: "Never Apologize", tag: "Spec Ad", cat: "ad", ind: "fashion",
-    desc: "A cinematic spec ad for Swarovski — a slow descent down a marble staircase in a gown, a necklace catching every light in the room, and a voiceover that refuses to soften itself. Luxury shot as confidence rather than seduction.",
-    colors: ["#ff2d78", "#c9a96e"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/376b544f-331d-4b81-a3a6-a33ff0e0e91e/thumbnail_2352b428.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/376b544f-331d-4b81-a3a6-a33ff0e0e91e?token=af4d3cd50ee72620fbba1f456aaa4fc14e78ccb99e2a80d17f8de5310cff749a&expires=1787850351&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Voyah", title: "360° Tunnel Loop", tag: "Ad Creative", cat: "ad", ind: "auto", feature: 2,
-    desc: "Ad creative for Voyah — an SUV runs a full 360-degree loop through a tunnel, pure stunt spectacle built to stop the scroll.",
-    colors: ["#4687ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/637af620-778f-4a9b-83b6-7941d535a772/thumbnail_393fe05d.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/637af620-778f-4a9b-83b6-7941d535a772?token=613086822587d8be60269286e3b8c68f91c1e8aa67596a8ee013e0280f9026f3&expires=1787759279&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  // === SOCIAL / REELS ===
-  {
-    client: "Streetside Classics", title: "Showroom Reel", tag: "Ad Creative", cat: "social", ind: "auto", hidden: true,
-    desc: "A reel for Streetside Classics — a classic car dealership in Dallas, Texas, showcasing oldtimers and other collector cars on the showroom floor.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/17a28273-f384-4e59-8b80-246b438b39d7/thumbnail_185b77d1.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/17a28273-f384-4e59-8b80-246b438b39d7?token=95aa1ae35aece2cb912db29a8e60c714a77ad12e8cd53cbb99eedc33ff2fd243&expires=1787759058&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Swarovski × Alienwork × Thomas Sabo", title: "Jewelry Mashup", tag: "Social Media", cat: "social", ind: "fashion", hidden: true,
-    desc: "A fast-cut social mashup blending Swarovski, Alienwork, and Thomas Sabo — three jewelry and watch brands, one feed-ready reel.",
-    colors: ["#c9a96e", "#9b30ff"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/55a6ac21-1885-439f-b4a4-575eba9bca85/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/55a6ac21-1885-439f-b4a4-575eba9bca85?token=ab0b09fa835293499e4548c2f61f9b642e21dd27e18d59d5f041a4ba5234031d&expires=1784306487&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Radisson Blu", title: "Valentine's Campaign", tag: "Social Media", cat: "social", ind: "food",
-    desc: "Valentine's Day campaign for Radisson Blu Stuttgart — candlelit ambiance, a skyline view, and 800,000+ organic impressions. No ad spend. Just a mood that sold itself.",
-    colors: ["#ff2d78", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/58b5722f-c01a-49c3-b354-95f87ccfbbb5/thumbnail_1a214c59.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/58b5722f-c01a-49c3-b354-95f87ccfbbb5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Radisson Blu", title: "Christmas Reel", tag: "Social Media", cat: "social", ind: "food", hidden: true,
-    desc: "Seasonal cinematic reel for the Radisson Blu Stuttgart property.",
-    colors: ["#9b30ff", "#ff2d78"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/c518444d-58e6-458e-a0a1-d7b880f8848d/thumbnail_56dc7cd1.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/c518444d-58e6-458e-a0a1-d7b880f8848d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Palazzo Circus", title: "Dinner Show Reel", tag: "Ad Creative", cat: "social", ind: "food",
-    desc: "Instagram reel for Palazzo — five courses served inside a circus. Adult spectacle, a serious bar, and dinner that doubles as the show.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/1dfa2361-efe0-4067-ae8c-6ccd66ea320c/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/1dfa2361-efe0-4067-ae8c-6ccd66ea320c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "French Touch", title: "Patisserie Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
-    desc: "Instagram reel for French Touch — a French patisserie in the heart of Munich, where butter, flour, and a little patience do the talking.",
-    colors: ["#ff2d78", "#9b30ff"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/ca3fa44f-26d8-4bef-9303-496692d4c76c/thumbnail_0acb9f11.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/ca3fa44f-26d8-4bef-9303-496692d4c76c?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Santa Lucia", title: "Restaurant Reel", tag: "Ad Creative", cat: "social", ind: "food",
-    desc: "Instagram reel for Santa Lucia — a founder-led Italian restaurant in Stuttgart, where the owner is on the floor every single day. The room, the plates, the atmosphere — everything that makes this place worth the table comes straight from the heart of Italy.",
-    colors: ["#c9a96e", "#ff2d78"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/f8ed2a20-4ccb-4c66-8b60-84e314d177f6/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/f8ed2a20-4ccb-4c66-8b60-84e314d177f6?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Munich Bierfest", title: "Tavern Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
-    desc: "A lively Instagram reel from a Munich Bierfest — clinking steins, swaying tables and the warm, golden buzz of a packed Bavarian tavern in full swing.",
-    colors: ["#c9a96e", "#ff6420"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/9ac156cd-7c36-4057-835c-e199f03c1ecd/thumbnail_c3856f2e.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/9ac156cd-7c36-4057-835c-e199f03c1ecd?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Pane e Vino", title: "Founder Reel", tag: "Ad Creative", cat: "social", ind: "food", hidden: true,
-    desc: "Instagram reel for Pane e Vino — a founder interview that breaks down what makes their Italian kitchen worth the table.",
-    colors: ["#c9a96e", "#ff2d78"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/3a5fcbf7-486c-4aa6-a6e8-ece43bb17dfa?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Tim Rabitz", title: "Social Content", tag: "Social Media", cat: "social", ind: "personal",
-    desc: "Social media content produced for Tim Rabitz.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/649373ec-dede-43a1-86af-38639fdc2352/thumbnail_4e24d005.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/649373ec-dede-43a1-86af-38639fdc2352?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Schmolke Carbon", title: "Behind the Lens", tag: "BTS", cat: "social", ind: "sport",
-    desc: "Behind-the-scenes on a Schmolke Carbon production — in the studio, building the shot.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/690975ad-3773-4966-8a30-92d3e4d4eae5/thumbnail_5142100b.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/690975ad-3773-4966-8a30-92d3e4d4eae5?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Recom Film", title: "Porsche — CGI BTS Racetrack Breakdown", tag: "BTS", cat: "social", ind: "auto",
-    desc: "Porsche 911 GT3 RS commercial — produced by Recom Film (on-set production, video & CGI), edited by Flow West Films. Featuring a full CGI breakdown of the racetrack and car, and how the commercial was made.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e2b98cd-323c-4973-9301-7c295c5bba6d/thumbnail_b33fd788.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/1e2b98cd-323c-4973-9301-7c295c5bba6d?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Studio Sessions", title: "Behind the Lens", tag: "BTS", cat: "social", ind: "food",
-    desc: "Behind-the-scenes footage of a food & lifestyle commercial shoot.",
-    colors: ["#ff6420", "#c9a96e"],
-    thumb: "assets/thumbs/crew_bw.jpg", video: "assets/videos/inside_crew.mp4"
-  },
-  {
-    client: "Flow West Films", title: "Behind the Scenes", tag: "BTS", cat: "social", ind: "culture",
-    desc: "Behind-the-scenes from a Flow West Films production — on location, in the air.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "assets/thumbs/helikopter.jpg", video: "assets/videos/helikopter.mp4"
-  },
-  // === BRAND FILMS / TESTIMONIALS ===
-  {
-    client: "Eibl GmbH", title: "Testimonial — Elif D.", tag: "Testimonial", cat: "image", ind: "realestate",
-    desc: "Client testimonial with Elif D. for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/c686eb45-8b2d-4513-a8d5-8a0419ca9469/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/c686eb45-8b2d-4513-a8d5-8a0419ca9469?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Eibl GmbH", title: "Testimonial — Chris", tag: "Testimonial", cat: "image", ind: "realestate",
-    desc: "Client testimonial for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
-    colors: ["#9b30ff", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/cae8231c-893d-4a8c-910e-20c3c57b3384/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/cae8231c-893d-4a8c-910e-20c3c57b3384?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "CW Architectural Art", title: "Founder Interview", tag: "Brand Film", cat: "image", ind: "fashion",
-    desc: "An intimate interview-led portrait for a luxury interior brand.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/11efbd67-5d01-41da-829d-ea50d8d41e46/thumbnail.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/11efbd67-5d01-41da-829d-ea50d8d41e46?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "App Liqes", title: "Image Film", tag: "Brand Film", cat: "image", ind: "tech",
-    desc: "Image film for App Liqes — digital presence done right, featuring a Café Bar Relax customer testimonial. Shot on location in Ludwigsburg.",
-    colors: ["#00ff88", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/d335b0a3-3816-44a1-af9e-7fb518ed16d1/thumbnail_46cf09ef.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/d335b0a3-3816-44a1-af9e-7fb518ed16d1?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  // === FILM ===
-  {
-    client: "Flow West Films", title: "The Lie Detector", tag: "Short Film", cat: "film", ind: "culture",
-    desc: "A short film built around a single interrogation — two men, one polygraph, and a needle that decides who walks out.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/84e569a7-e590-49f3-8059-34f419507d9d/thumbnail_00a8a478.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/84e569a7-e590-49f3-8059-34f419507d9d?token=f68a92fb980a3c4a9359a693d97f929b632b914184479e9e57d610ce1b1e3217&expires=1787850430&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Whiskey & Ice", title: "Short Film", tag: "Short Film", cat: "film", ind: "culture",
-    desc: "A family's son gets kidnapped, and the family deals with the aftermath of the kidnapping.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/1e625e35-8914-4d5f-a7ba-1f0bb74503c1/thumbnail_8e1529b8.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/1e625e35-8914-4d5f-a7ba-1f0bb74503c1?token=454a24fae561ca750764e73bb60b19a64c9b1291b74dbdf1757cc58953b1dfd1&expires=1782990535&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Old Suffolk Boys", title: "Documentary", tag: "Doc", cat: "film", ind: "culture",
-    desc: "A slice-of-life documentary following John Holder into the rural outback of East Anglia — small villages shaped by American influence, where locals make moonshine, play bluegrass, and collect old military gear. A unique subculture hiding in the British countryside.",
-    colors: ["#c9a96e", "#1a1208"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/d62b1fcc-269a-4b00-9930-af757d8f2174/thumbnail_be26e700.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/d62b1fcc-269a-4b00-9930-af757d8f2174?token=180145980a43be1ad70f306f6f7691a2178ab2bc32954a9e04f92722dcfe6135&expires=1782989292&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  {
-    client: "Flow West Films", title: "Quiet Sky", tag: "Short Film", cat: "film", ind: "culture",
-    desc: "A short film set in Earth orbit, where satellites and debris drift above the planet.",
-    colors: ["#c9a96e", "#0a0a0a"],
-    thumb: "https://vz-fd89cb27-622.b-cdn.net/d0d7187d-abd0-4cce-85e9-784e691a596e/thumbnail_785257da.jpg",
-    video: "https://iframe.mediadelivery.net/embed/684848/d0d7187d-abd0-4cce-85e9-784e691a596e?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
-  },
-  // === MUSIC ===
-  {
-    client: "aonenine", title: "SHOPS — Music Video", tag: "Music Video", cat: "music", ind: "culture",
-    desc: "Directed music video for aonenine & DTOXiD. Shot on location in the UK.",
-    colors: ["#9b30ff", "#ff2d78"],
-    thumb: "assets/thumbs/shops_mv.jpg", video: "assets/videos/shops_mv.mp4"
-  },
-];
+const ALL_PROJECTS = window.FWF_PROJECTS; // data lives in projects-data.js
 
 const FILTERS = [
   { id: "all", label: "All" },
@@ -1247,7 +925,7 @@ function ProjectIndex({ items }) {
             {items.map((p, i) => (
               <li key={i}>
                 <div style={fwfLabMono(9.5, "var(--fwf-purple)")}>{p.tag}{p.ind ? " · " + industryLabel(p.ind) : ""}</div>
-                <h3 style={{ fontSize: 16, margin: "6px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
+                <h3 style={{ fontSize: 16, margin: "6px 0", fontWeight: 500 }}><Link to={"projects/" + p.slug} style={{ color: "inherit" }}>{p.client} — {p.title}</Link></h3>
                 <p style={{ color: "var(--fwf-text-mute)", fontSize: 13.5, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
               </li>
             ))}
@@ -2246,9 +1924,10 @@ function AiVisibilityPage() {
 // ============================================
 // AI VIDEO PRODUCTION PAGE (/ki-videoproduktion)
 // ============================================
+const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "Spec Ad"]];
+
 function AiVideoPage() {
   const [activeVideo, setActiveVideo] = useStateP(null);
-  const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "Spec Ad"]];
   const aiWork = AI_WORK_PICKS.map(([c, t]) => ALL_PROJECTS.find((p) => p.client === c && p.title === t)).filter(Boolean);
 
   const included = [
@@ -2392,6 +2071,7 @@ function AiVideoPage() {
                     <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--fwf-purple)" }}>{p.tag}</span>
                     <h3 style={{ fontSize: 18, margin: "10px 0 8px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
                     <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
+                    <WatchLink p={p} />
                   </div>
                 </article>
               ))}
@@ -3001,6 +2681,106 @@ function DatenschutzPage() {
 }
 
 // ============================================
+// PROJECT WATCH PAGES — /projects/<slug>
+// One video per page, so Google can index it (videos inside a grid or modal are
+// "not on a watch page"). Naming lives in projects-data.js (FWF_WATCH), shared with
+// the prerender build that writes the VideoObject schema for each page.
+// ============================================
+const WATCH_UI = {
+  de: { projects: "Projekte", client: "Kunde", format: "Format", industry: "Branche", length: "Länge", all: "Alle Projekte", details: "Zum Projekt →" },
+  en: { projects: "Projects", client: "Client", format: "Format", industry: "Industry", length: "Running time", all: "All projects", details: "Project page →" },
+};
+const WATCH_SERVICES = {
+  "ki-videoproduktion": { de: "Mehr zur KI-Videoproduktion", en: "More on AI video production" },
+  "werbefilm-stuttgart": { de: "Mehr zum Werbefilm", en: "More on ad films" },
+  "imagefilm-stuttgart": { de: "Mehr zum Imagefilm", en: "More on brand films" },
+  "produktvideo-stuttgart": { de: "Mehr zum Produktvideo", en: "More on product videos" },
+  "social-media-ads": { de: "Mehr zu Social Media Ads", en: "More on social media ads" },
+};
+// The service page a video belongs to: where it is shown, else by format.
+function watchService(p) {
+  const on = (list) => list.some(([c, t]) => c === p.client && t === p.title);
+  const kw = Object.keys(KW_PAGES).find((id) => on(KW_PAGES[id].work));
+  if (kw) return kw;
+  if (on(AI_WORK_PICKS) || /^AI /.test(p.tag)) return "ki-videoproduktion";
+  if (p.tag === "Product") return "produktvideo-stuttgart";
+  if (p.cat === "image") return "imagefilm-stuttgart";
+  if (p.cat === "social" && p.tag !== "BTS") return "social-media-ads";
+  return "werbefilm-stuttgart";
+}
+
+// Small text link from a project card on a service page to the project's own page.
+function WatchLink({ p }) {
+  if (!p.slug) return null;
+  return (
+    <Link to={"projects/" + p.slug} onClick={(e) => e.stopPropagation()} className="fwf-btn-bare" style={{ display: "inline-flex", marginTop: 14, fontSize: 12 }}>
+      {WATCH_UI[fwfLang()].details}
+    </Link>
+  );
+}
+
+function WatchPlayer({ p, meta }) {
+  const v = p.video || "";
+  const ratio = (meta.w || 16) + " / " + (meta.h || 9);
+  const style = { width: "100%", aspectRatio: ratio, maxHeight: "78vh", display: "block", background: "#000", borderRadius: 12, border: "1px solid var(--fwf-hairline)" };
+  const yt = v.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+  if (yt) {
+    return <iframe src={"https://www.youtube-nocookie.com/embed/" + yt[1] + "?rel=0"} title={p.client + " — " + p.title} style={style} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />;
+  }
+  if (v.includes("/embed/684848/")) return <BunnyPlayer src={v} poster={p.thumb} style={style} />;
+  return <video src={v} poster={p.thumb} style={style} controls playsInline preload="none" data-keep-src="" />;
+}
+
+function ProjectWatchPage() {
+  const [route] = useRoute();
+  const p = window.FWF_WATCH.find(route.replace(/^projects\//, ""));
+  if (!p) return <ProjectsLabPage />;
+  const lang = fwfLang();
+  const U = WATCH_UI[lang];
+  const W = window.FWF_WATCH;
+  const meta = (window.FWF_VIDEO_META || {})[p.client + "·" + p.title] || {};
+  const vertical = meta.h > meta.w;
+  const svc = watchService(p);
+  const facts = [[U.client, p.client], [U.format, W.type(p, lang)], [U.industry, industryLabel(p.ind)], [U.length, W.duration(meta.secs)]].filter(([, v]) => v);
+  return (
+    <main>
+      <section style={{ position: "relative", paddingTop: 140, paddingBottom: 40, overflow: "hidden" }}>
+        <div className="fwf-grid-bg" />
+        <div className="fwf-container" style={{ position: "relative", maxWidth: vertical ? 520 : 1100 }}>
+          <div className="fwf-section-label fwf-fade-up fwf-d1">
+            <span className="fwf-section-label-line" />
+            <Link to="projects" className="fwf-eyebrow" style={{ textDecoration: "none" }}>{U.projects}</Link>
+            <span className="fwf-eyebrow">· {p.client}</span>
+          </div>
+          <WatchPlayer p={p} meta={meta} />
+        </div>
+      </section>
+      <section style={{ paddingBottom: 100 }}>
+        <div className="fwf-container" style={{ maxWidth: 900 }}>
+          <h1 className="fwf-display" style={{ fontSize: "clamp(36px, 5vw, 64px)", margin: "0 0 24px 0", lineHeight: 1.05, textWrap: "balance" }}>
+            {W.name(p)}{" — "}<em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>{W.type(p, lang)}</em>
+          </h1>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 32px 0" }}>{p.desc}</p>
+          <dl style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 20, margin: "0 0 40px 0", padding: "24px 0", borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)" }}>
+            {facts.map(([k, v]) => (
+              <div key={k}>
+                <dt className="fwf-mono" style={{ fontSize: 10.5, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 8 }}>{k}</dt>
+                <dd style={{ margin: 0, fontSize: 15 }}>{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
+            <Link to={svc} className="fwf-btn fwf-btn-primary">{WATCH_SERVICES[svc][lang]} <Icons.ArrowRight size={12} /></Link>
+            <Link to="projects" className="fwf-btn-bare">{U.all} <Icons.ArrowRight size={12} /></Link>
+          </div>
+        </div>
+      </section>
+      <FinalCTA />
+    </main>
+  );
+}
+
+// ============================================
 // KEYWORD SERVICE PAGES — Werbefilm / Imagefilm / Produktvideo (Stuttgart)
 // One template, three configs. Copy is language-aware (de default for crawlers, en on toggle).
 // ============================================
@@ -3163,6 +2943,8 @@ const KW_PAGES = {
         { q: "Muss der Imagefilm in Stuttgart gedreht werden?", a: "Nein. Wir drehen bei Ihnen vor Ort in Deutschland, Österreich und der Schweiz — oder produzieren ganz ohne Dreh mit KI." },
         { q: "Können Sie Gründer, Team und Kunden filmen?", a: "Ja, das ist oft der stärkste Teil eines Imagefilms. Interviews und echte Gesichter schaffen Vertrauen, KI ergänzt, was sich nicht drehen lässt." },
         { q: "Gibt es den Imagefilm auch auf Englisch?", a: "Ja. Voiceover und Untertitel liefern wir auf Deutsch und Englisch, auf Wunsch auch in weiteren Sprachen." },
+        { q: "Ist ein Unternehmensfilm dasselbe wie ein Imagefilm?", a: "Fast. Beide zeigen, wer Sie sind. Beim Unternehmensfilm stehen meist Team, Abläufe und Standort stärker im Vordergrund. Wer nach „Unternehmensfilm Stuttgart“ sucht, meint in der Regel genau das: einen Film über das eigene Unternehmen, gedreht in den eigenen Räumen." },
+        { q: "Drehen Sie den Unternehmensfilm bei uns vor Ort?", a: "Ja. Unternehmensfilm Stuttgart heißt bei uns: kurze Wege, Dreh in Ihren Räumen und mit Ihrem Team. Auch im übrigen Deutschland, in Österreich und der Schweiz drehen wir vor Ort — oder produzieren ganz ohne Dreh mit KI." },
       ],
       extra: {
         eyebrow: "Unternehmensfilm",
@@ -3213,6 +2995,8 @@ const KW_PAGES = {
         { q: "Does the brand film have to be shot in Stuttgart?", a: "No. We shoot on location with you across Germany, Austria and Switzerland — or produce with no shoot at all, using AI." },
         { q: "Can you film founders, team and customers?", a: "Yes, and it's often the strongest part of a brand film. Interviews and real faces build trust; AI fills in what can't be shot." },
         { q: "Is the brand film available in English?", a: "Yes. We deliver voiceover and subtitles in German and English, and in other languages on request." },
+        { q: "Is a corporate film the same as a brand film?", a: "Almost. Both show who you are. A corporate film usually puts more weight on the team, the way you work and the location. Anyone searching for a corporate film in Stuttgart usually means exactly that: a film about their own company, shot on their own premises." },
+        { q: "Do you shoot the corporate film on our premises?", a: "Yes. For a corporate film in Stuttgart that means short distances, a shoot in your rooms and with your team. We also shoot on location across Germany, Austria and Switzerland — or produce with no shoot at all, using AI." },
       ],
       extra: {
         eyebrow: "Corporate film",
@@ -3425,6 +3209,7 @@ function KeywordPage({ id }) {
                     <span className="fwf-mono" style={{ fontSize: 11, letterSpacing: "0.2em", color }}>{p.tag}</span>
                     <h3 style={{ fontSize: 18, margin: "10px 0 8px 0", fontWeight: 500 }}>{p.client} — {p.title}</h3>
                     <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{p.desc}</p>
+                    <WatchLink p={p} />
                   </div>
                 </article>
               ))}
@@ -3559,4 +3344,4 @@ function WerbefilmPage() { return <KeywordPage id="werbefilm-stuttgart" />; }
 function ImagefilmPage() { return <KeywordPage id="imagefilm-stuttgart" />; }
 function ProduktvideoPage() { return <KeywordPage id="produktvideo-stuttgart" />; }
 
-Object.assign(window, { ALL_PROJECTS, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, FullServicePage });
+Object.assign(window, { ALL_PROJECTS, ProjectWatchPage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, FullServicePage });

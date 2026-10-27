@@ -93,6 +93,43 @@ const EXTRA = {
   }
 }
 
+// Project watch pages: exactly one VideoObject per /projects/<slug> (German, like the page).
+{
+  const sb = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "i18n/translations.js"), "utf8"), sb);
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "projects-data.js"), "utf8"), sb);
+  const W = sb.window;
+  const de = (W.FWF_TRANSLATIONS || {}).de || {};
+  const abs = (u) => (/^https?:/.test(u) ? u : ORIGIN + "/" + u.replace(/^\//, ""));
+  const iso = (secs) => "PT" + (secs >= 60 ? Math.floor(secs / 60) + "M" : "") + (secs % 60) + "S";
+  const missing = [];
+  for (const p of W.FWF_PROJECTS) {
+    const key = p.client + "·" + p.title;
+    const meta = W.FWF_VIDEO_META[key] || {};
+    const added = W.FWF_VIDEO_ADDED[key];
+    const url = ORIGIN + "/projects/" + p.slug;
+    const v = {
+      "@type": "VideoObject", "@id": url + "#video",
+      name: W.FWF_WATCH.title(p, "de"),
+      description: de[p.desc] || p.desc,
+      thumbnailUrl: p.thumb ? abs(p.thumb) : undefined,
+      uploadDate: added ? added + "T12:00:00+02:00" : undefined,
+      duration: meta.secs ? iso(meta.secs) : undefined,
+      inLanguage: "de-DE",
+      mainEntityOfPage: url,
+      publisher: { "@id": ORIGIN + "/#business" },
+    };
+    const bunny = (p.video || "").match(/\/embed\/684848\/([0-9a-f-]{36})/);
+    const yt = (p.video || "").match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+    if (bunny) { v.contentUrl = "https://vz-fd89cb27-622.b-cdn.net/" + bunny[1] + "/playlist.m3u8"; v.embedUrl = "https://iframe.mediadelivery.net/embed/684848/" + bunny[1]; }
+    else if (yt) v.embedUrl = "https://www.youtube.com/embed/" + yt[1];
+    else v.contentUrl = abs(p.video);
+    if (!v.thumbnailUrl || !v.uploadDate) missing.push(p.slug + (v.thumbnailUrl ? "" : " (no thumbnail)") + (v.uploadDate ? "" : " (no upload date)"));
+    EXTRA["projects/" + p.slug] = [v];
+  }
+  if (missing.length) console.warn("VideoObject incomplete:", missing.join(", "));
+}
+
 fs.mkdirSync(path.join(OUT, "_pre"), { recursive: true });
 for (const f of fs.readdirSync(SNAP).filter((f) => f.endsWith(".json"))) {
   const route = f.replace(".json", "").replace(/__/g, "/");

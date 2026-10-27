@@ -164,6 +164,10 @@
     {
       "source": "/blog/unternehmensfilm-stuttgart",
       "destination": "/_pre/blog__unternehmensfilm-stuttgart.html"
+    },
+    {
+      "source": "/projects/:slug",
+      "destination": "/_pre/projects__:slug.html"
     }
   ],
   "headers": [

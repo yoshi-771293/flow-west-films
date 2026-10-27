@@ -298,7 +298,7 @@ const WHAT_WE_DO = [
   { to: "search-ads", t: "Search Ads", d: "Google & YouTube Ads for e-commerce and B2C brands.", c: "green" },
   { to: "full-service", t: "Full Service", d: "Creative and performance as one system, run by one team.", c: "orange" },
   { to: "werbefilm-stuttgart", t: "Ad Films Stuttgart", d: "AI-powered ad films and video ads built to sell.", c: "pink" },
-  { to: "imagefilm-stuttgart", t: "Brand Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
+  { to: "imagefilm-stuttgart", t: "Brand & Corporate Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
   { to: "produktvideo-stuttgart", t: "Product Videos Stuttgart", d: "Product videos for your shop, product pages and ads.", c: "green" },
   { to: "ai-visibility-agentur", t: "AI Visibility", d: "Be named when ChatGPT, Claude and Gemini are asked.", c: "orange" },
 ];

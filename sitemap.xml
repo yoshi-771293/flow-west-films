@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://flowwestfilms.de/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/services</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/social-media-ads</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/search-ads</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/full-service</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/ki-videoproduktion</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://flowwestfilms.de/imagefilm-stuttgart</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -56,45 +56,45 @@
   </url>
   <url>
     <loc>https://flowwestfilms.de/ai-visibility-agentur</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/audit/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/projects</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/about</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/contact</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/impressum</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/datenschutz</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://flowwestfilms.de/blog</loc>
@@ -130,6 +130,282 @@
     <loc>https://flowwestfilms.de/blog/unternehmensfilm-stuttgart</loc>
     <lastmod>2026-10-27</lastmod>
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/kfc-spec-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/wgv-versicherung-ad-creative</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/wgv-versicherung-vertical-cut</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/nike-ad-creative</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/nord-vpn-ad-creative</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/thomas-sabo-spec-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/eibl-gmbh-ad-creative</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/easy-foil-product-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/easy-foil-easy-drive-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/schmolke-carbon-ad-creative</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/schmolke-carbon-ad-creative-cut-2</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/schmolke-carbon-alps-descent</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/wilson-spec-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/panthera-spec-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/porsche-for-the-chosen</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/eibl-gmbh-introduction-gloria</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/list-for-less-brand-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/hook-creative-google-ranking-ad</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-short-cut</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-long-cut</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/alienwork-skeleton-automatic-watch-vertical-cut</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/swarovski-never-apologize</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/voyah-360-tunnel-loop</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/streetside-classics-showroom-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/swarovski-alienwork-thomas-sabo-jewelry-mashup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/radisson-blu-valentines-campaign</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/radisson-blu-christmas-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/palazzo-circus-dinner-show-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/french-touch-patisserie-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/santa-lucia-restaurant-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/munich-bierfest-tavern-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/pane-e-vino-founder-reel</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/tim-rabitz-social-content</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/schmolke-carbon-behind-the-lens</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/recom-film-porsche-cgi-bts-racetrack-breakdown</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/studio-sessions-behind-the-lens</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/flow-west-films-behind-the-scenes</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/eibl-gmbh-testimonial-elif-d</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/eibl-gmbh-testimonial-chris</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/cw-architectural-art-founder-interview</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/app-liqes-image-film</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/flow-west-films-the-lie-detector</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/whiskey-ice-short-film</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/old-suffolk-boys-documentary</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/flow-west-films-quiet-sky</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/projects/aonenine-shops-music-video</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
