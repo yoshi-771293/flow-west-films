@@ -329,5 +329,87 @@ window.FWF_POSTS = [
     ],
     related: ["was-kostet-ein-ki-werbefilm", "warum-ki-werbung-billig-aussieht"],
     cta: { h: "Du willst Dein Marketing abgeben?", sub: "30 Minuten Call. Wir klären, was Du abgeben willst und was es kostet.", link: { to: "full-service", label: "Mehr zum Full Service von Flow West Films →" } }
+  },
+
+  {
+    slug: "unternehmensfilm-stuttgart",
+    title: "Unternehmensfilm Stuttgart: Kosten, Ablauf und was danach kommt",
+    metaTitle: "Unternehmensfilm Stuttgart: Kosten & Ablauf | Flow West Films",
+    metaDesc: "Unternehmensfilm Stuttgart: Was er kostet, wie der Ablauf aussieht und warum Du mit einem Film allein nur die Hälfte bekommst. Ehrlich erklärt.",
+    eyebrow: "Unternehmensfilm",
+    date: "2026-10-27",
+    readMin: 4,
+    answer: "Ein Unternehmensfilm in Stuttgart kostet im Einstieg zwischen 2.000 und 5.000 €. Das gilt auch für Produktvideo und Produktfilm. Der Preis hängt an der Zahl der Videos, Korrekturrunden und der Frage, ob vor Ort gedreht wird. Mit Dreh, Testimonial und weiteren Ads sind es eher 10.000 €. Entscheidend ist aber nicht der Preis des Films, sondern ob aus ihm ein System aus Kurzvideos wird, das Anfragen bringt.",
+    intro: ["Ein Unternehmensfilm liegt auf Deiner Website, und danach passiert wenig. Das ist der häufigste Verlauf, wenn nur der Film bestellt wird.", "Als KI-Filmagentur zeigen wir Dir hier alles zum Thema Unternehmensfilm Stuttgart: was er kostet, wie die Videoproduktion abläuft und was Du zusätzlich brauchst, damit er sich auszahlt."],
+    sections: [
+      {
+        h: "Was ein Unternehmensfilm heute leisten muss",
+        blocks: [
+          { p: "Früher war ein Unternehmensfilm ein Aushängeschild: schön, ruhig, einmal gedreht. Heute entscheidet jemand in Sekunden, ob er weiterschaut. Der Film muss deshalb zwei Dinge können. Er schafft Vertrauen auf Deiner Website. Und er liefert das Material für kurze Videos, die in Anzeigen und auf Social Media laufen." },
+          { p: "Wer nur den langen Film bestellt, hat ein Video. Wer ihn von Anfang an für beide Aufgaben plant, hat eine Grundlage für Marketing." }
+        ]
+      },
+      {
+        h: "Unternehmensfilm Stuttgart: Was er kostet",
+        blocks: [
+          { p: "Im Einstieg liegst Du zwischen 2.000 und 5.000 €. Dafür bekommst Du entweder einen Imagefilm mit Cutdowns oder ein Content-Paket für rund 2.500 €, mit etwa 15 Kurzvideos von je 15 bis 30 Sekunden und einer Korrekturschleife." },
+          { p: "Ein Dreh vor Ort ist in dieser Klasse nicht enthalten. Sobald Menschen vor die Kamera müssen, braucht es mehr Crew, Equipment, Verpflegung und je nach Ort auch Anreise. Ein Beispiel: Imagefilm für rund 5.000 €, dazu ein Testimonial und teilweise real gedrehte Ads am selben Drehtag. Zusammen sind das etwa 10.000 €." },
+          { p: ["Die Details zu Paketen und Preistreibern findest Du im Beitrag „", { to: "blog/was-kostet-ein-ki-werbefilm", text: "Was kostet ein KI-Werbefilm?" }, "“. Beispiele und unser Vorgehen siehst Du auf der Seite ", { to: "imagefilm-stuttgart", text: "Unternehmensfilm Stuttgart" }, "."] }
+        ]
+      },
+      {
+        h: "Wie die Produktion abläuft",
+        blocks: [
+          { p: "Wir sitzen in Stuttgart. Ein Dreh bei Dir vor Ort bedeutet für uns kurze Wege. Der Ablauf ist bei jedem Projekt ähnlich:" },
+          { ol: [
+            "Skript und Look. Wir klären, was der Film sagen soll, und legen Look und Referenzen fest, bevor irgendetwas gedreht oder generiert wird.",
+            "Produktion. Je nach Projekt KI-gestützt, vor Ort gedreht oder beides kombiniert.",
+            "Schnitt, Sound und Grading. Hier entsteht der Look, der den Film nach Film aussehen lässt. Es ist auch der größte Zeitblock.",
+            "Korrekturrunde. Du bündelst Dein Feedback, wir setzen es um.",
+            "Cutdowns und Formate. Aus dem Film entstehen kurze Versionen für Anzeigen und Social Media."
+          ] },
+          { p: "Wer Skript und Look früh freigibt, spart die meisten Korrekturen." }
+        ]
+      },
+      {
+        h: "Produktvideo, Produktfilm und Reels aus Stuttgart",
+        blocks: [
+          { p: "Neben dem Unternehmensfilm produzieren wir Produktvideos und Produktfilme sowie vertikale Kurzvideos für Reels und Anzeigen. Es ist dieselbe Videoproduktion in Stuttgart, nur kürzer und für den Feed gebaut." },
+          { p: "Der Unterschied liegt im Einsatz. Der Unternehmensfilm erzählt, wer Du bist. Ein Produktvideo zeigt ein Produkt in wenigen Sekunden, und ein Kurzvideo für Reels oder Ads hat ein Ziel: einen Klick oder eine Anfrage." }
+        ]
+      },
+      {
+        h: "Das Problem mit dem Einzelfilm",
+        blocks: [
+          { p: "Nehmen wir ein Beispiel aus dem Autohaus. Viele Autohäuser filmen ihre Fahrzeuge mit dem Handy: einmal ums Auto laufen, hochladen, fertig. Das Video zeigt das Auto, aber nichts, was Deine Marke von der des Händlers nebenan unterscheidet. Es gibt keine Geschichte und keinen Grund, bei Dir statt dort zu kaufen." },
+          { p: "Ein guter Unternehmensfilm löst das Problem nur zur Hälfte. Er gibt Dir Vertrauen und eine Linie. Aber Autohäuser, Handwerksbetriebe oder Dienstleister brauchen danach laufend neue Videos, damit Anzeigen und Social Media nicht stillstehen." }
+        ]
+      },
+      {
+        h: "Besser: Film plus Content-System",
+        blocks: [
+          { p: "Statt einen einzelnen Film zu bestellen, planst Du ein kleines System:" },
+          { ul: [
+            "Ein Hauptfilm, der Deine Marke erzählt und auf der Website Vertrauen aufbaut.",
+            "Kurze Ad-Creatives, die daraus entstehen und laufend neu bestückt werden.",
+            "Meta Ads auf Facebook und Instagram, die diese Videos vor die richtigen Leute bringen."
+          ] },
+          { p: "Wenn Du eine Meta Ads Agentur in Stuttgart suchst, achte darauf, dass dieselbe Agentur die Videos produziert. Die Videos entscheiden mit, ob eine Anzeige funktioniert. Wer Creative und Ads trennt, verliert Zeit bei jeder Abstimmung." },
+          { p: ["Wenn Du das nicht selbst betreiben willst, geht das auch als Done-for-you-Service. Den Unterschied zum Einmalprojekt erkläre ich im Beitrag „", { to: "blog/done-for-you-marketing-agentur-vs-einmalprojekt", text: "Done for you oder Einmalprojekt?" }, "“."] }
+        ]
+      }
+    ],
+    faq: [
+      ["Was kostet ein Unternehmensfilm in Stuttgart?", "Im Einstieg zwischen 2.000 und 5.000 €. Mit Dreh vor Ort, Testimonial und zusätzlichen Ads sind es eher 10.000 €. Ein konkretes Festpreisangebot gibt es nach einem 30-minütigen Call."],
+      ["Wie läuft die Produktion eines Unternehmensfilms ab?", "Skript und Look, Produktion, Schnitt mit Sound und Grading, eine Korrekturrunde und danach Cutdowns für Anzeigen und Social Media."],
+      ["Ist ein Dreh vor Ort nötig?", "Nicht immer. Imagefilme und Content-Pakete lassen sich KI-gestützt produzieren. Für Interviews und Testimonials wird vor Ort gedreht. Beides lässt sich kombinieren."],
+      ["Was macht eine KI-Filmagentur?", "Eine KI-Filmagentur produziert Filme und Werbespots mit KI-Werkzeugen, die von Filmemachern inszeniert werden. Bei uns heißt das: Skript, Look, Schnitt, Sound und Grading wie bei jeder Filmproduktion, nur ohne den Aufbau am Set. Bei Bedarf kombinieren wir KI mit einem Dreh vor Ort."],
+      ["Produziert ihr auch Produktvideos und Produktfilme in Stuttgart?", "Ja. Produktvideos und Kurzvideos für Reels und Anzeigen sind Teil unserer Videoproduktion in Stuttgart. Sie lassen sich als Content-Paket mit rund 15 Videos bestellen."],
+      ["Schaltet ihr auch Meta Ads?", "Ja. Wir erstellen die Ad-Creatives und können die Anzeigen auf Facebook und Instagram auch betreuen, auswerten und optimieren, im Rahmen unseres Done-for-you-Services."],
+      ["Reicht ein Unternehmensfilm für mein Marketing?", "Allein meist nicht. Der Film schafft Vertrauen. Für Reichweite und Anfragen brauchst Du zusätzlich laufend neue Kurzvideos und Anzeigen."],
+      ["Wie viele Korrekturrunden sind enthalten?", "Im Content-Paket eine. Wer Skript und Look vorab freigibt und sein Feedback bündelt, braucht meist weniger."]
+    ],
+    related: ["was-kostet-ein-ki-werbefilm", "done-for-you-marketing-agentur-vs-einmalprojekt"],
+    cta: { h: "Du planst einen Unternehmensfilm in Stuttgart?", sub: "30 Minuten Call. Wir klären Ziel, Umfang und Preis.", link: { to: "imagefilm-stuttgart", label: "Mehr zu Imagefilm und Unternehmensfilm in Stuttgart →" } }
   }
 ];

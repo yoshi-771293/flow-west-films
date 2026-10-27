@@ -9,9 +9,15 @@ function blogFmtDate(iso) {
   return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 
+// A paragraph is a string, or an array of strings and inline links ({ to, text }).
+function blogInline(p) {
+  if (!Array.isArray(p)) return p;
+  return p.map((seg, i) => (typeof seg === "string" ? seg : <Link key={i} to={seg.to} style={{ color: "var(--fwf-purple)" }}>{seg.text}</Link>));
+}
+
 function BlogBlocks({ blocks }) {
   return blocks.map((b, i) => {
-    if (b.p) return <p key={i} style={{ fontSize: 18, lineHeight: 1.7, color: "var(--fwf-text-mute)", margin: "0 0 20px 0" }}>{b.p}</p>;
+    if (b.p) return <p key={i} style={{ fontSize: 18, lineHeight: 1.7, color: "var(--fwf-text-mute)", margin: "0 0 20px 0" }}>{blogInline(b.p)}</p>;
     const List = b.ol ? "ol" : "ul";
     const items = b.ol || b.ul;
     return (

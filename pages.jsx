@@ -3153,6 +3153,12 @@ const KW_PAGES = {
         { q: "Können Sie Gründer, Team und Kunden filmen?", a: "Ja, das ist oft der stärkste Teil eines Imagefilms. Interviews und echte Gesichter schaffen Vertrauen, KI ergänzt, was sich nicht drehen lässt." },
         { q: "Gibt es den Imagefilm auch auf Englisch?", a: "Ja. Voiceover und Untertitel liefern wir auf Deutsch und Englisch, auf Wunsch auch in weiteren Sprachen." },
       ],
+      extra: {
+        eyebrow: "Unternehmensfilm",
+        h: "Unternehmensfilm Stuttgart: Ihr Team, Ihre Räume, Ihre Geschichte.",
+        p: "Ein Unternehmensfilm zeigt mehr als Logo und Produkt: die Menschen, die Abläufe und den Ort, an dem Ihr Unternehmen arbeitet. Wir sitzen in Stuttgart, drehen bei Ihnen vor Ort und planen den Film von Anfang an so, dass daraus auch kurze Videos für Ihre Anzeigen entstehen.",
+        link: { to: "blog/unternehmensfilm-stuttgart", label: "Was ein Unternehmensfilm wirklich bringt →" },
+      },
       ctaA: "Ihr Imagefilm — ", ctaB: "mit Haltung und Reichweite.",
     },
     en: {
@@ -3197,6 +3203,12 @@ const KW_PAGES = {
         { q: "Can you film founders, team and customers?", a: "Yes, and it's often the strongest part of a brand film. Interviews and real faces build trust; AI fills in what can't be shot." },
         { q: "Is the brand film available in English?", a: "Yes. We deliver voiceover and subtitles in German and English, and in other languages on request." },
       ],
+      extra: {
+        eyebrow: "Corporate film",
+        h: "Corporate film Stuttgart: your team, your premises, your story.",
+        p: "A corporate film shows more than a logo and a product: the people, the way you work and the place your company works from. We're based in Stuttgart, shoot on location with you and plan the film from day one so it also yields short videos for your ads.",
+        link: { to: "blog/unternehmensfilm-stuttgart", label: "What a corporate film really delivers (German) →" },
+      },
       ctaA: "Your brand film — ", ctaB: "with a point of view and reach.",
     },
   },
@@ -3373,6 +3385,17 @@ function KeywordPage({ id }) {
           </div>
         </div>
       </section>
+
+      {L.extra && (
+        <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+          <div className="fwf-container" style={{ maxWidth: 900 }}>
+            {eyebrow(L.extra.eyebrow)}
+            <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: "0 0 24px 0", lineHeight: 1.1, textWrap: "balance" }}>{L.extra.h}</h2>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, lineHeight: 1.65, margin: "0 0 24px 0" }}>{L.extra.p}</p>
+            <Link to={L.extra.link.to} className="fwf-btn-bare">{L.extra.link.label}</Link>
+          </div>
+        </section>
+      )}
 
       {works.length > 0 && (
         <section id="kw-work" className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>

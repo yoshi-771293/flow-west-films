@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://flowwestfilms.de/blog</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -123,6 +123,12 @@
   <url>
     <loc>https://flowwestfilms.de/blog/done-for-you-marketing-agentur-vs-einmalprojekt</loc>
     <lastmod>2026-10-20</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog/unternehmensfilm-stuttgart</loc>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>

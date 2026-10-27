@@ -160,6 +160,10 @@
     {
       "source": "/blog/done-for-you-marketing-agentur-vs-einmalprojekt",
       "destination": "/_pre/blog__done-for-you-marketing-agentur-vs-einmalprojekt.html"
+    },
+    {
+      "source": "/blog/unternehmensfilm-stuttgart",
+      "destination": "/_pre/blog__unternehmensfilm-stuttgart.html"
     }
   ],
   "headers": [
