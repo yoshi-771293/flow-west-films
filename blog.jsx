@@ -1,6 +1,5 @@
-/* global React, Icons, Link, useRoute */
+/* global React, Icons, Link, useRoute, funnelHref */
 /* Blog pages — content lives in blog-data.js (window.FWF_POSTS). */
-const BLOG_CALENDLY = "https://start.flowwestfilms.de/?utm_source=website&utm_content=blog";
 const BLOG_MAX = 720;
 
 function blogPosts() { return window.FWF_POSTS || []; }
@@ -126,7 +125,7 @@ function BlogPostPage() {
           <div className="fwf-card fwf-card-green" style={{ padding: 36, textAlign: "center" }}>
             <h2 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: "0 0 12px 0" }}>{post.cta.h}</h2>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, margin: "0 0 24px 0" }}>{post.cta.sub}</p>
-            <a href={BLOG_CALENDLY} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               <Icons.Calendar size={14} />
               Gespräch buchen
               <Icons.ArrowRight size={14} />

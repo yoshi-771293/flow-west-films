@@ -54,7 +54,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
       )}
 
       {expanded ? (
-        <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=pricing" target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
+        <a href={funnelHref()} target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
           Book a call to discuss
           <Icons.ArrowRight size={12} />
         </a>
@@ -370,7 +370,7 @@ function HomePage() {
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
             React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →"),
-            React.createElement("a", { href: "https://start.flowwestfilms.de/?utm_source=website&utm_content=hero", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+            React.createElement("a", { href: funnelHref("home"), target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
               "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
             ),
             React.createElement("a", {
@@ -638,7 +638,7 @@ function HomePage() {
             })
           ),
           React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 } },
-            React.createElement("a", { href: "https://start.flowwestfilms.de/?utm_source=website&utm_content=sprint", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
+            React.createElement("a", { href: funnelHref("home"), target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
               "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
             ),
             React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: 0 } },
@@ -669,6 +669,23 @@ function HomePage() {
             })
           ),
           React.createElement(Link, { to: "services", className: "fwf-btn-bare" }, "Compare all services →")
+        )
+      ),
+
+      /* CHOOSER — sends each visitor to the matching funnel version (the funnel decides everything else) */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", textAlign: "center" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { className: "fwf-eyebrow", style: { color: "var(--fwf-pink)", marginBottom: 20 } }, "60-second check"),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", textWrap: "balance" } }, "What do you sell?"),
+          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.55, maxWidth: 520, margin: "0 auto 36px" } }, "Pick one and the check asks the right questions for your business."),
+          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 14 } },
+            React.createElement("a", { href: "https://start.flowwestfilms.de/?utm_source=website&utm_content=home-chooser#check", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-accent fwf-btn-accent-pink" },
+              "Products (e-commerce) ", React.createElement(Icons.ArrowRight, { size: 14 })
+            ),
+            React.createElement("a", { href: "https://start.flowwestfilms.de/dienstleister?utm_source=website&utm_content=home-chooser#check", target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-accent fwf-btn-accent-purple" },
+              "A service ", React.createElement(Icons.ArrowRight, { size: 14 })
+            )
+          )
         )
       ),
 

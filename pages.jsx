@@ -1718,7 +1718,7 @@ function MetaAdsPage() {
             Real client: Weinzeit — a wine festival touring all of Germany — went from <strong>2× to 14× ROAS</strong> on Meta with us.
           </div>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">
@@ -1929,7 +1929,7 @@ function GoogleAdsPage() {
             Google & YouTube Ads for e-commerce and B2C brands — built to catch high-intent search traffic and turn it into sales, with the same team producing the video creative YouTube ads actually need to perform.
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">
@@ -2128,7 +2128,7 @@ function AiVisibilityPage() {
             More shoppers are asking ChatGPT, Claude, and Gemini for recommendations before they ever open Google. We help e-commerce and B2C brands show up in those answers — not just in search results.
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">
@@ -2334,7 +2334,7 @@ function AiVideoPage() {
             Cinematic AI commercials, product films, UGC-style and AI-influencer videos and ad creatives for brands across the DACH region. AI gives us speed and scale. Story, taste and direction stay human — and that's the difference you see in every frame.
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href={window.location.pathname + "#ai-work"} className="fwf-btn fwf-btn-ghost">
@@ -2479,7 +2479,7 @@ function AiVideoPage() {
             Like what you see? <em className="fwf-display-italic" style={{ color: "var(--fwf-purple)" }}>Let's talk about your brand.</em>
           </h3>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">
@@ -2583,7 +2583,7 @@ function FullServicePage() {
             For e-commerce and B2C brands who want production and media buying handled by the same team — so nothing gets lost between the shoot and the spend.
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               Book a strategy call <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">
@@ -2796,7 +2796,7 @@ function ContactPage() {
               </p>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48, alignItems: "center" }}>
-                <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
+                <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
                   <Icons.Calendar size={14}/>
                   Book a strategy call
                   <Icons.ArrowRight size={14}/>
@@ -3374,7 +3374,7 @@ function KeywordPage({ id }) {
             {L.lead}
           </p>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               {U.book} <Icons.ArrowRight size={12} />
             </a>
             <a href={window.location.pathname + "#kw-work"} className="fwf-btn fwf-btn-ghost">{U.see}</a>
@@ -3510,7 +3510,7 @@ function KeywordPage({ id }) {
             {U.midA} {em(U.midB)}
           </h3>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=page" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+            <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
               {U.book} <Icons.ArrowRight size={12} />
             </a>
             <a href="/audit/" className="fwf-btn fwf-btn-ghost">{U.audit}</a>

@@ -112,6 +112,12 @@ function pathToRoute(pathname) {
   }
 })();
 
+// Every "book a call" button goes to the funnel's check, tagged with the page it was clicked on.
+function funnelHref(slug, path) {
+  const page = (slug || pathToRoute(window.location.pathname)).replace(/\//g, "-");
+  return "https://start.flowwestfilms.de/" + (path || "") + "?utm_source=website&utm_content=" + encodeURIComponent(page) + "#check";
+}
+
 function navigate(route) {
   const path = routeToPath(route);
   if (window.location.pathname !== path) window.history.pushState({}, "", path);
@@ -272,7 +278,7 @@ function Nav({ route }) {
             >
               <span style={{ color: "#a855f7", transition: "color 0.2s" }}>Free</span>{" "}Audit
             </a>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=nav" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
+            <a href={funnelHref(route)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
               <Icons.Calendar size={14} />
               Book a call
             </a>
@@ -314,7 +320,7 @@ function Nav({ route }) {
             >
               <span style={{ color: "#a855f7" }}>Free</span>{" "}Audit →
             </a>
-            <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=nav-mobile" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
+            <a href={funnelHref(route)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
               <Icons.Calendar size={14} /> Book a strategy call
             </a>
           </div>
@@ -412,7 +418,7 @@ function FinalCTA({ headline, sub }) {
         <p style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 600, margin: "0 auto 40px", lineHeight: 1.5 }}>
           {sub || "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team."}
         </p>
-        <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=final-cta" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
+        <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
           <Icons.Calendar size={14} />
           Book a strategy call
           <Icons.ArrowRight size={14} />
@@ -997,4 +1003,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });
