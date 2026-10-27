@@ -854,6 +854,7 @@ window.FWF_TRANSLATIONS = {
     "Vertical 9:16": "Hochkant 9:16",
     "Horizontal 16:9": "Quer 16:9",
     "Bigger project — image film or commercial?": "Sie planen etwas Größeres, etwa einen Imagefilm oder Werbespot?",
-    "Write to us →": "Schreiben Sie uns →"
+    "Write to us →": "Schreiben Sie uns →",
+    "Show services": "Leistungen anzeigen"
   }
 };

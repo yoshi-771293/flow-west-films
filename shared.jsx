@@ -57,6 +57,7 @@ const Icon = ({ children, size = 20, color = "currentColor", stroke = 1.5 }) => 
 const Icons = {
   ArrowRight: (p) => <Icon {...p}><path d="M5 12h14M13 5l7 7-7 7"/></Icon>,
   ArrowDown: (p) => <Icon {...p}><path d="M12 5v14M5 12l7 7 7-7"/></Icon>,
+  ChevronDown: (p) => <Icon {...p}><path d="M6 9l6 6 6-6"/></Icon>,
   Calendar:  (p) => <Icon {...p}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></Icon>,
   Play:      (p) => <Icon {...p}><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></Icon>,
   Film:      (p) => <Icon {...p}><rect x="2" y="2" width="20" height="20" rx="2.18"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></Icon>,
@@ -173,11 +174,18 @@ function Nav({ route }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [mobile]);
 
+  // Close the services menu whenever the route changes (after a click inside it).
+  useEffect(() => { setServicesOpen(false); }, [route]);
+
   const servicesChildren = [
     { to: "social-media-ads", label: "Social Media Ads" },
     { to: "search-ads", label: "Search Ads" },
     { to: "full-service", label: "Full Service" },
     { to: "ki-videoproduktion", label: "AI Video & Content" },
+    { to: "werbefilm-stuttgart", label: "Ad Films Stuttgart" },
+    { to: "imagefilm-stuttgart", label: "Brand Films Stuttgart" },
+    { to: "produktvideo-stuttgart", label: "Product Videos Stuttgart" },
+    { to: "ai-visibility-agentur", label: "AI Visibility" },
   ];
 
   const links = [
@@ -210,24 +218,36 @@ function Nav({ route }) {
                   >{l.label}</Link>
                 );
               }
+              // The panel is always in the DOM (real <a href> links for crawlers and the
+              // prerendered HTML) and only shown while open: hover on desktop, the chevron
+              // on touch, focus for keyboard users, Escape closes.
               return (
                 <div
                   key={l.to}
-                  className="fwf-nav-dropdown"
+                  className={"fwf-nav-dropdown" + (servicesOpen ? " fwf-nav-dropdown-open" : "")}
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
+                  onFocus={() => setServicesOpen(true)}
+                  onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setServicesOpen(false); }}
+                  onKeyDown={(e) => { if (e.key === "Escape") setServicesOpen(false); }}
                 >
                   <Link
                     to={l.to}
                     className={"fwf-nav-link " + (isActive ? "fwf-nav-link-active" : "")}
                   >{l.label}</Link>
-                  {servicesOpen && (
-                    <div className="fwf-nav-dropdown-panel">
-                      {l.children.map((c) => (
-                        <Link key={c.to} to={c.to} className="fwf-nav-dropdown-item">{c.label}</Link>
-                      ))}
-                    </div>
-                  )}
+                  <button
+                    type="button"
+                    className="fwf-nav-dropdown-toggle"
+                    aria-label="Show services"
+                    aria-expanded={servicesOpen}
+                    aria-controls="fwf-services-menu"
+                    onClick={() => setServicesOpen((o) => !o)}
+                  ><Icons.ChevronDown size={12} /></button>
+                  <div id="fwf-services-menu" className="fwf-nav-dropdown-panel">
+                    {l.children.map((c) => (
+                      <Link key={c.to} to={c.to} className="fwf-nav-dropdown-item" onClick={() => { setServicesOpen(false); if (document.activeElement) document.activeElement.blur(); }}>{c.label}</Link>
+                    ))}
+                  </div>
                 </div>
               );
             })}
