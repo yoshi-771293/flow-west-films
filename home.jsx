@@ -4,7 +4,7 @@ const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React
 // ============================================
 // Offer card (used on Home + Pricing)
 // ============================================
-function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, bullets, accent, expanded }) {
+function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, bullets, accent, expanded, serviceLink }) {
   const btnCls = `fwf-btn fwf-btn-sm fwf-btn-accent fwf-btn-accent-${accent}`;
   const btnStyle = { alignSelf: "flex-start" };
 
@@ -47,6 +47,12 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
         ))}
       </ul>
 
+      {expanded && serviceLink && (
+        <Link to={serviceLink.to} className="fwf-btn-bare" style={{ alignSelf: "flex-start", fontSize: 13, margin: "-8px 0 22px 0", color: "var(--fwf-text-mute)" }}>
+          {serviceLink.label}
+        </Link>
+      )}
+
       {expanded ? (
         <a href="https://start.flowwestfilms.de/?utm_source=website&utm_content=pricing" target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
           Book a call to discuss
@@ -73,6 +79,7 @@ const OFFERS = [
     badgeColor: "purple",
     accent: "purple",
     stat: "3 films / 1 shoot",
+    serviceLink: { to: "werbefilm-stuttgart", label: "See ad films →" },
     tagline: "Your story told right.",
     bullets: [
       "Strategy + positioning workshop (2 sessions)",
@@ -90,6 +97,7 @@ const OFFERS = [
     badgeColor: "orange",
     accent: "orange",
     stat: "30 creatives / month",
+    serviceLink: { to: "ki-videoproduktion", label: "See AI video production →" },
     tagline: "Never run out of creative to test.",
     bullets: [
       "2 ad concepts per month — hooks, scripts + CTAs",
@@ -107,6 +115,7 @@ const OFFERS = [
     highlight: true,
     accent: "pink",
     stat: "Creative + Performance Marketing",
+    serviceLink: { to: "full-service", label: "See full service →" },
     tagline: "The whole engine, handled.",
     bullets: [
       "Everything in Creative Sprint — monthly concepts, hooks, scripts",

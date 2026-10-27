@@ -2618,6 +2618,22 @@ function FullServicePage() {
         </div>
       </section>
 
+      {/* Why two vendors fail */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", background: "linear-gradient(180deg, transparent, rgba(255,45,120,0.04) 120%)" }}>
+        <div className="fwf-container" style={{ maxWidth: 900 }}>
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">Two vendors, one problem</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(32px, 4vw, 48px)", margin: "0 0 28px 0", lineHeight: 1.1, textWrap: "balance" }}>
+            Nice video, no strategy. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Or a strategy running on weak creative.</em>
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.7, margin: 0 }}>
+            Most brands we talk to have tried it the usual way: a videographer who only shoots, a media buyer who only runs ads, and cheap freelancers or a generalist agency somewhere in between. Everyone does their part, and still nothing connects. The video looks good but was never built for a strategy, or the ads run on creative that was never made to perform. When the numbers drop, the shoot blames the targeting and the targeting blames the creative, and nobody owns the result. At Flow West Films the camera and the ad account belong to the same team: every creative decision is made with the campaign in mind, and every campaign insight goes straight into the next shoot.
+          </p>
+        </div>
+      </section>
+
       {/* What's included */}
       <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
         <div className="fwf-container">
@@ -2700,14 +2716,9 @@ function FullServicePage() {
           <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 780, textWrap: "balance" }}>
             The two ways to run this as <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>one system.</em>
           </h2>
-          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 620 }}>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 620 }}>
             Growth Retainer for a defined monthly engine, Premium Partner for a bespoke founder-led partnership.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 32 }} className="fwf-grid-collapse">
-            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
-              <OfferCard key={i} {...o} />
-            ))}
-          </div>
           <Link to="services" className="fwf-btn-bare">
             See all four ways to work with us <Icons.ArrowRight size={12} />
           </Link>

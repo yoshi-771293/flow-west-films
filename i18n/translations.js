@@ -855,6 +855,13 @@ window.FWF_TRANSLATIONS = {
     "Horizontal 16:9": "Quer 16:9",
     "Bigger project — image film or commercial?": "Sie planen etwas Größeres, etwa einen Imagefilm oder Werbespot?",
     "Write to us →": "Schreiben Sie uns →",
-    "Show services": "Leistungen anzeigen"
+    "Show services": "Leistungen anzeigen",
+    "See ad films →": "Werbefilm ansehen →",
+    "See AI video production →": "KI-Videoproduktion ansehen →",
+    "See full service →": "Full Service ansehen →",
+    "Two vendors, one problem": "Zwei Dienstleister, ein Problem",
+    "Nice video, no strategy.": "Schönes Video, keine Strategie.",
+    "Or a strategy running on weak creative.": "Oder eine Strategie mit schwachem Creative.",
+    "Most brands we talk to have tried it the usual way: a videographer who only shoots, a media buyer who only runs ads, and cheap freelancers or a generalist agency somewhere in between. Everyone does their part, and still nothing connects. The video looks good but was never built for a strategy, or the ads run on creative that was never made to perform. When the numbers drop, the shoot blames the targeting and the targeting blames the creative, and nobody owns the result. At Flow West Films the camera and the ad account belong to the same team: every creative decision is made with the campaign in mind, and every campaign insight goes straight into the next shoot.": "Die meisten Marken, mit denen wir sprechen, haben es auf dem üblichen Weg versucht: ein Videograf, der nur dreht, ein Media Buyer, der nur Anzeigen schaltet, und irgendwo dazwischen günstige Freelancer oder eine Generalisten-Agentur. Jeder macht seinen Teil, und trotzdem greift nichts ineinander. Das Video sieht gut aus, wurde aber nie für eine Strategie gebaut. Oder die Anzeigen laufen mit Creatives, die nie für Performance gemacht wurden. Sinken die Zahlen, schiebt der Dreh es aufs Targeting und das Targeting aufs Creative, und niemand ist für das Ergebnis verantwortlich. Bei Flow West Films gehören Kamera und Werbekonto zum selben Team: Jede kreative Entscheidung fällt mit Blick auf die Kampagne, und jede Erkenntnis aus der Kampagne fließt direkt in den nächsten Dreh."
   }
 };
