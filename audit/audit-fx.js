@@ -93,18 +93,24 @@
 
   // Results-page header copy — bigger headline, brand voice, one italic moment,
   // a little dry wit. Tells them: you're done, read it, then book a call.
+  // The primary CTA no longer books directly: it sends people to the 90-second
+  // fit check on start.flowwestfilms.de, which qualifies them, hands out the
+  // industry bonus and only then shows the calendar.
+  var FIT_CHECK = "https://start.flowwestfilms.de/?utm_source=website&utm_content=audit#check";
   var RESULTS_COPY = {
     en: {
       head: ["You made it. Here's the ", "verdict", "."],
-      sub: "Seven dimensions, scored without mercy. Read it top to bottom — then book a call before you overthink it.",
-      ctaPrimary: "Book a call →",
+      sub: "Seven dimensions, scored without mercy. Read it top to bottom. Then take 90 seconds to find out if we're a fit.",
+      ctaPrimary: "Are we a fit? →",
       ctaSecondary: "Back to site",
+      note: "90 seconds, in German. Then we both know if a call is worth it.",
     },
     de: {
       head: ["Geschafft. Hier das ", "Urteil", "."],
-      sub: "Sieben Dimensionen, gnadenlos bewertet. Lesen Sie alles — und buchen Sie einen Call, bevor Sie zu lange grübeln.",
-      ctaPrimary: "Call buchen →",
+      sub: "Sieben Dimensionen, gnadenlos bewertet. Lesen Sie alles. Dann finden Sie in 90 Sekunden heraus, ob wir zusammenpassen.",
+      ctaPrimary: "Passen wir zusammen? →",
       ctaSecondary: "Zur Website",
+      note: "90 Sekunden. Danach wissen wir beide, ob sich ein Gespräch lohnt.",
     },
   };
 
@@ -532,17 +538,43 @@
     }
 
     if (!document.getElementById("fwf-results-cta")) {
-      var section = root.querySelector("section") || root;
-      var wrap = section.querySelector(".wrap") || section;
-      var cta = document.createElement("div");
-      cta.id = "fwf-results-cta";
-      cta.setAttribute("data-fwf-fx", "1");
-      cta.style.cssText = "margin:52px 0 8px;display:flex;gap:12px;flex-wrap:wrap;opacity:1;";
-      cta.innerHTML =
-        '<a href="' + CALENDLY + '" style="' + brandBtnCss(true) + '">' + esc(c.ctaPrimary) + "</a>" +
-        '<a href="' + SITE + '" style="' + brandBtnCss(false) + '">' + esc(c.ctaSecondary) + "</a>";
-      wrap.appendChild(cta);
+      var noteCss = "margin:16px 0 0;opacity:1;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a8a;";
+      // The bundle ends with its own "Wollen Sie es gemeinsam durchgehen?" block
+      // and a "Call buchen" button. Put the fit-check button in that button's
+      // place (so there is one closing CTA, not two stacked ones).
+      var booking = Array.prototype.filter.call(root.querySelectorAll("a.btn-cta"), function (a) {
+        return a.href.indexOf(CALENDLY) === 0 || a.href === FIT_CHECK;
+      }).pop();
+      var note = document.createElement("p");
+      note.id = "fwf-results-note";
+      note.setAttribute("data-fwf-fx", "1");
+      note.style.cssText = noteCss;
+      if (booking && booking.parentNode) {
+        var fit = document.createElement("a");
+        fit.id = "fwf-results-cta";
+        fit.setAttribute("data-fwf-fx", "1");
+        fit.href = FIT_CHECK;
+        fit.style.cssText = brandBtnCss(true);
+        booking.parentNode.insertBefore(fit, booking);
+        booking.style.display = "none";
+        booking.parentNode.parentNode.insertBefore(note, booking.parentNode.nextSibling);
+      } else {
+        // fallback: append our own row at the end of the results
+        var section = root.querySelector("section") || root;
+        var wrap = section.querySelector(".wrap") || section;
+        var row = document.createElement("div");
+        row.style.cssText = "margin:52px 0 8px;display:flex;gap:12px;flex-wrap:wrap;opacity:1;";
+        row.innerHTML = '<a id="fwf-results-cta" data-fwf-fx="1" href="' + FIT_CHECK + '" style="' + brandBtnCss(true) + '"></a>' +
+          '<a href="' + SITE + '" style="' + brandBtnCss(false) + '">' + esc(c.ctaSecondary) + "</a>";
+        wrap.appendChild(row);
+        wrap.appendChild(note);
+      }
     }
+    // (re)fill on every call so the language toggle swaps the copy too
+    var ctaEl = document.getElementById("fwf-results-cta");
+    if (ctaEl) ctaEl.textContent = c.ctaPrimary;
+    var noteEl = document.getElementById("fwf-results-note");
+    if (noteEl) noteEl.textContent = c.note;
   }
 
   function esc(s) {
@@ -740,7 +772,16 @@
       setTimeout(run, 120);
     }
 
-    var obs = new MutationObserver(schedule);
+    // Booking goes through the fit check: every "Book a call" button the bundle
+    // renders (nav, hero, results) points to the 90-second check instead of
+    // Calendly, same as all Calendly links on the main site.
+    function routeBookingLinks() {
+      document.querySelectorAll('#root a[href^="' + CALENDLY + '"]').forEach(function (a) {
+        a.href = FIT_CHECK;
+      });
+    }
+    var obs = new MutationObserver(function () { routeBookingLinks(); schedule(); });
+    routeBookingLinks();
     var root = document.getElementById("root");
     if (root) obs.observe(root, { childList: true, subtree: true });
     schedule();
@@ -748,8 +789,10 @@
     // keep the rewritten results header in the right language on a DE/EN toggle
     window.addEventListener("fwf-lang-change", function () {
       if (resultsRevealed && document.querySelector("#root main .score-bar-track")) {
-        var existing = document.getElementById("fwf-results-cta");
-        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+        ["fwf-results-cta", "fwf-results-note"].forEach(function (id) {
+          var existing = document.getElementById(id);
+          if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+        });
         try { customizeResults(); } catch (e) {}
       }
     });
