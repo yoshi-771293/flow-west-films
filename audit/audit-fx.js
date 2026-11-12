@@ -40,6 +40,10 @@
         companyLabel: "Company", companyPh: "Acme GmbH",
         emailLabel: "Email", emailPh: "you@company.com",
         phoneLabel: "Phone", phonePh: "+49 …",
+        fitLabel: "Three quick taps, so we know if we can help",
+        industryLabel: "Your field", spendLabel: "Ad spend per day", budgetLabel: "Budget for ad videos", choose: "Please choose",
+        newsletter: "Yes, send me the occasional tip on ad videos by email. Unsubscribe anytime.",
+        fine: 'We send your result by email and only use your phone number to follow up on it. More in our <a href="/datenschutz" target="_blank">privacy policy</a>.',
         cta: "Send it →",
         sending: "Sending",
         errInvalid: "That's not a valid email.",
@@ -68,6 +72,10 @@
         companyLabel: "Firma", companyPh: "Acme GmbH",
         emailLabel: "E-Mail", emailPh: "sie@firma.de",
         phoneLabel: "Telefon", phonePh: "+49 …",
+        fitLabel: "Drei kurze Klicks, damit wir wissen, ob wir helfen können",
+        industryLabel: "Ihr Bereich", spendLabel: "Ad Spend pro Tag", budgetLabel: "Budget für Ad-Videos", choose: "Bitte wählen",
+        newsletter: "Ja, schicken Sie mir gelegentlich Tipps zu Ad-Videos per E-Mail. Abmeldung jederzeit.",
+        fine: 'Ihr Ergebnis schicken wir per E-Mail. Ihre Telefonnummer nutzen wir nur, um uns zu Ihrem Ergebnis bei Ihnen zu melden. Mehr in der <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>.',
         cta: "Absenden →",
         sending: "Senden",
         errInvalid: "Das ist keine gültige E-Mail.",
@@ -93,26 +101,115 @@
 
   // Results-page header copy — bigger headline, brand voice, one italic moment,
   // a little dry wit. Tells them: you're done, read it, then book a call.
-  // The primary CTA no longer books directly: it sends people to the 90-second
-  // fit check on start.flowwestfilms.de, which qualifies them, hands out the
-  // industry bonus and only then shows the calendar.
+  // Booking buttons shown BEFORE the audit is finished (nav, hero) go to the
+  // fit check on start.flowwestfilms.de, like every booking link on the site.
+  // After the audit, the contact step has qualified the person: qualified leads
+  // book directly (Calendly, prefilled), everyone else gets the bonus + "not yet".
   var FIT_CHECK = "https://start.flowwestfilms.de/?utm_source=website&utm_content=audit#check";
   var RESULTS_COPY = {
     en: {
       head: ["You made it. Here's the ", "verdict", "."],
-      sub: "Seven dimensions, scored without mercy. Read it top to bottom. Then take 90 seconds to find out if we're a fit.",
-      ctaPrimary: "Are we a fit? →",
-      ctaSecondary: "Back to site",
-      note: "90 seconds, in German. Then we both know if a call is worth it.",
+      sub: "Seven dimensions, scored without mercy. Read it top to bottom.",
+      book: "Book your call →",
+      bookNote: "30 minutes with Florian. No pitch deck. Worst case, you leave with a plan.",
+      notHead: "Not quite yet.",
+      notTail: "Get in touch when the time is right. Until then: your bonus.",
+      bonusLabel: "Your bonus · by Florian Kotulla",
+      bonusBasis: "Based on Alex Hormozi's “$100M Offers” and Robert B. Cialdini's “Influence: The Psychology of Persuasion”. In German.",
+      bonusCta: "Get your bonus →",
     },
     de: {
       head: ["Geschafft. Hier das ", "Urteil", "."],
-      sub: "Sieben Dimensionen, gnadenlos bewertet. Lesen Sie alles. Dann finden Sie in 90 Sekunden heraus, ob wir zusammenpassen.",
-      ctaPrimary: "Passen wir zusammen? →",
-      ctaSecondary: "Zur Website",
-      note: "90 Sekunden. Danach wissen wir beide, ob sich ein Gespräch lohnt.",
+      sub: "Sieben Dimensionen, gnadenlos bewertet. Lesen Sie alles.",
+      book: "Jetzt Termin buchen →",
+      bookNote: "30 Minuten mit Florian. Kein Pitch-Deck. Im schlimmsten Fall gehen Sie mit einem Plan.",
+      notHead: "Noch nicht ganz.",
+      notTail: "Melden Sie sich, wenn es soweit ist. Bis dahin: Ihr Bonus.",
+      bonusLabel: "Ihr Bonus · von Florian Kotulla",
+      bonusBasis: "Basierend auf Alex Hormozis „$100M Offers“ und Robert B. Cialdinis „Influence: Die Psychologie des Überzeugens“.",
+      bonusCta: "Bonus jetzt holen →",
     },
   };
+
+  // Qualification — same rules as the funnel on start.flowwestfilms.de
+  // (fwf-funnel api/_funnel.js QUALIFY). Keep both in sync.
+  var FIT = {
+    options: {
+      industry: [
+        ["agentur", "Agentur", "Agency"], ["coaching", "Coaching oder Beratung", "Coaching or consulting"],
+        ["dienstleister", "Anderer Dienstleister", "Other service business"], ["ecommerce", "E-Commerce", "E-commerce"],
+        ["lokal", "Autohaus oder lokales Geschäft", "Car dealer or local business"],
+        ["reguliert", "Finanzprodukte oder Medizin", "Financial products or medical"], ["sonstige", "Sonstiges", "Other"],
+      ],
+      ad_spend: [
+        ["geplant", "Noch keine, Start geplant", "None yet, launch planned"], ["keine", "Keine, nichts geplant", "None, nothing planned"],
+        ["lt50", "unter 50 € / Tag", "under €50 / day"], ["50-100", "50–100 € / Tag", "€50–100 / day"],
+        ["100-300", "100–300 € / Tag", "€100–300 / day"], ["gt300", "über 300 € / Tag", "over €300 / day"],
+      ],
+      budget: [
+        ["lt1500", "unter 1.490 €", "under €1,490"], ["1500-2500", "1.490–2.500 €", "€1,490–2,500"],
+        ["2500-5000", "2.500–5.000 €", "€2,500–5,000"], ["gt5000", "über 5.000 €", "over €5,000"],
+      ],
+    },
+    qualify: {
+      industry: ["agentur", "coaching", "dienstleister", "ecommerce", "lokal", "sonstige"],
+      ad_spend: ["geplant", "50-100", "100-300", "gt300"],
+      budget: ["1500-2500", "2500-5000", "gt5000"],
+    },
+    notFit: [
+      ["industry", ["reguliert"], "Für Finanzprodukte und Medizin gelten bei Werbung strenge Regeln. Dafür sind wir nicht das richtige Studio.", "Financial and medical products come with strict advertising rules. We're not the right studio for that."],
+      ["ad_spend", ["keine", "lt50"], "Ein Sprint lohnt sich, sobald Ihre Ads mit mindestens 50 € pro Tag laufen oder der Start fest geplant ist. Vorher fehlt das Budget, um die Videos fair zu testen.", "A sprint pays off once your ads run at €50+ a day or the launch is firmly planned. Before that, there's no budget to test the videos fairly."],
+      ["budget", ["lt1500"], "Der Einstieg beginnt bei 1.490 €. Darunter können wir die Qualität, für die wir stehen, nicht liefern.", "Our entry point is €1,490. Below that, we can't deliver the quality we stand for."],
+    ],
+    // One bonus per Bereich: public Notion pages (fwf-funnel report-content.js)
+    bonus: {
+      agentur: ["Das Kunden-Onboarding in 12 Fragen", "416b06902a1e8105840ee9fe3478d4dc"],
+      coaching: ["Das Erstgespräch, das verkauft", "416b06902a1e81beb810d929ae0cc021"],
+      dienstleister: ["Ihr Angebot auf einer Seite", "416b06902a1e816e93a1e741da9de3fd"],
+      ecommerce: ["Hook, Meat, CTA: die Struktur für Produkt-Ads", "416b06902a1e8101b5bff1fcf7b7db39"],
+      lokal: ["Der lokale Ad-Funnel", "416b06902a1e811e85cdd10f01bc8693"],
+      reguliert: ["Vertrauen statt Versprechen", "416b06902a1e814eb6a8e199f5abea93"],
+      sonstige: ["Der einfachste Funnel in fünf Stationen", "416b06902a1e81428ca2ebf6753e2b3d"],
+    },
+  };
+  var NOTION = "https://boatneck-lavender-3eb.notion.site/";
+  var PIXEL_ID = "3457088161112221";
+
+  // set once the contact step is sent: {name, email, industry, ad_spend, budget, qualified, reason}
+  var fitState = null;
+
+  function evaluateFit(a) {
+    var q = FIT.qualify;
+    var ok = q.industry.indexOf(a.industry) >= 0 && q.ad_spend.indexOf(a.ad_spend) >= 0 && q.budget.indexOf(a.budget) >= 0;
+    var reason = null;
+    if (!ok) FIT.notFit.some(function (r) { if (r[1].indexOf(a[r[0]]) >= 0) { reason = [r[2], r[3]]; return true; } return false; });
+    return { qualified: ok, reason: reason };
+  }
+
+  function bookingUrl() {
+    var p = "?utm_source=website&utm_content=audit-result";
+    if (fitState) p += "&name=" + encodeURIComponent(fitState.name) + "&email=" + encodeURIComponent(fitState.email);
+    return CALENDLY + p;
+  }
+
+  function consentGranted() {
+    try { return localStorage.getItem("fwf-consent-v1") === "granted"; } catch (e) { return false; }
+  }
+
+  // QualifiedLead to Meta — only for qualified leads and only with the consent
+  // the visitor already gave in the site's cookie banner (same key, same origin).
+  // No PageView, no automatic events: Meta should learn from qualified people only.
+  function sendQualifiedLead(eventId) {
+    if (!consentGranted()) return;
+    try {
+      if (!window.fbq) {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+        window.fbq("set", "autoConfig", false, PIXEL_ID);
+        window.fbq("init", PIXEL_ID);
+      }
+      window.fbq("trackCustom", "QualifiedLead", { source: "website-audit", industry: fitState.industry }, { eventID: eventId });
+    } catch (e) {}
+  }
 
   // brand button (matches .fwf-btn-primary / -ghost on the main site: pill,
   // dark fill, 1px accent border, mono uppercase, soft glow)
@@ -184,6 +281,17 @@
       "#fwf-thanks .fwf-tk-foot span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A5A;}",
       "#fwf-thanks .fwf-tk-spin{width:13px;height:13px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:fwftkspin .6s linear infinite;}",
       "@keyframes fwftkspin{to{transform:rotate(360deg);}}",
+      "#fwf-thanks select{width:100%;background:#000;border:1px solid #262626;border-radius:9px;padding:12px 15px;color:#fff;font-family:'Syne',system-ui,sans-serif;font-size:15px;-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8a8a8a 50%),linear-gradient(135deg,#8a8a8a 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;}",
+      "#fwf-thanks select:focus{outline:none;border-color:#FF2D78;box-shadow:0 0 0 1px rgba(255,45,120,0.35);}",
+      "#fwf-thanks select.valid{border-color:#00FF88;}",
+      "#fwf-thanks .fwf-tk-fitlabel{margin:22px 0 12px;padding-top:18px;border-top:1px solid #1a1a1a;color:#8A8A8A;}",
+      "#fwf-thanks .fwf-tk-check{display:flex;gap:10px;align-items:flex-start;margin:6px 0 20px;font-family:'Syne',system-ui,sans-serif;font-size:13px;line-height:1.5;color:#8A8A8A;cursor:pointer;}",
+      "#fwf-thanks .fwf-tk-check input{width:16px;height:16px;flex:0 0 16px;margin-top:2px;padding:0;accent-color:#FF2D78;}",
+      "#fwf-thanks .fwf-tk-fine{font-family:'Syne',system-ui,sans-serif;font-size:11.5px;line-height:1.5;color:#5A5A5A;margin:-8px 0 18px;}",
+      "#fwf-thanks .fwf-tk-fine a{color:#8A8A8A;}",
+      // the contact step got taller: let the card scroll inside the viewport
+      "#fwf-thanks .fwf-tk-card{max-height:calc(100vh - 48px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#2a2a2a transparent;}",
+      "#fwf-thanks .fwf-tk-card::-webkit-scrollbar{width:6px;}#fwf-thanks .fwf-tk-card::-webkit-scrollbar-track{background:transparent;}#fwf-thanks .fwf-tk-card::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:3px;}",
       "@media (max-width:520px){#fwf-thanks h2{font-size:36px;}}",
     ].join("");
     (document.head || document.documentElement).appendChild(s);
@@ -206,6 +314,14 @@
           '<input id="' + id + '" type="' + type + '" autocomplete="' + autocomplete + '" spellcheck="false" placeholder="' + ph + '">' +
           '</div>';
       }
+      function select(id, label, key) {
+        var en = lang() === "en";
+        return '<div class="fwf-tk-field">' +
+          '<label class="fwf-tk-flabel" for="' + id + '">' + label + '</label>' +
+          '<select id="' + id + '"><option value="">' + c.s2.choose + '</option>' +
+          FIT.options[key].map(function (o) { return '<option value="' + o[0] + '">' + (en ? o[2] : o[1]) + '</option>'; }).join("") +
+          '</select></div>';
+      }
       return mark + eyebrow(c.s2) + head(c.s2) +
         '<p class="fwf-tk-sub" data-tk="sub">' + c.s2.sub + '</p>' +
         field("fwf-tk-name", c.s2.nameLabel, "text", c.s2.namePh, "name") +
@@ -213,6 +329,12 @@
         field("fwf-tk-email", c.s2.emailLabel, "email", c.s2.emailPh, "email") +
         '<div class="fwf-tk-msg" id="fwf-tk-emailmsg"></div>' +
         field("fwf-tk-phone", c.s2.phoneLabel, "tel", c.s2.phonePh, "tel") +
+        '<p class="fwf-tk-flabel fwf-tk-fitlabel">' + c.s2.fitLabel + '</p>' +
+        select("fwf-tk-industry", c.s2.industryLabel, "industry") +
+        select("fwf-tk-spend", c.s2.spendLabel, "ad_spend") +
+        select("fwf-tk-budget", c.s2.budgetLabel, "budget") +
+        '<label class="fwf-tk-check"><input type="checkbox" id="fwf-tk-news"><span>' + c.s2.newsletter + '</span></label>' +
+        '<p class="fwf-tk-fine">' + c.s2.fine + '</p>' +
         '<button class="fwf-tk-cta" type="button" data-act="send" disabled>' + c.s2.cta + '</button>' + foot;
     }
     return mark + eyebrow(c.s3) + head(c.s3) +
@@ -255,9 +377,12 @@
         if (r.ok) { emailEl.classList.add("valid"); msg.textContent = ""; emailOk = true; }
         else { emailEl.classList.add("invalid"); msg.textContent = r.disp ? c.s2.errDisp : c.s2.errInvalid; }
       }
-      btn.disabled = !(nameOk && companyOk && emailOk && phoneOk);
+      var picksOk = selects.every(function (s) { s.classList.toggle("valid", !!s.value); return !!s.value; });
+      btn.disabled = !(nameOk && companyOk && emailOk && phoneOk && picksOk);
     }
 
+    var selects = ["#fwf-tk-industry", "#fwf-tk-spend", "#fwf-tk-budget"].map(function (q) { return step.querySelector(q); });
+    selects.forEach(function (s) { s.addEventListener("change", revalidate); });
     [nameEl, companyEl, emailEl, phoneEl].forEach(function (el) { el.addEventListener("input", revalidate); });
     step.querySelectorAll("input").forEach(function (el) {
       el.addEventListener("keydown", function (e) { if (e.key === "Enter" && !btn.disabled) btn.click(); });
@@ -430,8 +555,22 @@
     var company = (step.querySelector("#fwf-tk-company").value || "").trim();
     var email = (step.querySelector("#fwf-tk-email").value || "").trim().toLowerCase();
     var phone = (step.querySelector("#fwf-tk-phone").value || "").trim();
-    // required: name + company + valid email + phone
+    var picks = {
+      industry: step.querySelector("#fwf-tk-industry").value,
+      ad_spend: step.querySelector("#fwf-tk-spend").value,
+      budget: step.querySelector("#fwf-tk-budget").value,
+    };
+    var newsletter = !!step.querySelector("#fwf-tk-news").checked;
+    // required: name + company + valid email + phone + the three qualifying taps
     if (!name || !company || phone.replace(/\D/g, "").length < 6 || validateEmail(email).ok !== true) return;
+    if (!picks.industry || !picks.ad_spend || !picks.budget) return;
+
+    var verdict = evaluateFit(picks);
+    fitState = { name: name, email: email, industry: picks.industry, ad_spend: picks.ad_spend, budget: picks.budget,
+      qualified: verdict.qualified, reason: verdict.reason };
+    var eventId = "wa-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
+    var consent = consentGranted();
+    if (verdict.qualified) sendQualifiedLead(eventId);
 
     btn.disabled = true;
     btn.innerHTML = '<span class="fwf-tk-spin"></span>' + c.s2.sending;
@@ -447,7 +586,9 @@
     fetch("/api/send-audit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, name: name, company: company, phone: phone, audit: payload }),
+      body: JSON.stringify({ email: email, name: name, company: company, phone: phone, audit: payload,
+        fit: { industry: picks.industry, ad_spend: picks.ad_spend, budget: picks.budget, newsletter: newsletter,
+          consent: consent, event_id: eventId, page: location.href.split("?")[0] } }),
     }).then(function () { advance(); }).catch(function (err) {
       console.error("[fwf] send-audit failed:", err); advance();
     });
@@ -537,44 +678,66 @@
       }
     }
 
-    if (!document.getElementById("fwf-results-cta")) {
-      var noteCss = "margin:16px 0 0;opacity:1;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a8a;";
-      // The bundle ends with its own "Wollen Sie es gemeinsam durchgehen?" block
-      // and a "Call buchen" button. Put the fit-check button in that button's
-      // place (so there is one closing CTA, not two stacked ones).
-      var booking = Array.prototype.filter.call(root.querySelectorAll("a.btn-cta"), function (a) {
-        return a.href.indexOf(CALENDLY) === 0 || a.href === FIT_CHECK;
-      }).pop();
-      var note = document.createElement("p");
-      note.id = "fwf-results-note";
-      note.setAttribute("data-fwf-fx", "1");
-      note.style.cssText = noteCss;
-      if (booking && booking.parentNode) {
-        var fit = document.createElement("a");
-        fit.id = "fwf-results-cta";
-        fit.setAttribute("data-fwf-fx", "1");
-        fit.href = FIT_CHECK;
-        fit.style.cssText = brandBtnCss(true);
-        booking.parentNode.insertBefore(fit, booking);
-        booking.style.display = "none";
-        booking.parentNode.parentNode.insertBefore(note, booking.parentNode.nextSibling);
-      } else {
-        // fallback: append our own row at the end of the results
-        var section = root.querySelector("section") || root;
-        var wrap = section.querySelector(".wrap") || section;
-        var row = document.createElement("div");
-        row.style.cssText = "margin:52px 0 8px;display:flex;gap:12px;flex-wrap:wrap;opacity:1;";
-        row.innerHTML = '<a id="fwf-results-cta" data-fwf-fx="1" href="' + FIT_CHECK + '" style="' + brandBtnCss(true) + '"></a>' +
-          '<a href="' + SITE + '" style="' + brandBtnCss(false) + '">' + esc(c.ctaSecondary) + "</a>";
-        wrap.appendChild(row);
-        wrap.appendChild(note);
+    applyFitResults(root, c);
+  }
+
+  // The bundle ends with its own block: "Wollen Sie es gemeinsam durchgehen?",
+  // a "Call buchen" button, "Unsere Arbeit ansehen" and "Neu starten".
+  //  - qualified: that button becomes "Jetzt Termin buchen" (Calendly, prefilled)
+  //  - not qualified: heading/text become an honest "not yet" + the reason, no booking
+  //  - everyone: the industry bonus right above that block
+  // Re-runs on the language toggle (old nodes are removed by the toggle handler).
+  function applyFitResults(root, c) {
+    if (document.getElementById("fwf-results-bonus")) return;
+    var en = lang() === "en";
+    var booking = Array.prototype.filter.call(root.querySelectorAll("a.btn-cta"), function (a) {
+      return a.href.indexOf(CALENDLY) === 0 || a.href === FIT_CHECK || a.hasAttribute("data-fwf-book");
+    }).pop();
+    var row = booking && booking.parentNode;
+    var block = row && row.parentNode;
+    var monoCss = "font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;";
+
+    // bonus card (needs the Bereich from the contact step; old sessions without it get none)
+    if (fitState && FIT.bonus[fitState.industry]) {
+      var b = FIT.bonus[fitState.industry];
+      var card = document.createElement("div");
+      card.id = "fwf-results-bonus";
+      card.setAttribute("data-fwf-fx", "1");
+      card.style.cssText = "margin:0 0 48px;padding:22px 24px;border:1px solid #242424;border-radius:12px;background:#121212;opacity:1;";
+      card.innerHTML =
+        '<p style="' + monoCss + 'margin:0 0 10px;color:#FF2D78;">' + esc(c.bonusLabel) + "</p>" +
+        "<p style=\"font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;line-height:1.1;margin:0 0 8px;color:#fff;\">" + esc(b[0]) + "</p>" +
+        '<p style="font-size:14px;line-height:1.6;margin:0 0 14px;color:#8a8a8a;">' + esc(c.bonusBasis) + "</p>" +
+        '<a href="' + NOTION + b[1] + '" target="_blank" rel="noopener" style="' + monoCss + 'color:#FF2D78;text-decoration:none;">' + esc(c.bonusCta) + "</a>";
+      if (block && block.parentNode) block.parentNode.insertBefore(card, block);
+      else (root.querySelector(".wrap") || root).appendChild(card);
+    }
+
+    if (!fitState || !booking) return;
+    var note = document.createElement("p");
+    note.id = "fwf-results-note";
+    note.setAttribute("data-fwf-fx", "1");
+    note.style.cssText = monoCss + "margin:16px 0 0;opacity:1;color:#8a8a8a;";
+
+    if (fitState.qualified) {
+      booking.href = bookingUrl();
+      booking.setAttribute("data-fwf-book", "1");
+      booking.target = "_blank";
+      booking.textContent = c.book;
+      booking.style.display = "";
+      note.textContent = c.bookNote;
+      block.insertBefore(note, row.nextSibling);
+    } else {
+      booking.style.display = "none";
+      // block = [heading div, p, button row]
+      var p = row.previousElementSibling && row.previousElementSibling.tagName === "P" ? row.previousElementSibling : null;
+      var h = p ? p.previousElementSibling : block.querySelector("h2, h3");
+      if (h) { h.setAttribute("data-fwf-fx", "1"); h.textContent = c.notHead; }
+      if (p) {
+        p.setAttribute("data-fwf-fx", "1");
+        p.textContent = (fitState.reason ? fitState.reason[en ? 1 : 0] + " " : "") + c.notTail;
       }
     }
-    // (re)fill on every call so the language toggle swaps the copy too
-    var ctaEl = document.getElementById("fwf-results-cta");
-    if (ctaEl) ctaEl.textContent = c.ctaPrimary;
-    var noteEl = document.getElementById("fwf-results-note");
-    if (noteEl) noteEl.textContent = c.note;
   }
 
   function esc(s) {
@@ -775,9 +938,18 @@
     // Booking goes through the fit check: every "Book a call" button the bundle
     // renders (nav, hero, results) points to the 90-second check instead of
     // Calendly, same as all Calendly links on the main site.
+    // After the contact step: qualified leads book directly everywhere on the
+    // results page; for everyone else the in-results booking buttons are hidden.
     function routeBookingLinks() {
-      document.querySelectorAll('#root a[href^="' + CALENDLY + '"]').forEach(function (a) {
-        a.href = FIT_CHECK;
+      document.querySelectorAll('#root a[href^="' + CALENDLY + '"], #root a[href="' + FIT_CHECK + '"]').forEach(function (a) {
+        if (a.hasAttribute("data-fwf-book")) return;
+        var inResults = !!a.closest("main") && resultsRevealed;
+        if (fitState && inResults) {
+          if (fitState.qualified) { a.href = bookingUrl(); a.setAttribute("data-fwf-book", "1"); }
+          else if (a.closest("main")) a.style.display = "none";
+        } else if (a.href.indexOf(CALENDLY) === 0) {
+          a.href = FIT_CHECK;
+        }
       });
     }
     var obs = new MutationObserver(function () { routeBookingLinks(); schedule(); });
@@ -789,7 +961,7 @@
     // keep the rewritten results header in the right language on a DE/EN toggle
     window.addEventListener("fwf-lang-change", function () {
       if (resultsRevealed && document.querySelector("#root main .score-bar-track")) {
-        ["fwf-results-cta", "fwf-results-note"].forEach(function (id) {
+        ["fwf-results-bonus", "fwf-results-note"].forEach(function (id) {
           var existing = document.getElementById(id);
           if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
         });

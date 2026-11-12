@@ -2630,6 +2630,28 @@ function DatenschutzPage() {
               Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO
               (berechtigtes Interesse an Anfragenbearbeitung).
             </p>
+            <p>
+              <strong>Kostenlose Analyse (Audit)</strong><br />
+              Wenn Sie unsere kostenlose Analyse unter /audit/ abschließen, verarbeiten wir Ihre Antworten sowie
+              Name, Firma, E-Mail-Adresse, Telefonnummer und Ihre Angaben zu Bereich, Werbebudget pro Tag und
+              Budget für Ad-Videos. Damit schicken wir Ihnen Ihr Ergebnis und einen Bonus per E-Mail, prüfen, ob
+              eine Zusammenarbeit passt, und melden uns zu Ihrem Ergebnis bei Ihnen. Rechtsgrundlage: Art. 6 Abs. 1
+              lit. b DSGVO (vorvertragliche Maßnahmen auf Ihre Anfrage). Die E-Mails versenden wir über Resend
+              (Resend, Inc., USA) auf Grundlage der Standardvertragsklauseln der EU-Kommission.
+            </p>
+            <p>
+              <strong>Newsletter (Mailchimp)</strong><br />
+              Nur wenn Sie im Audit das Häkchen für Tipps per E-Mail setzen, tragen wir Ihre E-Mail-Adresse,
+              Ihren Namen und Ihre Firma in unseren Verteiler bei Mailchimp ein (The Rocket Science Group LLC, USA;
+              Standardvertragsklauseln). Sie erhalten zuerst eine Bestätigungs-E-Mail (Double-Opt-in); erst nach
+              Ihrer Bestätigung schicken wir Ihnen Tipps. Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a
+              DSGVO), jederzeit widerrufbar über den Abmeldelink in jeder E-Mail.
+            </p>
+            <p>
+              <strong>Terminbuchung (Calendly)</strong><br />
+              Termine buchen Sie über Calendly (Calendly LLC, USA; Standardvertragsklauseln). Beim Klick auf einen
+              Buchungsbutton nach dem Audit werden Name und E-Mail-Adresse vorausgefüllt an Calendly übergeben.
+            </p>
 
             <h2>4. Social Media & externe Dienste</h2>
             <p>
@@ -2652,6 +2674,13 @@ function DatenschutzPage() {
               DSGVO). Die Einwilligung ist jederzeit widerrufbar, über „Cookie-Einstellungen“ im Footer dieser Website. Wir und Meta Platforms Ireland Limited sind für
               die Erfassung und Übermittlung dieser Daten gemeinsam verantwortlich (Art. 26 DSGVO). Die
               Datenübertragung in die USA stützt sich auf die Standardvertragsklauseln der EU-Kommission.
+            </p>
+            <p>
+              Wenn Sie eingewilligt haben und nach dem Audit zu uns passen, melden wir Meta dieses Ereignis
+              („QualifiedLead“), damit Meta unsere Werbung an ähnliche Unternehmen ausspielen kann. Dabei
+              übermitteln wir zusätzlich über die Meta Conversions API Ihre E-Mail-Adresse und Telefonnummer
+              ausschließlich in verschlüsselter Form (SHA-256-Hash), außerdem IP-Adresse und Browser-Kennung.
+              Ohne Einwilligung findet keine Übermittlung statt.
             </p>
             <p>
               <strong>YouTube</strong><br />

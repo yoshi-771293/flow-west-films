@@ -18,6 +18,60 @@ function isValidEmail(raw) {
   return true;
 }
 
+// ── Qualification from the audit's contact step (same rules as the funnel on
+//    start.flowwestfilms.de, fwf-funnel api/_funnel.js). Keep both in sync. ──
+const CALENDLY = "https://calendly.com/flowwestfilms-appointment/30min";
+const NOTION = "https://boatneck-lavender-3eb.notion.site/";
+const FIT_ALLOWED = {
+  industry: ["agentur", "coaching", "dienstleister", "ecommerce", "lokal", "reguliert", "sonstige"],
+  ad_spend: ["geplant", "keine", "lt50", "50-100", "100-300", "gt300"],
+  budget: ["lt1500", "1500-2500", "2500-5000", "gt5000"],
+};
+const FIT_QUALIFY = {
+  industry: ["agentur", "coaching", "dienstleister", "ecommerce", "lokal", "sonstige"],
+  ad_spend: ["geplant", "50-100", "100-300", "gt300"],
+  budget: ["1500-2500", "2500-5000", "gt5000"],
+};
+const FIT_LABELS = {
+  industry: { agentur: "Agentur", coaching: "Coaching/Beratung", dienstleister: "Dienstleister", ecommerce: "E-Commerce", lokal: "Autohaus/lokal", reguliert: "Finanzen/Medizin", sonstige: "Sonstiges" },
+  ad_spend: { geplant: "keine Ads, Start geplant", keine: "keine Ads, nichts geplant", lt50: "unter 50 €/Tag", "50-100": "50–100 €/Tag", "100-300": "100–300 €/Tag", gt300: "über 300 €/Tag" },
+  budget: { lt1500: "unter 1.490 €", "1500-2500": "1.490–2.500 €", "2500-5000": "2.500–5.000 €", gt5000: "über 5.000 €" },
+};
+const TIER_BY_BUDGET = { "1500-2500": "Minimum (10 Ad-Videos)", "2500-5000": "Scale (20 Ad-Videos)", gt5000: "Partner (50 Ad-Videos/Monat)" };
+const BONUS = {
+  agentur: ["Das Kunden-Onboarding in 12 Fragen", "416b06902a1e8105840ee9fe3478d4dc"],
+  coaching: ["Das Erstgespräch, das verkauft", "416b06902a1e81beb810d929ae0cc021"],
+  dienstleister: ["Ihr Angebot auf einer Seite", "416b06902a1e816e93a1e741da9de3fd"],
+  ecommerce: ["Hook, Meat, CTA: die Struktur für Produkt-Ads", "416b06902a1e8101b5bff1fcf7b7db39"],
+  lokal: ["Der lokale Ad-Funnel", "416b06902a1e811e85cdd10f01bc8693"],
+  reguliert: ["Vertrauen statt Versprechen", "416b06902a1e814eb6a8e199f5abea93"],
+  sonstige: ["Der einfachste Funnel in fünf Stationen", "416b06902a1e81428ca2ebf6753e2b3d"],
+};
+
+// Returns null for old clients that don't send the contact-step picks.
+function readFit(raw, name, email) {
+  if (!raw || typeof raw !== "object") return null;
+  const pick = {};
+  for (const k of Object.keys(FIT_ALLOWED)) {
+    if (!FIT_ALLOWED[k].includes(raw[k])) return null;
+    pick[k] = raw[k];
+  }
+  const qualified = Object.keys(FIT_QUALIFY).every((k) => FIT_QUALIFY[k].includes(pick[k]));
+  const b = BONUS[pick.industry];
+  return {
+    ...pick,
+    qualified,
+    tier: qualified ? TIER_BY_BUDGET[pick.budget] : null,
+    newsletter: raw.newsletter === true,
+    consent: raw.consent === true,
+    eventId: typeof raw.event_id === "string" && /^[\w-]{8,64}$/.test(raw.event_id) ? raw.event_id : null,
+    page: typeof raw.page === "string" && raw.page.startsWith("https://") ? raw.page.slice(0, 200) : "https://flowwestfilms.de/audit/",
+    bonusTitle: b[0],
+    bonusUrl: NOTION + b[1],
+    bookUrl: `${CALENDLY}?utm_source=website&utm_content=audit-email&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`,
+  };
+}
+
 function esc(str) {
   return String(str || "")
     .replace(/&/g, "&amp;")
@@ -43,7 +97,7 @@ function buildEmailText(audit) {
   const {
     lang = "en", date = "", score = "", dimensions = [],
     recommendation = null, sections = [],
-    recipientName = "", recipientCompany = "",
+    recipientName = "", recipientCompany = "", fit = null,
   } = audit;
   const de = lang === "de";
   const who = [recipientName, recipientCompany].filter(Boolean).join(" · ");
@@ -68,7 +122,13 @@ function buildEmailText(audit) {
     if (recommendation.body) out.push(recommendation.body);
     out.push("");
   }
-  out.push((de ? "Gespräch buchen: " : "Book a call: ") + "https://calendly.com/flowwestfilms-appointment/30min");
+  if (fit) {
+    out.push((de ? "IHR BONUS: " : "YOUR BONUS: ") + fit.bonusTitle);
+    out.push(fit.bonusUrl);
+    out.push("");
+  }
+  if (!fit) out.push((de ? "Gespräch buchen: " : "Book a call: ") + CALENDLY);
+  else if (fit.qualified) out.push((de ? "Jetzt Termin buchen: " : "Book your call: ") + fit.bookUrl);
   out.push("https://flowwestfilms.de");
   out.push("");
   out.push(de ? "Kein Spam. Nur die Analyse." : "No spam. Just the audit.");
@@ -79,7 +139,7 @@ function buildEmailHtml(audit) {
   const {
     lang = "en", date = "", score = "", scorePct = 0,
     dimensions = [], recommendation = null, headline = "", sections = [],
-    recipientName = "", recipientCompany = "",
+    recipientName = "", recipientCompany = "", fit = null,
   } = audit;
 
   // personalized "prepared for" line — name + company brighter, date muted
@@ -97,18 +157,44 @@ function buildEmailHtml(audit) {
     : { eyebrow: "AUDIT COMPLETE", defHead: "Here's where you stand.", scoreLabel: "Overall Score", recLabel: "What we'd do about it", ctaPrimary: "Let's talk →", ctaSecondary: "Visit homepage", foot: "No spam. Just the audit. · flowwestfilms.de" };
 
   // two buttons at the end — pill-shaped to match the site's .fwf-btn (dark fill,
-  // pink border on primary, faint border on secondary, mono uppercase)
+  // pink border on primary, faint border on secondary, mono uppercase).
+  // With the contact-step picks: qualified -> book directly (prefilled);
+  // not qualified -> the bonus is the primary action, no booking.
+  const de = lang === "de";
+  const B = {
+    label: de ? "Ihr Bonus · von Florian Kotulla" : "Your bonus · by Florian Kotulla",
+    intro: de ? "Holen Sie sich jetzt Ihren Bonus:" : "Grab your bonus now:",
+    basis: de
+      ? "Basierend auf Alex Hormozis „$100M Offers“ und Robert B. Cialdinis „Influence: Die Psychologie des Überzeugens“."
+      : "Based on Alex Hormozi's “$100M Offers” and Robert B. Cialdini's “Influence: The Psychology of Persuasion”. In German.",
+    get: de ? "Bonus jetzt holen →" : "Get your bonus →",
+    getShort: de ? "Bonus holen" : "Get bonus",
+    book: de ? "Jetzt Termin buchen →" : "Book your call →",
+  };
+  const pillCss = (border, fill) => `display:block;text-align:center;background:${fill};color:#FFFFFF;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid ${border};border-radius:999px;`;
+  let ctas = [[CALENDLY, L.ctaPrimary], ["https://flowwestfilms.de", L.ctaSecondary]];
+  if (fit && fit.qualified) ctas = [[fit.bookUrl, B.book], [fit.bonusUrl, B.getShort]];
+  else if (fit) ctas = [[fit.bonusUrl, B.get], ["https://flowwestfilms.de", L.ctaSecondary]];
   const ctaRow = `
       <tr><td style="padding:28px 36px 6px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
           <td width="50%" style="padding-right:6px;">
-            <a href="https://calendly.com/flowwestfilms-appointment/30min" style="display:block;text-align:center;background:#0A0A0A;color:#FFFFFF;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #FF2D78;border-radius:999px;">${esc(L.ctaPrimary)}</a>
+            <a href="${esc(ctas[0][0])}" style="${pillCss("#FF2D78", "#0A0A0A")}">${esc(ctas[0][1])}</a>
           </td>
           <td width="50%" style="padding-left:6px;">
-            <a href="https://flowwestfilms.de" style="display:block;text-align:center;background:transparent;color:#FFFFFF;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:14px 10px;border:1px solid #00C87A;border-radius:999px;">${esc(L.ctaSecondary)}</a>
+            <a href="${esc(ctas[1][0])}" style="${pillCss("#00C87A", "transparent")}">${esc(ctas[1][1])}</a>
           </td>
         </tr></table>
       </td></tr>`;
+  const bonusBlock = fit ? `
+      <tr><td style="padding:20px 36px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr><td style="padding:20px 0;border-top:1px solid #1f1f1f;border-bottom:1px solid #1f1f1f;">
+          <p style="font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8A8A;margin:0 0 8px 0;">${esc(B.label)}</p>
+          <p style="font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:15px;color:#FFFFFF;margin:0;line-height:1.65;">${esc(B.intro)} <b>${esc(fit.bonusTitle)}</b>.</p>
+          <p style="font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:#8a8a8a;margin:8px 0 12px 0;line-height:1.6;">${esc(B.basis)}</p>
+          <a href="${esc(fit.bonusUrl)}" style="font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,'Roboto Mono','Courier New',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#FF2D78;text-decoration:none;">${esc(B.get)}</a>
+        </td></tr></table>
+      </td></tr>` : "";
 
   const rich = Array.isArray(dimensions) && dimensions.length > 0;
 
@@ -205,6 +291,8 @@ function buildEmailHtml(audit) {
 
       ${middle}
 
+      ${bonusBlock}
+
       ${ctaRow}
 
       <tr><td style="padding:26px 36px 32px;border-top:1px solid #1a1a1a;">
@@ -241,6 +329,8 @@ module.exports = async function handler(req, res) {
   const cleanName = String(name).trim().slice(0, 255);
   const cleanCompany = String(company).trim().slice(0, 255);
   const cleanPhone = phone ? String(phone).trim().slice(0, 64) : "";
+  // contact-step picks (Bereich, Ad Spend, Budget, newsletter opt-in, consent)
+  const fit = readFit(req.body.fit, cleanName, cleanEmail);
 
   // ── 1. Send via Resend ──────────────────────────────────────────────────────
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -248,11 +338,12 @@ module.exports = async function handler(req, res) {
     await resend.emails.send({
       from: "Flow West Films <audit@noreply.flowwestfilms.de>",
       to: cleanEmail,
+      replyTo: "info@flowwestfilms.de",
       subject: audit.lang === "de" ? "Ihre Analyse ist fertig" : "Your audit is ready",
-      html: buildEmailHtml({ ...audit, recipientName: cleanName, recipientCompany: cleanCompany }),
+      html: buildEmailHtml({ ...audit, recipientName: cleanName, recipientCompany: cleanCompany, fit }),
       // A text/plain alternative isn't optional: HTML-only mail scores worse with
       // spam filters and leaves plain-text readers with nothing at all.
-      text: buildEmailText({ ...audit, recipientName: cleanName, recipientCompany: cleanCompany }),
+      text: buildEmailText({ ...audit, recipientName: cleanName, recipientCompany: cleanCompany, fit }),
     });
   } catch (err) {
     console.error("Resend error:", err?.message || err);
@@ -302,14 +393,22 @@ module.exports = async function handler(req, res) {
       from: "Flow West Films <audit@noreply.flowwestfilms.de>",
       to: notifyTo,
       replyTo: cleanEmail,
-      subject: `Audit lead: ${cleanName} — ${cleanCompany} (${audit.score || "?"})`,
+      subject: `${fit ? (fit.qualified ? "QUALIFIED · " : "Not a fit yet · ") : ""}Audit lead: ${cleanName} — ${cleanCompany} (${audit.score || "?"})`,
       text: [
-        `New audit lead`,
+        `New audit lead${fit ? (fit.qualified ? " · QUALIFIED" : " · not a fit yet") : ""}`,
         `Name:    ${cleanName}`,
         `Company: ${cleanCompany}`,
         `Phone:   ${cleanPhone || "—"}`,
         `Email:   ${cleanEmail}`,
         `Score:   ${audit.score || "?"}`,
+        ...(fit ? [
+          `Package: ${fit.tier || "—"}`,
+          `Field:   ${FIT_LABELS.industry[fit.industry]}`,
+          `Ad spend:${" " + FIT_LABELS.ad_spend[fit.ad_spend]}`,
+          `Budget:  ${FIT_LABELS.budget[fit.budget]}`,
+          `Newsletter: ${fit.newsletter ? "yes (double opt-in pending)" : "no"}`,
+          fit.qualified ? `Qualified: can book directly. Best to call within 5 minutes.` : ``,
+        ] : []),
         ``,
         gaps ? `Biggest gaps:\n${gaps.body}` : ``,
       ].join("\n"),
@@ -339,6 +438,12 @@ module.exports = async function handler(req, res) {
             <table width="100%" cellpadding="0" cellspacing="0">
               ${row("Phone", telHref ? `<a href="tel:${esc(telHref)}" style="color:#00C87A;text-decoration:none;font-weight:600;">${esc(cleanPhone)}</a>` : "", "#00C87A")}
               ${row("Email", `<a href="mailto:${esc(cleanEmail)}" style="color:#EDEDED;text-decoration:none;">${esc(cleanEmail)}</a>`)}
+              ${fit ? row("Qualified", fit.qualified ? "Yes" : "Not yet", fit.qualified ? "#FF2D78" : null) : ""}
+              ${fit ? row("Package", esc(fit.tier || "—")) : ""}
+              ${fit ? row("Field", esc(FIT_LABELS.industry[fit.industry])) : ""}
+              ${fit ? row("Ad spend", esc(FIT_LABELS.ad_spend[fit.ad_spend])) : ""}
+              ${fit ? row("Budget", esc(FIT_LABELS.budget[fit.budget])) : ""}
+              ${fit ? row("Newsletter", fit.newsletter ? "Yes (double opt-in pending)" : "No") : ""}
               ${row("Language", audit.lang === "de" ? "German" : "English")}
               ${row("Date", esc(audit.date || ""))}
             </table>
@@ -380,8 +485,10 @@ module.exports = async function handler(req, res) {
     console.error("Notify error:", err?.message || err);
   }
 
-  // ── 3. Upsert to Mailchimp (best-effort — never blocks the response) ────────
-  try {
+  // ── 3. Mailchimp — ONLY with the newsletter opt-in from the contact step, as
+  //    double opt-in (Mailchimp sends the confirmation mail; status_if_new
+  //    "pending", existing members keep their status). Best-effort. ─────────
+  if (fit && fit.newsletter) try {
     const apiKey = process.env.MAILCHIMP_API_KEY || "";
     const audienceId = process.env.MAILCHIMP_AUDIENCE_ID || "";
     const dc = apiKey.split("-").pop(); // e.g. "us1", "eu1"
@@ -397,8 +504,7 @@ module.exports = async function handler(req, res) {
         },
         body: JSON.stringify({
           email_address: cleanEmail,
-          status_if_new: "subscribed",
-          status: "subscribed",
+          status_if_new: "pending",
           // FNAME/PHONE are Mailchimp defaults; COMPANY needs a merge field with
           // tag COMPANY in the audience (otherwise Mailchimp ignores/rejects it —
           // which is fine, the audit email has already sent by this point).
@@ -412,10 +518,56 @@ module.exports = async function handler(req, res) {
     );
 
     if (!mcRes.ok) {
-      console.error("Mailchimp error:", mcRes.status, await mcRes.text());
+      console.error("Mailchimp error:", mcRes.status);
+    } else {
+      await fetch(`https://${dc}.api.mailchimp.com/3.0/lists/${audienceId}/members/${subscriberHash}/tags`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Basic ${Buffer.from(`x:${apiKey}`).toString("base64")}` },
+        body: JSON.stringify({ tags: [
+          { name: "website-audit", status: "active" },
+          { name: `bereich-${fit.industry}`, status: "active" },
+          { name: fit.qualified ? "qualifiziert" : "spaeter", status: "active" },
+        ] }),
+      }).catch(() => {});
     }
   } catch (err) {
     console.error("Mailchimp error:", err?.message || err);
+  }
+
+  // ── 4. Meta Conversions API: QualifiedLead (best-effort). Only for qualified
+  //    leads, only with the visitor's cookie consent, only if META_ACCESS_TOKEN
+  //    is set for this project. Email/phone go to Meta as SHA-256 hashes only.
+  //    Same event_id as the browser pixel, so Meta counts it once. ───────────
+  const metaToken = process.env.META_ACCESS_TOKEN;
+  if (metaToken && fit && fit.qualified && fit.consent && fit.eventId && process.env.VERCEL_ENV === "production") {
+    try {
+      const sha = (v) => crypto.createHash("sha256").update(v).digest("hex");
+      let ph = cleanPhone.replace(/\D/g, "").replace(/^00/, "");
+      if (ph.startsWith("0")) ph = "49" + ph.slice(1);
+      const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim();
+      const pixel = process.env.META_PIXEL_ID || "3457088161112221";
+      const r = await fetch(`https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(metaToken)}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [{
+          event_name: "QualifiedLead",
+          event_time: Math.floor(Date.now() / 1000),
+          event_id: fit.eventId,
+          action_source: "website",
+          event_source_url: fit.page,
+          user_data: {
+            em: [sha(cleanEmail)],
+            ...(ph.length >= 8 ? { ph: [sha(ph)] } : {}),
+            ...(ip ? { client_ip_address: ip } : {}),
+            ...(req.headers["user-agent"] ? { client_user_agent: String(req.headers["user-agent"]) } : {}),
+          },
+          custom_data: { source: "website-audit", industry: fit.industry },
+        }] }),
+      });
+      if (!r.ok) console.error("Meta CAPI error:", r.status);
+    } catch (err) {
+      console.error("Meta CAPI error:", err?.message || err);
+    }
   }
 
   return res.status(200).json({ ok: true });
