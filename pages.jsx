@@ -2619,6 +2619,15 @@ function DatenschutzPage() {
               Server-Log-Dateien erfasst. Dies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO — wir haben
               ein berechtigtes Interesse an der technisch einwandfreien Darstellung unserer Website.
             </p>
+            <p>
+              <strong>Reichweitenmessung (Vercel Web Analytics)</strong><br />
+              Um zu verstehen, welche Seiten besucht werden, nutzen wir Vercel Web Analytics (Vercel Inc., USA;
+              Standardvertragsklauseln). Dabei werden keine Cookies gesetzt, und einzelne Besucher werden nicht
+              über mehrere Tage hinweg wiedererkannt. Erfasst werden nur Nutzungsdaten wie aufgerufene Seite,
+              Referrer, Browser, Betriebssystem, Gerätetyp und das ungefähre Herkunftsland. Rechtsgrundlage:
+              Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Reichweitenmessung und an der
+              Verbesserung unseres Angebots).
+            </p>
 
             <h2>3. Kontaktaufnahme</h2>
             <p>
