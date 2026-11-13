@@ -1,0 +1,14 @@
+# Videos that are in the repo but not used by any page (checked 2026-11-13).
+# Not uploaded to Vercel, so each deployment is about 540 MB smaller.
+# The files stay in the repo and on disk. Remove a line here if a page starts using the file.
+assets/videos/bierfest.mp4
+assets/videos/cw_interview.mp4
+assets/videos/gloria_ad.mp4
+assets/videos/golden_brew.mp4
+assets/videos/golden_brew_final.mp4
+assets/videos/intro_lion_glitch_4k.mp4
+assets/videos/model_nyc.mp4
+assets/videos/rad_blu.mp4
+assets/videos/rad_blu_no_people.mp4
+assets/videos/radisson_upwork.mp4
+assets/videos/schmolke.mp4
