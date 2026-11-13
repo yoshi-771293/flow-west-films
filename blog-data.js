@@ -411,5 +411,83 @@ window.FWF_POSTS = [
     ],
     related: ["was-kostet-ein-ki-werbefilm", "done-for-you-marketing-agentur-vs-einmalprojekt"],
     cta: { h: "Du planst einen Unternehmensfilm in Stuttgart?", sub: "30 Minuten Call. Wir klären Ziel, Umfang und Preis.", link: { to: "imagefilm-stuttgart", label: "Mehr zu Imagefilm und Unternehmensfilm in Stuttgart →" } }
+  },
+
+  {
+    slug: "meta-ads-creatives-psychologie",
+    title: "Meta Ads Creatives: Die Psychologie hinter Anzeigen, die verkaufen",
+    metaTitle: "Meta Ads Creatives: Was wirklich verkauft | Flow West Films",
+    metaDesc: "Warum Deine Meta Ads nicht verkaufen: fünf Prinzipien aus der Werbepsychologie für Ad Creatives, mit Checkliste und einem Beispiel von ROAS 2 auf 14.",
+    eyebrow: "Ad Creatives",
+    date: "2026-11-13",
+    readMin: 4,
+    answer: "Meta Ads verkaufen, wenn jemand in wenigen Sekunden versteht, was Du anbietest, was er davon hat und was er tun soll. Die meisten Anzeigen scheitern nicht am Budget, sondern am Creative: Es ist austauschbar, zu voll oder erzählt von Dir statt vom Kunden. Fünf Prinzipien aus der Werbepsychologie machen den Unterschied.",
+    intro: ["Zwei Bücher erklären gut, warum die meisten Anzeigen nicht verkaufen: „Building a StoryBrand“ von Donald Miller und „Positioning“ von Al Ries und Jack Trout. Beide sagen im Kern dasselbe. Der Kopf Deines Kunden ist voll. Wer dort ankommen will, muss einfacher sein als alle anderen.", "Hier siehst Du, was das für Deine Ad Creatives auf Facebook und Instagram heißt, egal ob Du sie selbst baust oder mit einer Meta Ads Agentur in Stuttgart arbeitest. Am Ende steht eine Checkliste für den Livegang."],
+    sections: [
+      {
+        h: "1. Wer verwirrt, verliert",
+        blocks: [
+          { p: "Im Feed bekommt Deine Anzeige einen Wimpernschlag Aufmerksamkeit. Wer sie in dieser Zeit nicht versteht, scrollt weiter. Miller nennt das den Grunzen-Test: Könnte ein Höhlenmensch nach ein paar Sekunden drei Fragen beantworten?" },
+          { ul: [
+            "Was bietest Du an?",
+            "Was habe ich davon?",
+            "Was soll ich jetzt tun?"
+          ] },
+          { p: "Zeig Deine Anzeige einem Fremden und nimm sie nach fünf Sekunden weg. Kann er die drei Fragen beantworten? Wenn nicht, liegt das Problem im Creative, nicht im Targeting." }
+        ]
+      },
+      {
+        h: "2. Mach den Kunden zum Helden, nicht Dich",
+        blocks: [
+          { p: "Viele Anzeigen erzählen von der Firma: Gründungsjahr, Auszeichnungen, Teamfoto. Damit konkurrierst Du mit dem Kunden um die Hauptrolle. Er sucht aber keinen zweiten Helden. Er sucht jemanden, der ihm hilft." },
+          { p: "Ein Beispiel für ein Autohaus. Statt „Seit 1985 Ihr starker Partner“ zeigt die Anzeige das Problem und den nächsten Schritt: „Dein nächstes Auto ohne Verkaufsdruck: Probefahrt in zwei Klicks buchen.“ Die zweite Version handelt vom Käufer." }
+        ]
+      },
+      {
+        h: "3. Eine Anzeige, eine Idee",
+        blocks: [
+          { p: "Ries und Trout beschreiben, dass der Kopf pro Kategorie nur wenige Marken behält. Wer alles sagt, bleibt nirgends hängen. Das gilt auch für eine einzelne Anzeige: ein Creative, eine Idee, ein Versprechen." },
+          { p: ["Deshalb legen wir die Idee fest, bevor etwas produziert wird. Bei unserem ", { to: "blog/ki-werbespot-erstellen-kfc-spec-ad", text: "KFC-Spec-Ad" }, ", einem freien Projekt ohne Markenauftrag, war das die wichtigste Lehre: mehr Zeit in Skript und Konzept, bevor etwas generiert wird."] }
+        ]
+      },
+      {
+        h: "4. Verlust wiegt schwerer als Gewinn",
+        blocks: [
+          { p: "Menschen reagieren stärker darauf, etwas zu verlieren, als darauf, etwas zu gewinnen. Das ist ein gut belegtes Muster aus der Verhaltensökonomie. Für Anzeigen heißt das: Zeig, was es kostet, nichts zu ändern." },
+          { p: ["Dosiere es wie Salz. Eine Prise macht das Gericht, zu viel verdirbt es. Ein Satz wie „", { to: "blog/warum-ki-werbung-billig-aussieht", text: "Billige Creatives" }, " sind die teuersten Medien, die Du je kaufst“ reicht. Panik wirkt unglaubwürdig."] }
+        ]
+      },
+      {
+        h: "5. Beweis schlägt Versprechen",
+        blocks: [
+          { p: "Jede Agentur verspricht Ergebnisse. Deshalb zählt, was Du zeigst: ein konkretes Ergebnis, ein echter Kunde, eine Zahl. Bei der Marke Weinzeit stieg der Return on Ad Spend von 2 auf 14. Der wichtigste Hebel waren die Creatives." },
+          { p: ["Psychologie liefert Dir die Hypothese. Entscheiden tut der Test: mehrere Varianten laufen lassen, Gewinnern Budget geben, schwache Motive abschalten. Wer nur ein Creative hat, kann nichts testen. Wie viele Videos dafür nötig sind und was ein Content-Paket kostet, steht im Beitrag „", { to: "blog/was-kostet-ein-ki-werbefilm", text: "Was kostet ein KI-Werbefilm?" }, "“."] },
+          { p: ["Wenn Du das Testen nicht selbst betreiben willst, geht das auch als Done-for-you-Service. Den Unterschied zum Einmalprojekt erkläre ich im Beitrag „", { to: "blog/done-for-you-marketing-agentur-vs-einmalprojekt", text: "Done for you oder Einmalprojekt?" }, "“. Und wenn Du zusätzlich einen Hauptfilm für Deine Website planst, findest Du Kosten und Ablauf im Beitrag „", { to: "blog/unternehmensfilm-stuttgart", text: "Unternehmensfilm Stuttgart: Kosten, Ablauf und was danach kommt" }, "“."] }
+        ]
+      },
+      {
+        h: "Die Checkliste vor dem Livegang",
+        blocks: [
+          { p: "Prüfe jede Anzeige gegen diese fünf Fragen:" },
+          { ol: [
+            "Versteht ein Fremder nach fünf Sekunden, was Du anbietest, was er davon hat und was er tun soll?",
+            "Handelt die Anzeige vom Kunden und seinem Problem, nicht von Deiner Firma?",
+            "Steht genau eine Idee im Mittelpunkt?",
+            "Zeigt sie, was es kostet, nichts zu tun, in einem Satz und ohne Drama?",
+            "Gibt es einen Beweis, den man sehen oder nachrechnen kann?"
+          ] },
+          { p: "Fällt eine Antwort auf „nein“, produziere nicht weiter. Überarbeite zuerst das Konzept." }
+        ]
+      }
+    ],
+    faq: [
+      ["Was ist ein Ad Creative?", "Das Video oder Bild einer Anzeige samt Hook, Text und Handlungsaufforderung. Das Creative entscheidet im Feed, ob jemand stehen bleibt."],
+      ["Warum verkaufen meine Meta Ads nicht?", "Oft liegt es am Creative: Es ist austauschbar, unklar oder sagt zu viel auf einmal. Prüfe es zuerst gegen die Checkliste, bevor Du Budget oder Targeting änderst."],
+      ["Wie viele Creatives brauche ich zum Testen?", "Mehrere Varianten, damit Du Gewinner von schwachen Motiven trennen kannst. Unser Content-Paket startet mit rund 15 Kurzvideos von je 15 bis 30 Sekunden."],
+      ["Worauf achte ich bei einer Meta Ads oder Facebook Ads Agentur in Stuttgart?", "Auf Ergebnisse mit Zahlen statt Reichweite und darauf, dass Creative und Anzeigenschaltung zusammen gedacht werden. Die Videos entscheiden mit, ob eine Anzeige funktioniert."],
+      ["Kann KI Ad Creatives erstellen?", "Ja. Wir produzieren Ad Creatives KI-gestützt und inszenieren sie wie einen Film. Entscheidend bleibt das Konzept: Eine schwache Idee wird durch KI nicht besser."]
+    ],
+    related: ["warum-ki-werbung-billig-aussieht", "was-kostet-ein-ki-werbefilm", "done-for-you-marketing-agentur-vs-einmalprojekt", "unternehmensfilm-stuttgart"],
+    cta: { h: "Du suchst eine Meta Ads Agentur in Stuttgart?", sub: "30 Minuten Call. Wir klären, was Deine Anzeigen bremst.", link: { to: "social-media-ads", label: "Mehr zu Meta Ads und Ad Creatives von Flow West Films →" } }
   }
 ];

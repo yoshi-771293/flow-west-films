@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://flowwestfilms.de/blog</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -129,6 +129,12 @@
   <url>
     <loc>https://flowwestfilms.de/blog/unternehmensfilm-stuttgart</loc>
     <lastmod>2026-10-27</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://flowwestfilms.de/blog/meta-ads-creatives-psychologie</loc>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>

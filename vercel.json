@@ -166,6 +166,10 @@
       "destination": "/_pre/blog__unternehmensfilm-stuttgart.html"
     },
     {
+      "source": "/blog/meta-ads-creatives-psychologie",
+      "destination": "/_pre/blog__meta-ads-creatives-psychologie.html"
+    },
+    {
       "source": "/projects/:slug",
       "destination": "/_pre/projects__:slug.html"
     }
