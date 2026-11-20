@@ -327,6 +327,37 @@ function HOME_VIDEOS() {
   return [intro].concat(featured, VERTICAL_SPOTLIGHT);
 }
 
+// Homepage FAQ. Text lives in faq-data.js (the prerender reads it too, for the FAQPage
+// schema); <details> keeps every answer in the HTML for crawlers.
+function HomeFAQ() {
+  var lang = (window.FWF_getLanguage && window.FWF_getLanguage()) === "en" ? "en" : "de";
+  var items = (window.FWF_HOME_FAQ || {})[lang] || [];
+  return React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+    React.createElement("div", { className: "fwf-container" },
+      React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: 80 }, className: "fwf-grid-collapse" },
+        React.createElement("div", null,
+          React.createElement("div", { className: "fwf-section-label" },
+            React.createElement("span", { className: "fwf-section-label-line" }),
+            React.createElement("span", { className: "fwf-eyebrow" }, lang === "en" ? "Questions" : "Fragen")
+          ),
+          React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 60px)", margin: 0, lineHeight: 1, textWrap: "balance" } },
+            lang === "en" ? "What you should know " : "Was Sie vorher ",
+            React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, lang === "en" ? "first." : "wissen sollten.")
+          )
+        ),
+        React.createElement("div", { className: "fwf-faq" },
+          items.map(function(it) {
+            return React.createElement("details", { key: it[0] },
+              React.createElement("summary", null, it[0]),
+              React.createElement("p", null, it[1])
+            );
+          })
+        )
+      )
+    )
+  );
+}
+
 function HomePage() {
   const [activeVideo, setActiveVideo] = useState_h(null);
 
@@ -632,6 +663,8 @@ function HomePage() {
           )
         )
       ),
+
+      React.createElement(HomeFAQ),
 
       React.createElement(FinalCTA),
 

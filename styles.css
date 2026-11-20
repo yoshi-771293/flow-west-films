@@ -253,6 +253,17 @@ main { flex: 1; }
   .fwf-offers-grid { grid-template-columns: 1fr; }
 }
 
+/* ─── FAQ with <details>: every answer stays in the HTML for crawlers ─── */
+.fwf-faq details { border-bottom: 1px solid var(--fwf-hairline); }
+.fwf-faq summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 24px 0; font-size: 20px; font-weight: 500; color: #fff;
+}
+.fwf-faq summary::-webkit-details-marker { display: none; }
+.fwf-faq summary::after { content: "+"; color: var(--fwf-text-mute); font-size: 24px; line-height: 1; flex-shrink: 0; }
+.fwf-faq details[open] summary::after { content: "−"; color: var(--fwf-pink); }
+.fwf-faq details p { margin: 0 0 24px 0; color: var(--fwf-text-mute); font-size: 16px; line-height: 1.6; max-width: 680px; }
+
 /* ─── AI Creative Sprint packages — 3-col → 1-col, middle package highlighted ─── */
 .fwf-sprint-tiers {
   display: grid;

@@ -33,3 +33,8 @@ running times). Each one gets a watch page at `/projects/<slug>` (one video per 
 can index it) with a VideoObject built in scripts/seo-prerender/build.mjs. Routes, rewrite
 (`/projects/:slug`) and sitemap entries follow automatically. Keep slugs stable; for a new video
 add its upload date to FWF_VIDEO_ADDED and its size/running time to FWF_VIDEO_META.
+
+## Homepage FAQ
+The homepage FAQ text lives in `faq-data.js` (window.FWF_HOME_FAQ, `de` and `en`). home.jsx renders it
+and scripts/seo-prerender/build.mjs turns the German list into the homepage's FAQPage schema, so page
+and schema always match. Edit the questions there, then rebuild.

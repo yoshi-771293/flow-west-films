@@ -70,6 +70,13 @@ const EXTRA = {
   ],
 };
 
+// Homepage FAQ: faq-data.js (same text the page renders) -> FAQPage schema, German.
+{
+  const sb = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(SITE, "faq-data.js"), "utf8"), sb);
+  EXTRA["home"] = [faq(sb.window.FWF_HOME_FAQ.de)];
+}
+
 // Blog: posts come from blog-data.js -> BlogPosting + FAQPage schema per post, Blog schema on /blog.
 {
   const sb = { window: {} };
