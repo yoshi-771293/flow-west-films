@@ -9,7 +9,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
   const btnStyle = { alignSelf: "flex-start" };
 
   return (
-    <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32, height: "100%", display: "flex", flexDirection: "column", position: "relative" }}>
+    <div className={"fwf-card fwf-card-" + accent} style={{ padding: 32, height: "100%", minWidth: 0, display: "flex", flexDirection: "column", position: "relative" }}>
       <Crosshairs />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28 }}>
         <div style={{
