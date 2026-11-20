@@ -551,6 +551,36 @@ function HomePage() {
         )
       ),
 
+      /* FOUNDER — short version of the founder story on the funnel (start.flowwestfilms.de). */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: 64, alignItems: "center" }, className: "fwf-grid-collapse" },
+            React.createElement("div", {
+              role: "img",
+              "aria-label": "Florian Kotulla, founder of Flow West Films",
+              style: { aspectRatio: "4/5", border: "1px solid var(--fwf-hairline)", background: "url(assets/founder.jpg?v=2) center/cover no-repeat" }
+            }),
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "The founder")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 12px 0", lineHeight: 1 } }, "Florian Kotulla."),
+              React.createElement("p", { className: "fwf-label", style: { color: "var(--fwf-pink)", margin: "0 0 28px 0" } },
+                "Founder and creative director. Over 50 productions since 2018."
+              ),
+              React.createElement("p", { style: { color: "#fff", fontSize: 19, lineHeight: 1.65, margin: "0 0 20px 0", maxWidth: 620 } },
+                "“I worked as a freelancer for many agencies for a long time and kept seeing the same thing: big promises, beautiful videos, and nothing changed for the client. That's why I founded Flow West Films: my videos should actually do something for you.”"
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.65, margin: "0 0 24px 0", maxWidth: 620 } },
+                "You don't talk to an account manager, you talk to me. The filmmaker who shoots your ad creative sits at the table with you."
+              ),
+              React.createElement("div", { className: "fwf-label" }, "Flow West Films · Stuttgart")
+            )
+          )
+        )
+      ),
+
       React.createElement(WhyFwfSection, { compact: true }),
 
       /* VERTICAL SPOTLIGHT — WGV / Voyah / Streetside Classics */

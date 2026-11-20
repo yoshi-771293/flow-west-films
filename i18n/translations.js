@@ -939,6 +939,12 @@ window.FWF_TRANSLATIONS = {
     "Your ad account runs with at least [TODO: Florian] € budget per day.": "Ihr Ad Account läuft mit mindestens [TODO: Florian] € Budget pro Tag.",
     "The new ads go live within [TODO: Florian] days of delivery.": "Die neuen Ads gehen innerhalb von [TODO: Florian] Tagen nach Lieferung live.",
     "We have access to your ad account.": "Wir haben Zugriff auf Ihren Ad Account.",
-    "We guarantee our work, not your revenue.": "Garantiert ist unsere Arbeit, nicht Ihr Umsatz."
+    "We guarantee our work, not your revenue.": "Garantiert ist unsere Arbeit, nicht Ihr Umsatz.",
+    /* ---- Sales-logic cleanup 2026-11: founder block ---- */
+    "The founder": "Der Gründer",
+    "Founder and creative director. Over 50 productions since 2018.": "Gründer und Creative Director. Seit 2018 über 50 Produktionen.",
+    "“I worked as a freelancer for many agencies for a long time and kept seeing the same thing: big promises, beautiful videos, and nothing changed for the client. That's why I founded Flow West Films: my videos should actually do something for you.”": "„Ich habe lange als Freelancer für viele Agenturen gearbeitet und immer dasselbe gesehen: große Versprechen, schöne Videos, aber für den Kunden hat sich nichts verändert. Deshalb habe ich Flow West Films gegründet: Meine Videos sollen Ihnen wirklich etwas bringen.“",
+    "You don't talk to an account manager, you talk to me. The filmmaker who shoots your ad creative sits at the table with you.": "Sie sprechen nicht mit einem Account Manager, sondern direkt mit mir. Der Filmemacher, der Ihren Ad Creative dreht, sitzt mit Ihnen am Tisch.",
+    "Flow West Films · Stuttgart": "Flow West Films · Stuttgart"
   }
 };
