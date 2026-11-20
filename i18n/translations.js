@@ -945,6 +945,8 @@ window.FWF_TRANSLATIONS = {
     "Founder and creative director. Over 50 productions since 2018.": "Gründer und Creative Director. Seit 2018 über 50 Produktionen.",
     "“I worked as a freelancer for many agencies for a long time and kept seeing the same thing: big promises, beautiful videos, and nothing changed for the client. That's why I founded Flow West Films: my videos should actually do something for you.”": "„Ich habe lange als Freelancer für viele Agenturen gearbeitet und immer dasselbe gesehen: große Versprechen, schöne Videos, aber für den Kunden hat sich nichts verändert. Deshalb habe ich Flow West Films gegründet: Meine Videos sollen Ihnen wirklich etwas bringen.“",
     "You don't talk to an account manager, you talk to me. The filmmaker who shoots your ad creative sits at the table with you.": "Sie sprechen nicht mit einem Account Manager, sondern direkt mit mir. Der Filmemacher, der Ihren Ad Creative dreht, sitzt mit Ihnen am Tisch.",
-    "Flow West Films · Stuttgart": "Flow West Films · Stuttgart"
+    "Flow West Films · Stuttgart": "Flow West Films · Stuttgart",
+    /* ---- Sales-logic cleanup 2026-11: review fixes ---- */
+    "850K organic views, one post, zero ad spend": "850.000 organische Views, ein Post, null Werbebudget"
   }
 };

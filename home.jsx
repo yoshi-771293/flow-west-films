@@ -567,7 +567,7 @@ function HomePage() {
                 d: "A racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.",
               },
               {
-                i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views",
+                i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views, one post, zero ad spend",
                 d: "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.",
               },
               /* Sixth slot intentionally empty — Flow to decide what goes here. */

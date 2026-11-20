@@ -498,7 +498,7 @@ function SprintPackages({ slug }) {
             </div>
             <div className="fwf-label" style={{ color: "var(--fwf-pink)", marginBottom: 14 }}>{t.count}</div>
             <p style={{ color: "#fff", fontSize: 17, lineHeight: 1.5, margin: "0 0 22px 0" }}>{t.line}</p>
-            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "grid", gap: 10 }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10 }}>
               {t.points.map((pt) => (
                 <li key={pt} style={{ display: "flex", gap: 10, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.5 }}>
                   <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 3 }}><Icons.Check size={14} /></span>
@@ -506,9 +506,6 @@ function SprintPackages({ slug }) {
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: "auto", paddingTop: 18, borderTop: "1px solid var(--fwf-hairline)", fontFamily: "var(--fwf-display)", fontSize: 26, lineHeight: 1 }}>
-              On the call
-            </div>
           </div>
         ))}
       </div>
