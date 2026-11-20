@@ -1,4 +1,4 @@
-/* global React, Icons, Link, useRoute, Crosshairs, CtaButtons, FinalCTA, SprintPackages, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, useRoute, Crosshairs, CtaButtons, GuaranteeDraft, FinalCTA, SprintPackages, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection, VideoSchema */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -1152,6 +1152,7 @@ function PricingPage() {
               <OfferCard key={i} {...o} expanded />
             ))}
           </div>
+          <GuaranteeDraft />
         </div>
       </section>
 

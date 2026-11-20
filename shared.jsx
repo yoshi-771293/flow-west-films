@@ -393,6 +393,41 @@ function CtaButtons({ slug, check = true }) {
 }
 
 // ============================================
+// Drafts awaiting Florian's approval render only off the live domain (Vercel previews,
+// localhost). The prerender loads pages as flowwestfilms.de, so drafts never reach the
+// static HTML either.
+// ============================================
+const SHOW_DRAFTS = !/(^|\.)flowwestfilms\.de$/i.test(window.location.hostname);
+
+// Service guarantee for the retainers (DRAFT): conditional, about our work, never revenue.
+function GuaranteeDraft() {
+  if (!SHOW_DRAFTS) return null;
+  const conditions = [
+    "Your ad account runs with at least [TODO: Florian] € budget per day.",
+    "The new ads go live within [TODO: Florian] days of delivery.",
+    "We have access to your ad account.",
+  ];
+  return (
+    <div style={{ marginTop: 32, padding: 28, border: "1px dashed var(--fwf-orange)", borderRadius: 4, background: "rgba(255,140,40,0.04)" }}>
+      <div className="fwf-label" style={{ color: "var(--fwf-orange)", marginBottom: 14 }}>
+        Draft · only visible on staging · needs Florian's approval
+      </div>
+      <h3 className="fwf-display" style={{ fontSize: 30, margin: "0 0 12px 0", fontWeight: 400 }}>Our guarantee</h3>
+      <p style={{ color: "#fff", fontSize: 16, lineHeight: 1.6, margin: "0 0 16px 0", maxWidth: 680 }}>
+        If within [TODO: Florian] days we have not found an ad that beats your current best ad on [TODO: metric, e.g. cost per lead], we produce the next round of [TODO: number] ad videos at no extra cost.
+      </p>
+      <div className="fwf-label" style={{ marginBottom: 8 }}>Conditions</div>
+      <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.7 }}>
+        {conditions.map((c) => <li key={c}>{c}</li>)}
+      </ul>
+      <p style={{ color: "var(--fwf-text-faint)", fontSize: 14, margin: 0 }}>
+        We guarantee our work, not your revenue.
+      </p>
+    </div>
+  );
+}
+
+// ============================================
 // Final CTA — reused on every page
 // ============================================
 function FinalCTA({ headline, sub }) {
@@ -840,4 +875,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, GuaranteeDraft, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });

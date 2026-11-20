@@ -930,6 +930,15 @@ window.FWF_TRANSLATIONS = {
     "Give it a spin.": "Und drehen Sie es.",
     "Latest work": "Neueste Arbeiten",
     "Like what you see?": "Gefällt Ihnen, was Sie sehen?",
-    "Let's talk about your brand.": "Sprechen wir über Ihre Marke."
+    "Let's talk about your brand.": "Sprechen wir über Ihre Marke.",
+    /* ---- Sales-logic cleanup 2026-11: guarantee DRAFT (staging only) ---- */
+    "Draft · only visible on staging · needs Florian's approval": "Entwurf · nur auf Staging sichtbar · Freigabe durch Florian nötig",
+    "Our guarantee": "Unsere Garantie",
+    "If within [TODO: Florian] days we have not found an ad that beats your current best ad on [TODO: metric, e.g. cost per lead], we produce the next round of [TODO: number] ad videos at no extra cost.": "Wenn wir innerhalb von [TODO: Florian] Tagen keine Ad gefunden haben, die Ihre bisher beste Ad bei [TODO: Kennzahl, z. B. Kosten pro Lead] schlägt, produzieren wir die nächste Runde von [TODO: Anzahl] Ad-Videos ohne Aufpreis.",
+    "Conditions": "Voraussetzungen",
+    "Your ad account runs with at least [TODO: Florian] € budget per day.": "Ihr Ad Account läuft mit mindestens [TODO: Florian] € Budget pro Tag.",
+    "The new ads go live within [TODO: Florian] days of delivery.": "Die neuen Ads gehen innerhalb von [TODO: Florian] Tagen nach Lieferung live.",
+    "We have access to your ad account.": "Wir haben Zugriff auf Ihren Ad Account.",
+    "We guarantee our work, not your revenue.": "Garantiert ist unsere Arbeit, nicht Ihr Umsatz."
   }
 };
