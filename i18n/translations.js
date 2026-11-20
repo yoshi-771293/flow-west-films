@@ -947,6 +947,14 @@ window.FWF_TRANSLATIONS = {
     "You don't talk to an account manager, you talk to me. The filmmaker who shoots your ad creative sits at the table with you.": "Sie sprechen nicht mit einem Account Manager, sondern direkt mit mir. Der Filmemacher, der Ihren Ad Creative dreht, sitzt mit Ihnen am Tisch.",
     "Flow West Films · Stuttgart": "Flow West Films · Stuttgart",
     /* ---- Sales-logic cleanup 2026-11: review fixes ---- */
-    "850K organic views, one post, zero ad spend": "850.000 organische Views, ein Post, null Werbebudget"
+    "850K organic views, one post, zero ad spend": "850.000 organische Views, ein Post, null Werbebudget",
+    "Where do": "Wo stehen",
+    "your ads stand?": "Ihre Ads?",
+    "Free, no obligation, about 90 seconds. Then you see your score, your biggest lever and whether a sprint fits you.": "Kostenlos, unverbindlich, ca. 90 Sekunden. Danach sehen Sie Ihren Score, Ihren größten Hebel und ob ein Sprint zu Ihnen passt.",
+    "Clients": "Kunden",
+    "Who we": "Mit wem wir",
+    "work with.": "arbeiten.",
+    "Weinzeit, a wine festival touring all of Germany, went from": "Weinzeit, ein Weinfest, das durch ganz Deutschland tourt, steigerte den ROAS von",
+    "In numbers": "In Zahlen"
   }
 };

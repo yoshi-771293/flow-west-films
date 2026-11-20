@@ -1424,7 +1424,7 @@ function MetaAdsPage() {
           </p>
           <div className="fwf-fade-up fwf-d3b" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "9px 18px", borderRadius: 999, border: "1px solid rgba(0,255,136,0.28)", background: "rgba(0,255,136,0.06)", fontSize: 13.5, color: "rgba(255,255,255,0.9)", marginBottom: 36 }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)", flexShrink: 0 }} />
-            Real client: Weinzeit — a wine festival touring all of Germany — went from <strong>2× to 14× ROAS</strong> on Meta with us.
+            Weinzeit, a wine festival touring all of Germany, went from <strong>2× to 14× ROAS</strong> on Meta with us.
           </div>
           <div className="fwf-fade-up fwf-d4" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <CtaButtons />
@@ -1460,7 +1460,7 @@ function MetaAdsPage() {
               2× → 14×
             </div>
             <div>
-              <div className="fwf-label" style={{ marginBottom: 8, color: "var(--fwf-green)" }}>Real result · Weinzeit</div>
+              <div className="fwf-label" style={{ marginBottom: 8, color: "var(--fwf-green)" }}>Weinzeit · Meta Ads</div>
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 15.5, lineHeight: 1.6, margin: 0 }}>
                 Weinzeit — a wine festival touring all of Germany — scaled their Meta Ads ROAS from 2× to 14× working with us.
               </p>
@@ -2472,7 +2472,7 @@ function ContactPage() {
               {/* Trust block */}
               <div style={{ borderTop: "1px solid var(--fwf-hairline)", paddingTop: 40 }}>
                 <div style={{ fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--fwf-text-faint)", marginBottom: 28 }}>
-                  Results that speak for themselves
+                  In numbers
                 </div>
 
                 {/* Stats row */}
