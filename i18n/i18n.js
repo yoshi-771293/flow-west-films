@@ -12,10 +12,10 @@
   "use strict";
 
   var STORAGE_KEY = "fwf-lang";
-  var DEFAULT_LANG = (function() {
-    var nl = (navigator.language || navigator.userLanguage || "").toLowerCase();
-    return nl.startsWith("de") ? "de" : "en";
-  })();
+  // German for everyone on the .de domain, crawlers included (Googlebot renders with an
+  // English browser and would otherwise index English text on lang="de" pages).
+  // English stays one click away via the DE · EN toggle, which is remembered.
+  var DEFAULT_LANG = "de";
   var ATTRS = ["placeholder", "aria-label", "title", "alt"];
 
   // App-specific config (main site).
