@@ -29,7 +29,7 @@ const ORG = {
       areaServed: [{ "@type": "City", name: "Stuttgart" }, { "@type": "State", name: "Baden-Württemberg" }, { "@type": "Country", name: "Deutschland" }, { "@type": "Country", name: "Österreich" }, { "@type": "Country", name: "Schweiz" }],
       founder: { "@id": ORIGIN + "/#founder" },
       knowsAbout: ["Werbefilm", "Imagefilm", "Videoproduktion", "Ad Creative", "Meta Ads", "Social Media Ads", "Performance Marketing", "KI-Sichtbarkeit", "Autohaus Marketing"],
-      sameAs: ["https://www.facebook.com/flowwest/", "https://www.linkedin.com/in/florian-kotulla/"],
+      sameAs: ["https://www.facebook.com/flowwest/", "https://www.instagram.com/flowwestfilms/", "https://www.linkedin.com/in/florian-kotulla/"],
     },
     {
       "@type": "Person",
@@ -37,7 +37,7 @@ const ORG = {
       name: "Florian Kotulla",
       jobTitle: "Gründer & Creative Director",
       worksFor: { "@id": ORIGIN + "/#business" },
-      sameAs: ["https://www.linkedin.com/in/florian-kotulla/"],
+      sameAs: ["https://www.linkedin.com/in/florian-kotulla/", "https://www.imdb.com/name/nm6945443/"],
     },
     { "@type": "WebSite", "@id": ORIGIN + "/#website", url: ORIGIN + "/", name: "Flow West Films", inLanguage: "de-DE", publisher: { "@id": ORIGIN + "/#business" } },
   ],
