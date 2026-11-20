@@ -24,7 +24,7 @@ window.FWF_TRANSLATIONS = {
     "Full Service": "Full Service",
     "About": "Über uns",
     "Contact": "Kontakt",
-    "Book a call": "Call Buchen",
+    "Book a call": "Termin vereinbaren",
     "Book a strategy call": "Call Buchen",
     "Book a call to discuss": "Call Buchen",
     "Learn more": "Mehr erfahren",
@@ -910,6 +910,9 @@ window.FWF_TRANSLATIONS = {
     "Yes. That is what the AI Creative Sprint is for: Minimum and Scale are single sprints with no minimum term. Most retainer clients start with a sprint, see the results, and continue from there.": "Ja. Genau dafür gibt es den AI Creative Sprint: Minimum und Scale sind einzelne Sprints ohne Mindestlaufzeit. Die meisten Retainer-Kunden starten mit einem Sprint, sehen erste Ergebnisse und bauen darauf auf.",
     "Not sure which package": "Nicht sicher, welches Paket",
     "fits?": "passt?",
-    "See all ways to work with us": "Alle Wege der Zusammenarbeit ansehen"
+    "See all ways to work with us": "Alle Wege der Zusammenarbeit ansehen",
+    /* ---- Sales-logic cleanup 2026-11: the two CTAs ---- */
+    "Start the free ad check": "Kostenlosen Ad-Check starten",
+    "Eight short questions, then your result and your appointment": "Acht kurze Fragen, dann Ihr Ergebnis und Ihr Termin"
   }
 };

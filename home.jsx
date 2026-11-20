@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, Crosshairs, Logo, CtaButtons, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, WhyFwfSection, VideoSchema */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -55,8 +55,8 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
 
       {expanded ? (
         <a href={funnelHref()} target="_blank" rel="noreferrer" className={btnCls} style={btnStyle}>
-          Book a call to discuss
-          <Icons.ArrowRight size={12} />
+          <Icons.Calendar size={14} />
+          Book a call
         </a>
       ) : (
         <Link to="services" className={btnCls} style={btnStyle}>
@@ -358,13 +358,10 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
-            React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →"),
-            React.createElement("a", { href: funnelHref("home"), target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
-              "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
-            ),
+            React.createElement(CtaButtons, { slug: "home-hero" }),
             React.createElement("a", {
               href: "#work",
-              className: "fwf-btn fwf-btn-ghost",
+              className: "fwf-btn-bare",
               onClick: function(e) {
                 e.preventDefault();
                 var el = document.getElementById("work");
@@ -555,25 +552,6 @@ function HomePage() {
       ),
 
       React.createElement(WhyFwfSection, { compact: true }),
-
-      /* AUDIT CTA */
-      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
-        React.createElement("div", { className: "fwf-container", style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 } },
-          React.createElement("h3", { className: "fwf-display", style: { color: "var(--fwf-pink)", fontSize: "clamp(22px, 2.6vw, 30px)", margin: 0, fontWeight: 500 } },
-            "Where exactly are you losing ",
-            React.createElement(LangTypewriterWord, {
-              wordsEN: ["leads?", "revenue?", "momentum?"],
-              wordsDE: ["Leads?", "Umsatz?", "Momentum?"],
-              className: "fwf-display-italic",
-              style: { color: "var(--fwf-pink)" }
-            })
-          ),
-          React.createElement("p", { className: "fwf-display", style: { color: "#fff", fontSize: "clamp(32px, 4vw, 56px)", margin: 0, lineHeight: 1.2, maxWidth: 780 } },
-            "Not sure where to start? Our free 7-minute brand audit tells you exactly where your gaps are."
-          ),
-          React.createElement("a", { href: "/audit/", className: "fwf-btn fwf-btn-ghost" }, "Get your free audit →")
-        )
-      ),
 
       /* VERTICAL SPOTLIGHT — WGV / Voyah / Streetside Classics */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },

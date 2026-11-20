@@ -260,26 +260,7 @@ function Nav({ route }) {
             })}
           </div>
           <div className="fwf-nav-links">
-            <a
-              href="/audit/"
-              className="fwf-btn fwf-btn-sm fwf-nav-cta-desktop"
-              style={{ borderWidth: "1.5px", borderStyle: "solid", borderColor: "#a855f7", background: "transparent", color: "rgba(255,255,255,0.9)", transition: "box-shadow 0.2s, border-color 0.2s" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#ff2d78";
-                e.currentTarget.style.boxShadow = "0 0 0 1px #ff2d78, 0 0 16px rgba(255,45,120,0.4)";
-                const s = e.currentTarget.querySelector("span");
-                if (s) s.style.color = "#ff2d78";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "#a855f7";
-                e.currentTarget.style.boxShadow = "";
-                const s = e.currentTarget.querySelector("span");
-                if (s) s.style.color = "#a855f7";
-              }}
-            >
-              <span style={{ color: "#a855f7", transition: "color 0.2s" }}>Free</span>{" "}Audit
-            </a>
-            <a href={funnelHref(route)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
+            <a href={funnelHref(route + "-nav-call")} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-btn-sm fwf-nav-cta-desktop">
               <Icons.Calendar size={14} />
               Book a call
             </a>
@@ -312,18 +293,8 @@ function Nav({ route }) {
               </React.Fragment>
             );
           })}
-          <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 12 }}>
-            <a
-              href="/audit/"
-              className="fwf-btn"
-              style={{ border: "1.5px solid #a855f7", background: "transparent", color: "rgba(255,255,255,0.9)" }}
-              onClick={() => setMobile(false)}
-            >
-              <span style={{ color: "#a855f7" }}>Free</span>{" "}Audit →
-            </a>
-            <a href={funnelHref(route)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary" onClick={() => setMobile(false)}>
-              <Icons.Calendar size={14} /> Book a strategy call
-            </a>
+          <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 12 }} onClick={() => setMobile(false)}>
+            <CtaButtons slug={route + "-menu"} />
           </div>
         </div>
       )}
@@ -364,7 +335,6 @@ function Footer() {
             <Link to="blog">Blog</Link>
             <Link to="about">About</Link>
             <Link to="contact">Contact</Link>
-            <a href="/audit/">Audit</a>
             <Link to="impressum" style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--fwf-hairline)" }}>Impressum</Link>
             <Link to="datenschutz">Datenschutz</Link>
           </div>
@@ -398,6 +368,31 @@ function Footer() {
 }
 
 // ============================================
+// The site's two conversion buttons, same wording and look on every page: a direct
+// "Book a call" and the transitional free ad check. Both open the funnel's check
+// (the booking calendar comes after its questions, like on start.flowwestfilms.de);
+// the utm tag says which button was clicked. Renders bare buttons so they slot into
+// any button row; check={false} leaves only the call button.
+// ============================================
+function CtaButtons({ slug, check = true }) {
+  const page = slug || pathToRoute(window.location.pathname);
+  return (
+    <>
+      <a href={funnelHref(page + "-call")} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+        <Icons.Calendar size={14} />
+        Book a call
+      </a>
+      {check && (
+        <a href={funnelHref(page + "-check")} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-ghost">
+          Start the free ad check
+          <Icons.ArrowRight size={14} />
+        </a>
+      )}
+    </>
+  );
+}
+
+// ============================================
 // Final CTA — reused on every page
 // ============================================
 function FinalCTA({ headline, sub }) {
@@ -419,20 +414,12 @@ function FinalCTA({ headline, sub }) {
         <p style={{ color: "var(--fwf-text-mute)", fontSize: 18, maxWidth: 600, margin: "0 auto 40px", lineHeight: 1.5 }}>
           {sub || "Flow West Films combines cinematic production, ad creative and performance thinking into one external premium team."}
         </p>
-        <a href={funnelHref()} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary fwf-pulse">
-          <Icons.Calendar size={14} />
-          Book a strategy call
-          <Icons.ArrowRight size={14} />
-        </a>
-        <div style={{ marginTop: 24 }}>
-          <span style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em" }}>
-            Not ready yet?
-          </span>
-          {" "}
-          <a href="/audit/" style={{ color: "var(--fwf-pink)", fontFamily: "var(--fwf-mono)", fontSize: 13, textDecoration: "none", letterSpacing: "0.1em" }}>
-            Start with a free brand audit →
-          </a>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
+          <CtaButtons />
         </div>
+        <p style={{ marginTop: 20, color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em" }}>
+          Eight short questions, then your result and your appointment
+        </p>
         <div style={{ marginTop: 40, fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.22em", color: "var(--fwf-text-faint)" }}>
           FLOWWESTFILMS.DE
         </div>
@@ -497,11 +484,8 @@ function SprintPackages({ slug }) {
         No minimum term · Partner cancellable monthly
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24, marginTop: 32 }}>
-        <a href={funnelHref(slug)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
-          <Icons.Calendar size={14} />
-          Book a call
-        </a>
-        <a href={funnelHref(slug, "", "pakete")} target="_blank" rel="noreferrer" style={{ color: "var(--fwf-pink)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em", textDecoration: "none" }}>
+        <CtaButtons slug={slug + "-packages"} check={false} />
+        <a href={funnelHref(slug + "-packages-offer", "", "pakete")} target="_blank" rel="noreferrer" style={{ color: "var(--fwf-pink)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em", textDecoration: "none" }}>
           See the current offer →
         </a>
       </div>
@@ -856,4 +840,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });
