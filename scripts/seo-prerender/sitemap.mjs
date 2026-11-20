@@ -56,8 +56,8 @@ const projects = load("projects-data.js").FWF_PROJECTS || [];
 
 // [path, priority, sources]
 const PAGES = [
-  ["/", "1.0", [file("home.jsx")]],
-  ["/services", "0.9", [decl("pages.jsx", "PricingPage"), decl("pages.jsx", "FAQ"), decl("home.jsx", "OfferCard"), decl("home.jsx", "OFFERS")]],
+  ["/", "1.0", [file("home.jsx"), decl("shared.jsx", "SPRINT_TIERS"), decl("shared.jsx", "SprintPackages")]],
+  ["/services", "0.9", [decl("pages.jsx", "PricingPage"), decl("pages.jsx", "FAQ"), decl("shared.jsx", "SPRINT_TIERS"), decl("shared.jsx", "SprintPackages"), decl("home.jsx", "OfferCard"), decl("home.jsx", "OFFERS")]],
   ["/social-media-ads", "0.9", [decl("pages.jsx", "MetaAdsPage")]],
   ["/search-ads", "0.9", [decl("pages.jsx", "GoogleAdsPage")]],
   ["/full-service", "0.9", [decl("pages.jsx", "FullServicePage")]],

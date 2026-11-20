@@ -46,8 +46,8 @@ const ROUTE_META = {
     en: { title: "Projects — Flow West Films", desc: "Selected work: ad creatives, brand films, reels and productions for brands across hospitality, sport and consumer goods." },
   },
   services: {
-    de: { title: "Leistungen & Angebote — Flow West Films", desc: "Vier Wege der Zusammenarbeit: Launch Film, Creative Sprint, Growth Retainer und Premium Partner. Keine versteckten Kosten, keine Knebelverträge." },
-    en: { title: "Services & Pricing — Flow West Films", desc: "Four ways to work with us: Launch Film, Creative Sprint, Growth Retainer and Premium Partner. No hidden fees, no lock-ins." },
+    de: { title: "Leistungen: AI Creative Sprint & Retainer — Flow West Films", desc: "AI Creative Sprint: 10, 20 oder 50 Ad-Videos aus einem Drehtag, keine Mindestlaufzeit. Wenn wir Ihre Ads betreuen: Growth Retainer und Premium Partner." },
+    en: { title: "Services: AI Creative Sprint & Retainers — Flow West Films", desc: "AI Creative Sprint: 10, 20 or 50 ad videos from one shoot day, no minimum term. When we run your ads: Growth Retainer and Premium Partner." },
   },
   "social-media-ads": {
     de: { title: "Social Media Ads Agentur Stuttgart — Flow West Films", desc: "Volles Meta-Ads-Management: Strategie, Creative, Audiences und Scaling — geführt vom selben Team, das auch den Film dreht." },

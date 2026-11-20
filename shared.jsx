@@ -113,9 +113,10 @@ function pathToRoute(pathname) {
 })();
 
 // Every "book a call" button goes to the funnel's check, tagged with the page it was clicked on.
-function funnelHref(slug, path) {
+// `section` picks another anchor on the funnel page (e.g. "pakete" for its current offer).
+function funnelHref(slug, path, section) {
   const page = (slug || pathToRoute(window.location.pathname)).replace(/\//g, "-");
-  return "https://start.flowwestfilms.de/" + (path || "") + "?utm_source=website&utm_content=" + encodeURIComponent(page) + "#check";
+  return "https://start.flowwestfilms.de/" + (path || "") + "?utm_source=website&utm_content=" + encodeURIComponent(page) + "#" + (section || "check");
 }
 
 function navigate(route) {
@@ -441,6 +442,74 @@ function FinalCTA({ headline, sub }) {
 }
 
 // ============================================
+// AI Creative Sprint packages (home + /services). Same names, sizes and wording as
+// the funnel's packages (start.flowwestfilms.de#pakete). No prices here on purpose:
+// the funnel holds the current offer and its deadline, this site links to it.
+// ============================================
+const SPRINT_TIERS = [
+  {
+    name: "Minimum", count: "10 ad videos",
+    line: "Find out which hook sells before you burn budget.",
+    points: ["One shoot day, camera and AI", "First videos 7 working days after the shoot"],
+  },
+  {
+    name: "Scale", badge: "Recommended", highlight: true, count: "20 ad videos",
+    line: "New winners before the old ones get tired.",
+    points: ["One shoot day, camera and AI", "Hook variations for every message", "First videos 7 working days after the shoot"],
+  },
+  {
+    name: "Partner", count: "50 ad videos per month",
+    line: "New videos every month and a testing strategy that learns.",
+    points: ["Testing strategy for your ad account", "Monthly review: what wins, what goes", "Cancel monthly"],
+  },
+];
+
+function SprintPackages({ slug }) {
+  return (
+    <div>
+      <div className="fwf-sprint-tiers">
+        {SPRINT_TIERS.map((t) => (
+          <div key={t.name} className={"fwf-card " + (t.highlight ? "fwf-card-pink fwf-sprint-tier-highlight" : "fwf-card-purple")} style={{ padding: 32, display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginBottom: 16 }}>
+              <h3 className="fwf-display" style={{ fontSize: 34, margin: 0, fontWeight: 400, lineHeight: 1 }}>{t.name}</h3>
+              {t.badge && <span className="fwf-badge fwf-badge-pink">{t.badge}</span>}
+            </div>
+            <div className="fwf-label" style={{ color: "var(--fwf-pink)", marginBottom: 14 }}>{t.count}</div>
+            <p style={{ color: "#fff", fontSize: 17, lineHeight: 1.5, margin: "0 0 22px 0" }}>{t.line}</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "grid", gap: 10 }}>
+              {t.points.map((pt) => (
+                <li key={pt} style={{ display: "flex", gap: 10, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.5 }}>
+                  <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 3 }}><Icons.Check size={14} /></span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginTop: "auto", paddingTop: 18, borderTop: "1px solid var(--fwf-hairline)", fontFamily: "var(--fwf-display)", fontSize: 26, lineHeight: 1 }}>
+              On the call
+            </div>
+          </div>
+        ))}
+      </div>
+      <p style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.08em", lineHeight: 1.7, margin: "24px 0 0 0" }}>
+        Shoot day included · Not included: travel, on-site equipment, ad spend
+      </p>
+      <p style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.08em", lineHeight: 1.7, margin: 0 }}>
+        No minimum term · Partner cancellable monthly
+      </p>
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24, marginTop: 32 }}>
+        <a href={funnelHref(slug)} target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-primary">
+          <Icons.Calendar size={14} />
+          Book a call
+        </a>
+        <a href={funnelHref(slug, "", "pakete")} target="_blank" rel="noreferrer" style={{ color: "var(--fwf-pink)", fontFamily: "var(--fwf-mono)", fontSize: 13, letterSpacing: "0.1em", textDecoration: "none" }}>
+          See the current offer →
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// ============================================
 // Trust marquee (shared)
 // ============================================
 function TrustMarquee() {
@@ -636,174 +705,6 @@ function WhyFwfSection({ compact = false }) {
 }
 
 // ============================================
-// GrowthEngineSection — "how we scale" explainer, shared between Home
-// (below Recent Productions) and Pricing (below offers + audit bridge)
-// ============================================
-function GrowthEngineSection({ cta = true, compact = false }) {
-  const principles = [
-    {
-      i: <Icons.Target size={22} />, c: "pink", t: "It starts with your numbers",
-      d: "Before a single euro goes into media, you decide what success actually means — CTR, ROAS, CPA, whichever one your business runs on. Every decision after that gets measured against your targets, not ours.",
-    },
-    {
-      i: <Icons.TrendUp size={22} />, c: "pink", t: "Scaling, done right",
-      d: "Your budget doesn't grow on a hunch. Once a concept proves itself, the winner gets duplicated into new audience campaigns — so you're scaling the exact thing driving results, not diluting it.",
-    },
-  ];
-
-  const collab = [
-    { i: <Icons.Calendar size={22} />, t: "Onboarding (2–3 Days)", d: "A fast, focused setup to get strategy, access, and tracking aligned — no weeks-long ramp-up.", c: "purple" },
-    { i: <Icons.Phone size={22} />, t: "Weekly Performance Calls", d: "A standing sync with your dedicated Performance Marketing Manager to review what's working and answer questions in real time.", c: "green" },
-    { i: <Icons.FileText size={22} />, t: "Monthly Reporting", d: "A full report on performance and insights every month, so you always know exactly where your budget is going and why.", c: "orange" },
-  ];
-
-  return (
-    <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-      <div className="fwf-container">
-        <div className="fwf-section-label">
-          <span className="fwf-section-label-line" />
-          <span className="fwf-eyebrow">Performance Marketing</span>
-        </div>
-        <h2 className="fwf-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 24px 0", maxWidth: 780, textWrap: "balance" }}>
-          Creative built to become <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your growth engine.</em>
-        </h2>
-        {!compact && (
-          <>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px 0", maxWidth: 640 }}>
-              This isn't creative for creative's sake. Every asset is built to move a number that matters to your business — leads, brand awareness, sales, or the applicants walking through your door. Once a concept works, nothing gets left to guesswork. It gets scaled, deliberately.
-            </p>
-
-            <div style={{ display: "inline-flex", alignItems: "flex-start", gap: 10, padding: "10px 18px", borderRadius: 100, border: "1px solid rgba(255,45,120,0.28)", background: "rgba(255,45,120,0.06)", marginBottom: 56 }}>
-              <span style={{ color: "var(--fwf-pink)", flexShrink: 0, marginTop: 1 }}><Icons.Check size={15} stroke={2} /></span>
-              <span style={{ fontSize: 13.5, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
-                Included in the Growth Retainer and Premium Partner — the two offers where we run your paid media.
-              </span>
-            </div>
-
-            <div style={{ borderTop: "1px solid var(--fwf-hairline)", marginBottom: 64 }}>
-              {principles.map((p, i) => (
-                <div key={i} style={{ display: "flex", gap: 24, alignItems: "flex-start", padding: "32px 0", borderBottom: "1px solid var(--fwf-hairline)" }}>
-                  <div style={{ color: "var(--fwf-" + p.c + ")", flexShrink: 0 }}>{p.i}</div>
-                  <div>
-                    <h3 style={{ fontSize: 18, margin: "0 0 8px 0", fontWeight: 500 }}>{p.t}</h3>
-                    <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 640 }}>{p.d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24, marginTop: compact ? 32 : 0 }}>Where We Scale</span>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 64 }} className="fwf-grid-collapse">
-          <Link to="social-media-ads" className="fwf-card fwf-card-green" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
-              <img src="assets/logos/meta-neon.png" alt="Meta" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/tiktok-neon.png" alt="TikTok" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/linkedin-neon.png" alt="LinkedIn" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-            </div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Paid Social</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
-              Most brands start on Meta — but your audience decides, not us. TikTok and LinkedIn are on the table too.
-            </p>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-green)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-              Social Media Ads <Icons.ArrowRight size={12} />
-            </span>
-          </Link>
-          <Link to="search-ads" className="fwf-card fwf-card-purple" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
-              <img src="assets/logos/google-neon.png" alt="Google" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/youtube-neon.png" alt="YouTube" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-            </div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Search & YouTube</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
-              Google and YouTube Ads run on intent, not interest — a different engine than Meta. A strong option if you'd rather not lean hard into paid social.
-            </p>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-purple)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-              Search Ads <Icons.ArrowRight size={12} />
-            </span>
-          </Link>
-          <Link to="ai-visibility-agentur" className="fwf-card fwf-card-orange" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20, marginBottom: 22 }}>
-              <img src="assets/logos/openai-neon.png" alt="OpenAI" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/claude-neon.png" alt="Claude" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-              <img src="assets/logos/gemini-neon.png" alt="Gemini" style={{ height: 40, width: "auto", mixBlendMode: "screen" }} />
-            </div>
-            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>AI Visibility</h3>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 16px 0" }}>
-              Your buyers increasingly start their search inside an AI. Being found in ChatGPT, Claude and Gemini — not just Google — is becoming its own channel.
-            </p>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--fwf-orange)", fontFamily: "var(--fwf-mono)", fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-              AI Visibility Agency <Icons.ArrowRight size={12} />
-            </span>
-          </Link>
-        </div>
-
-        <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Onboarding & Collaboration</span>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, borderTop: "1px solid var(--fwf-hairline)", borderBottom: "1px solid var(--fwf-hairline)", marginBottom: 64 }} className="fwf-pillars">
-          {collab.map((w, i, arr) => (
-            <div key={i} style={{ padding: "40px 32px", borderRight: i < arr.length - 1 ? "1px solid var(--fwf-hairline)" : "none" }}>
-              <div style={{ color: "var(--fwf-" + w.c + ")", marginBottom: 24 }}>{w.i}</div>
-              <h3 style={{ fontSize: 17, margin: "0 0 12px 0", fontWeight: 500 }}>{w.t}</h3>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>{w.d}</p>
-            </div>
-          ))}
-        </div>
-
-        {!compact && (
-          <>
-            <span className="fwf-eyebrow" style={{ display: "block", marginBottom: 24 }}>Analytics & Smart Optimization</span>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="fwf-grid-collapse">
-              <div className="fwf-card fwf-card-pink" style={{ padding: 32 }}>
-                <div style={{ color: "var(--fwf-pink)", marginBottom: 20 }}><Icons.BarChart size={24} /></div>
-                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>Live Analytics Tool</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-                  Your own live dashboard — real-time CTR, ROAS, and CPA, no waiting for a report to know how a campaign is doing.
-                </p>
-              </div>
-              <div className="fwf-card fwf-card-purple" style={{ padding: 32 }}>
-                <div style={{ color: "var(--fwf-purple)", marginBottom: 20 }}><Icons.Repeat size={24} /></div>
-                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>CRM & Meta Feedback Loop</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
-                  Every lead flows straight into your CRM. Whoever handles sales on your side — founder or team — flags which leads were actually qualified and sends that back. That signal goes into Meta, training the algorithm to chase quality leads instead of raw volume.
-                </p>
-              </div>
-            </div>
-          </>
-        )}
-
-        {!compact && (
-        <div style={{ marginTop: 32 }}>
-          <ReassureBlock
-            accent="green"
-            question="Only ever done organic? Never run paid social?"
-            answer="No problem — we guide you through it."
-            points={[
-              "We handle the setup end to end: ad account, tracking, audiences.",
-              "Your organic work isn't wasted — what already performs organically is usually the first thing we test as paid.",
-              "We start on a defined test budget against agreed targets, then scale only what earns it.",
-              "Weekly calls mean you learn the system while we run it. No black box.",
-            ]}
-          />
-        </div>
-        )}
-
-        {cta && (
-          <div style={{ marginTop: 56, paddingTop: 40, borderTop: "1px solid var(--fwf-hairline)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 }}>
-            <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 420 }}>
-              This is what the Growth Retainer and Premium Partner are built around.
-            </p>
-            <Link to="services" className="fwf-btn fwf-btn-primary">
-              Check out the Growth Retainer & Premium Partner <Icons.ArrowRight size={12} />
-            </Link>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
-// ============================================
 // BunnyPlayer — plays a Bunny Stream video via hls.js pointed straight at the
 // HLS manifest, forcing the top bitrate rendition immediately so playback
 // starts at max resolution instead of ramping up through Bunny's default ABR.
@@ -955,4 +856,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });

@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, TrustMarquee, TypewriterWord, VideoModal, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, Crosshairs, Logo, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, WhyFwfSection, VideoSchema */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -441,30 +441,18 @@ function HomePage() {
           React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 20px 0", maxWidth: 900, textWrap: "balance" } },
             "The AI Creative Sprint. ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "As many ads as your account can test.")
           ),
-          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, maxWidth: 620, margin: "0 0 48px 0" } },
-            "Short-form videos in one package, sized to your needs: UGC style, ad creatives, YouTube ads, vertical or horizontal. One sprint, one team, every format."
+          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 18, lineHeight: 1.6, maxWidth: 620, margin: "0 0 24px 0" } },
+            "Your part: one kickoff call and one shoot day. Hooks, scripts, editing and finished files are on us."
           ),
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))", gap: 12, marginBottom: 24 } },
-            [10, 15, 20, 30, 40, 50].map(function(n) {
-              return React.createElement("div", { key: n, className: "fwf-stat", style: { textAlign: "center", padding: "24px 12px" } },
-                React.createElement("div", { className: "fwf-stat-num", style: { marginBottom: 10 } }, String(n)),
-                React.createElement("div", { className: "fwf-label" }, "Videos")
-              );
-            })
-          ),
-          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 } },
+          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 40 } },
             ["UGC style", "Ad creatives", "YouTube ads", "Vertical 9:16", "Horizontal 16:9"].map(function(f) {
               return React.createElement("span", { key: f, className: "fwf-badge fwf-badge-pink" }, f);
             })
           ),
-          React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24 } },
-            React.createElement("a", { href: funnelHref("home"), target: "_blank", rel: "noreferrer", className: "fwf-btn fwf-btn-primary fwf-pulse" },
-              "Start the 60-second check ", React.createElement(Icons.ArrowRight, { size: 14 })
-            ),
-            React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: 0 } },
-              "Bigger project — image film or commercial? ",
-              React.createElement(Link, { to: "contact", style: { color: "var(--fwf-pink)", textDecoration: "none" } }, "Write to us →")
-            )
+          React.createElement(SprintPackages, { slug: "home" }),
+          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: "28px 0 0 0" } },
+            "Want us to run your ads as well? ",
+            React.createElement(Link, { to: "services", style: { color: "var(--fwf-pink)", textDecoration: "none" } }, "Growth Retainer & Premium Partner →")
           )
         )
       ),

@@ -1,4 +1,4 @@
-/* global React, Icons, Link, useRoute, Crosshairs, FinalCTA, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, GrowthEngineSection, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, useRoute, Crosshairs, FinalCTA, SprintPackages, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection, VideoSchema */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -1097,6 +1097,17 @@ function ProjectsLabPage() {
 // PRICING PAGE
 // ============================================
 function PricingPage() {
+  // Entry offer first (the AI Creative Sprint, no minimum term), then the two retainers for
+  // brands that want us to run their ads, then everything else we make.
+  const more = [
+    { to: "werbefilm-stuttgart", t: "Ad Films Stuttgart", d: "AI-powered ad films and video ads built to sell.", c: "pink" },
+    { to: "imagefilm-stuttgart", t: "Brand & Corporate Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
+    { to: "produktvideo-stuttgart", t: "Product Videos Stuttgart", d: "Product videos for your shop, product pages and ads.", c: "green" },
+    { to: "ki-videoproduktion", t: "AI Video & Content", d: "AI commercials, UGC and AI-influencer videos, ongoing ad creatives.", c: "purple" },
+    { to: "social-media-ads", t: "Social Media Ads", d: "Full Meta Ads management — strategy, creative, audiences, scaling.", c: "pink" },
+    { to: "search-ads", t: "Search Ads", d: "Google & YouTube Ads for e-commerce and B2C brands.", c: "green" },
+    { to: "full-service", t: "Full Service", d: "Creative and performance as one system, run by one team.", c: "orange" },
+  ];
   return (
     <main>
       <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
@@ -1105,23 +1116,62 @@ function PricingPage() {
         <div className="fwf-container" style={{ position: "relative", textAlign: "center" }}>
           <div className="fwf-section-label fwf-fade-up fwf-d1" style={{ justifyContent: "center" }}>
             <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">No hidden fees · no lock-ins</span>
+            <span className="fwf-eyebrow">The AI Creative Sprint</span>
             <span className="fwf-section-label-line" />
           </div>
-          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(56px, 9vw, 130px)", margin: "0 0 28px 0", lineHeight: 0.95, textWrap: "balance" }}>
-            Four ways to <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>work with us.</em>
+          <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(52px, 8vw, 116px)", margin: "0 0 28px 0", lineHeight: 0.95, textWrap: "balance" }}>
+            Three packages. <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>One goal: your next winning ad.</em>
           </h1>
-          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 620, margin: "0 auto", lineHeight: 1.5 }}>
-            No hidden fees. No lock-ins. Just results. <span style={{ color: "#fff" }}>Pricing is discussed on your strategy call</span> — because every brand starts in a different place.
+          <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 19, maxWidth: 640, margin: "0 auto", lineHeight: 1.5 }}>
+            You're not paying for videos, you're paying to find out faster which ad sells. The number of videos is just the tool.
           </p>
         </div>
       </section>
 
       <section style={{ padding: "40px 0 120px" }}>
         <div className="fwf-container">
-          <div className="fwf-offers-grid">
-            {OFFERS.map((o, i) => (
+          <SprintPackages slug="services" />
+        </div>
+      </section>
+
+      {/* The next step: retainers, when we run the ads too */}
+      <section className="fwf-section" id="retainer" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">When we run your ads</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 820, textWrap: "balance" }}>
+            Growth Retainer <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>and Premium Partner.</em>
+          </h2>
+          <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 640 }}>
+            The Sprint gives you new ads. If we should also manage your ad account, that runs as a retainer: results need time with your account and your customers, so these two have a minimum term.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
               <OfferCard key={i} {...o} expanded />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Everything else we make */}
+      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+        <div className="fwf-container">
+          <div className="fwf-section-label">
+            <span className="fwf-section-label-line" />
+            <span className="fwf-eyebrow">More services</span>
+          </div>
+          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 48px 0", maxWidth: 820, textWrap: "balance" }}>
+            Planning something bigger? <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Films, ads, full service.</em>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
+            {more.map((m) => (
+              <Link key={m.to} to={m.to} className={"fwf-card fwf-card-" + m.c} style={{ padding: 28, display: "block", textDecoration: "none", color: "inherit" }}>
+                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>{m.t}</h3>
+                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: "0 0 18px 0" }}>{m.d}</p>
+                <span style={{ color: "var(--fwf-" + m.c + ")" }}><Icons.ArrowRight size={14} /></span>
+              </Link>
             ))}
           </div>
         </div>
@@ -1145,30 +1195,10 @@ function PricingPage() {
         </div>
       </section>
 
-      {/* Audit bridge */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)", background: "rgba(0,200,122,0.025)" }}>
-        <div className="fwf-container" style={{ textAlign: "center" }}>
-          <div className="fwf-eyebrow" style={{ color: "var(--fwf-green)", marginBottom: 20 }}>
-            Not sure which offer fits?
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 60px)", margin: "0 0 20px 0", textWrap: "balance" }}>
-            Take the free 7-minute brand audit first.
-          </h2>
-          <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, maxWidth: 520, margin: "0 auto 36px", lineHeight: 1.5 }}>
-            Get a clear picture of where your content stands before you invest.
-          </p>
-          <a href="/audit/" className="fwf-btn fwf-btn-primary">
-            Take the free audit →
-          </a>
-        </div>
-      </section>
-
       <WhyFwfSection />
 
-      <GrowthEngineSection cta={false} />
-
       <FinalCTA
-        headline={<>Not sure which offer is <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>right for you?</em></>}
+        headline={<>Not sure which package <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>fits?</em></>}
         sub="Let's figure it out together. 30 minutes, no pressure."
       />
     </main>
@@ -1178,9 +1208,9 @@ function PricingPage() {
 function FAQ() {
   const items = [
     { q: "Do you work with brands outside Germany?", a: "Yes — we work remotely with B2C brands across Europe and beyond. Production travel is built into the quote when needed." },
-    { q: "How long does a project take?", a: "Launch Films typically run 1–2 weeks from kickoff to delivery. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works." },
+    { q: "How long does a project take?", a: "In the AI Creative Sprint, the first videos come 7 working days after the shoot day. The Growth Retainer is ongoing with a 4–6 month minimum so we can actually learn what works." },
     { q: "Why no prices on the website?", a: "Every project is different. We price based on your goals, scope, and timeline — not a menu. That's how we keep quality up and clients honest about what they actually need." },
-    { q: "Can I start with just one project?", a: "Absolutely. The Creative Sprint is designed for exactly that — pure creative volume for brands that run their own paid. Most retainer clients start with a sprint, see the results, and continue from there." },
+    { q: "Can I start with just one project?", a: "Yes. That is what the AI Creative Sprint is for: Minimum and Scale are single sprints with no minimum term. Most retainer clients start with a sprint, see the results, and continue from there." },
     { q: "Who's on the team?", a: "Florian Kotulla leads creative and strategy. We bring in a vetted bench of DPs, editors, motion designers, and media buyers depending on the project scope." },
   ];
   const [open, setOpen] = useStateP(0);
@@ -1534,7 +1564,7 @@ function MetaAdsPage() {
             ))}
           </div>
           <Link to="services" className="fwf-btn-bare">
-            See all four ways to work with us <Icons.ArrowRight size={12} />
+            See all ways to work with us <Icons.ArrowRight size={12} />
           </Link>
         </div>
       </section>
@@ -1733,7 +1763,7 @@ function GoogleAdsPage() {
             ))}
           </div>
           <Link to="services" className="fwf-btn-bare">
-            See all four ways to work with us <Icons.ArrowRight size={12} />
+            See all ways to work with us <Icons.ArrowRight size={12} />
           </Link>
         </div>
       </section>
@@ -2400,7 +2430,7 @@ function FullServicePage() {
             Growth Retainer for a defined monthly engine, Premium Partner for a bespoke founder-led partnership.
           </p>
           <Link to="services" className="fwf-btn-bare">
-            See all four ways to work with us <Icons.ArrowRight size={12} />
+            See all ways to work with us <Icons.ArrowRight size={12} />
           </Link>
         </div>
       </section>

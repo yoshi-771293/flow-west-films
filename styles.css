@@ -253,6 +253,20 @@ main { flex: 1; }
   .fwf-offers-grid { grid-template-columns: 1fr; }
 }
 
+/* ─── AI Creative Sprint packages — 3-col → 1-col, middle package highlighted ─── */
+.fwf-sprint-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.fwf-sprint-tier-highlight {
+  border-color: rgba(255, 45, 120, 0.55);
+  box-shadow: 0 0 28px rgba(255, 45, 120, 0.18);
+}
+@media (max-width: 900px) {
+  .fwf-sprint-tiers { grid-template-columns: 1fr; }
+}
+
 /* ============================================
    Cards
    ============================================ */
