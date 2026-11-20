@@ -875,4 +875,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, GuaranteeDraft, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, SHOW_DRAFTS, GuaranteeDraft, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });

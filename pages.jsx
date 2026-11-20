@@ -2752,6 +2752,27 @@ function WatchPlayer({ p, meta }) {
   return <video src={v} poster={p.thumb} style={style} controls playsInline preload="none" data-keep-src="" />;
 }
 
+// Case notes on selected watch pages (projects-data.js `case`): only text already on the
+// site. The result row waits for Florian's numbers and shows only on staging until then.
+function CaseStudy({ c, lang }) {
+  const L = lang === "en"
+    ? { task: "The task", work: "What we made", result: "Result", todo: "[TODO: Florian to confirm the result]" }
+    : { task: "Die Aufgabe", work: "Die Umsetzung", result: "Das Ergebnis", todo: "[TODO: Florian bestätigt das Ergebnis]" };
+  const rows = [[L.task, c.task], [L.work, c.work]];
+  if (c.result) rows.push([L.result, c.result]);
+  else if (window.SHOW_DRAFTS) rows.push([L.result, L.todo, true]);
+  return (
+    <div style={{ display: "grid", gap: 24, margin: "0 0 40px 0" }}>
+      {rows.map(([k, v, draft]) => (
+        <div key={k}>
+          <div className="fwf-label" style={{ color: draft ? "var(--fwf-orange)" : "var(--fwf-pink)", marginBottom: 8 }}>{k}</div>
+          <p style={{ margin: 0, fontSize: 17, lineHeight: 1.65, color: draft ? "var(--fwf-orange)" : "var(--fwf-text-mute)" }}>{v}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ProjectWatchPage() {
   const [route] = useRoute();
   const p = window.FWF_WATCH.find(route.replace(/^projects\//, ""));
@@ -2790,6 +2811,7 @@ function ProjectWatchPage() {
               </div>
             ))}
           </dl>
+          {p.case && p.case[lang] && <CaseStudy c={p.case[lang]} lang={lang} />}
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
             <Link to={svc} className="fwf-btn fwf-btn-primary">{WATCH_SERVICES[svc][lang]} <Icons.ArrowRight size={12} /></Link>
             <Link to="projects" className="fwf-btn-bare">{U.all} <Icons.ArrowRight size={12} /></Link>

@@ -55,6 +55,8 @@ window.FWF_PROJECTS = [
     slug: "eibl-gmbh-ad-creative",
     client: "Eibl GmbH", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "realestate",
     desc: "Social ad creative for Eibl GmbH's ImmoVersteigerung — an Instagram platform helping people search all of Germany for real estate going up for auction.",
+    // Case notes from text already on the site; `result` waits for Florian's numbers.
+    case: {"de": {"task": "ImmoVersteigerung von Eibl GmbH ist eine Instagram-Plattform, mit der man in ganz Deutschland nach Immobilien sucht, die zur Versteigerung stehen.", "work": "Ad Creative und Paid Social für ImmoVersteigerung: Wir unterstützen sie dabei, sowohl auf Social Media als auch im Performance Marketing zu wachsen. Neben diesem Ad Creative entstanden eine Vorstellung mit Gloria und Kunden-Testimonials."}, "en": {"task": "Eibl GmbH's ImmoVersteigerung is an Instagram platform helping people search all of Germany for real estate going up for auction.", "work": "Ad creative and paid social for ImmoVersteigerung, helping them grow across social media and performance marketing. Alongside this ad creative we made an introduction with Gloria and client testimonials."}},
     colors: ["#c9a96e", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/c564f6f9-a279-4c39-be87-216cf6dc9fd9/thumbnail_e6b795ee.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/c564f6f9-a279-4c39-be87-216cf6dc9fd9?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -63,6 +65,8 @@ window.FWF_PROJECTS = [
     slug: "easy-foil-product-ad",
     client: "Easy Foil", title: "Product Ad", tag: "Ad Creative", cat: "ad", ind: "sport",
     desc: "Ad creative for Easy Foil — a lightweight, affordable hydrofoil built at Lake Constance. We spotlight the demo experience to make booking a test ride feel effortless. Ride the easy way.",
+    // Case notes from text already on the site; `result` waits for Florian's numbers.
+    case: {"de": {"task": "Easy Foil baut am Bodensee ein leichtes, günstiges Hydrofoil.", "work": "Wir zeigen das Demo-Erlebnis und machen eine Buchung so einfach wie das Fahren selbst."}, "en": {"task": "Easy Foil builds a lightweight, affordable hydrofoil at Lake Constance.", "work": "We spotlight the demo experience to make booking a test ride feel effortless."}},
     colors: ["#9b30ff", "#ff6420"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/bb89e0c9-dba0-4457-b023-0f88a7309a86/thumbnail_03a191ed.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/bb89e0c9-dba0-4457-b023-0f88a7309a86?autoplay=true&loop=false&muted=true&preload=true&responsive=true"
@@ -79,6 +83,8 @@ window.FWF_PROJECTS = [
     slug: "schmolke-carbon-ad-creative",
     client: "Schmolke Carbon", title: "Ad Creative", tag: "Ad Creative", cat: "ad", ind: "sport",
     desc: "Ad creative for Schmolke Carbon — a race handlebar built entirely from carbon, among the lightest bike components on the market. Premium engineering that shaves weight without sacrificing stability, built to help professional athletes go that little bit faster.",
+    // Case notes from text already on the site; `result` waits for Florian's numbers.
+    case: {"de": {"task": "Schmolke Carbon ist ein Rennrad-Hersteller aus Konstanz, bekannt für hochwertige Carbon-Rennkomponenten.", "work": "Ein Ad Creative für einen Rennlenker komplett aus Carbon, eines der leichtesten Fahrradbauteile auf dem Markt: Premium-Engineering, das Gewicht spart, ohne bei der Stabilität Kompromisse einzugehen."}, "en": {"task": "Schmolke Carbon is a racing bike manufacturer in Konstanz, Germany, known for premium carbon race components.", "work": "An ad creative for a race handlebar built entirely from carbon, among the lightest bike components on the market: premium engineering that shaves weight without sacrificing stability."}},
     colors: ["#8a8f98", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/a0017744-8d83-4f2f-8f12-ca9e937adb3f/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/a0017744-8d83-4f2f-8f12-ca9e937adb3f?token=5fbde514eda6a34c2dfcf241b14a011c6ab6faf83cae60d1e13a7f88f981eda2&expires=1785494649&autoplay=true&loop=false&muted=true&preload=true&responsive=true"
