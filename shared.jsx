@@ -191,7 +191,7 @@ function Nav({ route }) {
     { to: "werbefilm-stuttgart", label: "Ad Films Stuttgart" },
     { to: "imagefilm-stuttgart", label: "Brand Films Stuttgart" },
     { to: "produktvideo-stuttgart", label: "Product Videos Stuttgart" },
-    { to: "ai-visibility-agentur", label: "AI Visibility" },
+    // AI Visibility is its own page (linked from the footer), not part of the main offer.
   ];
 
   const links = [
