@@ -989,7 +989,7 @@ function ProjectsLabPage() {
           <div style={{ position: "absolute", top: 92, left: 0, right: 0, padding: "0 36px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", pointerEvents: "none", zIndex: 5 }}>
             <div style={{ ...fwfLabMono(10, "var(--fwf-text-mute)"), display: "flex", alignItems: "center", gap: 9 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
-              Available · Q4 2026
+              Stuttgart · Available remotely across Europe
             </div>
             <h1 style={{ ...fwfLabMono(10, "rgba(255,255,255,0.82)"), maxWidth: 330, margin: 0, fontWeight: "inherit" }}>
               Ad Creative · Brand Films · AI Content
@@ -1947,10 +1947,10 @@ function AiVideoPage() {
 
   const included = [
     { i: <Icons.Film size={22} />, t: "AI commercials & spec ads", d: "Cinematic 15–60 second spots for social, web and pre-roll — concept, script, generation, edit and sound from one team.", c: "pink" },
-    { i: <Icons.Play size={22} />, t: "UGC & AI-influencer videos", d: "Vertical 9:16 videos in UGC or AI-influencer style for Meta, TikTok and YouTube Shorts — full sets, ready to test in days, not weeks.", c: "purple" },
+    { i: <Icons.Play size={22} />, t: "UGC & AI-influencer videos", d: "Vertical 9:16 videos in UGC or AI-influencer style for Meta, TikTok and YouTube Shorts — full sets, ready to test.", c: "purple" },
     { i: <Icons.Sparkles size={22} />, t: "Product & brand worlds", d: "Locations and product scenes that would otherwise cost a set build or a flight — generated, lit and graded to match your brand.", c: "green" },
     { i: <Icons.Aperture size={22} />, t: "Hybrid productions", d: "Real footage of your team, product or location combined with AI scenes. The honest mix most brands actually need.", c: "orange" },
-    { i: <Icons.Zap size={22} />, t: "Ad creative at volume", d: "Hook variations, formats and cutdowns for Meta and TikTok — ready to test in days, not weeks.", c: "pink" },
+    { i: <Icons.Zap size={22} />, t: "Ad creative at volume", d: "Hook variations, formats and cutdowns for Meta and TikTok — ready to test.", c: "pink" },
     { i: <Icons.TrendUp size={22} />, t: "Automotive & dealerships", d: "Vehicle films and dealership spots — cars in light and locations you can't book, without moving a single car.", c: "purple" },
   ];
 
@@ -2439,15 +2439,6 @@ function ContactPage() {
                 overflow: "hidden",
               }}>
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85))" }} />
-                <div style={{
-                  position: "absolute", top: 24, left: 24,
-                  fontFamily: "var(--fwf-mono)", fontSize: 10, letterSpacing: "0.22em",
-                  textTransform: "uppercase", color: "var(--fwf-text-mute)",
-                  display: "flex", alignItems: "center", gap: 8
-                }}>
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--fwf-green)", boxShadow: "0 0 8px var(--fwf-green)" }} />
-                  Available · Q4 2026
-                </div>
                 <div style={{ position: "absolute", left: 28, bottom: 28, right: 28, display: "flex", flexDirection: "column", gap: 12 }}>
                   <div className="fwf-eyebrow" style={{ color: "var(--fwf-pink)" }}>Florian Kotulla</div>
                   <div className="fwf-display" style={{ fontSize: 36, lineHeight: 1, letterSpacing: "-0.01em" }}>
@@ -2467,15 +2458,10 @@ function ContactPage() {
                 <span className="fwf-eyebrow">Get in touch</span>
               </div>
               <h1 className="fwf-display" style={{ fontSize: "clamp(40px, 5.5vw, 72px)", margin: "0 0 24px 0", lineHeight: 0.95 }}>
-                Let's build something{" "}
-                <TypewriterWord
-                  words={["exceptional.", "unique.", "unforgettable.", "remarkable."]}
-                  className="fwf-display-italic"
-                  style={{ color: "var(--fwf-pink)", display: "inline-block", minWidth: "14ch" }}
-                />
+                Let's talk about <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>your ads.</em>
               </h1>
               <p style={{ color: "var(--fwf-text-mute)", fontSize: 17, lineHeight: 1.6, margin: "0 0 32px 0", maxWidth: 620 }}>
-                We work with established DACH B2C brands and growth-stage companies — €500K+ revenue — who are ready to move beyond templated social content and invest in premium, cinematic ad creative that builds trust and drives conversion. Ideal partners value craft as much as performance, and are scaling paid social for the first time or upgrading from a cheaper creative supplier.
+                We work with coaches, consultants, agencies and e-commerce brands running Meta ads. You talk to the filmmaker who makes your ads, not to an account manager.
               </p>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48, alignItems: "center" }}>
@@ -2492,20 +2478,20 @@ function ContactPage() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
                   {[
                     {
-                      num: "6.2×",
-                      label: "ROAS",
+                      num: "50+",
+                      label: "Projects since 2018",
                       color: "var(--fwf-pink)",
                     },
                     {
-                      num: "30",
-                      label: "DAYS TO FIRST OUTPUT",
-                      sub: "Results within the first sprint",
+                      num: "7",
+                      label: "Working days to the first videos",
+                      sub: "Counted from the shoot day",
                       color: "var(--fwf-orange)",
                     },
                     {
-                      num: "€0",
-                      label: "SPENT ON GUESSING",
-                      sub: "Every creative decision is backed by data. No spray-and-pray, no wasted budget on untested ideas.",
+                      num: "14×",
+                      label: "ROAS with Weinzeit",
+                      sub: "Every €1 of ad spend brought back €14 in revenue",
                       color: "var(--fwf-green)",
                     },
                   ].map((s, i) => (
@@ -2878,7 +2864,7 @@ const KW_PAGES = {
       faqA: "Werbefilm, ", faqB: "beantwortet.",
       faqs: [
         { q: "Was kostet ein Werbefilm?", a: "Das hängt von Länge, Szenenzahl und Varianten ab. KI-Produktion ist in der Regel deutlich günstiger als ein klassischer Dreh, weil Set, Crew und Reisen entfallen. Nach einem 30-minütigen Gespräch bekommen Sie ein Festangebot." },
-        { q: "Wie lange dauert die Produktion eines Werbefilms?", a: "Ein einzelnes Ad Creative oft nur wenige Tage. Ein vollständiger Werbefilm mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
+        { q: "Wie lange dauert die Produktion eines Werbefilms?", a: "Im AI Creative Sprint kommen die ersten Ad-Videos 7 Werktage nach dem Drehtag. Ein vollständiger Werbefilm mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
         { q: "Dürfen KI-Werbefilme in bezahlten Anzeigen laufen?", a: "Ja. Wir bilden keine realen Personen ohne Einwilligung nach und kennzeichnen KI-Inhalte, wo Meta, TikTok oder YouTube das verlangen." },
         { q: "Drehen Sie auch klassisch mit Kamera und Team?", a: "Ja — und oft ist die Mischung die beste Lösung. Wir drehen, was echt sein muss (Menschen, Produkt, Ort), und nutzen KI für alles, was teuer, gefährlich oder unmöglich zu drehen wäre." },
         { q: "Kann ich den Werbefilm auch ohne Kampagnenbetreuung bestellen?", a: "Ja. Die Kampagnenbetreuung ist optional. Viele Kunden buchen zunächst nur den Film und entscheiden danach, ob wir auch die Anzeigen betreuen." },
@@ -2922,7 +2908,7 @@ const KW_PAGES = {
       faqA: "Ad films, ", faqB: "answered.",
       faqs: [
         { q: "How much does an ad film cost?", a: "It depends on length, number of scenes and variants. AI production is typically well below a comparable live-action shoot, because there's no set, crew or travel. You get a fixed quote after a 30-minute call." },
-        { q: "How long does it take to produce an ad film?", a: "A single ad creative often takes just days. A full commercial with script, look development and revisions usually takes one to two weeks." },
+        { q: "How long does it take to produce an ad film?", a: "In the AI Creative Sprint, the first ad videos come 7 working days after the shoot day. A full commercial with script, look development and revisions usually takes one to two weeks." },
         { q: "Can AI ad films run in paid ads?", a: "Yes. We don't imitate real people without consent, and we label AI-generated content where Meta, TikTok or YouTube require it." },
         { q: "Do you also shoot with a camera and crew?", a: "Yes — and the mix is often the best answer. We film what has to be real (people, product, place) and use AI for everything that would be expensive, dangerous or impossible to shoot." },
         { q: "Can I order the ad film without campaign management?", a: "Yes. Campaign management is optional. Many clients book just the film first and decide afterwards whether we should run the ads too." },
@@ -3060,7 +3046,7 @@ const KW_PAGES = {
         { t: "Produktfilm für Shop & Produktseite", d: "Das Hero-Video, das auf der Produktseite zeigt, was Ihr Produkt kann und wofür es steht." },
         { t: "Produktwelten & Umgebungen", d: "Orte und Szenen, die sonst ein Set oder eine Reise kosten würden — generiert, ausgeleuchtet und passend zu Ihrer Marke gegradet." },
         { t: "Anwendung & Features", d: "Szenen, die zeigen, wie das Produkt funktioniert — als echtes Material, mit KI oder gemischt." },
-        { t: "Varianten im Volumen", d: "Hooks, Formate und Cutdowns für Meta und TikTok — in Tagen testbar statt in Wochen." },
+        { t: "Varianten im Volumen", d: "Hooks, Formate und Cutdowns für Meta und TikTok, als komplette Sets zum Testen." },
         { t: "Alle Formate", d: "16:9, 9:16 und 1:1 für Produktseite, Shop, Social und Anzeigen in einem Durchgang." },
         { t: "Sound & Sprecher", d: "Musik, Sounddesign und Voiceover auf Deutsch oder Englisch, abgemischt für die jeweilige Plattform." },
       ],
@@ -3082,7 +3068,7 @@ const KW_PAGES = {
       faqA: "Produktvideo, ", faqB: "beantwortet.",
       faqs: [
         { q: "Was kostet es, ein Produktvideo erstellen zu lassen?", a: "Das hängt von Länge, Szenenzahl und Varianten ab. KI-Produktion ist in der Regel deutlich günstiger als ein klassischer Dreh mit Studio und Crew. Nach einem 30-minütigen Gespräch bekommen Sie ein Festangebot." },
-        { q: "Wie schnell bekomme ich ein Produktvideo?", a: "Ein einzelnes Ad Creative oft in wenigen Tagen. Ein vollständiges Produktvideo mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
+        { q: "Wie schnell bekomme ich ein Produktvideo?", a: "Im AI Creative Sprint kommen die ersten Ad-Videos 7 Werktage nach dem Drehtag. Ein vollständiges Produktvideo mit Skript, Look-Entwicklung und Korrekturen dauert in der Regel ein bis zwei Wochen." },
         { q: "Brauche ich dafür das physische Produkt?", a: "Für eine originalgetreue Darstellung brauchen wir Referenzmaterial — Fotos, Renderings oder das Produkt selbst. Was genau nötig ist, klären wir im Briefing." },
         { q: "Kann ich mehrere Varianten zum Testen bekommen?", a: "Ja, und das empfehlen wir. Wir liefern verschiedene Hooks, Längen und Formate, damit Ihre Kampagne zeigt, welche Version verkauft." },
         { q: "Kann ich KI-Produktvideos im Shop und in Anzeigen nutzen?", a: "Für Ihren Shop, Ihre Website und Anzeigen auf Meta, TikTok und YouTube ja. Für einzelne Marktplätze gelten eigene Regeln, die wir vorab mit Ihnen prüfen." },
@@ -3104,7 +3090,7 @@ const KW_PAGES = {
         { t: "Product film for shop & product page", d: "The hero video that shows on the product page what your product does and what it stands for." },
         { t: "Product worlds & environments", d: "Places and scenes that would otherwise cost a set or a trip — generated, lit and graded to match your brand." },
         { t: "Use & features", d: "Scenes that show how the product works — as real footage, with AI, or mixed." },
-        { t: "Variations at volume", d: "Hooks, formats and cutdowns for Meta and TikTok — testable in days, not weeks." },
+        { t: "Variations at volume", d: "Hooks, formats and cutdowns for Meta and TikTok, as complete sets to test." },
         { t: "Every format", d: "16:9, 9:16 and 1:1 for product page, shop, social and ads in one pass." },
         { t: "Sound & voice", d: "Music, sound design and voiceover in German or English, mixed for each platform." },
       ],
@@ -3126,7 +3112,7 @@ const KW_PAGES = {
       faqA: "Product videos, ", faqB: "answered.",
       faqs: [
         { q: "How much does it cost to have a product video made?", a: "It depends on length, number of scenes and variants. AI production is typically well below a classic shoot with studio and crew. You get a fixed quote after a 30-minute call." },
-        { q: "How fast can I get a product video?", a: "A single ad creative often in a few days. A full product video with script, look development and revisions usually takes one to two weeks." },
+        { q: "How fast can I get a product video?", a: "In the AI Creative Sprint, the first ad videos come 7 working days after the shoot day. A full product video with script, look development and revisions usually takes one to two weeks." },
         { q: "Do I need the physical product?", a: "For a faithful result we need reference material — photos, renderings or the product itself. We settle exactly what's needed in the briefing." },
         { q: "Can I get several variants to test?", a: "Yes, and we recommend it. We deliver different hooks, lengths and formats so your campaign shows which version sells." },
         { q: "Can I use AI product videos in my shop and in ads?", a: "For your shop, website and ads on Meta, TikTok and YouTube, yes. Individual marketplaces have their own rules, which we check with you beforehand." },

@@ -913,6 +913,23 @@ window.FWF_TRANSLATIONS = {
     "See all ways to work with us": "Alle Wege der Zusammenarbeit ansehen",
     /* ---- Sales-logic cleanup 2026-11: the two CTAs ---- */
     "Start the free ad check": "Kostenlosen Ad-Check starten",
-    "Eight short questions, then your result and your appointment": "Acht kurze Fragen, dann Ihr Ergebnis und Ihr Termin"
+    "Eight short questions, then your result and your appointment": "Acht kurze Fragen, dann Ihr Ergebnis und Ihr Termin",
+    /* ---- Sales-logic cleanup 2026-11: claims + English leftovers ---- */
+    "When they're ready to buy, they already know you. Your ad gives them the clear next step.": "Wenn sie kaufbereit sind, kennen sie Sie bereits. Ihre Anzeige gibt ihnen dann den klaren nächsten Schritt.",
+    "Vertical 9:16 videos in UGC or AI-influencer style for Meta, TikTok and YouTube Shorts — full sets, ready to test.": "Vertikale 9:16-Videos im UGC- oder AI-Influencer-Stil für Meta, TikTok und YouTube Shorts — komplette Sets, testbereit.",
+    "Hook variations, formats and cutdowns for Meta and TikTok — ready to test.": "Hook-Varianten, Formate und Cutdowns für Meta und TikTok — testbereit.",
+    "Let's talk about": "Sprechen wir über",
+    "your ads.": "Ihre Ads.",
+    "We work with coaches, consultants, agencies and e-commerce brands running Meta ads. You talk to the filmmaker who makes your ads, not to an account manager.": "Wir arbeiten mit Coaches, Beratern, Agenturen und E-Commerce-Marken mit Meta-Ads. Sie sprechen mit dem Filmemacher, der Ihre Ads macht, nicht mit einem Account Manager.",
+    "Projects since 2018": "Projekte seit 2018",
+    "Working days to the first videos": "Werktage bis zu den ersten Videos",
+    "Counted from the shoot day": "Gezählt ab dem Drehtag",
+    "ROAS with Weinzeit": "ROAS mit Weinzeit",
+    "Every €1 of ad spend brought back €14 in revenue": "Aus 1 € Werbebudget wurden 14 € Umsatz",
+    "Grab it.": "Greifen Sie zu.",
+    "Give it a spin.": "Und drehen Sie es.",
+    "Latest work": "Neueste Arbeiten",
+    "Like what you see?": "Gefällt Ihnen, was Sie sehen?",
+    "Let's talk about your brand.": "Sprechen wir über Ihre Marke."
   }
 };

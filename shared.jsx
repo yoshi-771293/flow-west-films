@@ -625,7 +625,7 @@ function WhyFwfSection({ compact = false }) {
   const system = [
     { i: <Icons.Aperture size={22} />, n: "01", t: "Get Discovered with Creative", d: "Your future customers meet you through a film worth stopping for — not another ad they scroll straight past.", c: "purple" },
     { i: <Icons.Repeat size={22} />, n: "02", t: "Earn Trust with Retargeting & Testimonials", d: "The people who noticed you see you again — this time with real customers vouching that you deliver.", c: "pink" },
-    { i: <Icons.Target size={22} />, n: "03", t: "Convert Your Target Audience", d: "By the time they're ready to buy, the decision is already made. The sale is a formality.", c: "green" },
+    { i: <Icons.Target size={22} />, n: "03", t: "Convert Your Target Audience", d: "When they're ready to buy, they already know you. Your ad gives them the clear next step.", c: "green" },
   ];
 
   // What that system stands on. Without these three, the phases above leak.
