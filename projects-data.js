@@ -6,7 +6,7 @@ window.FWF_PROJECTS = [
   // === ADS FIRST ===
   {
     slug: "kfc-spec-ad",
-    client: "KFC", title: "Spec Ad", tag: "AI Spec Ad", cat: "ad", ind: "food", feature: 3,
+    client: "KFC", title: "The Good, the Bad, and the Sauce", tag: "AI Ad Creative", cat: "ad", ind: "food", feature: 3,
     desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
     colors: ["#e4002b", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
@@ -380,7 +380,7 @@ window.FWF_PROJECTS = [
 
 // When each video first went on the site (from git history) — uploadDate in the video schema.
 window.FWF_VIDEO_ADDED = {
-  "KFC·Spec Ad": "2026-08-27",
+  "KFC·The Good, the Bad, and the Sauce": "2026-08-27",
   "WGV Versicherung·Ad Creative": "2026-08-26",
   "WGV Versicherung·Vertical Cut": "2026-08-26",
   "Nike·Ad Creative": "2026-07-30",
@@ -432,7 +432,7 @@ window.FWF_VIDEO_ADDED = {
 // Pixel size of the top rendition and running time in seconds (Bunny HLS playlists, local files via mdls).
 // YouTube entries only carry the 16:9 frame; their running time is not known here.
 window.FWF_VIDEO_META = {
-  "KFC·Spec Ad": {w: 1920, h: 1080, secs: 54},
+  "KFC·The Good, the Bad, and the Sauce": {w: 1920, h: 1080, secs: 54},
   "WGV Versicherung·Ad Creative": {w: 1920, h: 1080, secs: 17},
   "WGV Versicherung·Vertical Cut": {w: 1080, h: 1920, secs: 29},
   "Nike·Ad Creative": {w: 1920, h: 1080, secs: 64},

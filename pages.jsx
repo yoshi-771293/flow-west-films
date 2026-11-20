@@ -1940,7 +1940,7 @@ function AiVisibilityPage() {
 // ============================================
 // AI VIDEO PRODUCTION PAGE (/ki-videoproduktion)
 // ============================================
-const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "Spec Ad"]];
+const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "The Good, the Bad, and the Sauce"]];
 
 function AiVideoPage() {
   const [activeVideo, setActiveVideo] = useStateP(null);
@@ -2849,7 +2849,7 @@ const KW_UI = {
 const KW_PAGES = {
   "werbefilm-stuttgart": {
     accent: "pink", rel: ["imagefilm-stuttgart", "produktvideo-stuttgart", "ki-videoproduktion"],
-    work: [["Porsche", "For the Chosen"], ["KFC", "Spec Ad"], ["Nike", "Ad Creative"], ["Nord VPN", "Ad Creative"], ["WGV Versicherung", "Ad Creative"], ["Swarovski", "Never Apologize"]],
+    work: [["Porsche", "For the Chosen"], ["KFC", "The Good, the Bad, and the Sauce"], ["Nike", "Ad Creative"], ["Nord VPN", "Ad Creative"], ["WGV Versicherung", "Ad Creative"], ["Swarovski", "Never Apologize"]],
     alt: { de: "Werbefilm", en: "Ad film" },
     de: {
       serviceName: "Werbefilm-Produktion mit KI", serviceType: "Werbefilm Produktion",
