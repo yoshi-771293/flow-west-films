@@ -868,6 +868,13 @@ window.FWF_TRANSLATIONS = {
     "Pick one and the check asks the right questions for your business.": "Wählen Sie aus, und der Check stellt die passenden Fragen zu Ihrem Geschäft.",
     "Products (e-commerce)": "Produkte (E-Commerce)",
     "A service": "Eine Dienstleistung",
-    "Brand & Corporate Films Stuttgart": "Imagefilm & Unternehmensfilm Stuttgart"
+    "Brand & Corporate Films Stuttgart": "Imagefilm & Unternehmensfilm Stuttgart",
+    /* ---- Sales-logic cleanup 2026-11: position + hero ---- */
+    "For coaches, consultants, agencies and e-commerce brands running Meta ads: when your ads get tired, especially in Q4, one shoot day gives you 10, 20 or 50 new ad videos. First videos 7 working days after the shoot.": "Für Coaches, Berater, Agenturen und E-Commerce-Marken mit Meta-Ads: Wenn Ihre Ads müde werden, gerade im Q4, entstehen aus einem Drehtag 10, 20 oder 50 neue Ad-Videos. Erste Videos 7 Werktage nach dem Dreh.",
+    "10, 20 or 50 ad videos": "10, 20 oder 50 Ad-Videos",
+    "First videos 7 working days after the shoot": "Erste Videos 7 Werktage nach dem Dreh",
+    "Coaches, consultants, agencies & e-commerce": "Coaches, Berater, Agenturen & E-Commerce",
+    "Flow West Films is a cinematic creative studio making ad creatives for brands that run Meta ads. Concept, shoot, edit and testing from one team.": "Flow West Films ist ein cinematisches Kreativstudio für Ad Creatives, gemacht für Marken mit Meta-Ads. Konzept, Dreh, Schnitt und Tests aus einem Team.",
+    "Ad videos for coaches, consultants, agencies and e-commerce brands running Meta ads.": "Ad-Videos für Coaches, Berater, Agenturen und E-Commerce-Marken mit Meta-Ads."
   }
 };

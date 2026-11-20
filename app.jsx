@@ -30,8 +30,8 @@ const BODY_FONTS = ["Syne", "Outfit", "Inter"];
 // ============================================
 const ROUTE_META = {
   home: {
-    de: { title: "Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films", desc: "Werbefilme, Ad Creatives & cinematische Filmproduktion für Mittelstandsmarken, die skalieren wollen. Studio in Stuttgart, Einsatz in ganz DACH." },
-    en: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "Premium ad creative & cinematic film production for B2C brands that want to scale. Studio in Stuttgart." },
+    de: { title: "Werbefilm & Ad Creative Produktion Stuttgart — Flow West Films", desc: "AI Creative Sprint aus Stuttgart: Aus einem Drehtag entstehen 10, 20 oder 50 neue Ad-Videos für Ihre Meta-Ads. Erste Videos 7 Werktage nach dem Dreh." },
+    en: { title: "Flow West Films — Premium Ad Creative & Cinematic Production", desc: "AI Creative Sprint from Stuttgart: one shoot day, 10, 20 or 50 new ad videos for your Meta ads. First videos 7 working days after the shoot." },
   },
   blog: {
     de: { title: "Blog: KI-Werbefilm, Kosten & Making-of | Flow West Films", desc: "Wissen aus der Produktion: Was KI-Werbefilme kosten, wie ein KI-Spot entsteht und warum so viel KI-Werbung billig aussieht." },

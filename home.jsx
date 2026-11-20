@@ -365,7 +365,7 @@ function HomePage() {
           ),
 
           React.createElement("p", { className: "fwf-fade-up fwf-d3", style: { color: "rgba(255,255,255,0.7)", fontSize: "clamp(17px, 1.6vw, 21px)", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.5 } },
-            "The AI Creative Sprint: 10, 20 or 50 short-form videos at once — from UGC to ad creative, vertical or horizontal, for Meta, TikTok and YouTube. First output in days, not weeks."
+            "For coaches, consultants, agencies and e-commerce brands running Meta ads: when your ads get tired, especially in Q4, one shoot day gives you 10, 20 or 50 new ad videos. First videos 7 working days after the shoot."
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d4", style: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 80 } },
@@ -385,9 +385,9 @@ function HomePage() {
           ),
 
           React.createElement("div", { className: "fwf-fade-up fwf-d5", style: { display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--fwf-text-mute)" } },
-            React.createElement("span", null, "10–50 short-form ads"),
+            React.createElement("span", null, "10, 20 or 50 ad videos"),
             React.createElement("span", null, "Meta · TikTok · YouTube"),
-            React.createElement("span", null, "First output in days")
+            React.createElement("span", null, "First videos 7 working days after the shoot")
           )
         )
       ),
@@ -429,7 +429,7 @@ function HomePage() {
                 { num: "50+", label: "Projects delivered", c: "pink" },
                 { num: "14× ROAS", label: "With Weinzeit, for example", c: "purple" },
                 { num: "DE",  label: "Stuttgart & remote", c: "green" },
-                { num: "E-Commerce & B2C", label: "Where we focus", c: "orange" },
+                { num: "Meta Ads", label: "Coaches, consultants, agencies & e-commerce", c: "orange" },
               ].map((s, i) =>
                 React.createElement("div", { key: i, className: "fwf-stat" },
                   React.createElement("div", { className: "fwf-stat-num", style: { color: "var(--fwf-" + s.c + ")", marginBottom: 12, fontSize: s.num.length > 8 ? 28 : 56 } }, s.num),
@@ -455,7 +455,7 @@ function HomePage() {
                 "Three ad creatives, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "reframed for the horizontal screen.")
               ),
               React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
-                "Flow West Films is a cinematic creative studio crafting ad creatives and content for B2C brands that want to scale. Concept, creation, performance marketing, and analytics — all included."
+                "Flow West Films is a cinematic creative studio making ad creatives for brands that run Meta ads. Concept, shoot, edit and testing from one team."
               )
             ),
             React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },

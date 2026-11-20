@@ -343,7 +343,7 @@ function Footer() {
               <Logo variant="lockup" size={64} />
             </div>
             <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.6, margin: 0, maxWidth: 320 }}>
-              Cinematic ad creative & performance marketing for e-commerce and B2C brands.
+              Ad videos for coaches, consultants, agencies and e-commerce brands running Meta ads.
             </p>
           </div>
 
