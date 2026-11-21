@@ -955,6 +955,8 @@ window.FWF_TRANSLATIONS = {
     "Who we": "Mit wem wir",
     "work with.": "arbeiten.",
     "Weinzeit, a wine festival touring all of Germany, went from": "Weinzeit, ein Weinfest, das durch ganz Deutschland tourt, steigerte den ROAS von",
-    "In numbers": "In Zahlen"
+    "In numbers": "In Zahlen",
+    /* ---- Hero strip ---- */
+    "Ad videos": "Ad-Videos"
   }
 };
