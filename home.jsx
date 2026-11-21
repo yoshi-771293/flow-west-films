@@ -25,7 +25,7 @@ function OfferCard({ icon, title, badge, badgeColor, highlight, tagline, stat, b
       </div>
 
       {stat && (
-        <div className="fwf-display" style={{ color: "rgb(" + (accent === "pink" ? "255,45,120" : accent === "purple" ? "155,48,255" : accent === "green" ? "0,255,136" : "255,100,32") + ")", fontSize: stat.length > 24 ? (expanded ? 30 : 26) : (expanded ? 48 : 40), fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "0 0 6px 0" }}>
+        <div className="fwf-display" style={{ color: "rgb(" + (accent === "pink" ? "255,45,120" : accent === "purple" ? "155,48,255" : accent === "green" ? "0,255,136" : "255,100,32") + ")", fontSize: stat.length > 18 ? (expanded ? 30 : 26) : (expanded ? 48 : 40), fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "0 0 6px 0" }}>
           {stat}
         </div>
       )}
@@ -525,15 +525,14 @@ function HomePage() {
             )
           ),
 
-          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
             React.createElement(ProjectThumb, {
               client: "Porsche", title: "For the Chosen", tag: "Ad Creative",
               desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
               colors: ["#d5001c", "#0a0a0a"],
               thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
               video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
-              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
-              featured: true
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
             }),
             React.createElement(ProjectThumb, {
               client: "Wilson", title: "Match Point", tag: "Ad Creative",
@@ -701,7 +700,7 @@ function ProjectThumb({ client, title, tag, desc, colors, featured, thumb, video
   return (
     React.createElement("div", { className: "fwf-card fwf-card-pink", style: { overflow: "hidden", display: "flex", flexDirection: "column", padding: 0 } },
       React.createElement("div", {
-        style: { position: "relative", aspectRatio: featured ? "16/10" : "4/3", background: "#0a0a0a", overflow: "hidden", cursor: video ? "pointer" : "default" },
+        style: { position: "relative", aspectRatio: "16/9", background: "#0a0a0a", overflow: "hidden", cursor: video ? "pointer" : "default" },
         onClick: video && onPlay ? onPlay : undefined
       },
         thumb
@@ -719,7 +718,7 @@ function ProjectThumb({ client, title, tag, desc, colors, featured, thumb, video
       ),
       React.createElement("div", { style: { padding: 24 } },
         React.createElement("div", { className: "fwf-label", style: { marginBottom: 8 } }, client),
-        React.createElement("h3", { className: "fwf-display", style: { fontSize: featured ? 32 : 24, margin: "0 0 10px 0", letterSpacing: "-0.01em" } }, title),
+        React.createElement("h3", { className: "fwf-display", style: { fontSize: 26, margin: "0 0 10px 0", letterSpacing: "-0.01em" } }, title),
         React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: 0 } }, desc)
       )
     )
