@@ -1940,7 +1940,7 @@ function AiVisibilityPage() {
 // ============================================
 // AI VIDEO PRODUCTION PAGE (/ki-videoproduktion)
 // ============================================
-const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"], ["KFC", "The Good, the Bad, and the Sauce"]];
+const AI_WORK_PICKS = [["Schmolke Carbon", "Alps Descent"], ["Wilson", "Match Point"], ["KFC", "The Good, the Bad, and the Sauce"]];
 
 function AiVideoPage() {
   const [activeVideo, setActiveVideo] = useStateP(null);
@@ -2723,7 +2723,7 @@ function watchService(p) {
   const on = (list) => list.some(([c, t]) => c === p.client && t === p.title);
   const kw = Object.keys(KW_PAGES).find((id) => on(KW_PAGES[id].work));
   if (kw) return kw;
-  if (on(AI_WORK_PICKS) || /^AI /.test(p.tag)) return "ki-videoproduktion";
+  if (on(AI_WORK_PICKS) || p.ai) return "ki-videoproduktion";
   if (p.tag === "Product") return "produktvideo-stuttgart";
   if (p.cat === "image") return "imagefilm-stuttgart";
   if (p.cat === "social" && p.tag !== "BTS") return "social-media-ads";
@@ -3053,7 +3053,7 @@ const KW_PAGES = {
 
   "produktvideo-stuttgart": {
     accent: "green", rel: ["werbefilm-stuttgart", "imagefilm-stuttgart", "ki-videoproduktion"],
-    work: [["Easy Foil", "Product Ad"], ["Easy Foil", "Easy Drive Ad"], ["Alienwork", "Skeleton Automatic Watch — Long Cut"], ["Schmolke Carbon", "Ad Creative"], ["Schmolke Carbon", "Alps Descent"], ["Wilson", "Spec Ad"]],
+    work: [["Easy Foil", "Product Ad"], ["Easy Foil", "Easy Drive Ad"], ["Alienwork", "Skeleton Automatic Watch — Long Cut"], ["Schmolke Carbon", "Ad Creative"], ["Schmolke Carbon", "Alps Descent"], ["Wilson", "Match Point"]],
     alt: { de: "Produktvideo", en: "Product video" },
     de: {
       serviceName: "Produktvideo-Produktion mit KI", serviceType: "Produktvideo Produktion",

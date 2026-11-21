@@ -6,7 +6,7 @@ window.FWF_PROJECTS = [
   // === ADS FIRST ===
   {
     slug: "kfc-spec-ad",
-    client: "KFC", title: "The Good, the Bad, and the Sauce", tag: "AI Ad Creative", cat: "ad", ind: "food", feature: 3,
+    client: "KFC", title: "The Good, the Bad, and the Sauce", tag: "Ad Creative", ai: true, cat: "ad", ind: "food", feature: 3,
     desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
     colors: ["#e4002b", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
@@ -99,7 +99,7 @@ window.FWF_PROJECTS = [
   },
   {
     slug: "schmolke-carbon-alps-descent",
-    client: "Schmolke Carbon", title: "Alps Descent", tag: "AI Ad Creative", cat: "ad", ind: "sport", feature: 2,
+    client: "Schmolke Carbon", title: "Alps Descent", tag: "Ad Creative", ai: true, cat: "ad", ind: "sport", feature: 2,
     desc: "A cinematic spec ad for Schmolke Carbon — the precise moment physics meets the Alps. Ultralight carbon fibre, zero compromise, no motors — just mountain asphalt and absolute velocity. Powered by AI, curated by creators.",
     colors: ["#8a8f98", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/IOSRkgMz6Ss/maxresdefault.jpg",
@@ -107,7 +107,7 @@ window.FWF_PROJECTS = [
   },
   {
     slug: "wilson-spec-ad",
-    client: "Wilson", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", ind: "sport", feature: 2,
+    client: "Wilson", title: "Match Point", tag: "Ad Creative", ai: true, cat: "ad", ind: "sport", feature: 2,
     desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
     colors: ["#c8102e", "#0a0a0a"],
     thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
@@ -115,7 +115,7 @@ window.FWF_PROJECTS = [
   },
   {
     slug: "panthera-spec-ad",
-    client: "Panthera", title: "Spec Ad", tag: "AI Ad Creative", cat: "ad", ind: "auto",
+    client: "Panthera", title: "Spec Ad", tag: "Ad Creative", ai: true, cat: "ad", ind: "auto",
     desc: "A cinematic spec ad for Panthera — a close-up on the dash as the numbers climb past redline, selling raw performance in one held shot. Powered by AI, curated by creators.",
     colors: ["#111318", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/7c8bd9dd-aee2-4403-a564-24a9c9cb1597/thumbnail_6dcb52ff.jpg",
@@ -123,7 +123,7 @@ window.FWF_PROJECTS = [
   },
   {
     slug: "porsche-for-the-chosen",
-    client: "Porsche", title: "For the Chosen", tag: "Spec Ad", cat: "ad", ind: "auto", feature: 3,
+    client: "Porsche", title: "For the Chosen", tag: "Ad Creative", cat: "ad", ind: "auto", feature: 3,
     desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
     colors: ["#d5001c", "#0a0a0a"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
@@ -177,7 +177,7 @@ window.FWF_PROJECTS = [
   },
   {
     slug: "swarovski-never-apologize",
-    client: "Swarovski", title: "Never Apologize", tag: "Spec Ad", cat: "ad", ind: "fashion",
+    client: "Swarovski", title: "Never Apologize", tag: "Ad Creative", cat: "ad", ind: "fashion",
     desc: "A cinematic spec ad for Swarovski — a slow descent down a marble staircase in a gown, a necklace catching every light in the room, and a voiceover that refuses to soften itself. Luxury shot as confidence rather than seduction.",
     colors: ["#ff2d78", "#c9a96e"],
     thumb: "https://vz-fd89cb27-622.b-cdn.net/376b544f-331d-4b81-a3a6-a33ff0e0e91e/thumbnail_2352b428.jpg",
@@ -392,7 +392,7 @@ window.FWF_VIDEO_ADDED = {
   "Schmolke Carbon·Ad Creative": "2026-07-30",
   "Schmolke Carbon·Ad Creative — Cut 2": "2026-07-30",
   "Schmolke Carbon·Alps Descent": "2026-08-12",
-  "Wilson·Spec Ad": "2026-08-12",
+  "Wilson·Match Point": "2026-08-12",
   "Panthera·Spec Ad": "2026-08-28",
   "Porsche·For the Chosen": "2026-08-29",
   "Eibl GmbH·Introduction: Gloria": "2026-06-18",
@@ -444,7 +444,7 @@ window.FWF_VIDEO_META = {
   "Schmolke Carbon·Ad Creative": {w: 1920, h: 1080, secs: 14},
   "Schmolke Carbon·Ad Creative — Cut 2": {w: 1920, h: 1080, secs: 14},
   "Schmolke Carbon·Alps Descent": {w: 16, h: 9},
-  "Wilson·Spec Ad": {w: 16, h: 9},
+  "Wilson·Match Point": {w: 16, h: 9},
   "Panthera·Spec Ad": {w: 1920, h: 1080, secs: 21},
   "Porsche·For the Chosen": {w: 1920, h: 1080, secs: 73},
   "Eibl GmbH·Introduction: Gloria": {w: 1920, h: 1080, secs: 25},

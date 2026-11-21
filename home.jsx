@@ -321,7 +321,10 @@ function HOME_VIDEOS() {
     thumb: "https://" + INTRO_ZONE + "/" + INTRO_GUID + "/thumbnail.jpg",
     video: "https://iframe.mediadelivery.net/embed/684848/" + INTRO_GUID,
   };
-  return [intro].concat(VERTICAL_SPOTLIGHT);
+  const all = window.ALL_PROJECTS || [];
+  const pick = (c, t) => all.find((p) => p.client === c && p.title === t);
+  const featured = [pick("Porsche", "For the Chosen"), pick("Wilson", "Match Point"), pick("KFC", "The Good, the Bad, and the Sauce")].filter(Boolean);
+  return [intro].concat(featured, VERTICAL_SPOTLIGHT);
 }
 
 // Homepage FAQ. Text lives in faq-data.js (the prerender reads it too, for the FAQPage
@@ -482,16 +485,67 @@ function HomePage() {
         )
       ),
 
-      /* FEATURED WORK — vertical feed ads (WGV / Voyah / Streetside Classics), the format Meta-ads buyers run.
-         The horizontal spec ads live on /projects. */
-      React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },
+      /* PORTFOLIO PREVIEW — horizontal work. Placed right after the pitch, ahead of
+         the proof/system sections, so real work backs up the claim early. */
+      React.createElement("section", { className: "fwf-section", id: "work", style: { borderTop: "1px solid var(--fwf-hairline)" } },
+        React.createElement("div", { className: "fwf-container" },
+          React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 } },
+            React.createElement("div", null,
+              React.createElement("div", { className: "fwf-section-label" },
+                React.createElement("span", { className: "fwf-section-label-line" }),
+                React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
+              ),
+              React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
+                "Three ad creatives, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "reframed for the horizontal screen.")
+              ),
+              React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0, maxWidth: 540 } },
+                "Flow West Films is a cinematic creative studio making ad creatives for brands that run Meta ads. Concept, shoot, edit and testing from one team."
+              )
+            ),
+            React.createElement(Link, { to: "projects", className: "fwf-btn-bare" },
+              "View all projects ", React.createElement(Icons.ArrowRight, { size: 12 })
+            )
+          ),
+
+          React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: 16 }, className: "fwf-featured-grid" },
+            React.createElement(ProjectThumb, {
+              client: "Porsche", title: "For the Chosen", tag: "Ad Creative",
+              desc: "A cinematic spec ad for Porsche — an unmarked invitation, a wax seal broken, and a private collection left behind for the one car she's spent years earning the right to own. Exclusivity that isn't announced, just known.",
+              colors: ["#d5001c", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/b383f508-762e-42a1-b709-ff858d7921a2/thumbnail_87ef2a1d.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/b383f508-762e-42a1-b709-ff858d7921a2?token=d915599a8dd079ce344fbc0915f219e0d8d93857668e8c56d43ec84aa535c074&expires=1788083004&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); },
+              featured: true
+            }),
+            React.createElement(ProjectThumb, {
+              client: "Wilson", title: "Match Point", tag: "Ad Creative",
+              desc: "A cinematic spec ad for Wilson — full commitment on the serve, the power and precision built into the racket captured in one frame. Powered by AI, curated by creators.",
+              colors: ["#c8102e", "#0a0a0a"],
+              thumb: "https://i.ytimg.com/vi/nYRfEo-6-Bk/maxresdefault.jpg",
+              video: "https://youtu.be/nYRfEo-6-Bk",
+              onPlay: function() { setActiveVideo("https://youtu.be/nYRfEo-6-Bk"); }
+            }),
+            React.createElement(ProjectThumb, {
+              client: "KFC", title: "The Good, the Bad, and the Sauce", tag: "Ad Creative",
+              desc: "A cinematic spec ad for KFC — a gunslinger walks into a dusty frontier town for a quick draw, the fastest hand in the West going up against the world's fastest fried chicken. Powered by AI, curated by creators.",
+              colors: ["#e4002b", "#0a0a0a"],
+              thumb: "https://vz-fd89cb27-622.b-cdn.net/14596e22-5c8c-42fc-a21e-d7fa4d3033ad/thumbnail_826e1ce9.jpg",
+              video: "https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true",
+              onPlay: function() { setActiveVideo("https://iframe.mediadelivery.net/embed/684848/14596e22-5c8c-42fc-a21e-d7fa4d3033ad?token=1763c69c0da5664b10e9295242ee0f09573d7e10378dc0e927b226e2d2fb013c&expires=1787907555&autoplay=true&loop=false&muted=true&preload=true&responsive=true"); }
+            })
+          )
+        )
+      ),
+
+      /* LATEST WORK — vertical feed ads (WGV / Voyah / Streetside Classics), the format Meta-ads buyers run. */
+      React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative", overflow: "hidden" } },
         React.createElement("div", { style: { position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 45% 55% at 85% 50%, rgba(45,108,223,0.14), transparent 60%)" } }),
         React.createElement("div", { className: "fwf-container", style: { position: "relative" }, id: "fwf-wgv-vertical" },
           React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 44, flexWrap: "wrap", gap: 24 } },
             React.createElement("div", null,
               React.createElement("div", { className: "fwf-section-label" },
                 React.createElement("span", { className: "fwf-section-label-line" }),
-                React.createElement("span", { className: "fwf-eyebrow" }, "Featured work")
+                React.createElement("span", { className: "fwf-eyebrow" }, "Latest work")
               ),
               React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(36px, 4.4vw, 58px)", margin: "0 0 16px 0", lineHeight: 1.05, textWrap: "balance" } },
                 "Three cuts, ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-purple)" } }, "reframed for the social media feed.")
