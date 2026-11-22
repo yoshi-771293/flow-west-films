@@ -404,20 +404,37 @@ const SHOW_DRAFTS = !/(^|\.)flowwestfilms\.de$/i.test(window.location.hostname);
 // "Die Bessere-Ad-Garantie" (approved 2026-11-22). Hormozi-style conditional guarantee:
 // named, one clear outcome, conditions the client controls. About our work, never revenue.
 function Guarantee() {
+  const steps = [
+    { when: "Before the shoot", t: "Scripts you approve.", d: "You see every hook and script before we shoot. If they still don't convince you after one revision, you pay nothing." },
+    { when: "After the shoot", t: "Videos in 7 working days.", d: "Your first videos arrive 7 working days after the shoot. If we're late, we add 3 videos for free." },
+    { when: "After going live", t: "New rounds until one wins.", d: "If within 30 days no new ad beats your best ad on cost per lead, we produce a new round of 10 ad videos at no extra cost. Up to two rounds, until one wins." },
+  ];
   const conditions = [
     "Your ad account runs with at least €30 budget per day.",
     "The new ads go live within 7 days of delivery.",
     "We have access to your ad account.",
+    "Your offer and landing page stay the same during the test.",
+    "No ads yet? Then the target cost per lead we agree on in the kickoff counts.",
+    "Your feedback time doesn't count toward the 7 working days.",
   ];
   return (
     <div className="fwf-card fwf-card-green fwf-guarantee" style={{ marginTop: 32, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 24, alignItems: "start" }}>
       <div style={{ color: "var(--fwf-green)" }}><Icons.Shield size={40} /></div>
-      <div>
+      <div style={{ minWidth: 0 }}>
         <div className="fwf-label" style={{ color: "var(--fwf-green)", marginBottom: 10 }}>Our guarantee</div>
-        <h3 className="fwf-display" style={{ fontSize: "clamp(28px, 3.4vw, 40px)", margin: "0 0 14px 0", fontWeight: 400, lineHeight: 1.05 }}>The Better-Ad Guarantee.</h3>
-        <p style={{ color: "#fff", fontSize: 17, lineHeight: 1.6, margin: "0 0 18px 0", maxWidth: 720 }}>
-          If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.
+        <h3 className="fwf-display" style={{ fontSize: "clamp(28px, 3.4vw, 40px)", margin: "0 0 10px 0", fontWeight: 400, lineHeight: 1.05 }}>The Better-Ad Guarantee.</h3>
+        <p style={{ color: "#fff", fontSize: 17, lineHeight: 1.6, margin: "0 0 22px 0", maxWidth: 720 }}>
+          Three promises, one for every moment you carry a risk.
         </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginBottom: 22 }}>
+          {steps.map((s, i) => (
+            <div key={s.when} style={{ border: "1px solid rgba(255,255,255,0.12)", borderRadius: 14, padding: 18 }}>
+              <div className="fwf-label" style={{ color: "var(--fwf-green)", marginBottom: 8 }}>{i + 1} · {s.when}</div>
+              <div style={{ color: "#fff", fontSize: 18, fontWeight: 500, marginBottom: 8, lineHeight: 1.25 }}>{s.t}</div>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{s.d}</p>
+            </div>
+          ))}
+        </div>
         <div className="fwf-label" style={{ marginBottom: 8 }}>Conditions</div>
         <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.7 }}>
           {conditions.map((c) => <li key={c}>{c}</li>)}
