@@ -446,9 +446,11 @@ const SPRINT_DEALS = [
   },
   {
     id: "new-year", ends: "2026-12-20T23:59:59+01:00",
-    eyebrow: "New Year Sprint",
+    eyebrow: "New Year Sprint", badge: "New Year",
     titleA: "Book by 20 December.", titleB: "Your new ads run in January.",
+    line: "In the Minimum package: 8 ad videos plus 3 more at no extra cost.",
     notes: ["Booking deadline: 20 December, 23:59"],
+    minimumCount: "8 ad videos + 3 free",
   },
 ];
 

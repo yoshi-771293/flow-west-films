@@ -966,6 +966,7 @@ window.FWF_TRANSLATIONS = {
     "Ends 2 December, 23:59": "Endet am 2. Dezember, 23:59 Uhr",
     "8 ad videos + 3 free": "8 Ad-Videos + 3 gratis",
     "New Year Sprint": "Neujahrs-Sprint",
+    "New Year": "Neujahr",
     "Book by 20 December.": "Bis 20. Dezember buchen.",
     "Your new ads run in January.": "Ihre neuen Ads laufen im Januar.",
     "Booking deadline: 20 December, 23:59": "Buchungsschluss: 20. Dezember, 23:59 Uhr",
