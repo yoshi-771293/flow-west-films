@@ -403,8 +403,8 @@ const SHOW_DRAFTS = !/(^|\.)flowwestfilms\.de$/i.test(window.location.hostname);
 function GuaranteeDraft() {
   if (!SHOW_DRAFTS) return null;
   const conditions = [
-    "Your ad account runs with at least [TODO: Florian] € budget per day.",
-    "The new ads go live within [TODO: Florian] days of delivery.",
+    "Your ad account runs with at least €30 budget per day.",
+    "The new ads go live within 7 days of delivery.",
     "We have access to your ad account.",
   ];
   return (
@@ -414,7 +414,7 @@ function GuaranteeDraft() {
       </div>
       <h3 className="fwf-display" style={{ fontSize: 30, margin: "0 0 12px 0", fontWeight: 400 }}>Our guarantee</h3>
       <p style={{ color: "#fff", fontSize: 16, lineHeight: 1.6, margin: "0 0 16px 0", maxWidth: 680 }}>
-        If within [TODO: Florian] days we have not found an ad that beats your current best ad on [TODO: metric, e.g. cost per lead], we produce the next round of [TODO: number] ad videos at no extra cost.
+        If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.
       </p>
       <div className="fwf-label" style={{ marginBottom: 8 }}>Conditions</div>
       <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.7 }}>

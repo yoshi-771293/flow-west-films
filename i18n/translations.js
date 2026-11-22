@@ -934,10 +934,10 @@ window.FWF_TRANSLATIONS = {
     /* ---- Sales-logic cleanup 2026-11: guarantee DRAFT (staging only) ---- */
     "Draft · only visible on staging · needs Florian's approval": "Entwurf · nur auf Staging sichtbar · Freigabe durch Florian nötig",
     "Our guarantee": "Unsere Garantie",
-    "If within [TODO: Florian] days we have not found an ad that beats your current best ad on [TODO: metric, e.g. cost per lead], we produce the next round of [TODO: number] ad videos at no extra cost.": "Wenn wir innerhalb von [TODO: Florian] Tagen keine Ad gefunden haben, die Ihre bisher beste Ad bei [TODO: Kennzahl, z. B. Kosten pro Lead] schlägt, produzieren wir die nächste Runde von [TODO: Anzahl] Ad-Videos ohne Aufpreis.",
+    "If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.": "Wenn wir innerhalb von 30 Tagen nach dem Livegang keine Ad gefunden haben, die Ihre bisher beste Ad bei den Kosten pro Lead schlägt, produzieren wir die nächste Runde von 10 Ad-Videos ohne Aufpreis.",
     "Conditions": "Voraussetzungen",
-    "Your ad account runs with at least [TODO: Florian] € budget per day.": "Ihr Ad Account läuft mit mindestens [TODO: Florian] € Budget pro Tag.",
-    "The new ads go live within [TODO: Florian] days of delivery.": "Die neuen Ads gehen innerhalb von [TODO: Florian] Tagen nach Lieferung live.",
+    "Your ad account runs with at least €30 budget per day.": "Ihr Ad Account läuft mit mindestens 30 € Budget pro Tag.",
+    "The new ads go live within 7 days of delivery.": "Die neuen Ads gehen innerhalb von 7 Tagen nach Lieferung live.",
     "We have access to your ad account.": "Wir haben Zugriff auf Ihren Ad Account.",
     "We guarantee our work, not your revenue.": "Garantiert ist unsere Arbeit, nicht Ihr Umsatz.",
     /* ---- Sales-logic cleanup 2026-11: founder block ---- */
