@@ -1,4 +1,4 @@
-/* global React, Icons, Link, useRoute, Crosshairs, CtaButtons, GuaranteeDraft, FinalCTA, SprintPackages, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection, VideoSchema */
+/* global React, Icons, Link, useRoute, Crosshairs, CtaButtons, Guarantee, SprintDeal, FinalCTA, SprintPackages, OfferCard, OFFERS, ProjectThumb, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection, VideoSchema */
 const { useState: useStateP, useEffect: useEffectP, useRef: useRefP } = React;
 
 // ============================================
@@ -1096,18 +1096,72 @@ function ProjectsLabPage() {
 // ============================================
 // PRICING PAGE
 // ============================================
+// "When we run your ads" (the two retainers) and "More services": on /services and,
+// since 2026-11-22, on the homepage too. One source so both pages always match.
+const MORE_SERVICES = [
+  { to: "werbefilm-stuttgart", t: "Ad Films Stuttgart", d: "AI-powered ad films and video ads built to sell.", c: "pink" },
+  { to: "imagefilm-stuttgart", t: "Brand & Corporate Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
+  { to: "produktvideo-stuttgart", t: "Product Videos Stuttgart", d: "Product videos for your shop, product pages and ads.", c: "green" },
+  { to: "ki-videoproduktion", t: "AI Video & Content", d: "AI commercials, UGC and AI-influencer videos, ongoing ad creatives.", c: "purple" },
+  { to: "social-media-ads", t: "Social Media Ads", d: "Full Meta Ads management — strategy, creative, audiences, scaling.", c: "pink" },
+  { to: "search-ads", t: "Search Ads", d: "Google & YouTube Ads for e-commerce and B2C brands.", c: "green" },
+  { to: "full-service", t: "Full Service", d: "Creative and performance as one system, run by one team.", c: "orange" },
+];
+
+function RetainerSection({ guarantee }) {
+  return (
+  <section className="fwf-section" id="retainer" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+    <div className="fwf-container">
+      <div className="fwf-section-label">
+        <span className="fwf-section-label-line" />
+        <span className="fwf-eyebrow">When we run your ads</span>
+      </div>
+      <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 820, textWrap: "balance" }}>
+        Growth Retainer <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>and Premium Partner.</em>
+      </h2>
+      <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 640 }}>
+        The Sprint gives you new ads. If we should also manage your ad account, that runs as a retainer: results need time with your account and your customers, so these two have a minimum term.
+      </p>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
+        {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
+          <OfferCard key={i} {...o} expanded />
+        ))}
+      </div>
+      {guarantee && <Guarantee />}
+    </div>
+  </section>
+  );
+}
+
+function MoreServicesSection() {
+  // Everything else we make
+  return (
+  <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
+    <div className="fwf-container">
+      <div className="fwf-section-label">
+        <span className="fwf-section-label-line" />
+        <span className="fwf-eyebrow">More services</span>
+      </div>
+      <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 48px 0", maxWidth: 820, textWrap: "balance" }}>
+        Planning something bigger? <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Films, ads, full service.</em>
+      </h2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
+        {MORE_SERVICES.map((m) => (
+          <Link key={m.to} to={m.to} className={"fwf-card fwf-card-" + m.c} style={{ padding: 28, display: "block", textDecoration: "none", color: "inherit" }}>
+            <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>{m.t}</h3>
+            <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: "0 0 18px 0" }}>{m.d}</p>
+            <span style={{ color: "var(--fwf-" + m.c + ")" }}><Icons.ArrowRight size={14} /></span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  </section>
+  );
+}
+
 function PricingPage() {
   // Entry offer first (the AI Creative Sprint, no minimum term), then the two retainers for
   // brands that want us to run their ads, then everything else we make.
-  const more = [
-    { to: "werbefilm-stuttgart", t: "Ad Films Stuttgart", d: "AI-powered ad films and video ads built to sell.", c: "pink" },
-    { to: "imagefilm-stuttgart", t: "Brand & Corporate Films Stuttgart", d: "Brand and corporate films, directed by filmmakers.", c: "purple" },
-    { to: "produktvideo-stuttgart", t: "Product Videos Stuttgart", d: "Product videos for your shop, product pages and ads.", c: "green" },
-    { to: "ki-videoproduktion", t: "AI Video & Content", d: "AI commercials, UGC and AI-influencer videos, ongoing ad creatives.", c: "purple" },
-    { to: "social-media-ads", t: "Social Media Ads", d: "Full Meta Ads management — strategy, creative, audiences, scaling.", c: "pink" },
-    { to: "search-ads", t: "Search Ads", d: "Google & YouTube Ads for e-commerce and B2C brands.", c: "green" },
-    { to: "full-service", t: "Full Service", d: "Creative and performance as one system, run by one team.", c: "orange" },
-  ];
   return (
     <main>
       <section style={{ position: "relative", paddingTop: 180, paddingBottom: 80, overflow: "hidden" }}>
@@ -1130,53 +1184,14 @@ function PricingPage() {
 
       <section style={{ padding: "40px 0 120px" }}>
         <div className="fwf-container">
+          <SprintDeal />
           <SprintPackages slug="services" />
         </div>
       </section>
 
-      {/* The next step: retainers, when we run the ads too */}
-      <section className="fwf-section" id="retainer" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div className="fwf-section-label">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">When we run your ads</span>
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 16px 0", maxWidth: 820, textWrap: "balance" }}>
-            Growth Retainer <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>and Premium Partner.</em>
-          </h2>
-          <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: "0 0 40px 0", maxWidth: 640 }}>
-            The Sprint gives you new ads. If we should also manage your ad account, that runs as a retainer: results need time with your account and your customers, so these two have a minimum term.
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="fwf-grid-collapse">
-            {OFFERS.filter((o) => o.title === "Growth Retainer" || o.title === "Premium Partner").map((o, i) => (
-              <OfferCard key={i} {...o} expanded />
-            ))}
-          </div>
-          <GuaranteeDraft />
-        </div>
-      </section>
+      <RetainerSection guarantee />
 
-      {/* Everything else we make */}
-      <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
-        <div className="fwf-container">
-          <div className="fwf-section-label">
-            <span className="fwf-section-label-line" />
-            <span className="fwf-eyebrow">More services</span>
-          </div>
-          <h2 className="fwf-display" style={{ fontSize: "clamp(36px, 4.5vw, 56px)", margin: "0 0 48px 0", maxWidth: 820, textWrap: "balance" }}>
-            Planning something bigger? <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>Films, ads, full service.</em>
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
-            {more.map((m) => (
-              <Link key={m.to} to={m.to} className={"fwf-card fwf-card-" + m.c} style={{ padding: 28, display: "block", textDecoration: "none", color: "inherit" }}>
-                <h3 style={{ fontSize: 18, margin: "0 0 10px 0", fontWeight: 500 }}>{m.t}</h3>
-                <p style={{ color: "var(--fwf-text-mute)", fontSize: 14, lineHeight: 1.55, margin: "0 0 18px 0" }}>{m.d}</p>
-                <span style={{ color: "var(--fwf-" + m.c + ")" }}><Icons.ArrowRight size={14} /></span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <MoreServicesSection />
 
       {/* FAQ */}
       <section className="fwf-section" style={{ borderTop: "1px solid var(--fwf-hairline)" }}>
@@ -1301,8 +1316,14 @@ function AboutPage() {
               <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 18, lineHeight: 1.65, margin: "0 0 18px 0" }}>
                 Flow West Films was founded by <strong style={{ color: "#fff", fontWeight: 500 }}>Florian Kotulla</strong> — filmmaker, creative director, and performance marketing thinker. Based in Stuttgart, the studio combines cinematic storytelling with ad strategy to help B2C brands grow.
               </p>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.65, margin: "0 0 32px 0" }}>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.65, margin: "0 0 18px 0" }}>
                 Florian has shot for hospitality groups, sports brands, watchmakers, and SaaS companies — with credits on IMDb across narrative film and commercial work.
+              </p>
+              <p style={{ color: "#fff", fontSize: 18, lineHeight: 1.65, margin: "0 0 18px 0" }}>
+                “I worked as a freelancer for many agencies for a long time and kept seeing the same thing: big promises, beautiful videos, and nothing changed for the client. That's why I founded Flow West Films: my videos should actually do something for you.”
+              </p>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.65, margin: "0 0 32px 0" }}>
+                You don't talk to an account manager, you talk to me. The filmmaker who shoots your ad creative sits at the table with you.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a href="https://imdb.com/name/nm6945443/" target="_blank" rel="noreferrer" className="fwf-btn fwf-btn-ghost fwf-btn-sm">
@@ -3382,4 +3403,4 @@ function WerbefilmPage() { return <KeywordPage id="werbefilm-stuttgart" />; }
 function ImagefilmPage() { return <KeywordPage id="imagefilm-stuttgart" />; }
 function ProduktvideoPage() { return <KeywordPage id="produktvideo-stuttgart" />; }
 
-Object.assign(window, { ALL_PROJECTS, ProjectWatchPage, ProjectsPage, ProjectsLabPage, PricingPage, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, FullServicePage });
+Object.assign(window, { ALL_PROJECTS, ProjectWatchPage, ProjectsPage, ProjectsLabPage, PricingPage, RetainerSection, MoreServicesSection, AboutPage, ContactPage, ImpressumPage, DatenschutzPage, MetaAdsPage, GoogleAdsPage, AiVisibilityPage, AiVideoPage, WerbefilmPage, ImagefilmPage, ProduktvideoPage, FullServicePage });

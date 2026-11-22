@@ -58,6 +58,7 @@ const Icons = {
   ArrowRight: (p) => <Icon {...p}><path d="M5 12h14M13 5l7 7-7 7"/></Icon>,
   ArrowDown: (p) => <Icon {...p}><path d="M12 5v14M5 12l7 7 7-7"/></Icon>,
   ChevronDown: (p) => <Icon {...p}><path d="M6 9l6 6 6-6"/></Icon>,
+  Shield: (p) => <Icon {...p}><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></Icon>,
   Calendar:  (p) => <Icon {...p}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></Icon>,
   Play:      (p) => <Icon {...p}><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></Icon>,
   Film:      (p) => <Icon {...p}><rect x="2" y="2" width="20" height="20" rx="2.18"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></Icon>,
@@ -185,6 +186,7 @@ function Nav({ route }) {
   useEffect(() => { setServicesOpen(false); }, [route]);
 
   const servicesChildren = [
+    { to: "services", label: "All services" },
     { to: "social-media-ads", label: "Social Media Ads" },
     { to: "search-ads", label: "Search Ads" },
     { to: "full-service", label: "Full Service" },
@@ -399,30 +401,102 @@ function CtaButtons({ slug, check = true }) {
 // ============================================
 const SHOW_DRAFTS = !/(^|\.)flowwestfilms\.de$/i.test(window.location.hostname);
 
-// Service guarantee for the retainers (DRAFT): conditional, about our work, never revenue.
-function GuaranteeDraft() {
-  if (!SHOW_DRAFTS) return null;
+// "Die Bessere-Ad-Garantie" (approved 2026-11-22). Hormozi-style conditional guarantee:
+// named, one clear outcome, conditions the client controls. About our work, never revenue.
+function Guarantee() {
   const conditions = [
     "Your ad account runs with at least €30 budget per day.",
     "The new ads go live within 7 days of delivery.",
     "We have access to your ad account.",
   ];
   return (
-    <div style={{ marginTop: 32, padding: 28, border: "1px dashed var(--fwf-orange)", borderRadius: 4, background: "rgba(255,140,40,0.04)" }}>
-      <div className="fwf-label" style={{ color: "var(--fwf-orange)", marginBottom: 14 }}>
-        Draft · only visible on staging · needs Florian's approval
+    <div className="fwf-card fwf-card-green fwf-guarantee" style={{ marginTop: 32, padding: 32, display: "grid", gridTemplateColumns: "auto 1fr", gap: 24, alignItems: "start" }}>
+      <div style={{ color: "var(--fwf-green)" }}><Icons.Shield size={40} /></div>
+      <div>
+        <div className="fwf-label" style={{ color: "var(--fwf-green)", marginBottom: 10 }}>Our guarantee</div>
+        <h3 className="fwf-display" style={{ fontSize: "clamp(28px, 3.4vw, 40px)", margin: "0 0 14px 0", fontWeight: 400, lineHeight: 1.05 }}>The Better-Ad Guarantee.</h3>
+        <p style={{ color: "#fff", fontSize: 17, lineHeight: 1.6, margin: "0 0 18px 0", maxWidth: 720 }}>
+          If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.
+        </p>
+        <div className="fwf-label" style={{ marginBottom: 8 }}>Conditions</div>
+        <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.7 }}>
+          {conditions.map((c) => <li key={c}>{c}</li>)}
+        </ul>
+        <p style={{ color: "var(--fwf-text-faint)", fontSize: 14, margin: 0 }}>
+          We guarantee our work, not your revenue.
+        </p>
       </div>
-      <h3 className="fwf-display" style={{ fontSize: 30, margin: "0 0 12px 0", fontWeight: 400 }}>Our guarantee</h3>
-      <p style={{ color: "#fff", fontSize: 16, lineHeight: 1.6, margin: "0 0 16px 0", maxWidth: 680 }}>
-        If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.
-      </p>
-      <div className="fwf-label" style={{ marginBottom: 8 }}>Conditions</div>
-      <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, color: "var(--fwf-text-mute)", fontSize: 15, lineHeight: 1.7 }}>
-        {conditions.map((c) => <li key={c}>{c}</li>)}
-      </ul>
-      <p style={{ color: "var(--fwf-text-faint)", fontSize: 14, margin: 0 }}>
-        We guarantee our work, not your revenue.
-      </p>
+    </div>
+  );
+}
+
+// ============================================
+// Time-boxed Sprint deals (Berlin time). One source for the homepage and /services.
+// Each phase ends by itself; after the last one the block disappears and the packages
+// fall back to their normal sizes. The funnel must say the same (fix it there too).
+// ============================================
+const SPRINT_DEALS = [
+  {
+    id: "black-friday", ends: "2026-12-02T23:59:59+01:00",
+    eyebrow: "Black Friday deal", badge: "Black Friday",
+    titleA: "8 ad videos", titleB: "+ 3 free.",
+    line: "In the Minimum package: 8 ad videos plus 3 more at no extra cost.",
+    notes: ["Only 15 spots in this deal", "Ends 2 December, 23:59"],
+    minimumCount: "8 ad videos + 3 free",
+  },
+  {
+    id: "new-year", ends: "2026-12-20T23:59:59+01:00",
+    eyebrow: "New Year Sprint",
+    titleA: "Book by 20 December.", titleB: "Your new ads run in January.",
+    notes: ["Booking deadline: 20 December, 23:59"],
+  },
+];
+
+function useNow(ms) {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), ms);
+    return () => clearInterval(id);
+  }, [ms]);
+  return now;
+}
+function currentDeal(now) {
+  return SPRINT_DEALS.find((d) => now < Date.parse(d.ends)) || null;
+}
+
+function SprintDeal() {
+  const now = useNow(1000);
+  const deal = currentDeal(now);
+  if (!deal) return null;
+  const left = Math.max(0, Date.parse(deal.ends) - now);
+  const parts = [
+    [Math.floor(left / 86400000), "Days"],
+    [Math.floor(left / 3600000) % 24, "Hours"],
+    [Math.floor(left / 60000) % 60, "Minutes"],
+    [Math.floor(left / 1000) % 60, "Seconds"],
+  ];
+  return (
+    <div className="fwf-card fwf-card-pink fwf-deal" style={{ padding: 28, margin: "0 0 32px 0", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 28 }}>
+      <div style={{ flex: "1 1 340px" }}>
+        <span className="fwf-badge fwf-badge-pink" style={{ marginBottom: 14, display: "inline-block" }}>{deal.eyebrow}</span>
+        <h3 className="fwf-display" style={{ fontSize: "clamp(30px, 3.6vw, 44px)", margin: "0 0 10px 0", fontWeight: 400, lineHeight: 1.05 }}>
+          {deal.titleA} <em className="fwf-display-italic" style={{ color: "var(--fwf-pink)" }}>{deal.titleB}</em>
+        </h3>
+        {deal.line && <p style={{ color: "#fff", fontSize: 16, lineHeight: 1.55, margin: "0 0 10px 0" }}>{deal.line}</p>}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 18px" }}>
+          {deal.notes.map((n) => (
+            <span key={n} className="fwf-label" style={{ color: "var(--fwf-pink)" }}>{n}</span>
+          ))}
+        </div>
+      </div>
+      <div role="timer" aria-live="off" style={{ display: "flex", gap: 8, flex: "1 1 260px", maxWidth: 330 }}>
+        {parts.map(([v, label]) => (
+          <div key={label} style={{ flex: "1 1 0", minWidth: 0, padding: "12px 2px", border: "1px solid var(--fwf-hairline)", textAlign: "center" }}>
+            <div className="fwf-display" style={{ fontSize: 34, lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{String(v).padStart(2, "0")}</div>
+            <div style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 11, letterSpacing: "0.02em", marginTop: 6 }}>{label}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -465,8 +539,8 @@ function FinalCTA({ headline, sub }) {
 
 // ============================================
 // AI Creative Sprint packages (home + /services). Same names, sizes and wording as
-// the funnel's packages (start.flowwestfilms.de#pakete). No prices here on purpose:
-// the funnel holds the current offer and its deadline, this site links to it.
+// the funnel's packages (start.flowwestfilms.de#pakete). No prices here on purpose.
+// While a deal with minimumCount runs (SPRINT_DEALS), the Minimum card shows the bonus.
 // ============================================
 const SPRINT_TIERS = [
   {
@@ -487,10 +561,14 @@ const SPRINT_TIERS = [
 ];
 
 function SprintPackages({ slug }) {
+  const deal = currentDeal(useNow(60000));
   return (
     <div>
       <div className="fwf-sprint-tiers">
-        {SPRINT_TIERS.map((t) => (
+        {SPRINT_TIERS.map((t0) => {
+          const dealTier = t0.name === "Minimum" && deal && deal.minimumCount;
+          const t = dealTier ? { ...t0, count: deal.minimumCount, badge: deal.badge || deal.eyebrow } : t0;
+          return (
           <div key={t.name} className={"fwf-card " + (t.highlight ? "fwf-card-pink fwf-sprint-tier-highlight" : "fwf-card-purple")} style={{ padding: 32, display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <h3 className="fwf-display" style={{ fontSize: 34, margin: 0, fontWeight: 400, lineHeight: 1 }}>{t.name}</h3>
@@ -507,7 +585,8 @@ function SprintPackages({ slug }) {
               ))}
             </ul>
           </div>
-        ))}
+          );
+        })}
       </div>
       <p style={{ color: "var(--fwf-text-faint)", fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.08em", lineHeight: 1.7, margin: "24px 0 0 0" }}>
         Shoot day included · Not included: travel, on-site equipment, ad spend
@@ -872,4 +951,4 @@ function VideoSchema({ items }) {
 }
 
 // Expose for other files
-Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, SHOW_DRAFTS, GuaranteeDraft, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });
+Object.assign(window, { funnelHref, VideoSchema, Logo, Crosshairs, Icons, useRoute, Link, Nav, Footer, CtaButtons, SHOW_DRAFTS, Guarantee, SprintDeal, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, BunnyPlayer, WhyFwfSection });

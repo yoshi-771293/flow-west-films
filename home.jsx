@@ -1,4 +1,4 @@
-/* global React, Icons, Link, Crosshairs, Logo, CtaButtons, FinalCTA, SprintPackages, TrustMarquee, TypewriterWord, VideoModal, VideoSchema */
+/* global React, Icons, Link, Crosshairs, Logo, CtaButtons, FinalCTA, SprintPackages, SprintDeal, Guarantee, RetainerSection, MoreServicesSection, TrustMarquee, TypewriterWord, VideoModal, VideoSchema */
 const { useState: useState_h, useEffect: useEffect_h, useRef: useRef_h } = React;
 
 // ============================================
@@ -476,8 +476,8 @@ function HomePage() {
         )
       ),
 
-      /* THE OFFER — one product, the AI Creative Sprint, right after the position.
-         The other services live on /services and in the footer (crawlable links). */
+      /* THE OFFER — the AI Creative Sprint with the running deal (countdown) and the
+         guarantee right next to it. Retainers and more services follow after the work. */
       React.createElement("section", { className: "fwf-section", id: "sprint", style: { borderTop: "1px solid var(--fwf-hairline)", position: "relative" } },
         React.createElement("div", { className: "fwf-container" },
           React.createElement("div", { className: "fwf-section-label" },
@@ -495,11 +495,9 @@ function HomePage() {
               return React.createElement("span", { key: f, className: "fwf-badge fwf-badge-pink" }, f);
             })
           ),
+          React.createElement(SprintDeal),
           React.createElement(SprintPackages, { slug: "home" }),
-          React.createElement("p", { style: { color: "var(--fwf-text-mute)", fontSize: 15, margin: "28px 0 0 0" } },
-            "Want us to run your ads as well? ",
-            React.createElement(Link, { to: "services", style: { color: "var(--fwf-pink)", textDecoration: "none" } }, "Growth Retainer & Premium Partner →")
-          )
+          React.createElement(Guarantee)
         )
       ),
 
@@ -604,12 +602,16 @@ function HomePage() {
         )
       ),
 
-      /* CLIENTS — Nike, XPRIZE, Eibl, Schmolke, Radisson Blu: who we work with, stated plainly. */
+      /* RETAINERS + MORE SERVICES — same sections as /services (pages.jsx). */
+      React.createElement(RetainerSection),
+      React.createElement(MoreServicesSection),
+
+      /* CLIENTS — Nike, XPRIZE, Eibl, Schmolke, Radisson Blu, WGV: who we work with, stated plainly. */
       React.createElement("section", { className: "fwf-section", style: { borderTop: "1px solid var(--fwf-hairline)" } },
         React.createElement("div", { className: "fwf-container" },
           React.createElement("div", { className: "fwf-section-label" },
             React.createElement("span", { className: "fwf-section-label-line" }),
-            React.createElement("span", { className: "fwf-eyebrow" }, "Clients")
+            React.createElement("span", { className: "fwf-eyebrow" }, "Clients we work with")
           ),
           React.createElement("h2", { className: "fwf-display", style: { fontSize: "clamp(40px, 5vw, 64px)", margin: "0 0 56px 0", maxWidth: 780, textWrap: "balance" } },
             "Who we ", React.createElement("em", { className: "fwf-display-italic", style: { color: "var(--fwf-pink)" } }, "work with.")
@@ -636,7 +638,10 @@ function HomePage() {
                 i: React.createElement(Icons.BarChart, { size: 22 }), c: "pink", t: "850K organic views, one post, zero ad spend",
                 d: "Organic reach for Radisson Blu, created with agency partner Viral House — story-first content that replaced typical ad formats and took off on its own.",
               },
-              /* Sixth slot intentionally empty — Flow to decide what goes here. */
+              {
+                i: React.createElement(Icons.TrendUp, { size: 22 }), c: "purple", t: "WGV Versicherung",
+                d: "Conversion-optimized ad creative for their private liability insurance: click-through rate went from 3% to 10%.",
+              },
             ].map((p, i) =>
               React.createElement("div", { key: i, className: "fwf-card fwf-card-" + p.c, style: { padding: 28 } },
                 React.createElement("div", { style: { color: "var(--fwf-" + p.c + ")", marginBottom: 18 } }, p.i),

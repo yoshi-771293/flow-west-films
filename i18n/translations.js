@@ -931,8 +931,8 @@ window.FWF_TRANSLATIONS = {
     "Latest work": "Neueste Arbeiten",
     "Like what you see?": "Gefällt Ihnen, was Sie sehen?",
     "Let's talk about your brand.": "Sprechen wir über Ihre Marke.",
-    /* ---- Sales-logic cleanup 2026-11: guarantee DRAFT (staging only) ---- */
-    "Draft · only visible on staging · needs Florian's approval": "Entwurf · nur auf Staging sichtbar · Freigabe durch Florian nötig",
+    /* ---- Guarantee (approved 2026-11-22) ---- */
+    "The Better-Ad Guarantee.": "Die Bessere-Ad-Garantie.",
     "Our guarantee": "Unsere Garantie",
     "If within 30 days of going live we have not found an ad that beats your current best ad on cost per lead, we produce the next round of 10 ad videos at no extra cost.": "Wenn wir innerhalb von 30 Tagen nach dem Livegang keine Ad gefunden haben, die Ihre bisher beste Ad bei den Kosten pro Lead schlägt, produzieren wir die nächste Runde von 10 Ad-Videos ohne Aufpreis.",
     "Conditions": "Voraussetzungen",
@@ -956,6 +956,25 @@ window.FWF_TRANSLATIONS = {
     "work with.": "arbeiten.",
     "Weinzeit, a wine festival touring all of Germany, went from": "Weinzeit, ein Weinfest, das durch ganz Deutschland tourt, steigerte den ROAS von",
     "In numbers": "In Zahlen",
+    /* ---- Sprint deals + homepage 2026-11-22 ---- */
+    "All services": "Alle Leistungen",
+    "Black Friday deal": "Black-Friday-Deal",
+    "8 ad videos": "8 Ad-Videos",
+    "+ 3 free.": "+ 3 gratis.",
+    "In the Minimum package: 8 ad videos plus 3 more at no extra cost.": "Im Minimum-Paket: 8 Ad-Videos plus 3 weitere ohne Aufpreis.",
+    "Only 15 spots in this deal": "Nur 15 Plätze in diesem Deal",
+    "Ends 2 December, 23:59": "Endet am 2. Dezember, 23:59 Uhr",
+    "8 ad videos + 3 free": "8 Ad-Videos + 3 gratis",
+    "New Year Sprint": "Neujahrs-Sprint",
+    "Book by 20 December.": "Bis 20. Dezember buchen.",
+    "Your new ads run in January.": "Ihre neuen Ads laufen im Januar.",
+    "Booking deadline: 20 December, 23:59": "Buchungsschluss: 20. Dezember, 23:59 Uhr",
+    "Days": "Tage",
+    "Hours": "Stunden",
+    "Minutes": "Minuten",
+    "Seconds": "Sekunden",
+    "Clients we work with": "Kunden, mit denen wir arbeiten",
+    "Conversion-optimized ad creative for their private liability insurance: click-through rate went from 3% to 10%.": "Conversion-optimierte Ad Creatives für ihre Privathaftpflicht: Die Klickrate stieg von 3 % auf 10 %.",
     /* ---- Hero strip ---- */
     "Ad videos": "Ad-Videos"
   }
