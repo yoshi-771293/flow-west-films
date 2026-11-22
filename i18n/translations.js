@@ -962,7 +962,7 @@ window.FWF_TRANSLATIONS = {
     "8 ad videos": "8 Ad-Videos",
     "+ 3 free.": "+ 3 gratis.",
     "In the Minimum package: 8 ad videos plus 3 more at no extra cost.": "Im Minimum-Paket: 8 Ad-Videos plus 3 weitere ohne Aufpreis.",
-    "Only 15 spots in this deal": "Nur 15 Plätze in diesem Deal",
+    "Only 7 spots in this deal": "Nur 7 Plätze in diesem Deal",
     "Ends 2 December, 23:59": "Endet am 2. Dezember, 23:59 Uhr",
     "8 ad videos + 3 free": "8 Ad-Videos + 3 gratis",
     "New Year Sprint": "Neujahrs-Sprint",

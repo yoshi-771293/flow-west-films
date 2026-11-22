@@ -441,7 +441,7 @@ const SPRINT_DEALS = [
     eyebrow: "Black Friday deal", badge: "Black Friday",
     titleA: "8 ad videos", titleB: "+ 3 free.",
     line: "In the Minimum package: 8 ad videos plus 3 more at no extra cost.",
-    notes: ["Only 15 spots in this deal", "Ends 2 December, 23:59"],
+    notes: ["Only 7 spots in this deal", "Ends 2 December, 23:59"],
     minimumCount: "8 ad videos + 3 free",
   },
   {
