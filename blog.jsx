@@ -3,10 +3,28 @@
 const BLOG_MAX = 720;
 
 function blogPosts() { return window.FWF_POSTS || []; }
-function blogFmtDate(iso) {
+function blogLang() { return (window.FWF_getLanguage && window.FWF_getLanguage()) === "en" ? "en" : "de"; }
+function blogFmtDate(iso, lang) {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(lang === "en" ? "en-GB" : "de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
+// UI strings per language. Post text itself comes from post.en (when present) in English mode.
+const BLOG_UI = {
+  de: {
+    indexH1: "Wissen aus der Produktion",
+    indexP: "Was KI-Werbefilme kosten, wie ein Spot entsteht und warum so viel KI-Werbung billig aussieht. Direkt aus der Arbeit bei Flow West Films.",
+    readMin: "Min. Lesezeit", shortAnswer: "Kurzantwort", faq: "Häufige Fragen", more: "Weiterlesen",
+    ctaLink: "Mehr zu KI-Videoproduktion bei Flow West Films →", germanOnly: "", germanOnlyNote: "",
+  },
+  en: {
+    indexH1: "Insights from production",
+    indexP: "What AI commercials cost, how a spot comes together and why so much AI advertising looks cheap. Straight from the work at Flow West Films.",
+    readMin: "min read", shortAnswer: "Short answer", faq: "Frequently asked questions", more: "Keep reading",
+    ctaLink: "More about AI video production at Flow West Films →", germanOnly: "in German", germanOnlyNote: "This article is currently only available in German.",
+  },
+};
+// The post as shown in the active language: English fields override the German ones when they exist.
+function blogLoc(post, lang) { return lang === "en" && post.en ? Object.assign({}, post, post.en) : post; }
 
 // A paragraph is a string, or an array of strings and inline links ({ to, text }).
 function blogInline(p) {
@@ -28,6 +46,9 @@ function BlogBlocks({ blocks }) {
 }
 
 function BlogIndexPage() {
+  const lang = blogLang();
+  const U = BLOG_UI[lang];
+  const L = (p) => blogLoc(p, lang);
   // Newest first; posts sharing a date keep "added later = newer" (blog-data.js appends new posts at the end).
   const posts = blogPosts().map((p, i) => [p, i]).sort((a, b) => b[0].date.localeCompare(a[0].date) || b[1] - a[1]).map(([p]) => p);
   return (
@@ -40,10 +61,10 @@ function BlogIndexPage() {
             <span className="fwf-eyebrow">Blog</span>
           </div>
           <h1 className="fwf-display fwf-fade-up fwf-d2" style={{ fontSize: "clamp(40px, 6vw, 80px)", margin: "0 0 24px 0", lineHeight: 1.02, maxWidth: 900, textWrap: "balance" }}>
-            Wissen aus der Produktion
+            {U.indexH1}
           </h1>
           <p className="fwf-fade-up fwf-d3" style={{ color: "var(--fwf-text-mute)", fontSize: 20, lineHeight: 1.55, maxWidth: 640, margin: 0 }}>
-            Was KI-Werbefilme kosten, wie ein Spot entsteht und warum so viel KI-Werbung billig aussieht. Direkt aus der Arbeit bei Flow West Films.
+            {U.indexP}
           </p>
         </div>
       </section>
@@ -51,9 +72,9 @@ function BlogIndexPage() {
         <div className="fwf-container" style={{ display: "grid", gap: 20, maxWidth: 900 }}>
           {posts.map((p) => (
             <Link key={p.slug} to={"blog/" + p.slug} className="fwf-card fwf-card-purple" style={{ padding: 32, display: "block", textDecoration: "none", color: "inherit" }}>
-              <div className="fwf-eyebrow" style={{ marginBottom: 12 }}>{p.eyebrow} · {blogFmtDate(p.date)} · {p.readMin} Min. Lesezeit</div>
-              <h2 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: "0 0 12px 0", lineHeight: 1.15 }}>{p.title}</h2>
-              <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: 0 }}>{p.metaDesc}</p>
+              <div className="fwf-eyebrow" style={{ marginBottom: 12 }}>{L(p).eyebrow} · {blogFmtDate(p.date, lang)} · {p.readMin} {U.readMin}{lang === "en" && !p.en ? " · " + U.germanOnly : ""}</div>
+              <h2 className="fwf-display" style={{ fontSize: "clamp(24px, 3vw, 34px)", margin: "0 0 12px 0", lineHeight: 1.15 }}>{L(p).title}</h2>
+              <p style={{ color: "var(--fwf-text-mute)", fontSize: 16, lineHeight: 1.6, margin: 0 }}>{L(p).metaDesc}</p>
             </Link>
           ))}
         </div>
@@ -66,8 +87,12 @@ function BlogPostPage() {
   const [route] = useRoute();
   const slug = route.replace(/^blog\//, "");
   const posts = blogPosts();
-  const post = posts.find((p) => p.slug === slug);
-  if (!post) return <BlogIndexPage />;
+  const raw = posts.find((p) => p.slug === slug);
+  if (!raw) return <BlogIndexPage />;
+  const lang = blogLang();
+  const U = BLOG_UI[lang];
+  const post = blogLoc(raw, lang);
+  const L = (p) => blogLoc(p, lang);
   const related = (post.related || []).map((s) => posts.find((p) => p.slug === s)).filter(Boolean);
   return (
     <main>
@@ -84,15 +109,16 @@ function BlogPostPage() {
               {post.title}
             </h1>
             <div className="fwf-fade-up fwf-d3" style={{ fontFamily: "var(--fwf-mono)", fontSize: 12, letterSpacing: "0.12em", color: "var(--fwf-text-faint)", textTransform: "uppercase" }}>
-              Florian Kotulla · <time dateTime={post.date}>{blogFmtDate(post.date)}</time> · {post.readMin} Min. Lesezeit
+              Florian Kotulla · <time dateTime={post.date}>{blogFmtDate(post.date, lang)}</time> · {post.readMin} {U.readMin}
             </div>
           </div>
         </section>
 
         <section style={{ paddingBottom: 40 }}>
           <div className="fwf-container" style={{ maxWidth: BLOG_MAX + 80 }}>
+            {lang === "en" && !raw.en && <p style={{ fontSize: 15, color: "var(--fwf-text-faint)", margin: "0 0 20px 0" }}>{U.germanOnlyNote}</p>}
             <div className="fwf-card fwf-card-pink" style={{ padding: 28, marginBottom: 36 }}>
-              <div className="fwf-eyebrow" style={{ color: "var(--fwf-pink)", marginBottom: 10 }}>Kurzantwort</div>
+              <div className="fwf-eyebrow" style={{ color: "var(--fwf-pink)", marginBottom: 10 }}>{U.shortAnswer}</div>
               <p style={{ fontSize: 19, lineHeight: 1.6, margin: 0, color: "var(--fwf-text)" }}>{post.answer}</p>
             </div>
             {(post.intro || []).map((t, i) => (
@@ -109,7 +135,7 @@ function BlogPostPage() {
 
         <section style={{ paddingBottom: 40 }}>
           <div className="fwf-container" style={{ maxWidth: BLOG_MAX + 80 }}>
-            <h2 className="fwf-display" style={{ fontSize: "clamp(26px, 3.4vw, 38px)", margin: "0 0 24px 0" }}>Häufige Fragen</h2>
+            <h2 className="fwf-display" style={{ fontSize: "clamp(26px, 3.4vw, 38px)", margin: "0 0 24px 0" }}>{U.faq}</h2>
             {post.faq.map(([q, a]) => (
               <div key={q} style={{ marginBottom: 22 }}>
                 <h3 style={{ fontSize: 20, margin: "0 0 8px 0", color: "var(--fwf-text)" }}>{q}</h3>
@@ -129,7 +155,7 @@ function BlogPostPage() {
               <CtaButtons />
             </div>
             <div style={{ marginTop: 20, fontSize: 15 }}>
-              <Link to={(post.cta.link || {}).to || "ki-videoproduktion"} style={{ color: "var(--fwf-purple)" }}>{(post.cta.link || {}).label || "Mehr zu KI-Videoproduktion bei Flow West Films →"}</Link>
+              <Link to={(post.cta.link || {}).to || "ki-videoproduktion"} style={{ color: "var(--fwf-purple)" }}>{(post.cta.link || {}).label || U.ctaLink}</Link>
             </div>
           </div>
         </div>
@@ -138,12 +164,12 @@ function BlogPostPage() {
       {related.length > 0 && (
         <section style={{ paddingBottom: 120 }}>
           <div className="fwf-container" style={{ maxWidth: BLOG_MAX + 80 }}>
-            <div className="fwf-eyebrow" style={{ marginBottom: 16 }}>Weiterlesen</div>
+            <div className="fwf-eyebrow" style={{ marginBottom: 16 }}>{U.more}</div>
             <div style={{ display: "grid", gap: 16 }}>
               {related.map((p) => (
                 <Link key={p.slug} to={"blog/" + p.slug} className="fwf-card fwf-card-purple" style={{ padding: 24, display: "block", textDecoration: "none", color: "inherit" }}>
-                  <div className="fwf-eyebrow" style={{ marginBottom: 8 }}>{p.eyebrow}</div>
-                  <div className="fwf-display" style={{ fontSize: 22, lineHeight: 1.2 }}>{p.title}</div>
+                  <div className="fwf-eyebrow" style={{ marginBottom: 8 }}>{L(p).eyebrow}{lang === "en" && !p.en ? " · " + U.germanOnly : ""}</div>
+                  <div className="fwf-display" style={{ fontSize: 22, lineHeight: 1.2 }}>{L(p).title}</div>
                 </Link>
               ))}
             </div>

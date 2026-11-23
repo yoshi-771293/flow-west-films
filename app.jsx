@@ -157,7 +157,7 @@ function App() {
     let entry = ROUTE_META[route];
     if (!entry && route.indexOf("blog/") === 0) {
       const post = (window.FWF_POSTS || []).find((p) => "blog/" + p.slug === route);
-      if (post) entry = { de: { title: post.metaTitle, desc: post.metaDesc }, en: { title: post.metaTitle, desc: post.metaDesc } };
+      if (post) { const e = post.en || {}; entry = { de: { title: post.metaTitle, desc: post.metaDesc }, en: { title: e.metaTitle || post.metaTitle, desc: e.metaDesc || post.metaDesc } }; }
     }
     if (!entry && route.indexOf("projects/") === 0 && window.FWF_WATCH) {
       const p = window.FWF_WATCH.find(route.slice("projects/".length));
