@@ -489,5 +489,114 @@ window.FWF_POSTS = [
     ],
     related: ["warum-ki-werbung-billig-aussieht", "was-kostet-ein-ki-werbefilm", "done-for-you-marketing-agentur-vs-einmalprojekt", "unternehmensfilm-stuttgart"],
     cta: { h: "Du suchst eine Meta Ads Agentur in Stuttgart?", sub: "30 Minuten Call. Wir klären, was Deine Anzeigen bremst.", link: { to: "social-media-ads", label: "Mehr zu Meta Ads und Ad Creatives von Flow West Films →" } }
+  },
+  {
+    slug: "marketing-aus-sicht-des-kunden",
+    title: "Marketing aus Sicht des Kunden: Was Dein Käufer denkt, bevor er bucht",
+    metaTitle: "Videoproduktion Stuttgart: Marketing aus Kundensicht | Flow West Films",
+    metaDesc: "Marketing aus Kundensicht: 8 Bausteine und eine Checkliste, die zeigen, was Dein Käufer denkt, bevor er eine Videoproduktion in Stuttgart bucht.",
+    eyebrow: "Marketing",
+    date: "2026-11-23",
+    readMin: 7,
+    answer: "Marketing wirkt, wenn Du es mit den Augen Deines Kunden planst. Er kauft keinen Film, sondern einen Zustand. Still fragt er sich, ob er Dir trauen kann, was es kostet und was passiert, wenn es schiefgeht. Wer diese Fragen beantwortet, bevor der Kunde sie stellt, gewinnt den Auftrag. Acht Bausteine zeigen, wie.",
+    intro: ["Die meisten Websites erzählen von der Firma: Gründungsjahr, Leistungen, Team. Dein Kunde liest etwas anderes. Er prüft, ob hier sein Problem gelöst wird und ob er mit der Entscheidung gut dasteht.", "Dieser Beitrag dreht die Perspektive um. Er stützt sich auf Chris Dos Buch „Pocket Full of Do“, in dem Do Lehren seiner Lehrer sammelt, etwa von Blair Enns und Seth Godin, sowie auf „Building a StoryBrand“ und „Positioning“. Am Ende steht eine Checkliste, mit der Du Dein eigenes Marketing aus Kundensicht prüfst."],
+    sections: [
+      {
+        h: "1. Dein Kunde kauft einen Zustand, kein Produkt",
+        blocks: [
+          { p: "Seth Godins Beispiel ist der Bohrer. Das Merkmal: eine diamantbesetzte Spitze. Der Vorteil: Sie bohrt durch mehr Materialien. Der Nutzen: Der Kunde bringt sein Heimwerkerprojekt zu Ende und ist stolz darauf. Gekauft wird der Nutzen." },
+          { p: "Übertrag das auf Video. Das Merkmal: 15 Kurzvideos mit je 15 bis 30 Sekunden. Der Vorteil: Du kannst mehrere Varianten gegeneinander testen. Der Nutzen: Du weißt, welche Botschaft verkauft, statt es zu raten. Die meisten Seiten hören beim Merkmal auf." },
+          { p: "Hinter dem Nutzen steht oft ein emotionaler Wunsch: Ruhe, Stolz, das Gefühl, richtig entschieden zu haben. Do schreibt, dass solche Wünsche häufig mehr wiegen als die rationalen Anforderungen. Wer nur Leistungen aufzählt, spricht an dieser Stelle nicht mit seinem Kunden." }
+        ]
+      },
+      {
+        h: "2. Schreib den inneren Monolog Deines Kunden auf",
+        blocks: [
+          { p: "Do beginnt sein Buch mit einer Lektion aus der Sicht des Kunden: Kenn mich, erkenne, was ich brauche, mach mir das Leben leicht, achte auf mich, belohne mich. Dafür musst Du Deinen Kunden so genau kennen, dass Du ihn in einer Menge erkennst. Seine Markenwahl verrät ihn. Wer einen Audi A8 fährt, mag Luxus, mag es aber nicht, damit anzugeben. Marken sind Selbstporträts." },
+          { p: "Schreib auf, was ein Geschäftsführer in Stuttgart denkt, wenn er über ein Video für sein Unternehmen nachdenkt:" },
+          { ul: [
+            "Was kostet das, und ist das fair?",
+            "Kann ich dem Anbieter trauen, oder verspricht er nur?",
+            "Was passiert, wenn das Ergebnis nicht gefällt?",
+            "Wie viel Zeit kostet mich das selbst?",
+            "Wie sieht das aus, wenn mein Team oder mein Partner es sieht?",
+            "Was habe ich am Ende in der Hand, das ich nutzen kann?"
+          ] },
+          { p: "Beantworte jede dieser Fragen auf Deiner Seite, bevor er sie stellen muss. Hilfreich ist es, das Gefühl beim Namen zu nennen: Du bist nicht unentschlossen. Du willst nur keine falsche Entscheidung treffen. Wer sich verstanden fühlt, verteidigt sich weniger." }
+        ]
+      },
+      {
+        h: "3. Sei dort, wo er sucht, und gib ihm einen Grund",
+        blocks: [
+          { p: "Dale Carnegie mochte Erdbeeren mit Sahne. Weil Fische aber Würmer mögen, köderte er den Haken mit Würmern. Frag also nicht, was Du anbieten willst, sondern was der Kunde sucht." },
+          { p: "Dazu gehören zwei Schritte. Erstens: Wo sucht er? Bei Google nach „Videoproduktion Stuttgart“ oder „Meta Ads Agentur Stuttgart“, auf Instagram oder bei KI-Assistenten, die er nach Empfehlungen fragt. Zweitens: Was passiert, wenn er auf Deiner Seite landet? Eine Galerie sagt nur, dass Du es kannst. Ein Grund sagt, warum er gerade Dich wählen sollte." },
+          { p: "Eine Lehre aus der Werbeproduktion kommt hinzu: Menschen geben ihr Geld nach einer Anzeige kaum noch aus, weil sie eine Anzeige sehen. Sie geben es für eine Kultur aus, zu der sie gehören wollen. Ein Spot, der wie ein Preisschild mit Button aussieht, wird übersprungen. Ein Spot, der wie ein Filmausschnitt wirkt, bleibt hängen." }
+        ]
+      },
+      {
+        h: "4. Er sucht einen Spezialisten, keinen Allrounder",
+        blocks: [
+          { p: "Do sagt es so: Du bestellst keine Pizza an der Sushi-Bar. Wenn ein Problem schwierig wird, sucht der Kunde jemanden, der genau dieses Problem löst. Ries und Trout beschreiben denselben Effekt: Der Kopf behält pro Kategorie nur wenige Namen. Wer alles ein bisschen anbietet, taucht in keiner Liste auf." },
+          { p: "Das verlangt ein Opfer. Wenn Du Dich klar positionierst, sprichst Du einige Interessenten nicht mehr an. Dafür verstehen die anderen sofort, dass Du für sie gemeint bist. Frag Dich: Für wen genau bist Du die erste Wahl, und welchen einen Satz soll Dein Kunde über Dich weitersagen können?" }
+        ]
+      },
+      {
+        h: "5. Er vergleicht, was er kennt: Setz den Anker",
+        blocks: [
+          { p: "Ohne Kontext ist nichts teuer oder günstig. Wer keine Zahl nennt, überlässt den Anker dem Wettbewerb, nämlich dem letzten Angebot, das Dein Kunde bekommen hat. Do rät deshalb, die erste Zahl selbst zu nennen." },
+          { p: "Darum veröffentlichen wir Spannen. Der Einstieg liegt zwischen 2.000 und 5.000 €. Ein Content-Paket mit rund 15 Kurzvideos startet bei etwa 2.500 €. Hybride Produktionen mit Dreh vor Ort landen eher zwischen 5.000 und 10.000 €. Die Details findest Du im Beitrag „Was kostet ein KI-Werbefilm?“." },
+          { p: "Ein zweiter Gedanke aus dem Buch: Bei einem einzigen Preis vergleicht der Kunde Dich mit anderen Anbietern. Bei drei Optionen vergleicht er Dich mit Dir selbst. Und wenn jemand sagt, er habe kein Budget, heißt das selten, dass kein Geld da ist. Meist fließt es in etwas, das ihm wichtiger ist. Frag, was wichtig genug wäre." }
+        ]
+      },
+      {
+        h: "6. Wo Du nichts erklärst, erfindet er eine Geschichte",
+        blocks: [
+          { p: "Do hielt die Finanzen seines Studios geheim. Die Folge: Seine Manager gaben zu viel aus, weil sie die Budgets für willkürlich hielten. Als er die Zahlen offenlegte, änderte sich das Verhalten sofort. Fehlende Information füllen Menschen mit Vermutungen, und die sind selten besser als die Wahrheit." },
+          { p: "Für Deine Website heißt das: Eine Zahl ohne Kontext wirkt verdächtig. Nenn immer die Zahl, den Zusammenhang und die Quelle. Ein Beispiel ist unser KFC-Spot. Er ist ein freies Projekt ohne Markenauftrag, und das schreiben wir dazu. So zeigt er Können und Eigeninitiative. Unmarkiert würde er Misstrauen wecken, auch gegenüber den echten Kundenprojekten." }
+        ]
+      },
+      {
+        h: "7. Er will diagnostiziert werden, nicht angepitcht",
+        blocks: [
+          { p: "Do vergleicht gute Beratung mit einem Arztbesuch. Der Patient sagt, warum er kommt. Der Arzt fragt nach, bildet eine Vermutung und lässt sie prüfen. Erst dann folgt die Behandlung. Wer ein Rezept schreibt, bevor er untersucht hat, handelt nicht wie ein Experte." },
+          { p: "Fragen führen das Gespräch. Gute Fragen sind: Was treibt die Anfrage gerade an? Was passiert, wenn Ihr nichts ändert? Was kostet Dich das heute, in Geld, Zeit und Nerven? Diese letzte Frage ist tiefer als „Warum hast Du noch nicht angefangen?“, weil sie die Kosten des Nichtstuns sichtbar macht." },
+          { p: "Bei uns beginnt ein Gespräch deshalb mit Fragen, nicht mit einem Angebot. Auch unser Ad-Check auf start.flowwestfilms.de folgt dieser Logik: kostenlos, unverbindlich, in etwa 90 Sekunden." }
+        ]
+      },
+      {
+        h: "8. Er will nicht überrascht werden",
+        blocks: [
+          { p: "Do rechnet mit einer einfachen Formel: Zufriedenheit ist die Wirklichkeit geteilt durch die Erwartung. Wer zu viel verspricht, muss beim Liefern scheitern. Versprich weniger, liefere mehr." },
+          { p: "Dazu gehört, vorab zu sagen, was der Kunde bekommt. Bei uns sind das ein Festpreis nach dem 30-Minuten-Call, Nutzungsrechte für Paid, Organic, Sales und interne Nutzung und vorher festgelegte Korrekturschleifen. Wer das vor dem Kauf weiß, erlebt nach dem Kauf keine bösen Überraschungen." }
+        ]
+      },
+      {
+        h: "Die Checkliste: Dein Marketing durch die Augen Deines Kunden",
+        blocks: [
+          { p: "Geh Deine Website und Deine Anzeigen mit diesen Fragen durch:" },
+          { ol: [
+            "Beschreibst Du den Nutzen für den Kunden oder nur Deine Leistung?",
+            "Beantwortet die Seite die sechs stillen Fragen, ohne dass er anrufen muss?",
+            "Findet er Dich dort, wo er sucht, und bekommt er sofort einen Grund, Dich zu wählen?",
+            "Ist klar, für wen Du die erste Wahl bist?",
+            "Hast Du eine Preisspanne genannt, bevor es ein anderer tut?",
+            "Hat jede Zahl und jedes Beispiel einen Kontext?",
+            "Fragst Du, bevor Du anbietest?",
+            "Versprichst Du nur, was Dein Prozess jedes Mal liefert?"
+          ] },
+          { p: "Schon die Antworten auf zwei oder drei dieser Fragen zeigen Dir, wo Dein Kunde heute abspringt." },
+          { p: "Marketing aus Kundensicht ist keine Technik, sondern eine Haltung. Du beantwortest die Fragen, die Dein Kunde ohnehin stellt. Je früher Du das tust, desto weniger Reibung gibt es bis zum Anruf." }
+        ]
+      }
+    ],
+    faq: [
+      ["Was bedeutet Marketing aus Kundensicht?", "Du planst Botschaft, Angebot und Ablauf von der Frage aus, was Dein Kunde denkt, fühlt und braucht, nicht von der Frage, was Du anbieten möchtest. Der Kunde ist die Hauptfigur, Du bist der Berater."],
+      ["Wie finde ich heraus, was meine Kunden denken?", "Frag bestehende Kunden, warum sie Dich statt eines anderen Anbieters gewählt haben, und frag Interessenten, die abgesprungen sind, wofür sie sich entschieden haben. Schreib ihre Worte wörtlich auf. Sie sind Dein bestes Rohmaterial für Texte."],
+      ["Worauf achte ich bei der Wahl einer Videoproduktion in Stuttgart?", "Auf Ergebnisse statt Showreel, auf eine Preisspanne vorab, auf klare Nutzungsrechte und festgelegte Korrekturschleifen. Außerdem darauf, ob der Anbieter erst fragt und dann anbietet."],
+      ["Muss ich Preise auf meiner Website nennen?", "Nicht zwingend. Eine Spanne setzt aber den Anker, bevor es ein anderer tut, und filtert Anfragen heraus, die nicht passen. Auf unseren Seiten nennen wir keine Preise, im Blog zeigen wir Spannen."],
+      ["Was ist der Unterschied zwischen Merkmal, Vorteil und Nutzen?", "Das Merkmal ist eine Eigenschaft Deines Angebots. Der Vorteil sagt, was sie ermöglicht. Der Nutzen zeigt, was der Kunde dadurch erreicht oder fühlt. Gekauft wird der Nutzen."]
+    ],
+    related: ["done-for-you-marketing-agentur-vs-einmalprojekt", "was-kostet-ein-ki-werbefilm"],
+    cta: { h: "Du willst Marketing, das Deinen Kunden versteht?", sub: "30 Minuten Call. Wir fragen zuerst nach Deiner Situation, dann sprechen wir über das Angebot.", link: { to: "ki-videoproduktion", label: "Mehr zur KI-Videoproduktion von Flow West Films →" } }
   }
 ];

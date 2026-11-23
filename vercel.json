@@ -170,6 +170,10 @@
       "destination": "/_pre/blog__meta-ads-creatives-psychologie.html"
     },
     {
+      "source": "/blog/marketing-aus-sicht-des-kunden",
+      "destination": "/_pre/blog__marketing-aus-sicht-des-kunden.html"
+    },
+    {
       "source": "/projects/:slug",
       "destination": "/_pre/projects__:slug.html"
     }
